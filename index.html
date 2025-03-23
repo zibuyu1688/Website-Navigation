@@ -657,6 +657,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('chat')">
+                    <i class="bi bi-chat"></i>
+                    AI对话聊天
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" onclick="showCategory('writing')">
                     <i class="bi bi-pencil"></i>
                     AI写作工具
@@ -687,12 +693,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('chat')">
-                    <i class="bi bi-chat"></i>
-                    AI对话聊天
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" onclick="showCategory('design')">
                     <i class="bi bi-palette"></i>
                     AI设计工具
@@ -711,8 +711,8 @@
     <div class="main-content">
         <!-- 增强搜索区域 -->
         <div class="enhanced-search-container">
-            <h1 class="enhanced-search-title">电商人的AI导航</h1>
-            <p class="enhanced-search-subtitle">AI导航，电商加速器——让您的生意快人一步</p>
+            <h1 class="enhanced-search-title">电商AI导航</h1>
+            <p class="enhanced-search-subtitle">发现、比较和使用最佳AI工具，提升您的工作效率和创造力</p>
             
             <div class="search-wrapper">
                 <div class="enhanced-search-box">
@@ -1661,28 +1661,28 @@
                 </div>
             </div>
             
-            <!-- AI写作工具分类 -->
-            <div id="writing-page" class="category-section">
+            <!-- AI对话聊天分类 -->
+            <div id="chat-page" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-pencil"></i> AI写作工具 <span class="count">共12个</span></h2>
+                    <h2><i class="bi bi-chat"></i> AI对话聊天 <span class="count">共13个</span></h2>
                 </div>
                 <div class="tool-grid">
-                    <!-- AI写作工具卡片内容 -->
                     <!-- ChatGPT -->
                     <div class="tool-card">
                         <div class="card-gradient"></div>
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-chatgpt-logo-icon-download-in-svg-png-gif-file-formats--chat-gpt-ai-tool-artificial-intelligence-productivity-apps-pack-logos-icons-8630392.png?f=webp&w=512" alt="ChatGPT Logo">
+                                    <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT Logo">
                                 </div>
                                 <div class="tool-title">
                                     ChatGPT <span class="recommend-tag">推荐</span>
                                 </div>
                             </div>
-                            <p class="tool-desc">由OpenAI开发的领先AI聊天助手，可以进行自然流畅的对话，回答问题，创建内容，提供建议。</p>
+                            <p class="tool-desc">由OpenAI开发的领先AI聊天助手，擅长自然对话、回答问题，创建内容，提供建议。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">通用AI</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
                                 <span class="tool-tag">强大</span>
                                 <span class="tool-tag">多用途</span>
                             </div>
@@ -1711,7 +1711,8 @@
                             </div>
                             <p class="tool-desc">由Anthropic开发的AI助手，擅长长篇对话、复杂任务处理、内容创作和数据分析，支持多种格式输入。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">通用AI</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
                                 <span class="tool-tag">安全可靠</span>
                                 <span class="tool-tag">长文本</span>
                             </div>
@@ -1732,22 +1733,23 @@
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://yiyan.baidu.com/favicon.ico" alt="文心一言 Logo">
+                                    <img src="https://nlp-eb.cdn.bcebos.com/static/eb/asset/topLogo.4a0fc7b7.png" alt="文心一言 Logo">
                                 </div>
                                 <div class="tool-title">
-                                        文心一言
-                                    </div>
+                                    文心一言 <span class="recommend-tag">推荐</span>
+                                </div>
                             </div>
                             <p class="tool-desc">百度推出的大语言模型，支持中文对话，提供多样化信息和服务，包括写作、翻译和创意生成。</p>
                             <div class="tool-tags">
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
                                 <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">本地化</span>
                                 <span class="tool-tag">多功能</span>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
+                            <div class="direct-label">
+                                <i class="bi bi-globe"></i>直达
                             </div>
                             <a href="https://yiyan.baidu.com" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
@@ -1761,22 +1763,23 @@
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://qianwen.aliyun.com/favicon.ico" alt="通义千问 Logo">
+                                    <img src="https://img.alicdn.com/imgextra/i4/O1CN01EfJVFQ1uZPd7W4W6i_!!6000000006051-2-tps-112-112.png" alt="通义千问 Logo">
                                 </div>
                                 <div class="tool-title">
-                                        通义千问
-                                    </div>
+                                    通义千问
+                                </div>
                             </div>
                             <p class="tool-desc">阿里推出的大模型对话产品，提供自然、准确的中文对话能力，可用于写作、思考和知识获取。</p>
                             <div class="tool-tags">
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
                                 <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">本地化</span>
-                                <span class="tool-tag">通用型</span>
+                                <span class="tool-tag">阿里生态</span>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
+                            <div class="direct-label">
+                                <i class="bi bi-globe"></i>直达
                             </div>
                             <a href="https://qianwen.aliyun.com" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
@@ -1793,21 +1796,82 @@
                                     <img src="https://xinghuo.xfyun.cn/favicon.ico" alt="讯飞星火 Logo">
                                 </div>
                                 <div class="tool-title">
-                                        讯飞星火
-                                    </div>
+                                    讯飞星火
+                                </div>
                             </div>
-                            <p class="tool-desc">科大讯飞推出的认知大模型，具备出色的中文理解能力和专业领域知识，提供多样化交互体验。</p>
+                            <p class="tool-desc">科大讯飞推出的AI大模型，拥有强大的中文语义理解能力，专注于知识问答、文本创作和对话交互。</p>
                             <div class="tool-tags">
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
+                                <span class="tool-tag">语义理解</span>
                                 <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">本地化</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="direct-label">
+                                <i class="bi bi-globe"></i>直达
+                            </div>
+                            <a href="https://xinghuo.xfyun.cn" target="_blank" class="visit-btn">
+                                访问 <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- 豆包 -->
+                    <div class="tool-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="tool-logo">
+                                    <img src="https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/logo_new.png" alt="豆包 Logo">
+                                </div>
+                                <div class="tool-title">
+                                    豆包
+                                </div>
+                            </div>
+                            <p class="tool-desc">字节跳动推出的AI助手，具有强大的中文理解能力和多模态功能，支持图像理解和内容创作。</p>
+                            <div class="tool-tags">
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
+                                <span class="tool-tag">多模态</span>
+                                <span class="tool-tag">中文优化</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="direct-label">
+                                <i class="bi bi-globe"></i>直达
+                            </div>
+                            <a href="https://doubao.com" target="_blank" class="visit-btn">
+                                访问 <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Deepseek -->
+                    <div class="tool-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="tool-logo">
+                                    <img src="https://www.deepseek.com/_next/image?url=https%3A%2F%2Fcdn.deepseek.com%2Flogo.png&w=1920&q=75" alt="Deepseek Logo">
+                                </div>
+                                <div class="tool-title">
+                                    Deepseek
+                                </div>
+                            </div>
+                            <p class="tool-desc">中国最先进的AI对话大模型之一，具备出色的中英文理解能力，擅长复杂问题推理和专业领域知识。</p>
+                            <div class="tool-tags">
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
+                                <span class="tool-tag">中文优化</span>
                                 <span class="tool-tag">专业知识</span>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
+                            <div class="direct-label">
+                                <i class="bi bi-globe"></i>直达
                             </div>
-                            <a href="https://xinghuo.xfyun.cn" target="_blank" class="visit-btn">
+                            <a href="https://www.deepseek.com/" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -1819,17 +1883,18 @@
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://copilot.microsoft.com/favicon.ico" alt="Microsoft Copilot Logo">
+                                    <img src="https://www.bing.com/favicon.ico" alt="Microsoft Copilot Logo">
                                 </div>
                                 <div class="tool-title">
-                                        Microsoft Copilot
-                                    </div>
+                                    Microsoft Copilot
+                                </div>
                             </div>
-                            <p class="tool-desc">微软开发的对话式AI助手，集成了Bing搜索能力，可以提供实时信息、回答问题和创建各种内容。</p>
+                            <p class="tool-desc">微软推出的AI助手，集成搜索引擎功能，提供实时信息、图像生成和对话能力，支持多种创意任务。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">搜索增强</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
+                                <span class="tool-tag">搜索集成</span>
                                 <span class="tool-tag">实时信息</span>
-                                <span class="tool-tag">多功能</span>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -1842,320 +1907,121 @@
                         </div>
                     </div>
                     
-                    <!-- 豆包 -->
+                    <!-- Perplexity -->
                     <div class="tool-card">
                         <div class="card-gradient"></div>
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://www.doubao.com/favicon.ico" alt="豆包 Logo">
+                                    <img src="https://www.perplexity.ai/favicon.ico" alt="Perplexity Logo">
                                 </div>
                                 <div class="tool-title">
-                                        豆包
-                                    </div>
+                                    Perplexity
+                                </div>
                             </div>
-                            <p class="tool-desc">字节跳动推出的AI助手，拥有强大的中文理解能力、实时信息和多模态功能，支持图像和文本交互。</p>
+                            <p class="tool-desc">基于AI的搜索引擎，提供实时信息和引用来源，结合大语言模型回答问题并生成准确内容。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">多模态</span>
-                                <span class="tool-tag">本地化</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI大模型</span>
+                                <span class="tool-tag">搜索引擎</span>
+                                <span class="tool-tag">实时信息</span>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="magic-label">
                                 <i class="bi bi-lightning-fill"></i>魔法
                             </div>
-                            <a href="https://www.doubao.com" target="_blank" class="visit-btn">
+                            <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <!-- Jasper -->
+                    <!-- Monica -->
                     <div class="tool-card">
                         <div class="card-gradient"></div>
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://www.jasper.ai/favicon.ico" alt="Jasper Logo">
+                                    <img src="https://assets.monica.im/home-web/_next/static/media/monicaLogo.83e0ae18.png" alt="Monica Logo">
                                 </div>
                                 <div class="tool-title">
-                                        Jasper <span class="recommend-tag">推荐</span>
-                                    </div>
+                                    Monica
+                                </div>
                             </div>
-                            <p class="tool-desc">专为营销人员设计的AI写作助手，提供高质量博客、广告文案和社交媒体内容生成。</p>
+                            <p class="tool-desc">集成多个AI大模型的综合平台，支持AI对话、AI视频创作和AI绘画等多种功能于一体。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">营销文案</span>
-                                <span class="tool-tag">博客写作</span>
-                                <span class="tool-tag">专业级</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI视频</span>
+                                <span class="tool-tag">AI绘画</span>
+                                <span class="tool-tag">多模型集成</span>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="magic-label">
                                 <i class="bi bi-lightning-fill"></i>魔法
                             </div>
-                            <a href="https://www.jasper.ai" target="_blank" class="visit-btn">
+                            <a href="https://monica.im/home" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <!-- Copy.ai -->
+                    <!-- Poe -->
                     <div class="tool-card">
                         <div class="card-gradient"></div>
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://www.copy.ai/favicon.ico" alt="Copy.ai Logo">
+                                    <img src="https://psc2.cf2.poecdn.net/assets/_next/static/media/poeFullMultibot.aa56caf5.svg" alt="Poe Logo">
                                 </div>
                                 <div class="tool-title">
-                                        Copy.ai
-                                    </div>
+                                    Poe
+                                </div>
                             </div>
-                            <p class="tool-desc">商业写作工具，提供90多种模板，适合营销文案、邮件、广告和社交媒体内容创作。</p>
+                            <p class="tool-desc">Quora开发的AI平台，集成多种AI模型，包括ChatGPT、Claude等，支持AI对话、图像生成等多功能。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">商业写作</span>
-                                <span class="tool-tag">模板丰富</span>
-                                <span class="tool-tag">多语言</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">AI绘画</span>
+                                <span class="tool-tag">多模型集成</span>
+                                <span class="tool-tag">跨平台</span>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="magic-label">
                                 <i class="bi bi-lightning-fill"></i>魔法
                             </div>
-                            <a href="https://www.copy.ai" target="_blank" class="visit-btn">
+                            <a href="https://poe.com/login" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <!-- 笔灵AI写作 -->
+                    <!-- Character.AI -->
                     <div class="tool-card">
                         <div class="card-gradient"></div>
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://www.aigc.cn/static/favicon.ico" alt="笔灵AI写作 Logo">
+                                    <img src="https://character.ai/favicon.ico" alt="Character.AI Logo">
                                 </div>
                                 <div class="tool-title">
-                                        笔灵AI写作
-                                    </div>
+                                    Character.AI
+                                </div>
                             </div>
-                            <p class="tool-desc">专业中文AI写作工具，集成多种写作模板，支持文章创作、改写和优化。</p>
+                            <p class="tool-desc">提供角色扮演AI对话体验，用户可以与历史人物、虚构角色交流，或创建自定义角色进行互动。</p>
                             <div class="tool-tags">
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">专业创作</span>
-                                <span class="tool-tag">国产工具</span>
+                                <span class="tool-tag">AI对话</span>
+                                <span class="tool-tag">角色扮演</span>
+                                <span class="tool-tag">自定义角色</span>
+                                <span class="tool-tag">社区创作</span>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="magic-label">
                                 <i class="bi bi-lightning-fill"></i>魔法
                             </div>
-                            <a href="https://www.aigc.cn" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Notion AI -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.notion.so/images/favicon.ico" alt="Notion AI Logo">
-                                </div>
-                                <div class="tool-title">
-                                        Notion AI
-                                    </div>
-                            </div>
-                            <p class="tool-desc">集成在Notion中的AI内容创作助手，支持写作、总结、修改和头脑风暴等功能。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">工作流集成</span>
-                                <span class="tool-tag">内容助手</span>
-                                <span class="tool-tag">多功能</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.notion.so/product/ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Grammarly -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.grammarly.com/favicon.ico" alt="Grammarly Logo">
-                                </div>
-                                <div class="tool-title">
-                                        Grammarly
-                                    </div>
-                            </div>
-                            <p class="tool-desc">AI写作助手，专注于语法修正、拼写检查和写作风格改进，提高文本质量和专业度。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">语法修正</span>
-                                <span class="tool-tag">写作改进</span>
-                                <span class="tool-tag">专业校对</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.grammarly.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 写作猫 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://xiezuocat.com/favicon.ico" alt="写作猫 Logo">
-                                </div>
-                                <div class="tool-title">
-                                        写作猫
-                                    </div>
-                            </div>
-                            <p class="tool-desc">中文写作辅助工具，提供实时错别字检查、语法纠正和润色建议，支持多种写作场景。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">校对润色</span>
-                                <span class="tool-tag">国产工具</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://xiezuocat.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Rytr -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://rytr.me/favicon.ico" alt="Rytr Logo">
-                                </div>
-                                <div class="tool-title">
-                                        Rytr
-                                    </div>
-                            </div>
-                            <p class="tool-desc">平价AI写作助手，支持30多种语言和20多种写作风格，适合博客、邮件和营销内容创作。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">多语言</span>
-                                <span class="tool-tag">多场景</span>
-                                <span class="tool-tag">经济实惠</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://rytr.me" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Writesonic -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://writesonic.com/favicon.ico" alt="Writesonic Logo">
-                                </div>
-                                <div class="tool-title">
-                                        Writesonic
-                                    </div>
-                            </div>
-                            <p class="tool-desc">AI写作平台，专注于营销内容创作，提供博客、广告文案和产品描述等多种写作模板。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">营销内容</span>
-                                <span class="tool-tag">模板丰富</span>
-                                <span class="tool-tag">SEO优化</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://writesonic.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- QuillBot -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://quillbot.com/favicon.ico" alt="QuillBot Logo">
-                                </div>
-                                <div class="tool-title">
-                                        QuillBot
-                                    </div>
-                            </div>
-                            <p class="tool-desc">AI改写工具，提供多种改写模式和语气选项，帮助用户改善句子结构和表达方式。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">文本改写</span>
-                                <span class="tool-tag">多样风格</span>
-                                <span class="tool-tag">语法检查</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://quillbot.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 讯飞星火 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://xinghuo.xfyun.cn/favicon.ico" alt="讯飞星火 Logo">
-                                </div>
-                                <div class="tool-title">
-                                        讯飞星火
-                                    </div>
-                            </div>
-                            <p class="tool-desc">科大讯飞推出的大语言模型，支持中文文本创作、内容生成和创意写作，中文处理能力强。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">创意写作</span>
-                                <span class="tool-tag">国产工具</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://xinghuo.xfyun.cn" target="_blank" class="visit-btn">
+                            <a href="https://character.ai" target="_blank" class="visit-btn">
                                 访问 <i class="bi bi-box-arrow-up-right"></i>
                             </a>
                         </div>
@@ -3591,720 +3457,6 @@
                 </div>
             </div>
             
-            <!-- AI对话聊天分类 -->
-            <div id="chat-page" class="category-section">
-                <div class="category-title">
-                    <h2><i class="bi bi-chat"></i> AI对话聊天 <span class="count">共10个</span></h2>
-                </div>
-                <div class="tool-grid">
-                    <!-- AI对话聊天卡片内容 -->
-                    <!-- ChatGPT -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT Logo">
-                                </div>
-                                <div class="tool-title">
-                                    ChatGPT <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">OpenAI开发的领先AI聊天助手，擅长自然对话、内容创作、代码解释和知识问答，功能全面。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">全能型</span>
-                                <span class="tool-tag">内容创作</span>
-                                <span class="tool-tag">知识库</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://chat.openai.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Claude -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://claude.ai/favicon.ico" alt="Claude Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Claude <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">Anthropic开发的AI助手，以长上下文理解、复杂推理能力和亲和的对话风格著称，支持文档分析。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">长文本</span>
-                                <span class="tool-tag">文档分析</span>
-                                <span class="tool-tag">自然对话</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://claude.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 文心一言 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://yiyan.baidu.com/favicon.ico" alt="文心一言 Logo">
-                                </div>
-                                <div class="tool-title">
-                                    文心一言 <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">百度开发的AI大模型，擅长中文对话，提供创作、内容生成和信息检索，集成百度生态和搜索能力。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">搜索能力</span>
-                                <span class="tool-tag">百度生态</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://yiyan.baidu.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 通义千问 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://tongyi.aliyun.com/favicon.ico" alt="通义千问 Logo">
-                                </div>
-                                <div class="tool-title">
-                                    通义千问
-                                </div>
-                            </div>
-                            <p class="tool-desc">阿里巴巴开发的AI大模型，提供流畅的中文对话能力，集成阿里生态，支持文档分析和内容创作。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">国产大模型</span>
-                                <span class="tool-tag">中文理解</span>
-                                <span class="tool-tag">阿里生态</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://tongyi.aliyun.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 讯飞星火 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://xinghuo.xfyun.cn/favicon.ico" alt="讯飞星火 Logo">
-                                </div>
-                                <div class="tool-title">
-                                    讯飞星火
-                                </div>
-                            </div>
-                            <p class="tool-desc">科大讯飞开发的AI大模型，拥有强大的中文语义理解能力，专注于知识问答、文本创作和对话交互。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">语义理解</span>
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">创作助手</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://xinghuo.xfyun.cn" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Microsoft Copilot -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.bing.com/favicon.ico" alt="Microsoft Copilot Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Microsoft Copilot
-                                </div>
-                            </div>
-                            <p class="tool-desc">微软推出的AI助手，集成搜索引擎功能，提供实时信息、图像生成和对话能力，支持多种创意任务。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">搜索集成</span>
-                                <span class="tool-tag">实时信息</span>
-                                <span class="tool-tag">创意助手</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://copilot.microsoft.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 豆包 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://doubao.com/favicon.ico" alt="豆包 Logo">
-                                </div>
-                                <div class="tool-title">
-                                    豆包
-                                </div>
-                            </div>
-                            <p class="tool-desc">字节跳动推出的AI助手，具有强大的中文理解能力和多模态功能，支持图像理解和内容创作。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">多模态</span>
-                                <span class="tool-tag">中文优化</span>
-                                <span class="tool-tag">内容创作</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://doubao.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- 月之暗面 -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.moonshot.cn/favicon.ico" alt="月之暗面 Logo">
-                                </div>
-                                <div class="tool-title">
-                                    月之暗面
-                                </div>
-                            </div>
-                            <p class="tool-desc">国内领先的AI聊天助手，支持深度对话和复杂任务处理，专注于提供准确的信息和严谨的推理能力。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">深度对话</span>
-                                <span class="tool-tag">信息精准</span>
-                                <span class="tool-tag">国产模型</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.moonshot.cn" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Character.AI -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://character.ai/favicon.ico" alt="Character.AI Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Character.AI <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">AI角色扮演平台，可创建和与各种虚拟人物对话，包括历史人物、游戏角色和原创角色，体验丰富的互动。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">角色扮演</span>
-                                <span class="tool-tag">人格化AI</span>
-                                <span class="tool-tag">创意对话</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://character.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Perplexity -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.perplexity.ai/favicon.ico" alt="Perplexity Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Perplexity
-                                </div>
-                            </div>
-                            <p class="tool-desc">AI搜索引擎和聊天助手，提供实时信息和研究能力，支持深度问答和信息探索，注重引用和信息准确性。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">实时信息</span>
-                                <span class="tool-tag">研究助手</span>
-                                <span class="tool-tag">引用支持</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.perplexity.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Poe -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://poe.com/favicon.ico" alt="Poe Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Poe
-                                </div>
-                            </div>
-                            <p class="tool-desc">Quora开发的AI平台，集成多种AI模型，包括ChatGPT、Claude等，支持在一个平台上使用多种AI服务。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">多模型</span>
-                                <span class="tool-tag">统一平台</span>
-                                <span class="tool-tag">快速切换</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://poe.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pi -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://pi.ai/favicon.ico" alt="Pi Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Pi
-                                </div>
-                            </div>
-                            <p class="tool-desc">个人AI助手，专注于提供友好的对话和情感支持，擅长日常交流和提供建议，注重隐私和个性化体验。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">个人助手</span>
-                                <span class="tool-tag">情感支持</span>
-                                <span class="tool-tag">日常交流</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://pi.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- AI设计工具分类 -->
-            <div id="design-page" class="category-section">
-                <div class="category-title">
-                    <h2><i class="bi bi-palette"></i> AI设计工具 <span class="count">共12个</span></h2>
-                </div>
-                <div class="tool-grid">
-                    <!-- AI设计工具卡片内容 -->
-                    <!-- Midjourney -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.midjourney.com/favicon.ico" alt="Midjourney Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Midjourney <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">强大的AI图像生成工具，以艺术性高质量输出闻名，适合创意设计和概念艺术创作。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">图像生成</span>
-                                <span class="tool-tag">艺术创作</span>
-                                <span class="tool-tag">高质量</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.midjourney.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Canva AI -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.canva.com/favicon.ico" alt="Canva AI Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Canva AI <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">Canva推出的AI设计工具套件，包括Magic Design和Magic Edit等功能，简化设计流程，提高效率。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">设计平台</span>
-                                <span class="tool-tag">模板生成</span>
-                                <span class="tool-tag">图像编辑</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.canva.com/ai-image-generator/" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Adobe Firefly -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://firefly.adobe.com/favicon.ico" alt="Adobe Firefly Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Adobe Firefly
-                                </div>
-                            </div>
-                            <p class="tool-desc">Adobe的创意AI平台，提供文本生成图像和矢量重新上色等功能，为专业设计师定制的AI工具。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">文生图</span>
-                                <span class="tool-tag">专业设计</span>
-                                <span class="tool-tag">Adobe生态</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://firefly.adobe.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Figma AI -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.figma.com/favicon.ico" alt="Figma AI Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Figma AI
-                                </div>
-                            </div>
-                            <p class="tool-desc">Figma集成的AI工具，用于设计生成和内容填充，帮助设计师更快创建和迭代产品原型。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">UI设计</span>
-                                <span class="tool-tag">原型设计</span>
-                                <span class="tool-tag">效率工具</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.figma.com/ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Designify -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.designify.com/favicon.ico" alt="Designify Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Designify
-                                </div>
-                            </div>
-                            <p class="tool-desc">将普通照片转换为专业设计的工具，提供各种风格模板和效果，一键美化图像。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">图像美化</span>
-                                <span class="tool-tag">一键处理</span>
-                                <span class="tool-tag">多风格</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.designify.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Uizard -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://uizard.io/favicon.ico" alt="Uizard Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Uizard
-                                </div>
-                            </div>
-                            <p class="tool-desc">AI驱动的设计平台，可将草图转换为UI设计，非设计师也能快速实现创意的理想工具。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">草图转UI</span>
-                                <span class="tool-tag">快速原型</span>
-                                <span class="tool-tag">易用性</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://uizard.io" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Leonardo.ai -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://leonardo.ai/favicon.ico" alt="Leonardo.ai Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Leonardo.ai <span class="recommend-tag">推荐</span>
-                                </div>
-                            </div>
-                            <p class="tool-desc">为专业人士设计的AI创意平台，提供高质量图像生成和自定义模型训练，功能丰富。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">模型训练</span>
-                                <span class="tool-tag">高级控制</span>
-                                <span class="tool-tag">专业级</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://leonardo.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Remove.bg -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.remove.bg/favicon.ico" alt="Remove.bg Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Remove.bg
-                                </div>
-                            </div>
-                            <p class="tool-desc">自动从图像中移除背景的AI工具，一键处理，效果精确，适合电商和设计使用。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">背景去除</span>
-                                <span class="tool-tag">一键处理</span>
-                                <span class="tool-tag">高精度</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.remove.bg" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Stable Diffusion -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://stability.ai/favicon.ico" alt="Stable Diffusion Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Stable Diffusion
-                                </div>
-                            </div>
-                            <p class="tool-desc">开源AI图像生成模型，提供多种部署选项，适合创意图像生成和修改，社区活跃。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">开源</span>
-                                <span class="tool-tag">本地部署</span>
-                                <span class="tool-tag">可定制</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://stability.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Runway -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://runway.com/favicon.ico" alt="Runway Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Runway
-                                </div>
-                            </div>
-                            <p class="tool-desc">创意AI工具包，用于图像生成、编辑和视频创作，帮助专业人士简化视觉内容创建流程。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">视频生成</span>
-                                <span class="tool-tag">图像合成</span>
-                                <span class="tool-tag">专业创作</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://runway.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Interior AI -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://interiorai.com/favicon.ico" alt="Interior AI Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Interior AI
-                                </div>
-                            </div>
-                            <p class="tool-desc">专注于室内设计的AI工具，能生成各种风格的室内装饰效果图，帮助装修规划和设计。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">室内设计</span>
-                                <span class="tool-tag">装修规划</span>
-                                <span class="tool-tag">风格转换</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://interiorai.com" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Vizcom -->
-                    <div class="tool-card">
-                        <div class="card-gradient"></div>
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="tool-logo">
-                                    <img src="https://www.vizcom.ai/favicon.ico" alt="Vizcom Logo">
-                                </div>
-                                <div class="tool-title">
-                                    Vizcom
-                                </div>
-                            </div>
-                            <p class="tool-desc">将简单草图转换为详细渲染图像的AI工具，特别适合产品和工业设计师使用。</p>
-                            <div class="tool-tags">
-                                <span class="tool-tag">草图渲染</span>
-                                <span class="tool-tag">产品设计</span>
-                                <span class="tool-tag">概念可视化</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="magic-label">
-                                <i class="bi bi-lightning-fill"></i>魔法
-                            </div>
-                            <a href="https://www.vizcom.ai" target="_blank" class="visit-btn">
-                                访问 <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!-- AI编程工具分类 -->
             <div id="coding-page" class="category-section">
                 <div class="category-title">
@@ -4521,7 +3673,7 @@
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="tool-logo">
-                                    <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT Logo">
+                                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-chatgpt-logo-icon-download-in-svg-png-gif-file-formats--chat-gpt-ai-tool-artificial-intelligence-productivity-apps-pack-logos-icons-8630392.png?f=webp&w=512" alt="ChatGPT Logo">
                                 </div>
                                 <div class="tool-title">
                                     ChatGPT
