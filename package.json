@@ -1,0 +1,36 @@
+{
+  "name": "website-navigation",
+  "version": "1.0.0",
+  "description": "A website navigation tool",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp serve",
+    "vercel-build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zibuyu1688/Website-Navigation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zibuyu1688/Website-Navigation/issues"
+  },
+  "homepage": "https://github.com/zibuyu1688/Website-Navigation#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "cache": "^5.0.1",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-cache": "^1.1.3",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-handlebars": "^5.1.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify": "^3.0.2",
+    "handlebars": "^4.7.8",
+    "through2": "^4.0.2"
+  }
+}

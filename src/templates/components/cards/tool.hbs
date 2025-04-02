@@ -1,0 +1,19 @@
+<div class="tool-card">
+  <div class="tool-logo">
+    {{#if logo}}
+      <img src="{{logo}}" alt="{{title}} Logo">
+    {{else}}
+      <svg viewBox="0 0 24 24" width="48" height="48">
+        <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    {{/if}}
+  </div>
+  <h3 class="tool-title">{{title}}</h3>
+  <p class="tool-description">{{description}}</p>
+  <div class="tool-tags">
+    {{#each tags}}
+      <span class="tag">{{this}}</span>
+    {{/each}}
+  </div>
+  <a href="{{url}}" target="_blank" class="tool-link"></a>
+</div> 

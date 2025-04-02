@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": "ai-tools",
+      "title": "AI 工具",
+      "icon": "🤖",
+      "tools": [
+        {
+          "title": "ChatGPT",
+          "description": "OpenAI 开发的大型语言模型，可以进行自然语言对话",
+          "url": "https://chat.openai.com",
+          "logo": "https://chat.openai.com/favicon.ico",
+          "tags": ["AI", "对话", "写作"]
+        },
+        {
+          "title": "Midjourney",
+          "description": "AI 图像生成工具，可以创建高质量的艺术作品",
+          "url": "https://www.midjourney.com",
+          "logo": "https://www.midjourney.com/favicon.ico",
+          "tags": ["AI", "图像", "艺术"]
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "title": "社交平台",
+      "icon": "👥",
+      "tools": [
+        {
+          "title": "Twitter",
+          "description": "全球最大的社交媒体平台之一",
+          "url": "https://twitter.com",
+          "logo": "https://twitter.com/favicon.ico",
+          "tags": ["社交", "新闻", "娱乐"]
+        },
+        {
+          "title": "LinkedIn",
+          "description": "专业的职业社交网络",
+          "url": "https://www.linkedin.com",
+          "logo": "https://www.linkedin.com/favicon.ico",
+          "tags": ["职业", "招聘", "社交"]
+        }
+      ]
+    }
+  ]
+} 
