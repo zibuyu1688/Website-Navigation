@@ -491,11 +491,11 @@ body {
     color: #00BCD4;
 }
 
-/* 二级分类导航样式 - 两行显示优化 */
+/* 二级分类导航样式 - 网格布局优化 */
 .subcategory-nav {
-    display: flex;
-    flex-wrap: wrap; /* 允许换行 */
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
     margin-bottom: 20px;
     padding: 12px 16px;
     overflow-x: hidden;
@@ -508,20 +508,6 @@ body {
     position: relative;
     z-index: 10;
     transition: all 0.3s ease;
-    justify-content: flex-start; /* 左对齐按钮 */
-}
-
-.subcategory-nav::-webkit-scrollbar {
-    height: 5px;
-}
-
-.subcategory-nav::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.subcategory-nav::-webkit-scrollbar-thumb {
-    background-color: rgba(75, 139, 244, 0.3);
-    border-radius: 10px;
 }
 
 .subcategory-btn {
@@ -529,7 +515,7 @@ body {
     color: #555;
     border: none;
     border-radius: 10px;
-    padding: 8px 16px;  /* 减小按钮内边距 */
+    padding: 8px 5px;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -538,9 +524,12 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     position: relative;
     overflow: hidden;
-    margin: 4px 2px;  /* 添加外边距 */
-    min-width: 80px;  /* 设置最小宽度 */
-    flex: 0 1 auto;  /* 不伸展，可缩小，基于内容自动宽度 */
+    text-align: center;
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .subcategory-btn:before {

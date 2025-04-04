@@ -294,21 +294,18 @@ function loadSites() {
     const aiSearchGrid = document.getElementById('ai-search-grid');
     if (aiSearchGrid) {
         aiSearchGrid.innerHTML = '';
+        const filteredAiSearch = sitesData.ai_search.filter(site => 
+            site && (
+                site.title.toLowerCase().includes(query) || 
+                site.description.toLowerCase().includes(query) ||
+                site.tags.some(tag => tag.toLowerCase().includes(query))
+            )
+        );
+        filteredAiSearch.forEach(site => {
+            aiSearchGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (Array.isArray(aiSearchData)) {
-            aiSearchData.forEach(site => {
-                aiSearchGrid.innerHTML += createSiteCard({
-                    title: site.name,
-                    logo: site.logo,
-                    description: site.description,
-                    url: site.url,
-                    tags: site.tags,
-                    subcategory: site.subcategory
-                });
-            });
-        }
-        
-        // 初始化卡片可见性
+        // 重新应用卡片可见性
         initializeCardVisibility('ai-search-grid');
     }
     
@@ -1633,30 +1630,21 @@ function performSiteSearch(query) {
     
     // 搜索AI搜索工具
     const aiSearchGrid = document.getElementById('ai-search-grid');
-    if (aiSearchGrid && Array.isArray(aiSearchData)) {
+    if (aiSearchGrid) {
         aiSearchGrid.innerHTML = '';
-        const filteredAiSearch = aiSearchData.filter(site => 
+        const filteredAiSearch = sitesData.ai_search.filter(site => 
             site && (
-                site.name.toLowerCase().includes(query) || 
+                site.title.toLowerCase().includes(query) || 
                 site.description.toLowerCase().includes(query) ||
-                (site.tags && site.tags.some(tag => tag.toLowerCase().includes(query)))
+                site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiSearch.forEach(site => {
+            aiSearchGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiSearch.length > 0) {
-            filteredAiSearch.forEach(site => {
-                aiSearchGrid.innerHTML += createSiteCard({
-                    title: site.name,
-                    logo: site.logo,
-                    description: site.description,
-                    url: site.url,
-                    tags: site.tags,
-                    subcategory: site.subcategory
-                });
-            });
-            displayAllSiteCards('ai-search-grid');
-            matchedSections.push('ai-search-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-search-grid');
     }
     
     // 显示有匹配结果的分类
@@ -1929,11 +1917,10 @@ function balanceAllSubcategoryNavs() {
     });
 }
 
-// 平衡单个二级分类导航的布局
+// 平衡单个二级分类导航的布局 - 网格布局版本
 function balanceSubcategoryNav(nav) {
-    // 首先移除任何现有的行分隔符
-    const existingBreaks = nav.querySelectorAll('.row-break');
-    existingBreaks.forEach(breakEl => breakEl.remove());
+    // 网格布局会自动处理对齐，不再需要手动添加换行元素
+    // 但我们仍然需要计算最佳列数以保持合理的布局
     
     // 获取导航容器的宽度
     const navWidth = nav.offsetWidth;
@@ -1944,44 +1931,15 @@ function balanceSubcategoryNav(nav) {
     // 如果按钮太少不需要处理
     if (buttons.length <= 1) return;
     
-    // 计算按钮总宽度
-    let totalButtonsWidth = 0;
-    const buttonWidths = buttons.map(btn => {
-        const width = btn.offsetWidth + parseInt(window.getComputedStyle(btn).marginLeft) + parseInt(window.getComputedStyle(btn).marginRight);
-        totalButtonsWidth += width;
-        return width;
-    });
+    // 计算适合的列数（根据容器宽度）
+    const idealButtonWidth = 120; // 每个按钮理想宽度
+    const maxColumns = Math.floor(navWidth / idealButtonWidth);
     
-    // 如果总宽度小于容器宽度，则不需要分行
-    if (totalButtonsWidth <= navWidth) return;
-    
-    // 计算应该在第一行放置多少按钮以实现平衡
-    let firstRowWidth = 0;
-    let buttonsInFirstRow = 0;
-    
-    // 尝试找到最佳的分割点，使得两行按钮数量尽量接近
-    const idealButtonsPerRow = Math.ceil(buttons.length / 2);
-    
-    for (let i = 0; i < buttons.length; i++) {
-        firstRowWidth += buttonWidths[i];
-        
-        // 如果已经达到或超过理想的每行按钮数量，或者宽度已经接近容器宽度的一半
-        if (i + 1 >= idealButtonsPerRow || firstRowWidth >= navWidth * 0.9) {
-            buttonsInFirstRow = i + 1;
-            break;
-        }
-    }
-    
-    // 如果无法分割得很好，就简单地在中间分割
-    if (buttonsInFirstRow === 0 || buttonsInFirstRow === buttons.length) {
-        buttonsInFirstRow = Math.ceil(buttons.length / 2);
-    }
-    
-    // 在适当位置添加换行元素
-    if (buttonsInFirstRow < buttons.length) {
-        const breakEl = document.createElement('div');
-        breakEl.className = 'row-break';
-        nav.insertBefore(breakEl, buttons[buttonsInFirstRow]);
+    // 设置网格列数
+    if (maxColumns > 0) {
+        // 确保至少有3列，但不超过按钮数量或最大列数
+        const columns = Math.min(Math.max(3, maxColumns), buttons.length);
+        nav.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
     }
 }
 
