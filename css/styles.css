@@ -1178,12 +1178,12 @@ body {
     right: -3px;
     bottom: -3px;
     border-radius: 15px;
-    background: linear-gradient(45deg, #ffd700, #ff9800, #ffeb3b, #ffc107, #f7d683, #ffd700);
-    background-size: 400% 400%;
+    background: linear-gradient(90deg, #ffd700, #ff9800, #ffeb3b, #ffc107, #f7d683, #ffd700);
+    background-size: 300% 100%;
     animation: goldFlow 8s linear infinite;
     z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
 }
 
 /* 搜索框白色背景遮罩 */
@@ -1213,11 +1213,8 @@ body {
     0% {
         background-position: 0% 50%;
     }
-    50% {
-        background-position: 100% 50%;
-    }
     100% {
-        background-position: 0% 50%;
+        background-position: 300% 50%;
     }
 }
 
