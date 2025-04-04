@@ -1351,8 +1351,15 @@ function selectSearchEngine(engine) {
 
 // 执行搜索
 function performSearch() {
-    const query = document.getElementById('search-input').value.trim();
-    if (!query) return;
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput.value.trim();
+    
+    if (query.length === 0) {
+        return;
+    }
+    
+    // 显示清除按钮
+    document.getElementById('clear-search-btn').classList.add('visible');
     
     // 根据不同搜索引擎执行不同操作
     switch(currentSearchEngine) {
@@ -1588,6 +1595,18 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch();
         }
     });
+    
+    // 监听搜索框输入事件，控制X按钮显示/隐藏
+    document.getElementById('search-input').addEventListener('input', function() {
+        const clearBtn = document.getElementById('clear-search-btn');
+        if (this.value.length > 0) {
+            clearBtn.classList.add('visible');
+        } else {
+            clearBtn.classList.remove('visible');
+            // 当输入框内容被清空时，恢复首页状态
+            showCategory('home');
+        }
+    });
 
     // 点击页面其他地方关闭搜索引擎下拉菜单
     document.addEventListener('click', function(e) {
@@ -1642,6 +1661,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化底部分类导航
     organizeFooterCategories();
 });
+
+// 清除搜索框内容并恢复首页状态
+function clearSearch() {
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = '';
+    document.getElementById('clear-search-btn').classList.remove('visible');
+    
+    // 重新加载所有站点数据
+    loadSites();
+    
+    // 显示首页（所有分类）
+    showCategory('home');
+    
+    // 滚动到页面顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
 
 // 组织底部分类导航为两行布局
 function organizeFooterCategories() {

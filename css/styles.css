@@ -1219,4 +1219,27 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+/* 清除按钮样式 */
+.clear-search-btn {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: none;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.clear-search-btn:hover {
+    color: #555;
+    background-color: #f0f0f0;
+}
+
+.clear-search-btn.visible {
+    display: block;
 } 
