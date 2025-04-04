@@ -4880,5 +4880,546 @@ const sitesData = {
             subcategory: 'cloud_ide',
             needsMagic: true
         }
+    ],
+    
+    // AI提示词
+    ai_prompts: [
+        // 综合提示词平台
+        {
+            title: 'PromptPerfect',
+            description: '专业提示词优化工具，支持多模型（如GPT、Stable Diffusion等），可自动优化提示结构。',
+            logo: 'https://promptperfect.jina.ai/favicon.ico',
+            tags: ['提示词优化', '多模型支持', '自动优化'],
+            url: 'https://promptperfect.jina.ai',
+            subcategory: 'prompt_platforms',
+            needsMagic: true
+        },
+        {
+            title: 'FlowGPT',
+            description: '社区驱动的提示词分享平台，含大量实战案例（如写作、编程、设计）。',
+            logo: 'https://flowgpt.com/favicon.ico',
+            tags: ['提示词分享', '社区驱动', '实战案例'],
+            url: 'https://flowgpt.com',
+            subcategory: 'prompt_platforms',
+            needsMagic: true
+        },
+        {
+            title: 'PromptHero',
+            description: '专注于AI生成内容的提示词库，尤其适合Stable Diffusion和MidJourney用户。',
+            logo: 'https://prompthero.com/favicon.ico',
+            tags: ['AI生成内容', 'Stable Diffusion', 'MidJourney'],
+            url: 'https://prompthero.com',
+            subcategory: 'prompt_platforms',
+            needsMagic: true
+        },
+        {
+            title: 'PromptBase',
+            description: '提示词交易市场，可购买/出售高质量提示，涵盖DALL·E、ChatGPT等。',
+            logo: 'https://promptbase.com/favicon.ico',
+            tags: ['提示词交易', '高质量提示', 'DALL·E'],
+            url: 'https://promptbase.com',
+            subcategory: 'prompt_platforms',
+            needsMagic: true
+        },
+        
+        // Stable Diffusion专属工具
+        {
+            title: 'Stable Diffusion Prompt Book',
+            description: '官方提示词手册，包含风格模板和参数详解。',
+            logo: 'https://github.com/favicon.ico',
+            tags: ['提示词手册', '风格模板', '参数详解'],
+            url: 'https://github.com/search?q=Stable-Diffusion-Prompt-Book',
+            subcategory: 'sd_tools',
+            needsMagic: true
+        },
+        {
+            title: 'PublicPrompts',
+            description: '开源提示词库，适合艺术创作和设计灵感。',
+            logo: 'https://publicprompts.art/favicon.ico',
+            tags: ['开源提示词', '艺术创作', '设计灵感'],
+            url: 'https://publicprompts.art',
+            subcategory: 'sd_tools',
+            needsMagic: true
+        },
+        {
+            title: 'MJ Prompt Tool',
+            description: 'MidJourney专用提示生成器，支持风格、灯光等参数调节。',
+            logo: 'https://mjprompttool.com/favicon.ico',
+            tags: ['MidJourney', '提示生成器', '参数调节'],
+            url: 'https://mjprompttool.com',
+            subcategory: 'sd_tools',
+            needsMagic: true
+        },
+        
+        // ChatGPT提示优化
+        {
+            title: 'Awesome ChatGPT Prompts',
+            description: 'GitHub开源项目，提供可直接复用的对话模板（如模拟Linux终端、编剧助手）。',
+            logo: 'https://github.com/favicon.ico',
+            tags: ['开源项目', '对话模板', 'ChatGPT'],
+            url: 'https://github.com/search?q=awesome-chatgpt-prompts',
+            subcategory: 'chatgpt_prompts',
+            needsMagic: true
+        },
+        {
+            title: 'ChatGPT Shortcut',
+            description: '中文快捷指令库，分类明确（写作、营销、编程等），一键调用。',
+            logo: 'https://newzone.top/favicon.ico',
+            tags: ['中文指令库', '快捷调用', '分类明确'],
+            url: 'https://newzone.top/chatgpt-shortcuts',
+            subcategory: 'chatgpt_prompts',
+            needsMagic: false
+        },
+        {
+            title: 'AIPRM',
+            description: 'ChatGPT浏览器插件，内置数百个预设提示词（SEO、数据分析等）。',
+            logo: 'https://aiprm.com/favicon.ico',
+            tags: ['浏览器插件', '预设提示词', 'SEO'],
+            url: 'https://aiprm.com',
+            subcategory: 'chatgpt_prompts',
+            needsMagic: true
+        },
+        
+        // 可视化提示工具
+        {
+            title: 'Visual Prompt Builder',
+            description: '通过拖拽生成复杂提示词，适合图像生成模型。',
+            logo: 'https://viaualpromptbuilder.com/favicon.ico',
+            tags: ['拖拽生成', '复杂提示词', '图像生成'],
+            url: 'https://viaualpromptbuilder.com',
+            subcategory: 'visual_tools',
+            needsMagic: true
+        },
+        {
+            title: 'Generrated',
+            description: 'DALL·E 2提示词设计指南，附案例解析。',
+            logo: 'https://generrated.com/favicon.ico',
+            tags: ['DALL·E 2', '提示词设计', '案例解析'],
+            url: 'https://generrated.com/guides',
+            subcategory: 'visual_tools',
+            needsMagic: true
+        },
+        
+        // 中文特色资源
+        {
+            title: '词魂',
+            description: '中文AIGC提示词库，聚焦本土化场景（如电商文案、短视频脚本）。',
+            logo: 'https://cihun.com/favicon.ico',
+            tags: ['中文提示词', '本土化场景', '电商文案'],
+            url: 'https://cihun.com',
+            subcategory: 'chinese_resources',
+            needsMagic: false
+        },
+        {
+            title: 'AI Short',
+            description: '中文精简提示词生成器，输入关键词快速输出优化指令。',
+            logo: 'https://aishort.top/favicon.ico',
+            tags: ['中文生成器', '精简提示词', '关键词优化'],
+            url: 'https://aishort.top',
+            subcategory: 'chinese_resources',
+            needsMagic: false
+        },
+        {
+            title: 'LangGPT',
+            description: '针对中文大模型的提示工程技术指南，含角色设定模板。',
+            logo: 'https://github.com/favicon.ico',
+            tags: ['中文大模型', '提示工程', '角色设定'],
+            url: 'https://github.com/search?q=LangGPT',
+            subcategory: 'chinese_resources',
+            needsMagic: true
+        },
+        
+        // 其他实用工具
+        {
+            title: 'ClickPrompt',
+            description: '可视化提示词工作流工具，支持团队协作。',
+            logo: 'https://clickprompt.org/favicon.ico',
+            tags: ['工作流工具', '团队协作', '可视化'],
+            url: 'https://clickprompt.org',
+            subcategory: 'other_tools',
+            needsMagic: true
+        },
+        {
+            title: 'Snack Prompt',
+            description: '极简提示词生成器，适合快速实验。',
+            logo: 'https://snackprompt.com/favicon.ico',
+            tags: ['极简生成器', '快速实验', '提示词'],
+            url: 'https://snackprompt.com',
+            subcategory: 'other_tools',
+            needsMagic: true
+        },
+        {
+            title: 'PromptVine',
+            description: '用户共享的提示词库，含评分系统。',
+            logo: 'https://promptvine.com/favicon.ico',
+            tags: ['用户共享', '提示词库', '评分系统'],
+            url: 'https://promptvine.com',
+            subcategory: 'other_tools',
+            needsMagic: true
+        }
     ]
 }; 
+
+// AI提示词工具数据
+const aiPromptsData = [
+    // 数据将通过JavaScript动态添加
+];
+
+// AI搜索工具数据
+// AI搜索工具数据
+// AI搜索工具数据
+const aiSearchData = [
+    // 综合类AI搜索引擎
+    {
+        name: "夸克AI",
+        logo: "https://quark.cn/favicon.ico",
+        description: "阿里旗下，集成AI搜索、网盘、文档编辑、内容创作的一体化应用",
+        url: "https://quark.cn",
+        tags: ["阿里", "一体化应用"],
+        subcategory: "general_search"
+    },
+    {
+        name: "Perplexity AI",
+        logo: "https://www.perplexity.ai/favicon.ico",
+        description: "强交互的对话式AI搜索引擎，支持溯源和实时网络检索",
+        url: "https://www.perplexity.ai/",
+        tags: ["对话式搜索", "溯源"],
+        subcategory: "general_search"
+    },
+    {
+        name: "百度文心一言",
+        logo: "https://www.baidu.com/favicon.ico",
+        description: "百度推出的AI搜索服务，提供中文内容理解和生成能力",
+        url: "https://yiyan.baidu.com/",
+        tags: ["百度", "中文搜索"],
+        subcategory: "general_search"
+    },
+    
+    // 学术科研类
+    {
+        name: "Consensus",
+        logo: "https://consensus.app/favicon.ico",
+        description: "专注学术研究的AI搜索引擎，搜索和总结科学论文",
+        url: "https://consensus.app/",
+        tags: ["学术研究", "论文搜索"],
+        subcategory: "academic_search"
+    },
+    {
+        name: "Elicit",
+        logo: "https://elicit.org/favicon.ico",
+        description: "AI研究助手，帮助查找相关论文并总结研究发现",
+        url: "https://elicit.org/",
+        tags: ["研究工具", "论文分析"],
+        subcategory: "academic_search"
+    },
+    {
+        name: "Scholar Chat",
+        logo: "https://scholarchat.io/favicon.ico",
+        description: "基于学术论文的AI聊天工具，提供有科学依据的回答",
+        url: "https://scholarchat.io/",
+        tags: ["学术问答", "研究助手"],
+        subcategory: "academic_search"
+    },
+    {
+        name: "ResearchRabbit",
+        logo: "https://www.researchrabbit.ai/favicon.ico",
+        description: "学术文献发现工具，可视化引用关系和相关研究",
+        url: "https://www.researchrabbit.ai/",
+        tags: ["文献发现", "引用分析"],
+        subcategory: "academic_search"
+    },
+    {
+        "name": "Lumina",
+        "logo": "https://lumina.com/favicon.ico",
+        "description": "完全免费的AI学术搜索引擎，覆盖论文、期刊等资源，支持一键生成文献综述",
+        "url": "https://lumina.com",
+        "tags": ["学术搜索", "论文检索"],
+        "subcategory": "academic_search"
+    },
+    {
+        "name": "AMiner",
+        "logo": "https://www.aminer.cn/favicon.ico",
+        "description": "智谱AI推出的学术平台，基于大模型提供学者画像、论文推荐和趋势分析",
+        "url": "https://www.aminer.cn",
+        "tags": ["学术图谱", "科研分析"],
+        "subcategory": "academic_search"
+    },
+    
+    {
+        "name": "Consensus",
+        "logo": "https://consensus.app/favicon.ico",
+        "description": "直接链接科研论文结论的AI工具，用问答形式快速获取可信赖的研究答案",
+        "url": "https://consensus.app",
+        "tags": ["科研问答", "论文摘要"],
+        "subcategory": "academic_search"
+    },
+    
+    {
+        "name": "Devv",
+        "logo": "https://devv.ai/favicon.ico",
+        "description": "专为程序员设计的新一代搜索引擎，支持代码片段搜索和API文档直达",
+        "url": "https://devv.ai",
+        "tags": ["代码搜索", "开发者工具"],
+        "subcategory": "programming_search"
+    },
+    
+    {
+        "name": "AlphaSense",
+        "logo": "https://www.alphasese.com/favicon.ico",
+        "description": "金融专业人士专用的AI平台，整合财报、新闻和行业分析数据",
+        "url": "https://www.alphasese.com",
+        "tags": ["金融数据", "行业分析"],
+        "subcategory": "finance_search"
+    },
+    
+    {
+        "name": "点点（小红书）",
+        "logo": "https://www.xiaohongshu.com/favicon.ico",
+        "description": "小红书推出的生活场景AI搜索，涵盖美食、旅行、购物等实用推荐",
+        "url": "https://www.xiaohongshu.com",
+        "tags": ["生活推荐", "场景搜索"],
+        "subcategory": "life_search"
+    },
+    
+    {
+        "name": "Flowith",
+        "logo": "https://flowith.com/favicon.ico",
+        "description": "节点式交互AI工具，通过可视化图谱连接搜索与对话内容",
+        "url": "https://flowith.com",
+        "tags": ["可视化搜索", "知识图谱"],
+        "subcategory": "innovative_search"
+    },
+    
+    {
+        "name": "Exa AI",
+        "logo": "https://exa.ai/favicon.ico",
+        "description": "专为AI模型设计的搜索引擎，优化了RAG（检索增强生成）效果",
+        "url": "https://exa.ai",
+        "tags": ["AI开发", "模型训练"],
+        "subcategory": "tech_search"
+    },
+    
+    {
+        "name": "纳米搜索（360）",
+        "logo": "https://ai.360.cn/favicon.ico",
+        "description": "360推出的AI搜索，可将文本结果自动生成短视频摘要",
+        "url": "https://ai.360.cn",
+        "tags": ["视频生成", "多媒体搜索"],
+        "subcategory": "special_search"
+    },
+    
+    // 编程开发类
+    {
+        name: "Phind",
+        logo: "https://www.phind.com/favicon.ico",
+        description: "专为开发者设计的AI搜索引擎，能解答复杂的编程问题",
+        url: "https://www.phind.com/",
+        tags: ["编程", "开发工具"],
+        subcategory: "programming_search"
+    },
+    {
+        name: "Bloop",
+        logo: "https://bloop.ai/favicon.ico",
+        description: "代码搜索引擎，理解语义并提供上下文相关的代码结果",
+        url: "https://bloop.ai/",
+        tags: ["代码搜索", "语义理解"],
+        subcategory: "programming_search"
+    },
+    {
+        name: "Devv",
+        logo: "https://devv.ai/favicon.ico",
+        description: "开发者专用AI搜索，提供代码示例和技术解决方案",
+        url: "https://devv.ai/",
+        tags: ["代码示例", "技术解决方案"],
+        subcategory: "programming_search"
+    },
+    {
+        name: "AskCodi",
+        logo: "https://www.askcodi.com/favicon.ico",
+        description: "编程问答助手，提供即时代码建议和解决方案",
+        url: "https://www.askcodi.com/",
+        tags: ["编程问答", "代码建议"],
+        subcategory: "programming_search"
+    },
+    
+    // 金融/商业类
+    {
+        name: "Bloomberg AI",
+        logo: "https://www.bloomberg.com/favicon.ico",
+        description: "彭博社的AI搜索，提供金融市场分析和数据解读",
+        url: "https://www.bloomberg.com/ai",
+        tags: ["金融市场", "数据分析"],
+        subcategory: "finance_search"
+    },
+    {
+        name: "Financial Chat",
+        logo: "https://www.financialchat.ai/favicon.ico",
+        description: "专注金融领域问答的AI工具，提供投资建议和市场分析",
+        url: "https://www.financialchat.ai/",
+        tags: ["投资建议", "金融分析"],
+        subcategory: "finance_search"
+    },
+    {
+        name: "Stockwise AI",
+        logo: "https://www.stockwise.ai/favicon.ico",
+        description: "股票市场AI搜索，分析公司财报和市场趋势",
+        url: "https://www.stockwise.ai/",
+        tags: ["股票分析", "市场趋势"],
+        subcategory: "finance_search"
+    },
+    {
+        name: "Finology Ticker",
+        logo: "https://ticker.finology.in/favicon.ico", 
+        description: "印度市场股票分析工具，提供AI驱动的市场洞察",
+        url: "https://ticker.finology.in/",
+        tags: ["股票", "市场洞察"],
+        subcategory: "finance_search"
+    },
+    
+    // 生活娱乐类
+    {
+        name: "Copilot.travel",
+        logo: "https://www.copilot.travel/favicon.ico",
+        description: "AI旅行规划助手，帮助规划旅程、寻找景点和制定行程",
+        url: "https://www.copilot.travel/",
+        tags: ["旅行规划", "行程助手"],
+        subcategory: "life_search"
+    },
+    {
+        name: "RecipeGPT",
+        logo: "https://www.recipegpt.com/favicon.ico",
+        description: "AI菜谱搜索引擎，根据食材和偏好推荐菜谱",
+        url: "https://www.recipegpt.com/",
+        tags: ["菜谱", "烹饪"],
+        subcategory: "life_search"
+    },
+    {
+        name: "Tripnotes",
+        logo: "https://tripnotes.ai/favicon.ico",
+        description: "AI旅行笔记助手，个性化旅行建议和攻略",
+        url: "https://tripnotes.ai/",
+        tags: ["旅行笔记", "个性化攻略"],
+        subcategory: "life_search"
+    },
+    {
+        name: "MovieGPT",
+        logo: "https://www.moviegpt.com/favicon.ico",
+        description: "AI电影推荐搜索，根据观影偏好推荐电影",
+        url: "https://www.moviegpt.com/",
+        tags: ["电影推荐", "娱乐"],
+        subcategory: "life_search"
+    },
+    
+    // 产品/公司类
+    {
+        name: "Producthunt AI Tools",
+        logo: "https://www.producthunt.com/favicon.ico",
+        description: "专注发现新兴AI产品和工具的平台",
+        url: "https://www.producthunt.com/topics/artificial-intelligence",
+        tags: ["产品发现", "AI工具"],
+        subcategory: "product_search"
+    },
+    {
+        name: "SimilarWeb AI",
+        logo: "https://www.similarweb.com/favicon.ico",
+        description: "AI驱动的公司和网站流量分析工具",
+        url: "https://www.similarweb.com/",
+        tags: ["网站分析", "竞争情报"],
+        subcategory: "product_search"
+    },
+    {
+        name: "Crunchbase",
+        logo: "https://www.crunchbase.com/favicon.ico",
+        description: "公司信息和投资数据搜索平台，集成AI搜索功能",
+        url: "https://www.crunchbase.com/",
+        tags: ["公司信息", "投资数据"],
+        subcategory: "product_search"
+    },
+    {
+        name: "G2 AI Tool Finder",
+        logo: "https://www.g2.com/favicon.ico",
+        description: "专业AI工具评估和比较平台，基于真实用户评价",
+        url: "https://www.g2.com/categories/ai-tools",
+        tags: ["工具评估", "用户评价"],
+        subcategory: "product_search"
+    }
+]
+// 加载所有站点数据
+function loadAllSitesData() {
+    // 加载电商平台数据
+    loadEcommerceSites();
+    
+    // 加载社交平台数据
+    loadSocialSites();
+    
+    // 加载建站工具数据
+    loadWebsiteTools();
+    
+    // 加载AI对话工具数据
+    loadAiChatTools();
+    
+    // 加载AI写作工具数据
+    loadAiWritingTools();
+    
+    // 加载AI图像工具数据
+    loadAiImageTools();
+    
+    // 加载AI视频工具数据
+    loadAiVideoTools();
+    
+    // 加载AI音频工具数据
+    loadAiAudioTools();
+    
+    // 加载AI设计工具数据
+    loadAiDesignTools();
+    
+    // 加载AI编程工具数据
+    loadAiCodingTools();
+    
+    // 加载AI提示词工具数据
+    loadAiPromptsTools();
+    
+    // 加载AI搜索工具数据
+    loadAiSearchTools();
+}
+
+// ... existing code ...
+
+// 加载AI提示词工具
+function loadAiPromptsTools() {
+    loadSitesByCategory(aiPromptsData, 'ai-prompts-grid');
+}
+
+// 加载AI搜索工具
+function loadAiSearchTools() {
+    loadSitesByCategory(aiSearchData, 'ai-search-grid');
+}
+
+// ... existing code ...
+
+// 执行所有站点数据加载
+document.addEventListener('DOMContentLoaded', function() {
+    // 加载所有数据
+    loadAllSitesData();
+});
+
+// 通用加载分类网站数据的函数
+function loadSitesByCategory(siteData, gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    
+    if (Array.isArray(siteData)) {
+        siteData.forEach(site => {
+            grid.innerHTML += createSiteCard({
+                title: site.name,
+                logo: site.logo,
+                description: site.description,
+                url: site.url,
+                tags: site.tags || [],
+                subcategory: site.subcategory || ''
+            });
+        });
+    }
+}

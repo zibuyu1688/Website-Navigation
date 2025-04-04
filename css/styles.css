@@ -813,4 +813,34 @@ body {
     .footer-category-item span {
         font-size: 0.8rem;
     }
+}
+
+/* AI编程图标 - 蓝绿色 */
+.nav-item .bi-code-slash {
+    color: #00acc1;
+}
+
+/* AI提示词图标 - 橙色 */
+.nav-item .bi-lightbulb {
+    color: #ff9800;
+}
+
+/* AI编程子菜单圆圈 - 蓝绿色 */
+.submenu-ai-coding .nav-item::before {
+    background-color: #00acc1;
+}
+
+/* AI提示词子菜单圆圈 - 橙色 */
+.submenu-ai-prompts .nav-item::before {
+    background-color: #ff9800;
+}
+
+/* AI编程图标 - 蓝绿色 */
+.footer-category-item .bi-code-slash {
+    color: #00acc1;
+}
+
+/* AI提示词图标 - 橙色 */
+.footer-category-item .bi-lightbulb {
+    color: #ff9800;
 } 
