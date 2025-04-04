@@ -1203,7 +1203,13 @@ function showCategory(category) {
         
         // 更新导航栏高亮状态
         updateNavHighlight('ai_audio');
-    } else if (category === 'ai_design') {
+    } else if (category === 'ai_design' || 
+             category === 'commerce_design' || 
+             category === 'ui_ux' || 
+             category === 'illustration' || 
+             category === 'model_design' || 
+             category === 'assistant_tools' || 
+             category === 'special_tools') {
         document.getElementById('ai-design-section').style.display = 'block';
         
         // 过滤二级分类
@@ -1273,6 +1279,7 @@ function showCategory(category) {
             // 重置为全部
             document.querySelectorAll('#ai-search-section .subcategory-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector('#ai-search-section .subcategory-btn[onclick*="filterAiSearchSubcategory(\'all\')"]').classList.add('active');
+            loadAiSearchTools();
         }
         
         // 更新导航栏高亮状态
@@ -1336,9 +1343,17 @@ function selectSearchEngine(engine) {
             btnName.textContent = 'Bing';
             btnIcon.innerHTML = '<img src="https://www.bing.com/favicon.ico" alt="Bing" class="search-engine-icon">';
             break;
+        case 'chatgpt':
+            btnName.textContent = 'ChatGPT';
+            btnIcon.innerHTML = '<img src="https://chat.openai.com/favicon.ico" alt="ChatGPT" class="search-engine-icon">';
+            break;
         case 'gemini':
             btnName.textContent = 'Gemini';
             btnIcon.innerHTML = '<img src="https://gemini.google.com/favicon.ico" alt="Gemini" class="search-engine-icon">';
+            break;
+        case 'deepseek':
+            btnName.textContent = 'DeepSeek';
+            btnIcon.innerHTML = '<img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek" class="search-engine-icon">';
             break;
     }
     
@@ -1372,8 +1387,14 @@ function performSearch() {
         case 'bing':
             window.open(`https://www.bing.com/search?q=${encodeURIComponent(query)}`, '_blank');
             break;
+        case 'chatgpt':
+            window.open(`https://chatgpt.com/?q=${encodeURIComponent(query)}`, '_blank');
+            break;
         case 'gemini':
             window.open(`https://gemini.google.com/app?q=${encodeURIComponent(query)}`, '_blank');
+            break;
+        case 'deepseek':
+            window.open(`https://www.deepseek.com/search?q=${encodeURIComponent(query)}`, '_blank');
             break;
     }
 }
@@ -1930,6 +1951,21 @@ function balanceSubcategoryNav(nav) {
     
     // 如果按钮太少不需要处理
     if (buttons.length <= 1) return;
+    
+    // 特殊处理AI写作分类，要求排列为两行
+    if (nav.closest('#ai-writing-section')) {
+        // 获取按钮总数
+        const totalButtons = buttons.length;
+        
+        // 计算每行需要多少列
+        const columnsPerRow = Math.ceil(totalButtons / 2);
+        
+        // 设置为两行固定布局
+        nav.style.gridTemplateRows = "repeat(2, 1fr)";
+        nav.style.gridAutoFlow = "column";
+        nav.style.gridTemplateColumns = `repeat(${columnsPerRow}, 1fr)`;
+        return;
+    }
     
     // 计算适合的列数（根据容器宽度）
     const idealButtonWidth = 120; // 每个按钮理想宽度
