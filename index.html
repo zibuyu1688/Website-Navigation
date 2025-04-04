@@ -530,45 +530,41 @@
                     <i class="bi bi-search"></i>
                     AI搜索
                 </a>
-                <!-- 原来的代码 -->
-
-
-        <!-- 改为： -->
-        <ul class="nav-submenu submenu-ai-search">
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('general_search')">
-                    综合类AI搜索引擎
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('academic_search')">
-                    学术科研类
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('programming_search')">
-                    编程开发类
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('finance_search')">
-                    金融/商业类
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('life_search')">
-                    生活娱乐类
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('product_search')">
-                    产品/公司类
-                </a>
-            </li>
-        </ul>
+                <ul class="nav-submenu submenu-ai-search">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('general_search')">
+                            综合类AI搜索引擎
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('academic_search')">
+                            学术科研类
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('programming_search')">
+                            编程开发类
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('finance_search')">
+                            金融/商业类
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('life_search')">
+                            生活娱乐类
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('product_search')">
+                            产品/公司类
+                        </a>
                     </li>
                 </ul>
-            </div>
+            </li>
+        </ul>
+    </div>
 
     <!-- 主内容区域 -->
     <div class="main-content">
@@ -850,89 +846,46 @@
             <!-- AI搜索 -->
             <div id="ai-search-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-search"></i> AI搜索</h2>
+                    <h2><i class="bi bi-search"></i>AI搜索</h2>
                 </div>
                 <!-- 二级分类导航 -->
-            
-
-            <!-- 改为： -->
-            <div class="subcategory-nav">
-                <button class="subcategory-btn active" onclick="filterAiSearchSubcategory('all')">全部</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('general_search')">综合类AI搜索引擎</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('academic_search')">学术科研类</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('programming_search')">编程开发类</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('finance_search')">金融/商业类</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('life_search')">生活娱乐类</button>
-                <button class="subcategory-btn" onclick="filterAiSearchSubcategory('product_search')">产品/公司类</button>
-            </div>
-                <div class="site-grid" id="ai-search-grid">
-                    <!-- AI搜索工具网站卡片将通过JavaScript动态添加 -->
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterAiSearchSubcategory('all')">全部</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('general_search')">综合类AI搜索引擎</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('academic_search')">学术科研类</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('programming_search')">编程开发类</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('finance_search')">金融/商业类</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('life_search')">生活娱乐类</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('product_search')">产品/公司类</button>
+                </div>
+                <div id="ai-search-grid" class="site-grid">
+                    <!-- 网站卡片将通过JavaScript动态添加 -->
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 底部分类导航 -->
-    <div class="footer-categories">
-        <div class="container">
+        <!-- 底部分类导航 -->
+        <div class="footer-categories">
             <div class="categories-container">
-                <a class="footer-category-item" onclick="showCategory('home')">
-                    <i class="bi bi-house"></i>
-                    <span>首页</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ecommerce')">
-                    <i class="bi bi-shop"></i>
-                    <span>电商平台</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('social')">
-                    <i class="bi bi-people"></i>
-                    <span>社交平台</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('website')">
-                    <i class="bi bi-globe"></i>
-                    <span>建站工具</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_chat')">
-                    <i class="bi bi-chat-dots"></i>
-                    <span>AI对话</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_writing')">
-                    <i class="bi bi-pen"></i>
-                    <span>AI写作</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_image')">
-                    <i class="bi bi-image"></i>
-                    <span>AI图像</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_video')">
-                    <i class="bi bi-film"></i>
-                    <span>AI视频</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_audio')">
-                    <i class="bi bi-soundwave"></i>
-                    <span>AI音频</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_design')">
-                    <i class="bi bi-palette"></i>
-                    <span>AI设计</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_coding')">
-                    <i class="bi bi-code-slash"></i>
-                    <span>AI编程</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_prompts')">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>AI提示词</span>
-                </a>
-                <a class="footer-category-item" onclick="showCategory('ai_search')">
-                    <i class="bi bi-search"></i>
-                    <span>AI搜索</span>
-                </a>
+                <!-- 分类项由JS动态生成 -->
             </div>
         </div>
     </div>
 
+    <!-- JavaScript依赖 -->
     <script src="js/sites-data.js"></script>
     <script src="js/scripts.js"></script>
+
+    <!-- SVG定义 - 用于按钮发光效果 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                <feFlood flood-color="rgba(255,255,255,0.2)" result="glow-color" />
+                <feComposite in="glow-color" in2="blur" operator="in" result="glow-blur" />
+                <feComposite in="SourceGraphic" in2="glow-blur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
 </body>
 </html>

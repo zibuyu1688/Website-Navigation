@@ -393,24 +393,49 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    background-color: var(--card-bg);
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
     padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.category-title:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4B8BF4, #6BA2FF);
+    border-radius: 3px;
+}
+
+.category-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .category-title h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     display: flex;
     align-items: center;
+    padding-left: 10px;
 }
 
 .category-title h2 i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    margin-right: 15px;
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.category-title:hover h2 i {
+    transform: scale(1.1);
 }
 
 /* 主内容区域分类标题图标颜色 */
@@ -464,39 +489,95 @@ body {
     color: #00BCD4;
 }
 
-/* 二级分类导航样式 */
+/* 二级分类导航样式 - 两行显示优化 */
 .subcategory-nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 允许换行 */
     gap: 8px;
-    margin-bottom: 15px;
-    padding: 5px 0;
-    overflow-x: auto;
-    white-space: nowrap;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    overflow-x: hidden;
+    white-space: normal;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(249,250,251,0.8));
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+    justify-content: flex-start; /* 左对齐按钮 */
+}
+
+.subcategory-nav::-webkit-scrollbar {
+    height: 5px;
+}
+
+.subcategory-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.subcategory-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(75, 139, 244, 0.3);
+    border-radius: 10px;
 }
 
 .subcategory-btn {
-    background-color: #f4f6f8;
+    background-color: white;
     color: #555;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 7px 15px;
-    font-size: 0.85rem;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;  /* 减小按钮内边距 */
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    margin: 4px 2px;  /* 添加外边距 */
+    min-width: 80px;  /* 设置最小宽度 */
+    flex: 0 1 auto;  /* 不伸展，可缩小，基于内容自动宽度 */
+}
+
+.subcategory-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: 0.5s;
 }
 
 .subcategory-btn:hover {
-    background-color: #e9ecef;
+    background-color: #f8f9fa;
     color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.subcategory-btn:hover:before {
+    transform: translateX(100%);
 }
 
 .subcategory-btn.active {
-    background-color: var(--primary-color);
+    background: linear-gradient(45deg, #4B8BF4, #6BA2FF);
     color: white;
-    border-color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(75, 139, 244, 0.25);
+    transform: translateY(-1px);
+}
+
+/* 添加辅助类用于在JS中实现两行平衡 */
+.row-break {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* 网站卡片样式 */
@@ -636,7 +717,9 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 5px 0;
+    margin: 20px 0 40px;
+    text-align: center;
+    clear: both;
 }
 
 .more-sites-btn {
@@ -664,6 +747,132 @@ body {
     margin-right: 5px;
 }
 
+/* 按钮样式101 - 显示更多按钮高级效果 */
+.btn-101,
+.btn-101 *,
+.btn-101 :after,
+.btn-101 :before,
+.btn-101:after,
+.btn-101:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-101 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #f7a129; /* 默认橙色背景 */
+  background-image: none;
+  color: #ffffff; /* 白色文字 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-101:disabled {
+  cursor: default;
+}
+
+.btn-101:-moz-focusring {
+  outline: auto;
+}
+
+.btn-101 svg {
+  vertical-align: middle;
+}
+
+.btn-101 [hidden] {
+  display: none;
+}
+
+.btn-101 {
+  --thickness: 0.3rem;
+  --roundness: 1.2rem;
+  --color: #ffffff; /* 边框和文字颜色统一为白色 */
+  --opacity: 0.6;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+  background: #f7a129; /* 覆盖默认背景色 */
+  border: none;
+  border-radius: var(--roundness);
+  color: var(--color);
+  cursor: pointer;
+  display: block;
+  font-family: Poppins, "sans-serif";
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.8rem 3rem;
+  position: relative;
+  transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 悬停状态 - 更深的橙色 */
+.btn-101:hover {
+  background: #e6911f;
+  filter: brightness(1.1);
+}
+
+/* 点击状态 - 深橙色 + 文字轻微缩小 */
+.btn-101:active {
+  background: #d4851c;
+  transform: scale(0.98);
+  --opacity: 0.8; /* 提高边框可见度 */
+}
+
+/* SVG边框动画部分 */
+.btn-101 svg {
+  border-radius: var(--roundness);
+  display: block;
+  filter: url(#glow);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.btn-101 rect {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: var(--thickness);
+  rx: var(--roundness);
+  stroke-linejoin: round;
+  stroke-dasharray: 185%;
+  stroke-dashoffset: 80;
+  -webkit-animation: snake 2s linear infinite;
+  animation: snake 2s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+
+.btn-101:hover rect {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: var(--opacity);
+}
+
+@-webkit-keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
+
+@keyframes snake {
+  to {
+    stroke-dashoffset: 370%;
+  }
+}
 /* 隐藏超出8个的卡片 */
 .site-card.hidden {
     display: none !important;
@@ -704,32 +913,41 @@ body {
 /* 底部分类导航样式 */
 .footer-categories {
     background-color: #fff;
-    border-top: 1px solid var(--border-color);
-    padding: 20px 0;
-    margin-top: 40px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    margin: 40px auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    max-width: 100%;
 }
 
 .categories-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer-category-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .footer-category-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 12px 18px;
+    padding: 10px 8px;
     border-radius: 10px;
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     color: var(--text-color);
+    width: auto;
+    min-width: 75px;
+    flex: 1;
 }
 
 .footer-category-item:hover {
@@ -738,13 +956,18 @@ body {
 }
 
 .footer-category-item i {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
 }
 
 .footer-category-item span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
 }
 
 /* 保持图标彩色 */
@@ -798,10 +1021,6 @@ body {
         padding: 15px 0;
     }
     
-    .categories-container {
-        gap: 10px;
-    }
-    
     .footer-category-item {
         padding: 8px 12px;
     }
@@ -843,4 +1062,108 @@ body {
 /* AI提示词图标 - 橙色 */
 .footer-category-item .bi-lightbulb {
     color: #ff9800;
+}
+
+#website-section .subcategory-nav {
+    background: linear-gradient(to right, rgba(241,245,255,0.9), rgba(230,238,255,0.9));
+    border: 1px solid rgba(93, 156, 236, 0.1);
+    row-gap: 10px; /* 行间距 */
+}
+
+#website-section .subcategory-btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#website-section .subcategory-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #5D9CEC;
+    box-shadow: 0 4px 10px rgba(93, 156, 236, 0.15);
+}
+
+#website-section .subcategory-btn.active {
+    background: linear-gradient(45deg, #5D9CEC, #7FB5FF);
+}
+
+/* 添加一些图标到特定的建站工具按钮上 */
+#website-section .subcategory-btn[onclick*="'seo'"] {
+    padding-left: 36px;
+    position: relative;
+}
+
+#website-section .subcategory-btn[onclick*="'seo'"]:before {
+    content: "\F27E";
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5D9CEC;
+}
+
+#website-section .subcategory-btn[onclick*="'domain'"] {
+    padding-left: 36px;
+    position: relative;
+}
+
+#website-section .subcategory-btn[onclick*="'domain'"]:before {
+    content: "\F18E";
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5D9CEC;
+}
+
+#website-section .subcategory-btn[onclick*="'analytics'"] {
+    padding-left: 36px;
+    position: relative;
+}
+
+#website-section .subcategory-btn[onclick*="'analytics'"]:before {
+    content: "\F2FD";
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5D9CEC;
+}
+
+/* 导航包装容器 - 不再需要，但保留样式以避免页面结构错误 */
+.subcategory-nav-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* 导航滚动按钮 - 不再需要 */
+.nav-scroll-button {
+    display: none; /* 隐藏滚动按钮 */
+}
+
+/* 美化网站分类导航标题 */
+#website-section .category-title:before {
+    background: linear-gradient(to bottom, #5D9CEC, #7FB5FF);
+}
+
+#website-section .category-title h2 i {
+    color: #5D9CEC;
+}
+
+/* 针对AI视频分类的特殊样式，因为它的分类项较多 */
+#ai-video-section .subcategory-nav {
+    row-gap: 6px; /* 行间距更小 */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#ai-video-section .subcategory-btn {
+    padding: 7px 14px; /* 稍微减小内边距 */
+    font-size: 0.85rem; /* 稍微减小字体 */
+    margin: 3px 2px; /* 减少垂直边距 */
+}
+
+/* 为容器添加滚动到顶部的过渡动画 */
+.subcategory-nav:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 } 
