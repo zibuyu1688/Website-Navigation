@@ -288,13 +288,15 @@ body {
     align-items: center;
     background: #F8F9FA;
     border-radius: 12px;
-    padding: 0.5rem;
-    border: 1px solid #E9ECEF;
+    padding: 0.7rem;
+    border: none;
     transition: all 0.3s ease;
     gap: 0.5rem;
     max-width: 800px;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .search-input {
@@ -1166,4 +1168,55 @@ body {
 /* 为容器添加滚动到顶部的过渡动画 */
 .subcategory-nav:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* 搜索框边框效果容器 */
+.search-border-effect {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ffd700, #ff9800, #ffeb3b, #ffc107, #f7d683, #ffd700);
+    background-size: 400% 400%;
+    animation: goldFlow 8s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 搜索框白色背景遮罩 */
+.search-box::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #F8F9FA;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+/* 搜索框焦点状态 */
+.search-box:focus-within {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+}
+
+.search-box:focus-within .search-border-effect {
+    animation-duration: 4s;
+}
+
+/* 搜索框金色流动动画 */
+@keyframes goldFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 } 

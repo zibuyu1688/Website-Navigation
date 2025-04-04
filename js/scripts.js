@@ -1599,6 +1599,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 搜索框边框动画效果增强
+    const searchInput = document.getElementById('search-input');
+    const searchBox = document.querySelector('.search-box');
+    
+    // 当页面加载时，添加轻微的动画效果
+    setTimeout(() => {
+        if(searchBox.querySelector('.search-border-effect')) {
+            searchBox.querySelector('.search-border-effect').style.opacity = '0.3';
+        }
+    }, 500);
+    
+    // 当搜索框获得焦点时，增加边框亮度
+    searchInput.addEventListener('focus', function() {
+        if(searchBox.querySelector('.search-border-effect')) {
+            searchBox.querySelector('.search-border-effect').style.opacity = '1';
+        }
+    });
+    
+    // 当搜索框失去焦点时，减弱边框亮度
+    searchInput.addEventListener('blur', function() {
+        if(searchBox.querySelector('.search-border-effect')) {
+            searchBox.querySelector('.search-border-effect').style.opacity = '0.3';
+        }
+    });
+
     // 清理页面上所有的"显示更多"按钮
     document.querySelectorAll('.more-sites-btn-container').forEach(button => {
         button.parentNode.removeChild(button);
