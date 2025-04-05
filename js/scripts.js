@@ -8,10 +8,8 @@ function createSiteCard(site) {
     const isRecommended = site.isRecommended || site.isPopular || site.tags.includes('推荐');
     const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> 强烈推荐</div>` : '';
     
-    // 处理网站图标
-    const domain = extractDomain(site.url);
-    let logoUrl = site.logo || `https://${domain}/favicon.ico`;
-    const fallbackIcon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+    // 处理网站图标 - 只从本地favicon文件夹加载
+    let logoUrl = site.logo || '';
     
     return `
         <div class="site-card" data-subcategory="${site.subcategory || ''}" style="position: relative;">
@@ -20,7 +18,7 @@ function createSiteCard(site) {
             <div class="card-content">
                 <div class="card-header">
                     <div class="site-logo">
-                        <img src="${logoUrl}" alt="${site.title}" onerror="this.onerror=null; this.src='${fallbackIcon}';">
+                        <img src="${logoUrl}" alt="${site.title}">
                     </div>
                     <div class="site-title">${site.title}</div>
                 </div>
@@ -1040,6 +1038,13 @@ function showCategory(category) {
         
         // 平衡所有显示的二级分类导航
         setTimeout(balanceAllSubcategoryNavs, 50);
+        
+        // 滚动到页面顶部
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
         return;
     }
 
@@ -1287,15 +1292,48 @@ function showCategory(category) {
     
     // 平衡当前显示的二级分类导航
     setTimeout(balanceAllSubcategoryNavs, 50);
+    
+    // 滚动到页面顶部
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // 切换子菜单
 function toggleSubmenu(element) {
     const parentItem = element.parentElement;
-    parentItem.classList.toggle('active');
-    const submenu = parentItem.querySelector('.nav-submenu');
-    if (submenu) {
-        submenu.classList.toggle('active');
+    
+    // 检查是否是已经激活的菜单
+    const isCurrentlyActive = parentItem.classList.contains('active');
+    
+    // 关闭所有已展开的子菜单
+    const allMenuItems = document.querySelectorAll('.nav-item.has-submenu');
+    allMenuItems.forEach(item => {
+        // 如果不是当前点击的项目，则关闭它
+        if (item !== parentItem) {
+            item.classList.remove('active');
+            const submenu = item.querySelector('.nav-submenu');
+            if (submenu) {
+                submenu.classList.remove('active');
+            }
+        }
+    });
+    
+    // 如果当前菜单已经是激活状态，点击则关闭
+    // 如果当前菜单是非激活状态，点击则打开
+    if (!isCurrentlyActive) {
+        parentItem.classList.add('active');
+        const submenu = parentItem.querySelector('.nav-submenu');
+        if (submenu) {
+            submenu.classList.add('active');
+        }
+    } else {
+        parentItem.classList.remove('active');
+        const submenu = parentItem.querySelector('.nav-submenu');
+        if (submenu) {
+            submenu.classList.remove('active');
+        }
     }
 }
 
@@ -1834,43 +1872,146 @@ function balanceSubcategoryNav(nav) {
     // 如果按钮太少不需要处理
     if (buttons.length <= 1) return;
     
-    // 计算按钮总宽度
-    let totalButtonsWidth = 0;
-    const buttonWidths = buttons.map(btn => {
-        const width = btn.offsetWidth + parseInt(window.getComputedStyle(btn).marginLeft) + parseInt(window.getComputedStyle(btn).marginRight);
-        totalButtonsWidth += width;
-        return width;
-    });
+    // 计算按钮宽度和按钮组
+    const buttonInfo = buttons.map((btn, index) => ({
+        button: btn,
+        width: btn.offsetWidth + 
+            parseInt(window.getComputedStyle(btn).marginLeft) + 
+            parseInt(window.getComputedStyle(btn).marginRight),
+        text: btn.textContent.trim(),
+        index: index
+    }));
     
-    // 如果总宽度小于容器宽度，则不需要分行
-    if (totalButtonsWidth <= navWidth) return;
+    // 特殊处理：确保特定的按钮在同一行显示
+    // IP代理、指纹浏览器、反向外链、内容优化和学习资料
+    const specialButtonsWebsite = ['IP代理', '指纹浏览器', '反向外链', '内容优化', '学习资料'];
     
-    // 计算应该在第一行放置多少按钮以实现平衡
-    let firstRowWidth = 0;
-    let buttonsInFirstRow = 0;
+    // AI写作分类中的特殊按钮
+    const specialButtonsWriting = ['脚本与创意内容', '速读与摘要工具', '互动式写作'];
     
-    // 尝试找到最佳的分割点，使得两行按钮数量尽量接近
-    const idealButtonsPerRow = Math.ceil(buttons.length / 2);
+    // AI图像分类中的特殊按钮 - 第一行
+    const specialButtonsImageRow1 = ['通用AI图片生成', '人像与头像生成', '背景与设计素材', '品牌与商业设计', '照片修复与增强'];
     
-    for (let i = 0; i < buttons.length; i++) {
-        firstRowWidth += buttonWidths[i];
+    // AI图像分类中的特殊按钮 - 第二行
+    const specialButtonsImageRow2 = ['动漫与二次元创作', '娱乐与趣味工具', '服装与时尚设计', '图像编辑与处理', '专业场景生成'];
+    
+    // 检查当前导航区域是哪个分类
+    const sectionId = nav.closest('.category-section').id;
+    
+    // 计算使每行尽可能排满的方法
+    const optimizeRowDistribution = () => {
+        // 尝试计算每行平均能放多少按钮
+        const totalWidth = buttonInfo.reduce((sum, info) => sum + info.width, 0);
+        const avgButtonsPerRow = Math.ceil(buttons.length / Math.ceil(totalWidth / navWidth));
         
-        // 如果已经达到或超过理想的每行按钮数量，或者宽度已经接近容器宽度的一半
-        if (i + 1 >= idealButtonsPerRow || firstRowWidth >= navWidth * 0.9) {
-            buttonsInFirstRow = i + 1;
-            break;
+        // 初始化行数组
+        let rows = [];
+        let currentRow = [];
+        let currentRowWidth = 0;
+        
+        // AI图像分类特殊处理 - 强制两行排列
+        if (sectionId === 'ai-image-section') {
+            // 找出"全部"按钮
+            const allButton = buttonInfo.find(info => info.text === '全部');
+            
+            // 初始化第一行，从"全部"按钮开始
+            let row1 = allButton ? [allButton] : [];
+            let row1Width = allButton ? allButton.width : 0;
+            
+            // 添加第一行的剩余按钮 (通用AI图片生成到照片修复与增强)
+            specialButtonsImageRow1.forEach(buttonText => {
+                const buttonInfo1 = buttonInfo.find(info => info.text === buttonText);
+                if (buttonInfo1) {
+                    row1.push(buttonInfo1);
+                    row1Width += buttonInfo1.width;
+                }
+            });
+            
+            // 第二行按钮 (动漫与二次元创作到专业场景生成)
+            let row2 = [];
+            let row2Width = 0;
+            
+            specialButtonsImageRow2.forEach(buttonText => {
+                const buttonInfo2 = buttonInfo.find(info => info.text === buttonText);
+                if (buttonInfo2) {
+                    row2.push(buttonInfo2);
+                    row2Width += buttonInfo2.width;
+                }
+            });
+            
+            // 返回两行按钮
+            if (row1.length > 0) rows.push(row1);
+            if (row2.length > 0) rows.push(row2);
+            
+            return rows;
         }
-    }
+        
+        // 选择适当的特殊按钮组
+        let specialButtons = [];
+        if (sectionId === 'website-section') {
+            specialButtons = specialButtonsWebsite;
+        } else if (sectionId === 'ai-writing-section') {
+            specialButtons = specialButtonsWriting;
+        }
+        
+        // 标记特殊按钮的索引
+        const specialIndices = buttonInfo
+            .filter(info => specialButtons.includes(info.text))
+            .map(info => info.index);
+        
+        // 计算特殊按钮的总宽度
+        const specialButtonsWidth = buttonInfo
+            .filter(info => specialButtons.includes(info.text))
+            .reduce((sum, info) => sum + info.width, 0);
+        
+        // 如果特殊按钮不适合放在一行，则按正常逻辑处理
+        const specialButtonsFitInOneRow = specialButtonsWidth <= navWidth * 0.95;
+        
+        // 尝试按平均每行按钮数进行分配
+        buttonInfo.forEach((info, index) => {
+            // 特殊处理：如果当前按钮是特殊组中第一个且前面已有按钮，且当前行无法容纳所有特殊按钮，则换行
+            if (specialIndices.length > 0 && 
+                index === specialIndices[0] && 
+                currentRow.length > 0 &&
+                specialButtonsFitInOneRow) {
+                rows.push(currentRow);
+                currentRow = [info];
+                currentRowWidth = info.width;
+                return;
+            }
+            
+            // 常规处理逻辑
+            if (currentRowWidth + info.width <= navWidth) {
+                // 当前行还能放下这个按钮
+                currentRow.push(info);
+                currentRowWidth += info.width;
+            } else {
+                // 当前行已经放不下，开始新行
+                rows.push(currentRow);
+                currentRow = [info];
+                currentRowWidth = info.width;
+            }
+        });
+        
+        // 添加最后一行
+        if (currentRow.length > 0) {
+            rows.push(currentRow);
+        }
+        
+        return rows;
+    };
     
-    // 如果无法分割得很好，就简单地在中间分割
-    if (buttonsInFirstRow === 0 || buttonsInFirstRow === buttons.length) {
-        buttonsInFirstRow = Math.ceil(buttons.length / 2);
-    }
+    // 执行优化
+    const optimizedRows = optimizeRowDistribution();
     
-    // 在适当位置添加换行元素
-    if (buttonsInFirstRow < buttons.length) {
-        const breakEl = document.createElement('div');
-        breakEl.className = 'row-break';
-        nav.insertBefore(breakEl, buttons[buttonsInFirstRow]);
-    }
+    // 重新插入行分隔符
+    optimizedRows.forEach((row, rowIndex) => {
+        if (rowIndex > 0) {
+            const breakEl = document.createElement('div');
+            breakEl.className = 'row-break';
+            // 插入断行符在该行第一个按钮前面
+            const firstButtonInRow = row[0].button;
+            nav.insertBefore(breakEl, firstButtonInRow);
+        }
+    });
 } 
