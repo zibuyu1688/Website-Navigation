@@ -294,18 +294,21 @@ function loadSites() {
     const aiSearchGrid = document.getElementById('ai-search-grid');
     if (aiSearchGrid) {
         aiSearchGrid.innerHTML = '';
-        const filteredAiSearch = sitesData.ai_search.filter(site => 
-            site && (
-                site.title.toLowerCase().includes(query) || 
-                site.description.toLowerCase().includes(query) ||
-                site.tags.some(tag => tag.toLowerCase().includes(query))
-            )
-        );
-        filteredAiSearch.forEach(site => {
-            aiSearchGrid.innerHTML += createSiteCard(site);
-        });
         
-        // 重新应用卡片可见性
+        if (Array.isArray(aiSearchData)) {
+            aiSearchData.forEach(site => {
+                aiSearchGrid.innerHTML += createSiteCard({
+                    title: site.name,
+                    logo: site.logo,
+                    description: site.description,
+                    url: site.url,
+                    tags: site.tags,
+                    subcategory: site.subcategory
+                });
+            });
+        }
+        
+        // 初始化卡片可见性
         initializeCardVisibility('ai-search-grid');
     }
     
@@ -1203,13 +1206,7 @@ function showCategory(category) {
         
         // 更新导航栏高亮状态
         updateNavHighlight('ai_audio');
-    } else if (category === 'ai_design' || 
-             category === 'commerce_design' || 
-             category === 'ui_ux' || 
-             category === 'illustration' || 
-             category === 'model_design' || 
-             category === 'assistant_tools' || 
-             category === 'special_tools') {
+    } else if (category === 'ai_design') {
         document.getElementById('ai-design-section').style.display = 'block';
         
         // 过滤二级分类
@@ -1279,7 +1276,6 @@ function showCategory(category) {
             // 重置为全部
             document.querySelectorAll('#ai-search-section .subcategory-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector('#ai-search-section .subcategory-btn[onclick*="filterAiSearchSubcategory(\'all\')"]').classList.add('active');
-            loadAiSearchTools();
         }
         
         // 更新导航栏高亮状态
@@ -1343,17 +1339,9 @@ function selectSearchEngine(engine) {
             btnName.textContent = 'Bing';
             btnIcon.innerHTML = '<img src="https://www.bing.com/favicon.ico" alt="Bing" class="search-engine-icon">';
             break;
-        case 'chatgpt':
-            btnName.textContent = 'ChatGPT';
-            btnIcon.innerHTML = '<img src="https://chat.openai.com/favicon.ico" alt="ChatGPT" class="search-engine-icon">';
-            break;
         case 'gemini':
             btnName.textContent = 'Gemini';
             btnIcon.innerHTML = '<img src="https://gemini.google.com/favicon.ico" alt="Gemini" class="search-engine-icon">';
-            break;
-        case 'deepseek':
-            btnName.textContent = 'DeepSeek';
-            btnIcon.innerHTML = '<img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek" class="search-engine-icon">';
             break;
     }
     
@@ -1387,14 +1375,8 @@ function performSearch() {
         case 'bing':
             window.open(`https://www.bing.com/search?q=${encodeURIComponent(query)}`, '_blank');
             break;
-        case 'chatgpt':
-            window.open(`https://chatgpt.com/?q=${encodeURIComponent(query)}`, '_blank');
-            break;
         case 'gemini':
             window.open(`https://gemini.google.com/app?q=${encodeURIComponent(query)}`, '_blank');
-            break;
-        case 'deepseek':
-            window.open(`https://www.deepseek.com/search?q=${encodeURIComponent(query)}`, '_blank');
             break;
     }
 }
@@ -1410,13 +1392,10 @@ function performSiteSearch(query) {
         return;
     }
 
-    // 隐藏所有分类
+    // 显示所有分类
     document.querySelectorAll('.category-section').forEach(section => {
-        section.style.display = 'none';
+        section.style.display = 'block';
     });
-    
-    // 记录所有有匹配结果的分类
-    const matchedSections = [];
     
     // 搜索电商平台
     const ecommerceGrid = document.getElementById('ecommerce-grid');
@@ -1429,14 +1408,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredEcommerce.forEach(site => {
+            ecommerceGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredEcommerce.length > 0) {
-            filteredEcommerce.forEach(site => {
-                ecommerceGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ecommerce-grid');
-            matchedSections.push('ecommerce-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ecommerce-grid');
     }
     
     // 搜索社交平台
@@ -1450,14 +1427,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredSocial.forEach(site => {
+            socialGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredSocial.length > 0) {
-            filteredSocial.forEach(site => {
-                socialGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('social-grid');
-            matchedSections.push('social-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('social-grid');
     }
 
     // 搜索建站工具
@@ -1471,14 +1446,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredWebsite.forEach(site => {
+            websiteToolsGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredWebsite.length > 0) {
-            filteredWebsite.forEach(site => {
-                websiteToolsGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('website-tools-grid');
-            matchedSections.push('website-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('website-tools-grid');
     }
     
     // 搜索AI对话工具
@@ -1492,14 +1465,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiChat.forEach(site => {
+            aiChatGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiChat.length > 0) {
-            filteredAiChat.forEach(site => {
-                aiChatGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-chat-grid');
-            matchedSections.push('ai-chat-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-chat-grid');
     }
     
     // 搜索AI写作工具
@@ -1513,14 +1484,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiWriting.forEach(site => {
+            aiWritingGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiWriting.length > 0) {
-            filteredAiWriting.forEach(site => {
-                aiWritingGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-writing-grid');
-            matchedSections.push('ai-writing-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-writing-grid');
     }
 
     // 搜索AI图像工具
@@ -1534,14 +1503,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiImage.forEach(site => {
+            aiImageGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiImage.length > 0) {
-            filteredAiImage.forEach(site => {
-                aiImageGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-image-grid');
-            matchedSections.push('ai-image-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-image-grid');
     }
     
     // 搜索AI视频工具
@@ -1555,14 +1522,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiVideo.forEach(site => {
+            aiVideoGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiVideo.length > 0) {
-            filteredAiVideo.forEach(site => {
-                aiVideoGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-video-grid');
-            matchedSections.push('ai-video-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-video-grid');
     }
     
     // 搜索AI音频工具
@@ -1576,14 +1541,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiAudio.forEach(site => {
+            aiAudioGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiAudio.length > 0) {
-            filteredAiAudio.forEach(site => {
-                aiAudioGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-audio-grid');
-            matchedSections.push('ai-audio-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-audio-grid');
     }
     
     // 搜索AI设计工具
@@ -1597,14 +1560,12 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
+        filteredAiDesign.forEach(site => {
+            aiDesignGrid.innerHTML += createSiteCard(site);
+        });
         
-        if (filteredAiDesign.length > 0) {
-            filteredAiDesign.forEach(site => {
-                aiDesignGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-design-grid');
-            matchedSections.push('ai-design-section');
-        }
+        // 重新应用卡片可见性
+        initializeCardVisibility('ai-design-grid');
     }
     
     // 搜索AI编程工具
@@ -1618,100 +1579,13 @@ function performSiteSearch(query) {
                 site.tags.some(tag => tag.toLowerCase().includes(query))
             )
         );
-        
-        if (filteredAiCoding.length > 0) {
-            filteredAiCoding.forEach(site => {
-                aiCodingGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-coding-grid');
-            matchedSections.push('ai-coding-section');
-        }
-    }
-    
-    // 搜索AI提示词工具
-    const aiPromptsGrid = document.getElementById('ai-prompts-grid');
-    if (aiPromptsGrid) {
-        aiPromptsGrid.innerHTML = '';
-        const filteredAiPrompts = sitesData.ai_prompts.filter(site => 
-            site && (
-                site.title.toLowerCase().includes(query) || 
-                site.description.toLowerCase().includes(query) ||
-                site.tags.some(tag => tag.toLowerCase().includes(query))
-            )
-        );
-        
-        if (filteredAiPrompts.length > 0) {
-            filteredAiPrompts.forEach(site => {
-                aiPromptsGrid.innerHTML += createSiteCard(site);
-            });
-            displayAllSiteCards('ai-prompts-grid');
-            matchedSections.push('ai-prompts-section');
-        }
-    }
-    
-    // 搜索AI搜索工具
-    const aiSearchGrid = document.getElementById('ai-search-grid');
-    if (aiSearchGrid) {
-        aiSearchGrid.innerHTML = '';
-        const filteredAiSearch = sitesData.ai_search.filter(site => 
-            site && (
-                site.title.toLowerCase().includes(query) || 
-                site.description.toLowerCase().includes(query) ||
-                site.tags.some(tag => tag.toLowerCase().includes(query))
-            )
-        );
-        filteredAiSearch.forEach(site => {
-            aiSearchGrid.innerHTML += createSiteCard(site);
+        filteredAiCoding.forEach(site => {
+            aiCodingGrid.innerHTML += createSiteCard(site);
         });
         
         // 重新应用卡片可见性
-        initializeCardVisibility('ai-search-grid');
+        initializeCardVisibility('ai-coding-grid');
     }
-    
-    // 显示有匹配结果的分类
-    matchedSections.forEach(section => {
-        document.getElementById(section).style.display = 'block';
-    });
-    
-    // 如果没有任何匹配结果，显示提示信息
-    if (matchedSections.length === 0) {
-        // 创建一个临时容器来显示没有结果的消息
-        const noResultsContainer = document.createElement('div');
-        noResultsContainer.id = 'no-search-results';
-        noResultsContainer.style.textAlign = 'center';
-        noResultsContainer.style.padding = '50px 0';
-        noResultsContainer.style.margin = '20px 0';
-        noResultsContainer.style.backgroundColor = '#fff';
-        noResultsContainer.style.borderRadius = '12px';
-        noResultsContainer.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-        
-        noResultsContainer.innerHTML = `
-            <i class="bi bi-search" style="font-size: 3rem; color: #ccc; margin-bottom: 20px;"></i>
-            <h3>未找到与"${query}"相关的结果</h3>
-            <p style="color: #666;">请尝试使用其他关键词或浏览分类目录</p>
-        `;
-        
-        // 移除旧的无结果消息（如果有）
-        const oldNoResults = document.getElementById('no-search-results');
-        if (oldNoResults) {
-            oldNoResults.parentNode.removeChild(oldNoResults);
-        }
-        
-        // 将消息添加到主内容区
-        document.querySelector('.main-content').appendChild(noResultsContainer);
-    } else {
-        // 移除旧的无结果消息（如果有）
-        const oldNoResults = document.getElementById('no-search-results');
-        if (oldNoResults) {
-            oldNoResults.parentNode.removeChild(oldNoResults);
-        }
-    }
-    
-    // 滚动到页面顶部
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 }
 
 // 页面加载时初始化
@@ -1748,17 +1622,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const searchBox = document.querySelector('.search-box');
     
+    // 当页面加载时，添加轻微的动画效果
+    setTimeout(() => {
+        if(searchBox.querySelector('.search-border-effect')) {
+            searchBox.querySelector('.search-border-effect').style.opacity = '0.3';
+        }
+    }, 500);
+    
     // 当搜索框获得焦点时，增加边框亮度
     searchInput.addEventListener('focus', function() {
         if(searchBox.querySelector('.search-border-effect')) {
-            searchBox.querySelector('.search-border-effect').style.opacity = '0.8';
+            searchBox.querySelector('.search-border-effect').style.opacity = '1';
         }
     });
     
-    // 当搜索框失去焦点时，减弱边框亮度但保持可见
+    // 当搜索框失去焦点时，减弱边框亮度
     searchInput.addEventListener('blur', function() {
         if(searchBox.querySelector('.search-border-effect')) {
-            searchBox.querySelector('.search-border-effect').style.opacity = '0.5';
+            searchBox.querySelector('.search-border-effect').style.opacity = '0.3';
         }
     });
 
@@ -1938,10 +1819,11 @@ function balanceAllSubcategoryNavs() {
     });
 }
 
-// 平衡单个二级分类导航的布局 - 网格布局版本
+// 平衡单个二级分类导航的布局
 function balanceSubcategoryNav(nav) {
-    // 网格布局会自动处理对齐，不再需要手动添加换行元素
-    // 但我们仍然需要计算最佳列数以保持合理的布局
+    // 首先移除任何现有的行分隔符
+    const existingBreaks = nav.querySelectorAll('.row-break');
+    existingBreaks.forEach(breakEl => breakEl.remove());
     
     // 获取导航容器的宽度
     const navWidth = nav.offsetWidth;
@@ -1952,52 +1834,43 @@ function balanceSubcategoryNav(nav) {
     // 如果按钮太少不需要处理
     if (buttons.length <= 1) return;
     
-    // 特殊处理AI写作分类，要求排列为两行
-    if (nav.closest('#ai-writing-section')) {
-        // 获取按钮总数
-        const totalButtons = buttons.length;
-        
-        // 计算每行需要多少列
-        const columnsPerRow = Math.ceil(totalButtons / 2);
-        
-        // 设置为两行固定布局
-        nav.style.gridTemplateRows = "repeat(2, 1fr)";
-        nav.style.gridAutoFlow = "column";
-        nav.style.gridTemplateColumns = `repeat(${columnsPerRow}, 1fr)`;
-        return;
-    }
-    
-    // 计算适合的列数（根据容器宽度）
-    const idealButtonWidth = 120; // 每个按钮理想宽度
-    const maxColumns = Math.floor(navWidth / idealButtonWidth);
-    
-    // 设置网格列数
-    if (maxColumns > 0) {
-        // 确保至少有3列，但不超过按钮数量或最大列数
-        const columns = Math.min(Math.max(3, maxColumns), buttons.length);
-        nav.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-    }
-}
-
-/**
- * 显示指定栅格中的所有网站卡片
- * @param {string} gridId - 栅格元素的ID
- */
-function displayAllSiteCards(gridId) {
-    // 获取所有卡片
-    const siteCards = document.querySelectorAll(`#${gridId} .site-card`);
-    
-    // 获取节ID（从gridId中提取，例如：'ecommerce-grid' -> 'ecommerce'）
-    const sectionId = gridId.replace('-grid', '');
-    
-    // 删除所有"显示更多"按钮
-    const moreBtns = document.querySelectorAll(`#${sectionId}-section .more-sites-btn-container`);
-    moreBtns.forEach(btn => btn.remove());
-    
-    // 显示所有卡片
-    siteCards.forEach(card => {
-        if (card.style.display !== 'none') {
-            card.classList.remove('hidden');
-        }
+    // 计算按钮总宽度
+    let totalButtonsWidth = 0;
+    const buttonWidths = buttons.map(btn => {
+        const width = btn.offsetWidth + parseInt(window.getComputedStyle(btn).marginLeft) + parseInt(window.getComputedStyle(btn).marginRight);
+        totalButtonsWidth += width;
+        return width;
     });
+    
+    // 如果总宽度小于容器宽度，则不需要分行
+    if (totalButtonsWidth <= navWidth) return;
+    
+    // 计算应该在第一行放置多少按钮以实现平衡
+    let firstRowWidth = 0;
+    let buttonsInFirstRow = 0;
+    
+    // 尝试找到最佳的分割点，使得两行按钮数量尽量接近
+    const idealButtonsPerRow = Math.ceil(buttons.length / 2);
+    
+    for (let i = 0; i < buttons.length; i++) {
+        firstRowWidth += buttonWidths[i];
+        
+        // 如果已经达到或超过理想的每行按钮数量，或者宽度已经接近容器宽度的一半
+        if (i + 1 >= idealButtonsPerRow || firstRowWidth >= navWidth * 0.9) {
+            buttonsInFirstRow = i + 1;
+            break;
+        }
+    }
+    
+    // 如果无法分割得很好，就简单地在中间分割
+    if (buttonsInFirstRow === 0 || buttonsInFirstRow === buttons.length) {
+        buttonsInFirstRow = Math.ceil(buttons.length / 2);
+    }
+    
+    // 在适当位置添加换行元素
+    if (buttonsInFirstRow < buttons.length) {
+        const breakEl = document.createElement('div');
+        breakEl.className = 'row-break';
+        nav.insertBefore(breakEl, buttons[buttonsInFirstRow]);
+    }
 } 

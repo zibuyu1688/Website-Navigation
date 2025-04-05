@@ -478,9 +478,9 @@ const sitesData = {
             subcategory: 'social-global'
         },
         {
-            title: 'TX',
+            title: 'X',
             description: '实时信息网络，用户可以发布短消息（推文）并与他人互动',
-            logo: 'favicon/Twitter/X.svg',
+            logo: 'favicon/X.svg',
             tags: ['社交媒体', '短消息', '实时信息'],
             url: 'https://twitter.com/',
             subcategory: 'social-global'
@@ -5071,24 +5071,21 @@ const aiPromptsData = [
 const aiSearchData = [
     // 综合类AI搜索引擎
     {
-        name: "夸克AI",
-        logo: "favicon/夸克AI.svg",
+        name: "夸克AI", logo: "favicon/夸克AI.svg",
         description: "阿里旗下，集成AI搜索、网盘、文档编辑、内容创作的一体化应用",
         url: "https://quark.cn",
         tags: ["阿里", "一体化应用"],
         subcategory: "general_search"
     },
     {
-        name: "Perplexity AI",
-        logo: "favicon/Perplexity AI.svg",
+        name: "Perplexity AI", logo: "favicon/Perplexity AI.svg",
         description: "强交互的对话式AI搜索引擎，支持溯源和实时网络检索",
         url: "https://www.perplexity.ai/",
         tags: ["对话式搜索", "溯源"],
         subcategory: "general_search"
     },
     {
-        name: "百度文心一言",
-        logo: "favicon/百度文心一言.svg",
+        name: "百度文心一言", logo: "favicon/百度文心一言.svg",
         description: "百度推出的AI搜索服务，提供中文内容理解和生成能力",
         url: "https://yiyan.baidu.com/",
         tags: ["百度", "中文搜索"],
@@ -5097,32 +5094,28 @@ const aiSearchData = [
     
     // 学术科研类
     {
-        name: "Consensus",
-        logo: "favicon/Consensus.svg",
+        name: "Consensus", logo: "favicon/Consensus.svg",
         description: "专注学术研究的AI搜索引擎，搜索和总结科学论文",
         url: "https://consensus.app/",
         tags: ["学术研究", "论文搜索"],
         subcategory: "academic_search"
     },
     {
-        name: "Elicit",
-        logo: "favicon/Elicit.svg",
+        name: "Elicit", logo: "favicon/Elicit.svg",
         description: "AI研究助手，帮助查找相关论文并总结研究发现",
         url: "https://elicit.org/",
         tags: ["研究工具", "论文分析"],
         subcategory: "academic_search"
     },
     {
-        name: "Scholar Chat",
-        logo: "favicon/Scholar Chat.svg",
+        name: "Scholar Chat", logo: "favicon/Scholar Chat.svg",
         description: "基于学术论文的AI聊天工具，提供有科学依据的回答",
         url: "https://scholarchat.io/",
         tags: ["学术问答", "研究助手"],
         subcategory: "academic_search"
     },
     {
-        name: "ResearchRabbit",
-        logo: "favicon/ResearchRabbit.svg",
+        name: "ResearchRabbit", logo: "favicon/ResearchRabbit.svg",
         description: "学术文献发现工具，可视化引用关系和相关研究",
         url: "https://www.researchrabbit.ai/",
         tags: ["文献发现", "引用分析"],
@@ -5210,32 +5203,28 @@ const aiSearchData = [
     
     // 编程开发类
     {
-        name: "Phind",
-        logo: "favicon/Phind.svg",
+        name: "Phind", logo: "favicon/Phind.svg",
         description: "专为开发者设计的AI搜索引擎，能解答复杂的编程问题",
         url: "https://www.phind.com/",
         tags: ["编程", "开发工具"],
         subcategory: "programming_search"
     },
     {
-        name: "Bloop",
-        logo: "favicon/Bloop.svg",
+        name: "Bloop", logo: "favicon/Bloop.svg",
         description: "代码搜索引擎，理解语义并提供上下文相关的代码结果",
         url: "https://bloop.ai/",
         tags: ["代码搜索", "语义理解"],
         subcategory: "programming_search"
     },
     {
-        name: "Devv",
-        logo: "favicon/Devv.svg",
+        name: "Devv", logo: "favicon/Devv.svg",
         description: "开发者专用AI搜索，提供代码示例和技术解决方案",
         url: "https://devv.ai/",
         tags: ["代码示例", "技术解决方案"],
         subcategory: "programming_search"
     },
     {
-        name: "AskCodi",
-        logo: "favicon/AskCodi.svg",
+        name: "AskCodi", logo: "favicon/AskCodi.svg",
         description: "编程问答助手，提供即时代码建议和解决方案",
         url: "https://www.askcodi.com/",
         tags: ["编程问答", "代码建议"],
@@ -5244,32 +5233,28 @@ const aiSearchData = [
     
     // 金融/商业类
     {
-        name: "Bloomberg AI",
-        logo: "favicon/Bloomberg AI.svg",
+        name: "Bloomberg AI", logo: "favicon/Bloomberg AI.svg",
         description: "彭博社的AI搜索，提供金融市场分析和数据解读",
         url: "https://www.bloomberg.com/ai",
         tags: ["金融市场", "数据分析"],
         subcategory: "finance_search"
     },
     {
-        name: "Financial Chat",
-        logo: "favicon/Financial Chat.svg",
+        name: "Financial Chat", logo: "favicon/Financial Chat.svg",
         description: "专注金融领域问答的AI工具，提供投资建议和市场分析",
         url: "https://www.financialchat.ai/",
         tags: ["投资建议", "金融分析"],
         subcategory: "finance_search"
     },
     {
-        name: "Stockwise AI",
-        logo: "favicon/Stockwise AI.svg",
+        name: "Stockwise AI", logo: "favicon/Stockwise AI.svg",
         description: "股票市场AI搜索，分析公司财报和市场趋势",
         url: "https://www.stockwise.ai/",
         tags: ["股票分析", "市场趋势"],
         subcategory: "finance_search"
     },
     {
-        name: "Finology Ticker",
-        logo: "favicon/Finology Ticker.svg", 
+        name: "Finology Ticker", logo: "favicon/Finology Ticker.svg", 
         description: "印度市场股票分析工具，提供AI驱动的市场洞察",
         url: "https://ticker.finology.in/",
         tags: ["股票", "市场洞察"],
@@ -5278,32 +5263,28 @@ const aiSearchData = [
     
     // 生活娱乐类
     {
-        name: "Copilot.travel",
-        logo: "favicon/Copilot.travel.svg",
+        name: "Copilot.travel", logo: "favicon/Copilot.travel.svg",
         description: "AI旅行规划助手，帮助规划旅程、寻找景点和制定行程",
         url: "https://www.copilot.travel/",
         tags: ["旅行规划", "行程助手"],
         subcategory: "life_search"
     },
     {
-        name: "RecipeGPT",
-        logo: "favicon/RecipeGPT.svg",
+        name: "RecipeGPT", logo: "favicon/RecipeGPT.svg",
         description: "AI菜谱搜索引擎，根据食材和偏好推荐菜谱",
         url: "https://www.recipegpt.com/",
         tags: ["菜谱", "烹饪"],
         subcategory: "life_search"
     },
     {
-        name: "Tripnotes",
-        logo: "favicon/Tripnotes.svg",
+        name: "Tripnotes", logo: "favicon/Tripnotes.svg",
         description: "AI旅行笔记助手，个性化旅行建议和攻略",
         url: "https://tripnotes.ai/",
         tags: ["旅行笔记", "个性化攻略"],
         subcategory: "life_search"
     },
     {
-        name: "MovieGPT",
-        logo: "favicon/MovieGPT.svg",
+        name: "MovieGPT", logo: "favicon/MovieGPT.svg",
         description: "AI电影推荐搜索，根据观影偏好推荐电影",
         url: "https://www.moviegpt.com/",
         tags: ["电影推荐", "娱乐"],
@@ -5312,32 +5293,28 @@ const aiSearchData = [
     
     // 产品/公司类
     {
-        name: "Producthunt AI Tools",
-        logo: "favicon/Producthunt AI Tools.svg",
+        name: "Producthunt AI Tools", logo: "favicon/Producthunt AI Tools.svg",
         description: "专注发现新兴AI产品和工具的平台",
         url: "https://www.producthunt.com/topics/artificial-intelligence",
         tags: ["产品发现", "AI工具"],
         subcategory: "product_search"
     },
     {
-        name: "SimilarWeb AI",
-        logo: "favicon/SimilarWeb AI.svg",
+        name: "SimilarWeb AI", logo: "favicon/SimilarWeb AI.svg",
         description: "AI驱动的公司和网站流量分析工具",
         url: "https://www.similarweb.com/",
         tags: ["网站分析", "竞争情报"],
         subcategory: "product_search"
     },
     {
-        name: "Crunchbase",
-        logo: "favicon/Crunchbase.svg",
+        name: "Crunchbase", logo: "favicon/Crunchbase.svg",
         description: "公司信息和投资数据搜索平台，集成AI搜索功能",
         url: "https://www.crunchbase.com/",
         tags: ["公司信息", "投资数据"],
         subcategory: "product_search"
     },
     {
-        name: "G2 AI Tool Finder",
-        logo: "favicon/G2 AI Tool Finder.svg",
+        name: "G2 AI Tool Finder", logo: "favicon/G2 AI Tool Finder.svg",
         description: "专业AI工具评估和比较平台，基于真实用户评价",
         url: "https://www.g2.com/categories/ai-tools",
         tags: ["工具评估", "用户评价"],
