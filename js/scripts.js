@@ -8,18 +8,12 @@ function createSiteCard(site) {
     const isRecommended = site.isRecommended || site.isPopular || site.tags.includes('推荐');
     const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> 强烈推荐</div>` : '';
     
-    // 处理网站图标 - 只从本地favicon文件夹加载
-    let logoUrl = site.logo || '';
-    
     return `
         <div class="site-card" data-subcategory="${site.subcategory || ''}" style="position: relative;">
             ${magicTag}
             ${recommendTag}
             <div class="card-content">
                 <div class="card-header">
-                    <div class="site-logo">
-                        <img src="${logoUrl}" alt="${site.title}">
-                    </div>
                     <div class="site-title">${site.title}</div>
                 </div>
                 <div class="site-desc">${site.description}</div>
@@ -313,7 +307,6 @@ function loadSites() {
                     title: site.name,
                     description: site.description,
                     url: site.url,
-                    logo: site.logo,
                     tags: site.tags || [],
                     subcategory: site.subcategory,
                     needsMagic: site.needsMagic || false,
