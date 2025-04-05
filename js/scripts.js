@@ -76,34 +76,55 @@ function createMoreSitesButton(sectionId, expanded = false) {
     `;
 }
 
-// 切换展开/收起状态 - 修改为始终显示所有卡片
+// 切换展开/收起状态
 function toggleMoreSites(sectionId, buttonElement) {
     const siteCards = document.querySelectorAll(`#${sectionId} .site-card`);
+    const isExpanded = buttonElement.textContent.trim().includes('收起');
+    const filterId = `glow-${sectionId}`;
     
-    // 确保所有卡片都可见
-    siteCards.forEach(card => {
-        card.classList.remove('hidden');
-        card.style.display = '';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
+    // 切换卡片显示状态
+    siteCards.forEach((card, index) => {
+        if (index >= 8) {
+            card.classList.toggle('hidden', isExpanded);
+        }
     });
     
-    // 移除按钮 - 不再需要显示更多按钮
-    if (buttonElement && buttonElement.parentNode) {
-        buttonElement.parentNode.remove();
-    }
+    // 更新按钮文本
+    buttonElement.innerHTML = isExpanded ? 
+        `显示更多 +
+        <svg width="100%" height="100%">
+            <filter id="${filterId}">
+                <feGaussianBlur result="coloredBlur" stdDeviation="5"></feGaussianBlur>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#${filterId})"></rect>
+        </svg>` : 
+        `- 收起
+        <svg width="100%" height="100%">
+            <filter id="${filterId}">
+                <feGaussianBlur result="coloredBlur" stdDeviation="5"></feGaussianBlur>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#${filterId})"></rect>
+        </svg>`;
 }
 
 // 应用初始化卡片显示/隐藏状态
 function initializeCardVisibility(sectionId) {
     const siteCards = document.querySelectorAll(`#${sectionId} .site-card`);
+    let visibleCards = 0;
     
-    // 确保所有卡片都可见
+    // 计算可见卡片数量
     siteCards.forEach(card => {
-        card.classList.remove('hidden');
-        card.style.display = '';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
+        if (card.style.display !== 'none') {
+            visibleCards++;
+        }
     });
     
     // 移除该区域内所有的"显示更多"按钮
@@ -112,7 +133,34 @@ function initializeCardVisibility(sectionId) {
         button.parentNode.removeChild(button);
     });
     
-    // 不再添加"显示更多"按钮，因为我们想要显示所有卡片
+    // 只有当可见卡片超过8个时才显示"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        siteCards.forEach(card => {
+            if (card.style.display !== 'none') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在site-grid后面而不是内部
+        const gridElement = document.getElementById(sectionId);
+        
+        // 确保只添加一个按钮
+        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton(sectionId));
+    } else {
+        // 如果卡片数量不超过8个，确保所有卡片都可见
+        siteCards.forEach(card => {
+            if (card.style.display !== 'none') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 处理分类切换后的卡片可见性
@@ -1021,15 +1069,101 @@ function showCategory(category) {
         
         return;
     }
+    
+    // 要滚动到的目标分类节点ID
+    let targetSectionId = '';
 
-    // 根据传入的分类显示相应内容
-    if (category === 'ecommerce') {
+    // 处理特定电商网站的情况
+    const ecommerceWebsites = {
+        'amazon': 'domestic_ecommerce',
+        'aliexpress': 'cross_border_ecommerce',
+        'ebay': 'cross_border_ecommerce',
+        'lazada': 'cross_border_ecommerce',
+        'shopee': 'cross_border_ecommerce',
+        'other-ecommerce': 'other_ecommerce'
+    };
+
+    // 处理特定社交网站的情况
+    const socialWebsites = {
+        'social-global': 'international_social',
+        'social-china': 'domestic_social'
+    };
+
+    // 判断是否是电商平台下的具体网站
+    if (ecommerceWebsites[category]) {
+        // 显示电商平台部分
         document.getElementById('ecommerce-section').style.display = 'block';
+        targetSectionId = 'ecommerce-section';
+        
+        // 过滤特定网站 - 调用修改后的函数
+        filterSitesByName(category, 'ecommerce-grid');
+        
+        // 更新导航高亮状态
+        updateNavHighlight('ecommerce');
+        
+        // 平衡所有显示的二级分类导航
+        setTimeout(balanceAllSubcategoryNavs, 50);
+    }
+    // 判断是否是社交平台下的具体类型
+    else if (socialWebsites[category]) {
+        // 显示社交平台部分
+        document.getElementById('social-section').style.display = 'block';
+        targetSectionId = 'social-section';
+        
+        // 过滤特定社交网站 - 调用修改后的函数
+        filterSitesByName(category, 'social-grid');
+        
+        // 更新导航高亮状态
+        updateNavHighlight('social');
+        
+        // 平衡所有显示的二级分类导航
+        setTimeout(balanceAllSubcategoryNavs, 50);
+    }
+    // 根据传入的分类显示相应内容
+    else if (category === 'ecommerce' || 
+        category === 'domestic_ecommerce' || 
+        category === 'cross_border_ecommerce' || 
+        category === 'content_ecommerce' || 
+        category === 'supply_chain' || 
+        category === 'vertical_ecommerce' || 
+        category === 'other_ecommerce') {
+        document.getElementById('ecommerce-section').style.display = 'block';
+        targetSectionId = 'ecommerce-section';
+        
+        // 过滤二级分类
+        if (category !== 'ecommerce') {
+            filterEcommerceSubcategory(category);
+        } else {
+            // 显示全部时，选中"全部"按钮
+            document.querySelectorAll('#ecommerce-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('#ecommerce-section .subcategory-btn[onclick*="filterEcommerceSubcategory(\'all\')"]').classList.add('active');
+        }
         
         // 更新导航栏高亮状态
         updateNavHighlight('ecommerce');
-    } else if (category === 'social') {
+    } else if (category === 'social' || 
+               category === 'domestic_social' || 
+               category === 'international_social' || 
+               category === 'image_social' || 
+               category === 'video_social' || 
+               category === 'blog_forum' || 
+               category === 'dating_social' || 
+               category === 'niche_social') {
         document.getElementById('social-section').style.display = 'block';
+        targetSectionId = 'social-section';
+        
+        // 过滤二级分类
+        if (category !== 'social') {
+            filterSocialSubcategory(category);
+        } else {
+            // 显示全部时，选中"全部"按钮
+            document.querySelectorAll('#social-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('#social-section .subcategory-btn[onclick*="filterSocialSubcategory(\'all\')"]').classList.add('active');
+        }
         
         // 更新导航栏高亮状态
         updateNavHighlight('social');
@@ -1050,6 +1184,7 @@ function showCategory(category) {
                category === 'backlink' || 
                category === 'content') {
         document.getElementById('website-section').style.display = 'block';
+        targetSectionId = 'website-section';
         
         // 过滤二级分类
         if (category !== 'website') {
@@ -1072,6 +1207,7 @@ function showCategory(category) {
                category === 'professional_ai' || 
                category === 'international_ai') {
         document.getElementById('ai-chat-section').style.display = 'block';
+        targetSectionId = 'ai-chat-section';
         
         // 过滤二级分类
         if (category !== 'ai_chat') {
@@ -1098,6 +1234,7 @@ function showCategory(category) {
                category === 'summary_tools' || 
                category === 'interactive_writing') {
         document.getElementById('ai-writing-section').style.display = 'block';
+        targetSectionId = 'ai-writing-section';
         
         // 过滤二级分类
         if (category !== 'ai_writing') {
@@ -1124,6 +1261,7 @@ function showCategory(category) {
                category === 'image_editing' || 
                category === 'professional_scene') {
         document.getElementById('ai-image-section').style.display = 'block';
+        targetSectionId = 'ai-image-section';
         
         // 过滤二级分类
         if (category !== 'ai_image') {
@@ -1149,6 +1287,7 @@ function showCategory(category) {
                category === 'professional_video' || 
                category === 'opensource_tools') {
         document.getElementById('ai-video-section').style.display = 'block';
+        targetSectionId = 'ai-video-section';
         
         // 过滤二级分类
         if (category !== 'ai_video') {
@@ -1171,6 +1310,7 @@ function showCategory(category) {
                category === 'audio_editing' || 
                category === 'other_audio_tools') {
         document.getElementById('ai-audio-section').style.display = 'block';
+        targetSectionId = 'ai-audio-section';
         
         // 过滤二级分类
         if (category !== 'ai_audio') {
@@ -1187,6 +1327,7 @@ function showCategory(category) {
         updateNavHighlight('ai_audio');
     } else if (category === 'ai_design') {
         document.getElementById('ai-design-section').style.display = 'block';
+        targetSectionId = 'ai-design-section';
         
         // 过滤二级分类
         if (category !== 'ai_design') {
@@ -1211,6 +1352,7 @@ function showCategory(category) {
                category === 'cloud_ide') {
         // 显示AI编程部分
         document.getElementById('ai-coding-section').style.display = 'block';
+        targetSectionId = 'ai-coding-section';
         
         // 过滤二级分类
         if (category !== 'ai_coding') {
@@ -1230,6 +1372,7 @@ function showCategory(category) {
         category === 'other_tools') {
         // 显示AI提示词部分
         document.getElementById('ai-prompts-section').style.display = 'block';
+        targetSectionId = 'ai-prompts-section';
         
         // 过滤二级分类
         if (category !== 'ai_prompts') {
@@ -1247,6 +1390,7 @@ function showCategory(category) {
         category === 'vertical_search') {
         // 显示AI搜索部分
         document.getElementById('ai-search-section').style.display = 'block';
+        targetSectionId = 'ai-search-section';
         
         // 过滤二级分类
         if (category !== 'ai_search') {
@@ -1267,11 +1411,24 @@ function showCategory(category) {
     // 平衡当前显示的二级分类导航
     setTimeout(balanceAllSubcategoryNavs, 50);
     
-    // 滚动到页面顶部
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    // 滚动到对应分类标题的位置
+    if (targetSectionId) {
+        const targetSection = document.getElementById(targetSectionId);
+        if (targetSection) {
+            // 获取搜索框的高度和其他可能的固定元素高度，作为偏移量
+            const searchContainer = document.querySelector('.search-container');
+            const offsetTop = searchContainer ? searchContainer.offsetHeight + 20 : 0;
+            
+            // 计算需要滚动的位置（减去偏移量以确保标题完全可见）
+            const scrollPosition = targetSection.offsetTop - offsetTop;
+            
+            // 平滑滚动到目标位置
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
 }
 
 // 切换子菜单
@@ -1523,7 +1680,7 @@ function performSiteSearch(query) {
         searchResultsGrid.innerHTML += createSiteCardWithCategory(site, categoryName);
     });
     
-    // 为新创建的卡片添加事件监听器和其他初始化
+    // 初始化搜索结果卡片可见性，显示/隐藏
     initializeCardVisibility('search-results-grid');
     
     // 滚动到搜索结果区域
@@ -1552,47 +1709,8 @@ function getCategoryDisplayName(categoryKey) {
 
 // 创建带有分类标记的站点卡片
 function createSiteCardWithCategory(site, categoryName) {
-    // 标签HTML
-    let tagsHtml = '';
-    if (site.tags && site.tags.length > 0) {
-        tagsHtml = '<div class="card-tags">';
-        site.tags.forEach(tag => {
-            tagsHtml += `<span class="tag">${tag}</span>`;
-        });
-        tagsHtml += '</div>';
-    }
-    
-    // 特殊标记HTML
-    let badgesHtml = '';
-    if (site.isRecommended) {
-        badgesHtml += '<span class="badge recommended-badge">推荐</span>';
-    }
-    if (site.needsMagic) {
-        badgesHtml += '<span class="badge magic-badge">需魔法</span>';
-    }
-    
-    // 添加分类标记
-    const categoryBadge = `<span class="badge category-badge" style="background-color: #f0f0f0; color: #333;">${categoryName}</span>`;
-    
-    // 构建完整的卡片HTML
-    return `
-    <div class="site-card" data-category="${site.category}" data-subcategory="${site.subcategory || ''}">
-        <a href="${site.url}" target="_blank" rel="noopener noreferrer">
-            <div class="card-header">
-                <img src="${site.logo || 'favicon/default.svg'}" alt="${site.title}" class="card-logo">
-                <div class="card-title-container">
-                    <h3 class="card-title">${site.title}</h3>
-                    <div class="card-badges">
-                        ${badgesHtml}
-                        ${categoryBadge}
-                    </div>
-                </div>
-            </div>
-            <p class="card-description">${site.description || ''}</p>
-            ${tagsHtml}
-        </a>
-    </div>
-    `;
+    // 直接复用createSiteCard函数生成卡片，确保搜索结果与普通卡片样式一致
+    return createSiteCard(site);
 }
 
 // 页面加载时初始化
@@ -2028,4 +2146,148 @@ function initCategoryLinks() {
             // 原有的点击处理会通过onclick属性调用showCategory函数
         });
     });
+}
+
+// 根据网站名称过滤站点
+function filterSitesByName(siteName, gridId) {
+    // 获取网格中的所有卡片
+    const cards = document.querySelectorAll(`#${gridId} .site-card`);
+    let visibleCards = 0;
+    
+    // 先移除所有hidden类，重置显示状态
+    cards.forEach(card => {
+        card.classList.remove('hidden');
+    });
+    
+    // 电商网站名称与二级分类的映射
+    const ecommerceSiteToCategory = {
+        'amazon': 'amazon',
+        'aliexpress': 'aliexpress',
+        'ebay': 'ebay',
+        'lazada': 'lazada',
+        'shopee': 'shopee',
+        'other-ecommerce': 'other'
+    };
+    
+    // 社交网站名称与二级分类的映射
+    const socialSiteToCategory = {
+        'social-global': 'social-global',
+        'social-china': 'social-china'
+    };
+    
+    // 根据gridId确定是电商平台还是社交平台
+    if (gridId === 'ecommerce-grid') {
+        // 电商平台处理逻辑
+        const category = ecommerceSiteToCategory[siteName];
+        if (category) {
+            // 移除所有按钮的活跃状态
+            document.querySelectorAll('#ecommerce-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 找到并激活对应的按钮
+            const targetBtn = document.querySelector(`#ecommerce-section .subcategory-btn[onclick*="filterEcommerceSubcategory('${category}')"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+                
+                // 直接调用对应的分类过滤函数，保持统一的处理方式
+                filterEcommerceSubcategory(category);
+                return;
+            }
+        }
+        
+        // 后备方案：使用关键词过滤
+        const searchTerms = {
+            'amazon': ['亚马逊', 'amazon'],
+            'aliexpress': ['速卖通', 'aliexpress'],
+            'ebay': ['ebay'],
+            'lazada': ['lazada'],
+            'shopee': ['shopee'],
+            'other-ecommerce': ['other']
+        };
+        
+        const terms = searchTerms[siteName] || [siteName];
+        filterByTerms(cards, terms);
+    } else if (gridId === 'social-grid') {
+        // 社交平台处理逻辑
+        const category = socialSiteToCategory[siteName];
+        if (category) {
+            // 移除所有按钮的活跃状态
+            document.querySelectorAll('#social-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 找到并激活对应的按钮
+            const targetBtn = document.querySelector(`#social-section .subcategory-btn[onclick*="filterSocialSubcategory('${category}')"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+                
+                // 直接调用对应的分类过滤函数，保持统一的处理方式
+                filterSocialSubcategory(category);
+                return;
+            }
+        }
+        
+        // 后备方案：使用关键词过滤
+        const searchTerms = {
+            'social-global': ['全球', 'global', 'international'],
+            'social-china': ['中国', 'china', 'domestic']
+        };
+        
+        const terms = searchTerms[siteName] || [siteName];
+        filterByTerms(cards, terms);
+    } else {
+        // 其他分类的处理（如有需要）
+        console.log(`未知的网格ID: ${gridId}`);
+    }
+    
+    // 内部函数：根据关键词过滤卡片
+    function filterByTerms(cards, terms) {
+        // 通过网站标题进行过滤
+        cards.forEach(card => {
+            const title = card.querySelector('.site-title').textContent.toLowerCase();
+            const isMatch = terms.some(term => title.toLowerCase().includes(term.toLowerCase()));
+            
+            if (isMatch) {
+                card.style.display = 'flex';
+                visibleCards++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // 显示过滤结果
+        console.log(`过滤 ${terms.join(', ')}: 找到 ${visibleCards} 个网站`);
+    }
+    
+    // 移除所有的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`#${gridId}-section .more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        button.parentNode.removeChild(button);
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById(gridId);
+        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton(gridId));
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 } 

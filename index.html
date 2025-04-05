@@ -106,11 +106,9 @@
             white-space: nowrap;
         }
         
-        /* 确保所有卡片都显示（移除任何隐藏规则） */
-        .site-card {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
+        /* 隐藏多余卡片的CSS */
+        .site-card.hidden {
+            display: none !important;
         }
         
         /* 修复卡片内部布局 */
@@ -132,6 +130,47 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             line-height: 1.5;
+        }
+        
+        /* 显示更多按钮样式 */
+        .more-sites-btn-container {
+            width: 100%;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .btn-101 {
+            position: relative;
+            padding: 10px 25px;
+            border-radius: 30px;
+            background-color: transparent;
+            color: #4285f4;
+            border: 1px solid #4285f4;
+            cursor: pointer;
+            font-weight: 500;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .btn-101:hover {
+            color: white;
+            background-color: #4285f4;
+        }
+        
+        .btn-101 svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+        }
+        
+        .btn-101:hover svg {
+            opacity: 1;
         }
     </style>
 </head>
