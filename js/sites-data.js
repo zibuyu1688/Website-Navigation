@@ -37,7 +37,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '英国前台',
+            title: '英国站前台',
             description: '亚马逊英国站购物网站，面向英国消费者的电子商务平台',
             tags: ['亚马逊', '英国站', '消费者平台'],
             url: 'https://www.amazon.co.uk/',
@@ -51,7 +51,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '日本前台',
+            title: '日本站前台',
             description: '亚马逊日本站购物网站，面向日本消费者的电子商务平台',
             tags: ['亚马逊', '日本站', '消费者平台'],
             url: 'https://www.amazon.co.jp/',
@@ -65,7 +65,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '德国前台',
+            title: '德国站前台',
             description: '亚马逊德国站购物网站，面向德国消费者的电子商务平台',
             tags: ['亚马逊', '德国站', '消费者平台'],
             url: 'https://www.amazon.de/',
@@ -79,7 +79,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '法国前台',
+            title: '法国站前台',
             description: '亚马逊法国站购物网站，面向法国消费者的电子商务平台',
             tags: ['亚马逊', '法国站', '消费者平台'],
             url: 'https://www.amazon.fr/',
@@ -93,7 +93,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '意大利前台',
+            title: '意大利站前台',
             description: '亚马逊意大利站购物网站，面向意大利消费者的电子商务平台',
             tags: ['亚马逊', '意大利站', '消费者平台'],
             url: 'https://www.amazon.it/',
