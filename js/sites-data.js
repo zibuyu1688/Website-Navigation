@@ -480,7 +480,7 @@ const sitesData = {
         {
             title: 'TX',
             description: '实时信息网络，用户可以发布短消息（推文）并与他人互动',
-            logo: 'favicon/Twitter/X.svg',
+            logo: 'favicon/TX.svg',
             tags: ['社交媒体', '短消息', '实时信息'],
             url: 'https://twitter.com/',
             subcategory: 'social-global'
