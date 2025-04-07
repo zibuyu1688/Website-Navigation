@@ -3,14 +3,14 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*.html",
-      "destination": "/:path*",
+      "source": "/index.html",
+      "destination": "/",
       "permanent": true
     }
   ],
   "headers": [
     {
-      "source": "/(.*).(css|jpg|jpeg|png|gif|ico|svg|webp)",
+      "source": "/(.*).(css|jpg|jpeg|png|gif|ico|svg|webp|js|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -39,7 +39,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/$1"
+      "destination": "/index.html"
     }
   ]
 }
