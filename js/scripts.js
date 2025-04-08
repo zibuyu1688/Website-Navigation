@@ -76,6 +76,14 @@ function toggleMoreSites(sectionId, buttonElement) {
     const isExpanded = buttonElement.textContent.trim().includes('收起');
     const filterId = `glow-${sectionId}`;
     
+    // 确保没有其他相同section的显示更多按钮
+    const otherButtons = document.querySelectorAll(`.more-sites-btn-container button[onclick*="${sectionId}"]`);
+    otherButtons.forEach(btn => {
+        if (btn !== buttonElement) {
+            btn.closest('.more-sites-btn-container').remove();
+        }
+    });
+    
     // 切换卡片显示状态
     siteCards.forEach((card, index) => {
         if (index >= 8) {
@@ -121,11 +129,8 @@ function initializeCardVisibility(sectionId) {
         }
     });
     
-    // 移除该区域内所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#${sectionId}-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    // 移除相关的"显示更多"按钮
+    cleanupMoreButtons(sectionId);
     
     // 只有当可见卡片超过8个时才显示"显示更多"按钮
     if (visibleCards > 8) {
@@ -159,19 +164,14 @@ function initializeCardVisibility(sectionId) {
 
 // 处理分类切换后的卡片可见性
 function handleCategoryVisibility() {
-    initializeCardVisibility('ecommerce-grid');
-    initializeCardVisibility('social-grid');
-    initializeCardVisibility('website-tools-grid');
-    initializeCardVisibility('ai-chat-grid');
-    initializeCardVisibility('ai-writing-grid');
-    initializeCardVisibility('ai-image-grid');
-    initializeCardVisibility('ai-video-grid');
-    initializeCardVisibility('ai-audio-grid');
-    initializeCardVisibility('ai-design-grid');
-    initializeCardVisibility('ai-coding-grid');
-    initializeCardVisibility('ai-prompts-grid');
-    initializeCardVisibility('ai-search-grid');
-    initializeCardVisibility('rent-grid');
+    // 只处理当前显示的分类区域
+    const visibleSections = document.querySelectorAll('.category-section[style*="display: block"]');
+    visibleSections.forEach(section => {
+        const gridId = section.querySelector('.site-grid').id;
+        if (gridId) {
+            initializeCardVisibility(gridId);
+        }
+    });
 }
 
 // 加载网站数据
@@ -447,6 +447,17 @@ function filterEcommerceSubcategory(subcategory) {
     }
 }
 
+// 清理特定grid相关的"显示更多"按钮
+function cleanupMoreButtons(gridId) {
+    const allButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allButtons.forEach(button => {
+        const buttonHtml = button.innerHTML;
+        if (buttonHtml.includes(gridId)) {
+            button.parentNode.removeChild(button);
+        }
+    });
+}
+
 // 过滤社交平台二级分类
 function filterSocialSubcategory(subcategory) {
     // 更新按钮状态
@@ -474,10 +485,7 @@ function filterSocialSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#social-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    cleanupMoreButtons('social-grid');
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -532,10 +540,7 @@ function filterAiWritingSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-writing-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    cleanupMoreButtons('ai-writing-grid');
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -590,10 +595,7 @@ function filterAiChatSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-chat-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    cleanupMoreButtons('ai-chat-grid');
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -648,10 +650,7 @@ function filterAiImageSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-image-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    cleanupMoreButtons('ai-image-grid');
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -706,10 +705,7 @@ function filterAiVideoSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-video-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    cleanupMoreButtons('ai-video-grid');
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -1203,6 +1199,7 @@ function showCategory(category) {
                category === 'video_social' || 
                category === 'blog_forum' || 
                category === 'dating_social' || 
+               category === 'social-influencer' ||
                category === 'niche_social') {
         document.getElementById('social-section').style.display = 'block';
         targetSectionId = 'social-section';
@@ -2290,7 +2287,8 @@ function filterSitesByName(siteName, gridId) {
         // 后备方案：使用关键词过滤
         const searchTerms = {
             'social-global': ['全球', 'global', 'international'],
-            'social-china': ['中国', 'china', 'domestic']
+            'social-china': ['中国', 'china', 'domestic'],
+            'social-influencer': ['红人', '网红', '博主', 'influencer']
         };
         
         const terms = searchTerms[siteName] || [siteName];
@@ -2319,11 +2317,8 @@ function filterSitesByName(siteName, gridId) {
         console.log(`过滤 ${terms.join(', ')}: 找到 ${visibleCards} 个网站`);
     }
     
-    // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#${gridId}-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
+    // 移除相关的"显示更多"按钮
+    cleanupMoreButtons(gridId);
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {

@@ -1105,7 +1105,152 @@ const sitesData = {
             tags: ['即时通讯', '加密', '群组频道'],
             url: 'https://telegram.org/',
             subcategory: 'social-global'
+        },
+        {
+            title: 'Upfluence',
+            description: '全球性的网红营销平台，提供影响者搜索、管理和活动分析，帮助品牌与创作者建立合作关系',
+            tags: ['网红营销', '红人', '创作者管理'],
+            url: 'https://www.upfluence.com/',
+            subcategory: 'social-influencer',
+            isRecommended: true
+        },
+        {
+            "title": "impact.com",
+            "description": "全球合作伙伴营销管理平台，支持联盟营销、红人合作及自动化结算",
+            "tags": ["联盟营销", "红人管理", "企业级"],
+            "url": "https://impact.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "NoxInfluencer",
+            "description": "海外网红营销一站式平台，提供YouTube/TikTok红人数据分析及合作",
+            "tags": ["红人分析", "免费工具", "TikTok"],
+            "url": "https://www.noxinfluencer.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": false
+        },
+        {
+            "title": "Upfluence",
+            "description": "全功能红人营销平台，覆盖红人搜索、合作管理及效果追踪",
+            "tags": ["红人CRM", "电商集成", "UGC收集"],
+            "url": "https://www.upfluence.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "AspireIQ",
+            "description": "专注电商品牌的红人营销SaaS，支持自动化合作与内容授权",
+            "tags": ["DTC品牌", "内容库", "Shopify集成"],
+            "url": "https://www.aspire.io/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Grin",
+            "description": "为电商企业设计的红人营销工具，强调关系管理与支付自动化",
+            "tags": ["红人支付", "品牌社区", "ROI分析"],
+            "url": "https://grin.co/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Traackr",
+            "description": "企业级红人关系管理平台，提供影响力评分与竞品对标",
+            "tags": ["跨国管理", "行业基准", "API集成"],
+            "url": "https://www.traackr.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Klear",
+            "description": "基于AI的红人发现平台，支持多维度筛选与虚假粉丝检测",
+            "tags": ["AI匹配", "粉丝质量", "跨平台"],
+            "url": "https://klear.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "CreatorIQ",
+            "description": "面向大型品牌的红人营销操作系统，含合规审查功能",
+            "tags": ["合规管理", "全球团队", "数据治理"],
+            "url": "https://creatoriq.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Tagger Media",
+            "description": "结合社媒监听的红人平台，实时追踪活动效果",
+            "tags": ["趋势预测", "实时数据", "Campaign管理"],
+            "url": "https://www.taggermedia.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "InfluencerDB",
+            "description": "德国红人数据分析平台，专注欧洲市场",
+            "tags": ["欧洲市场", "Instagram", "合作报价"],
+            "url": "https://influencerdb.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "HypeAuditor",
+            "description": "红人真实性检测工具，分析粉丝质量与欺诈行为",
+            "tags": ["打假检测", "受众画像", "Instagram"],
+            "url": "https://hypeauditor.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "IZEA",
+            "description": "老牌红人营销平台，支持内容交易市场",
+            "tags": ["内容交易", "长尾红人", "UGC采购"],
+            "url": "https://izea.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Fohr",
+            "description": "时尚美妆领域专属平台，提供风格匹配算法",
+            "tags": ["时尚行业", "审美匹配", "内容审核"],
+            "url": "https://fohr.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Linqia",
+            "description": "绩效驱动型红人营销平台，按效果付费",
+            "tags": ["CPA模式", "转化追踪", "美妆个护"],
+            "url": "https://www.linqia.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "NeoReach",
+            "description": "红人Campaign全流程管理工具，含预算优化建议",
+            "tags": ["预算规划", "跨平台", "案例库"],
+            "url": "https://neoreach.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "Mavrck",
+            "description": "侧重用户生成内容(UGC)收集与权利管理",
+            "tags": ["UGC收集", "版权管理", "品牌倡导"],
+            "url": "https://mavrck.co/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
+        },
+        {
+            "title": "impact.com",
+            "description": "合作伙伴营销管理平台，涵盖联盟营销、红人合作等",
+            "tags": ["联盟营销", "红人营销", "付费工具"],
+            "url": "https://impact.com/",
+            "subcategory": "social-influencer",
+            "needsMagic": true
         }
+        
     ],
     
     // SEO 工具
