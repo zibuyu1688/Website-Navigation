@@ -682,6 +682,71 @@ const sitesData = {
             url: 'https://www.1688.com/',
             subcategory: 'other'
         },
+        // Shopify电商平台
+        {
+            title: 'Shopify官网',
+            description: 'Shopify电商平台官网，提供一站式电商建站与运营解决方案',
+            tags: ['Shopify', '电商建站', '独立站'],
+            url: 'https://www.shopify.com/',
+            subcategory: 'shopify'
+        },
+        {
+            "title": "Shopify免费工具",
+            "description": "Shopify提供的免费电商工具，包括Logo生成器、域名生成器等实用功能",
+            "tags": ["Shopify工具", "免费资源", "电商工具"],
+            "url": "https://www.shopify.com/zh/tools",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify中文社区",
+            "description": "Shopify官方中文社区，卖家可交流经验、提问并获得官方支持",
+            "tags": ["Shopify社区", "卖家交流", "官方支持"],
+            "url": "https://community.shopify.com/c/shopify-community-zh-cn/ct-p/zh-cn",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify主题市场",
+            "description": "Shopify官方主题商店，提供付费和免费主题，适配不同行业风格",
+            "tags": ["Shopify主题", "网站模板", "UI设计"],
+            "url": "https://themes.shopify.com/",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify官方博客（中文）",
+            "description": "Shopify官方中文博客，分享电商趋势、运营技巧和成功案例",
+            "tags": ["Shopify博客", "电商资讯", "运营指南"],
+            "url": "https://www.shopify.com/zh/blog",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify Academy",
+            "description": "Shopify官方学习平台，提供电商课程、教程和认证",
+            "tags": ["Shopify教程", "电商课程", "在线学习"],
+            "url": "https://www.shopifyacademy.com/",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify客服（中文）",
+            "description": "Shopify官方中文客服支持，提供邮件、在线聊天等帮助",
+            "tags": ["Shopify客服", "技术支持", "帮助中心"],
+            "url": "https://help.shopify.com/zh-CN#/contact/email",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify帮助中心（英文）",
+            "description": "Shopify官方帮助文档，涵盖建站、支付、物流等全流程指南",
+            "tags": ["Shopify文档", "操作指南", "常见问题"],
+            "url": "https://help.shopify.com/en#/contact",
+            "subcategory": "shopify"
+        },
+        {
+            "title": "Shopify免费试用",
+            "description": "Shopify官方免费试用入口，14天体验独立站搭建与功能",
+            "tags": ["Shopify建站", "免费试用", "独立站"],
+            "url": "https://www.shopify.com/zh/free-trial",
+            "subcategory": "shopify"
+        },
+        
         // TikTok电商平台
         {
             title: 'TikTok US(美国站)',
@@ -1244,7 +1309,7 @@ const sitesData = {
         },
         {
             "title": "impact.com",
-            "description": "合作伙伴营销管理平台，涵盖联盟营销、红人合作等",
+            "description": "合作伙伴营销管理平台，涵盖联盟营销、红人营销等",
             "tags": ["联盟营销", "红人营销", "付费工具"],
             "url": "https://impact.com/",
             "subcategory": "social-influencer",

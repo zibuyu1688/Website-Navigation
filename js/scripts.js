@@ -1167,12 +1167,14 @@ function showCategory(category) {
     }
     // 根据传入的分类显示相应内容
     else if (category === 'ecommerce' || 
-        category === 'domestic_ecommerce' || 
-        category === 'cross_border_ecommerce' || 
-        category === 'content_ecommerce' || 
-        category === 'supply_chain' || 
-        category === 'vertical_ecommerce' || 
-        category === 'other_ecommerce') {
+               category === 'amazon' || 
+               category === 'aliexpress' || 
+               category === 'ebay' || 
+               category === 'shopify' || 
+               category === 'lazada' || 
+               category === 'shopee' || 
+               category === 'tiktok' || 
+               category === 'other-ecommerce') {
         document.getElementById('ecommerce-section').style.display = 'block';
         targetSectionId = 'ecommerce-section';
         
