@@ -798,13 +798,6 @@ const sitesData = {
             subcategory: 'tiktok'
         },
         {
-            title: 'TikTok Shop Malaysia(马来西亚站)',
-            description: 'TikTok马来西亚站电商平台',
-            tags: ['TikTok', '马来西亚站', '短视频电商'],
-            url: 'https://shop.tiktok.com/my',
-            subcategory: 'tiktok'
-        },
-        {
             title: 'TikTok Thailand(泰国站)',
             description: 'TikTok泰国站官方网站',
             tags: ['TikTok', '泰国站', '短视频电商'],
@@ -1512,6 +1505,14 @@ const sitesData = {
             tags: ['SEO', '网站优化', '链接分析'],
             url: 'https://moz.com/products/pro',
             subcategory: 'seo'
+        },
+        {
+            title: 'helium10',
+            description: '亚马逊店铺分析工具',
+            tags: ['亚马逊', '店铺分析', '数据分析'],
+            url: 'https://www.helium10.com/',
+            subcategory: 'analytics',
+            needsMagic: true
         },
         {
             title: 'Udemy',
@@ -5067,7 +5068,14 @@ const sitesData = {
             subcategory: 'assistant_tools',
             needsMagic: false
         },
-        
+        {
+            title: 'ColorHunter',
+            description: 'AI调色工具，学习用户偏好生成个性化配色',
+            tags: ['AI调色', '个性化', '用户偏好'],
+            url: 'https://colorhunter.ai/',
+            subcategory: 'assistant_tools',
+            needsMagic: true
+        },
         // 素材与资源库
         {
             title: '千图网',
@@ -5570,6 +5578,48 @@ const sitesData = {
             subcategory: 'ai-account',
             isRecommended: true
         }
+    ],
+    
+    // 学习社区
+    study: [
+        {
+            title: 'AI星河',
+            description: 'AI爱好者的分享',
+            tags: ['AI', 'CHATGPT'],
+            url: 'https://www.ziroom.com/',
+            subcategory: 'wechatblogger',
+            isRecommended: true
+        },
+        {
+            title: '视频号博主',
+            description: '视频AI',
+            tags: ['视频', 'AI'],
+            url: 'https://www.ke.com/',
+            subcategory: 'wechatvideoblogger'
+        },
+        {
+            title: '生财有术',
+            description: '致富社群',
+            tags: ['生财有书', 'AI学习'],
+            url: 'https://scys.com/',
+            subcategory: 'studygroup'
+        },
+        {
+            title: '通往AGI之路',
+            description: '通往AGI之路',
+            tags: ['通往AGI之路', 'AI学习'],
+            url: 'https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e',
+            subcategory: 'articlecollection'
+        },
+        {
+            title: 'KA21工具导航',
+            description: 'KA21工具导航',
+            tags: ['KA21工具导航', 'AI学习'],
+            url: 'https://ka21.voidcool.top/',
+            subcategory: 'articlecollection'
+        }
+        
+        
     ]
 }; 
 
@@ -5578,8 +5628,6 @@ const aiPromptsData = [
     // 数据将通过JavaScript动态添加
 ];
 
-// AI搜索工具数据
-// AI搜索工具数据
 // AI搜索工具数据
 const aiSearchData = [
     // 综合类AI搜索引擎
@@ -5872,6 +5920,12 @@ function loadAllSitesData() {
     
     // 加载AI搜索工具数据
     loadAiSearchTools();
+    
+    // 加载合租平台数据
+    loadRentSites();
+    
+    // 加载学习社区数据
+    loadStudySites();
 }
 
 // ... existing code ...
@@ -5884,6 +5938,11 @@ function loadAiPromptsTools() {
 // 加载AI搜索工具
 function loadAiSearchTools() {
     loadSitesByCategory(aiSearchData, 'ai-search-grid');
+}
+
+// 加载学习社区
+function loadStudySites() {
+    loadSitesByCategory(sitesData.study, 'study-grid');
 }
 
 // ... existing code ...
@@ -5990,6 +6049,11 @@ function loadAiPromptsTools() {
 // 加载AI搜索工具
 function loadAiSearchTools() {
     loadSitesByCategory(aiSearchData, 'ai-search-grid');
+}
+
+// 加载合租平台数据
+function loadRentSites() {
+    loadSitesByCategory(sitesData.rent, 'rent-grid');
 }
 
 // ... existing code ...

@@ -775,6 +775,34 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item has-submenu">
+                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('study');">
+                    <i class="bi bi-book"></i>
+                    学习社区
+                </a>
+                <ul class="nav-submenu submenu-study">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('wechatblogger')">
+                            公众号推荐
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('wechatvideoblogger')">
+                            视频号推荐
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('studygroup')">
+                            学习社群
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('articlecollection')">
+                            优质导航
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 
@@ -1080,6 +1108,25 @@
                 </div>
                 <div id="ai-search-grid" class="site-grid">
                     <!-- 网站卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+
+            <!-- 学习社区 -->
+            <div id="study-section" class="category-section">
+                <div class="category-title">
+                    <h2><i class="bi bi-book"></i> 学习社区</h2>
+                </div>
+                <!-- 二级分类导航 -->
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterStudySubcategory('all')">全部</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatblogger')">公众号推荐</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatvideoblogger')">视频号推荐</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('studygroup')">学习社群</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('articlecollection')">优质导航</button>
+
+                </div>
+                <div class="site-grid" id="study-grid">
+                    <!-- 学习社区网站卡片将通过JavaScript动态添加 -->
                 </div>
             </div>
 

@@ -1030,6 +1030,7 @@ function showCategory(category) {
     document.getElementById('ai-prompts-section').style.display = 'none';
     document.getElementById('ai-search-section').style.display = 'none';
     document.getElementById('rent-section').style.display = 'none';
+    document.getElementById('study-section').style.display = 'none';
 
     // 如果是首页，显示所有分类
     if (category === 'home') {
@@ -1046,6 +1047,7 @@ function showCategory(category) {
         document.getElementById('ai-prompts-section').style.display = 'block';
         document.getElementById('ai-search-section').style.display = 'block';
         document.getElementById('rent-section').style.display = 'block';
+        document.getElementById('study-section').style.display = 'block';
         
         // 更新导航高亮状态
         updateNavHighlight('home');
@@ -1063,6 +1065,36 @@ function showCategory(category) {
         });
         
         return;
+    }
+    
+    // 添加学习社区的处理
+    else if (category === 'study' || 
+             category === 'wechatblogger' || 
+             category === 'wechatvideoblogger' || 
+             category === 'studygroup' ||
+             category === 'articlecollection') {
+        document.getElementById('study-section').style.display = 'block';
+        targetSectionId = 'study-section';
+        
+        // 过滤二级分类
+        if (category !== 'study') {
+            filterStudySubcategory(category);
+        } else {
+            // 显示全部时，选中"全部"按钮
+            document.querySelectorAll('#study-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('#study-section .subcategory-btn[onclick*="filterStudySubcategory(\'all\')"]').classList.add('active');
+            
+            // 确保显示所有学习社区网站
+            filterStudySubcategory('all');
+        }
+        
+        // 初始化卡片可见性
+        initializeCardVisibility('study-grid');
+        
+        // 更新导航栏高亮状态
+        updateNavHighlight('study');
     }
     
     // 添加合租平台的处理
@@ -1378,7 +1410,13 @@ function showCategory(category) {
         
         // 更新导航栏高亮状态
         updateNavHighlight('ai_audio');
-    } else if (category === 'ai_design') {
+    } else if (category === 'ai_design' || 
+             category === 'commerce_design' || 
+             category === 'ui_ux' || 
+             category === 'illustration' || 
+             category === 'model_design' || 
+             category === 'assistant_tools' || 
+             category === 'special_tools') {
         document.getElementById('ai-design-section').style.display = 'block';
         targetSectionId = 'ai-design-section';
         
@@ -1396,13 +1434,13 @@ function showCategory(category) {
         // 更新导航栏高亮状态
         updateNavHighlight('ai_design');
     } else if (category === 'ai_coding' || 
-               category === 'code_generation' || 
-               category === 'fullstack_dev' || 
-               category === 'design_to_code' || 
-               category === 'code_review' || 
-               category === 'natural_language_dev' || 
-               category === 'low_code' || 
-               category === 'cloud_ide') {
+             category === 'code_generation' || 
+             category === 'fullstack_dev' || 
+             category === 'design_to_code' || 
+             category === 'code_review' || 
+             category === 'natural_language_dev' || 
+             category === 'low_code' || 
+             category === 'cloud_ide') {
         // 显示AI编程部分
         document.getElementById('ai-coding-section').style.display = 'block';
         targetSectionId = 'ai-coding-section';
@@ -1847,6 +1885,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 加载合租平台数据
     loadRentSites();
+    
+    // 加载学习社区数据
+    loadStudySites();
+    
+    // 添加学习社区到handleCategoryVisibility函数中
+    handleCategoryVisibility = function() {
+        initializeCardVisibility('ecommerce-grid');
+        initializeCardVisibility('social-grid');
+        initializeCardVisibility('website-tools-grid');
+        initializeCardVisibility('ai-chat-grid');
+        initializeCardVisibility('ai-writing-grid');
+        initializeCardVisibility('ai-image-grid');
+        initializeCardVisibility('ai-video-grid');
+        initializeCardVisibility('ai-audio-grid');
+        initializeCardVisibility('ai-design-grid');
+        initializeCardVisibility('ai-coding-grid');
+        initializeCardVisibility('ai-prompts-grid');
+        initializeCardVisibility('ai-search-grid');
+        initializeCardVisibility('rent-grid');
+        initializeCardVisibility('study-grid');
+    }
+    
+    // 调用一次handleCategoryVisibility以确保所有分类正确初始化
+    handleCategoryVisibility();
 });
 
 // 清除搜索框内容并恢复首页状态
@@ -1950,26 +2012,156 @@ function organizeFooterCategories() {
 
 // 更新导航高亮状态
 function updateNavHighlight(category) {
-    // 移除所有导航项的激活状态
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
+    // 移除所有导航项的 active 类
+    document.querySelectorAll('.nav-link').forEach(item => {
+        item.classList.remove('active');
     });
     
-    // 查找匹配的导航链接
-    const activeLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
-    if (activeLink) {
-        activeLink.classList.add('active');
-        
-        // 如果在子菜单中，确保父菜单项也被激活并展开
-        const parentSubmenu = activeLink.closest('.nav-submenu');
-        if (parentSubmenu) {
-            const parentItem = parentSubmenu.closest('.has-submenu');
-            if (parentItem) {
-                const parentLink = parentItem.querySelector('.nav-link');
-                parentLink.classList.add('active');
-                parentSubmenu.style.display = 'block';
-            }
-        }
+    // 根据分类设置相应导航项的 active 类
+    if (category === 'home') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'home\')"]').classList.add('active');
+    } 
+    else if (category === 'ecommerce' || 
+             category === 'amazon' || 
+             category === 'aliexpress' || 
+             category === 'ebay' || 
+             category === 'shopify' || 
+             category === 'lazada' || 
+             category === 'shopee' || 
+             category === 'tiktok' || 
+             category === 'other-ecommerce') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ecommerce\')"]').classList.add('active');
+    } 
+    else if (category === 'social' || 
+             category === 'social-global' || 
+             category === 'social-china' || 
+             category === 'social-influencer') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'social\')"]').classList.add('active');
+    } 
+    else if (category === 'rent' || 
+             category === 'ai-account' || 
+             category === 'social-account' || 
+             category === 'software-account') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'rent\')"]').classList.add('active');
+    }
+    else if (category === 'website' || 
+             category === 'google' || 
+             category === 'seo' || 
+             category === 'keyword' || 
+             category === 'analytics' ||
+             category === 'domain' ||
+             category === 'server' ||
+             category === 'payment' ||
+             category === 'erp' ||
+             category === 'network' ||
+             category === 'account' ||
+             category === 'temp-mail' ||
+             category === 'ip-proxy' ||
+             category === 'browser' ||
+             category === 'backlink' ||
+             category === 'content' ||
+             category === 'learning') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'website\')"]').classList.add('active');
+    }
+    else if (category === 'ai_chat' || 
+             category === 'general_assistant' || 
+             category === 'entertainment_ai' || 
+             category === 'role_play' || 
+             category === 'multimodal_ai' || 
+             category === 'professional_ai' || 
+             category === 'international_ai') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_chat\')"]').classList.add('active');
+    }
+    else if (category === 'ai_writing' || 
+             category === 'academic_paper' || 
+             category === 'official_document' || 
+             category === 'fiction_writing' || 
+             category === 'marketing_copy' || 
+             category === 'blog_media' || 
+             category === 'multilingual' || 
+             category === 'office_writing' || 
+             category === 'script_content' || 
+             category === 'summary_tools' || 
+             category === 'interactive_writing') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_writing\')"]').classList.add('active');
+    }
+    else if (category === 'ai_image' || 
+             category === 'general_image' || 
+             category === 'portrait' || 
+             category === 'background' || 
+             category === 'brand_design' || 
+             category === 'photo_enhancement' || 
+             category === 'anime' || 
+             category === 'fun_tools' || 
+             category === 'fashion' || 
+             category === 'image_editing' || 
+             category === 'professional_scene') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_image\')"]').classList.add('active');
+    }
+    else if (category === 'ai_video' || 
+             category === 'text_to_video' || 
+             category === 'image_to_video' || 
+             category === 'video_editing' || 
+             category === 'digital_human' || 
+             category === 'animation' || 
+             category === 'short_video' || 
+             category === 'speech_driven' || 
+             category === 'professional_video' || 
+             category === 'opensource_tools') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_video\')"]').classList.add('active');
+    }
+    else if (category === 'ai_audio' || 
+             category === 'tts' || 
+             category === 'music_generation' || 
+             category === 'speech_to_text' || 
+             category === 'voice_conversion' || 
+             category === 'audio_editing' || 
+             category === 'other_audio_tools') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_audio\')"]').classList.add('active');
+    }
+    else if (category === 'ai_design' || 
+             category === 'commerce_design' || 
+             category === 'ui_ux' || 
+             category === 'illustration' || 
+             category === 'model_design' || 
+             category === 'assistant_tools' || 
+             category === 'special_tools') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_design\')"]').classList.add('active');
+    }
+    else if (category === 'ai_coding' || 
+             category === 'code_generation' || 
+             category === 'fullstack_dev' || 
+             category === 'design_to_code' || 
+             category === 'code_review' || 
+             category === 'natural_language_dev' || 
+             category === 'low_code' || 
+             category === 'cloud_ide') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_coding\')"]').classList.add('active');
+    }
+    else if (category === 'ai_prompts' || 
+             category === 'prompt_platforms' || 
+             category === 'sd_tools' || 
+             category === 'chatgpt_prompts' || 
+             category === 'visual_tools' || 
+             category === 'chinese_resources' || 
+             category === 'other_tools') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_prompts\')"]').classList.add('active');
+    }
+    else if (category === 'ai_search' || 
+             category === 'general_search' || 
+             category === 'academic_search' || 
+             category === 'programming_search' || 
+             category === 'finance_search' || 
+             category === 'life_search' || 
+             category === 'product_search') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'ai_search\')"]').classList.add('active');
+    }
+    else if (category === 'study' ||
+             category === 'wechatblogger' ||
+             category === 'wechatvideoblogger' ||
+             category === 'studygroup' ||
+             category === 'articlecollection') {
+        document.querySelector('.nav-link[onclick*="showCategory(\'study\')"]').classList.add('active');
     }
 }
 
@@ -2449,5 +2641,63 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeCardVisibility('ai-prompts-grid');
         initializeCardVisibility('ai-search-grid');
         initializeCardVisibility('rent-grid');
+        initializeCardVisibility('study-grid');
     }
-}); 
+});
+
+// 过滤学习社区子分类
+function filterStudySubcategory(subcategory) {
+    // 更新按钮状态
+    updateSubcategoryButtons('study-section', subcategory);
+    
+    const studyGrid = document.getElementById('study-grid');
+    if (!studyGrid) return;
+    
+    studyGrid.innerHTML = '';
+    
+    if (sitesData.study) {
+        sitesData.study.forEach(site => {
+            if (subcategory === 'all' || site.subcategory === subcategory) {
+                // 确保站点数据格式统一
+                const formattedSite = {
+                    title: site.title || site.name,
+                    description: site.description,
+                    url: site.url,
+                    tags: site.tags || [],
+                    subcategory: site.subcategory || '',
+                    isRecommended: site.isRecommended || false
+                };
+                studyGrid.innerHTML += createSiteCard(formattedSite);
+            }
+        });
+    }
+    
+    // 初始化卡片可见性
+    initializeCardVisibility('study-grid');
+}
+
+// 加载学习社区
+function loadStudySites() {
+    const studyGrid = document.getElementById('study-grid');
+    if (!studyGrid) return;
+    
+    studyGrid.innerHTML = '';
+    
+    if (sitesData.study) {
+        sitesData.study.forEach(site => {
+            // 确保站点数据格式统一
+            const formattedSite = {
+                title: site.title || site.name,
+                description: site.description,
+                url: site.url,
+                tags: site.tags || [],
+                subcategory: site.subcategory || '',
+                isRecommended: site.isRecommended || false
+            };
+            studyGrid.innerHTML += createSiteCard(formattedSite);
+        });
+    }
+    
+    // 初始化卡片可见性
+    initializeCardVisibility('study-grid');
+}
