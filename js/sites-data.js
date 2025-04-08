@@ -246,11 +246,202 @@ const sitesData = {
             url: 'https://login.aliexpress.com/user/seller/login',
             subcategory: 'aliexpress'
         },
+
         {
             title: 'eBay卖家中心',
             description: 'eBay卖家平台，管理产品刊登、订单、库存和业绩分析',
             tags: ['eBay', '卖家平台', '跨境电商'],
             url: 'https://www.ebay.com/sh/ovw',
+            subcategory: 'ebay'
+        },
+        
+        {
+            title: 'eBay卖家中心',
+            description: 'eBay卖家平台，管理产品刊登、订单、库存和业绩分析',
+            tags: ['eBay', '卖家平台', '跨境电商'],
+            url: 'https://www.ebay.com/sh/ovw',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay全球主站',
+            description: 'eBay全球主站官网',
+            tags: ['eBay', '全球主站', '跨境电商'],
+            url: 'https://www.ebay.com/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay澳洲',
+            description: 'eBay澳大利亚分站',
+            tags: ['eBay', '澳洲分站', '跨境电商'],
+            url: 'https://www.ebay.com.au/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay德国',
+            description: 'eBay德国分站',
+            tags: ['eBay', '德国分站', '跨境电商'],
+            url: 'https://www.ebay.de/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay法国',
+            description: 'eBay法国分站',
+            tags: ['eBay', '法国分站', '跨境电商'],
+            url: 'https://www.ebay.fr/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay西班牙',
+            description: 'eBay西班牙分站',
+            tags: ['eBay', '西班牙分站', '跨境电商'],
+            url: 'https://www.ebay.es/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay意大利',
+            description: 'eBay意大利分站',
+            tags: ['eBay', '意大利分站', '跨境电商'],
+            url: 'https://www.ebay.it/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay英国',
+            description: 'eBay英国分站',
+            tags: ['eBay', '英国分站', '跨境电商'],
+            url: 'https://www.ebay.co.uk/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay日本',
+            description: 'eBay日本分站',
+            tags: ['eBay', '日本分站', '跨境电商'],
+            url: 'https://www.ebay.co.jp/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay加拿大',
+            description: 'eBay加拿大分站',
+            tags: ['eBay', '加拿大分站', '跨境电商'],
+            url: 'https://www.ebay.ca/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay墨西哥',
+            description: 'eBay墨西哥分站',
+            tags: ['eBay', '墨西哥分站', '跨境电商'],
+            url: 'https://www.ebay.com.mx/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay新加坡',
+            description: 'eBay新加坡分站',
+            tags: ['eBay', '新加坡分站', '跨境电商'],
+            url: 'https://www.ebay.com.sg/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay荷兰',
+            description: 'eBay荷兰分站',
+            tags: ['eBay', '荷兰分站', '跨境电商'],
+            url: 'https://www.ebay.nl/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay印度',
+            description: 'eBay印度分站（已关闭，现跳转至主站）',
+            tags: ['eBay', '印度分站', '跨境电商'],
+            url: 'https://www.ebay.in/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay爱尔兰',
+            description: 'eBay爱尔兰分站',
+            tags: ['eBay', '爱尔兰分站', '跨境电商'],
+            url: 'https://www.ebay.ie/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay葡萄牙',
+            description: 'eBay葡萄牙分站',
+            tags: ['eBay', '葡萄牙分站', '跨境电商'],
+            url: 'https://www.ebay.pt/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay比利时',
+            description: 'eBay比利时分站',
+            tags: ['eBay', '比利时分站', '跨境电商'],
+            url: 'https://www.ebay.be/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay瑞士',
+            description: 'eBay瑞士分站',
+            tags: ['eBay', '瑞士分站', '跨境电商'],
+            url: 'https://www.ebay.ch/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay波兰',
+            description: 'eBay波兰分站',
+            tags: ['eBay', '波兰分站', '跨境电商'],
+            url: 'https://www.ebay.pl/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay奥地利',
+            description: 'eBay奥地利分站',
+            tags: ['eBay', '奥地利分站', '跨境电商'],
+            url: 'https://www.ebay.at/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay菲律宾',
+            description: 'eBay菲律宾分站',
+            tags: ['eBay', '菲律宾分站', '跨境电商'],
+            url: 'https://www.ebay.ph/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay香港',
+            description: 'eBay中国香港分站',
+            tags: ['eBay', '中国香港分站', '跨境电商'],
+            url: 'https://www.ebay.com.hk/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay台湾',
+            description: 'eBay中国台湾分站',
+            tags: ['eBay', '中国台湾分站', '跨境电商'],
+            url: 'https://www.ebay.com.tw/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay马来西亚',
+            description: 'eBay马来西亚分站',
+            tags: ['eBay', '马来西亚分站', '跨境电商'],
+            url: 'https://www.ebay.com.my/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay越南',
+            description: 'eBay越南分站（已关闭，现跳转至主站）',
+            tags: ['eBay', '越南分站', '跨境电商'],
+            url: 'https://www.ebay.vn/',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay大学（英文版）',
+            description: 'eBay全球卖家学习中心',
+            tags: ['eBay', '卖家学习中心', '跨境电商'],
+            url: 'https://www.ebay.com/sellercenter',
+            subcategory: 'ebay'
+        },
+        {
+            title: 'eBay大学（中文版）',
+            description: 'eBay中国卖家培训中心',
+            tags: ['eBay', '卖家学习中心', '跨境电商'],
+            url: 'https://university.ebay.cn/',
             subcategory: 'ebay'
         },
         {
@@ -352,6 +543,97 @@ const sitesData = {
             subcategory: 'shopee'
         },
         {
+            title: 'Shopee Colombia',
+            description: '哥伦比亚站Shopee平台，提供跨境电商服务',
+            tags: ['Shopee', '哥伦比亚电商', '拉美电商'],
+            url: 'https://shopee.com.co',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Chile',
+            description: '智利站Shopee平台，提供跨境电商服务',
+            tags: ['Shopee', '智利电商', '拉美电商'],
+            url: 'https://shopee.cl',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Poland',
+            description: '波兰站Shopee平台，提供跨境电商服务',
+            tags: ['Shopee', '波兰电商', '欧洲电商'],
+            url: 'https://shopee.pl',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Spain',
+            description: '西班牙站Shopee平台，提供跨境电商服务',
+            tags: ['Shopee', '西班牙电商', '欧洲电商'],
+            url: 'https://shopee.es',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Malaysia',
+            description: '马来西亚站Shopee平台，东南亚领先的电商平台',
+            tags: ['Shopee', '马来西亚电商', '东南亚电商'],
+            url: 'https://shopee.com.my',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Indonesia',
+            description: '印尼站Shopee平台，东南亚最大的电商市场之一',
+            tags: ['Shopee', '印尼电商', '东南亚电商'],
+            url: 'https://shopee.co.id',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Thailand',
+            description: '泰国站Shopee平台，东南亚主要电商市场',
+            tags: ['Shopee', '泰国电商', '东南亚电商'],
+            url: 'https://shopee.co.th',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Philippines',
+            description: '菲律宾站Shopee平台，东南亚快速增长电商市场',
+            tags: ['Shopee', '菲律宾电商', '东南亚电商'],
+            url: 'https://shopee.ph',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Vietnam',
+            description: '越南站Shopee平台，东南亚重要电商市场',
+            tags: ['Shopee', '越南电商', '东南亚电商'],
+            url: 'https://shopee.vn',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Singapore',
+            description: '新加坡站Shopee平台，东南亚成熟电商市场',
+            tags: ['Shopee', '新加坡电商', '东南亚电商'],
+            url: 'https://shopee.sg',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Taiwan',
+            description: '台湾站Shopee平台，提供本地化电商服务',
+            tags: ['Shopee', '台湾电商', '跨境电商'],
+            url: 'https://shopee.tw',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Brazil',
+            description: '巴西站Shopee平台，拉美重要电商市场',
+            tags: ['Shopee', '巴西电商', '拉美电商'],
+            url: 'https://shopee.com.br',
+            subcategory: 'shopee'
+        },
+        {
+            title: 'Shopee Mexico',
+            description: '墨西哥站Shopee平台，拉美新兴电商市场',
+            tags: ['Shopee', '墨西哥电商', '拉美电商'],
+            url: 'https://shopee.com.mx',
+            subcategory: 'shopee'
+        },
+        {
             title: 'Wish商户平台',
             description: 'Wish跨境电商平台的商家管理系统',
             tags: ['Wish', '跨境电商', '移动电商'],
@@ -399,7 +681,218 @@ const sitesData = {
             tags: ['1688', '阿里巴巴', '批发', 'B2B'],
             url: 'https://www.1688.com/',
             subcategory: 'other'
-        }
+        },
+        // TikTok电商平台
+        {
+            title: 'TikTok US(美国站)',
+            description: 'TikTok美国站官方网站',
+            tags: ['TikTok', '美国站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop US(美国站)',
+            description: 'TikTok美国站电商平台',
+            tags: ['TikTok', '美国站', '短视频电商'],
+            url: 'https://shop.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok UK(英国站)',
+            description: 'TikTok英国站官方网站',
+            tags: ['TikTok', '英国站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop UK(英国站)',
+            description: 'TikTok英国站电商平台',
+            tags: ['TikTok', '英国站', '短视频电商'],
+            url: 'https://shop.tiktok.com/uk',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Singapore(新加坡站)',
+            description: 'TikTok新加坡站官方网站',
+            tags: ['TikTok', '新加坡站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Singapore(新加坡站)',
+            description: 'TikTok新加坡站电商平台',
+            tags: ['TikTok', '新加坡站', '短视频电商'],
+            url: 'https://shop.tiktok.com/sg',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Malaysia(马来西亚站)',
+            description: 'TikTok马来西亚站官方网站',
+            tags: ['TikTok', '马来西亚站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Malaysia(马来西亚站)',
+            description: 'TikTok马来西亚站电商平台',
+            tags: ['TikTok', '马来西亚站', '短视频电商'],
+            url: 'https://shop.tiktok.com/my',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Thailand(泰国站)',
+            description: 'TikTok泰国站官方网站',
+            tags: ['TikTok', '泰国站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Thailand(泰国站)',
+            description: 'TikTok泰国站电商平台',
+            tags: ['TikTok', '泰国站', '短视频电商'],
+            url: 'https://shop.tiktok.com/th',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Vietnam(越南站)',
+            description: 'TikTok越南站官方网站',
+            tags: ['TikTok', '越南站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Vietnam(越南站)',
+            description: 'TikTok越南站电商平台',
+            tags: ['TikTok', '越南站', '短视频电商'],
+            url: 'https://shop.tiktok.com/vn',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Philippines(菲律宾站)',
+            description: 'TikTok菲律宾站官方网站',
+            tags: ['TikTok', '菲律宾站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Philippines(菲律宾站)',
+            description: 'TikTok菲律宾站电商平台',
+            tags: ['TikTok', '菲律宾站', '短视频电商'],
+            url: 'https://shop.tiktok.com/ph',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Indonesia(印尼站)',
+            description: 'TikTok印尼站官方网站',
+            tags: ['TikTok', '印尼站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Indonesia(印尼站)',
+            description: 'TikTok印尼站电商平台',
+            tags: ['TikTok', '印尼站', '短视频电商'],
+            url: 'https://shop.tiktok.com/id',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Germany(德国站)',
+            description: 'TikTok德国站官方网站',
+            tags: ['TikTok', '德国站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Germany(德国站)',
+            description: 'TikTok德国站电商平台',
+            tags: ['TikTok', '德国站', '短视频电商'],
+            url: 'https://shop.tiktok.com/de',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok France(法国站)',
+            description: 'TikTok法国站官方网站',
+            tags: ['TikTok', '法国站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop France(法国站)',
+            description: 'TikTok法国站电商平台',
+            tags: ['TikTok', '法国站', '短视频电商'],
+            url: 'https://shop.tiktok.com/fr',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Italy(意大利站)',
+            description: 'TikTok意大利站官方网站',
+            tags: ['TikTok', '意大利站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Italy(意大利站)',
+            description: 'TikTok意大利站电商平台',
+            tags: ['TikTok', '意大利站', '短视频电商'],
+            url: 'https://shop.tiktok.com/it',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Spain(西班牙站)',
+            description: 'TikTok西班牙站官方网站',
+            tags: ['TikTok', '西班牙站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Spain(西班牙站)',
+            description: 'TikTok西班牙站电商平台',
+            tags: ['TikTok', '西班牙站', '短视频电商'],
+            url: 'https://shop.tiktok.com/es',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Brazil(巴西站)',
+            description: 'TikTok巴西站官方网站',
+            tags: ['TikTok', '巴西站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Brazil(巴西站)',
+            description: 'TikTok巴西站电商平台',
+            tags: ['TikTok', '巴西站', '短视频电商'],
+            url: 'https://shop.tiktok.com/br',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Japan(日本站)',
+            description: 'TikTok日本站官方网站(无电商功能)',
+            tags: ['TikTok', '日本站', '短视频'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Korea(韩国站)',
+            description: 'TikTok韩国站官方网站(无电商功能)',
+            tags: ['TikTok', '韩国站', '短视频'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Australia(澳大利亚站)',
+            description: 'TikTok澳大利亚站官方网站',
+            tags: ['TikTok', '澳大利亚站', '短视频电商'],
+            url: 'https://www.tiktok.com/',
+            subcategory: 'tiktok'
+        },
+        {
+            title: 'TikTok Shop Australia(澳大利亚站)',
+            description: 'TikTok澳大利亚站电商平台',
+            tags: ['TikTok', '澳大利亚站', '短视频电商'],
+            url: 'https://shop.tiktok.com/au',
+            subcategory: 'tiktok'
+        },
     ],
     
     // 社交平台
@@ -460,6 +953,80 @@ const sitesData = {
             description: '社交新闻聚合平台，用户可以发布、投票、讨论各种主题内容',
             tags: ['社区论坛', '社交新闻', '兴趣小组'],
             url: 'https://www.reddit.com/',
+            subcategory: 'social-global'
+        },
+        
+        {
+            title: 'Vkontakte',
+            description: '俄罗斯及东欧地区流行的社交网络平台，用户可以进行社交互动、分享内容等。',
+            tags: ['社交网络', '俄罗斯社交', '东欧社交'],
+            url: 'https://vk.com/',
+            subcategory: 'social-global'
+        },
+        
+        {
+            title: 'Linkedin',
+            description: '全球最大的职业社交网站，用户可以建立职业人脉，分享工作经验、行业动态，寻找工作机会等。',
+            tags: ['职业社交', '求职招聘', '职场人脉'],
+            url: 'https://www.linkedin.com/',
+            subcategory: 'social-global'
+        },
+     
+        {
+            title: 'Azar',
+            description: '一款主打随机视频聊天的社交应用，用户可以与来自世界各地的人进行实时视频交流。',
+            tags: ['视频社交', '随机聊天', '国际社交'],
+            url: 'https://www.azar.com/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'LivU',
+            description: '提供实时视频聊天的社交平台，用户可以与不同国家和地区的人进行互动，具有多种社交功能。',
+            tags: ['视频社交', '实时互动', '国际交友'],
+            url: 'https://livu.com/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'Telegram',
+            description: '一款跨平台的即时通讯软件，注重隐私保护，用户可以创建群组、频道进行交流和信息分享。',
+            tags: ['即时通讯', '隐私保护', '群组交流'],
+            url: 'https://telegram.org/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'WhatsApp',
+            description: '全球广泛使用的即时通讯应用，支持多种语言，用户可以发送消息、语音通话、视频通话等。',
+            tags: ['即时通讯', '国际通讯', '多媒体消息'],
+            url: 'https://www.whatsapp.com/',
+            subcategory: 'social-global'
+        },
+      
+        {
+            title: 'Myspace',
+            description: '曾经流行的社交网络平台，用户可以创建个人主页，分享音乐、照片、博客等内容，具有社交和娱乐功能。',
+            tags: ['社交网络', '音乐分享', '个人主页'],
+            url: 'https://www.myspace.com/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'Discord',
+            description: '主要面向游戏玩家的即时通讯和社交平台，用户可以创建服务器，进行语音、文字聊天，分享游戏经验等。',
+            tags: ['游戏社交', '即时通讯', '语音聊天'],
+            url: 'https://discord.com/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'Flickr',
+            description: '知名的图片分享和存储平台，用户可以上传、存储、分享照片和视频，同时也有社交互动功能。',
+            tags: ['图片分享', '照片存储', '社交摄影'],
+            url: 'https://www.flickr.com/',
+            subcategory: 'social-global'
+        },
+        {
+            title: 'Quora',
+            description: '一个知识问答社区，用户可以提出问题、回答问题，分享知识和经验，涵盖各种领域和话题。',
+            tags: ['知识问答', '社区交流', '知识分享'],
+            url: 'https://www.quora.com/',
             subcategory: 'social-global'
         },
         {
@@ -541,8 +1108,178 @@ const sitesData = {
         }
     ],
     
-    // 建站工具
+    // SEO 工具
     website: [
+        {
+            title: 'Google Search Console',
+            description: 'Google官方网站管理工具，提供网站索引状态、搜索流量、关键词排名等数据',
+            tags: ['谷歌', '网站管理', 'SEO优化'],
+            url: 'https://search.google.com/search-console',
+            subcategory: 'google',
+            isRecommended: true
+        },
+        {
+            title: 'Google Analytics',
+            description: '谷歌官方网站分析工具，提供全面的网站流量和用户行为数据，支持自定义报告和目标跟踪',
+            tags: ['网站分析', '流量统计', '用户行为'],
+            url: 'https://analytics.google.com/',
+            subcategory: 'google',
+            needsMagic: true
+        },
+        {
+            title: 'Google My Business',
+            description: '管理Google地图和搜索中的商家信息，提升本地SEO效果',
+            tags: ['本地SEO', '商家信息', '地图优化'],
+            url: 'https://business.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google PageSpeed Insights',
+            description: '分析网页加载速度和性能，提供优化建议，有助于提升用户体验和搜索排名',
+            tags: ['网页性能', '速度优化', '用户体验'],
+            url: 'https://pagespeed.web.dev/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Trends',
+            description: '查看特定关键词在不同地区和时间段的搜索趋势变化',
+            tags: ['关键词趋势', '市场分析', '搜索热度'],
+            url: 'https://trends.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Ads',
+            description: '谷歌广告平台，用于创建和管理搜索、展示和视频广告系列',
+            tags: ['在线广告', '竞价排名', 'PPC'],
+            url: 'https://ads.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Merchant Center',
+            description: '商家中心平台，用于上传和管理产品信息，使其显示在Google购物和其他Google服务中',
+            tags: ['电商', '产品目录', '谷歌购物'],
+            url: 'https://merchants.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Skillshop',
+            description: '谷歌学院，提供Google产品和服务的免费在线培训和认证',
+            tags: ['培训', '认证', '学习资源'],
+            url: 'https://skillshop.exceedlms.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Digital Garage',
+            description: '提供数字营销和职业发展方面的免费课程和工具',
+            tags: ['数字营销', '技能培训', '职业发展'],
+            url: 'https://learndigital.withgoogle.com/digitalgarage/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google AdSense',
+            description: '网站广告变现平台，允许网站发布者在自己的网站上投放Google广告并获得收入',
+            tags: ['网站变现', '广告发布', '联盟计划'],
+            url: 'https://www.google.com/adsense/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google 商品数据规范',
+            description: '为商家提供的产品数据格式指南，帮助正确提交产品到Google购物',
+            tags: ['电商', '产品数据', '数据规范'],
+            url: 'https://support.google.com/merchants',
+            subcategory: 'google'
+        },
+        {
+            title: 'Chrome 网上应用店',
+            description: 'Google Chrome浏览器的插件和扩展程序商店',
+            tags: ['浏览器插件', 'Chrome扩展', '工具'],
+            url: 'https://chrome.google.com/webstore/category/extensions',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google 搜索',
+            description: '全球最大的搜索引擎，提供网页、图片、视频和其他信息的搜索服务',
+            tags: ['搜索引擎', '信息检索', '网络浏览'],
+            url: 'https://www.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Tag Manager',
+            description: '标签管理系统，无需修改代码即可部署和更新营销标签',
+            tags: ['网站标签', '代码管理', '跟踪代码'],
+            url: 'https://tagmanager.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google 帮助中心',
+            description: '提供Google各产品和服务的全面帮助文档和支持资源',
+            tags: ['帮助文档', '技术支持', '问题解决'],
+            url: 'https://support.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Merchant Center 帮助',
+            description: '专门针对商家中心的详细帮助文档和指南',
+            tags: ['电商', 'GMC帮助', '商家支持'],
+            url: 'https://support.google.com/merchants',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google MCC 经理账号',
+            description: '管理多个Google Ads账号的工具，适合代理商和大型广告主',
+            tags: ['账号管理', '多账号', '广告代理'],
+            url: 'https://ads.google.com/home/tools/manager-accounts/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google 移动适配性测试',
+            description: '检测网站是否对移动设备友好，并提供优化建议',
+            tags: ['移动优化', '响应式设计', '用户体验'],
+            url: 'https://search.google.com/test/mobile-friendly',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Drive',
+            description: '云存储服务，可存储、同步和共享文件',
+            tags: ['云存储', '文件共享', '在线备份'],
+            url: 'https://drive.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Docs',
+            description: '在线文档编辑工具，支持实时协作和自动保存',
+            tags: ['在线文档', '协作工具', '办公软件'],
+            url: 'https://docs.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Search Central Blog',
+            description: '谷歌搜索中心博客，提供搜索引擎优化和网站管理的官方最新资讯',
+            tags: ['SEO资讯', '官方博客', '搜索动态'],
+            url: 'https://developers.google.com/search/blog',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Sheets',
+            description: '在线电子表格工具，支持多人协作编辑和自动保存',
+            tags: ['电子表格', '数据分析', '协作工具'],
+            url: 'https://sheets.google.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Market Finder',
+            description: '全球商机通工具，帮助企业发现和评估国际市场机会',
+            tags: ['国际营销', '市场分析', '全球扩张'],
+            url: 'https://marketfinder.thinkwithgoogle.com/',
+            subcategory: 'google'
+        },
+        {
+            title: 'Google Ads 帮助中心',
+            description: '提供Google广告平台的详细使用指南、最佳实践和问题解决方案',
+            tags: ['广告帮助', '营销指南', '技术支持'],
+            url: 'https://support.google.com/google-ads/',
+            subcategory: 'google'
+        },
         {
             title: 'SEMrush',
             description: '深度SEO分析：竞品关键词排名、自然搜索流量、付费广告词、反向链接分析和内容营销洞察',
@@ -556,14 +1293,6 @@ const sitesData = {
             description: '强大的外链数据库、关键词排名追踪和内容分析工具，专注于链接和关键词分析',
             tags: ['外链分析', '关键词排名', 'SEO工具'],
             url: 'https://ahrefs.com/',
-            subcategory: 'analytics',
-            needsMagic: true
-        },
-        {
-            title: 'Google Analytics',
-            description: '谷歌官方网站分析工具，提供全面的网站流量和用户行为数据，支持自定义报告和目标跟踪',
-            tags: ['网站分析', '流量统计', '用户行为'],
-            url: 'https://analytics.google.com/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -738,13 +1467,6 @@ const sitesData = {
             url: 'https://www.hotjar.com/',
             subcategory: 'analytics',
             needsMagic: true
-        },
-        {
-            title: 'Namecheap',
-            description: '域名注册和托管服务提供商',
-            tags: ['域名注册', '托管服务', '互联网服务'],
-            url: 'https://www.namecheap.com/',
-            subcategory: 'domain'
         },
         {
             title: 'GoDaddy',
@@ -1184,6 +1906,103 @@ const sitesData = {
             subcategory: 'keyword',
             needsMagic: true
         },
+        {
+        title: 'Google Keyword Planner',
+        description: 'Google官方免费工具，提供搜索量、竞争程度预测，适合Google Ads用户',
+        tags: ['关键词研究', 'Google Ads', '免费工具'],
+        url: 'https://ads.google.com/home/tools/keyword-planner/',
+        subcategory: 'keyword',
+        needsMagic: false
+    },
+    {
+        title: 'Ahrefs Keywords Explorer',
+        description: '强大的付费关键词工具，提供关键词难度、点击量分布和父话题分析',
+        tags: ['SEO', '关键词研究', '付费工具'],
+        url: 'https://ahrefs.com/keywords-explorer',
+        subcategory: 'keyword',
+        needsMagic: true
+        },
+        {
+            title: 'SEMrush Keyword Magic Tool',
+            description: '提供长尾关键词挖掘、竞争分析和搜索意图分类',
+            tags: ['SEO', '关键词研究', '付费工具'],
+            url: 'https://www.semrush.com/keyword-magic-tool/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Moz Keyword Explorer',
+            description: '提供关键词优先级评分，适合SEO优化',
+            tags: ['SEO', '关键词研究', '付费工具'],
+            url: 'https://moz.com/explorer',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Ubersuggest',
+            description: 'Neil Patel开发的工具，提供搜索量、CPC和SEO建议',
+            tags: ['关键词研究', 'SEO', '免费工具'],
+            url: 'https://neilpatel.com/ubersuggest/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+        {
+            title: 'AnswerThePublic',
+            description: '可视化展示用户搜索问题，适合内容创作',
+            tags: ['长尾关键词', '内容灵感', '免费工具'],
+            url: 'https://answerthepublic.com/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+        {
+            title: 'AlsoAsked',
+            description: '挖掘"People Also Ask"数据，揭示相关搜索问题',
+            tags: ['长尾关键词', 'SEO', '内容研究'],
+            url: 'https://alsoasked.com/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+        {
+            title: 'Keywords Everywhere',
+            description: '浏览器插件，在Google/Youtube等页面显示搜索量和CPC数据',
+            tags: ['关键词研究', '浏览器插件', '付费工具'],
+            url: 'https://keywordseverywhere.com/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+        {
+            title: 'Keyword Tool',
+            description: '支持Google、YouTube、亚马逊等平台的关键词建议',
+            tags: ['关键词研究', '电商SEO', '免费工具'],
+            url: 'https://keywordtool.io/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+        {
+            title: 'MerchantWords',
+            description: '专注亚马逊等电商平台，分析买家搜索习惯',
+            tags: ['电商关键词', '亚马逊SEO', '付费工具'],
+            url: 'https://www.merchantwords.com/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Local Falcon',
+            description: '本地SEO工具，可视化分析关键词在特定地理位置的排名',
+            tags: ['本地SEO', '关键词研究', '付费工具'],
+            url: 'https://localfalcon.com/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Google Trends',
+            description: '分析关键词热度趋势和地域分布',
+            tags: ['关键词趋势', '免费工具', '市场研究'],
+            url: 'https://trends.google.com/',
+            subcategory: 'keyword',
+            needsMagic: false
+        },
+
         {
             title: 'Ubersuggest',
             description: '综合性SEO工具，提供关键词建议、内容创意和竞争分析',
@@ -4505,6 +5324,42 @@ const sitesData = {
             subcategory: 'other_tools',
             needsMagic: true
         }
+    ],
+    
+    // 合租平台
+    rent: [
+        {
+            title: '银河录像局',
+            description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
+            tags: ['AI账号', '共享平台', '账号合租'],
+            url: 'https://nf.video/wKHLL',
+            subcategory: 'ai-account',
+            isRecommended: true
+        },
+        {
+            title: '银河录像局',
+            description: '社交媒体账号共享平台，提供各类社交媒体账号的共享服务',
+            tags: ['社交媒体', '账号共享', '合租平台'],
+            url: 'https://nf.video/wKHLL',
+            subcategory: 'social-account',
+            isRecommended: true
+        },
+        {
+            title: '野火',
+            description: '软件账号共享平台，提供各类软件工具的账号共享服务',
+            tags: ['软件账号', '共享平台', '合租服务'],
+            url: 'https://yeka.ai/',
+            subcategory: 'software-account',
+            isRecommended: true
+        },
+        {
+            title: '环球巴士',
+            description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
+            tags: ['AI账号', '共享平台', '账号合租'],
+            url: 'https://universalbus.cn/?s=X5U8JppXcf',
+            subcategory: 'ai-account',
+            isRecommended: true
+        }
     ]
 }; 
 
@@ -4848,3 +5703,83 @@ function loadSitesByCategory(siteData, gridId) {
         });
     }
 }
+
+// 从localStorage获取数据或使用默认数据
+function getSitesData() {
+    // 尝试从localStorage获取数据
+    const categories = JSON.parse(localStorage.getItem('categories')) || [];
+    const sites = JSON.parse(localStorage.getItem('sites')) || [];
+    
+    // 返回处理后的数据
+    return {
+        categories: categories,
+        sites: sites
+    };
+}
+
+// 导出数据供其他JS文件使用
+window.sitesData = getSitesData();
+
+// ... existing code ...
+
+// 加载电商平台数据
+function loadEcommerceSites() {
+    loadSitesByCategory(sitesData.ecommerce, 'ecommerce-grid');
+}
+
+// 加载社交平台数据
+function loadSocialSites() {
+    loadSitesByCategory(sitesData.social, 'social-grid');  
+}
+
+// 加载SEO工具数据
+function loadWebsiteTools() {
+    loadSitesByCategory(sitesData.website, 'website-tools-grid');
+}
+
+// 加载AI对话工具数据
+function loadAiChatTools() {
+    loadSitesByCategory(sitesData.ai_chat, 'ai-chat-grid');
+}
+
+// 加载AI写作工具数据
+function loadAiWritingTools() {
+    loadSitesByCategory(sitesData.ai_writing, 'ai-writing-grid');
+}
+
+// 加载AI图像工具数据
+function loadAiImageTools() {
+    loadSitesByCategory(sitesData.ai_image, 'ai-image-grid');
+}
+
+// 加载AI视频工具数据
+function loadAiVideoTools() {
+    loadSitesByCategory(sitesData.ai_video, 'ai-video-grid');
+}
+
+// 加载AI音频工具数据
+function loadAiAudioTools() {
+    loadSitesByCategory(sitesData.ai_audio, 'ai-audio-grid');
+}
+
+// 加载AI设计工具数据
+function loadAiDesignTools() {
+    loadSitesByCategory(sitesData.ai_design, 'ai-design-grid');
+}
+
+// 加载AI编程工具数据
+function loadAiCodingTools() {
+    loadSitesByCategory(sitesData.ai_coding, 'ai-coding-grid');
+}
+
+// 加载AI提示词工具
+function loadAiPromptsTools() {
+    loadSitesByCategory(aiPromptsData, 'ai-prompts-grid');
+}
+
+// 加载AI搜索工具
+function loadAiSearchTools() {
+    loadSitesByCategory(aiSearchData, 'ai-search-grid');
+}
+
+// ... existing code ...

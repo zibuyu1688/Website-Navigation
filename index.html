@@ -190,7 +190,7 @@
                 </a>
             </li>
             <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this)">
+                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ecommerce');">
                     <i class="bi bi-shop"></i>
                     电商平台
                 </a>
@@ -221,6 +221,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('tiktok')">
+                            TikTok
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('other-ecommerce')">
                             其他
                         </a>
@@ -245,15 +250,45 @@
                     </li>
                 </ul>
             </li>
+        
+            <li class="nav-item has-submenu">
+                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('rent');">
+                    <i class="bi bi-people-fill"></i>
+                    合租平台
+                </a>
+                <ul class="nav-submenu submenu-rent">
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('ai-account')">
+                            AI账号共享
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('social-account')">
+                            社交媒体账号
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('software-account')">
+                            软件账号
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('website');">
                     <i class="bi bi-globe"></i>
-                    建站工具
+                    SEO 工具
                 </a>
                 <ul class="nav-submenu submenu-website">
                     <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('google')">
+                            Google大全
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('seo')">
-                            SEO工具
+                            综合工具
                         </a>
                     </li>
                     <li class="nav-item">
@@ -790,6 +825,7 @@
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('ebay')">Ebay</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('lazada')">Lazada</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('shopee')">Shopee</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('tiktok')">TikTok</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('other')">其他</button>
                 </div>
                 <div class="site-grid" id="ecommerce-grid">
@@ -813,15 +849,16 @@
                 </div>
             </div>
 
-            <!-- 建站工具 -->
+            <!-- SEO 工具 -->
             <div id="website-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-globe"></i> 建站工具</h2>
+                    <h2><i class="bi bi-globe"></i> SEO 工具</h2>
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('seo')">SEO工具</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('google')">Google大全</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('seo')">综合工具</button>
                     <button class="subcategory-btn" onclick="filterSubcategory('keyword')">关键字工具</button>
                     <button class="subcategory-btn" onclick="filterSubcategory('analytics')">网站分析</button>
                     <button class="subcategory-btn" onclick="filterSubcategory('domain')">域名注册</button>
@@ -838,7 +875,7 @@
                     <button class="subcategory-btn" onclick="filterSubcategory('learning')">学习资料</button>
                 </div>
                 <div class="site-grid" id="website-tools-grid">
-                    <!-- 建站工具网站卡片将通过JavaScript动态添加 -->
+                    <!-- SEO 工具网站卡片将通过JavaScript动态添加 -->
                 </div>
             </div>
             
@@ -1031,6 +1068,23 @@
                 </div>
                 <div id="ai-search-grid" class="site-grid">
                     <!-- 网站卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+
+            <!-- 合租平台 -->
+            <div id="rent-section" class="category-section">
+                <div class="category-title">
+                    <h2><i class="bi bi-people-fill"></i> 合租平台</h2>
+                </div>
+                <!-- 二级分类导航 -->
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterRentSubcategory('all')">全部</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('ai-account')">AI账号共享</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('social-account')">社交媒体账号</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('software-account')">软件账号</button>
+                </div>
+                <div class="site-grid" id="rent-grid">
+                    <!-- 合租平台网站卡片将通过JavaScript动态添加 -->
                 </div>
             </div>
         </div>

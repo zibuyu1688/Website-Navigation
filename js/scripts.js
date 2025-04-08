@@ -171,6 +171,7 @@ function handleCategoryVisibility() {
     initializeCardVisibility('ai-coding-grid');
     initializeCardVisibility('ai-prompts-grid');
     initializeCardVisibility('ai-search-grid');
+    initializeCardVisibility('rent-grid');
 }
 
 // 加载网站数据
@@ -197,7 +198,7 @@ function loadSites() {
     // 初始化卡片可见性
     initializeCardVisibility('social-grid');
     
-    // 加载建站工具
+    // 加载SEO工具
     const websiteToolsGrid = document.getElementById('website-tools-grid');
     websiteToolsGrid.innerHTML = '';
     
@@ -323,7 +324,7 @@ function loadSites() {
     handleCategoryVisibility();
 }
 
-// 过滤建站工具二级分类
+// 过滤SEO工具二级分类
 function filterSubcategory(subcategory) {
     // 更新按钮状态
     document.querySelectorAll('#website-section .subcategory-btn').forEach(btn => {
@@ -1005,6 +1006,9 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
 
 // 显示分类
 function showCategory(category) {
+    // 要滚动到的目标分类节点ID
+    let targetSectionId = '';
+    
     // 清除搜索状态 - 隐藏搜索结果区域
     const searchResultsSection = document.getElementById('search-results-section');
     if (searchResultsSection) {
@@ -1029,6 +1033,7 @@ function showCategory(category) {
     document.getElementById('ai-coding-section').style.display = 'none';
     document.getElementById('ai-prompts-section').style.display = 'none';
     document.getElementById('ai-search-section').style.display = 'none';
+    document.getElementById('rent-section').style.display = 'none';
 
     // 如果是首页，显示所有分类
     if (category === 'home') {
@@ -1044,6 +1049,7 @@ function showCategory(category) {
         document.getElementById('ai-coding-section').style.display = 'block';
         document.getElementById('ai-prompts-section').style.display = 'block';
         document.getElementById('ai-search-section').style.display = 'block';
+        document.getElementById('rent-section').style.display = 'block';
         
         // 更新导航高亮状态
         updateNavHighlight('home');
@@ -1063,8 +1069,58 @@ function showCategory(category) {
         return;
     }
     
-    // 要滚动到的目标分类节点ID
-    let targetSectionId = '';
+    // 添加合租平台的处理
+    else if (category === 'rent' || 
+             category === 'ai-account' || 
+             category === 'social-account' || 
+             category === 'software-account') {
+        document.getElementById('rent-section').style.display = 'block';
+        targetSectionId = 'rent-section';
+        
+        // 过滤二级分类
+        if (category !== 'rent') {
+            // 更新按钮状态
+            document.querySelectorAll('#rent-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetBtn = document.querySelector(`#rent-section .subcategory-btn[onclick*="filterRentSubcategory('${category}')"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+            
+            // 过滤显示对应分类的网站
+            const rentGrid = document.getElementById('rent-grid');
+            if (rentGrid && sitesData.rent) {
+                rentGrid.innerHTML = '';
+                sitesData.rent.forEach(site => {
+                    if (site.subcategory === category) {
+                        rentGrid.innerHTML += createSiteCard(site);
+                    }
+                });
+            }
+        } else {
+            // 显示全部时，选中"全部"按钮并显示所有网站
+            document.querySelectorAll('#rent-section .subcategory-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('#rent-section .subcategory-btn[onclick*="filterRentSubcategory(\'all\')"]').classList.add('active');
+            
+            // 显示所有合租平台网站
+            const rentGrid = document.getElementById('rent-grid');
+            if (rentGrid && sitesData.rent) {
+                rentGrid.innerHTML = '';
+                sitesData.rent.forEach(site => {
+                    rentGrid.innerHTML += createSiteCard(site);
+                });
+            }
+        }
+        
+        // 初始化卡片可见性
+        initializeCardVisibility('rent-grid');
+        
+        // 更新导航栏高亮状态
+        updateNavHighlight('rent');
+    }
 
     // 处理特定电商网站的情况
     const ecommerceWebsites = {
@@ -1073,6 +1129,7 @@ function showCategory(category) {
         'ebay': 'cross_border_ecommerce',
         'lazada': 'cross_border_ecommerce',
         'shopee': 'cross_border_ecommerce',
+        'tiktok': 'cross_border_ecommerce',
         'other-ecommerce': 'other_ecommerce'
     };
 
@@ -1132,6 +1189,9 @@ function showCategory(category) {
                 btn.classList.remove('active');
             });
             document.querySelector('#ecommerce-section .subcategory-btn[onclick*="filterEcommerceSubcategory(\'all\')"]').classList.add('active');
+            
+            // 确保显示所有电商平台网站
+            filterEcommerceSubcategory('all');
         }
         
         // 更新导航栏高亮状态
@@ -1161,6 +1221,7 @@ function showCategory(category) {
         // 更新导航栏高亮状态
         updateNavHighlight('social');
     } else if (category === 'website' || 
+               category === 'google' || 
                category === 'seo' || 
                category === 'keyword' || 
                category === 'analytics' || 
@@ -1685,7 +1746,7 @@ function getCategoryDisplayName(categoryKey) {
     const categoryMap = {
         'ecommerce': '电商平台',
         'social': '社交平台',
-        'website': '建站工具',
+        'website': 'SEO 工具',
         'ai_chat': 'AI对话',
         'ai_writing': 'AI写作',
         'ai_image': 'AI图像',
@@ -1784,6 +1845,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 为所有侧边栏和底部分类链接添加监听器，确保在搜索状态下点击也能切换类目
     initCategoryLinks();
+    
+    // 加载合租平台数据
+    loadRentSites();
 });
 
 // 清除搜索框内容并恢复首页状态
@@ -1830,7 +1894,7 @@ function organizeFooterCategories() {
     const categories = [
         { id: 'ecommerce', icon: 'bi-shop', text: '电商平台' },
         { id: 'social', icon: 'bi-people', text: '社交平台' },
-        { id: 'website', icon: 'bi-globe', text: '建站工具' },
+        { id: 'website', icon: 'bi-globe', text: 'SEO 工具' },
         { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI对话' },
         { id: 'ai_writing', icon: 'bi-pen', text: 'AI写作' },
         { id: 'ai_image', icon: 'bi-image', text: 'AI图像' },
@@ -2159,6 +2223,7 @@ function filterSitesByName(siteName, gridId) {
         'ebay': 'ebay',
         'lazada': 'lazada',
         'shopee': 'shopee',
+        'tiktok': 'tiktok',
         'other-ecommerce': 'other'
     };
     
@@ -2196,6 +2261,7 @@ function filterSitesByName(siteName, gridId) {
             'ebay': ['ebay'],
             'lazada': ['lazada'],
             'shopee': ['shopee'],
+            'tiktok': ['tiktok', '抖音'],
             'other-ecommerce': ['other']
         };
         
@@ -2283,4 +2349,108 @@ function filterSitesByName(siteName, gridId) {
             }
         });
     }
-} 
+}
+
+// 初始化合租平台数据
+const rentData = [
+    {
+        title: '银河录像局',
+        description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
+        tags: ['AI账号', '共享平台', '账号合租'],
+        url: 'https://nf.video/wKHLL',
+        subcategory: 'ai-account',
+        isRecommended: true
+    },
+    {
+        title: '银河录像局',
+        description: '社交媒体账号共享平台，提供各类社交媒体账号的共享服务',
+        tags: ['社交媒体', '账号共享', '合租平台'],
+        url: 'https://nf.video/wKHLL',
+        subcategory: 'social-account',
+        isRecommended: true
+    },
+    {
+        title: '野火',
+        description: '软件账号共享平台，提供各类软件工具的账号共享服务',
+        tags: ['软件账号', '共享平台', '合租服务'],
+        url: 'https://yeka.ai/',
+        subcategory: 'software-account',
+        isRecommended: true
+    }
+];
+
+// 更新子分类按钮状态
+function updateSubcategoryButtons(sectionId, activeSubcategory) {
+    const buttons = document.querySelectorAll(`#${sectionId} .subcategory-btn`);
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeButton = document.querySelector(`#${sectionId} .subcategory-btn[onclick*="${activeSubcategory}"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+}
+
+// 加载合租平台数据
+function loadRentSites() {
+    const rentGrid = document.getElementById('rent-grid');
+    if (!rentGrid) return;
+    
+    rentGrid.innerHTML = '';
+    
+    if (sitesData.rent) {
+        sitesData.rent.forEach(site => {
+            rentGrid.innerHTML += createSiteCard(site);
+        });
+    }
+    
+    // 初始化卡片可见性
+    initializeCardVisibility('rent-grid');
+}
+
+// 筛选合租平台子分类
+function filterRentSubcategory(subcategory) {
+    const rentGrid = document.getElementById('rent-grid');
+    if (!rentGrid) return;
+    
+    // 更新按钮状态
+    updateSubcategoryButtons('rent-section', subcategory);
+    
+    rentGrid.innerHTML = '';
+    
+    if (sitesData.rent) {
+        sitesData.rent.forEach(site => {
+            if (subcategory === 'all' || site.subcategory === subcategory) {
+                rentGrid.innerHTML += createSiteCard(site);
+            }
+        });
+    }
+    
+    // 初始化卡片可见性
+    initializeCardVisibility('rent-grid');
+}
+
+// 在页面加载时初始化
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    
+    // 加载合租平台数据
+    loadRentSites();
+    
+    // 添加合租平台到handleCategoryVisibility函数中
+    handleCategoryVisibility = function() {
+        initializeCardVisibility('ecommerce-grid');
+        initializeCardVisibility('social-grid');
+        initializeCardVisibility('website-tools-grid');
+        initializeCardVisibility('ai-chat-grid');
+        initializeCardVisibility('ai-writing-grid');
+        initializeCardVisibility('ai-image-grid');
+        initializeCardVisibility('ai-video-grid');
+        initializeCardVisibility('ai-audio-grid');
+        initializeCardVisibility('ai-design-grid');
+        initializeCardVisibility('ai-coding-grid');
+        initializeCardVisibility('ai-prompts-grid');
+        initializeCardVisibility('ai-search-grid');
+        initializeCardVisibility('rent-grid');
+    }
+}); 
