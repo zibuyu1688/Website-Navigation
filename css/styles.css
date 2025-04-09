@@ -1370,108 +1370,41 @@ body {
     color: #ff9800;
 }
 
+/* 调整SEO工具部分的二级分类导航样式 */
 #website-section .subcategory-nav {
     background: linear-gradient(to right, rgba(241,245,255,0.9), rgba(230,238,255,0.9));
     border: 1px solid rgba(93, 156, 236, 0.1);
-    row-gap: 10px; /* 行间距 */
+    row-gap: 12px; /* 增加行间距 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 改为两端对齐，增加间距 */
+    align-items: center;
+    padding: 12px 15px; /* 增加内边距 */
+    max-height: unset; /* 移除高度限制 */
+    overflow-y: visible; /* 确保内容可见 */
 }
 
 #website-section .subcategory-btn {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 4px 6px; /* 增加按钮边距 */
+    padding: 7px 14px; /* 增加内边距使按钮更大 */
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    min-width: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 添加轻微阴影 */
 }
 
-#website-section .subcategory-btn:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #5D9CEC;
-    box-shadow: 0 4px 10px rgba(93, 156, 236, 0.15);
-}
-
-#website-section .subcategory-btn.active {
-    background: linear-gradient(45deg, #5D9CEC, #7FB5FF);
-}
-
-/* 添加一些图标到特定的建站工具按钮上 */
-#website-section .subcategory-btn[onclick*="'seo'"] {
-    padding-left: 36px;
-    position: relative;
-}
-
-#website-section .subcategory-btn[onclick*="'seo'"]:before {
-    content: "\F27E";
-    font-family: 'bootstrap-icons';
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #5D9CEC;
-}
-
-#website-section .subcategory-btn[onclick*="'domain'"] {
-    padding-left: 36px;
-    position: relative;
-}
-
-#website-section .subcategory-btn[onclick*="'domain'"]:before {
-    content: "\F18E";
-    font-family: 'bootstrap-icons';
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #5D9CEC;
-}
-
-#website-section .subcategory-btn[onclick*="'analytics'"] {
-    padding-left: 36px;
-    position: relative;
-}
-
-#website-section .subcategory-btn[onclick*="'analytics'"]:before {
-    content: "\F2FD";
-    font-family: 'bootstrap-icons';
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #5D9CEC;
-}
-
-/* 导航包装容器 - 不再需要，但保留样式以避免页面结构错误 */
-.subcategory-nav-wrapper {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-/* 导航滚动按钮 - 不再需要 */
-.nav-scroll-button {
-    display: none; /* 隐藏滚动按钮 */
-}
-
-/* 美化网站分类导航标题 */
-#website-section .category-title:before {
-    background: linear-gradient(to bottom, #5D9CEC, #7FB5FF);
-}
-
-#website-section .category-title h2 i {
-    color: #5D9CEC;
-}
-
-/* 针对AI视频分类的特殊样式，因为它的分类项较多 */
-#ai-video-section .subcategory-nav {
-    row-gap: 6px; /* 行间距更小 */
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#ai-video-section .subcategory-btn {
-    padding: 7px 14px; /* 稍微减小内边距 */
-    font-size: 0.85rem; /* 稍微减小字体 */
-    margin: 3px 2px; /* 减少垂直边距 */
-}
-
-/* 为容器添加滚动到顶部的过渡动画 */
-.subcategory-nav:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+/* 确保行分隔符完全占据一行 */
+#website-section .subcategory-nav .row-break {
+    flex-basis: 100%; 
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* 搜索框边框效果容器 */

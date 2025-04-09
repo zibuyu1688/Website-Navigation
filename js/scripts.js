@@ -8,8 +8,11 @@ function createSiteCard(site) {
     const isRecommended = site.isRecommended || site.isPopular || site.tags.includes('推荐');
     const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> 强烈推荐</div>` : '';
     
+    // 处理subcategory，支持数组形式
+    const subcatValue = Array.isArray(site.subcategory) ? site.subcategory.join(' ') : (site.subcategory || '');
+    
     return `
-        <div class="site-card" data-subcategory="${site.subcategory || ''}" style="position: relative;">
+        <div class="site-card" data-subcategory="${subcatValue}" style="position: relative;">
             ${magicTag}
             ${recommendTag}
             <div class="card-content">
@@ -342,7 +345,11 @@ function filterSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -407,7 +414,11 @@ function filterEcommerceSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -476,7 +487,11 @@ function filterSocialSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -531,7 +546,11 @@ function filterAiWritingSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -586,7 +605,11 @@ function filterAiChatSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -955,7 +978,11 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -2258,6 +2285,21 @@ function balanceSubcategoryNav(nav) {
         let rows = [];
         let currentRow = [];
         let currentRowWidth = 0;
+        
+        // SEO工具分类特殊处理 - 强制两行排列
+        if (sectionId === 'website-section') {
+            // 第一行：全部 + 前6个按钮，共7个按钮
+            let row1 = buttonInfo.slice(0, 7);
+            
+            // 第二行：剩余按钮
+            let row2 = buttonInfo.slice(7);
+            
+            // 返回两行按钮
+            rows.push(row1);
+            if (row2.length > 0) rows.push(row2);
+            
+            return rows;
+        }
         
         // AI图像分类特殊处理 - 强制两行排列
         if (sectionId === 'ai-image-section') {

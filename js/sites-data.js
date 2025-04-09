@@ -8,11 +8,19 @@ const sitesData = {
     // 电商平台
     ecommerce: [
         {
+            title: '多类别测试站点',
+            description: '这是一个同时属于多个子类别的测试站点，用于验证subcategory数组功能',
+            tags: ['测试', '多类别', '跨境电商'],
+            url: 'https://example.com/',
+            subcategory: ['amazon', 'shopify', 'tiktok'],
+            isRecommended: true
+        },
+        {
             title: '亚马逊卖家中心',
             description: '亚马逊卖家平台，提供产品上传、订单管理、广告投放等功能',
             tags: ['亚马逊', '卖家平台', '跨境电商'],
             url: 'https://sellercentral.amazon.com/',
-            subcategory: 'amazon',
+            subcategory: ['amazon', 'other-ecommerce'],
             isRecommended: true
         },
         {
@@ -20,49 +28,49 @@ const sitesData = {
             description: '亚马逊品牌分析工具，提供关键词搜索、购物行为、商品比较等数据',
             tags: ['亚马逊', '数据分析', '品牌'],
             url: 'https://sellercentral.amazon.com/analytics/dashboard/',
-            subcategory: 'amazon'
+            subcategory: ['amazon', 'analytics']
         },
         {
             title: '美国前台',
             description: '亚马逊美国站购物网站，面向消费者的电子商务平台',
             tags: ['亚马逊', '美国站', '消费者平台'],
             url: 'https://www.amazon.com/',
-            subcategory: 'amazon'
+            subcategory: ['amazon']
         },
         {
             title: '美国站后台',
             description: '亚马逊美国站卖家平台，管理产品、订单和销售数据',
             tags: ['亚马逊', '美国站', '卖家后台'],
             url: 'https://sellercentral.amazon.com/',
-            subcategory: 'amazon'
+            subcategory: ['amazon', 'seller-platform']
         },
         {
             title: '英国站前台',
             description: '亚马逊英国站购物网站，面向英国消费者的电子商务平台',
             tags: ['亚马逊', '英国站', '消费者平台'],
             url: 'https://www.amazon.co.uk/',
-            subcategory: 'amazon'
+            subcategory: ['amazon']
         },
         {
             title: '英国站后台',
             description: '亚马逊英国站卖家平台，管理英国站产品、订单和销售数据',
             tags: ['亚马逊', '英国站', '卖家后台'],
             url: 'https://sellercentral.amazon.co.uk/',
-            subcategory: 'amazon'
+            subcategory: ['amazon', 'seller-platform']
         },
         {
             title: '日本站前台',
             description: '亚马逊日本站购物网站，面向日本消费者的电子商务平台',
             tags: ['亚马逊', '日本站', '消费者平台'],
             url: 'https://www.amazon.co.jp/',
-            subcategory: 'amazon'
+            subcategory: ['amazon']
         },
         {
             title: '日本站后台',
             description: '亚马逊日本站卖家平台，管理日本站产品、订单和销售数据',
             tags: ['亚马逊', '日本站', '卖家后台'],
             url: 'https://sellercentral-japan.amazon.com/',
-            subcategory: 'amazon'
+            subcategory: ['amazon', 'seller-platform']
         },
         {
             title: '德国站前台',
@@ -1483,20 +1491,13 @@ const sitesData = {
             url: 'https://support.google.com/google-ads/',
             subcategory: 'google'
         },
-        {
-            title: 'SEMrush',
-            description: '深度SEO分析：竞品关键词排名、自然搜索流量、付费广告词、反向链接分析和内容营销洞察',
-            tags: ['SEO分析', '关键词分析', '竞品分析'],
-            url: 'https://www.semrush.com/',
-            subcategory: 'analytics',
-            needsMagic: true
-        },
+        
         {
             title: 'Ahrefs',
             description: '强大的外链数据库、关键词排名追踪和内容分析工具，专注于链接和关键词分析',
             tags: ['外链分析', '关键词排名', 'SEO工具'],
             url: 'https://ahrefs.com/',
-            subcategory: 'analytics',
+            subcategory: ['analytics', 'seo'],
             needsMagic: true
         },
         {
@@ -1504,14 +1505,14 @@ const sitesData = {
             description: '专业SEO软件工具，帮助提升排名、增加流量并提高可见性',
             tags: ['SEO', '网站优化', '链接分析'],
             url: 'https://moz.com/products/pro',
-            subcategory: 'seo'
+            subcategory: ['analytics', 'seo'],
         },
         {
             title: 'helium10',
             description: '亚马逊店铺分析工具',
             tags: ['亚马逊', '店铺分析', '数据分析'],
             url: 'https://www.helium10.com/',
-            subcategory: 'analytics',
+            subcategory: ['analytics', 'amazon','seo'],
             needsMagic: true
         },
         {
@@ -1577,8 +1578,8 @@ const sitesData = {
             subcategory: 'content',
         },
         {
-            title: 'ChatGPT',
-            description: 'Quora国外版知乎',
+            title: 'Quora',
+            description: '国外版知乎',
             tags: ['Quora', '内容创作', '网络热帖'],
             url: 'https://www.quora.com/',
             subcategory: 'content',
@@ -1596,6 +1597,7 @@ const sitesData = {
             tags: ['HubSpot', '内容创作', '写作'],
             url: 'https://www.hubspot.com/blog-topic-generator',
             subcategory: 'content',
+
         },
         {
             title: 'ChatGPT',
@@ -2206,11 +2208,11 @@ const sitesData = {
         needsMagic: true
         },
         {
-            title: 'SEMrush Keyword Magic Tool',
+            title: 'SEMrush',
             description: '提供长尾关键词挖掘、竞争分析和搜索意图分类',
             tags: ['SEO', '关键词研究', '付费工具'],
             url: 'https://www.semrush.com/keyword-magic-tool/',
-            subcategory: 'keyword',
+            subcategory: ['keyword', 'seo'],
             needsMagic: true
         },
         {
@@ -2514,6 +2516,181 @@ const sitesData = {
             description: '免费电子邮件服务，提供大容量存储和多账户管理',
             tags: ['电子邮件', '免费邮箱', '账号资源'],
             url: 'https://www.gmx.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Fiverr',
+            description: '全球自由职业者平台，提供各种数字服务',
+            tags: ['自由职业', '远程工作', '数字服务'],
+            url: 'https://www.fiverr.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Upwork',
+            description: '专业自由职业者和客户连接平台',
+            tags: ['自由职业', '远程工作', '专业服务'],
+            url: 'https://www.upwork.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Freelancer',
+            description: '竞争性自由职业平台，适合各种项目',
+            tags: ['自由职业', '项目竞标', '远程工作'],
+            url: 'https://www.freelancer.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Guru',
+            description: '专注于创意和技术自由职业者的平台',
+            tags: ['创意工作', '自由职业', '技术专家'],
+            url: 'https://www.guru.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Giggrabbers',
+            description: '新兴的自由职业者服务平台',
+            tags: ['自由职业', '新兴平台', '远程工作'],
+            url: 'https://www.giggrabbers.com/',
+            subcategory: 'account'
+        },
+        {
+            title: '99designs',
+            description: '专注于设计领域的自由职业平台',
+            tags: ['设计服务', '创意工作', '自由职业'],
+            url: 'https://99designs.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Dribbble',
+            description: '设计师展示作品和寻找工作的平台',
+            tags: ['设计作品集', '设计师社区', '创意工作'],
+            url: 'https://dribbble.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Flexjobs',
+            description: '专注于远程和灵活工作机会的平台',
+            tags: ['远程工作', '灵活工作', '职业机会'],
+            url: 'https://www.flexjobs.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Vemploy',
+            description: '自由职业者和企业连接的平台',
+            tags: ['自由职业', '企业服务', '远程工作'],
+            url: 'https://www.vemploy.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Peopleperhour',
+            description: '按小时雇佣自由职业者的平台',
+            tags: ['自由职业', '按小时计费', '远程工作'],
+            url: 'https://www.peopleperhour.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Toptal',
+            description: '高端自由职业者平台，只接受前3%的顶尖人才',
+            tags: ['精英自由职业', '高端项目', '技术专家'],
+            url: 'https://www.toptal.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'SolidGigs',
+            description: '自由职业者工作机会聚合平台，附带资源工具',
+            tags: ['工作聚合', '自由职业工具', '资源整合'],
+            url: 'https://solidgigs.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'AngelList Talent',
+            description: '连接初创公司与自由职业者的平台',
+            tags: ['初创公司', '科技工作', '远程机会'],
+            url: 'https://angel.co/talent',
+            subcategory: 'account'
+        },
+        {
+            title: 'Truelancer',
+            description: '全球自由职业市场，适合各种技能水平',
+            tags: ['全球市场', '多样化项目', '自由职业'],
+            url: 'https://www.truelancer.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'DesignHill',
+            description: '专注于设计竞赛和自由职业的平台',
+            tags: ['设计竞赛', '创意工作', '自由职业'],
+            url: 'https://www.designhill.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Working Not Working',
+            description: '创意行业自由职业者专属平台',
+            tags: ['创意行业', '设计师网络', '自由职业'],
+            url: 'https://workingnotworking.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Gun.io',
+            description: '专注于软件开发自由职业者的高端平台',
+            tags: ['软件开发', '技术专家', '高端项目'],
+            url: 'https://gun.io/',
+            subcategory: 'account'
+        },
+        {
+            title: 'YunoJuno',
+            description: '英国为主的创意和技术自由职业平台',
+            tags: ['英国市场', '创意工作', '技术自由职业'],
+            url: 'https://www.yunojuno.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Moonlight',
+            description: '软件开发自由职业者平台，按项目付费',
+            tags: ['软件开发', '项目制', '技术工作'],
+            url: 'https://www.moonlightwork.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Crossover',
+            description: '长期远程工作机会平台，侧重全职自由职业',
+            tags: ['长期项目', '远程工作', '全职自由职业'],
+            url: 'https://www.crossover.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'We Work Remotely',
+            description: '远程工作职位板，包含自由职业机会',
+            tags: ['远程工作', '职位板', '自由职业'],
+            url: 'https://weworkremotely.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'RemoteOK',
+            description: '专注于远程工作的平台，含自由职业机会',
+            tags: ['远程工作', '数字游民', '自由职业'],
+            url: 'https://remoteok.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Pangian',
+            description: '全球远程工作和自由职业社区',
+            tags: ['全球机会', '远程社区', '自由职业'],
+            url: 'https://pangian.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Outvise',
+            description: '高端商业和技术自由职业者平台',
+            tags: ['商业咨询', '技术专家', '高端自由职业'],
+            url: 'https://www.outvise.com/',
+            subcategory: 'account'
+        },
+        {
+            title: 'Gigster',
+            description: '按项目组建自由职业团队的平台',
+            tags: ['团队项目', '软件开发', '自由职业网络'],
+            url: 'https://gigster.com/',
             subcategory: 'account'
         },
         {
