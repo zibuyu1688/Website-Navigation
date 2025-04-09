@@ -6194,6 +6194,14 @@ const sitesData = {
             isRecommended: true
         },
         {
+            title: '数字生命卡兹克',
+            description: 'AI TOP博主',
+            tags: ['AI', '数字生命卡兹克', 'KA21'],
+            url: 'https://mp.weixin.qq.com/s/Z66YRjY1EnC_hMgXE9_nnw',
+            subcategory: ['wechatblogger'],
+            isRecommended: true
+        },
+        {
             title: '视频号博主',
             description: '视频AI',
             tags: ['视频', 'AI'],
@@ -6202,10 +6210,18 @@ const sitesData = {
         },
         {
             title: '生财有术',
-            description: '致富社群',
-            tags: ['生财有书', 'AI学习'],
+            description: '一个只谈如何赚钱的社群，信息最早，最全的社群之一',
+            tags: ['生财有术', 'AI学习'],
             url: 'https://scys.com/',
             subcategory: ['studygroup']
+        },
+        {
+            title: '顾小北和他的朋友们',
+            description: '社交营销,SEO方面的专家，参加过他的优联荟',
+            tags: ['AI', '顾小北'],
+            url: 'https://guxiaobei.com/',
+            subcategory: ['studygroup'],
+            isRecommended: true
         },
         {
             title: '通往AGI之路',
@@ -6216,7 +6232,7 @@ const sitesData = {
         },
         {
             title: 'KA21工具导航',
-            description: 'KA21工具导航',
+            description: '我们群主，AI大神出品',
             tags: ['KA21工具导航', 'AI学习'],
             url: 'https://ka21.voidcool.top/',
             subcategory: ['articlecollection']
