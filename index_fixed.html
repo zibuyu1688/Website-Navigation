@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电商AI导航 - 电商工具及网站一站式导航</title>
+    <title>鐢靛晢AI瀵艰埅 - 鐢靛晢宸ュ叿鍙婄綉绔欎竴绔欏紡瀵艰埅</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* 搜索结果页面样式 */
+        /* 鎼滅储缁撴灉椤甸潰鏍峰紡 */
         #search-results-section {
             padding: 2rem 1rem;
             background-color: #fff;
@@ -34,7 +34,7 @@
         
         #search-results-section h2 i {
             margin-right: 10px;
-            color: #4285f4;
+            color: #4列285f4列;
         }
         
         #search-results-section .category-badge {
@@ -60,7 +60,7 @@
             display: block;
         }
         
-        /* 增强搜索框样式 */
+        /* 澧炲己鎼滅储妗嗘牱锟?*/
         .search-box {
             transition: all 0.3s ease;
         }
@@ -70,10 +70,10 @@
         }
         
         .search-input:focus {
-            box-shadow: 0 0 15px rgba(66, 133, 244, 0.3);
+            box-shadow: 0 0 15px rgba(66, 133, 24列4列, 0.3);
         }
         
-        /* 增强站点卡片样式 */
+        /* 澧炲己绔欑偣鍗＄墖鏍峰紡 */
         .search-results-grid .site-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -83,15 +83,15 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        /* 修复网格布局 - 强制使用4列 */
+        /* 淇缃戞牸甯冨眬 - 寮哄埗浣跨敤4列锟?*/
         .site-grid, #search-results-grid {
             display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
+            grid-template-columns: repeat(4列, 1fr) !important;
             gap: 20px !important;
             width: 100% !important;
         }
         
-        /* 确保所有卡片正确显示 */
+        /* 纭繚鎵€鏈夊崱鐗囨纭樉锟?*/
         .site-card {
             width: 100% !important;
             margin: 0 !important;
@@ -99,19 +99,19 @@
             box-sizing: border-box !important;
         }
         
-        /* 确保卡片内容不溢出 */
+        /* 纭繚鍗＄墖鍐呭涓嶆孩锟?*/
         .site-card .card-title {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
         
-        /* 隐藏多余卡片的CSS */
+        /* 闅愯棌澶氫綑鍗＄墖鐨凜SS */
         .site-card.hidden {
             display: none !important;
         }
         
-        /* 修复卡片内部布局 */
+        /* 淇鍗＄墖鍐呴儴甯冨眬 */
         .site-card .card-header {
             display: flex;
             align-items: center;
@@ -122,7 +122,7 @@
             width: 32px;
             height: 32px;
             object-fit: contain;
-            display: none; /* 隐藏logo */
+            display: none; /* 闅愯棌logo */
         }
         
         .site-card .card-description {
@@ -133,7 +133,7 @@
             line-height: 1.5;
         }
         
-        /* 显示更多按钮样式 */
+        /* 鏄剧ず鏇村鎸夐挳鏍峰紡 */
         .more-sites-btn-container {
             width: 100%;
             text-align: center;
@@ -145,8 +145,8 @@
             padding: 10px 25px;
             border-radius: 30px;
             background-color: transparent;
-            color: #4285f4;
-            border: 1px solid #4285f4;
+            color: #4列285f4列;
+            border: 1px solid #4列285f4列;
             cursor: pointer;
             font-weight: 500;
             overflow: hidden;
@@ -157,7 +157,7 @@
         
         .btn-101:hover {
             color: white;
-            background-color: #4285f4;
+            background-color: #4列285f4列;
         }
         
         .btn-101 svg {
@@ -176,34 +176,32 @@
     </style>
 </head>
 <body>
-    <!-- 侧边栏 -->
+    <!-- 渚ц竟锟?-->
     <div class="sidebar">
         <div class="sidebar-logo">
-            <img src="logo.svg" alt="AI365导航">
-            <span>AI365导航</span>
+            <img src="logo.svg" alt="AI365瀵艰埅">
+            <span>AI365瀵艰埅</span>
         </div>
         <ul class="nav-menu">
             <li class="nav-item">
                 <a class="nav-link active" onclick="showCategory('home')">
                     <i class="bi bi-house"></i>
-                    首页
+                    棣栭〉
                 </a>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ecommerce');">
                     <i class="bi bi-shop"></i>
-                    电商平台
+                    鐢靛晢骞冲彴
                 </a>
                 <ul class="nav-submenu submenu-ecommerce">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('amazon')">
-                            亚马逊
-                        </a>
+                            浜氶┈锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('aliexpress')">
-                            速卖通
-                        </a>
+                            閫熷崠锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('ebay')">
@@ -232,7 +230,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('other-ecommerce')">
-                            其他
+                            鍏朵粬
                         </a>
                     </li>
                 </ul>
@@ -240,32 +238,32 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('social');">
                     <i class="bi bi-people"></i>
-                    社交平台
+                    绀句氦骞冲彴
                 </a>
                 <ul class="nav-submenu submenu-social">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-global')">
-                            全球平台
+                            鍏ㄧ悆骞冲彴
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-china')">
-                            中国平台
+                            涓浗骞冲彴
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-influencer')">
-                            红人资源
+                            绾汉璧勬簮
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-marketing')">
-                            社交营销
+                            绀句氦钀ラ攢
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-analytics')">
-                            账号数据分析
+                            璐﹀彿鏁版嵁鍒嗘瀽
                         </a>
                     </li>
                 </ul>
@@ -274,22 +272,22 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('rent');">
                     <i class="bi bi-people-fill"></i>
-                    合租平台
+                    鍚堢骞冲彴
                 </a>
                 <ul class="nav-submenu submenu-rent">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('ai-account')">
-                            AI账号共享
+                            AI璐﹀彿鍏变韩
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('social-account')">
-                            社交媒体账号
+                            绀句氦濯掍綋璐﹀彿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('software-account')">
-                            软件账号
+                            杞欢璐﹀彿
                         </a>
                     </li>
                 </ul>
@@ -298,42 +296,41 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('website');">
                     <i class="bi bi-globe"></i>
-                    SEO 工具
+                    SEO 宸ュ叿
                 </a>
                 <ul class="nav-submenu submenu-website">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('google')">
-                            Google大全
+                            Google澶у叏
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('seo')">
-                            综合工具
+                            缁煎悎宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('keyword')">
-                            关键字工具
-                        </a>
+                            鍏抽敭瀛楀伐锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('analytics')">
-                            网站分析
+                            缃戠珯鍒嗘瀽
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('domain')">
-                            域名注册
+                            鍩熷悕娉ㄥ唽
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('server')">
-                            服务器IP代理
+                            鏈嶅姟锟?IP浠ｇ悊
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('payment')">
-                            收款工具
+                            鏀舵宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
@@ -343,42 +340,41 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('product-selection')">
-                            选品工具
+                            閫夊搧宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('account')">
-                            工作外包
+                            宸ヤ綔澶栧寘
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('temp-mail')">
-                            邮箱
+                            閭
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('ip-proxy')">
-                            联盟营销
+                            鑱旂洘钀ラ攢
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('browser')">
-                            指纹浏览器
-                        </a>
+                            鎸囩汗娴忚锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('backlink')">
-                            反向外链
+                            鍙嶅悜澶栭摼
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('content')">
-                            内容优化
+                            鍐呭浼樺寲
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('learning')">
-                            其他工具
+                            鍏朵粬宸ュ叿
                         </a>
                     </li>
                 </ul>
@@ -386,37 +382,36 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_chat');">
                     <i class="bi bi-chat-dots"></i>
-                    AI对话
+                    AI瀵硅瘽
                 </a>
                 <ul class="nav-submenu submenu-ai-chat">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('general_assistant')">
-                            通用AI助手
+                            閫氱敤AI鍔╂墜
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('entertainment_ai')">
-                            游戏与娱乐AI
+                            娓告垙涓庡ū涔怉I
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('role_play')">
-                            角色扮演与虚拟陪伴
-                        </a>
+                            瑙掕壊鎵紨涓庤櫄鎷熼櫔锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('multimodal_ai')">
-                            多模态AI助手
+                            澶氭ā鎬丄I鍔╂墜
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('professional_ai')">
-                            专业领域AI
+                            涓撲笟棰嗗煙AI
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('international_ai')">
-                            国际化AI助手
+                            鍥介檯鍖朅I鍔╂墜
                         </a>
                     </li>
                 </ul>
@@ -424,115 +419,100 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_writing');">
                     <i class="bi bi-pen"></i>
-                    AI写作
+                    AI鍐欎綔
                 </a>
                 <ul class="nav-submenu submenu-ai-writing">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('academic_paper')">
-                            学术论文写作
+                            瀛︽湳璁烘枃鍐欎綔
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('official_document')">
-                            公文与政务写作
-                        </a>
+                            鍏枃涓庢斂鍔″啓锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('fiction_writing')">
-                            小说与文学创作
-                        </a>
+                            灏忚涓庢枃瀛﹀垱锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('marketing_copy')">
-                            营销与商业文案
-                        </a>
+                            钀ラ攢涓庡晢涓氭枃锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('blog_media')">
-                            新媒体与博客写作
+                            鏂板獟浣撲笌鍗氬鍐欎綔
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('multilingual')">
-                            多语言写作与翻译
-                        </a>
+                            澶氳瑷€鍐欎綔涓庣炕锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('office_writing')">
-                            办公与综合写作
-                        </a>
+                            鍔炲叕涓庣患鍚堝啓锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('script_content')">
-                            脚本与创意内容
-                        </a>
+                            鑴氭湰涓庡垱鎰忓唴锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('summary_tools')">
-                            速读与摘要工具
-                        </a>
+                            閫熻涓庢憳瑕佸伐锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('interactive_writing')">
-                            互动式写作
-                        </a>
+                            浜掑姩寮忓啓锟?                        </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_image');">
                     <i class="bi bi-image"></i>
-                    AI图像
+                    AI鍥惧儚
                 </a>
                 <ul class="nav-submenu submenu-ai-image">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('general_image')">
-                            通用AI图片生成
+                            閫氱敤AI鍥剧墖鐢熸垚
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('portrait')">
-                            人像与头像生成
-                        </a>
+                            浜哄儚涓庡ご鍍忕敓锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('background')">
-                            背景与设计素材
-                        </a>
+                            鑳屾櫙涓庤璁＄礌锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('brand_design')">
-                            品牌与商业设计
-                        </a>
+                            鍝佺墝涓庡晢涓氳锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('photo_enhancement')">
-                            照片修复与增强
-                        </a>
+                            鐓х墖淇涓庡锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('anime')">
-                            动漫与二次元创作
+                            鍔ㄦ极涓庝簩娆″厓鍒涗綔
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('fun_tools')">
-                            娱乐与趣味工具
-                        </a>
+                            濞变箰涓庤叮鍛冲伐锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('fashion')">
-                            服装与时尚设计
-                        </a>
+                            鏈嶈涓庢椂灏氳锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('image_editing')">
-                            图像编辑与处理
-                        </a>
+                            鍥惧儚缂栬緫涓庡锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('professional_scene')">
-                            专业场景生成
+                            涓撲笟鍦烘櫙鐢熸垚
                         </a>
                     </li>
                 </ul>
@@ -540,90 +520,82 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_video');">
                     <i class="bi bi-film"></i>
-                    AI视频
+                    AI瑙嗛
                 </a>
                 <ul class="nav-submenu submenu-ai-video">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('text_to_video')">
-                            文本生成视频
+                            鏂囨湰鐢熸垚瑙嗛
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('image_to_video')">
-                            图片生成视频
+                            鍥剧墖鐢熸垚瑙嗛
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('video_editing')">
-                            视频编辑与增强
-                        </a>
+                            瑙嗛缂栬緫涓庡锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('digital_human')">
-                            AI数字人与虚拟主播
+                            AI鏁板瓧浜轰笌铏氭嫙涓绘挱
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('animation')">
-                            动画与卡通生成
-                        </a>
+                            鍔ㄧ敾涓庡崱閫氱敓锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('short_video')">
-                            短视频与社交媒体工具
+                            鐭棰戜笌绀句氦濯掍綋宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('speech_driven')">
-                            语音驱动视频
+                            璇煶椹卞姩瑙嗛
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('professional_video')">
-                            专业级视频生成
-                        </a>
+                            涓撲笟绾ц棰戠敓锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('opensource_tools')">
-                            开源与开发者工具
-                        </a>
+                            寮€婧愪笌寮€鍙戣€呭伐锟?                        </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_audio');">
                     <i class="bi bi-soundwave"></i>
-                    AI音频
+                    AI闊抽
                 </a>
                 <ul class="nav-submenu submenu-ai-audio">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('tts')">
-                            AI配音/文本转语音
-                        </a>
+                            AI閰嶉煶/鏂囨湰杞锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('music_generation')">
-                            AI音乐生成与创作
-                        </a>
+                            AI闊充箰鐢熸垚涓庡垱锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('speech_to_text')">
-                            语音转文字与录音助手
+                            璇煶杞枃瀛椾笌褰曢煶鍔╂墜
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('voice_conversion')">
-                            AI变声与语音处理
-                        </a>
+                            AI鍙樺０涓庤闊冲锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('audio_editing')">
-                            音频编辑与增强工具
-                        </a>
+                            闊抽缂栬緫涓庡寮哄伐锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('other_audio_tools')">
-                            其他工具
+                            鍏朵粬宸ュ叿
                         </a>
                     </li>
                 </ul>
@@ -631,37 +603,33 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_design');">
                     <i class="bi bi-palette"></i>
-                    AI设计
+                    AI璁捐
                 </a>
                 <ul class="nav-submenu submenu-ai-design">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('commerce_design')">
-                            平面与电商设计
-                        </a>
+                            骞抽潰涓庣數鍟嗚锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('ui_ux')">
-                            UI/UX与原型设计
-                        </a>
+                            UI/UX涓庡師鍨嬭锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('illustration')">
-                            插画与矢量设计
-                        </a>
+                            鎻掔敾涓庣煝閲忚锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('model_design')">
-                            3D与模型设计
-                        </a>
+                            3D涓庢ā鍨嬭锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('assistant_tools')">
-                            辅助设计工具
+                            杈呭姪璁捐宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('special_tools')">
-                            其他专项工具
+                            鍏朵粬涓撻」宸ュ叿
                         </a>
                     </li>
                 </ul>
@@ -669,42 +637,36 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_coding');">
                     <i class="bi bi-code-slash"></i>
-                    AI编程
+                    AI缂栫▼
                 </a>
                 <ul class="nav-submenu submenu-ai-coding">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('code_generation')">
-                            代码生成与补全
-                        </a>
+                            浠ｇ爜鐢熸垚涓庤ˉ锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('fullstack_dev')">
-                            全栈/端到端开发
-                        </a>
+                            鍏ㄦ爤/绔埌绔紑锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('design_to_code')">
-                            设计转代码
-                        </a>
+                            璁捐杞唬锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('code_review')">
-                            代码审查与测试
-                        </a>
+                            浠ｇ爜瀹℃煡涓庢祴锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('natural_language_dev')">
-                            自然语言交互开发
-                        </a>
+                            鑷劧璇█浜や簰寮€锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('low_code')">
-                            低代码/无代码平台
-                        </a>
+                            浣庝唬锟?鏃犱唬鐮佸钩锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('cloud_ide')">
-                            云端IDE与编辑器
+                            浜戠IDE涓庣紪杈戝櫒
                         </a>
                     </li>
                 </ul>
@@ -712,37 +674,34 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_prompts');">
                     <i class="bi bi-lightbulb"></i>
-                    AI提示词
-                </a>
+                    AI鎻愮ず锟?                </a>
                 <ul class="nav-submenu submenu-ai-prompts">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('prompt_platforms')">
-                            综合提示词平台
-                        </a>
+                            缁煎悎鎻愮ず璇嶅钩锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('sd_tools')">
-                            Stable Diffusion专属工具
+                            Stable Diffusion涓撳睘宸ュ叿
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('chatgpt_prompts')">
-                            ChatGPT提示优化
+                            ChatGPT鎻愮ず浼樺寲
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('visual_tools')">
-                            可视化提示工具
-                        </a>
+                            鍙鍖栨彁绀哄伐锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('chinese_resources')">
-                            中文特色资源
+                            涓枃鐗硅壊璧勬簮
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('other_tools')">
-                            其他实用工具
+                            鍏朵粬瀹炵敤宸ュ叿
                         </a>
                     </li>
                 </ul>
@@ -750,65 +709,59 @@
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_search');">
                     <i class="bi bi-search"></i>
-                    AI搜索
+                    AI鎼滅储
                 </a>
                 <ul class="nav-submenu submenu-ai-search">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('general_search')">
-                            综合类AI搜索引擎
+                            缁煎悎绫籄I鎼滅储寮曟搸
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('academic_search')">
-                            学术科研类
-                        </a>
+                            瀛︽湳绉戠爺锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('programming_search')">
-                            编程开发类
+                            缂栫▼寮€鍙戠被
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('finance_search')">
-                            金融/商业类
-                        </a>
+                            閲戣瀺/鍟嗕笟锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('life_search')">
-                            生活娱乐类
-                        </a>
+                            鐢熸椿濞变箰锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('product_search')">
-                            产品/公司类
-                        </a>
+                            浜у搧/鍏徃锟?                        </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('study');">
                     <i class="bi bi-book"></i>
-                    学习社区
+                    瀛︿範绀惧尯
                 </a>
                 <ul class="nav-submenu submenu-study">
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('wechatblogger')">
-                            公众号推荐
-                        </a>
+                            鍏紬鍙锋帹锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('wechatvideoblogger')">
-                            视频号推荐
-                        </a>
+                            瑙嗛鍙锋帹锟?                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('studygroup')">
-                            学习社群
+                            瀛︿範绀剧兢
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('articlecollection')">
-                            优质导航
+                            浼樿川瀵艰埅
                         </a>
                     </li>
                 </ul>
@@ -816,26 +769,26 @@
         </ul>
     </div>
 
-    <!-- 主内容区 -->
+    <!-- 涓诲唴瀹瑰尯 -->
     <div class="main-content">
-        <!-- 搜索容器 -->
+        <!-- 鎼滅储瀹瑰櫒 -->
         <div class="search-container">
-            <h1 class="search-title">AI365导航</h1>
-            <p class="search-subtitle">你的AI电商军师，全年无休>
+            <h1 class="search-title">AI365瀵艰埅</h1>
+            <p class="search-subtitle">浣犵殑AI鐢靛晢鍐涘笀锛屽叏骞存棤锟?/p>
             <div class="search-box">
                 <div class="search-border-effect"></div>
                 <div class="search-engine-selector">
                     <button id="search-engine-btn" class="search-engine-btn" onclick="toggleSearchEngines()">
                         <span id="current-engine-icon"><i class="bi bi-search"></i></span>
-                        <span id="current-engine-name">站内搜索</span>
+                        <span id="current-engine-name">绔欏唴鎼滅储</span>
                         <i class="bi bi-chevron-down"></i>
                     </button>
                     <div id="search-engine-dropdown" class="search-engine-dropdown">
                         <div class="search-engine-item active" data-engine="site" onclick="selectSearchEngine('site')">
-                            <i class="bi bi-search"></i> 站内搜索
+                            <i class="bi bi-search"></i> 绔欏唴鎼滅储
                         </div>
                         <div class="search-engine-item" data-engine="baidu" onclick="selectSearchEngine('baidu')">
-                            <img src="https://www.baidu.com/favicon.ico" alt="百度" class="search-engine-icon"> 百度
+                            <img src="https://www.baidu.com/favicon.ico" alt="鐧惧害" class="search-engine-icon"> 鐧惧害
                         </div>
                         <div class="search-engine-item" data-engine="google" onclick="selectSearchEngine('google')">
                             <img src="https://www.google.com/favicon.ico" alt="Google" class="search-engine-icon"> Google
@@ -848,330 +801,332 @@
                         </div>
                     </div>
                 </div>
-                <input type="text" id="search-input" class="search-input" placeholder="搜索AI工具名称、描述..." autofocus>
+                <input type="text" id="search-input" class="search-input" placeholder="鎼滅储AI宸ュ叿鍚嶇О銆佹弿锟?.." autofocus>
                 <button id="clear-search-btn" class="clear-search-btn" onclick="clearSearch()">
                     <i class="bi bi-x-lg"></i>
                 </button>
                 <button id="search-button" class="search-button" onclick="performSearch()">
-                    <i class="bi bi-search"></i> 搜索
+                    <i class="bi bi-search"></i> 鎼滅储
                 </button>
             </div>
         </div>
         
-        <!-- 内容区域 -->
+        <!-- 鍐呭鍖哄煙 -->
         <div id="content-area">
-            <!-- 电商平台 -->
+            <!-- 鐢靛晢骞冲彴 -->
             <div id="ecommerce-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-shop"></i> 电商平台</h2>
+                    <h2><i class="bi bi-shop"></i> 鐢靛晢骞冲彴</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterEcommerceSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('amazon')">亚马?/button>
-                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('aliexpress')">速卖?/button>
+                    <button class="subcategory-btn active" onclick="filterEcommerceSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('amazon')">浜氶┈锟?/button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('aliexpress')">閫熷崠锟?/button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('ebay')">Ebay</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('shopify')">Shopify</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('lazada')">Lazada</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('shopee')">Shopee</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('tiktok')">TikTok</button>
-                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('other')">其他</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('other')">鍏朵粬</button>
                 </div>
                 <div class="site-grid" id="ecommerce-grid">
-                    <!-- 电商平台网站卡片将通过JavaScript动态添?-->
+                    <!-- 鐢靛晢骞冲彴缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
 
-            <!-- 社交平台 -->
+            <!-- 绀句氦骞冲彴 -->
             <div id="social-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-people"></i> 社交平台</h2>
+                    <h2><i class="bi bi-people"></i> 绀句氦骞冲彴</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterSocialSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-global')">全球平台</button>
-                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-china')">中国平台</button>
-                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-influencer')">红人资源</button>
-                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-marketing')">社交营销</button>
-                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-analytics')">账号数据分析</button>
+                    <button class="subcategory-btn active" onclick="filterSocialSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-global')">鍏ㄧ悆骞冲彴</button>
+                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-china')">涓浗骞冲彴</button>
+                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-influencer')">绾汉璧勬簮</button>
+                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-marketing')">绀句氦钀ラ攢</button>
+                    <button class="subcategory-btn" onclick="filterSocialSubcategory('social-analytics')">璐﹀彿鏁版嵁鍒嗘瀽</button>
                 </div>
                 <div class="site-grid" id="social-grid">
-                    <!-- 社交平台网站卡片将通过JavaScript动态添?-->
+                    <!-- 绀句氦骞冲彴缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
 
-            <!-- SEO 工具 -->
+            <!-- SEO 宸ュ叿 -->
             <div id="website-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-globe"></i> SEO 工具</h2>
+                    <h2><i class="bi bi-globe"></i> SEO 宸ュ叿</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('google')">Google大全</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('seo')">综合工具</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('keyword')">关键词工具</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('analytics')">网站分析</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('domain')">域名注册</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('server')">服务器IP代理</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('payment')">收款工具</button>
+                    <button class="subcategory-btn active" onclick="filterSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('google')">Google澶у叏</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('seo')">缁煎悎宸ュ叿</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('keyword')">鍏抽敭璇嶅伐鍏?/button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('analytics')">缃戠珯鍒嗘瀽</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('domain')">鍩熷悕娉ㄥ唽</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('server')">鏈嶅姟鍣↖P浠ｇ悊
+                    </button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('payment')">鏀舵宸ュ叿</button>
                     <button class="subcategory-btn" onclick="filterSubcategory('erp')">ERP</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('product-selection')">选品工具</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('account')">工作外包</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('temp-mail')">邮箱</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('ip-proxy')">联盟营销</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('browser')">指纹浏览器</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('backlink')">反向外链</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('content')">内容优化</button>
-                    <button class="subcategory-btn" onclick="filterSubcategory('learning')">其他工具</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('product-selection')">閫夊搧宸ュ叿</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('account')">宸ヤ綔澶栧寘</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('temp-mail')">閭</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('ip-proxy')">鑱旂洘钀ラ攢</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('browser')">鎸囩汗娴忚鍣?/button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('backlink')">鍙嶅悜澶栭摼</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('content')">鍐呭浼樺寲</button>
+                    <button class="subcategory-btn" onclick="filterSubcategory('learning')">鍏朵粬宸ュ叿</button>
                 </div>
                 <div class="site-grid" id="website-tools-grid">
-                    <!-- SEO 工具网站卡片将通过JavaScript动态添?-->
+                    <!-- SEO 宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊?-->
                 </div>
             </div>
             
-            <!-- AI对话 -->
+            <!-- AI瀵硅瘽 -->
             <div id="ai-chat-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-chat-dots"></i> AI对话</h2>
+                    <h2><i class="bi bi-chat-dots"></i> AI瀵硅瘽</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiChatSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('general_assistant')">通用AI助手</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('entertainment_ai')">游戏与娱乐AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('role_play')">角色扮演与虚拟陪伴</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">多模态AI助手</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('professional_ai')">专业领域AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('international_ai')">国际化AI助手</button>
+                    <button class="subcategory-btn active" onclick="filterAiChatSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('general_assistant')">閫氱敤AI鍔╂墜</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('entertainment_ai')">娓告垙涓庡ū涔怉I</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('role_play')">瑙掕壊鎵紨涓庤櫄鎷熼櫔浼?button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">澶氭ā鎬丄I鍔╂墜</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('professional_ai')">涓撲笟棰嗗煙AI</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('international_ai')">鍥介檯鍖朅I鍔╂墜</button>
                 </div>
                 <div class="site-grid" id="ai-chat-grid">
-                    <!-- AI对话工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI瀵硅瘽宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊?-->
                 </div>
             </div>
             
-            <!-- AI写作 -->
+            <!-- AI鍐欎綔 -->
             <div id="ai-writing-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-pen"></i> AI写作</h2>
+                    <h2><i class="bi bi-pen"></i> AI鍐欎綔</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiWritingSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('academic_paper')">学术论文写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('official_document')">公文与政务写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('fiction_writing')">小说与文学创作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('marketing_copy')">营销与商业文案</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('blog_media')">博客写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('multilingual')">多语言写作与翻译</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('office_writing')">办公与综合写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('script_content')">脚本与创意内容</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('summary_tools')">速读与摘要工具</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('interactive_writing')">互动式写作</button>
+                    <button class="subcategory-btn active" onclick="filterAiWritingSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('academic_paper')">瀛︽湳鍐欎綔</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('fiction_writing')">鏂囧鍒涗綔/button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('marketing_copy')">钀ラ攢鏂囨?/button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('blog_media')">鍗氬鍐欎綔</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('official_document')">鍏枃鍐欎綔/button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('multilingual')">鍐欎綔涓庣炕璇?button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('office_writing')">鍔炲叕涓庡啓浣?button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('script_content')">鑴氭湰涓庡垱鎰忓啓浣?button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('summary_tools')">閫熻涓庢憳瑕佸啓浣?button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('interactive_writing')">浜掑姩寮忓啓锟?/button>
                 </div>
                 <div class="site-grid" id="ai-writing-grid">
-                    <!-- AI写作工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI鍐欎綔宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI图像 -->
+            <!-- AI鍥惧儚 -->
             <div id="ai-image-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-image"></i> AI图像</h2>
+                    <h2><i class="bi bi-image"></i> AI鍥惧儚</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiImageSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('general_image')">通用AI图片生成</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('portrait')">人像与头像生成</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('background')">背景与设计素材</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('brand_design')">品牌与商业设计</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('photo_enhancement')">照片修复与增强</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('anime')">动漫与二次元创作</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fun_tools')">娱乐与趣味工具</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fashion')">服装与时尚设计</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('image_editing')">图像编辑与处理</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('professional_scene')">专业场景生成</button>
+                    <button class="subcategory-btn active" onclick="filterAiImageSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('general_image')">閫氱敤AI鍥剧墖鐢熸垚</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('portrait')">浜哄儚涓庡ご鍍忕敓锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('background')">鑳屾櫙涓庤璁＄礌锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('brand_design')">鍝佺墝涓庡晢涓氳锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('photo_enhancement')">鐓х墖淇涓庡锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('anime')">鍔ㄦ极涓庝簩娆″厓鍒涗綔</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fun_tools')">濞变箰涓庤叮鍛冲伐锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fashion')">鏈嶈涓庢椂灏氳锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('image_editing')">鍥惧儚缂栬緫涓庡锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('professional_scene')">涓撲笟鍦烘櫙鐢熸垚</button>
                 </div>
                 <div class="site-grid" id="ai-image-grid">
-                    <!-- AI图像工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI鍥惧儚宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI视频 -->
+            <!-- AI瑙嗛 -->
             <div id="ai-video-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-film"></i> AI视频</h2>
+                    <h2><i class="bi bi-film"></i> AI瑙嗛</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiVideoSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('text_to_video')">文本生成视频</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('image_to_video')">图片生成视频</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('video_editing')">视频编辑与增强</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('digital_human')">AI数字人与虚拟主播</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('animation')">动画与卡通生成</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('short_video')">短视频与社交媒体工具</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('speech_driven')">语音驱动视频</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('professional_video')">专业级视频生成</button>
-                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('opensource_tools')">开源与开发者工具</button>
+                    <button class="subcategory-btn active" onclick="filterAiVideoSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('text_to_video')">鏂囨湰鐢熸垚瑙嗛</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('image_to_video')">鍥剧墖鐢熸垚瑙嗛</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('video_editing')">瑙嗛缂栬緫涓庡锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('digital_human')">AI鏁板瓧浜轰笌铏氭嫙涓绘挱</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('animation')">鍔ㄧ敾涓庡崱閫氱敓锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('short_video')">鐭棰戜笌绀句氦濯掍綋宸ュ叿</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('speech_driven')">璇煶椹卞姩瑙嗛</button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('professional_video')">涓撲笟绾ц棰戠敓锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiVideoSubcategory('opensource_tools')">寮€婧愪笌寮€鍙戣€呭伐锟?/button>
                 </div>
                 <div class="site-grid" id="ai-video-grid">
-                    <!-- AI视频工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI瑙嗛宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI音频 -->
+            <!-- AI闊抽 -->
             <div id="ai-audio-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-soundwave"></i> AI音频</h2>
+                    <h2><i class="bi bi-soundwave"></i> AI闊抽</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiAudioSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('tts')">AI配音/文本转语音</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('music_generation')">AI音乐生成与创作</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('speech_to_text')">语音转文字与录音助手</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('voice_conversion')">AI变声与语音处理</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('audio_editing')">音频编辑与增强工具</button>
-                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('other_audio_tools')">其他工具</button>
+                    <button class="subcategory-btn active" onclick="filterAiAudioSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('tts')">AI閰嶉煶/鏂囨湰杞锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('music_generation')">AI闊充箰鐢熸垚涓庡垱锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('speech_to_text')">璇煶杞枃瀛椾笌褰曢煶鍔╂墜</button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('voice_conversion')">AI鍙樺０涓庤闊冲锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('audio_editing')">闊抽缂栬緫涓庡寮哄伐锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiAudioSubcategory('other_audio_tools')">鍏朵粬宸ュ叿</button>
                 </div>
                 <div class="site-grid" id="ai-audio-grid">
-                    <!-- AI音频工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI闊抽宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI设计 -->
+            <!-- AI璁捐 -->
             <div id="ai-design-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-palette"></i> AI设计</h2>
+                    <h2><i class="bi bi-palette"></i> AI璁捐</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiDesignSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('commerce_design')">平面与电商设计</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('ui_ux')">UI/UX与原型设计</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('illustration')">插画与矢量设计</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('model_design')">3D与模型设计</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('assistant_tools')">辅助设计工具</button>
-                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('special_tools')">其他专项工具</button>
+                    <button class="subcategory-btn active" onclick="filterAiDesignSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('commerce_design')">骞抽潰涓庣數鍟嗚锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('ui_ux')">UI/UX涓庡師鍨嬭锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('illustration')">鎻掔敾涓庣煝閲忚锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('model_design')">3D涓庢ā鍨嬭锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('assistant_tools')">杈呭姪璁捐宸ュ叿</button>
+                    <button class="subcategory-btn" onclick="filterAiDesignSubcategory('special_tools')">鍏朵粬涓撻」宸ュ叿</button>
                 </div>
                 <div class="site-grid" id="ai-design-grid">
-                    <!-- AI设计工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI璁捐宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI编程 -->
+            <!-- AI缂栫▼ -->
             <div id="ai-coding-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-code-slash"></i> AI编程</h2>
+                    <h2><i class="bi bi-code-slash"></i> AI缂栫▼</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiCodingSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('code_generation')">代码生成与补全</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('fullstack_dev')">全栈/端到端开发</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('design_to_code')">设计转代码</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('code_review')">代码审查与测试</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('natural_language_dev')">自然语言交互开发</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('low_code')">低代码/无代码平台</button>
-                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('cloud_ide')">云端IDE与编辑器</button>
+                    <button class="subcategory-btn active" onclick="filterAiCodingSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('code_generation')">浠ｇ爜鐢熸垚涓庤ˉ锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('fullstack_dev')">鍏ㄦ爤/绔埌绔紑锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('design_to_code')">璁捐杞唬锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('code_review')">浠ｇ爜瀹℃煡涓庢祴锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('natural_language_dev')">鑷劧璇█浜や簰寮€锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('low_code')">浣庝唬锟?鏃犱唬鐮佸钩锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiCodingSubcategory('cloud_ide')">浜戠IDE涓庣紪杈戝櫒</button>
                 </div>
                 <div class="site-grid" id="ai-coding-grid">
-                    <!-- AI编程工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI缂栫▼宸ュ叿缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI提示词 -->
+            <!-- AI鎻愮ず锟?-->
             <div id="ai-prompts-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-lightbulb"></i> AI提示词</h2>
+                    <h2><i class="bi bi-lightbulb"></i> AI鎻愮ず锟?/h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiPromptsSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('prompt_platforms')">综合提示词平台</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('sd_tools')">Stable Diffusion专属工具</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('chatgpt_prompts')">ChatGPT提示优化</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('visual_tools')">可视化提示工具</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('chinese_resources')">中文特色资源</button>
-                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('other_tools')">其他实用工具</button>
+                    <button class="subcategory-btn active" onclick="filterAiPromptsSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('prompt_platforms')">缁煎悎鎻愮ず璇嶅钩锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('sd_tools')">Stable Diffusion涓撳睘宸ュ叿</button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('chatgpt_prompts')">ChatGPT鎻愮ず浼樺寲</button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('visual_tools')">鍙鍖栨彁绀哄伐锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('chinese_resources')">涓枃鐗硅壊璧勬簮</button>
+                    <button class="subcategory-btn" onclick="filterAiPromptsSubcategory('other_tools')">鍏朵粬瀹炵敤宸ュ叿</button>
                 </div>
                 <div class="site-grid" id="ai-prompts-grid">
-                    <!-- AI提示词工具网站卡片将通过JavaScript动态添?-->
+                    <!-- AI鎻愮ず璇嶅伐鍏风綉绔欏崱鐗囧皢閫氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
             
-            <!-- AI搜索 -->
+            <!-- AI鎼滅储 -->
             <div id="ai-search-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-search"></i>AI搜索</h2>
+                    <h2><i class="bi bi-search"></i>AI鎼滅储</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterAiSearchSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('general_search')">综合类AI搜索引擎</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('academic_search')">学术科研类</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('programming_search')">编程开发类</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('finance_search')">金融/商业类</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('life_search')">生活娱乐类</button>
-                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('product_search')">产品/公司类</button>
+                    <button class="subcategory-btn active" onclick="filterAiSearchSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('general_search')">缁煎悎绫籄I鎼滅储寮曟搸</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('academic_search')">瀛︽湳绉戠爺锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('programming_search')">缂栫▼寮€鍙戠被</button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('finance_search')">閲戣瀺/鍟嗕笟锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('life_search')">鐢熸椿濞变箰锟?/button>
+                    <button class="subcategory-btn" onclick="filterAiSearchSubcategory('product_search')">浜у搧/鍏徃锟?/button>
                 </div>
                 <div id="ai-search-grid" class="site-grid">
-                    <!-- 网站卡片将通过JavaScript动态添?-->
+                    <!-- 缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
 
-            <!-- 学习社区 -->
+            <!-- 瀛︿範绀惧尯 -->
             <div id="study-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-book"></i> 学习社区</h2>
+                    <h2><i class="bi bi-book"></i> 瀛︿範绀惧尯</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterStudySubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatblogger')">公众号推荐</button>
-                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatvideoblogger')">视频号推荐</button>
-                    <button class="subcategory-btn" onclick="filterStudySubcategory('studygroup')">学习社群</button>
-                    <button class="subcategory-btn" onclick="filterStudySubcategory('articlecollection')">优质导航</button>
+                    <button class="subcategory-btn active" onclick="filterStudySubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatblogger')">鍏紬鍙锋帹锟?/button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('wechatvideoblogger')">瑙嗛鍙锋帹锟?/button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('studygroup')">瀛︿範绀剧兢</button>
+                    <button class="subcategory-btn" onclick="filterStudySubcategory('articlecollection')">浼樿川瀵艰埅</button>
+
                 </div>
                 <div class="site-grid" id="study-grid">
-                    <!-- 学习社区网站卡片将通过JavaScript动态添?-->
+                    <!-- 瀛︿範绀惧尯缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
 
-            <!-- 合租平台 -->
+            <!-- 鍚堢骞冲彴 -->
             <div id="rent-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-people-fill"></i> 合租平台</h2>
+                    <h2><i class="bi bi-people-fill"></i> 鍚堢骞冲彴</h2>
                 </div>
-                <!-- 二级分类导航 -->
+                <!-- 浜岀骇鍒嗙被瀵艰埅 -->
                 <div class="subcategory-nav">
-                    <button class="subcategory-btn active" onclick="filterRentSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterRentSubcategory('ai-account')">AI账号共享</button>
-                    <button class="subcategory-btn" onclick="filterRentSubcategory('social-account')">社交媒体账号</button>
-                    <button class="subcategory-btn" onclick="filterRentSubcategory('software-account')">软件账号</button>
+                    <button class="subcategory-btn active" onclick="filterRentSubcategory('all')">鍏ㄩ儴</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('ai-account')">AI璐﹀彿鍏变韩</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('social-account')">绀句氦濯掍綋璐﹀彿</button>
+                    <button class="subcategory-btn" onclick="filterRentSubcategory('software-account')">杞欢璐﹀彿</button>
                 </div>
                 <div class="site-grid" id="rent-grid">
-                    <!-- 合租平台网站卡片将通过JavaScript动态添?-->
+                    <!-- 鍚堢骞冲彴缃戠珯鍗＄墖灏嗛€氳繃JavaScript鍔ㄦ€佹坊锟?-->
                 </div>
             </div>
         </div>
 
-        <!-- 底部分类导航 -->
+        <!-- 搴曢儴鍒嗙被瀵艰埅 -->
         <div class="footer-categories">
             <div class="categories-container">
-                <!-- 分类项由JS动态生成 -->
+                <!-- 鍒嗙被椤圭敱JS鍔ㄦ€佺敓锟?-->
             </div>
         </div>
     </div>
 
-    <!-- JavaScript依赖 -->
+    <!-- JavaScript渚濊禆 -->
     <script src="js/sites-data.js"></script>
     <script src="js/scripts.js"></script>
 
-    <!-- SVG定义 - 用于按钮发光效果 -->
+    <!-- SVG瀹氫箟 - 鐢ㄤ簬鎸夐挳鍙戝厜鏁堟灉 -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
         <defs>
             <filter id="glow">
@@ -1184,3 +1139,4 @@
     </svg>
 </body>
 </html>
+

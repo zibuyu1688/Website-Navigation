@@ -1254,14 +1254,11 @@ function showCategory(category) {
         // 更新导航栏高亮状态
         updateNavHighlight('ecommerce');
     } else if (category === 'social' || 
-               category === 'domestic_social' || 
-               category === 'international_social' || 
-               category === 'image_social' || 
-               category === 'video_social' || 
-               category === 'blog_forum' || 
-               category === 'dating_social' || 
+               category === 'social-global' || 
+               category === 'social-china' || 
                category === 'social-influencer' ||
-               category === 'niche_social') {
+               category === 'social-marketing' ||
+               category === 'social-analytics') {
         document.getElementById('social-section').style.display = 'block';
         targetSectionId = 'social-section';
         
@@ -1287,7 +1284,7 @@ function showCategory(category) {
                category === 'server' || 
                category === 'payment' || 
                category === 'erp' || 
-               category === 'network' || 
+               category === 'product-selection' || 
                category === 'account' || 
                category === 'temp-mail' || 
                category === 'ip-proxy' || 
@@ -2065,7 +2062,9 @@ function updateNavHighlight(category) {
     else if (category === 'social' || 
              category === 'social-global' || 
              category === 'social-china' || 
-             category === 'social-influencer') {
+             category === 'social-influencer' ||
+             category === 'social-marketing' ||
+             category === 'social-analytics') {
         document.querySelector('.nav-link[onclick*="showCategory(\'social\')"]').classList.add('active');
     } 
     else if (category === 'rent' || 
@@ -2083,14 +2082,14 @@ function updateNavHighlight(category) {
              category === 'server' ||
              category === 'payment' ||
              category === 'erp' ||
-             category === 'network' ||
+             category === 'product-selection' ||
              category === 'account' ||
              category === 'temp-mail' ||
              category === 'ip-proxy' ||
              category === 'browser' ||
-             category === 'backlink' ||
-             category === 'content' ||
-             category === 'learning') {
+             category === 'learning' || 
+             category === 'backlink' || 
+             category === 'content') {
         document.querySelector('.nav-link[onclick*="showCategory(\'website\')"]').classList.add('active');
     }
     else if (category === 'ai_chat' || 

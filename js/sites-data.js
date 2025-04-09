@@ -1,17 +1,12 @@
-/**
- * 网站数据文件
- * 此文件包含所有网站卡片的数据
- * 可以根据需要添加更多网站
- */
 
 const sitesData = {
     // 电商平台
     ecommerce: [
         {
-            title: '多类别测试站点',
-            description: '这是一个同时属于多个子类别的测试站点，用于验证subcategory数组功能',
-            tags: ['测试', '多类别', '跨境电商'],
-            url: 'https://example.com/',
+            title: '亚马逊全球开店',
+            description: '亚马逊开店，提供产品上传、订单管理、广告投放等功能',
+            tags: ['亚马逊', '开店', '跨境电商'],
+            url: 'https://gs.amazon.cn/?utm_source=amz520.com',
             subcategory: ['amazon', 'shopify', 'tiktok'],
             isRecommended: true
         },
@@ -29,6 +24,28 @@ const sitesData = {
             tags: ['亚马逊', '数据分析', '品牌'],
             url: 'https://sellercentral.amazon.com/analytics/dashboard/',
             subcategory: ['amazon', 'analytics']
+        },
+        {
+            title: '亚马逊欧洲FBA费用计算器',
+            description: '亚马逊欧洲FBA费用计算器，计算FBA费用',
+            tags: ['亚马逊', 'FBA', '欧洲FBA费用计算器'],
+            url: 'https://sellercentral.amazon.co.uk/fba/profitabilitycalculator/index',
+            subcategory: ['amazon']
+        },
+
+        {
+            title: '亚马逊日本FBA费用计算器',
+            description: '亚马逊日本FBA费用计算器，计算FBA费用',
+            tags: ['亚马逊', 'FBA', '日本FBA费用计算器'],
+            url: 'https://sellercentral-japan.amazon.com/fba/profitabilitycalculator/index',
+            subcategory: ['amazon']
+        },
+        {
+            title: '亚马逊北美FBA费用计算器',
+            description: '亚马逊北美FBA费用计算器，计算FBA费用',
+            tags: ['亚马逊', 'FBA', '北美FBA费用计算器'],
+            url: 'https://sellercentral.amazon.com/hz/fba/profitabilitycalculator/index?lang=en_US',
+            subcategory: ['amazon',]
         },
         {
             title: '美国前台',
@@ -1315,6 +1332,176 @@ const sitesData = {
             "url": "https://impact.com/",
             "subcategory": "social-influencer",
             "needsMagic": true
+        },
+
+        // 社交媒体管理工具
+        {
+            title: 'Sendible',
+            description: '一体化社交媒体管理平台，支持多账号调度和团队协作',
+            tags: ['多平台管理', '内容排期', '团队协作'],
+            url: 'https://www.sendible.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Agorapulse',
+            description: '社交媒体收件箱管理工具，提供自动化工作流和CRM功能',
+            tags: ['社交收件箱', '自动化', '客户关系管理'],
+            url: 'https://www.agorapulse.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Hootsuite',
+            description: '企业级社交媒体管理套件，支持深度数据分析和广告管理',
+            tags: ['企业级', '社交监控', '广告管理'],
+            url: 'https://hootsuite.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Buffer',
+            description: '轻量级社交媒体发布工具，适合初创团队和个人创作者',
+            tags: ['内容排期', '基础分析', '性价比'],
+            url: 'https://buffer.com/',
+            subcategory: 'social-marketing'
+        },
+
+        // 社交媒体分析工具
+        {
+            title: 'SocialPeta',
+            description: '全球广告创意分析平台，提供竞品广告策略洞察',
+            tags: ['广告情报', '竞品分析', '素材库'],
+            url: 'https://www.socialpeta.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Quintly',
+            description: '跨平台社交媒体数据分析工具，支持自定义报告',
+            tags: ['绩效分析', '数据可视化', '跨平台'],
+            url: 'https://www.quintly.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Followerwonk',
+            description: 'Twitter专属分析工具，优化粉丝增长和互动策略',
+            tags: ['Twitter分析', '粉丝画像', '内容优化'],
+            url: 'https://followerwonk.com/',
+            subcategory: 'social-marketing'
+        },
+
+        // 社交媒体营销工具
+        {
+            title: 'Woobox',
+            description: '社交媒体营销活动创建平台（抽奖/投票/优惠券等）',
+            tags: ['互动营销', '活动模板', '用户参与'],
+            url: 'https://woobox.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'Famebit',
+            description: 'YouTube/Instagram创作者与品牌合作的撮合平台',
+            tags: ['网红营销', '创作者合作', '内容赞助'],
+            url: 'https://famebit.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'business.linkedin',
+            description: 'LinkedIn官方营销解决方案，专注B2B领域',
+            tags: ['B2B营销', '企业品牌', '人才招聘'],
+            url: 'https://business.linkedin.com/',
+            subcategory: 'social-marketing'
+        },
+
+        // 特色工具
+        {
+            title: 'Vidrocket',
+            description: '视频内容社交媒体优化和发布管理工具',
+            tags: ['视频营销', 'SEO优化', '多平台发布'],
+            url: 'https://vidrocket.com/',
+            subcategory: 'social-marketing'
+        },
+        {
+            title: 'cyfe',
+            description: '一体化营销数据仪表板，集成50+数据源',
+            tags: ['数据看板', '跨平台', '实时监控'],
+            url: 'https://www.cyfe.com/',
+            subcategory: 'social-marketing'
+        },
+        // 社交媒体分析工具
+        {
+            title: 'Hypeauditor',
+            description: 'Instagram/TikTok网红真实性检测和受众分析工具',
+            tags: ['网红分析', '粉丝质量检测', '受众画像'],
+            url: 'https://hypeauditor.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Followerwonk',
+            description: 'Twitter深度分析工具，提供粉丝构成分析和最佳发帖时间建议',
+            tags: ['Twitter分析', '粉丝 demographics', '内容优化'],
+            url: 'https://followerwonk.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Google Analytics',
+            description: '综合性网站和社交媒体流量分析平台',
+            tags: ['流量分析', '用户行为', '转化追踪'],
+            url: 'https://analytics.google.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Discover.ly',
+            description: '社交媒体联系人信息扩展和关系分析工具',
+            tags: ['联系人分析', '社交关系图谱', 'CRM增强'],
+            url: 'https://discover.ly/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Sproutsocial',
+            description: '社交媒体管理和分析一体化平台，提供详细报告',
+            tags: ['社交聆听', '绩效报告', '竞争对手分析'],
+            url: 'https://sproutsocial.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Keyhole',
+            description: '实时话题追踪和社交媒体影响力分析工具',
+            tags: ['话题追踪', '影响力评分', '实时监控'],
+            url: 'https://keyhole.co/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Tailwindapp',
+            description: 'Pinterest和Instagram专用分析和排期工具',
+            tags: ['Pinterest分析', '视觉内容优化', '排期建议'],
+            url: 'https://www.tailwindapp.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'iconosquare',
+            description: 'Instagram和Facebook专业分析平台',
+            tags: ['Instagram分析', '内容绩效', '增长追踪'],
+            url: 'https://www.iconosquare.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Findmyfbid',
+            description: 'Facebook专页和用户ID查询工具',
+            tags: ['Facebook工具', 'ID查询', '页面分析'],
+            url: 'https://findmyfbid.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Likealyzer',
+            description: 'Facebook专页即时分析和优化建议工具',
+            tags: ['Facebook分析', '页面评分', '优化建议'],
+            url: 'https://likealyzer.com/',
+            subcategory: 'social-analytics'
+        },
+        {
+            title: 'Minter',
+            description: '社交媒体内容表现预测和优化平台',
+            tags: ['表现预测', '内容推荐', 'AI分析'],
+            url: 'https://minter.io/',
+            subcategory: 'social-analytics'
         }
         
     ],
@@ -1696,7 +1883,7 @@ const sitesData = {
             description: '针对电商独立站，估算竞品销量、收入，分析产品评论趋势',
             tags: ['电商分析', '销量估算', '产品评论'],
             url: 'https://www.junglescout.com/',
-            subcategory: 'analytics',
+            subcategory: ['analytics', 'product-selection'],
             needsMagic: true
         },
         {
@@ -1934,7 +2121,7 @@ const sitesData = {
             description: '网络安全与性能服务，提供CDN、DNS管理和DDoS防护',
             tags: ['CDN', '网络安全', 'DNS'],
             url: 'https://www.cloudflare.com/',
-            subcategory: 'network'
+            subcategory: 'server'
         },
         {
             title: 'PayPal',
@@ -2117,13 +2304,6 @@ const sitesData = {
             subcategory: 'erp'
         },
         {
-            title: '领星ERP(原积加)',
-            description: '聚焦亚马逊卖家，提供精细化运营、财务核算、广告管理服务',
-            tags: ['亚马逊', '精细运营', '广告管理'],
-            url: 'https://www.lingxing.com/',
-            subcategory: 'erp'
-        },
-        {
             title: '旺店通',
             description: '尤其适合东南亚（如Shopee、Lazada）卖家，支持多平台订单同步',
             tags: ['东南亚电商', '多平台', '订单同步'],
@@ -2175,6 +2355,88 @@ const sitesData = {
             url: 'https://www.dolphin-erp.com/',
             subcategory: 'erp'
         },
+        // 选品工具
+        // 市场趋势分析类
+      
+    
+        {
+            title: 'Helium 10',
+            description: '亚马逊全功能选品工具套件，含关键词研究、竞品追踪和利润计算',
+            tags: ['亚马逊工具', '关键词分析', '产品追踪'],
+            url: 'https://www.helium10.com/',
+            subcategory: 'product-selection'
+        },
+        {
+            title: 'Keepa',
+            description: '亚马逊价格历史追踪工具，分析产品价格趋势和促销频率',
+            tags: ['价格监控', '历史数据', '折扣分析'],
+            url: 'https://keepa.com/',
+            subcategory: 'product-selection'
+        },
+
+        // 多平台选品工具
+        {
+            title: 'EcomHunt',
+            description: '每日推荐热销产品，提供AliExpress速卖通和Shopify选品数据',
+            tags: ['热销产品', '速卖通选品', 'Dropshipping'],
+            url: 'https://www.ecomhunt.com/',
+            subcategory: 'product-selection'
+        },
+        {
+            title: 'SaleSource',
+            description: '多平台产品分析工具，支持亚马逊、eBay和独立站选品',
+            tags: ['多平台', '产品验证', '供应商分析'],
+            url: 'https://www.salesource.io/',
+            subcategory: 'product-selection'
+        },
+
+        // 社交媒体选品工具
+        {
+            title: 'Pexgle',
+            description: '通过Facebook广告数据挖掘热销产品',
+            tags: ['FB广告', '热品挖掘', '社交趋势'],
+            url: 'https://pexgle.com/',
+            subcategory: 'product-selection'
+        },
+        {
+            title: 'Niche Scraper',
+            description: '抓取Shopify店铺热销产品，分析Dropshipping机会',
+            tags: ['Shopify', 'Dropshipping', '竞品分析'],
+            url: 'https://nichescraper.com/',
+            subcategory: 'product-selection'
+        },
+
+        // 供应链与货源工具
+        {
+            title: 'Oberlo',
+            description: 'Dropshipping选品工具，直接对接AliExpress供应商',
+            tags: ['Dropshipping', '速卖通', '一键导入'],
+            url: 'https://www.oberlo.com/',
+            subcategory: 'product-selection'
+        },
+        {
+            title: '1688选品工具',
+            description: '阿里巴巴国内站选品助手，提供批发价分析和供应商评级',
+            tags: ['1688', '批发选品', '供应链'],
+            url: 'https://www.1688.com/',
+            subcategory: 'product-selection'
+        },
+
+        // 新兴市场工具
+        {
+            title: 'Trendsi',
+            description: '针对TikTok爆款产品的选品平台，含供应链支持',
+            tags: ['TikTok', '短视频爆款', '美国仓配'],
+            url: 'https://www.trendsi.com/',
+            subcategory: 'product-selection'
+        },
+        {
+            title: 'BigSpy',
+            description: '跨境广告情报工具，通过广告数据反推热销产品',
+            tags: ['广告监测', '爆品预测', '多平台'],
+            url: 'https://bigspy.com/',
+            subcategory: 'product-selection'
+        },
         {
             title: 'Ranktank',
             description: '专业SEO工具集，提供关键词研究、竞争分析和网站审计',
@@ -2198,8 +2460,8 @@ const sitesData = {
         url: 'https://ads.google.com/home/tools/keyword-planner/',
         subcategory: 'keyword',
         needsMagic: false
-    },
-    {
+         },
+        {
         title: 'Ahrefs Keywords Explorer',
         description: '强大的付费关键词工具，提供关键词难度、点击量分布和父话题分析',
         tags: ['SEO', '关键词研究', '付费工具'],
@@ -2285,7 +2547,7 @@ const sitesData = {
             tags: ['关键词趋势', '免费工具', '市场研究'],
             url: 'https://trends.google.com/',
             subcategory: 'keyword',
-            needsMagic: false
+            needsMagic: true
         },
 
         {
@@ -3161,6 +3423,15 @@ const sitesData = {
             url: 'https://chat.openai.com/',
             subcategory: 'general_assistant',
             isRecommended: true,
+            needsMagic: true
+        },
+
+        {
+            title: 'Monica',
+            description: 'Monica是一款基于AI的智能助手，能够进行多轮对话、信息检索、内容创作等',
+            tags: ['智能对话', '信息检索', '内容创作'],
+            url: 'https://www.monica.ai/',
+            subcategory: ['general_assistant','office_writing'],
             needsMagic: true
         },
         {
@@ -5715,7 +5986,7 @@ const sitesData = {
             description: '专业提示词优化工具，支持多模型（如GPT、Stable Diffusion等），可自动优化提示结构。',
             tags: ['提示词优化', '多模型支持', '自动优化'],
             url: 'https://promptperfect.jina.ai',
-            subcategory: 'prompt_platforms',
+            subcategory: ['prompt_platforms'],
             needsMagic: true
         },
         {
@@ -5723,7 +5994,7 @@ const sitesData = {
             description: '社区驱动的提示词分享平台，含大量实战案例（如写作、编程、设计）。',
             tags: ['提示词分享', '社区驱动', '实战案例'],
             url: 'https://flowgpt.com',
-            subcategory: 'prompt_platforms',
+            subcategory: ['prompt_platforms'],
             needsMagic: true
         },
         {
@@ -5731,7 +6002,7 @@ const sitesData = {
             description: '专注于AI生成内容的提示词库，尤其适合Stable Diffusion和MidJourney用户。',
             tags: ['AI生成内容', 'Stable Diffusion', 'MidJourney'],
             url: 'https://prompthero.com',
-            subcategory: 'prompt_platforms',
+            subcategory: ['prompt_platforms'],
             needsMagic: true
         },
         {
@@ -5739,7 +6010,7 @@ const sitesData = {
             description: '提示词交易市场，可购买/出售高质量提示，涵盖DALL·E、ChatGPT等。',
             tags: ['提示词交易', '高质量提示', 'DALL·E'],
             url: 'https://promptbase.com',
-            subcategory: 'prompt_platforms',
+            subcategory: ['prompt_platforms'],
             needsMagic: true
         },
         
@@ -5749,7 +6020,7 @@ const sitesData = {
             description: '官方提示词手册，包含风格模板和参数详解。',
             tags: ['提示词手册', '风格模板', '参数详解'],
             url: 'https://github.com/search?q=Stable-Diffusion-Prompt-Book',
-            subcategory: 'sd_tools',
+            subcategory: ['sd_tools'],
             needsMagic: true
         },
         {
@@ -5757,7 +6028,7 @@ const sitesData = {
             description: '开源提示词库，适合艺术创作和设计灵感。',
             tags: ['开源提示词', '艺术创作', '设计灵感'],
             url: 'https://publicprompts.art',
-            subcategory: 'sd_tools',
+            subcategory: ['sd_tools'],
             needsMagic: true
         },
         {
@@ -5765,7 +6036,7 @@ const sitesData = {
             description: 'MidJourney专用提示生成器，支持风格、灯光等参数调节。',
             tags: ['MidJourney', '提示生成器', '参数调节'],
             url: 'https://mjprompttool.com',
-            subcategory: 'sd_tools',
+            subcategory: ['sd_tools'],
             needsMagic: true
         },
         
@@ -5775,7 +6046,7 @@ const sitesData = {
             description: 'GitHub开源项目，提供可直接复用的对话模板（如模拟Linux终端、编剧助手）。',
             tags: ['开源项目', '对话模板', 'ChatGPT'],
             url: 'https://github.com/search?q=awesome-chatgpt-prompts',
-            subcategory: 'chatgpt_prompts',
+            subcategory: ['chatgpt_prompts'],
             needsMagic: true
         },
         {
@@ -5783,7 +6054,7 @@ const sitesData = {
             description: '中文快捷指令库，分类明确（写作、营销、编程等），一键调用。',
             tags: ['中文指令库', '快捷调用', '分类明确'],
             url: 'https://newzone.top/chatgpt-shortcuts',
-            subcategory: 'chatgpt_prompts',
+            subcategory: ['chatgpt_prompts'],
             needsMagic: false
         },
         {
@@ -5791,7 +6062,7 @@ const sitesData = {
             description: 'ChatGPT浏览器插件，内置数百个预设提示词（SEO、数据分析等）。',
             tags: ['浏览器插件', '预设提示词', 'SEO'],
             url: 'https://aiprm.com',
-            subcategory: 'chatgpt_prompts',
+            subcategory: ['chatgpt_prompts'],
             needsMagic: true
         },
         
@@ -5801,7 +6072,7 @@ const sitesData = {
             description: '通过拖拽生成复杂提示词，适合图像生成模型。',
             tags: ['拖拽生成', '复杂提示词', '图像生成'],
             url: 'https://viaualpromptbuilder.com',
-            subcategory: 'visual_tools',
+            subcategory: ['visual_tools'],
             needsMagic: true
         },
         {
@@ -5809,7 +6080,7 @@ const sitesData = {
             description: 'DALL·E 2提示词设计指南，附案例解析。',
             tags: ['DALL·E 2', '提示词设计', '案例解析'],
             url: 'https://generrated.com/guides',
-            subcategory: 'visual_tools',
+            subcategory: ['visual_tools'],
             needsMagic: true
         },
         
@@ -5819,7 +6090,7 @@ const sitesData = {
             description: '中文AIGC提示词库，聚焦本土化场景（如电商文案、短视频脚本）。',
             tags: ['中文提示词', '本土化场景', '电商文案'],
             url: 'https://cihun.com',
-            subcategory: 'chinese_resources',
+            subcategory: ['chinese_resources'],
             needsMagic: false
         },
         {
@@ -5827,7 +6098,7 @@ const sitesData = {
             description: '中文精简提示词生成器，输入关键词快速输出优化指令。',
             tags: ['中文生成器', '精简提示词', '关键词优化'],
             url: 'https://aishort.top',
-            subcategory: 'chinese_resources',
+            subcategory: ['chinese_resources'],
             needsMagic: false
         },
         {
@@ -5835,7 +6106,7 @@ const sitesData = {
             description: '针对中文大模型的提示工程技术指南，含角色设定模板。',
             tags: ['中文大模型', '提示工程', '角色设定'],
             url: 'https://github.com/search?q=LangGPT',
-            subcategory: 'chinese_resources',
+            subcategory: ['chinese_resources'],
             needsMagic: true
         },
         
@@ -5845,7 +6116,7 @@ const sitesData = {
             description: '可视化提示词工作流工具，支持团队协作。',
             tags: ['工作流工具', '团队协作', '可视化'],
             url: 'https://clickprompt.org',
-            subcategory: 'other_tools',
+            subcategory: ['other_tools'],
             needsMagic: true
         },
         {
@@ -5853,7 +6124,7 @@ const sitesData = {
             description: '极简提示词生成器，适合快速实验。',
             tags: ['极简生成器', '快速实验', '提示词'],
             url: 'https://snackprompt.com',
-            subcategory: 'other_tools',
+            subcategory: ['other_tools'],
             needsMagic: true
         },
         {
@@ -5861,7 +6132,7 @@ const sitesData = {
             description: '用户共享的提示词库，含评分系统。',
             tags: ['用户共享', '提示词库', '评分系统'],
             url: 'https://promptvine.com',
-            subcategory: 'other_tools',
+            subcategory: ['other_tools'],
             needsMagic: true
         }
     ],
@@ -5873,7 +6144,7 @@ const sitesData = {
             description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
             tags: ['AI账号', '共享平台', '账号合租'],
             url: 'https://nf.video/wKHLL',
-            subcategory: 'ai-account',
+            subcategory: ['ai-account'],
             isRecommended: true
         },
         {
@@ -5881,7 +6152,7 @@ const sitesData = {
             description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
             tags: ['AI账号', '共享平台', '账号合租'],
             url: 'https://www.haiwaike.com/',
-            subcategory: 'ai-account',
+            subcategory: ['ai-account'],
             isRecommended: true
         },
         {
@@ -5889,7 +6160,7 @@ const sitesData = {
             description: 'SEO工具团购平台，提供各类SEO工具的团购服务',
             tags: ['SEO工具', '团购平台', '工具合租'],
             url: 'https://s.taobao.com/search?commend=all&ie=utf8&initiative_id=tbindexz_20170306&page=1&q=seo%E5%9B%A2%E8%B4%AD&search_type=item&sourceId=tb.index&spm=a21bo.jianhua%2Fa.search_manual.0&ssid=s5-e&tab=all/',
-            subcategory: 'software-account',
+            subcategory: ['software-account'],
             isRecommended: true
         },
         
@@ -5898,7 +6169,7 @@ const sitesData = {
             description: '社交媒体账号共享平台，提供各类社交媒体账号的共享服务',
             tags: ['社交媒体', '账号共享', '合租平台'],
             url: 'https://nf.video/wKHLL',
-            subcategory: 'social-account',
+            subcategory: ['social-account'],
             isRecommended: true
         },
         {
@@ -5906,7 +6177,7 @@ const sitesData = {
             description: '软件账号共享平台，提供各类软件工具的账号共享服务',
             tags: ['软件账号', '共享平台', '合租服务'],
             url: 'https://yeka.ai/',
-            subcategory: 'software-account',
+            subcategory: ['software-account'],
             isRecommended: true
         },
         {
@@ -5914,7 +6185,7 @@ const sitesData = {
             description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
             tags: ['AI账号', '共享平台', '账号合租'],
             url: 'https://universalbus.cn/?s=X5U8JppXcf',
-            subcategory: 'ai-account',
+            subcategory: ['ai-account'],
             isRecommended: true
         }
     ],
@@ -5926,7 +6197,7 @@ const sitesData = {
             description: 'AI爱好者的分享',
             tags: ['AI', 'CHATGPT'],
             url: 'https://www.ziroom.com/',
-            subcategory: 'wechatblogger',
+            subcategory: ['wechatblogger'],
             isRecommended: true
         },
         {
@@ -5934,28 +6205,28 @@ const sitesData = {
             description: '视频AI',
             tags: ['视频', 'AI'],
             url: 'https://www.ke.com/',
-            subcategory: 'wechatvideoblogger'
+            subcategory: ['wechatvideoblogger']
         },
         {
             title: '生财有术',
             description: '致富社群',
             tags: ['生财有书', 'AI学习'],
             url: 'https://scys.com/',
-            subcategory: 'studygroup'
+            subcategory: ['studygroup']
         },
         {
             title: '通往AGI之路',
             description: '通往AGI之路',
             tags: ['通往AGI之路', 'AI学习'],
             url: 'https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e',
-            subcategory: 'articlecollection'
+            subcategory: ['articlecollection']
         },
         {
             title: 'KA21工具导航',
             description: 'KA21工具导航',
             tags: ['KA21工具导航', 'AI学习'],
             url: 'https://ka21.voidcool.top/',
-            subcategory: 'articlecollection'
+            subcategory: ['articlecollection']
         }
         
         
@@ -5975,21 +6246,21 @@ const aiSearchData = [
         description: "阿里旗下，集成AI搜索、网盘、文档编辑、内容创作的一体化应用",
         url: "https://quark.cn",
         tags: ["阿里", "一体化应用"],
-        subcategory: "general_search"
+        subcategory: ["general_search"]
     },
     {
         name: "Perplexity AI",
         description: "强交互的对话式AI搜索引擎，支持溯源和实时网络检索",
         url: "https://www.perplexity.ai/",
         tags: ["对话式搜索", "溯源"],
-        subcategory: "general_search"
+        subcategory: ["general_search"]
     },
     {
         name: "百度文心一言",
         description: "百度推出的AI搜索服务，提供中文内容理解和生成能力",
         url: "https://yiyan.baidu.com/",
         tags: ["百度", "中文搜索"],
-        subcategory: "general_search"
+        subcategory: ["general_search"]
     },
     
     // 学术科研类
@@ -5998,28 +6269,28 @@ const aiSearchData = [
         description: "专注学术研究的AI搜索引擎，搜索和总结科学论文",
         url: "https://consensus.app/",
         tags: ["学术研究", "论文搜索"],
-        subcategory: "academic_search"
+        subcategory: ["academic_search"]
     },
     {
         name: "Elicit",
         description: "AI研究助手，帮助查找相关论文并总结研究发现",
         url: "https://elicit.org/",
         tags: ["研究工具", "论文分析"],
-        subcategory: "academic_search"
+        subcategory: ["academic_search"]
     },
     {
         name: "Scholar Chat",
         description: "基于学术论文的AI聊天工具，提供有科学依据的回答",
         url: "https://scholarchat.io/",
         tags: ["学术问答", "研究助手"],
-        subcategory: "academic_search"
+        subcategory: ["academic_search"]
     },
     {
         name: "ResearchRabbit",
         description: "学术文献发现工具，可视化引用关系和相关研究",
         url: "https://www.researchrabbit.ai/",
         tags: ["文献发现", "引用分析"],
-        subcategory: "academic_search"
+        subcategory: ["academic_search"]
     },
     {
         "name": "Lumina",
@@ -6027,7 +6298,7 @@ const aiSearchData = [
         "description": "完全免费的AI学术搜索引擎，覆盖论文、期刊等资源，支持一键生成文献综述",
         "url": "https://lumina.com",
         "tags": ["学术搜索", "论文检索"],
-        "subcategory": "academic_search"
+        "subcategory": ["academic_search"]
     },
     {
         "name": "AMiner",
@@ -6035,7 +6306,7 @@ const aiSearchData = [
         "description": "智谱AI推出的学术平台，基于大模型提供学者画像、论文推荐和趋势分析",
         "url": "https://www.aminer.cn",
         "tags": ["学术图谱", "科研分析"],
-        "subcategory": "academic_search"
+        "subcategory": ["academic_search"]
     },
     
     {
@@ -6044,7 +6315,7 @@ const aiSearchData = [
         "description": "直接链接科研论文结论的AI工具，用问答形式快速获取可信赖的研究答案",
         "url": "https://consensus.app",
         "tags": ["科研问答", "论文摘要"],
-        "subcategory": "academic_search"
+        "subcategory": ["academic_search"]
     },
     
     {
@@ -6053,7 +6324,7 @@ const aiSearchData = [
         "description": "专为程序员设计的新一代搜索引擎，支持代码片段搜索和API文档直达",
         "url": "https://devv.ai",
         "tags": ["代码搜索", "开发者工具"],
-        "subcategory": "programming_search"
+        "subcategory": ["programming_search"]
     },
     
     {
@@ -6062,7 +6333,7 @@ const aiSearchData = [
         "description": "金融专业人士专用的AI平台，整合财报、新闻和行业分析数据",
         "url": "https://www.alphasese.com",
         "tags": ["金融数据", "行业分析"],
-        "subcategory": "finance_search"
+        "subcategory": ["finance_search"]
     },
     
     {
@@ -6071,7 +6342,7 @@ const aiSearchData = [
         "description": "小红书推出的生活场景AI搜索，涵盖美食、旅行、购物等实用推荐",
         "url": "https://www.xiaohongshu.com",
         "tags": ["生活推荐", "场景搜索"],
-        "subcategory": "life_search"
+        "subcategory": ["life_search"]
     },
     
     {
@@ -6080,7 +6351,7 @@ const aiSearchData = [
         "description": "节点式交互AI工具，通过可视化图谱连接搜索与对话内容",
         "url": "https://flowith.com",
         "tags": ["可视化搜索", "知识图谱"],
-        "subcategory": "innovative_search"
+        "subcategory": ["innovative_search"]
     },
     
     {
@@ -6089,7 +6360,7 @@ const aiSearchData = [
         "description": "专为AI模型设计的搜索引擎，优化了RAG（检索增强生成）效果",
         "url": "https://exa.ai",
         "tags": ["AI开发", "模型训练"],
-        "subcategory": "tech_search"
+        "subcategory": ["tech_search"]
     },
     
     {
@@ -6098,7 +6369,7 @@ const aiSearchData = [
         "description": "360推出的AI搜索，可将文本结果自动生成短视频摘要",
         "url": "https://ai.360.cn",
         "tags": ["视频生成", "多媒体搜索"],
-        "subcategory": "special_search"
+        "subcategory": ["special_search"]
     },
     
     // 编程开发类
@@ -6107,28 +6378,28 @@ const aiSearchData = [
         description: "专为开发者设计的AI搜索引擎，能解答复杂的编程问题",
         url: "https://www.phind.com/",
         tags: ["编程", "开发工具"],
-        subcategory: "programming_search"
+        subcategory: ["programming_search"]
     },
     {
         name: "Bloop",
         description: "代码搜索引擎，理解语义并提供上下文相关的代码结果",
         url: "https://bloop.ai/",
         tags: ["代码搜索", "语义理解"],
-        subcategory: "programming_search"
+        subcategory: ["programming_search"]
     },
     {
         name: "Devv",
         description: "开发者专用AI搜索，提供代码示例和技术解决方案",
         url: "https://devv.ai/",
         tags: ["代码示例", "技术解决方案"],
-        subcategory: "programming_search"
+        subcategory: ["programming_search"]
     },
     {
         name: "AskCodi",
         description: "编程问答助手，提供即时代码建议和解决方案",
         url: "https://www.askcodi.com/",
         tags: ["编程问答", "代码建议"],
-        subcategory: "programming_search"
+        subcategory: ["programming_search"]
     },
     
     // 金融/商业类
@@ -6137,21 +6408,21 @@ const aiSearchData = [
         description: "彭博社的AI搜索，提供金融市场分析和数据解读",
         url: "https://www.bloomberg.com/ai",
         tags: ["金融市场", "数据分析"],
-        subcategory: "finance_search"
+        subcategory: ["finance_search"]
     },
     {
         name: "Financial Chat",
         description: "专注金融领域问答的AI工具，提供投资建议和市场分析",
         url: "https://www.financialchat.ai/",
         tags: ["投资建议", "金融分析"],
-        subcategory: "finance_search"
+        subcategory: ["finance_search"]
     },
     {
         name: "Stockwise AI",
         description: "股票市场AI搜索，分析公司财报和市场趋势",
         url: "https://www.stockwise.ai/",
         tags: ["股票分析", "市场趋势"],
-        subcategory: "finance_search"
+        subcategory: ["finance_search"]
     },
     {
         name: "Finology Ticker",
@@ -6159,7 +6430,7 @@ const aiSearchData = [
         description: "印度市场股票分析工具，提供AI驱动的市场洞察",
         url: "https://ticker.finology.in/",
         tags: ["股票", "市场洞察"],
-        subcategory: "finance_search"
+        subcategory: ["finance_search"]
     },
     
     // 生活娱乐类
@@ -6168,28 +6439,28 @@ const aiSearchData = [
         description: "AI旅行规划助手，帮助规划旅程、寻找景点和制定行程",
         url: "https://www.copilot.travel/",
         tags: ["旅行规划", "行程助手"],
-        subcategory: "life_search"
+        subcategory: ["life_search"]
     },
     {
         name: "RecipeGPT",
         description: "AI菜谱搜索引擎，根据食材和偏好推荐菜谱",
         url: "https://www.recipegpt.com/",
         tags: ["菜谱", "烹饪"],
-        subcategory: "life_search"
+        subcategory: ["life_search"]
     },
     {
         name: "Tripnotes",
         description: "AI旅行笔记助手，个性化旅行建议和攻略",
         url: "https://tripnotes.ai/",
         tags: ["旅行笔记", "个性化攻略"],
-        subcategory: "life_search"
+        subcategory: ["life_search"]
     },
     {
         name: "MovieGPT",
         description: "AI电影推荐搜索，根据观影偏好推荐电影",
         url: "https://www.moviegpt.com/",
         tags: ["电影推荐", "娱乐"],
-        subcategory: "life_search"
+        subcategory: ["life_search"]
     },
     
     // 产品/公司类
@@ -6198,28 +6469,28 @@ const aiSearchData = [
         description: "专注发现新兴AI产品和工具的平台",
         url: "https://www.producthunt.com/topics/artificial-intelligence",
         tags: ["产品发现", "AI工具"],
-        subcategory: "product_search"
+        subcategory: ["product_search"]
     },
     {
         name: "SimilarWeb AI",
         description: "AI驱动的公司和网站流量分析工具",
         url: "https://www.similarweb.com/",
         tags: ["网站分析", "竞争情报"],
-        subcategory: "product_search"
+        subcategory: ["product_search"]
     },
     {
         name: "Crunchbase",
         description: "公司信息和投资数据搜索平台，集成AI搜索功能",
         url: "https://www.crunchbase.com/",
         tags: ["公司信息", "投资数据"],
-        subcategory: "product_search"
+        subcategory: ["product_search"]
     },
     {
         name: "G2 AI Tool Finder",
         description: "专业AI工具评估和比较平台，基于真实用户评价",
         url: "https://www.g2.com/categories/ai-tools",
         tags: ["工具评估", "用户评价"],
-        subcategory: "product_search"
+        subcategory: ["product_search"]
     }
 ]
 // 加载所有站点数据
