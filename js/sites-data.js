@@ -2304,13 +2304,6 @@ const sitesData = {
             subcategory: 'erp'
         },
         {
-            title: '旺店通',
-            description: '尤其适合东南亚（如Shopee、Lazada）卖家，支持多平台订单同步',
-            tags: ['东南亚电商', '多平台', '订单同步'],
-            url: 'https://www.wangdian.cn/',
-            subcategory: 'erp'
-        },
-        {
             title: '易仓ERP',
             description: '专注跨境供应链，支持海外仓、FBA头程管理，物流优化',
             tags: ['供应链', '海外仓', 'FBA管理'],
@@ -6573,11 +6566,11 @@ function loadSitesByCategory(siteData, gridId) {
     if (Array.isArray(siteData)) {
         siteData.forEach(site => {
             grid.innerHTML += createSiteCard({
-                title: site.name,
+                title: site.title || site.name,
                 description: site.description,
                 url: site.url,
                 tags: site.tags || [],
-                subcategory: site.subcategory || ''
+                subcategory: normalizeSubcategory(site.subcategory)
             });
         });
     }

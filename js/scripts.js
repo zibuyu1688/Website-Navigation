@@ -547,10 +547,22 @@ function filterAiWritingSubcategory(subcategory) {
     
     cards.forEach(card => {
         // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
         
         // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -560,31 +572,6 @@ function filterAiWritingSubcategory(subcategory) {
     
     // 移除所有的"显示更多"按钮
     cleanupMoreButtons('ai-writing-grid');
-    
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById('ai-writing-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-writing-grid'));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
-            }
-        });
-    }
 }
 
 // 过滤AI对话二级分类
@@ -664,7 +651,23 @@ function filterAiImageSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -674,31 +677,6 @@ function filterAiImageSubcategory(subcategory) {
     
     // 移除所有的"显示更多"按钮
     cleanupMoreButtons('ai-image-grid');
-    
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById('ai-image-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-image-grid'));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
-            }
-        });
-    }
 }
 
 // 过滤AI视频二级分类
@@ -719,7 +697,23 @@ function filterAiVideoSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -729,31 +723,6 @@ function filterAiVideoSubcategory(subcategory) {
     
     // 移除所有的"显示更多"按钮
     cleanupMoreButtons('ai-video-grid');
-    
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById('ai-video-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-video-grid'));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
-            }
-        });
-    }
 }
 
 // 过滤AI音频二级分类
@@ -774,7 +743,23 @@ function filterAiAudioSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -783,35 +768,7 @@ function filterAiAudioSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-audio-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
-    
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById('ai-audio-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-audio-grid'));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
-            }
-        });
-    }
+    cleanupMoreButtons('ai-audio-grid');
 }
 
 // 过滤AI设计二级分类
@@ -832,7 +789,23 @@ function filterAiDesignSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -841,35 +814,7 @@ function filterAiDesignSubcategory(subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-design-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
-    });
-    
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
-        
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById('ai-design-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-design-grid'));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
-            }
-        });
-    }
+    cleanupMoreButtons('ai-design-grid');
 }
 
 // 过滤AI编程二级分类
@@ -952,24 +897,14 @@ function loadAiPromptsTools() {
 
 // 过滤AI提示词子分类
 function filterAiPromptsSubcategory(subcategory) {
-    filterSubcategoryGeneric('ai-prompts', subcategory);
-}
-
-// 过滤AI搜索子分类
-function filterAiSearchSubcategory(subcategory) {
-    filterSubcategoryGeneric('ai-search', subcategory);
-}
-
-// 过滤子分类
-function filterSubcategoryGeneric(sectionId, subcategory) {
     // 更新按钮状态
-    document.querySelectorAll(`#${sectionId}-section .subcategory-btn`).forEach(btn => {
+    document.querySelectorAll('#ai-prompts-section .subcategory-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    document.querySelector(`#${sectionId}-section .subcategory-btn[onclick*="${subcategory}')"]`).classList.add('active');
+    document.querySelector(`#ai-prompts-section .subcategory-btn[onclick*="filterAiPromptsSubcategory('${subcategory}')"]`).classList.add('active');
 
     // 过滤卡片
-    const cards = document.querySelectorAll(`#${sectionId}-grid .site-card`);
+    const cards = document.querySelectorAll('#ai-prompts-grid .site-card');
     let visibleCards = 0;
     
     // 先移除所有hidden类，重置显示状态
@@ -979,10 +914,22 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
     
     cards.forEach(card => {
         // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
+        
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
+            }
+        }
         
         // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -991,40 +938,53 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
     });
     
     // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#${sectionId}-section .more-sites-btn-container`);
-    allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
+    cleanupMoreButtons('ai-prompts-grid');
+}
+
+// 过滤AI搜索子分类
+function filterAiSearchSubcategory(subcategory) {
+    // 更新按钮状态
+    document.querySelectorAll('#ai-search-section .subcategory-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`#ai-search-section .subcategory-btn[onclick*="filterAiSearchSubcategory('${subcategory}')"]`).classList.add('active');
+
+    // 过滤卡片
+    const cards = document.querySelectorAll('#ai-search-grid .site-card');
+    let visibleCards = 0;
+    
+    // 先移除所有hidden类，重置显示状态
+    cards.forEach(card => {
+        card.classList.remove('hidden');
     });
     
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮和隐藏多余卡片
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
-        let count = 0;
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                count++;
-                if (count > 8) {
-                    card.classList.add('hidden');
-                }
-            }
-        });
+    cards.forEach(card => {
+        // 获取卡片的subcategory属性
+        const cardSubcats = card.dataset.subcategory;
+        let subcategories = [];
         
-        // 添加"显示更多"按钮 - 在grid后面而不是内部
-        const gridElement = document.getElementById(`${sectionId}-grid`);
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton(`${sectionId}-grid`));
-    } else {
-        // 确保所有可见卡片都显示出来
-        cards.forEach(card => {
-            if (card.style.display === 'flex') {
-                card.classList.remove('hidden');
+        // 处理subcategory格式
+        if (cardSubcats) {
+            try {
+                // 尝试解析为数组
+                subcategories = JSON.parse(cardSubcats);
+            } catch (e) {
+                // 如果不是数组，则作为单个字符串处理
+                subcategories = [cardSubcats];
             }
-        });
-    }
+        }
+        
+        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
+        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+            card.style.display = 'flex';
+            visibleCards++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
     
-    // 平衡二级分类导航
-    setTimeout(() => {
-        balanceSubcategoryNav(document.querySelector(`#${sectionId}-section .subcategory-nav`));
-    }, 50);
+    // 移除所有的"显示更多"按钮
+    cleanupMoreButtons('ai-search-grid');
 }
 
 // 显示分类
@@ -1143,16 +1103,8 @@ function showCategory(category) {
                 targetBtn.classList.add('active');
             }
             
-            // 过滤显示对应分类的网站
-            const rentGrid = document.getElementById('rent-grid');
-            if (rentGrid && sitesData.rent) {
-                rentGrid.innerHTML = '';
-                sitesData.rent.forEach(site => {
-                    if (site.subcategory === category) {
-                        rentGrid.innerHTML += createSiteCard(site);
-                    }
-                });
-            }
+            // 调用过滤函数显示对应分类的网站
+            filterRentSubcategory(category);
         } else {
             // 显示全部时，选中"全部"按钮并显示所有网站
             document.querySelectorAll('#rent-section .subcategory-btn').forEach(btn => {
@@ -1161,17 +1113,8 @@ function showCategory(category) {
             document.querySelector('#rent-section .subcategory-btn[onclick*="filterRentSubcategory(\'all\')"]').classList.add('active');
             
             // 显示所有合租平台网站
-            const rentGrid = document.getElementById('rent-grid');
-            if (rentGrid && sitesData.rent) {
-                rentGrid.innerHTML = '';
-                sitesData.rent.forEach(site => {
-                    rentGrid.innerHTML += createSiteCard(site);
-                });
-            }
+            filterRentSubcategory('all');
         }
-        
-        // 初始化卡片可见性
-        initializeCardVisibility('rent-grid');
         
         // 更新导航栏高亮状态
         updateNavHighlight('rent');
@@ -2653,7 +2596,8 @@ function filterRentSubcategory(subcategory) {
     
     if (sitesData.rent) {
         sitesData.rent.forEach(site => {
-            if (subcategory === 'all' || site.subcategory === subcategory) {
+            const siteSubcategories = Array.isArray(site.subcategory) ? site.subcategory : [site.subcategory];
+            if (subcategory === 'all' || siteSubcategories.includes(subcategory)) {
                 rentGrid.innerHTML += createSiteCard(site);
             }
         });
@@ -2701,7 +2645,8 @@ function filterStudySubcategory(subcategory) {
     
     if (sitesData.study) {
         sitesData.study.forEach(site => {
-            if (subcategory === 'all' || site.subcategory === subcategory) {
+            const siteSubcategories = Array.isArray(site.subcategory) ? site.subcategory : [site.subcategory];
+            if (subcategory === 'all' || siteSubcategories.includes(subcategory)) {
                 // 确保站点数据格式统一
                 const formattedSite = {
                     title: site.title || site.name,
