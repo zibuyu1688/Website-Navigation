@@ -1515,10 +1515,17 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Udemy',
-            description: '全球最大的在线学习平台之一，提供数千门关于网站建设、营销和电商的课程',
-            tags: ['在线学习', '建站教程', '电商技能'],
-            url: 'https://www.udemy.com/',
+            title: '美国专利商标局官网',
+            description: '美国专利商标局官网',
+            tags: ['美国专利', '商标查询', '专利查询'],
+            url: 'https://tmsearch.uspto.gov/search/search-information.com/',
+            subcategory: 'learning'
+        },
+        {
+            title: 'DeepL',
+            description: '专业的翻译工具，支持多种语言的翻译',
+            tags: ['翻译', '语言工具', '翻译工具'],
+            url: 'https://www.deepl.com/',
             subcategory: 'learning'
         },
         {
@@ -1538,13 +1545,78 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'Portent',
+            description: 'P生成内容建议或者营销点子',
+            tags: ['Portent', '内容创作', '营销点子'],
+            url: 'https://portent.com/tools/title-maker',
+            subcategory: 'content',
+        },
+        {
+            title: 'Meltwater',
+            description: '网络热门内容',
+            tags: ['Meltwater', '内容创作', '网络热帖'],
+            url: 'https://www.meltwater.com/',
+            subcategory: 'content',
+            isRecommended: true,
+            needsMagic: true
+        },
+        {
+            title: 'Answer the Public',
+            description: '提供长尾词建议写文章',
+            tags: ['Answer the Public', '内容创作', '营销点子'],
+            url: 'https://answerthepublic.com/',
+            subcategory: 'content',
+            isRecommended: true,
+            needsMagic: true
+        },
+        {
             title: 'ChatGPT',
             description: 'OpenAI开发的大型语言模型，能够进行自然对话和信息检索',
             tags: ['对话AI', '自然语言处理', '信息检索'],
             url: 'https://chat.openai.com/',
             subcategory: 'content',
-            isRecommended: true,
-            needsMagic: true
+        },
+        {
+            title: 'ChatGPT',
+            description: 'Quora国外版知乎',
+            tags: ['Quora', '内容创作', '网络热帖'],
+            url: 'https://www.quora.com/',
+            subcategory: 'content',
+        },  
+        {
+            title: 'Readable',
+            description: '文章的可读性判断',
+            tags: ['Readable', '内容创作', '写作'],
+            url: 'https://readable.com/',
+            subcategory: 'content',
+        },
+        {
+            title: 'HubSpot',
+            description: '提供博客话题生成器',
+            tags: ['HubSpot', '内容创作', '写作'],
+            url: 'https://www.hubspot.com/blog-topic-generator',
+            subcategory: 'content',
+        },
+        {
+            title: 'ChatGPT',
+            description: 'OpenAI开发的大型语言模型，能够进行自然对话和信息检索',
+            tags: ['对话AI', '自然语言处理', '信息检索'],
+            url: 'https://chat.openai.com/',
+            subcategory: 'content',
+        },
+        {
+            title: 'Alltop',
+            description: '汇聚全球热门话题',
+            tags: ['Alltop', '内容创作', '写作'],
+            url: 'https://alltop.com/',
+            subcategory: 'content',
+        },
+        {
+            title: 'Mashshare',
+            description: '社交分享工具按钮',
+            tags: ['Mashshare', '内容创作', '写作'],
+            url: 'https://mashshare.net/',
+            subcategory: 'content',
         },
         {
             title: 'Matomo Analytics',
@@ -2297,6 +2369,78 @@ const sitesData = {
             description: '代理IP服务，提供HTTP、SOCKS5代理，支持地区选择',
             tags: ['代理IP', 'HTTP代理', 'SOCKS5'],
             url: 'https://proxyscrape.com/',
+            subcategory: 'server',
+            needsMagic: true
+        },
+        {
+            title: 'Google AdSense',
+            description: 'Google AdSense',
+            tags: ['Google AdSense', '联盟营销', '联盟营销工具'],
+            url: 'https://adsense.google.com/start/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'CJ联盟',
+            description: 'CJ联盟',
+            tags: ['CJ联盟', '联盟营销', '联盟营销工具'],
+            url: 'https://www.cj.com/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'Markethealth',
+            description: 'Markethealth',
+            tags: ['Markethealth', '健康美容联盟', '联盟营销工具'],
+            url: 'https://www.markethealth.com/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'ShareASale',
+            description: 'ShareASale',
+            tags: ['ShareASale', '联盟营销', '联盟营销工具'],
+            url: 'https://www.shareasale.com/info//',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'OfferVault联盟',
+            description: 'OfferVault',
+            tags: ['OfferVault', '联盟营销', '联盟营销工具'],
+            url: 'https://www.offervault.com/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'AdCombo联盟',
+            description: 'AdCombo',
+            tags: ['AdCombo', '联盟营销', '联盟营销工具'],
+            url: 'https://adcombo.com/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'Awin联盟',
+            description: 'Awin',
+            tags: ['Awin', '联盟营销', '联盟营销工具'],
+            url: 'https://www.awin.com/kbank.com/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'Admitad联盟',
+            description: 'Admitad',
+            tags: ['Admitad', '联盟营销', '联盟营销工具'],
+            url: 'https://www.admitad.com/om/',
+            subcategory: 'ip-proxy',
+            needsMagic: true
+        },
+        {
+            title: 'Amazon联盟',
+            description: 'Amazon',
+            tags: ['Amazon', '联盟营销', '联盟营销工具'],
+            url: 'https://affiliate-program.amazon.com/',
             subcategory: 'ip-proxy',
             needsMagic: true
         },
@@ -2308,6 +2452,7 @@ const sitesData = {
             subcategory: 'browser',
             needsMagic: true
         },
+
         {
             title: 'AdsPower',
             description: '性价比高，支持团队协作和自动化脚本（RPA），提供免费版和付费版，适合社交媒体多账号管理',
@@ -5554,6 +5699,23 @@ const sitesData = {
             subcategory: 'ai-account',
             isRecommended: true
         },
+        {
+            title: '海外客',
+            description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
+            tags: ['AI账号', '共享平台', '账号合租'],
+            url: 'https://www.haiwaike.com/',
+            subcategory: 'ai-account',
+            isRecommended: true
+        },
+        {
+            title: 'SEO工具团购-淘宝',
+            description: 'SEO工具团购平台，提供各类SEO工具的团购服务',
+            tags: ['SEO工具', '团购平台', '工具合租'],
+            url: 'https://s.taobao.com/search?commend=all&ie=utf8&initiative_id=tbindexz_20170306&page=1&q=seo%E5%9B%A2%E8%B4%AD&search_type=item&sourceId=tb.index&spm=a21bo.jianhua%2Fa.search_manual.0&ssid=s5-e&tab=all/',
+            subcategory: 'software-account',
+            isRecommended: true
+        },
+        
         {
             title: '银河录像局',
             description: '社交媒体账号共享平台，提供各类社交媒体账号的共享服务',

@@ -1909,6 +1909,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 调用一次handleCategoryVisibility以确保所有分类正确初始化
     handleCategoryVisibility();
+    
+    // 更新一级分类的网址数量统计
+    updateCategoryCounts();
 });
 
 // 清除搜索框内容并恢复首页状态
@@ -2700,4 +2703,40 @@ function loadStudySites() {
     
     // 初始化卡片可见性
     initializeCardVisibility('study-grid');
+}
+
+// 统计并显示每个一级分类下的网址数量
+function updateCategoryCounts() {
+    // 获取每个分类的网址数量
+    const counts = {
+        'ecommerce': sitesData.ecommerce ? sitesData.ecommerce.length : 0,
+        'social': sitesData.social ? sitesData.social.length : 0,
+        'website': sitesData.website ? sitesData.website.length : 0,
+        'ai_chat': sitesData.ai_chat ? sitesData.ai_chat.length : 0, 
+        'ai_writing': sitesData.ai_writing ? sitesData.ai_writing.length : 0,
+        'ai_image': sitesData.ai_image ? sitesData.ai_image.length : 0,
+        'ai_video': sitesData.ai_video ? sitesData.ai_video.length : 0,
+        'ai_audio': sitesData.ai_audio ? sitesData.ai_audio.length : 0,
+        'ai_design': sitesData.ai_design ? sitesData.ai_design.length : 0,
+        'ai_coding': sitesData.ai_coding ? sitesData.ai_coding.length : 0,
+        'ai_prompts': aiPromptsData ? aiPromptsData.length : 0,
+        'ai_search': aiSearchData ? aiSearchData.length : 0,
+        'rent': sitesData.rent ? sitesData.rent.length : 0,
+        'study': sitesData.study ? sitesData.study.length : 0
+    };
+    
+    // 为每个一级分类添加数量
+    Object.keys(counts).forEach(category => {
+        const navLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
+        if (navLink) {
+            // 检查是否已有计数标签
+            let countSpan = navLink.querySelector('.category-count');
+            if (!countSpan) {
+                countSpan = document.createElement('span');
+                countSpan.className = 'category-count';
+                navLink.appendChild(countSpan);
+            }
+            countSpan.textContent = ` (${counts[category]})`;
+        }
+    });
 }

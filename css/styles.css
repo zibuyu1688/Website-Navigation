@@ -1546,4 +1546,18 @@ body {
 
 .clear-search-btn.visible {
     display: block;
+}
+
+/* 分类计数样式 */
+.category-count {
+    display: inline-block;
+    font-size: 0.85em;
+    color: #8e9aaf;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+/* 当分类被选中时的计数样式 */
+.nav-link.active .category-count {
+    color: #a1c2f7;
 } 
