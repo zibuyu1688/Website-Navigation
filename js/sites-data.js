@@ -6,7 +6,7 @@ const sitesData = {
             title: '亚马逊全球开店',
             description: '亚马逊开店，提供产品上传、订单管理、广告投放等功能',
             tags: ['亚马逊', '开店', '跨境电商'],
-            url: 'https://gs.amazon.cn/?utm_source=amz520.com',
+            url: 'https://gs.amazon.cn',
             subcategory: ['amazon', 'shopify', 'tiktok'],
             isRecommended: true
         },
@@ -1739,6 +1739,14 @@ const sitesData = {
             url: 'https://portent.com/tools/title-maker',
             subcategory: 'content',
         },
+        {
+            title: 'Bing Webmaster',
+            description: '微软推出的免费工具,类似于Google Search Console',
+            tags: ['Bingwebmaster', 'seo', 'seo优化'],
+            url: 'https://www.bing.com/webmasters',
+            subcategory: 'content',
+        },
+
         {
             title: 'Meltwater',
             description: '网络热门内容',
@@ -6586,7 +6594,7 @@ function loadSitesByCategory(siteData, gridId) {
                 description: site.description,
                 url: site.url,
                 tags: site.tags || [],
-                subcategory: normalizeSubcategory(site.subcategory)
+                subcategory: site.subcategory
             });
         });
     }
