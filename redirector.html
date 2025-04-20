@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI365 Navigation</title>
+    <script src="js/language-redirector.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4285f4;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .language-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .language-btn {
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .language-btn:hover {
+            background-color: #3367d6;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <h1>AI365 Navigation</h1>
+    <p>Redirecting to the appropriate language version...</p>
+    <div class="language-buttons">
+        <button class="language-btn" onclick="manualSwitchLanguage('zh')">中文版</button>
+        <button class="language-btn" onclick="manualSwitchLanguage('en')">English Version</button>
+    </div>
+    
+    <script>
+        // 页面加载3秒后，如果仍未重定向，自动重定向到默认的中文页面
+        setTimeout(function() {
+            if (document.readyState === 'complete') {
+                window.location.href = 'index.html';
+            }
+        }, 3000);
+    </script>
+</body>
+</html> 

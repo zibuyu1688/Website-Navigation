@@ -1,36 +1,166 @@
 // 创建网站卡片
 function createSiteCard(site) {
+    // 确定当前语言
+    const isEnglish = getCurrentLanguage() === 'en';
+    
     // 检查网站是否需要VPN访问
     const needsMagic = site.needsMagic || site.tags.includes('魔法');
-    const magicTag = needsMagic ? `<div class="magic-tag">魔法</div>` : '';
+    // 如果是英文模式，则不显示魔法标签
+    const magicTag = !isEnglish && needsMagic ? `<div class="magic-tag">${getText('magic_tag')}</div>` : '';
     
     // 检查网站是否为推荐网站
     const isRecommended = site.isRecommended || site.isPopular || site.tags.includes('推荐');
-    const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> 强烈推荐</div>` : '';
+    const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> ${getText('recommend_tag')}</div>` : '';
     
-    // 处理subcategory，支持数组形式
-    const subcatValue = Array.isArray(site.subcategory) ? site.subcategory.join(' ') : (site.subcategory || '');
+    // 准备英文描述属性
+    const descriptionEnAttr = site.descriptionEn ? `data-description-en="${site.descriptionEn.replace(/"/g, '&quot;')}"` : '';
+    
+    // 准备英文标题属性
+    const titleEnAttr = site.titleEn ? `data-title-en="${site.titleEn.replace(/"/g, '&quot;')}"` : '';
+    
+    // 根据当前语言选择显示的标签
+    let displayTags = site.tags;
+    if (isEnglish && site.tagsEn && site.tagsEn.length > 0) {
+        displayTags = site.tagsEn;
+    } else if (isEnglish) {
+        // 英文模式但没有英文标签时，尝试翻译常见标签
+        displayTags = site.tags.map(tag => translateTag(tag));
+    }
+    
+    // 获取访问按钮文本
+    const visitButtonText = getText('visit_button');
     
     return `
-        <div class="site-card" data-subcategory="${subcatValue}" style="position: relative;">
+        <div class="site-card" data-subcategory="${site.subcategory || ''}" ${descriptionEnAttr} ${titleEnAttr} style="position: relative;">
             ${magicTag}
             ${recommendTag}
             <div class="card-content">
                 <div class="card-header">
-                    <div class="site-title">${site.title}</div>
+                    <div class="site-title">${isEnglish && site.titleEn ? site.titleEn : site.title}</div>
                 </div>
-                <div class="site-desc">${site.description}</div>
+                <div class="site-desc">${isEnglish && site.descriptionEn ? site.descriptionEn : site.description}</div>
                 <div class="site-tags">
-                    ${site.tags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
+                    ${displayTags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
                 </div>
             </div>
             <div class="card-footer">
                 <a href="${site.url}" target="_blank" class="visit-btn">
-                    访问 <i class="bi bi-box-arrow-up-right"></i>
+                    ${visitButtonText} <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
         </div>
     `;
+}
+
+// 翻译常见标签到英文
+function translateTag(tag) {
+    const tagTranslations = {
+        '亚马逊': 'Amazon',
+        '卖家平台': 'Seller Platform',
+        '跨境电商': 'Cross-border',
+        '数据分析': 'Analytics',
+        '品牌': 'Brand',
+        '美国站': 'US Store',
+        '消费者平台': 'Consumer',
+        '卖家后台': 'Seller Backend',
+        '英国站': 'UK Store',
+        '日本站': 'Japan Store',
+        '德国站': 'Germany Store',
+        '法国站': 'France Store',
+        '意大利站': 'Italy Store',
+        '加拿大站': 'Canada Store',
+        '澳洲站': 'Australia Store',
+        '西班牙站': 'Spain Store',
+        '墨西哥站': 'Mexico Store',
+        '排行榜': 'Rankings',
+        '新品': 'New Products',
+        '销量': 'Sales',
+        '飙升': 'Trending',
+        '速卖通': 'AliExpress',
+        '社交媒体': 'Social Media',
+        '关键词': 'Keywords',
+        '工具': 'Tools',
+        '营销': 'Marketing',
+        '研究': 'Research',
+        '人工智能': 'AI',
+        '图像生成': 'Image Generation',
+        '文本生成': 'Text Generation',
+        '视频制作': 'Video Creation',
+        '音频处理': 'Audio Processing',
+        '设计': 'Design',
+        '编程': 'Programming',
+        '学习资源': 'Learning',
+        '推荐': 'Recommended',
+        '免费': 'Free',
+        '付费': 'Paid',
+        '高级版': 'Premium',
+        '魔法': '',
+        '分析工具': 'Analytics',
+        '排名': 'Ranking',
+        '商业': 'Business',
+        '电商': 'E-commerce',
+        '购物': 'Shopping',
+        '网站工具': 'Web Tools',
+        '广告': 'Ads',
+        '搜索引擎': 'Search Engine',
+        '监控': 'Monitoring',
+        '自动化': 'Automation',
+        '流量': 'Traffic',
+        '域名': 'Domain',
+        '服务器': 'Server',
+        '建站': 'Web Building',
+        '社交': 'Social',
+        '平台': 'Platform',
+        '跨境': 'Cross-border',
+        '在线学习': 'Online Learning',
+        '建站教程': 'Website Tutorials',
+        '电商技能': 'E-commerce Skills',
+        '内容优化': 'Content Optimization',
+        '英文校对': 'English Proofreading',
+        '写作助手': 'Writing Assistant',
+        'AI写作': 'AI Writing',
+        '内容创作': 'Content Creation',
+        '营销文案': 'Marketing Copy',
+        '对话AI': 'Conversational AI',
+        '自然语言处理': 'NLP',
+        '信息检索': 'Information Retrieval',
+        '访问': 'Visit',
+        '在线教育': 'Online Education',
+        '学习平台': 'Learning Platform',
+        '多媒体': 'Multimedia',
+        '视频教程': 'Video Tutorials',
+        '专业课程': 'Professional Courses',
+        '技能提升': 'Skill Enhancement',
+        '语言学习': 'Language Learning',
+        '写作工具': 'Writing Tools',
+        '语法检查': 'Grammar Check',
+        '拼写检查': 'Spell Check',
+        '文章润色': 'Content Polishing',
+        '专业写作': 'Professional Writing',
+        '创意写作': 'Creative Writing',
+        '内容管理': 'Content Management',
+        '企业服务': 'Business Services',
+        '沟通工具': 'Communication Tools',
+        '协作平台': 'Collaboration Platform',
+        '数据可视化': 'Data Visualization',
+        '商业分析': 'Business Analytics',
+        '人力资源': 'HR Resources',
+        '客户服务': 'Customer Service',
+        '项目管理': 'Project Management',
+        '开发工具': 'Development Tools',
+        '产品设计': 'Product Design',
+        '用户体验': 'User Experience',
+        '用户界面': 'User Interface',
+        '网页设计': 'Web Design',
+        '响应式设计': 'Responsive Design',
+        '移动应用': 'Mobile Apps',
+        '云服务': 'Cloud Services',
+        '网络安全': 'Cybersecurity',
+        '数据备份': 'Data Backup',
+        '系统集成': 'System Integration'
+    };
+    
+    return tagTranslations[tag] || tag;
 }
 
 // 从URL中提取域名
@@ -52,7 +182,7 @@ function extractDomain(url) {
 
 // 创建展开/收起按钮
 function createMoreSitesButton(sectionId, expanded = false) {
-    const buttonText = expanded ? '- 收起' : '显示更多 +';
+    const buttonText = expanded ? getText('collapse') : getText('show_more');
     const filterId = `glow-${sectionId}`;
     return `
         <div class="more-sites-btn-container">
@@ -76,16 +206,8 @@ function createMoreSitesButton(sectionId, expanded = false) {
 // 切换展开/收起状态
 function toggleMoreSites(sectionId, buttonElement) {
     const siteCards = document.querySelectorAll(`#${sectionId} .site-card`);
-    const isExpanded = buttonElement.textContent.trim().includes('收起');
+    const isExpanded = buttonElement.textContent.trim().includes(getText('collapse'));
     const filterId = `glow-${sectionId}`;
-    
-    // 确保没有其他相同section的显示更多按钮
-    const otherButtons = document.querySelectorAll(`.more-sites-btn-container button[onclick*="${sectionId}"]`);
-    otherButtons.forEach(btn => {
-        if (btn !== buttonElement) {
-            btn.closest('.more-sites-btn-container').remove();
-        }
-    });
     
     // 切换卡片显示状态
     siteCards.forEach((card, index) => {
@@ -96,7 +218,7 @@ function toggleMoreSites(sectionId, buttonElement) {
     
     // 更新按钮文本
     buttonElement.innerHTML = isExpanded ? 
-        `显示更多 +
+        `${getText('show_more')}
         <svg width="100%" height="100%">
             <filter id="${filterId}">
                 <feGaussianBlur result="coloredBlur" stdDeviation="5"></feGaussianBlur>
@@ -107,7 +229,7 @@ function toggleMoreSites(sectionId, buttonElement) {
             </filter>
             <rect width="100%" height="100%" filter="url(#${filterId})"></rect>
         </svg>` : 
-        `- 收起
+        `${getText('collapse')}
         <svg width="100%" height="100%">
             <filter id="${filterId}">
                 <feGaussianBlur result="coloredBlur" stdDeviation="5"></feGaussianBlur>
@@ -132,8 +254,14 @@ function initializeCardVisibility(sectionId) {
         }
     });
     
-    // 移除相关的"显示更多"按钮
-    cleanupMoreButtons(sectionId);
+    // 移除该区域内所有的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        // 检查按钮是否与当前部分相关
+        if (button.querySelector("button")?.getAttribute("onclick")?.includes(sectionId)) {
+            button.parentNode.removeChild(button);
+        }
+    });
     
     // 只有当可见卡片超过8个时才显示"显示更多"按钮
     if (visibleCards > 8) {
@@ -152,9 +280,32 @@ function initializeCardVisibility(sectionId) {
         
         // 添加"显示更多"按钮 - 在site-grid后面而不是内部
         const gridElement = document.getElementById(sectionId);
+        // 根据grid ID获取正确的section ID
+        let sectionName = sectionId;
+        if (sectionId === 'website-tools-grid') {
+            sectionName = 'website';
+        } else if (sectionId.includes('-grid')) {
+            sectionName = sectionId.replace('-grid', '');
+        }
+        const sectionElement = document.getElementById(`${sectionName}-section`);
         
-        // 确保只添加一个按钮
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton(sectionId));
+        if (sectionElement) {
+            // 检查该部分是否已经有"显示更多"按钮
+            const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="${sectionId}"]`);
+            if (!existingButton) {
+                // 确保只添加一个按钮，且添加到分类的底部
+                sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton(sectionId));
+            }
+        } else {
+            console.warn(`没有找到section元素: ${sectionName}-section，尝试添加到grid后面`);
+            if (gridElement) {
+                // 如果找不到section元素，尝试添加到grid后面
+                const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="${sectionId}"]`);
+                if (!existingButton) {
+                    gridElement.insertAdjacentHTML('afterend', createMoreSitesButton(sectionId));
+                }
+            }
+        }
     } else {
         // 如果卡片数量不超过8个，确保所有卡片都可见
         siteCards.forEach(card => {
@@ -167,14 +318,18 @@ function initializeCardVisibility(sectionId) {
 
 // 处理分类切换后的卡片可见性
 function handleCategoryVisibility() {
-    // 只处理当前显示的分类区域
-    const visibleSections = document.querySelectorAll('.category-section[style*="display: block"]');
-    visibleSections.forEach(section => {
-        const gridId = section.querySelector('.site-grid').id;
-        if (gridId) {
-            initializeCardVisibility(gridId);
-        }
-    });
+    initializeCardVisibility('ecommerce-grid');
+    initializeCardVisibility('social-grid');
+    initializeCardVisibility('website-tools-grid');
+    initializeCardVisibility('ai-chat-grid');
+    initializeCardVisibility('ai-writing-grid');
+    initializeCardVisibility('ai-image-grid');
+    initializeCardVisibility('ai-video-grid');
+    initializeCardVisibility('ai-audio-grid');
+    initializeCardVisibility('ai-design-grid');
+    initializeCardVisibility('ai-coding-grid');
+    initializeCardVisibility('ai-prompts-grid');
+    initializeCardVisibility('ai-search-grid');
 }
 
 // 加载网站数据
@@ -201,7 +356,7 @@ function loadSites() {
     // 初始化卡片可见性
     initializeCardVisibility('social-grid');
     
-    // 加载SEO工具
+    // 加载建站工具
     const websiteToolsGrid = document.getElementById('website-tools-grid');
     websiteToolsGrid.innerHTML = '';
     
@@ -327,7 +482,7 @@ function loadSites() {
     handleCategoryVisibility();
 }
 
-// 过滤SEO工具二级分类
+// 过滤建站工具二级分类
 function filterSubcategory(subcategory) {
     // 更新按钮状态
     document.querySelectorAll('#website-section .subcategory-btn').forEach(btn => {
@@ -345,11 +500,7 @@ function filterSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -414,11 +565,7 @@ function filterEcommerceSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -426,10 +573,12 @@ function filterEcommerceSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ecommerce-section .more-sites-btn-container`);
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
     allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
+        if (button.querySelector("button").getAttribute("onclick").includes('ecommerce-grid')) {
+            button.parentNode.removeChild(button);
+        }
     });
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
@@ -447,7 +596,14 @@ function filterEcommerceSubcategory(subcategory) {
         
         // 添加"显示更多"按钮 - 在grid后面而不是内部
         const gridElement = document.getElementById('ecommerce-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ecommerce-grid'));
+        const sectionElement = document.getElementById('ecommerce-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ecommerce-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ecommerce-grid'));
+        }
     } else {
         // 确保所有可见卡片都显示出来
         cards.forEach(card => {
@@ -456,17 +612,6 @@ function filterEcommerceSubcategory(subcategory) {
             }
         });
     }
-}
-
-// 清理特定grid相关的"显示更多"按钮
-function cleanupMoreButtons(gridId) {
-    const allButtons = document.querySelectorAll(`.more-sites-btn-container`);
-    allButtons.forEach(button => {
-        const buttonHtml = button.innerHTML;
-        if (buttonHtml.includes(gridId)) {
-            button.parentNode.removeChild(button);
-        }
-    });
 }
 
 // 过滤社交平台二级分类
@@ -487,11 +632,7 @@ function filterSocialSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -499,8 +640,13 @@ function filterSocialSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('social-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('social-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -517,7 +663,14 @@ function filterSocialSubcategory(subcategory) {
         
         // 添加"显示更多"按钮 - 在grid后面而不是内部
         const gridElement = document.getElementById('social-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('social-grid'));
+        const sectionElement = document.getElementById('social-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="social-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('social-grid'));
+        }
     } else {
         // 确保所有可见卡片都显示出来
         cards.forEach(card => {
@@ -546,23 +699,7 @@ function filterAiWritingSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -570,8 +707,45 @@ function filterAiWritingSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-writing-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-writing-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById('ai-writing-grid');
+        const sectionElement = document.getElementById('ai-writing-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-writing-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-writing-grid'));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 过滤AI对话二级分类
@@ -592,11 +766,7 @@ function filterAiChatSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory ? card.dataset.subcategory.split(' ') : [];
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || cardSubcats.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -604,8 +774,13 @@ function filterAiChatSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-chat-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-chat-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -622,7 +797,14 @@ function filterAiChatSubcategory(subcategory) {
         
         // 添加"显示更多"按钮 - 在grid后面而不是内部
         const gridElement = document.getElementById('ai-chat-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-chat-grid'));
+        const sectionElement = document.getElementById('ai-chat-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-chat-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-chat-grid'));
+        }
     } else {
         // 确保所有可见卡片都显示出来
         cards.forEach(card => {
@@ -651,23 +833,7 @@ function filterAiImageSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -675,8 +841,45 @@ function filterAiImageSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-image-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-image-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById('ai-image-grid');
+        const sectionElement = document.getElementById('ai-image-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-image-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-image-grid'));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 过滤AI视频二级分类
@@ -697,23 +900,7 @@ function filterAiVideoSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -721,8 +908,45 @@ function filterAiVideoSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-video-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-video-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById('ai-video-grid');
+        const sectionElement = document.getElementById('ai-video-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-video-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-video-grid'));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 过滤AI音频二级分类
@@ -743,23 +967,7 @@ function filterAiAudioSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -767,8 +975,45 @@ function filterAiAudioSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-audio-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-audio-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById('ai-audio-grid');
+        const sectionElement = document.getElementById('ai-audio-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-audio-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-audio-grid'));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 过滤AI设计二级分类
@@ -789,23 +1034,7 @@ function filterAiDesignSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -813,8 +1042,45 @@ function filterAiDesignSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-design-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-design-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById('ai-design-grid');
+        const sectionElement = document.getElementById('ai-design-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-design-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-design-grid'));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 过滤AI编程二级分类
@@ -843,10 +1109,12 @@ function filterAiCodingSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    const allOldButtons = document.querySelectorAll(`#ai-coding-section .more-sites-btn-container`);
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
     allOldButtons.forEach(button => {
-        button.parentNode.removeChild(button);
+        if (button.querySelector("button").getAttribute("onclick").includes('ai-coding-grid')) {
+            button.parentNode.removeChild(button);
+        }
     });
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
@@ -864,7 +1132,14 @@ function filterAiCodingSubcategory(subcategory) {
         
         // 添加"显示更多"按钮 - 在grid后面而不是内部
         const gridElement = document.getElementById('ai-coding-grid');
-        gridElement.insertAdjacentHTML('afterend', createMoreSitesButton('ai-coding-grid'));
+        const sectionElement = document.getElementById('ai-coding-section');
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="ai-coding-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ai-coding-grid'));
+        }
     } else {
         // 确保所有可见卡片都显示出来
         cards.forEach(card => {
@@ -885,6 +1160,16 @@ function loadAiCodingTools() {
     });
 }
 
+// 加载AI设计工具
+function loadAiDesignTools() {
+    const aiDesignGrid = document.getElementById('ai-design-grid');
+    aiDesignGrid.innerHTML = '';
+    
+    sitesData.ai_design.forEach(site => {
+        aiDesignGrid.innerHTML += createSiteCard(site);
+    });
+}
+
 // 加载AI提示词工具
 function loadAiPromptsTools() {
     const aiPromptsGrid = document.getElementById('ai-prompts-grid');
@@ -897,60 +1182,24 @@ function loadAiPromptsTools() {
 
 // 过滤AI提示词子分类
 function filterAiPromptsSubcategory(subcategory) {
-    // 更新按钮状态
-    document.querySelectorAll('#ai-prompts-section .subcategory-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.querySelector(`#ai-prompts-section .subcategory-btn[onclick*="filterAiPromptsSubcategory('${subcategory}')"]`).classList.add('active');
-
-    // 过滤卡片
-    const cards = document.querySelectorAll('#ai-prompts-grid .site-card');
-    let visibleCards = 0;
-    
-    // 先移除所有hidden类，重置显示状态
-    cards.forEach(card => {
-        card.classList.remove('hidden');
-    });
-    
-    cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
-            card.style.display = 'flex';
-            visibleCards++;
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-prompts-grid');
+    filterSubcategoryGeneric('ai-prompts', subcategory);
 }
 
 // 过滤AI搜索子分类
 function filterAiSearchSubcategory(subcategory) {
+    filterSubcategoryGeneric('ai-search', subcategory);
+}
+
+// 过滤子分类
+function filterSubcategoryGeneric(sectionId, subcategory) {
     // 更新按钮状态
-    document.querySelectorAll('#ai-search-section .subcategory-btn').forEach(btn => {
+    document.querySelectorAll(`#${sectionId}-section .subcategory-btn`).forEach(btn => {
         btn.classList.remove('active');
     });
-    document.querySelector(`#ai-search-section .subcategory-btn[onclick*="filterAiSearchSubcategory('${subcategory}')"]`).classList.add('active');
+    document.querySelector(`#${sectionId}-section .subcategory-btn[onclick*="${subcategory}')"]`).classList.add('active');
 
     // 过滤卡片
-    const cards = document.querySelectorAll('#ai-search-grid .site-card');
+    const cards = document.querySelectorAll(`#${sectionId}-grid .site-card`);
     let visibleCards = 0;
     
     // 先移除所有hidden类，重置显示状态
@@ -959,23 +1208,7 @@ function filterAiSearchSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
-        // 获取卡片的subcategory属性
-        const cardSubcats = card.dataset.subcategory;
-        let subcategories = [];
-        
-        // 处理subcategory格式
-        if (cardSubcats) {
-            try {
-                // 尝试解析为数组
-                subcategories = JSON.parse(cardSubcats);
-            } catch (e) {
-                // 如果不是数组，则作为单个字符串处理
-                subcategories = [cardSubcats];
-            }
-        }
-        
-        // 如果是全部或者卡片的subcategory包含当前选中的subcategory，则显示
-        if (subcategory === 'all' || subcategories.includes(subcategory)) {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
         } else {
@@ -983,15 +1216,49 @@ function filterAiSearchSubcategory(subcategory) {
         }
     });
     
-    // 移除所有的"显示更多"按钮
-    cleanupMoreButtons('ai-search-grid');
+    // 移除与当前部分相关的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`.more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        if (button.querySelector("button").getAttribute("onclick").includes(`${sectionId}-grid`)) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
+    if (visibleCards > 8) {
+        // 隐藏第8个之后的卡片
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        
+        // 添加"显示更多"按钮 - 在grid后面而不是内部
+        const gridElement = document.getElementById(`${sectionId}-grid`);
+        const sectionElement = document.getElementById(`${sectionId}-section`);
+        
+        // 检查该部分是否已经有"显示更多"按钮
+        const existingButton = document.querySelector(`.more-sites-btn-container button[onclick*="${sectionId}-grid"]`);
+        if (!existingButton) {
+            // 确保只添加一个按钮，且添加到分类的底部
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton(`${sectionId}-grid`));
+        }
+    } else {
+        // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
 }
 
 // 显示分类
 function showCategory(category) {
-    // 要滚动到的目标分类节点ID
-    let targetSectionId = '';
-    
     // 清除搜索状态 - 隐藏搜索结果区域
     const searchResultsSection = document.getElementById('search-results-section');
     if (searchResultsSection) {
@@ -1016,8 +1283,6 @@ function showCategory(category) {
     document.getElementById('ai-coding-section').style.display = 'none';
     document.getElementById('ai-prompts-section').style.display = 'none';
     document.getElementById('ai-search-section').style.display = 'none';
-    document.getElementById('rent-section').style.display = 'none';
-    document.getElementById('study-section').style.display = 'none';
 
     // 如果是首页，显示所有分类
     if (category === 'home') {
@@ -1033,8 +1298,6 @@ function showCategory(category) {
         document.getElementById('ai-coding-section').style.display = 'block';
         document.getElementById('ai-prompts-section').style.display = 'block';
         document.getElementById('ai-search-section').style.display = 'block';
-        document.getElementById('rent-section').style.display = 'block';
-        document.getElementById('study-section').style.display = 'block';
         
         // 更新导航高亮状态
         updateNavHighlight('home');
@@ -1054,71 +1317,8 @@ function showCategory(category) {
         return;
     }
     
-    // 添加学习社区的处理
-    else if (category === 'study' || 
-             category === 'wechatblogger' || 
-             category === 'wechatvideoblogger' || 
-             category === 'studygroup' ||
-             category === 'articlecollection') {
-        document.getElementById('study-section').style.display = 'block';
-        targetSectionId = 'study-section';
-        
-        // 过滤二级分类
-        if (category !== 'study') {
-            filterStudySubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#study-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#study-section .subcategory-btn[onclick*="filterStudySubcategory(\'all\')"]').classList.add('active');
-            
-            // 确保显示所有学习社区网站
-            filterStudySubcategory('all');
-        }
-        
-        // 初始化卡片可见性
-        initializeCardVisibility('study-grid');
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('study');
-    }
-    
-    // 添加合租平台的处理
-    else if (category === 'rent' || 
-             category === 'ai-account' || 
-             category === 'social-account' || 
-             category === 'software-account') {
-        document.getElementById('rent-section').style.display = 'block';
-        targetSectionId = 'rent-section';
-        
-        // 过滤二级分类
-        if (category !== 'rent') {
-            // 更新按钮状态
-            document.querySelectorAll('#rent-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            const targetBtn = document.querySelector(`#rent-section .subcategory-btn[onclick*="filterRentSubcategory('${category}')"]`);
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-            }
-            
-            // 调用过滤函数显示对应分类的网站
-            filterRentSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮并显示所有网站
-            document.querySelectorAll('#rent-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#rent-section .subcategory-btn[onclick*="filterRentSubcategory(\'all\')"]').classList.add('active');
-            
-            // 显示所有合租平台网站
-            filterRentSubcategory('all');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('rent');
-    }
+    // 要滚动到的目标分类节点ID
+    let targetSectionId = '';
 
     // 处理特定电商网站的情况
     const ecommerceWebsites = {
@@ -1127,7 +1327,6 @@ function showCategory(category) {
         'ebay': 'cross_border_ecommerce',
         'lazada': 'cross_border_ecommerce',
         'shopee': 'cross_border_ecommerce',
-        'tiktok': 'cross_border_ecommerce',
         'other-ecommerce': 'other_ecommerce'
     };
 
@@ -1169,14 +1368,12 @@ function showCategory(category) {
     }
     // 根据传入的分类显示相应内容
     else if (category === 'ecommerce' || 
-               category === 'amazon' || 
-               category === 'aliexpress' || 
-               category === 'ebay' || 
-               category === 'shopify' || 
-               category === 'lazada' || 
-               category === 'shopee' || 
-               category === 'tiktok' || 
-               category === 'other-ecommerce') {
+        category === 'domestic_ecommerce' || 
+        category === 'cross_border_ecommerce' || 
+        category === 'content_ecommerce' || 
+        category === 'supply_chain' || 
+        category === 'vertical_ecommerce' || 
+        category === 'other_ecommerce') {
         document.getElementById('ecommerce-section').style.display = 'block';
         targetSectionId = 'ecommerce-section';
         
@@ -1189,19 +1386,18 @@ function showCategory(category) {
                 btn.classList.remove('active');
             });
             document.querySelector('#ecommerce-section .subcategory-btn[onclick*="filterEcommerceSubcategory(\'all\')"]').classList.add('active');
-            
-            // 确保显示所有电商平台网站
-            filterEcommerceSubcategory('all');
         }
         
         // 更新导航栏高亮状态
         updateNavHighlight('ecommerce');
     } else if (category === 'social' || 
-               category === 'social-global' || 
-               category === 'social-china' || 
-               category === 'social-influencer' ||
-               category === 'social-marketing' ||
-               category === 'social-analytics') {
+               category === 'domestic_social' || 
+               category === 'international_social' || 
+               category === 'image_social' || 
+               category === 'video_social' || 
+               category === 'blog_forum' || 
+               category === 'dating_social' || 
+               category === 'niche_social') {
         document.getElementById('social-section').style.display = 'block';
         targetSectionId = 'social-section';
         
@@ -1219,7 +1415,6 @@ function showCategory(category) {
         // 更新导航栏高亮状态
         updateNavHighlight('social');
     } else if (category === 'website' || 
-               category === 'google' || 
                category === 'seo' || 
                category === 'keyword' || 
                category === 'analytics' || 
@@ -1227,7 +1422,7 @@ function showCategory(category) {
                category === 'server' || 
                category === 'payment' || 
                category === 'erp' || 
-               category === 'product-selection' || 
+               category === 'network' || 
                category === 'account' || 
                category === 'temp-mail' || 
                category === 'ip-proxy' || 
@@ -1377,13 +1572,7 @@ function showCategory(category) {
         
         // 更新导航栏高亮状态
         updateNavHighlight('ai_audio');
-    } else if (category === 'ai_design' || 
-             category === 'commerce_design' || 
-             category === 'ui_ux' || 
-             category === 'illustration' || 
-             category === 'model_design' || 
-             category === 'assistant_tools' || 
-             category === 'special_tools') {
+    } else if (category === 'ai_design') {
         document.getElementById('ai-design-section').style.display = 'block';
         targetSectionId = 'ai-design-section';
         
@@ -1401,13 +1590,13 @@ function showCategory(category) {
         // 更新导航栏高亮状态
         updateNavHighlight('ai_design');
     } else if (category === 'ai_coding' || 
-             category === 'code_generation' || 
-             category === 'fullstack_dev' || 
-             category === 'design_to_code' || 
-             category === 'code_review' || 
-             category === 'natural_language_dev' || 
-             category === 'low_code' || 
-             category === 'cloud_ide') {
+               category === 'code_generation' || 
+               category === 'fullstack_dev' || 
+               category === 'design_to_code' || 
+               category === 'code_review' || 
+               category === 'natural_language_dev' || 
+               category === 'low_code' || 
+               category === 'cloud_ide') {
         // 显示AI编程部分
         document.getElementById('ai-coding-section').style.display = 'block';
         targetSectionId = 'ai-coding-section';
@@ -1750,7 +1939,7 @@ function getCategoryDisplayName(categoryKey) {
     const categoryMap = {
         'ecommerce': '电商平台',
         'social': '社交平台',
-        'website': 'SEO 工具',
+        'website': '建站工具',
         'ai_chat': 'AI对话',
         'ai_writing': 'AI写作',
         'ai_image': 'AI图像',
@@ -1765,10 +1954,49 @@ function getCategoryDisplayName(categoryKey) {
     return categoryMap[categoryKey] || categoryKey;
 }
 
-// 创建带有分类标记的站点卡片
+// 在搜索结果页面创建带分类的网站卡片
 function createSiteCardWithCategory(site, categoryName) {
-    // 直接复用createSiteCard函数生成卡片，确保搜索结果与普通卡片样式一致
-    return createSiteCard(site);
+    // 检查网站是否需要VPN访问
+    const needsMagic = site.needsMagic || site.tags.includes('魔法');
+    const magicTag = needsMagic ? `<div class="magic-tag">${getText('magic_tag')}</div>` : '';
+    
+    // 检查网站是否为推荐网站
+    const isRecommended = site.isRecommended || site.isPopular || site.tags.includes('推荐');
+    const recommendTag = isRecommended ? `<div class="recommend-tag"><i class="bi bi-star-fill"></i> ${getText('recommend_tag')}</div>` : '';
+    
+    // 确定当前语言
+    const isEnglish = getCurrentLanguage() === 'en';
+    
+    // 根据当前语言选择显示的标签
+    let displayTags = site.tags;
+    if (isEnglish && site.tagsEn && site.tagsEn.length > 0) {
+        displayTags = site.tagsEn;
+    } else if (isEnglish) {
+        // 英文模式但没有英文标签时，尝试翻译常见标签
+        displayTags = site.tags.map(tag => translateTag(tag));
+    }
+    
+    return `
+        <div class="site-card" data-subcategory="${site.subcategory || ''}" style="position: relative;">
+            ${magicTag}
+            ${recommendTag}
+            <div class="category-badge">${categoryName}</div>
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="site-title">${isEnglish && site.titleEn ? site.titleEn : site.title}</div>
+                </div>
+                <div class="site-desc">${isEnglish && site.descriptionEn ? site.descriptionEn : site.description}</div>
+                <div class="site-tags">
+                    ${displayTags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="${site.url}" target="_blank" class="visit-btn">
+                    ${getText('visit_button')} <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+            </div>
+        </div>
+    `;
 }
 
 // 页面加载时初始化
@@ -1849,36 +2077,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 为所有侧边栏和底部分类链接添加监听器，确保在搜索状态下点击也能切换类目
     initCategoryLinks();
-    
-    // 加载合租平台数据
-    loadRentSites();
-    
-    // 加载学习社区数据
-    loadStudySites();
-    
-    // 添加学习社区到handleCategoryVisibility函数中
-    handleCategoryVisibility = function() {
-        initializeCardVisibility('ecommerce-grid');
-        initializeCardVisibility('social-grid');
-        initializeCardVisibility('website-tools-grid');
-        initializeCardVisibility('ai-chat-grid');
-        initializeCardVisibility('ai-writing-grid');
-        initializeCardVisibility('ai-image-grid');
-        initializeCardVisibility('ai-video-grid');
-        initializeCardVisibility('ai-audio-grid');
-        initializeCardVisibility('ai-design-grid');
-        initializeCardVisibility('ai-coding-grid');
-        initializeCardVisibility('ai-prompts-grid');
-        initializeCardVisibility('ai-search-grid');
-        initializeCardVisibility('rent-grid');
-        initializeCardVisibility('study-grid');
-    }
-    
-    // 调用一次handleCategoryVisibility以确保所有分类正确初始化
-    handleCategoryVisibility();
-    
-    // 更新一级分类的网址数量统计
-    updateCategoryCounts();
 });
 
 // 清除搜索框内容并恢复首页状态
@@ -1925,7 +2123,7 @@ function organizeFooterCategories() {
     const categories = [
         { id: 'ecommerce', icon: 'bi-shop', text: '电商平台' },
         { id: 'social', icon: 'bi-people', text: '社交平台' },
-        { id: 'website', icon: 'bi-globe', text: 'SEO 工具' },
+        { id: 'website', icon: 'bi-globe', text: '建站工具' },
         { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI对话' },
         { id: 'ai_writing', icon: 'bi-pen', text: 'AI写作' },
         { id: 'ai_image', icon: 'bi-image', text: 'AI图像' },
@@ -1982,158 +2180,26 @@ function organizeFooterCategories() {
 
 // 更新导航高亮状态
 function updateNavHighlight(category) {
-    // 移除所有导航项的 active 类
-    document.querySelectorAll('.nav-link').forEach(item => {
-        item.classList.remove('active');
+    // 移除所有导航项的激活状态
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
     });
     
-    // 根据分类设置相应导航项的 active 类
-    if (category === 'home') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'home\')"]').classList.add('active');
-    } 
-    else if (category === 'ecommerce' || 
-             category === 'amazon' || 
-             category === 'aliexpress' || 
-             category === 'ebay' || 
-             category === 'shopify' || 
-             category === 'lazada' || 
-             category === 'shopee' || 
-             category === 'tiktok' || 
-             category === 'other-ecommerce') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ecommerce\')"]').classList.add('active');
-    } 
-    else if (category === 'social' || 
-             category === 'social-global' || 
-             category === 'social-china' || 
-             category === 'social-influencer' ||
-             category === 'social-marketing' ||
-             category === 'social-analytics') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'social\')"]').classList.add('active');
-    } 
-    else if (category === 'rent' || 
-             category === 'ai-account' || 
-             category === 'social-account' || 
-             category === 'software-account') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'rent\')"]').classList.add('active');
-    }
-    else if (category === 'website' || 
-             category === 'google' || 
-             category === 'seo' || 
-             category === 'keyword' || 
-             category === 'analytics' ||
-             category === 'domain' ||
-             category === 'server' ||
-             category === 'payment' ||
-             category === 'erp' ||
-             category === 'product-selection' ||
-             category === 'account' ||
-             category === 'temp-mail' ||
-             category === 'ip-proxy' ||
-             category === 'browser' ||
-             category === 'learning' || 
-             category === 'backlink' || 
-             category === 'content') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'website\')"]').classList.add('active');
-    }
-    else if (category === 'ai_chat' || 
-             category === 'general_assistant' || 
-             category === 'entertainment_ai' || 
-             category === 'role_play' || 
-             category === 'multimodal_ai' || 
-             category === 'professional_ai' || 
-             category === 'international_ai') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_chat\')"]').classList.add('active');
-    }
-    else if (category === 'ai_writing' || 
-             category === 'academic_paper' || 
-             category === 'official_document' || 
-             category === 'fiction_writing' || 
-             category === 'marketing_copy' || 
-             category === 'blog_media' || 
-             category === 'multilingual' || 
-             category === 'office_writing' || 
-             category === 'script_content' || 
-             category === 'summary_tools' || 
-             category === 'interactive_writing') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_writing\')"]').classList.add('active');
-    }
-    else if (category === 'ai_image' || 
-             category === 'general_image' || 
-             category === 'portrait' || 
-             category === 'background' || 
-             category === 'brand_design' || 
-             category === 'photo_enhancement' || 
-             category === 'anime' || 
-             category === 'fun_tools' || 
-             category === 'fashion' || 
-             category === 'image_editing' || 
-             category === 'professional_scene') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_image\')"]').classList.add('active');
-    }
-    else if (category === 'ai_video' || 
-             category === 'text_to_video' || 
-             category === 'image_to_video' || 
-             category === 'video_editing' || 
-             category === 'digital_human' || 
-             category === 'animation' || 
-             category === 'short_video' || 
-             category === 'speech_driven' || 
-             category === 'professional_video' || 
-             category === 'opensource_tools') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_video\')"]').classList.add('active');
-    }
-    else if (category === 'ai_audio' || 
-             category === 'tts' || 
-             category === 'music_generation' || 
-             category === 'speech_to_text' || 
-             category === 'voice_conversion' || 
-             category === 'audio_editing' || 
-             category === 'other_audio_tools') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_audio\')"]').classList.add('active');
-    }
-    else if (category === 'ai_design' || 
-             category === 'commerce_design' || 
-             category === 'ui_ux' || 
-             category === 'illustration' || 
-             category === 'model_design' || 
-             category === 'assistant_tools' || 
-             category === 'special_tools') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_design\')"]').classList.add('active');
-    }
-    else if (category === 'ai_coding' || 
-             category === 'code_generation' || 
-             category === 'fullstack_dev' || 
-             category === 'design_to_code' || 
-             category === 'code_review' || 
-             category === 'natural_language_dev' || 
-             category === 'low_code' || 
-             category === 'cloud_ide') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_coding\')"]').classList.add('active');
-    }
-    else if (category === 'ai_prompts' || 
-             category === 'prompt_platforms' || 
-             category === 'sd_tools' || 
-             category === 'chatgpt_prompts' || 
-             category === 'visual_tools' || 
-             category === 'chinese_resources' || 
-             category === 'other_tools') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_prompts\')"]').classList.add('active');
-    }
-    else if (category === 'ai_search' || 
-             category === 'general_search' || 
-             category === 'academic_search' || 
-             category === 'programming_search' || 
-             category === 'finance_search' || 
-             category === 'life_search' || 
-             category === 'product_search') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'ai_search\')"]').classList.add('active');
-    }
-    else if (category === 'study' ||
-             category === 'wechatblogger' ||
-             category === 'wechatvideoblogger' ||
-             category === 'studygroup' ||
-             category === 'articlecollection') {
-        document.querySelector('.nav-link[onclick*="showCategory(\'study\')"]').classList.add('active');
+    // 查找匹配的导航链接
+    const activeLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+        
+        // 如果在子菜单中，确保父菜单项也被激活并展开
+        const parentSubmenu = activeLink.closest('.nav-submenu');
+        if (parentSubmenu) {
+            const parentItem = parentSubmenu.closest('.has-submenu');
+            if (parentItem) {
+                const parentLink = parentItem.querySelector('.nav-link');
+                parentLink.classList.add('active');
+                parentSubmenu.style.display = 'block';
+            }
+        }
     }
 }
 
@@ -2227,21 +2293,6 @@ function balanceSubcategoryNav(nav) {
         let rows = [];
         let currentRow = [];
         let currentRowWidth = 0;
-        
-        // SEO工具分类特殊处理 - 强制两行排列
-        if (sectionId === 'website-section') {
-            // 第一行：全部 + 前6个按钮，共7个按钮
-            let row1 = buttonInfo.slice(0, 7);
-            
-            // 第二行：剩余按钮
-            let row2 = buttonInfo.slice(7);
-            
-            // 返回两行按钮
-            rows.push(row1);
-            if (row2.length > 0) rows.push(row2);
-            
-            return rows;
-        }
         
         // AI图像分类特殊处理 - 强制两行排列
         if (sectionId === 'ai-image-section') {
@@ -2401,7 +2452,6 @@ function filterSitesByName(siteName, gridId) {
         'ebay': 'ebay',
         'lazada': 'lazada',
         'shopee': 'shopee',
-        'tiktok': 'tiktok',
         'other-ecommerce': 'other'
     };
     
@@ -2439,7 +2489,6 @@ function filterSitesByName(siteName, gridId) {
             'ebay': ['ebay'],
             'lazada': ['lazada'],
             'shopee': ['shopee'],
-            'tiktok': ['tiktok', '抖音'],
             'other-ecommerce': ['other']
         };
         
@@ -2468,8 +2517,7 @@ function filterSitesByName(siteName, gridId) {
         // 后备方案：使用关键词过滤
         const searchTerms = {
             'social-global': ['全球', 'global', 'international'],
-            'social-china': ['中国', 'china', 'domestic'],
-            'social-influencer': ['红人', '网红', '博主', 'influencer']
+            'social-china': ['中国', 'china', 'domestic']
         };
         
         const terms = searchTerms[siteName] || [siteName];
@@ -2498,8 +2546,11 @@ function filterSitesByName(siteName, gridId) {
         console.log(`过滤 ${terms.join(', ')}: 找到 ${visibleCards} 个网站`);
     }
     
-    // 移除相关的"显示更多"按钮
-    cleanupMoreButtons(gridId);
+    // 移除所有的"显示更多"按钮
+    const allOldButtons = document.querySelectorAll(`#${gridId}-section .more-sites-btn-container`);
+    allOldButtons.forEach(button => {
+        button.parentNode.removeChild(button);
+    });
     
     // 只有当显示的卡片超过8个时才添加"显示更多"按钮
     if (visibleCards > 8) {
@@ -2527,202 +2578,56 @@ function filterSitesByName(siteName, gridId) {
     }
 }
 
-// 初始化合租平台数据
-const rentData = [
-    {
-        title: '银河录像局',
-        description: 'AI账号共享平台，提供各类AI工具的账号共享服务',
-        tags: ['AI账号', '共享平台', '账号合租'],
-        url: 'https://nf.video/wKHLL',
-        subcategory: 'ai-account',
-        isRecommended: true
-    },
-    {
-        title: '银河录像局',
-        description: '社交媒体账号共享平台，提供各类社交媒体账号的共享服务',
-        tags: ['社交媒体', '账号共享', '合租平台'],
-        url: 'https://nf.video/wKHLL',
-        subcategory: 'social-account',
-        isRecommended: true
-    },
-    {
-        title: '野火',
-        description: '软件账号共享平台，提供各类软件工具的账号共享服务',
-        tags: ['软件账号', '共享平台', '合租服务'],
-        url: 'https://yeka.ai/',
-        subcategory: 'software-account',
-        isRecommended: true
-    }
-];
-
-// 更新子分类按钮状态
-function updateSubcategoryButtons(sectionId, activeSubcategory) {
-    const buttons = document.querySelectorAll(`#${sectionId} .subcategory-btn`);
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-    });
-    const activeButton = document.querySelector(`#${sectionId} .subcategory-btn[onclick*="${activeSubcategory}"]`);
-    if (activeButton) {
-        activeButton.classList.add('active');
-    }
+// 获取当前语言
+function getCurrentLanguage() {
+    // 直接检查当前页面URL确定语言
+    const isEnglish = window.location.href.includes('en.html');
+    return isEnglish ? 'en' : 'zh';
 }
 
-// 加载合租平台数据
-function loadRentSites() {
-    const rentGrid = document.getElementById('rent-grid');
-    if (!rentGrid) return;
-    
-    rentGrid.innerHTML = '';
-    
-    if (sitesData.rent) {
-        sitesData.rent.forEach(site => {
-            rentGrid.innerHTML += createSiteCard(site);
-        });
-    }
-    
-    // 初始化卡片可见性
-    initializeCardVisibility('rent-grid');
-}
-
-// 筛选合租平台子分类
-function filterRentSubcategory(subcategory) {
-    const rentGrid = document.getElementById('rent-grid');
-    if (!rentGrid) return;
-    
-    // 更新按钮状态
-    updateSubcategoryButtons('rent-section', subcategory);
-    
-    rentGrid.innerHTML = '';
-    
-    if (sitesData.rent) {
-        sitesData.rent.forEach(site => {
-            const siteSubcategories = Array.isArray(site.subcategory) ? site.subcategory : [site.subcategory];
-            if (subcategory === 'all' || siteSubcategories.includes(subcategory)) {
-                rentGrid.innerHTML += createSiteCard(site);
-            }
-        });
-    }
-    
-    // 初始化卡片可见性
-    initializeCardVisibility('rent-grid');
-}
-
-// 在页面加载时初始化
+// 在DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
+    // 初始化语言设置
+    const lang = navigator.language || navigator.userLanguage;
+    const isChineseUser = lang.startsWith('zh');
     
-    // 加载合租平台数据
-    loadRentSites();
+    // 根据用户系统语言设置默认语言
+    setLanguage(getCurrentLanguage());
     
-    // 添加合租平台到handleCategoryVisibility函数中
-    handleCategoryVisibility = function() {
-        initializeCardVisibility('ecommerce-grid');
-        initializeCardVisibility('social-grid');
-        initializeCardVisibility('website-tools-grid');
-        initializeCardVisibility('ai-chat-grid');
-        initializeCardVisibility('ai-writing-grid');
-        initializeCardVisibility('ai-image-grid');
-        initializeCardVisibility('ai-video-grid');
-        initializeCardVisibility('ai-audio-grid');
-        initializeCardVisibility('ai-design-grid');
-        initializeCardVisibility('ai-coding-grid');
-        initializeCardVisibility('ai-prompts-grid');
-        initializeCardVisibility('ai-search-grid');
-        initializeCardVisibility('rent-grid');
-        initializeCardVisibility('study-grid');
-    }
-});
-
-// 过滤学习社区子分类
-function filterStudySubcategory(subcategory) {
-    // 更新按钮状态
-    updateSubcategoryButtons('study-section', subcategory);
+    // 加载网站数据
+    loadSites();
     
-    const studyGrid = document.getElementById('study-grid');
-    if (!studyGrid) return;
+    // 初始化事件监听器
+    initCategoryLinks();
+    initCategoryNavButtons();
+    initScrollNavigation();
     
-    studyGrid.innerHTML = '';
+    // 平衡所有二级导航
+    balanceAllSubcategoryNavs();
     
-    if (sitesData.study) {
-        sitesData.study.forEach(site => {
-            const siteSubcategories = Array.isArray(site.subcategory) ? site.subcategory : [site.subcategory];
-            if (subcategory === 'all' || siteSubcategories.includes(subcategory)) {
-                // 确保站点数据格式统一
-                const formattedSite = {
-                    title: site.title || site.name,
-                    description: site.description,
-                    url: site.url,
-                    tags: site.tags || [],
-                    subcategory: site.subcategory || '',
-                    isRecommended: site.isRecommended || false
-                };
-                studyGrid.innerHTML += createSiteCard(formattedSite);
-            }
-        });
-    }
+    // 组织底部分类
+    organizeFooterCategories();
     
-    // 初始化卡片可见性
-    initializeCardVisibility('study-grid');
-}
-
-// 加载学习社区
-function loadStudySites() {
-    const studyGrid = document.getElementById('study-grid');
-    if (!studyGrid) return;
-    
-    studyGrid.innerHTML = '';
-    
-    if (sitesData.study) {
-        sitesData.study.forEach(site => {
-            // 确保站点数据格式统一
-            const formattedSite = {
-                title: site.title || site.name,
-                description: site.description,
-                url: site.url,
-                tags: site.tags || [],
-                subcategory: site.subcategory || '',
-                isRecommended: site.isRecommended || false
-            };
-            studyGrid.innerHTML += createSiteCard(formattedSite);
-        });
-    }
-    
-    // 初始化卡片可见性
-    initializeCardVisibility('study-grid');
-}
-
-// 统计并显示每个一级分类下的网址数量
-function updateCategoryCounts() {
-    // 获取每个分类的网址数量
-    const counts = {
-        'ecommerce': sitesData.ecommerce ? sitesData.ecommerce.length : 0,
-        'social': sitesData.social ? sitesData.social.length : 0,
-        'website': sitesData.website ? sitesData.website.length : 0,
-        'ai_chat': sitesData.ai_chat ? sitesData.ai_chat.length : 0, 
-        'ai_writing': sitesData.ai_writing ? sitesData.ai_writing.length : 0,
-        'ai_image': sitesData.ai_image ? sitesData.ai_image.length : 0,
-        'ai_video': sitesData.ai_video ? sitesData.ai_video.length : 0,
-        'ai_audio': sitesData.ai_audio ? sitesData.ai_audio.length : 0,
-        'ai_design': sitesData.ai_design ? sitesData.ai_design.length : 0,
-        'ai_coding': sitesData.ai_coding ? sitesData.ai_coding.length : 0,
-        'ai_prompts': aiPromptsData ? aiPromptsData.length : 0,
-        'ai_search': aiSearchData ? aiSearchData.length : 0,
-        'rent': sitesData.rent ? sitesData.rent.length : 0,
-        'study': sitesData.study ? sitesData.study.length : 0
-    };
-    
-    // 为每个一级分类添加数量
-    Object.keys(counts).forEach(category => {
-        const navLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
-        if (navLink) {
-            // 检查是否已有计数标签
-            let countSpan = navLink.querySelector('.category-count');
-            if (!countSpan) {
-                countSpan = document.createElement('span');
-                countSpan.className = 'category-count';
-                navLink.appendChild(countSpan);
-            }
-            countSpan.textContent = ` (${counts[category]})`;
+    // 为搜索输入框添加回车触发搜索
+    document.getElementById('search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
         }
     });
-}
+    
+    // 为清除搜索按钮添加默认隐藏样式
+    const clearBtn = document.getElementById('clear-search-btn');
+    clearBtn.style.display = 'none';
+    
+    // 监听搜索输入框变化，控制清除按钮显示
+    document.getElementById('search-input').addEventListener('input', function() {
+        clearBtn.style.display = this.value ? 'flex' : 'none';
+    });
+    
+    // 如果有语言设置，应用语言
+    if (typeof initLanguage === 'function') {
+        initLanguage();
+    }
+    
+    console.log('页面初始化完成');
+}); 

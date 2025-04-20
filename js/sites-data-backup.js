@@ -35,8 +35,6 @@ const sitesData = {
         {
             title: '美国站后台',
             description: '亚马逊美国站卖家平台，管理产品、订单和销售数据',
-            titleEn: 'Amazon US Seller Central',
-            descriptionEn: 'Amazon US seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '美国站', '卖家后台'],
             url: 'https://sellercentral.amazon.com/',
             subcategory: 'amazon'
@@ -44,8 +42,6 @@ const sitesData = {
         {
             title: '英国站前台',
             description: '亚马逊英国站购物网站，面向英国消费者的电子商务平台',
-            titleEn: 'Amazon UK Store',
-            descriptionEn: 'Amazon UK shopping website, an e-commerce platform for UK consumers',
             tags: ['亚马逊', '英国站', '消费者平台'],
             url: 'https://www.amazon.co.uk/',
             subcategory: 'amazon'
@@ -53,8 +49,6 @@ const sitesData = {
         {
             title: '英国站后台',
             description: '亚马逊英国站卖家平台，管理英国站产品、订单和销售数据',
-            titleEn: 'Amazon UK Seller Central',
-            descriptionEn: 'Amazon UK seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '英国站', '卖家后台'],
             url: 'https://sellercentral.amazon.co.uk/',
             subcategory: 'amazon'
@@ -62,8 +56,6 @@ const sitesData = {
         {
             title: '日本站前台',
             description: '亚马逊日本站购物网站，面向日本消费者的电子商务平台',
-            titleEn: 'Amazon Japan Store',
-            descriptionEn: 'Amazon Japan shopping website, an e-commerce platform for Japanese consumers',
             tags: ['亚马逊', '日本站', '消费者平台'],
             url: 'https://www.amazon.co.jp/',
             subcategory: 'amazon'
@@ -71,8 +63,6 @@ const sitesData = {
         {
             title: '日本站后台',
             description: '亚马逊日本站卖家平台，管理日本站产品、订单和销售数据',
-            titleEn: 'Amazon Japan Seller Central',
-            descriptionEn: 'Amazon Japan seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '日本站', '卖家后台'],
             url: 'https://sellercentral-japan.amazon.com/',
             subcategory: 'amazon'
@@ -80,8 +70,6 @@ const sitesData = {
         {
             title: '德国站前台',
             description: '亚马逊德国站购物网站，面向德国消费者的电子商务平台',
-            titleEn: 'Amazon Germany Store',
-            descriptionEn: 'Amazon Germany shopping website, an e-commerce platform for German consumers',
             tags: ['亚马逊', '德国站', '消费者平台'],
             url: 'https://www.amazon.de/',
             subcategory: 'amazon'
@@ -89,8 +77,6 @@ const sitesData = {
         {
             title: '德国站后台',
             description: '亚马逊德国站卖家平台，管理德国站产品、订单和销售数据',
-            titleEn: 'Amazon Germany Seller Central',
-            descriptionEn: 'Amazon Germany seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '德国站', '卖家后台'],
             url: 'https://sellercentral.amazon.de/',
             subcategory: 'amazon'
@@ -98,8 +84,6 @@ const sitesData = {
         {
             title: '法国站前台',
             description: '亚马逊法国站购物网站，面向法国消费者的电子商务平台',
-            titleEn: 'Amazon France Store',
-            descriptionEn: 'Amazon France shopping website, an e-commerce platform for French consumers',
             tags: ['亚马逊', '法国站', '消费者平台'],
             url: 'https://www.amazon.fr/',
             subcategory: 'amazon'
@@ -107,8 +91,6 @@ const sitesData = {
         {
             title: '法国站后台',
             description: '亚马逊法国站卖家平台，管理法国站产品、订单和销售数据',
-            titleEn: 'Amazon France Seller Central',
-            descriptionEn: 'Amazon France seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '法国站', '卖家后台'],
             url: 'https://sellercentral.amazon.fr/',
             subcategory: 'amazon'
@@ -116,8 +98,6 @@ const sitesData = {
         {
             title: '意大利站前台',
             description: '亚马逊意大利站购物网站，面向意大利消费者的电子商务平台',
-            titleEn: 'Amazon Italy Store',
-            descriptionEn: 'Amazon Italy shopping website, an e-commerce platform for Italian consumers',
             tags: ['亚马逊', '意大利站', '消费者平台'],
             url: 'https://www.amazon.it/',
             subcategory: 'amazon'
@@ -125,28 +105,20 @@ const sitesData = {
         {
             title: '意大利站后台',
             description: '亚马逊意大利站卖家平台，管理意大利站产品、订单和销售数据',
-            titleEn: 'Amazon Italy Seller Central',
-            descriptionEn: 'Amazon Italy seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '意大利站', '卖家后台'],
-            tagsEn: ['Amazon', 'Italy Store', 'Seller Backend'],
             url: 'https://sellercentral.amazon.it/',
             subcategory: 'amazon'
         },
         {
             title: '加拿大前台',
             description: '亚马逊加拿大站购物网站，面向加拿大消费者的电子商务平台',
-            titleEn: 'Amazon Canada Store',
-            descriptionEn: 'Amazon Canada shopping website, an e-commerce platform for Canadian consumers',
             tags: ['亚马逊', '加拿大站', '消费者平台'],
-            tagsEn: ['Amazon', 'Canada Store', 'Consumer'],
             url: 'https://www.amazon.ca/',
             subcategory: 'amazon'
         },
         {
             title: '加拿大站后台',
             description: '亚马逊加拿大站卖家平台，管理加拿大站产品、订单和销售数据',
-            titleEn: 'Amazon Canada Seller Central',
-            descriptionEn: 'Amazon Canada seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '加拿大站', '卖家后台'],
             url: 'https://sellercentral.amazon.ca/',
             subcategory: 'amazon'
@@ -154,8 +126,6 @@ const sitesData = {
         {
             title: '澳洲前台',
             description: '亚马逊澳大利亚站购物网站，面向澳洲消费者的电子商务平台',
-            titleEn: 'Amazon Australia Store',
-            descriptionEn: 'Amazon Australia shopping website, an e-commerce platform for Australian consumers',
             tags: ['亚马逊', '澳洲站', '消费者平台'],
             url: 'https://www.amazon.com.au/',
             subcategory: 'amazon'
@@ -163,8 +133,6 @@ const sitesData = {
         {
             title: '澳洲站后台',
             description: '亚马逊澳大利亚站卖家平台，管理澳洲站产品、订单和销售数据',
-            titleEn: 'Amazon Australia Seller Central',
-            descriptionEn: 'Amazon Australia seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '澳洲站', '卖家后台'],
             url: 'https://sellercentral.amazon.com.au/',
             subcategory: 'amazon'
@@ -172,8 +140,6 @@ const sitesData = {
         {
             title: '西班牙前台',
             description: '亚马逊西班牙站购物网站，面向西班牙消费者的电子商务平台',
-            titleEn: 'Amazon Spain Store',
-            descriptionEn: 'Amazon Spain shopping website, an e-commerce platform for Spanish consumers',
             tags: ['亚马逊', '西班牙站', '消费者平台'],
             url: 'https://www.amazon.es/',
             subcategory: 'amazon'
@@ -181,8 +147,6 @@ const sitesData = {
         {
             title: '西班牙站后台',
             description: '亚马逊西班牙站卖家平台，管理西班牙站产品、订单和销售数据',
-            titleEn: 'Amazon Spain Seller Central',
-            descriptionEn: 'Amazon Spain seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '西班牙站', '卖家后台'],
             url: 'https://sellercentral.amazon.es/',
             subcategory: 'amazon'
@@ -190,8 +154,6 @@ const sitesData = {
         {
             title: '墨西哥前台',
             description: '亚马逊墨西哥站购物网站，面向墨西哥消费者的电子商务平台',
-            titleEn: 'Amazon Mexico Store',
-            descriptionEn: 'Amazon Mexico shopping website, an e-commerce platform for Mexican consumers',
             tags: ['亚马逊', '墨西哥站', '消费者平台'],
             url: 'https://www.amazon.com.mx/',
             subcategory: 'amazon'
@@ -199,8 +161,6 @@ const sitesData = {
         {
             title: '墨西哥站后台',
             description: '亚马逊墨西哥站卖家平台，管理墨西哥站产品、订单和销售数据',
-            titleEn: 'Amazon Mexico Seller Central',
-            descriptionEn: 'Amazon Mexico seller platform for managing products, orders and sales data',
             tags: ['亚马逊', '墨西哥站', '卖家后台'],
             url: 'https://sellercentral.amazon.com.mx/',
             subcategory: 'amazon'
@@ -208,8 +168,6 @@ const sitesData = {
         {
             title: '美亚新品榜',
             description: '亚马逊美国站新品发布排行榜，查看不同品类的新品趋势',
-            titleEn: 'Amazon US New Releases',
-            descriptionEn: 'Amazon US new product release rankings, view new product trends across different categories',
             tags: ['亚马逊', '美国站', '排行榜', '新品'],
             url: 'https://www.amazon.com/gp/new-releases',
             subcategory: 'amazon'
@@ -217,8 +175,6 @@ const sitesData = {
         {
             title: '美亚销售榜',
             description: '亚马逊美国站销售排行榜，查看各品类最畅销的商品',
-            titleEn: 'Amazon US Best Sellers',
-            descriptionEn: 'Amazon US sales rankings, view best-selling products across all categories',
             tags: ['亚马逊', '美国站', '排行榜', '销量'],
             url: 'https://www.amazon.com/gp/bestsellers',
             subcategory: 'amazon'
@@ -226,8 +182,6 @@ const sitesData = {
         {
             title: '美亚飙升榜',
             description: '亚马逊美国站销量飙升榜，展示销量增长最快的商品',
-            titleEn: 'Amazon US Movers & Shakers',
-            descriptionEn: 'Amazon US trending products list, showing products with the fastest-growing sales',
             tags: ['亚马逊', '美国站', '排行榜', '飙升'],
             url: 'https://www.amazon.com/gp/movers-and-shakers',
             subcategory: 'amazon'
@@ -235,8 +189,6 @@ const sitesData = {
         {
             title: '英国排行榜',
             description: '亚马逊英国站销售排行榜，查看英国市场最畅销商品',
-            titleEn: 'Amazon UK Best Sellers',
-            descriptionEn: 'Amazon UK sales rankings, view best-selling products in the UK market',
             tags: ['亚马逊', '英国站', '排行榜', '销量'],
             url: 'https://www.amazon.co.uk/gp/bestsellers',
             subcategory: 'amazon'
@@ -244,8 +196,6 @@ const sitesData = {
         {
             title: '法国排行榜',
             description: '亚马逊法国站销售排行榜，查看法国市场最畅销商品',
-            titleEn: 'Amazon France Best Sellers',
-            descriptionEn: 'Amazon France sales rankings, view best-selling products in the French market',
             tags: ['亚马逊', '法国站', '排行榜', '销量'],
             url: 'https://www.amazon.fr/gp/bestsellers',
             subcategory: 'amazon'
@@ -253,8 +203,6 @@ const sitesData = {
         {
             title: '日本排行榜',
             description: '亚马逊日本站销售排行榜，查看日本市场最畅销商品',
-            titleEn: 'Amazon Japan Best Sellers',
-            descriptionEn: 'Amazon Japan sales rankings, view best-selling products in the Japanese market',
             tags: ['亚马逊', '日本站', '排行榜', '销量'],
             url: 'https://www.amazon.co.jp/gp/bestsellers',
             subcategory: 'amazon'
@@ -262,8 +210,6 @@ const sitesData = {
         {
             title: '德国排行榜',
             description: '亚马逊德国站销售排行榜，查看德国市场最畅销商品',
-            titleEn: 'Amazon Germany Best Sellers',
-            descriptionEn: 'Amazon Germany sales rankings, view best-selling products in the German market',
             tags: ['亚马逊', '德国站', '排行榜', '销量'],
             url: 'https://www.amazon.de/gp/bestsellers',
             subcategory: 'amazon'
@@ -271,8 +217,6 @@ const sitesData = {
         {
             title: '意大利排行榜',
             description: '亚马逊意大利站销售排行榜，查看意大利市场最畅销商品',
-            titleEn: 'Amazon Italy Best Sellers',
-            descriptionEn: 'Amazon Italy sales rankings, view best-selling products in the Italian market',
             tags: ['亚马逊', '意大利站', '排行榜', '销量'],
             url: 'https://www.amazon.it/gp/bestsellers',
             subcategory: 'amazon'
@@ -280,8 +224,6 @@ const sitesData = {
         {
             title: '澳洲排行榜',
             description: '亚马逊澳大利亚站销售排行榜，查看澳洲市场最畅销商品',
-            titleEn: 'Amazon Australia Best Sellers',
-            descriptionEn: 'Amazon Australia sales rankings, view best-selling products in the Australian market',
             tags: ['亚马逊', '澳洲站', '排行榜', '销量'],
             url: 'https://www.amazon.com.au/gp/bestsellers',
             subcategory: 'amazon'
@@ -289,8 +231,6 @@ const sitesData = {
         {
             title: '加拿大排行榜',
             description: '亚马逊加拿大站销售排行榜，查看加拿大市场最畅销商品',
-            titleEn: 'Amazon Canada Best Sellers',
-            descriptionEn: 'Amazon Canada sales rankings, view best-selling products in the Canadian market',
             tags: ['亚马逊', '加拿大站', '排行榜', '销量'],
             url: 'https://www.amazon.ca/gp/bestsellers',
             subcategory: 'amazon'
@@ -4927,23 +4867,13 @@ function loadSitesByCategory(siteData, gridId) {
     
     if (Array.isArray(siteData)) {
         siteData.forEach(site => {
-            const siteInfo = {
-                title: site.name || site.title,
+            grid.innerHTML += createSiteCard({
+                title: site.name,
                 description: site.description,
                 url: site.url,
                 tags: site.tags || [],
-                subcategory: site.subcategory || '',
-                needsMagic: site.needsMagic || false,
-                isRecommended: site.isRecommended || site.isPopular || false
-            };
-            
-            // 添加英文字段（如果存在）
-            if (site.nameEn) siteInfo.titleEn = site.nameEn;
-            if (site.titleEn) siteInfo.titleEn = site.titleEn;
-            if (site.descriptionEn) siteInfo.descriptionEn = site.descriptionEn;
-            if (site.tagsEn) siteInfo.tagsEn = site.tagsEn;
-            
-            grid.innerHTML += createSiteCard(siteInfo);
+                subcategory: site.subcategory || ''
+            });
         });
     }
 }
