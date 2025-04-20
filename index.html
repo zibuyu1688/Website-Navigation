@@ -381,19 +381,10 @@
                             通用AI助手
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('entertainment_ai')">
-                            游戏与娱乐AI
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('role_play')">
-                            角色扮演与虚拟陪伴
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('multimodal_ai')">
-                            多模态AI助手
+                            多模型AI平台
                         </a>
                     </li>
                     <li class="nav-item">
@@ -401,11 +392,7 @@
                             专业领域AI
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('international_ai')">
-                            国际化AI助手
-                        </a>
-                    </li>
+                    
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -414,21 +401,8 @@
                     AI写作
                 </a>
                 <ul class="nav-submenu submenu-ai-writing">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('academic_paper')">
-                            学术论文写作
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('official_document')">
-                            公文与政务写作
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fiction_writing')">
-                            小说与文学创作
-                        </a>
-                    </li>
+                    
+                    
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('marketing_copy')">
                             营销与商业文案
@@ -444,26 +418,13 @@
                             多语言写作与翻译
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('office_writing')">
-                            办公与综合写作
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('script_content')">
                             脚本与创意内容
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('summary_tools')">
-                            速读与摘要工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('interactive_writing')">
-                            互动式写作
-                        </a>
-                    </li>
+                   
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -893,11 +854,8 @@
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterAiChatSubcategory('all')">全部</button>
                     <button class="subcategory-btn" onclick="filterAiChatSubcategory('general_assistant')">通用AI助手</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('entertainment_ai')">游戏与娱乐AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('role_play')">角色扮演与虚拟陪伴</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">多模态AI助手</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">多模型AI平台</button>
                     <button class="subcategory-btn" onclick="filterAiChatSubcategory('professional_ai')">专业领域AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('international_ai')">国际化AI助手</button>
                 </div>
                 <div class="site-grid" id="ai-chat-grid">
                     <!-- AI对话工具网站卡片将通过JavaScript动态添加 -->
@@ -912,16 +870,10 @@
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterAiWritingSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('academic_paper')">学术论文写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('fiction_writing')">小说与文学创作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('marketing_copy')">营销与商业文案</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('blog_media')">新媒体与博客写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('official_document')">公文与政务写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('multilingual')">多语言写作与翻译</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('office_writing')">办公与综合写作</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('script_content')">脚本与创意内容</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('summary_tools')">速读与摘要工具</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('interactive_writing')">互动式写作</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('marketing_copy')">营销文案写作</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('blog_media')">新媒体写作</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('multilingual')">写作与翻译</button>
+                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('script_content')">脚本创意写作</button>
                 </div>
                 <div class="site-grid" id="ai-writing-grid">
                     <!-- AI写作工具网站卡片将通过JavaScript动态添加 -->
@@ -1095,6 +1047,36 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 初始化语言设置
             initLanguage();
+            
+            // 加载所有网站数据
+            loadSites();
+            
+            // 隐藏不需要的分类按钮和内容
+            setTimeout(function() {
+                // 隐藏"速读与摘要工具"、"互动式写作"和"办公与综合写作"按钮
+                const buttonsToHide = [
+                    'filterAiWritingSubcategory(\'office_writing\')',
+                    'filterAiWritingSubcategory(\'summary_tools\')',
+                    'filterAiWritingSubcategory(\'interactive_writing\')'
+                ];
+                
+                // 寻找并移除这些按钮
+                buttonsToHide.forEach(btnSelector => {
+                    const btn = document.querySelector(`.subcategory-btn[onclick*="${btnSelector}"]`);
+                    if (btn) {
+                        btn.style.display = 'none';
+                    }
+                });
+                
+                // 隐藏这三个分类的卡片
+                const cardsToHide = document.querySelectorAll('.site-card[data-subcategory="office_writing"], .site-card[data-subcategory="summary_tools"], .site-card[data-subcategory="interactive_writing"]');
+                cardsToHide.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // 初始化分类链接点击事件
+                initCategoryLinks();
+            }, 500);
         });
     </script>
 

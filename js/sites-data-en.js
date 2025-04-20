@@ -1372,164 +1372,7 @@ const sitesData = {
     
     // AI Writing
     ai_writing: [
-        // Academic Paper Writing
-        {
-            title: 'Paperpal',
-            description: 'AI writing assistant for academic researchers offering grammar checking and formatting',
-            tags: ['Paper Polishing', 'Academic Writing', 'Grammar Check'],
-            url: 'https://paperpal.com/',
-            subcategory: 'academic_paper',
-            needsMagic: true
-        },
-        {
-            title: '稿易AI论文(Gaoyi AI)',
-            description: 'Chinese academic paper writing tool with content generation and optimization',
-            tags: ['Chinese Papers', 'Academic Writing', 'Paper Generation'],
-            url: 'https://gaoyi.com/',
-            subcategory: 'academic_paper',
-            needsMagic: false
-        },
-        {
-            title: '千笔AI论文(Qianbi AI)',
-            description: 'AI paper writing tool tailored for Chinese academic requirements with structure optimization',
-            tags: ['Paper Writing', 'Chinese Academic', 'Structure Optimization'],
-            url: 'https://www.qianbi.com/',
-            subcategory: 'academic_paper',
-            needsMagic: false
-        },
-        {
-            title: '66AI论文(66 AI)',
-            description: 'Academic writing assistant for generating paragraphs and references',
-            tags: ['Paper Tool', 'References', 'Content Generation'],
-            url: 'https://66ai.com/',
-            subcategory: 'academic_paper',
-            needsMagic: false
-        },
-        {
-            title: '茅茅虫(Maomaochong)',
-            description: 'Chinese academic writing assistant with plagiarism check and rewriting features',
-            tags: ['Plagiarism Check', 'Rewriting Tool', 'Academic Writing'],
-            url: 'https://www.maomchong.com/',
-            subcategory: 'academic_paper',
-            needsMagic: false
-        },
-        {
-            title: 'Grammarly Academic',
-            description: 'Advanced grammar and style checker for academic writing improvement',
-            tags: ['Grammar Check', 'Academic English', 'Writing Improvement'],
-            url: 'https://www.grammarly.com/edu',
-            subcategory: 'academic_paper',
-            needsMagic: true
-        },
-        {
-            title: 'Wordvice AI',
-            description: 'Professional academic editing and proofreading for international journal submissions',
-            tags: ['Paper Editing', 'Journal Submission', 'Academic English'],
-            url: 'https://wordvice.ai/',
-            subcategory: 'academic_paper',
-            needsMagic: true
-        },
-        {
-            title: 'Scholarcy',
-            description: 'Academic literature summarizer extracting key information from research papers',
-            tags: ['Academic Summary', 'Research Assistant', 'Literature Analysis'],
-            url: 'https://www.scholarcy.com/',
-            subcategory: 'academic_paper',
-            needsMagic: true
-        },
-        {
-            title: 'Essaybot',
-            description: 'AI tool for academic papers and assignments with citation suggestions',
-            tags: ['Paper Writing', 'Citation Management', 'Academic Assistant'],
-            url: 'https://www.essaybot.com/',
-            subcategory: 'academic_paper',
-            needsMagic: true
-        },
-        
-        // Official Document Writing
-        {
-            title: '新华妙笔(Xinhua Miaobi)',
-            description: 'AI assistant for government documents including reports and summaries',
-            tags: ['Government Documents', 'Official Writing', 'Party Documents'],
-            url: 'https://miaobixinhua.com/',
-            subcategory: 'official_document',
-            needsMagic: false
-        },
-        {
-            title: '讯飞文书(Xunfei Wenshu)',
-            description: 'Smart document system for government and corporate document generation',
-            tags: ['Official Writing', 'Document Generation', 'Government Files'],
-            url: 'https://www.xfyun.cn/solution/wenxie',
-            subcategory: 'official_document',
-            needsMagic: false
-        },
-        {
-            title: '文状元(Wenzhuangyuan)',
-            description: 'Professional AI assistant for standardized government/application documents',
-            tags: ['Document Templates', 'Standardized Writing', 'Corporate Documents'],
-            url: 'https://wenzhuangyuan.com/',
-            subcategory: 'official_document',
-            needsMagic: false
-        },
-        {
-            title: '深言达意(Shenyan Dayi)',
-            description: 'Deep learning-based tool for government reports and work summaries',
-            tags: ['Formal Documents', 'Work Summary', 'Report Generation'],
-            url: 'https://shenyandayi.com/',
-            subcategory: 'official_document',
-            needsMagic: false
-        },
-        
-        // Fiction and Literary Creation
-        {
-            title: '笔灵AI小说(Biling AI)',
-            description: 'AI fiction writing assistant supporting plot development and character creation',
-            tags: ['Novel Writing', 'Creative Writing', 'Character Development'],
-            url: 'https://bilingai.com/',
-            subcategory: 'fiction_writing',
-            needsMagic: false
-        },
-        {
-            title: '墨狐AI(Mohu AI)',
-            description: 'Professional Chinese novel writing assistant for complete storylines',
-            tags: ['Novel Creation', 'Plot Development', 'Chinese Writing'],
-            url: 'https://mohu.com/',
-            subcategory: 'fiction_writing',
-            needsMagic: false
-        },
-    
-        {
-            title: 'Caiyun Xiaomeng',
-            description: 'An interactive AI novel creation platform where readers can participate in decision-making about the story\'s direction',
-            tags: ['interactive fiction', 'creative writing', 'story generation'],
-            url: 'https://if.caiyunai.com/',
-            subcategory: 'fiction_writing',
-            needsMagic: false
-        },
-        {
-            title: 'MidReal',
-            description: 'An interactive AI novel creation tool that allows users to participate in plot development',
-            tags: ['interactive narrative', 'novel writing', 'plot branches'],
-            url: 'https://midreal.ai/',
-            subcategory: 'fiction_writing',
-            needsMagic: true
-        },
-        {
-            title: 'Sudowrite',
-            description: 'An AI tool designed for novelists and creative writers to help conceive stories and overcome writing bottlenecks',
-            tags: ['novel writing', 'creative writing', 'story conception'],
-            url: 'https://www.sudowrite.com/',
-            subcategory: 'fiction_writing',
-            needsMagic: true
-        },
-        {
-            title: 'NovelAI',
-            description: 'An AI platform focused on narrative and novel writing that can generate coherent storylines and dialogues',
-            tags: ['novel generation', 'plot creation', 'character development'],
-            url: 'https://novelai.net/',
-            subcategory: 'fiction_writing',
-            needsMagic: true
-        },
+       
         
         // Marketing and Commercial Copy
         {
@@ -1657,72 +1500,7 @@ const sitesData = {
             needsMagic: true
         },
         
-        // Office and Comprehensive Writing
-        {
-            title: 'Huoshan Writing (Doubao)',
-            description: 'An all - around AI writing tool launched by ByteDance, supporting various office scenarios and document types',
-            tags: ['document writing', 'email generation', 'comprehensive office'],
-            url: 'https://www.doubao.com/',
-            subcategory: 'office_writing',
-            needsMagic: false
-        },
-        {
-            title: 'Notion AI',
-            description: 'An AI writing assistant integrated into Notion, which can generate and edit content directly in notes and documents',
-            tags: ['document writing', 'note assistant', 'content generation'],
-            url: 'https://www.notion.so/product/ai',
-            subcategory: 'office_writing',
-            needsMagic: true
-        },
-        {
-            title: 'iFlytek Writing',
-            description: 'An AI writing assistant launched by iFlytek, suitable for various office documents and content creation',
-            tags: ['office documents', 'intelligent writing', 'multi - scenario'],
-            url: 'https://www.xfyun.cn/services/xiezuo',
-            subcategory: 'office_writing',
-            needsMagic: false
-        },
-        {
-            title: 'FlowUs AI',
-            description: 'An AI writing assistant integrated into the FlowUs collaboration platform, supporting the generation of various content such as documents, tables, and PPTs',
-            tags: ['collaborative documents', 'team writing', 'multi - format support'],
-            url: 'https://flowus.cn/product/ai',
-            subcategory: 'office_writing',
-            needsMagic: false
-        },
-        {
-            title: 'Xunjie AI Writing',
-            description: 'An AI writing tool focused on office application scenarios, supporting the generation of various documents, PPTs, etc.',
-            tags: ['office writing', 'PPT generation', 'document creation'],
-            url: 'https://xunjiepdf.com/ai',
-            subcategory: 'office_writing',
-            needsMagic: false
-        },
-        {
-            title: 'Kubao AI Work Assistant',
-            description: 'An office writing tool integrating online documents and AI technology to improve office efficiency',
-            tags: ['document processing', 'collaborative office', 'AI assistance'],
-            url: 'https://kubaopdf.com/ai',
-            subcategory: 'office_writing',
-            needsMagic: false
-        },
-        {
-            title: 'ChatGPT',
-            description: 'An intelligent AI dialogue system launched by OpenAI, which can be used for various text generation and writing tasks',
-            tags: ['AI assistant', 'text generation', 'multi - purpose'],
-            url: 'https://chat.openai.com/',
-            subcategory: 'office_writing',
-            isRecommended: true,
-            needsMagic: true
-        },
-        {
-            title: 'Claude',
-            description: 'An AI assistant developed by Anthropic, good at long - text creation, analysis, and dialogue',
-            tags: ['AI assistant', 'long - text', 'conversational AI'],
-            url: 'https://claude.ai/',
-            subcategory: 'office_writing',
-            needsMagic: true
-        },
+       
         
         // Script and Creative Content
         {
@@ -1766,49 +1544,8 @@ const sitesData = {
             needsMagic: true
         },
         
-        // Speed Reading and Summarization
-        {
-            title: 'ReadPo',
-            description: 'A professional AI text summarization and speed - reading tool that can quickly extract the core ideas and key points of articles',
-            tags: ['article summarization', 'speed - reading tool', 'content extraction'],
-            url: 'https://readpo.com/',
-            subcategory: 'summary_tools',
-            needsMagic: true
-        },
-        {
-            title: 'Xiaoyutai',
-            description: 'A Chinese long - text summarization and key - point extraction tool to help users quickly understand article content',
-            tags: ['Chinese summarization', 'content extraction', 'fast reading'],
-            url: 'https://xiaoyutai.com/',
-            subcategory: 'summary_tools',
-            needsMagic: false
-        },
-        {
-            title: 'Hemingway Editor',
-            description: 'A text - editing tool to help improve writing clarity and readability',
-            tags: ['text clarity', 'writing improvement', 'readability'],
-            url: 'https://hemingwayapp.com/',
-            subcategory: 'summary_tools',
-            needsMagic: true
-        },
-        
-        // Interactive Writing
-        {
-            title: 'MidReal',
-            description: 'An interactive AI novel creation tool that allows users to participate in plot development',
-            tags: ['interactive narrative', 'novel writing', 'plot branches'],
-            url: 'https://midreal.ai/',
-            subcategory: 'interactive_writing',
-            needsMagic: true
-        },
-        {
-            title: 'Caiyun Xiaomeng',
-            description: 'An interactive AI novel creation platform where readers can participate in decision - making about the story\'s direction',
-            tags: ['interactive fiction', 'creative writing', 'story generation'],
-            url: 'https://if.caiyunai.com/',
-            subcategory: 'interactive_writing',
-            needsMagic: false
-        }
+       
+    
     ],
     // AI图像
     ai_image: [
@@ -2244,14 +1981,7 @@ const sitesData = {
             subcategory: 'general_assistant',
             needsMagic: true
         },
-        {
-            title: 'ERNIE Bot',
-            description: 'An artificial - intelligence language model launched by Baidu, capable of multi - round dialogue communication with people',
-            tags: ['Chinese conversation', 'domestic model', 'Baidu AI'],
-            url: 'https://yiyan.baidu.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
+       
         {
             title: 'Tongyi Qianwen',
             description: 'A large - language model developed by Alibaba, supporting multi - round dialogue and complex task processing',
@@ -2260,22 +1990,8 @@ const sitesData = {
             subcategory: 'general_assistant',
             needsMagic: false
         },
-        {
-            title: 'iFlytek Xinghuo',
-            description: 'A cognitive large - model launched by iFlytek, with strong Chinese understanding ability',
-            tags: ['domestic AI', 'cognitive model', 'Chinese optimization'],
-            url: 'https://xinghuo.xfyun.cn/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: 'Zhipu Qingyan',
-            description: 'A large - language model jointly developed by Zhipu AI and Tsinghua University, performing excellently in Chinese and general abilities',
-            tags: ['ChatGLM', 'Tsinghua AI', 'academic support'],
-            url: 'https://chatglm.cn/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
+      
+        
         {
             title: 'Gemini',
             description: 'A multimodal AI model launched by Google, supporting various inputs such as text and images',
@@ -2324,190 +2040,27 @@ const sitesData = {
             subcategory: 'general_assistant',
             needsMagic: false
         },
-        {
-            title: 'Baidu Xiaoying',
-            description: 'A knowledge - enhanced AI assistant by Baidu, with up - to - date Internet information',
-            tags: ['Baidu search', 'real - time information', 'knowledge Q&A'],
-            url: 'https://info.baidu.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: 'Tiangong AI',
-            description: 'A Chinese large - language model launched by Kunlun Wanwei, with strong instruction - understanding ability',
-            tags: ['Chinese AI', 'instruction understanding', 'domestic model'],
-            url: 'https://tiangong.kunlun.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: 'Bing New Bing',
-            description: 'A conversational search experience combining the capabilities of Microsoft\'s search engine and AI',
-            tags: ['AI search', 'Internet information', 'Microsoft AI'],
-            url: 'https://www.bing.com/new',
-            subcategory: 'general_assistant',
-            needsMagic: true
-        },
-        {
-            title: 'SenseChat',
-            description: 'An AI assistant launched by SenseTime, with multi - round dialogue and knowledge reasoning abilities',
-            tags: ['SenseTime AI', 'domestic model', 'multi - round dialogue'],
-            url: 'https://chat.sensetime.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: 'Xiaowukong',
-            description: 'An AI assistant launched by Singularity AI, with good Chinese understanding and creation abilities',
-            tags: ['Chinese AI', 'knowledge Q&A', 'Singularity AI'],
-            url: 'https://openxlab.org.cn/apps/detail/singularity - ai/wukong',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: 'Zidong Taichu',
-            description: 'An AI assistant launched by the Institute of Automation, Chinese Academy of Sciences, with strong knowledge reasoning ability',
-            tags: ['academic support', 'knowledge reasoning', 'CAS AI'],
-            url: 'https://chatbot.automata - ai.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
         
-        // Game and Entertainment AI
-        {
-            title: 'Character.AI',
-            description: 'A platform for creating and chatting with various AI characters, supporting custom character settings',
-            tags: ['role - playing', 'personality customization', 'entertainment dialogue'],
-            url: 'https://character.ai/',
-            subcategory: 'entertainment_ai',
-            needsMagic: true
-        },
-        {
-            title: 'Doudou',
-            description: 'An AI assistant focused on entertainment interaction, supporting various fun dialogue scenarios',
-            tags: ['entertainment chat', 'leisure interaction', 'fun dialogue'],
-            url: 'https://doudou.ai/',
-            subcategory: 'entertainment_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Koko AI',
-            description: 'A platform providing interesting AI interaction experiences, supporting social and entertainment functions',
-            tags: ['social AI', 'fun interaction', 'leisure chat'],
-            url: 'https://www.koko.ai/',
-            subcategory: 'entertainment_ai',
-            needsMagic: true
-        },
-        {
-            title: 'Zaomeng Ciyuan',
-            description: 'A well - known domestic AI entertainment interaction platform, providing diverse AI experiences',
-            tags: ['AI interaction', 'entertainment platform', 'leisure entertainment'],
-            url: 'https://www.zaomeng.space/',
-            subcategory: 'entertainment_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Museland',
-            description: 'An AI interaction platform focused on music and entertainment, providing creative music experiences',
-            tags: ['music interaction', 'AI creativity', 'entertainment experience'],
-            url: 'https://www.museland.com/',
-            subcategory: 'entertainment_ai',
-            needsMagic: true
-        },
-        
-        
-        {
-            title: 'Xiaohuangjiao',
-            description: 'A fun AI chat assistant skilled in humorous dialogue and entertainment interaction',
-            tags: ['humorous dialogue', 'casual chat', 'leisure interaction'],
-            url: 'https://www.xiaohuangjiao.com/',
-            subcategory: 'entertainment_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Maopaoya',
-            description: 'A relaxing and fun AI dialogue assistant providing casual companionship and interactive experiences',
-            tags: ['casual chat', 'entertainment interaction', 'relaxed companionship'],
-            url: 'https://maopaoya.com/',
-            subcategory: 'entertainment_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Cici',
-            description: 'An entertainment AI assistant for young users, providing rich interactive experiences',
-            tags: ['youth style', 'interactive entertainment', 'fun dialogue'],
-            url: 'https://www.cici.ai/',
-            subcategory: 'entertainment_ai',
-            needsMagic: true
-        },
-        
-        // Role-playing and Virtual Companionship
-        {
-            title: 'Ohai',
-            description: 'A platform providing AI virtual companion experiences, supporting deep emotional interaction',
-            tags: ['virtual companion', 'emotional interaction', 'deep dialogue'],
-            url: 'https://ohai.com/',
-            subcategory: 'role_play',
-            needsMagic: true
-        },
-        {
-            title: 'Me.bot',
-            description: 'A platform for creating personalized AI avatars, allowing customization based on personal style',
-            tags: ['AI avatar', 'personality customization', 'image replication'],
-            url: 'https://me.bot/',
-            subcategory: 'role_play',
-            needsMagic: true
-        },
-        {
-            title: 'Saylo',
-            description: 'A platform offering AI character dialogue and emotional companionship, supporting rich character customization',
-            tags: ['character customization', 'emotional communication', 'virtual companionship'],
-            url: 'https://www.saylo.ai/',
-            subcategory: 'role_play',
-            needsMagic: true
-        },
-        {
-            title: 'Tongyi Xingchen',
-            description: 'A virtual digital human assistant launched by Alibaba, providing emotional dialogue experiences',
-            tags: ['digital human', 'emotional dialogue', 'virtual avatar'],
-            url: 'https://tongyi.aliyun.com/xingchen',
-            subcategory: 'role_play',
-            needsMagic: false
-        },
-        {
-            title: 'CueMe',
-            description: 'An AI platform providing personalized virtual companions and role-playing',
-            tags: ['virtual companion', 'role-playing', 'emotional interaction'],
-            url: 'https://www.cueme.com/',
-            subcategory: 'role_play',
-            needsMagic: true
-        },
-        {
-            title: 'Chai',
-            description: 'A social platform providing AI character dialogues, supporting various roles and interactive scenarios',
-            tags: ['character dialogue', 'AI social', 'interactive scenarios'],
-            url: 'https://chai.ml/',
-            subcategory: 'role_play',
-            needsMagic: true
-        },
+    
         
         // Multimodal AI Assistant
         {
-            title: 'Yuewen',
+            title: 'Monica AI',
             description: 'An AI assistant supporting image recognition and multimodal interaction, capable of understanding image content',
             tags: ['multimodal', 'image recognition', 'visual understanding'],
-            url: 'https://www.yuewen.ai/',
+            url: 'https://www.monica.ai/',
             subcategory: 'multimodal_ai',
             needsMagic: false
         },
         {
-            title: 'Huawei Xiaoyi',
+            title: 'Poe',
             description: 'A multimodal AI assistant by Huawei, supporting voice, image, and text interaction',
             tags: ['Huawei AI', 'multimodal', 'voice interaction'],
-            url: 'https://xiaoyi.huawei.com/',
+            url: 'https://www.poe.com/',
             subcategory: 'multimodal_ai',
-            needsMagic: false
+            needsMagic: false   
         },
+        
         {
             title: 'Meta AI Assistant',
             description: 'A multimodal AI by Meta, supporting comprehensive understanding of images, voice, and text',
@@ -2521,7 +2074,7 @@ const sitesData = {
             description: 'A dialogue tool focused on AI art creation, generating high-quality images from text',
             tags: ['AI painting', 'image generation', 'creative design'],
             url: 'https://www.midjourney.com/',
-            subcategory: 'multimodal_ai',
+            subcategory: 'general_image',
             needsMagic: true
         },
         {
@@ -2529,23 +2082,16 @@ const sitesData = {
             description: 'An AI image generation system developed by OpenAI, creating images from text descriptions',
             tags: ['image generation', 'AI art', 'creative tool'],
             url: 'https://openai.com/dall-e-3',
-            subcategory: 'multimodal_ai',
+            subcategory: 'general_image',
             needsMagic: true
         },
-        {
-            title: 'Xifan AI',
-            description: 'An AI dialogue assistant focused on Chinese scenarios, supporting text-to-image, image-to-image, and other creative modes',
-            tags: ['AI creation', 'image-text combination', 'Chinese optimization'],
-            url: 'https://xfan.ai/',
-            subcategory: 'multimodal_ai',
-            needsMagic: false
-        },
+        
         {
             title: 'Stable Diffusion',
             description: 'An open-source AI image generation model capable of generating high-quality images from text descriptions',
             tags: ['open-source AI', 'image generation', 'model customization'],
             url: 'https://stability.ai/',
-            subcategory: 'multimodal_ai',
+            subcategory: 'general_image',
             needsMagic: true
         },
         {
@@ -2553,7 +2099,7 @@ const sitesData = {
             description: 'A multimodal AI launched by Kunlun Wanwei, supporting image recognition and generation functions',
             tags: ['image processing', 'multimodal', 'Chinese optimization'],
             url: 'https://tiangong.kunlun.com/image',
-            subcategory: 'multimodal_ai',
+            subcategory: 'general_image',
             needsMagic: false
         },
         // Photo Enhancement and Enhancement
@@ -3272,14 +2818,7 @@ const sitesData = {
                 subcategory: 'tts',
                 needsMagic: false
             },
-            {
-                title: 'MiniMax Audio',
-                description: 'Voice synthesis service supporting voice cloning, enabling personalized voice customization',
-                tags: ['Voice Cloning', 'Personalization', 'Voice Synthesis'],
-                url: 'https://api.minimax.chat/voice-demo',
-                subcategory: 'tts',
-                needsMagic: false
-            },
+            
             {
                 title: 'Reecho',
                 description: 'Ultra-realistic Chinese and English voice cloning/generation tool providing high-quality voice replication services',
@@ -4763,13 +4302,7 @@ const aiSearchData = [
         tags: ["Conversational Search", "Source Tracing"],
         subcategory: "general_search"
     },
-    {
-        name: "ERNIE Bot",
-        description: "AI search service by Baidu offering Chinese content understanding and generation capabilities",
-        url: "https://yiyan.baidu.com/",
-        tags: ["Baidu", "Chinese Search"],
-        subcategory: "general_search"
-    },
+    
     
     // 学术科研类
     {

@@ -48,10 +48,7 @@ const languageData = {
         'menu_blog_media': '新媒体与博客写作',
         'menu_official_document': '公文与政务写作',
         'menu_multilingual': '多语言写作与翻译',
-        'menu_office_writing': '办公与综合写作',
         'menu_script_content': '脚本与创意内容',
-        'menu_summary_tools': '速读与摘要工具',
-        'menu_interactive_writing': '互动式写作',
         'menu_ai_image': 'AI图像',
         'menu_general_image': '通用AI图片生成',
         'menu_portrait': '人像与头像生成',
@@ -186,10 +183,7 @@ const languageData = {
         'menu_blog_media': 'Media & Blog Writing',
         'menu_official_document': 'Official & Government Writing',
         'menu_multilingual': 'Multilingual Writing & Translation',
-        'menu_office_writing': 'Office & General Writing',
         'menu_script_content': 'Scripts & Creative Content',
-        'menu_summary_tools': 'Reading & Summary Tools',
-        'menu_interactive_writing': 'Interactive Writing',
         'menu_ai_image': 'AI Images',
         'menu_general_image': 'General AI Image Generation',
         'menu_portrait': 'Portrait & Avatar Generation',
@@ -448,15 +442,12 @@ function updateNavMenuTexts() {
         // AI写作子菜单
         const aiWritingItems = {
             'academic_paper': 'menu_academic_paper',
-            'official_document': 'menu_official_document',
             'fiction_writing': 'menu_fiction_writing',
             'marketing_copy': 'menu_marketing_copy',
             'blog_media': 'menu_blog_media',
+            'official_document': 'menu_official_document',
             'multilingual': 'menu_multilingual',
-            'office_writing': 'menu_office_writing',
-            'script_content': 'menu_script_content',
-            'summary_tools': 'menu_summary_tools',
-            'interactive_writing': 'menu_interactive_writing'
+            'script_content': 'menu_script_content'
         };
         updateSubmenuItems('submenu-ai-writing', aiWritingItems);
         

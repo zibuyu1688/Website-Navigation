@@ -683,6 +683,11 @@ function filterSocialSubcategory(subcategory) {
 
 // 过滤AI写作二级分类
 function filterAiWritingSubcategory(subcategory) {
+    // 如果是要跳过的分类，直接返回
+    if (subcategory === 'office_writing' || subcategory === 'summary_tools' || subcategory === 'interactive_writing') {
+        return;
+    }
+    
     // 更新按钮状态
     document.querySelectorAll('#ai-writing-section .subcategory-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -699,6 +704,13 @@ function filterAiWritingSubcategory(subcategory) {
     });
     
     cards.forEach(card => {
+        // 始终隐藏这三个分类的卡片
+        const cardSubcategory = card.dataset.subcategory;
+        if (cardSubcategory === 'office_writing' || cardSubcategory === 'summary_tools' || cardSubcategory === 'interactive_writing') {
+            card.style.display = 'none';
+            return;
+        }
+        
         if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
             card.style.display = 'flex';
             visibleCards++;
@@ -1259,423 +1271,179 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
 
 // 显示分类
 function showCategory(category) {
-    // 清除搜索状态 - 隐藏搜索结果区域
-    const searchResultsSection = document.getElementById('search-results-section');
-    if (searchResultsSection) {
-        searchResultsSection.style.display = 'none';
-    }
+    // 调试信息
+    console.log('显示分类:', category);
     
-    // 清理页面上所有的"显示更多"按钮
-    document.querySelectorAll('.more-sites-btn-container').forEach(button => {
-        button.parentNode.removeChild(button);
-    });
-
-    // 隐藏所有分类
-    document.getElementById('ecommerce-section').style.display = 'none';
-    document.getElementById('social-section').style.display = 'none';
-    document.getElementById('website-section').style.display = 'none';
-    document.getElementById('ai-chat-section').style.display = 'none';
-    document.getElementById('ai-writing-section').style.display = 'none';
-    document.getElementById('ai-image-section').style.display = 'none';
-    document.getElementById('ai-video-section').style.display = 'none';
-    document.getElementById('ai-audio-section').style.display = 'none';
-    document.getElementById('ai-design-section').style.display = 'none';
-    document.getElementById('ai-coding-section').style.display = 'none';
-    document.getElementById('ai-prompts-section').style.display = 'none';
-    document.getElementById('ai-search-section').style.display = 'none';
-
-    // 如果是首页，显示所有分类
-    if (category === 'home') {
-        document.getElementById('ecommerce-section').style.display = 'block';
-        document.getElementById('social-section').style.display = 'block';
-        document.getElementById('website-section').style.display = 'block';
-        document.getElementById('ai-chat-section').style.display = 'block';
-        document.getElementById('ai-writing-section').style.display = 'block';
-        document.getElementById('ai-image-section').style.display = 'block';
-        document.getElementById('ai-video-section').style.display = 'block';
-        document.getElementById('ai-audio-section').style.display = 'block';
-        document.getElementById('ai-design-section').style.display = 'block';
-        document.getElementById('ai-coding-section').style.display = 'block';
-        document.getElementById('ai-prompts-section').style.display = 'block';
-        document.getElementById('ai-search-section').style.display = 'block';
-        
-        // 更新导航高亮状态
-        updateNavHighlight('home');
-        
-        // 处理卡片可见性
-        handleCategoryVisibility();
-        
-        // 平衡所有显示的二级分类导航
-        setTimeout(balanceAllSubcategoryNavs, 50);
-        
-        // 滚动到页面顶部
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-        
+    // 如果是要跳过的分类，直接返回
+    if (category === 'office_writing' || category === 'summary_tools' || category === 'interactive_writing') {
+        console.log('跳过显示被排除的分类:', category);
         return;
     }
     
-    // 要滚动到的目标分类节点ID
-    let targetSectionId = '';
-
-    // 处理特定电商网站的情况
-    const ecommerceWebsites = {
-        'amazon': 'domestic_ecommerce',
-        'aliexpress': 'cross_border_ecommerce',
-        'ebay': 'cross_border_ecommerce',
-        'lazada': 'cross_border_ecommerce',
-        'shopee': 'cross_border_ecommerce',
-        'other-ecommerce': 'other_ecommerce'
-    };
-
-    // 处理特定社交网站的情况
-    const socialWebsites = {
-        'social-global': 'international_social',
-        'social-china': 'domestic_social'
-    };
-
-    // 判断是否是电商平台下的具体网站
-    if (ecommerceWebsites[category]) {
-        // 显示电商平台部分
+    // 隐藏所有分类
+    document.querySelectorAll('.category-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    let targetSectionId = null;
+    
+    // 根据分类显示对应部分
+    if (category === 'home') {
+        // 主页显示所有分类
+        console.log('显示首页 - 所有分类');
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.style.display = 'block';
+        });
+    } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
+               category === 'lazada' || category === 'shopee' || category === 'other-ecommerce') {
+        // 电商平台子分类
+        console.log('显示电商平台子分类:', category);
         document.getElementById('ecommerce-section').style.display = 'block';
-        targetSectionId = 'ecommerce-section';
-        
-        // 过滤特定网站 - 调用修改后的函数
-        filterSitesByName(category, 'ecommerce-grid');
-        
-        // 更新导航高亮状态
-        updateNavHighlight('ecommerce');
-        
-        // 平衡所有显示的二级分类导航
-        setTimeout(balanceAllSubcategoryNavs, 50);
-    }
-    // 判断是否是社交平台下的具体类型
-    else if (socialWebsites[category]) {
-        // 显示社交平台部分
+        filterEcommerceSubcategory(category);
+    } else if (category === 'social-global' || category === 'social-china') {
+        // 社交平台子分类
+        console.log('显示社交平台子分类:', category);
         document.getElementById('social-section').style.display = 'block';
-        targetSectionId = 'social-section';
-        
-        // 过滤特定社交网站 - 调用修改后的函数
-        filterSitesByName(category, 'social-grid');
-        
-        // 更新导航高亮状态
-        updateNavHighlight('social');
-        
-        // 平衡所有显示的二级分类导航
-        setTimeout(balanceAllSubcategoryNavs, 50);
-    }
-    // 根据传入的分类显示相应内容
-    else if (category === 'ecommerce' || 
-        category === 'domestic_ecommerce' || 
-        category === 'cross_border_ecommerce' || 
-        category === 'content_ecommerce' || 
-        category === 'supply_chain' || 
-        category === 'vertical_ecommerce' || 
-        category === 'other_ecommerce') {
-        document.getElementById('ecommerce-section').style.display = 'block';
-        targetSectionId = 'ecommerce-section';
-        
-        // 过滤二级分类
-        if (category !== 'ecommerce') {
-            filterEcommerceSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ecommerce-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ecommerce-section .subcategory-btn[onclick*="filterEcommerceSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ecommerce');
-    } else if (category === 'social' || 
-               category === 'domestic_social' || 
-               category === 'international_social' || 
-               category === 'image_social' || 
-               category === 'video_social' || 
-               category === 'blog_forum' || 
-               category === 'dating_social' || 
-               category === 'niche_social') {
+        filterSocialSubcategory(category);
+    } else if (category === 'social') {
+        // 社交平台主分类
+        console.log('显示社交平台主分类');
         document.getElementById('social-section').style.display = 'block';
-        targetSectionId = 'social-section';
-        
-        // 过滤二级分类
-        if (category !== 'social') {
-            filterSocialSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#social-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#social-section .subcategory-btn[onclick*="filterSocialSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('social');
-    } else if (category === 'website' || 
-               category === 'seo' || 
-               category === 'keyword' || 
-               category === 'analytics' || 
-               category === 'domain' || 
-               category === 'server' || 
-               category === 'payment' || 
-               category === 'erp' || 
-               category === 'network' || 
-               category === 'account' || 
-               category === 'temp-mail' || 
-               category === 'ip-proxy' || 
-               category === 'browser' || 
-               category === 'learning' || 
-               category === 'backlink' || 
-               category === 'content') {
+        filterSocialSubcategory('all'); // 显示所有社交平台
+    } else if (category === 'website') {
+        // 建站工具主分类
+        console.log('显示建站工具主分类');
         document.getElementById('website-section').style.display = 'block';
-        targetSectionId = 'website-section';
-        
-        // 过滤二级分类
-        if (category !== 'website') {
-            filterSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#website-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#website-section .subcategory-btn[onclick*="filterSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('website');
-    } else if (category === 'ai_chat' || 
-               category === 'general_assistant' || 
-               category === 'entertainment_ai' || 
-               category === 'role_play' || 
-               category === 'multimodal_ai' || 
-               category === 'professional_ai' || 
-               category === 'international_ai') {
+        filterSubcategory('all'); // 显示所有建站工具
+    } else if (category === 'seo' || category === 'keyword' || category === 'analytics' || 
+               category === 'domain' || category === 'server' || category === 'payment' || 
+               category === 'erp' || category === 'network' || category === 'account' || 
+               category === 'temp-mail' || category === 'ip-proxy' || category === 'browser' || 
+               category === 'backlink' || category === 'content' || category === 'learning') {
+        // 建站工具子分类
+        console.log('显示建站工具子分类:', category);
+        document.getElementById('website-section').style.display = 'block';
+        filterSubcategory(category);
+    } else if (category === 'ai_chat') {
+        // AI对话主分类
+        console.log('显示AI对话主分类');
         document.getElementById('ai-chat-section').style.display = 'block';
-        targetSectionId = 'ai-chat-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_chat') {
-            filterAiChatSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-chat-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-chat-section .subcategory-btn[onclick*="filterAiChatSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_chat');
-    } else if (category === 'ai_writing' || 
-               category === 'academic_paper' || 
-               category === 'official_document' || 
-               category === 'fiction_writing' || 
-               category === 'marketing_copy' || 
-               category === 'blog_media' || 
-               category === 'multilingual' || 
-               category === 'office_writing' || 
-               category === 'script_content' || 
-               category === 'summary_tools' || 
-               category === 'interactive_writing') {
+        filterAiChatSubcategory('all');
+    } else if (category === 'general_assistant' || category === 'entertainment_ai' || 
+               category === 'role_play' || category === 'multimodal_ai' || category === 'professional_ai' || 
+               category === 'international_ai') {
+        // AI对话子分类
+        console.log('显示AI对话子分类:', category);
+        document.getElementById('ai-chat-section').style.display = 'block';
+        filterAiChatSubcategory(category);
+    } else if (category === 'ai_writing') {
+        // AI写作主分类
+        console.log('显示AI写作主分类');
         document.getElementById('ai-writing-section').style.display = 'block';
-        targetSectionId = 'ai-writing-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_writing') {
-            filterAiWritingSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-writing-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-writing-section .subcategory-btn[onclick*="filterAiWritingSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_writing');
-    } else if (category === 'ai_image' || 
-               category === 'general_image' || 
-               category === 'portrait' || 
-               category === 'background' || 
-               category === 'brand_design' || 
-               category === 'photo_enhancement' || 
-               category === 'anime' || 
-               category === 'fun_tools' || 
-               category === 'fashion' || 
-               category === 'image_editing' || 
-               category === 'professional_scene') {
+        filterAiWritingSubcategory('all');
+    } else if (category === 'academic_paper' || category === 'fiction_writing' || 
+               category === 'marketing_copy' || category === 'blog_media' || 
+               category === 'official_document' || category === 'multilingual' || 
+               category === 'script_content') {
+        // AI写作子分类
+        console.log('显示AI写作子分类:', category);
+        document.getElementById('ai-writing-section').style.display = 'block';
+        filterAiWritingSubcategory(category);
+    } else if (category === 'ai_image') {
+        // AI图像主分类
+        console.log('显示AI图像主分类');
         document.getElementById('ai-image-section').style.display = 'block';
-        targetSectionId = 'ai-image-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_image') {
-            filterAiImageSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-image-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-image-section .subcategory-btn[onclick*="filterAiImageSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_image');
-    } else if (category === 'ai_video' || 
-               category === 'text_to_video' || 
-               category === 'image_to_video' || 
-               category === 'video_editing' || 
-               category === 'digital_human' || 
-               category === 'animation' || 
-               category === 'short_video' || 
-               category === 'speech_driven' || 
-               category === 'professional_video' || 
-               category === 'opensource_tools') {
+        filterAiImageSubcategory('all');
+    } else if (category === 'general_image' || category === 'portrait' || 
+               category === 'background' || category === 'brand_design' || 
+               category === 'photo_enhancement' || category === 'anime' || 
+               category === 'fun_tools' || category === 'fashion' || 
+               category === 'image_editing' || category === 'professional_scene') {
+        // AI图像子分类
+        console.log('显示AI图像子分类:', category);
+        document.getElementById('ai-image-section').style.display = 'block';
+        filterAiImageSubcategory(category);
+    } else if (category === 'ai_video') {
+        // AI视频主分类
+        console.log('显示AI视频主分类');
         document.getElementById('ai-video-section').style.display = 'block';
-        targetSectionId = 'ai-video-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_video') {
-            filterAiVideoSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-video-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-video-section .subcategory-btn[onclick*="filterAiVideoSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_video');
-    } else if (category === 'ai_audio' || 
-               category === 'tts' || 
-               category === 'music_generation' || 
-               category === 'speech_to_text' || 
-               category === 'voice_conversion' || 
-               category === 'audio_editing' || 
-               category === 'other_audio_tools') {
+        filterAiVideoSubcategory('all');
+    } else if (category === 'text_to_video' || category === 'image_to_video' || 
+               category === 'video_editing' || category === 'digital_human' || 
+               category === 'animation' || category === 'short_video' || 
+               category === 'speech_driven' || category === 'professional_video' || 
+               category === 'opensource_tools') {
+        // AI视频子分类
+        console.log('显示AI视频子分类:', category);
+        document.getElementById('ai-video-section').style.display = 'block';
+        filterAiVideoSubcategory(category);
+    } else if (category === 'ai_audio') {
+        // AI音频主分类
+        console.log('显示AI音频主分类');
         document.getElementById('ai-audio-section').style.display = 'block';
-        targetSectionId = 'ai-audio-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_audio') {
-            filterAiAudioSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-audio-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-audio-section .subcategory-btn[onclick*="filterAiAudioSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_audio');
+        filterAiAudioSubcategory('all');
+    } else if (category === 'tts' || category === 'music_generation' || 
+               category === 'speech_to_text' || category === 'voice_conversion' || 
+               category === 'audio_editing' || category === 'other_audio_tools') {
+        // AI音频子分类
+        console.log('显示AI音频子分类:', category);
+        document.getElementById('ai-audio-section').style.display = 'block';
+        filterAiAudioSubcategory(category);
     } else if (category === 'ai_design') {
+        // AI设计主分类
+        console.log('显示AI设计主分类');
         document.getElementById('ai-design-section').style.display = 'block';
-        targetSectionId = 'ai-design-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_design') {
-            filterAiDesignSubcategory(category);
-        } else {
-            // 显示全部时，选中"全部"按钮
-            document.querySelectorAll('#ai-design-section .subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector('#ai-design-section .subcategory-btn[onclick*="filterAiDesignSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_design');
-    } else if (category === 'ai_coding' || 
-               category === 'code_generation' || 
-               category === 'fullstack_dev' || 
-               category === 'design_to_code' || 
-               category === 'code_review' || 
-               category === 'natural_language_dev' || 
-               category === 'low_code' || 
-               category === 'cloud_ide') {
-        // 显示AI编程部分
+        filterAiDesignSubcategory('all');
+    } else if (category === 'commerce_design' || category === 'ui_ux' || 
+               category === 'illustration' || category === 'model_design' || 
+               category === 'assistant_tools' || category === 'special_tools') {
+        // AI设计子分类
+        console.log('显示AI设计子分类:', category);
+        document.getElementById('ai-design-section').style.display = 'block';
+        filterAiDesignSubcategory(category);
+    } else if (category === 'ai_coding') {
+        // AI编程主分类
+        console.log('显示AI编程主分类');
         document.getElementById('ai-coding-section').style.display = 'block';
-        targetSectionId = 'ai-coding-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_coding') {
-            filterAiCodingSubcategory(category);
-        } else {
-            // 重置为全部
-            document.querySelectorAll('#ai-coding-section .subcategory-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('#ai-coding-section .subcategory-btn[onclick*="filterAiCodingSubcategory(\'all\')"]').classList.add('active');
-            loadAiCodingTools();
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_coding');
-    } else if (category === 'ai_prompts' || category === 'prompt_platforms' || 
-        category === 'sd_tools' || category === 'chatgpt_prompts' || 
-        category === 'visual_tools' || category === 'chinese_resources' || 
-        category === 'other_tools') {
-        // 显示AI提示词部分
+        filterAiCodingSubcategory('all');
+    } else if (category === 'code_generation' || category === 'fullstack_dev' || 
+               category === 'design_to_code' || category === 'code_review' || 
+               category === 'natural_language_dev' || category === 'low_code' || 
+               category === 'cloud_ide') {
+        // AI编程子分类
+        console.log('显示AI编程子分类:', category);
+        document.getElementById('ai-coding-section').style.display = 'block';
+        filterAiCodingSubcategory(category);
+    } else if (category === 'ai_prompts') {
+        // AI提示词主分类
+        console.log('显示AI提示词主分类');
         document.getElementById('ai-prompts-section').style.display = 'block';
-        targetSectionId = 'ai-prompts-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_prompts') {
-            filterAiPromptsSubcategory(category);
-        } else {
-            // 重置为全部
-            document.querySelectorAll('#ai-prompts-section .subcategory-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('#ai-prompts-section .subcategory-btn[onclick*="filterAiPromptsSubcategory(\'all\')"]').classList.add('active');
-            loadAiPromptsTools();
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_prompts');
-    } else if (category === 'ai_search' || category === 'general_search' || 
-        category === 'vertical_search') {
-        // 显示AI搜索部分
+        filterAiPromptsSubcategory('all');
+    } else if (category === 'prompt_platforms' || category === 'sd_tools' || 
+               category === 'chatgpt_prompts' || category === 'visual_tools' || 
+               category === 'chinese_resources' || category === 'other_tools') {
+        // AI提示词子分类
+        console.log('显示AI提示词子分类:', category);
+        document.getElementById('ai-prompts-section').style.display = 'block';
+        filterAiPromptsSubcategory(category);
+    } else if (category === 'ai_search') {
+        // AI搜索主分类
+        console.log('显示AI搜索主分类');
         document.getElementById('ai-search-section').style.display = 'block';
-        targetSectionId = 'ai-search-section';
-        
-        // 过滤二级分类
-        if (category !== 'ai_search') {
-            filterAiSearchSubcategory(category);
-        } else {
-            // 重置为全部
-            document.querySelectorAll('#ai-search-section .subcategory-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('#ai-search-section .subcategory-btn[onclick*="filterAiSearchSubcategory(\'all\')"]').classList.add('active');
-        }
-        
-        // 更新导航栏高亮状态
-        updateNavHighlight('ai_search');
+        filterAiSearchSubcategory('all');
+    } else if (category === 'general_search' || category === 'academic_search' || 
+               category === 'programming_search' || category === 'finance_search' || 
+               category === 'life_search' || category === 'product_search') {
+        // AI搜索子分类
+        console.log('显示AI搜索子分类:', category);
+        document.getElementById('ai-search-section').style.display = 'block';
+        filterAiSearchSubcategory(category);
+    } else {
+        console.log('未匹配到任何已知分类:', category);
     }
     
-    // 处理卡片可见性
-    handleCategoryVisibility();
-    
-    // 平衡当前显示的二级分类导航
-    setTimeout(balanceAllSubcategoryNavs, 50);
-    
-    // 滚动到对应分类标题的位置
-    if (targetSectionId) {
-        const targetSection = document.getElementById(targetSectionId);
-        if (targetSection) {
-            // 获取搜索框的高度和其他可能的固定元素高度，作为偏移量
-            const searchContainer = document.querySelector('.search-container');
-            const offsetTop = searchContainer ? searchContainer.offsetHeight + 20 : 0;
-            
-            // 计算需要滚动的位置（减去偏移量以确保标题完全可见）
-            const scrollPosition = targetSection.offsetTop - offsetTop;
-            
-            // 平滑滚动到目标位置
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: 'smooth'
-            });
-        }
-    }
+    // 更新导航高亮显示
+    updateNavHighlight(category);
 }
 
 // 切换子菜单

@@ -382,30 +382,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('entertainment_ai')">
-                            Gaming & Entertainment AI
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('role_play')">
-                            Role-playing & Virtual Companions
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('multimodal_ai')">
-                            Multimodal AI Assistants
+                            Multimodal AI
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_ai')">
-                            Professional AI
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('international_ai')">
-                            International AI Assistants
-                        </a>
-                    </li>
+                   
+                    
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -414,21 +396,7 @@
                     AI Writing
                 </a>
                 <ul class="nav-submenu submenu-ai-writing">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('academic_paper')">
-                            Academic Paper Writing
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('official_document')">
-                            Official & Government Writing
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fiction_writing')">
-                            Fiction & Literary Creation
-                        </a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('marketing_copy')">
                             Marketing & Business Copy
@@ -444,26 +412,13 @@
                             Multilingual Writing & Translation
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('office_writing')">
-                            Office & General Writing
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('script_content')">
                             Scripts & Creative Content
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('summary_tools')">
-                            Reading & Summary Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('interactive_writing')">
-                            Interactive Writing
-                        </a>
-                    </li>
+                    
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -780,7 +735,7 @@
         <!-- Search container -->
         <div class="search-container">
             <h1 class="search-title">AI365 Navigation</h1>
-            <p class="search-subtitle">Your AI E-commerce Advisor, </p>
+            <p class="search-subtitle">Your Best AI E-commerce Advisor, </p>
             <div class="search-box">
                 <div class="search-border-effect"></div>
                 <div class="search-engine-selector">
@@ -893,11 +848,7 @@
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterAiChatSubcategory('all')">All</button>
                     <button class="subcategory-btn" onclick="filterAiChatSubcategory('general_assistant')">General AI Assistants</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('entertainment_ai')">Gaming & Entertainment AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('role_play')">Role-playing & Virtual Companions</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">Multimodal AI Assistants</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('professional_ai')">Professional AI</button>
-                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('international_ai')">International AI Assistants</button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">Multimodal AI </button>
                 </div>
                 <div class="site-grid" id="ai-chat-grid">
                     <!-- AI chat site cards will be dynamically added via JavaScript -->
@@ -912,16 +863,10 @@
                 <!-- Subcategory navigation -->
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterAiWritingSubcategory('all')">All</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('academic_paper')">Academic Paper Writing</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('fiction_writing')">Fiction & Literary Creation</button>
                     <button class="subcategory-btn" onclick="filterAiWritingSubcategory('marketing_copy')">Marketing & Business Copy</button>
                     <button class="subcategory-btn" onclick="filterAiWritingSubcategory('blog_media')">Media & Blog Writing</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('official_document')">Official & Government Writing</button>
                     <button class="subcategory-btn" onclick="filterAiWritingSubcategory('multilingual')">Multilingual Writing & Translation</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('office_writing')">Office & General Writing</button>
                     <button class="subcategory-btn" onclick="filterAiWritingSubcategory('script_content')">Scripts & Creative Content</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('summary_tools')">Reading & Summary Tools</button>
-                    <button class="subcategory-btn" onclick="filterAiWritingSubcategory('interactive_writing')">Interactive Writing</button>
                 </div>
                 <div class="site-grid" id="ai-writing-grid">
                     <!-- AI writing site cards will be dynamically added via JavaScript -->
@@ -1098,6 +1043,42 @@
             
             // 初始化语言设置
             initLanguage();
+            
+            // 加载所有网站数据
+            loadSites();
+            
+            // 过滤掉"entertainment_ai"分类的网址
+            setTimeout(function() {
+                // 查找并隐藏所有entertainment_ai分类的网址卡片
+                const entertainmentCards = document.querySelectorAll('.site-card[data-subcategory="entertainment_ai"]');
+                entertainmentCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // 隐藏"速读与摘要工具"、"互动式写作"和"办公与综合写作"按钮
+                const buttonsToHide = [
+                    'filterAiWritingSubcategory(\'office_writing\')',
+                    'filterAiWritingSubcategory(\'summary_tools\')',
+                    'filterAiWritingSubcategory(\'interactive_writing\')'
+                ];
+                
+                // 寻找并移除这些按钮
+                buttonsToHide.forEach(btnSelector => {
+                    const btn = document.querySelector(`.subcategory-btn[onclick*="${btnSelector}"]`);
+                    if (btn) {
+                        btn.style.display = 'none';
+                    }
+                });
+                
+                // 隐藏这三个分类的卡片
+                const cardsToHide = document.querySelectorAll('.site-card[data-subcategory="office_writing"], .site-card[data-subcategory="summary_tools"], .site-card[data-subcategory="interactive_writing"]');
+                cardsToHide.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // 初始化分类链接点击事件
+                initCategoryLinks();
+            }, 1000);
             
             // 强制更新所有文本内容
             updateAllTexts();
