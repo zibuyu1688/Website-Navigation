@@ -1651,16 +1651,23 @@ function showCategory(category) {
     // 更新导航高亮显示
     updateNavHighlight(category);
 
-    if (category === 'resources' || category === 'tech-blog') {
-        const anchorId = category === 'tech-blog' ? 'tech-blog' : category;
-        const anchorElement = document.getElementById(anchorId);
+    const navigationTarget = resolveCategoryNavigationTarget(category);
+    if (navigationTarget) {
+        const anchorElement = document.getElementById(navigationTarget.scrollId);
         if (anchorElement) {
             anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            if (window.history && window.history.replaceState) {
-                window.history.replaceState(null, '', `#${anchorId}`);
-            } else {
-                window.location.hash = anchorId;
-            }
+        }
+
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', `#${navigationTarget.hash}`);
+        } else {
+            window.location.hash = navigationTarget.hash;
+        }
+    } else if (category === 'home') {
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', window.location.pathname);
+        } else {
+            window.location.hash = '';
         }
     }
 
@@ -1786,6 +1793,151 @@ function performSearch() {
         case 'gemini':
             window.open(`https://gemini.google.com/app?q=${encodeURIComponent(query)}`, '_blank');
             break;
+    }
+}
+
+function getBookmarkToolConfig() {
+    const language = getFabLanguage();
+    const isMac = /Mac|iPhone|iPad|iPod/i.test(navigator.platform) || /Mac OS|iPhone OS/i.test(navigator.userAgent);
+    const shortcut = isMac ? 'Cmd + D' : 'Ctrl + D';
+
+    if (language === 'en') {
+        return {
+            title: 'Save This Site',
+            description: 'Browsers no longer allow one-click bookmarks from web pages. Use the shortcut below or copy the URL and save it manually.',
+            shortcutLabel: 'Quick shortcut',
+            shortcut,
+            step: 'On mobile, open the browser menu and choose Add bookmark, Add to favorites, or Add to Home Screen.',
+            copyButton: 'Copy URL',
+            confirmButton: 'Got it',
+            copied: 'URL copied. You can paste it into your bookmark manager.',
+            copyFailed: 'Copy failed. Please copy the URL manually.',
+            urlLabel: 'Current URL'
+        };
+    }
+
+    return {
+        title: '网站收藏',
+        description: '现代浏览器通常不允许网页直接一键写入收藏夹。你可以使用下面的快捷键，或先复制网址后手动收藏。',
+        shortcutLabel: '快速快捷键',
+        shortcut,
+        step: '手机端可打开浏览器菜单，选择“添加书签”、“收藏”或“添加到主屏幕”。',
+        copyButton: '复制网址',
+        confirmButton: '我知道了',
+        copied: '网址已复制，你可以粘贴到浏览器收藏夹里。',
+        copyFailed: '复制失败，请手动复制当前网址。',
+        urlLabel: '当前网址'
+    };
+}
+
+function ensureBookmarkModal() {
+    let modal = document.getElementById('bookmark-modal');
+    if (modal) {
+        return modal;
+    }
+
+    document.body.insertAdjacentHTML('beforeend', `
+        <div id="bookmark-modal" class="bookmark-modal" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="bookmark-modal-card">
+                <div class="bookmark-modal-header">
+                    <h3 class="bookmark-modal-title" id="bookmark-modal-title"></h3>
+                    <button type="button" class="bookmark-modal-close" aria-label="Close" onclick="closeBookmarkModal()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <p class="bookmark-modal-text" id="bookmark-modal-text"></p>
+                <div class="bookmark-modal-shortcut">
+                    <span id="bookmark-modal-shortcut-label"></span>
+                    <span id="bookmark-modal-shortcut"></span>
+                </div>
+                <p class="bookmark-modal-step" id="bookmark-modal-step"></p>
+                <input id="bookmark-modal-url" class="bookmark-modal-url" type="text" readonly>
+                <div class="bookmark-modal-actions">
+                    <button type="button" class="bookmark-modal-btn secondary" id="bookmark-copy-btn" onclick="copyBookmarkUrl()"></button>
+                    <button type="button" class="bookmark-modal-btn primary" id="bookmark-confirm-btn" onclick="closeBookmarkModal()"></button>
+                </div>
+                <p class="bookmark-modal-status" id="bookmark-modal-status" aria-live="polite"></p>
+            </div>
+        </div>
+    `);
+
+    modal = document.getElementById('bookmark-modal');
+    modal.addEventListener('click', event => {
+        if (event.target === modal) {
+            closeBookmarkModal();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal.classList.contains('is-visible')) {
+            closeBookmarkModal();
+        }
+    });
+
+    return modal;
+}
+
+function saveBookmarkSite() {
+    try {
+        if (window.external && typeof window.external.AddFavorite === 'function') {
+            window.external.AddFavorite(window.location.href, document.title);
+            return;
+        }
+    } catch (error) {
+        console.warn('浏览器不支持直接添加收藏:', error);
+    }
+
+    const config = getBookmarkToolConfig();
+    const modal = ensureBookmarkModal();
+
+    document.getElementById('bookmark-modal-title').textContent = config.title;
+    document.getElementById('bookmark-modal-text').textContent = config.description;
+    document.getElementById('bookmark-modal-shortcut-label').textContent = `${config.shortcutLabel}:`;
+    document.getElementById('bookmark-modal-shortcut').textContent = config.shortcut;
+    document.getElementById('bookmark-modal-step').textContent = config.step;
+    document.getElementById('bookmark-copy-btn').textContent = config.copyButton;
+    document.getElementById('bookmark-confirm-btn').textContent = config.confirmButton;
+
+    const urlInput = document.getElementById('bookmark-modal-url');
+    urlInput.value = window.location.href;
+    urlInput.setAttribute('aria-label', config.urlLabel);
+
+    const status = document.getElementById('bookmark-modal-status');
+    status.textContent = '';
+    modal.classList.add('is-visible');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('bookmark-modal-open');
+}
+
+function closeBookmarkModal() {
+    const modal = document.getElementById('bookmark-modal');
+    if (!modal) return;
+
+    modal.classList.remove('is-visible');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('bookmark-modal-open');
+}
+
+async function copyBookmarkUrl() {
+    const config = getBookmarkToolConfig();
+    const url = window.location.href;
+    const status = document.getElementById('bookmark-modal-status');
+
+    try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = config.copied;
+    } catch (error) {
+        const input = document.getElementById('bookmark-modal-url');
+        input.focus();
+        input.select();
+        input.setSelectionRange(0, input.value.length);
+
+        try {
+            const success = document.execCommand('copy');
+            status.textContent = success ? config.copied : config.copyFailed;
+        } catch (fallbackError) {
+            status.textContent = config.copyFailed;
+        }
     }
 }
 
@@ -2348,6 +2500,54 @@ function resolveSeoCategoryContext(category) {
     return { pageType: 'home', topLevel: null, subcategory: null };
 }
 
+function resolveCategoryNavigationTarget(category) {
+    const normalizedCategory = category === 'tech_blog'
+        ? 'tech-blog'
+        : (category === 'other-ecommerce' ? 'other' : category);
+
+    const context = resolveSeoCategoryContext(normalizedCategory);
+    const fallbackTopLevels = {
+        ecommerce_zone: 'ecommerce_zone',
+        ai_model: 'ecommerce_zone',
+        product_photo: 'ecommerce_zone',
+        listing_writing: 'ecommerce_zone',
+        ad_assistant: 'ecommerce_zone'
+    };
+
+    const topLevel = context.topLevel || fallbackTopLevels[normalizedCategory];
+    if (!topLevel) {
+        return null;
+    }
+
+    const scrollTargetMap = {
+        resources: 'resources',
+        'tech-blog': 'tech-blog',
+        ecommerce: 'ecommerce-section',
+        social: 'social-section',
+        website: 'website-section',
+        ecommerce_zone: 'ecommerce-zone-section',
+        ai_chat: 'ai-chat-section',
+        ai_writing: 'ai-writing-section',
+        ai_image: 'ai-image-section',
+        ai_video: 'ai-video-section',
+        ai_audio: 'ai-audio-section',
+        ai_design: 'ai-design-section',
+        ai_coding: 'ai-coding-section',
+        ai_prompts: 'ai-prompts-section',
+        ai_search: 'ai-search-section'
+    };
+
+    const scrollId = scrollTargetMap[topLevel];
+    if (!scrollId) {
+        return null;
+    }
+
+    return {
+        scrollId,
+        hash: topLevel
+    };
+}
+
 function getCategorySitesForSchema(context) {
     if (!context.topLevel) {
         return [];
@@ -2776,6 +2976,7 @@ function organizeFooterCategories() {
 // 更新导航高亮状态
 function updateNavHighlight(category) {
     const activeLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
+    const activeTopLink = document.querySelector(`.top-nav-link[onclick*="showCategory('${category}')"]`);
     const topLevelParentItem = activeLink?.parentElement?.classList.contains('has-submenu')
         ? activeLink.parentElement
         : null;
@@ -2783,6 +2984,10 @@ function updateNavHighlight(category) {
 
     // 移除所有导航项的激活状态
     document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    document.querySelectorAll('.top-nav-link').forEach(link => {
         link.classList.remove('active');
     });
 
@@ -2814,6 +3019,10 @@ function updateNavHighlight(category) {
                 submenu.classList.add('active');
             }
         }
+    }
+
+    if (activeTopLink) {
+        activeTopLink.classList.add('active');
     }
 }
 

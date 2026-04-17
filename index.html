@@ -246,6 +246,10 @@
                 <div class="language-buttons">
                     <button id="chinese-nav-toggle" class="language-nav-toggle active" onclick="switchLanguage('zh')">中文</button>
                     <button id="english-nav-toggle" class="language-nav-toggle" onclick="switchLanguage('en')">English</button>
+                    <button type="button" class="search-tool-btn header-bookmark-btn" title="收藏 AI365导航，方便下次快速访问" aria-label="收藏 AI365导航，方便下次快速访问" onclick="saveBookmarkSite()">
+                        <i class="bi bi-bookmark-star"></i>
+                        <span>网站收藏</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -752,6 +756,30 @@
                 <!-- 分类项由JS动态生成 -->
             </div>
         </div>
+
+        <footer class="site-footer-info" aria-label="网站底部信息">
+            <div class="site-footer-panels">
+                <section class="site-footer-panel footer-about-panel" aria-labelledby="footer-about-title">
+                    <span class="site-footer-eyebrow">关于</span>
+                    <h3 id="footer-about-title">做给电商人的 AI 导航站</h3>
+                    <p>作为电商人，我看过很多 AI 导航网站，但真正围绕卖家工作流整理内容的平台并不多。AI365 导航想做的不是再堆一份“工具清单”，而是把跨境卖家、独立站运营者、内容团队和技术实战需要的入口放到同一张地图里。</p>
+                    <p>这里会持续整理电商平台、AI 工具、资源导引、技术实战和专题资料，让你少花时间在重复搜索上，把更多精力放在选品、运营、内容和增长本身。</p>
+                </section>
+
+                <section class="site-footer-panel footer-wechat-panel" aria-labelledby="footer-wechat-title">
+                
+                    <h3 id="footer-wechat-title">公众号二维码</h3>
+                    <div class="footer-wechat-card">
+                        <img src="assets/images/WechatIMG410.jpg" alt="AI365导航公众号二维码" class="footer-wechat-qr">
+                    </div>
+                </section>
+            </div>
+
+            <div class="site-footer-privacy" aria-labelledby="footer-privacy-title">
+                <h4 id="footer-privacy-title">隐私声明</h4>
+                <p>本网站主要用于整理公开可访问的网址导航与资料入口，不主动收集敏感个人信息。站内搜索和页面交互主要在本地浏览器中完成；跳转到第三方网站后，其数据、Cookie 与隐私规则由对应平台自行负责。</p>
+            </div>
+        </footer>
     </div>
 
     <!-- JavaScript依赖 -->
