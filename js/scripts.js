@@ -2254,13 +2254,25 @@ function organizeFooterCategories() {
 
 // 更新导航高亮状态
 function updateNavHighlight(category) {
+    const activeLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
+    const topLevelParentItem = activeLink?.parentElement?.classList.contains('has-submenu')
+        ? activeLink.parentElement
+        : null;
+    const shouldKeepTopLevelExpanded = !!topLevelParentItem?.querySelector('.nav-submenu.active');
+
     // 移除所有导航项的激活状态
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
     });
+
+    document.querySelectorAll('.nav-item.has-submenu').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    document.querySelectorAll('.nav-submenu').forEach(submenu => {
+        submenu.classList.remove('active');
+    });
     
-    // 查找匹配的导航链接
-    const activeLink = document.querySelector(`.nav-link[onclick*="showCategory('${category}')"]`);
     if (activeLink) {
         activeLink.classList.add('active');
         
@@ -2270,8 +2282,15 @@ function updateNavHighlight(category) {
             const parentItem = parentSubmenu.closest('.has-submenu');
             if (parentItem) {
                 const parentLink = parentItem.querySelector('.nav-link');
+                parentItem.classList.add('active');
                 parentLink.classList.add('active');
-                parentSubmenu.style.display = 'block';
+                parentSubmenu.classList.add('active');
+            }
+        } else if (topLevelParentItem && shouldKeepTopLevelExpanded) {
+            topLevelParentItem.classList.add('active');
+            const submenu = topLevelParentItem.querySelector('.nav-submenu');
+            if (submenu) {
+                submenu.classList.add('active');
             }
         }
     }
