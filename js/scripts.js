@@ -1388,10 +1388,8 @@ function showCategory(category) {
         console.log('显示AI写作主分类');
         document.getElementById('ai-writing-section').style.display = 'block';
         filterAiWritingSubcategory('all');
-    } else if (category === 'academic_paper' || category === 'fiction_writing' || 
-               category === 'marketing_copy' || category === 'blog_media' || 
-               category === 'official_document' || category === 'multilingual' || 
-               category === 'script_content') {
+    } else if (category === 'model_reasoning' || category === 'productivity_longform' || 
+               category === 'content_safety' || category === 'vertical_specialized') {
         // AI写作子分类
         console.log('显示AI写作子分类:', category);
         document.getElementById('ai-writing-section').style.display = 'block';
@@ -1847,7 +1845,7 @@ const SEO_CATEGORY_GROUPS = {
     social: ['social-global', 'social-china'],
     website: ['seo', 'keyword', 'analytics', 'domain', 'server', 'payment', 'erp', 'network', 'account', 'temp-mail', 'ip-proxy', 'browser', 'backlink', 'content', 'learning'],
     ai_chat: ['general_assistant', 'entertainment_ai', 'role_play', 'multimodal_ai', 'professional_ai', 'international_ai'],
-    ai_writing: ['academic_paper', 'fiction_writing', 'marketing_copy', 'blog_media', 'official_document', 'multilingual', 'script_content'],
+    ai_writing: ['model_reasoning', 'productivity_longform', 'content_safety', 'vertical_specialized'],
     ai_image: ['general_image', 'portrait', 'background', 'brand_design', 'photo_enhancement', 'anime', 'fun_tools', 'fashion', 'image_editing', 'professional_scene'],
     ai_video: ['text_to_video', 'image_to_video', 'video_editing', 'digital_human', 'animation', 'short_video', 'speech_driven', 'professional_video', 'opensource_tools'],
     ai_audio: ['tts', 'music_generation', 'speech_to_text', 'voice_conversion', 'audio_editing', 'other_audio_tools'],

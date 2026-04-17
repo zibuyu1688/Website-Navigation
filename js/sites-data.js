@@ -1551,48 +1551,173 @@ const sitesData = {
     
     // AI写作
     ai_writing: [
-       
-        // 营销与商业文案
+        // 综合写作与逻辑之王（大模型类）
+        {
+            title: 'Claude 4',
+            description: '2026 年公认文笔最像真人、逻辑最严密的写作模型，Artifacts 特别适合长文、论文和结构化编辑。',
+            tags: ['长文写作', '结构化编辑', '低AI味'],
+            url: 'https://claude.ai/',
+            subcategory: 'model_reasoning',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'DeepSeek V3 / R1',
+            description: '目前性价比最高且中文语境处理极佳，思维链能力很强，特别适合技术文档和复杂逻辑分析。',
+            tags: ['中文写作', '技术文档', '复杂推理'],
+            url: 'https://chat.deepseek.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'ChatGPT - GPT-5.4',
+            description: 'OpenAI 最新推理模型，擅长事实准确性要求极高的学术写作、科学报告和严谨论证。',
+            tags: ['学术写作', '科学报告', '事实准确'],
+            url: 'https://chat.openai.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Gemini',
+            description: 'Google 生态中的多模态大模型，适合资料整合、联网辅助写作和多格式内容生成。',
+            tags: ['多模态', '资料整合', '联网写作'],
+            url: 'https://gemini.google.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: true
+        },
+
+        // 生产力与长文辅助（工具类）
+        {
+            title: 'Jasper.ai',
+            description: '依旧是营销文案领域的强势平台，已深度整合企业级 SEO 数据，可直接生成更符合 Google 逻辑的博客文章。',
+            tags: ['SEO写作', '营销文案', '博客生成'],
+            url: 'https://www.jasper.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Writesonic',
+            description: '侧重快速生成和一键发布，Article Writer 能结合实时搜索结果写作，适合时效性内容。',
+            tags: ['实时搜索', '一键发布', '长文生成'],
+            url: 'https://writesonic.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Copy.ai Workflows',
+            description: '主打写作自动化，可自动抓取产品信息并批量生成多个平台的推广脚本和营销内容。',
+            tags: ['写作自动化', '批量生成', '营销流程'],
+            url: 'https://www.copy.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Rytr',
+            description: '性价比高的通用写作助手，适合草稿生成、邮件、博客和日常生产力写作。',
+            tags: ['通用写作', '草稿生成', '性价比高'],
+            url: 'https://rytr.me/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'Otter.ai',
+            description: '实时语音转文字与会议纪要助手，适合把访谈、会议内容整理成长文素材。',
+            tags: ['会议纪要', '语音转文字', '素材整理'],
+            url: 'https://otter.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'Descript',
+            description: '集转录、字幕和编辑于一体，适合播客、视频脚本和长内容再加工。',
+            tags: ['转录', '字幕生成', '内容编辑'],
+            url: 'https://www.descript.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'DeepL',
+            description: '高质量翻译与表达优化工具，适合跨语言资料整理和多语种长文辅助。',
+            tags: ['翻译工具', '多语言', '表达优化'],
+            url: 'https://www.deepl.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+
+        // 内容安全与 AI 伪装（润色/查重类）
+        {
+            title: 'QuillBot',
+            description: '全球强势的转写与润色工具，可按学术、创意、简洁等多种语气调整文章。',
+            tags: ['转写润色', '语气调整', '去AI味'],
+            url: 'https://quillbot.com/',
+            subcategory: 'content_safety',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Originality.ai',
+            description: '较权威的 AI 内容检测与事实核查网站，不仅查 AI 比例，还能识别事实错误和幻觉风险。',
+            tags: ['AI检测', '事实核查', '幻觉检测'],
+            url: 'https://originality.ai/',
+            subcategory: 'content_safety',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'DeepL Write',
+            description: '专注英文润色与措辞优化，适合商务邮件、论文和正式文本打磨。',
+            tags: ['英文润色', '措辞优化', '正式写作'],
+            url: 'https://www.deepl.com/write',
+            subcategory: 'content_safety',
+            needsMagic: true
+        },
+        {
+            title: '有道翻译·AI写作',
+            description: '支持翻译、润色与语法修正，适合中英双语内容校对和安全发布前检查。',
+            tags: ['中英翻译', '写作润色', '语法修正'],
+            url: 'https://ai.youdao.com/',
+            subcategory: 'content_safety',
+            needsMagic: false
+        },
+
+        // 垂直领域专精（推荐收录）
+        {
+            title: 'Notion AI',
+            description: '如果用户长期在 Notion 里办公，它的文档内嵌写作、整理与协作体验依旧是最顺手的一档。',
+            tags: ['知识管理', '文档协作', '办公写作'],
+            url: 'https://www.notion.so/product/ai',
+            subcategory: 'vertical_specialized',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Lex.page',
+            description: '专门为作家和博主设计的 AI 写作编辑器，界面极简，卡壳时能像副驾驶一样自然接龙。',
+            tags: ['作家工具', '博客写作', '极简编辑器'],
+            url: 'https://lex.page/',
+            subcategory: 'vertical_specialized',
+            needsMagic: true,
+            isRecommended: true
+        },
         {
             title: '绘蛙AI文案',
             description: '专注于电商和营销领域的AI文案工具，生成广告文案、产品描述等内容',
             tags: ['电商文案', '产品描述', '营销文本'],
             url: 'https://huiwa.com/',
-            subcategory: 'marketing_copy',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
-        {
-            title: 'Copy.ai',
-            description: '面向营销和商业的AI文案生成工具，提供多种文案模板',
-            tags: ['营销文案', '邮件写作', '社交媒体'],
-            url: 'https://www.copy.ai/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        {
-            title: 'Jasper',
-            description: '专业AI内容创作平台，为营销团队和内容创作者提供多种模板和功能',
-            tags: ['内容营销', '博客写作', '专业创作'],
-            url: 'https://www.jasper.ai/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        {
-            title: 'Writesonic',
-            description: '全能AI写作平台，为企业和个人提供博客、广告和产品描述等内容创作',
-            tags: ['内容创作', '营销文案', 'SEO优化'],
-            url: 'https://writesonic.com/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        
-        // 新媒体与博客写作
         {
             title: '松果AI写作',
             description: '专注于新媒体内容创作的中文AI写作工具，适合公众号、自媒体等内容生成',
             tags: ['新媒体', '公众号', '内容创作'],
             url: 'https://songguo.ai/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1600,7 +1725,7 @@ const sitesData = {
             description: '面向自媒体创作者的AI写作助手，支持生成热点文章、专业内容等',
             tags: ['自媒体', '热点内容', '原创文章'],
             url: 'https://chengpian.com/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1608,7 +1733,7 @@ const sitesData = {
             description: '专注于新媒体创作的AI助手，提供多种写作风格和模板',
             tags: ['自媒体', '写作风格', '内容创作'],
             url: 'https://xiaoyu.ai/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1616,78 +1741,15 @@ const sitesData = {
             description: '夸克搜索推出的新媒体文章创作工具，支持一键生成完整文章',
             tags: ['新媒体', '一键生成', '内容创作'],
             url: 'https://www.myquark.cn/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
-        {
-            title: 'Rytr',
-            description: '经济实惠的AI写作助手，适合博客、邮件和社交媒体内容创作',
-            tags: ['内容创作', '性价比高', '多语言'],
-            url: 'https://rytr.me/',
-            subcategory: 'blog_media',
-            needsMagic: true
-        },
-        
-        // 多语言写作与翻译
-        {
-            title: 'QuillBot',
-            description: '智能重写和润色工具，提供释义、摘要和语法检查功能',
-            tags: ['文本改写', '摘要工具', '语法检查'],
-            url: 'https://quillbot.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: '有道翻译·AI写作',
-            description: '网易有道推出的AI写作助手，支持多语言翻译和写作润色',
-            tags: ['中英翻译', '写作润色', '语法修正'],
-            url: 'https://ai.youdao.com/',
-            subcategory: 'multilingual',
-            needsMagic: false
-        },
-        {
-            title: 'DeepL Write',
-            description: '由顶级翻译服务DeepL推出的AI写作助手，专注于多语言写作优化',
-            tags: ['多语言写作', '高级翻译', '内容润色'],
-            url: 'https://www.deepl.com/write',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'DeepL',
-            description: '高质量的AI翻译工具，支持多种语言之间的准确翻译',
-            tags: ['翻译工具', '多语言', '专业翻译'],
-            url: 'https://www.deepl.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'Descript',
-            description: '视频和音频编辑平台，提供先进的转录和字幕生成功能',
-            tags: ['音频转录', '视频字幕', '内容编辑'],
-            url: 'https://www.descript.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'Otter.ai',
-            description: '实时语音转文字工具，适用于会议记录和采访转录',
-            tags: ['会议记录', '语音转文字', '实时转录'],
-            url: 'https://otter.ai/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        
-        
-      
-        
-        // 脚本与创意内容
         {
             title: '创一AI',
             description: '专注于视频脚本和创意内容生成的AI工具，适合短视频创作者使用',
             tags: ['视频脚本', '短视频', '创意内容'],
             url: 'https://chuangyi.ai/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1695,7 +1757,7 @@ const sitesData = {
             description: '科大讯飞推出的创意内容生成工具，擅长脚本、短剧和创意故事',
             tags: ['创意脚本', '短剧内容', '故事生成'],
             url: 'https://www.xfyun.cn/services/huiwen',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1703,7 +1765,7 @@ const sitesData = {
             description: '面向创意内容制作的AI助手，支持脚本、梗概、对白等多种创意文本生成',
             tags: ['创意制作', '内容创作', '脚本生成'],
             url: 'https://wannengxiaoin.com/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
@@ -1711,7 +1773,7 @@ const sitesData = {
             description: '自动为图片和视频生成字幕和说明文字的AI工具',
             tags: ['图片字幕', '视频说明', 'AI字幕'],
             url: 'https://captionbot.ai/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: true
         },
         {
@@ -1719,11 +1781,9 @@ const sitesData = {
             description: 'Canva设计平台内置的AI文本生成工具，可创建标题、说明和短文',
             tags: ['设计文本', '标题生成', '图文结合'],
             url: 'https://www.canva.com/features/ai-text-generator/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: true
-        },
-        
-
+        }
     ],
     
     // AI对话
@@ -1780,9 +1840,17 @@ const sitesData = {
         },
         {
             title: '通义千问',
-            description: '阿里推出的通用AI助手，支持复杂任务与多轮会话',
-            tags: ['阿里AI', '多轮对话', '中文优化'],
-            url: 'https://qianwen.aliyun.com/',
+            description: '阿里最新一代通用AI助手，适合问答、写作、推理和工作流执行',
+            tags: ['阿里AI', '多轮对话', '工作流执行'],
+            url: 'https://www.qianwen.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
+            title: 'MiniMax',
+            description: '国内正在快速增长的 AI 智能体平台，兼顾对话、任务拆解与多步骤执行场景',
+            tags: ['AI智能体', '任务执行', '国产模型'],
+            url: 'https://www.minimaxi.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
@@ -1796,143 +1864,389 @@ const sitesData = {
         },
         {
             title: '腾讯元宝',
-            description: '腾讯推出的AI对话助手，覆盖问答、创作和办公场景',
-            tags: ['腾讯AI', '中文对话', '混元模型'],
+            description: '腾讯推出的AI对话助手，擅长中文语境的交流和创作',
+            tags: ['腾讯AI', '中文对话', '混元大模型'],
             url: 'https://hunyuan.tencent.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: '文心一言',
-            description: '百度推出的AI助手，支持中文问答与知识检索',
-            tags: ['百度AI', '中文问答', '知识检索'],
-            url: 'https://yiyan.baidu.com/',
+            title: '百小应',
+            description: '百度知识增强的AI助手，拥有及时更新的互联网信息',
+            tags: ['百度搜索', '实时信息', '知识问答'],
+            url: 'https://info.baidu.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: '讯飞星火',
-            description: '科大讯飞推出的认知大模型助手，中文理解能力强',
-            tags: ['讯飞AI', '中文理解', '通用助手'],
-            url: 'https://xinghuo.xfyun.cn/',
+            title: '天工AI',
+            description: '昆仑万维推出的中文大语言模型，具有较强的指令理解能力',
+            tags: ['中文AI', '指令理解', '国产模型'],
+            url: 'https://tiangong.kunlun.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: '智谱清言',
-            description: '智谱AI推出的对话助手，面向学习和办公场景',
-            tags: ['ChatGLM', '国产AI', '学习办公'],
-            url: 'https://chatglm.cn/',
+            title: 'Bing新必应',
+            description: '微软搜索引擎结合AI能力的对话式搜索体验',
+            tags: ['AI搜索', '网络信息', '微软AI'],
+            url: 'https://www.bing.com/new',
+            subcategory: 'general_assistant',
+            needsMagic: true
+        },
+        {
+            title: '商量SenseChat',
+            description: '商汤科技推出的AI助手，具有多轮对话和知识推理能力',
+            tags: ['商汤AI', '国产模型', '多轮对话'],
+            url: 'https://chat.sensetime.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: 'Microsoft Copilot',
-            description: '微软推出的通用AI助手，可结合搜索和办公生态使用',
-            tags: ['微软AI', '生产力', '搜索增强'],
-            url: 'https://copilot.microsoft.com/',
+            title: '小悟空',
+            description: '奇点智源推出的AI助手，拥有良好的中文理解和创作能力',
+            tags: ['中文AI', '知识问答', '奇点智源'],
+            url: 'https://openxlab.org.cn/apps/detail/singularity-ai/wukong',
             subcategory: 'general_assistant',
-            needsMagic: true
-        },
-
-        // 多模型/多模态AI平台
-        {
-            title: 'Poe',
-            description: 'Quora推出的多模型AI平台，可快速切换不同模型进行对话',
-            tags: ['多模型', '模型切换', '对比体验'],
-            url: 'https://poe.com/',
-            subcategory: 'multimodal_ai',
-            needsMagic: true
+            needsMagic: false
         },
         {
-            title: 'Meta AI',
-            description: 'Meta推出的AI助手，支持文本和图像等多模态能力',
-            tags: ['Meta AI', '多模态', '社交生态'],
-            url: 'https://www.meta.ai/',
-            subcategory: 'multimodal_ai',
+            title: '紫东太初',
+            description: '中科院自动化所推出的AI助手，具有强大的知识推理能力',
+            tags: ['学术支持', '知识推理', '中科院AI'],
+            url: 'https://chatbot.automata-ai.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        
+        // 游戏与娱乐AI
+        {
+            title: 'Character.AI',
+            description: '创建并与各种AI角色对话的平台，支持自定义角色设定',
+            tags: ['角色扮演', '人格定制', '娱乐对话'],
+            url: 'https://character.ai/',
+            subcategory: 'entertainment_ai',
             needsMagic: true
         },
         {
-            title: 'Monica',
-            description: '浏览器侧AI助手，支持网页阅读、翻译和多模型对话',
-            tags: ['浏览器助手', '多模型', '效率工具'],
-            url: 'https://monica.im/',
-            subcategory: 'multimodal_ai',
+            title: '逗逗',
+            description: '专注于娱乐互动的AI助手，支持多种趣味对话场景',
+            tags: ['娱乐聊天', '休闲互动', '趣味对话'],
+            url: 'https://doudou.ai/',
+            subcategory: 'entertainment_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Koko AI',
+            description: '提供有趣AI互动体验的平台，支持社交和娱乐功能',
+            tags: ['社交AI', '趣味互动', '休闲聊天'],
+            url: 'https://www.koko.ai/',
+            subcategory: 'entertainment_ai',
             needsMagic: true
+        },
+        {
+            title: '造梦次元',
+            description: '国内知名的AI娱乐互动平台，提供多样化的AI体验',
+            tags: ['AI互动', '娱乐平台', '休闲娱乐'],
+            url: 'https://www.zaomeng.space/',
+            subcategory: 'entertainment_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Museland',
+            description: '专注于音乐和娱乐的AI互动平台，提供创意音乐体验',
+            tags: ['音乐互动', 'AI创意', '娱乐体验'],
+            url: 'https://www.museland.com/',
+            subcategory: 'entertainment_ai',
+            needsMagic: true
+        },
+        {
+            title: '小黄蕉',
+            description: '趣味性AI聊天助手，擅长幽默对话和娱乐互动',
+            tags: ['幽默对话', '轻松聊天', '休闲互动'],
+            url: 'https://www.xiaohuangjiao.com/',
+            subcategory: 'entertainment_ai',
+            needsMagic: false
+        },
+        {
+            title: '冒泡鸭',
+            description: '轻松有趣的AI对话助手，提供休闲陪伴和互动体验',
+            tags: ['休闲聊天', '娱乐互动', '轻松陪伴'],
+            url: 'https://maopaoya.com/',
+            subcategory: 'entertainment_ai',
+            needsMagic: false
         },
         {
             title: 'Cici',
-            description: '面向国际用户的AI助手，支持多语言对话和创作',
-            tags: ['国际化', '多语言', '对话助手'],
+            description: '面向年轻用户的娱乐AI助手，提供丰富的互动体验',
+            tags: ['年轻风格', '互动娱乐', '趣味对话'],
             url: 'https://www.cici.ai/',
+            subcategory: 'entertainment_ai',
+            needsMagic: true
+        },
+        
+        // 角色扮演与虚拟陪伴
+        {
+            title: 'Ohai',
+            description: '提供AI虚拟伴侣体验的平台，支持深度情感互动',
+            tags: ['虚拟伴侣', '情感互动', '深度对话'],
+            url: 'https://ohai.com/',
+            subcategory: 'role_play',
+            needsMagic: true
+        },
+        {
+            title: 'Me.bot',
+            description: '创建个性化AI分身的平台，可以基于自己的风格定制AI',
+            tags: ['AI分身', '个性定制', '形象复制'],
+            url: 'https://me.bot/',
+            subcategory: 'role_play',
+            needsMagic: true
+        },
+        {
+            title: 'Saylo',
+            description: '提供AI角色对话和情感陪伴的平台，支持丰富的角色定制',
+            tags: ['角色定制', '情感交流', '虚拟陪伴'],
+            url: 'https://www.saylo.ai/',
+            subcategory: 'role_play',
+            needsMagic: true
+        },
+        {
+            title: '通义星尘',
+            description: '阿里推出的虚拟数字人助手，提供情感化的对话体验',
+            tags: ['数字人', '情感对话', '虚拟形象'],
+            url: 'https://tongyi.aliyun.com/xingchen',
+            subcategory: 'role_play',
+            needsMagic: false
+        },
+        {
+            title: 'CueMe',
+            description: '提供个性化虚拟伴侣和角色扮演的AI平台',
+            tags: ['虚拟伴侣', '角色扮演', '情感互动'],
+            url: 'https://www.cueme.com/',
+            subcategory: 'role_play',
+            needsMagic: true
+        },
+        {
+            title: 'Chai',
+            description: '提供AI角色对话的社交平台，支持多种角色和互动场景',
+            tags: ['角色对话', 'AI社交', '互动场景'],
+            url: 'https://chai.ml/',
+            subcategory: 'role_play',
+            needsMagic: true
+        },
+        
+        // 多模态AI助手
+        {
+            title: '跃问',
+            description: '支持图像识别和多模态交互的AI助手，可以理解图片内容',
+            tags: ['多模态', '图像识别', '视觉理解'],
+            url: 'https://www.yuewen.ai/',
+            subcategory: 'multimodal_ai',
+            needsMagic: false
+        },
+        {
+            title: '华为小艺',
+            description: '华为推出的多模态AI助手，支持语音、图像和文本交互',
+            tags: ['华为AI', '多模态', '语音交互'],
+            url: 'https://xiaoyi.huawei.com/',
+            subcategory: 'multimodal_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Meta AI助手',
+            description: 'Meta推出的多模态AI，支持图像、语音和文本的综合理解',
+            tags: ['Meta AI', '多模态', '社交平台'],
+            url: 'https://ai.meta.com/',
             subcategory: 'multimodal_ai',
             needsMagic: true
         },
         {
-            title: 'NotebookLM',
-            description: 'Google推出的资料型AI助手，擅长文档问答与知识整理',
-            tags: ['文档问答', '知识整理', '学习研究'],
-            url: 'https://notebooklm.google.com/',
+            title: 'Midjourney AI',
+            description: '专注于AI艺术创作的对话工具，通过文本生成高质量图像',
+            tags: ['AI绘画', '图像生成', '创意设计'],
+            url: 'https://www.midjourney.com/',
             subcategory: 'multimodal_ai',
             needsMagic: true
         },
-
+        {
+            title: 'DALL-E',
+            description: 'OpenAI开发的AI图像生成系统，可根据文本描述创建图像',
+            tags: ['图像生成', 'AI艺术', '创意工具'],
+            url: 'https://openai.com/dall-e-3',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+        {
+            title: '稀饭AI',
+            description: '专注于中文场景的AI对话助手，支持文生图、图生图等多种创作模式',
+            tags: ['AI创作', '图文结合', '中文优化'],
+            url: 'https://xfan.ai/',
+            subcategory: 'multimodal_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Stable Diffusion',
+            description: '开源的AI图像生成模型，可通过文字描述生成高质量图像',
+            tags: ['开源AI', '图像生成', '模型定制'],
+            url: 'https://stability.ai/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+        {
+            title: '天工图像',
+            description: '昆仑万维推出的多模态AI，支持图像识别和生成功能',
+            tags: ['图像处理', '多模态', '中文优化'],
+            url: 'https://tiangong.kunlun.com/image',
+            subcategory: 'multimodal_ai',
+            needsMagic: false
+        },
+        
         // 专业领域AI
         {
             title: 'GitHub Copilot',
-            description: '主流AI编程助手，支持代码补全、解释和重构建议',
-            tags: ['代码补全', '开发助手', '编程效率'],
+            description: 'AI代码助手，可以自动补全代码、提供建议和解释代码',
+            tags: ['代码补全', '开发助手', '编程辅助'],
             url: 'https://github.com/features/copilot',
             subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Cursor',
-            description: 'AI原生代码编辑器，适合工程化开发与重构协作',
-            tags: ['AI编辑器', '代码生成', '开发工作流'],
-            url: 'https://cursor.com/',
-            subcategory: 'professional_ai',
-            needsMagic: true
-        },
-        {
-            title: 'CodeGeeX',
-            description: '国产AI编程助手，支持多语言代码生成和补全',
-            tags: ['国产工具', '代码生成', '开发辅助'],
-            url: 'https://codegeex.cn/',
+            title: 'Qwen Chat',
+            description: '阿里开发者友好的AI助手，专为编程和技术开发设计',
+            tags: ['开发助手', '代码生成', '技术支持'],
+            url: 'https://www.qianwen.com/',
             subcategory: 'professional_ai',
             needsMagic: false
         },
         {
-            title: 'Perplexity',
-            description: 'AI问答搜索工具，提供可追溯来源和研究型回答',
-            tags: ['AI搜索', '引用来源', '研究问答'],
-            url: 'https://www.perplexity.ai/',
+            title: 'Grok',
+            description: 'xAI推出的技术导向型AI助手，擅长科技和编程问题',
+            tags: ['技术问答', '科学知识', '马斯克AI'],
+            url: 'https://grok.x.ai/',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'J1 Assistant',
+            description: '面向商务和专业人士的AI助手，擅长处理商业场景问题',
+            tags: ['商务AI', '专业助手', '企业应用'],
+            url: 'https://j1.ai/',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Codeium',
+            description: '免费的AI代码助手，提供智能代码补全和生成功能',
+            tags: ['代码补全', '免费工具', '多语言支持'],
+            url: 'https://codeium.com/',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Cursor',
+            description: '集成AI的代码编辑器，可以理解、解释和生成代码',
+            tags: ['AI编辑器', '代码理解', '快速开发'],
+            url: 'https://cursor.sh/',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Tabnine',
+            description: '基于AI的代码补全工具，支持多种IDE和编程语言',
+            tags: ['代码补全', 'IDE插件', '多平台'],
+            url: 'https://www.tabnine.com/',
             subcategory: 'professional_ai',
             needsMagic: true
         },
         {
             title: 'ChatPDF',
-            description: '面向文档场景的AI助手，可上传PDF并进行问答总结',
-            tags: ['PDF问答', '文档总结', '知识提取'],
+            description: '上传PDF文件并与之对话，可提取信息、总结内容或解答相关问题',
+            tags: ['PDF助手', '文档问答', '内容提取'],
             url: 'https://www.chatpdf.com/',
             subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Manus',
-            description: '任务执行型AI代理，适合研究、分析和流程自动化',
-            tags: ['AI代理', '任务拆解', '自动化执行'],
-            url: 'https://manus.im/',
+            title: 'Perplexity AI',
+            description: '基于AI的搜索引擎，提供实时信息和参考来源',
+            tags: ['AI搜索', '信息汇总', '实时资讯'],
+            url: 'https://www.perplexity.ai/',
             subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'CodeGeeX',
+            description: '清华大学开源的AI编程助手，支持多种编程语言的代码生成',
+            tags: ['国产AI', '代码生成', '开源项目'],
+            url: 'https://codegeex.cn/',
+            subcategory: 'professional_ai',
+            needsMagic: false
+        },
+        
+        // 国际化AI助手
+        {
+            title: 'Poe',
+            description: 'Quora开发的AI平台，集成多种AI模型，方便用户对比使用',
+            tags: ['多模型集成', '快速切换', '比较体验'],
+            url: 'https://poe.com/',
+            subcategory: 'international_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Cici',
+            description: '豆包国际版，面向国际用户的中国AI技术展示',
+            tags: ['国际版', '中国技术', '多语言'],
+            url: 'https://www.cici.ai/',
+            subcategory: 'international_ai',
+            needsMagic: true
+        },
+        {
+            title: '百川大模型',
+            description: '提供多语言支持的中国大模型，面向国际市场',
+            tags: ['多语言', '国际化', '中国AI'],
+            url: 'https://www.baichuan-ai.com/',
+            subcategory: 'international_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Langchain AI',
+            description: '开发者工具框架，用于构建基于大型语言模型的国际化应用程序',
+            tags: ['开发框架', 'LLM应用', '国际标准'],
+            url: 'https://www.langchain.com/',
+            subcategory: 'international_ai',
+            needsMagic: true
+        },
+        {
+            title: 'FlowGPT',
+            description: '预设各种专业场景的AI对话，包含众多工作流程和提示词',
+            tags: ['提示词库', '场景模板', '国际化'],
+            url: 'https://flowgpt.com/',
+            subcategory: 'international_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Writesonic',
+            description: '面向营销内容创作的AI助手，提供多种语言支持',
+            tags: ['多语言', '营销内容', '国际化'],
+            url: 'https://writesonic.com/',
+            subcategory: 'international_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Jasper',
+            description: '专业的AI内容创作平台，面向全球企业和营销团队',
+            tags: ['全球化', '企业级AI', '多语言'],
+            url: 'https://www.jasper.ai/',
+            subcategory: 'international_ai',
             needsMagic: true
         }
     ],
     
-    // AI图像
+    // AI绘画
     ai_image: [
         // 通用AI图片生成
         {
-            title: 'Midjourney',
+            title: 'MidJourney',
             description: '强大的AI艺术生成工具，通过文本提示创建高质量艺术作品',
             tags: ['AI艺术', '图像生成', '创意设计'],
             url: 'https://www.midjourney.com/',
@@ -1980,26 +2294,26 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Ideogram',
-            description: '擅长文字排版与品牌视觉生成的AI图像平台，适合海报和营销素材',
-            tags: ['文字渲染', '品牌视觉', '海报设计'],
-            url: 'https://ideogram.ai/',
+            title: '即梦AI',
+            description: '剪映旗下的中文图像与视频生成平台，擅长海报、电商物料和短视频视觉内容一体化创作',
+            tags: ['中文生成', '图生视频', '电商物料'],
+            url: 'https://jimeng.jianying.com/ai-tool/home/',
             subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'FLUX.1',
-            description: 'Black Forest Labs推出的高质量图像生成模型系列，擅长写实画质和文本细节',
-            tags: ['图像模型', '写实风格', '文本细节'],
-            url: 'https://bfl.ai/',
-            subcategory: 'general_image',
-            needsMagic: true
+            needsMagic: false
         },
         {
             title: 'Bing Image Creator',
             description: '微软推出的免费AI图像生成工具，基于DALL-E模型',
             tags: ['微软', '免费工具', '简易操作'],
             url: 'https://www.bing.com/create',
+            subcategory: 'general_image',
+            needsMagic: true
+        },
+        {
+            title: 'DeepFloyd IF',
+            description: '多模态生成模型，支持高质量图像和精确文本理解',
+            tags: ['多模态', '高质量', '精确理解'],
+            url: 'https://deepfloyd.ai/',
             subcategory: 'general_image',
             needsMagic: true
         },
@@ -2375,6 +2689,14 @@ const sitesData = {
             description: '快手推出的新一代AI视频生成平台，支持多模态提示、镜头控制和高一致性视频创作',
             tags: ['文本生成视频', '镜头控制', '高一致性'],
             url: 'https://kling.ai/',
+            subcategory: 'text_to_video',
+            needsMagic: false
+        },
+        {
+            title: '即梦AI',
+            description: '剪映推出的中文 AI 视频创作平台，支持文生视频、图生视频和短视频素材快速成片',
+            tags: ['文生视频', '图生视频', '短视频创作'],
+            url: 'https://jimeng.jianying.com/ai-tool/home/',
             subcategory: 'text_to_video',
             needsMagic: false
         },

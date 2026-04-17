@@ -44,13 +44,10 @@ const languageData = {
         'menu_professional_ai': 'AI办公与专业助手',
         'menu_international_ai': '海外AI聊天工具',
         'menu_ai_writing': 'AI写作',
-        'menu_academic_paper': 'AI论文写作',
-        'menu_fiction_writing': 'AI小说与故事写作',
-        'menu_marketing_copy': 'AI营销文案',
-        'menu_blog_media': 'AI新媒体与博客写作',
-        'menu_official_document': 'AI公文与商务写作',
-        'menu_multilingual': 'AI翻译与多语言写作',
-        'menu_script_content': 'AI脚本生成与创意写作',
+        'menu_model_reasoning': '综合写作与逻辑之王',
+        'menu_productivity_longform': '生产力与长文辅助',
+        'menu_content_safety': '内容安全与AI伪装',
+        'menu_vertical_specialized': '垂直领域专精',
         'menu_ai_image': 'AI图像',
         'menu_general_image': 'AI图片生成',
         'menu_portrait': 'AI头像与人像生成',
@@ -183,13 +180,10 @@ const languageData = {
         'menu_professional_ai': 'AI Work & Professional Assistants',
         'menu_international_ai': 'Global AI Chat Tools',
         'menu_ai_writing': 'AI Writing',
-        'menu_academic_paper': 'AI Essay & Paper Writing',
-        'menu_fiction_writing': 'AI Story & Novel Writing',
-        'menu_marketing_copy': 'AI Marketing Copy',
-        'menu_blog_media': 'AI Blog & Social Media Writing',
-        'menu_official_document': 'AI Official & Business Writing',
-        'menu_multilingual': 'AI Translation & Multilingual Writing',
-        'menu_script_content': 'AI Script Writing & Creative Content',
+        'menu_model_reasoning': 'Writing & Reasoning Models',
+        'menu_productivity_longform': 'Productivity & Long-Form Tools',
+        'menu_content_safety': 'Content Safety & AI Humanization',
+        'menu_vertical_specialized': 'Vertical Specialists',
         'menu_ai_image': 'AI Images',
         'menu_general_image': 'AI Image Generator',
         'menu_portrait': 'AI Avatar & Portrait Generator',
@@ -558,13 +552,10 @@ function updateNavMenuTexts() {
         
         // AI写作子菜单
         const aiWritingItems = {
-            'academic_paper': 'menu_academic_paper',
-            'fiction_writing': 'menu_fiction_writing',
-            'marketing_copy': 'menu_marketing_copy',
-            'blog_media': 'menu_blog_media',
-            'official_document': 'menu_official_document',
-            'multilingual': 'menu_multilingual',
-            'script_content': 'menu_script_content'
+            'model_reasoning': 'menu_model_reasoning',
+            'productivity_longform': 'menu_productivity_longform',
+            'content_safety': 'menu_content_safety',
+            'vertical_specialized': 'menu_vertical_specialized'
         };
         updateSubmenuItems('submenu-ai-writing', aiWritingItems);
         

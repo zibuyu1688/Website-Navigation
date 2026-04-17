@@ -45,181 +45,6 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: 'Amazon Japan Store',
-            description: 'Amazon Japan shopping website, an e-commerce platform for Japanese consumers',
-            tags: ['Amazon', 'Japan Store', 'Consumer'],
-            url: 'https://www.amazon.co.jp/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Japan Seller Central',
-            description: 'Amazon Japan seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Japan Store', 'Seller Backend'],
-            url: 'https://sellercentral-japan.amazon.com/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Germany Store',
-            description: 'Amazon Germany shopping website, an e-commerce platform for German consumers',
-            tags: ['Amazon', 'Germany Store', 'Consumer'],
-            url: 'https://www.amazon.de/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Germany Seller Central',
-            description: 'Amazon Germany seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Germany Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.de/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon France Store',
-            description: 'Amazon France shopping website, an e-commerce platform for French consumers',
-            tags: ['Amazon', 'France Store', 'Consumer'],
-            url: 'https://www.amazon.fr/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon France Seller Central',
-            description: 'Amazon France seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'France Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.fr/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Italy Store',
-            description: 'Amazon Italy shopping website, an e-commerce platform for Italian consumers',
-            tags: ['Amazon', 'Italy Store', 'Consumer'],
-            url: 'https://www.amazon.it/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Italy Seller Central',
-            description: 'Amazon Italy seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Italy Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.it/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Canada Store',
-            description: 'Amazon Canada shopping website, an e-commerce platform for Canadian consumers',
-            tags: ['Amazon', 'Canada Store', 'Consumer'],
-            url: 'https://www.amazon.ca/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Canada Seller Central',
-            description: 'Amazon Canada seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Canada Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.ca/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Australia Store',
-            description: 'Amazon Australia shopping website, an e-commerce platform for Australian consumers',
-            tags: ['Amazon', 'Australia Store', 'Consumer'],
-            url: 'https://www.amazon.com.au/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Australia Seller Central',
-            description: 'Amazon Australia seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Australia Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.com.au/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Spain Store',
-            description: 'Amazon Spain shopping website, an e-commerce platform for Spanish consumers',
-            tags: ['Amazon', 'Spain Store', 'Consumer'],
-            url: 'https://www.amazon.es/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Spain Seller Central',
-            description: 'Amazon Spain seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Spain Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.es/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Mexico Store',
-            description: 'Amazon Mexico shopping website, an e-commerce platform for Mexican consumers',
-            tags: ['Amazon', 'Mexico Store', 'Consumer'],
-            url: 'https://www.amazon.com.mx/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Mexico Seller Central',
-            description: 'Amazon Mexico seller platform for managing products, orders and sales data',
-            tags: ['Amazon', 'Mexico Store', 'Seller Backend'],
-            url: 'https://sellercentral.amazon.com.mx/',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon US New Releases',
-            description: 'Amazon US new product release rankings, view new product trends across different categories',
-            tags: ['Amazon', 'US Store', 'New Releases'],
-            url: 'https://www.amazon.com/gp/new-releases',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon US Best Sellers',
-            description: 'Amazon US sales rankings, view best-selling products across all categories',
-            tags: ['Amazon', 'US Store', 'Best Sellers'],
-            url: 'https://www.amazon.com/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon US Movers & Shakers',
-            description: 'Amazon US trending products list, showing products with the fastest-growing sales',
-            tags: ['Amazon', 'US Store', 'Movers & Shakers'],
-            url: 'https://www.amazon.com/gp/movers-and-shakers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon UK Best Sellers',
-            description: 'Amazon UK sales rankings, view best-selling products in the UK market',
-            tags: ['Amazon', 'UK Store', 'Best Sellers'],
-            url: 'https://www.amazon.co.uk/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon France Best Sellers',
-            description: 'Amazon France sales rankings, view best-selling products in the French market',
-            tags: ['Amazon', 'France Store', 'Best Sellers'],
-            url: 'https://www.amazon.fr/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Japan Best Sellers',
-            description: 'Amazon Japan sales rankings, view best-selling products in the Japanese market',
-            tags: ['Amazon', 'Japan Store', 'Best Sellers'],
-            url: 'https://www.amazon.co.jp/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Germany Best Sellers',
-            description: 'Amazon Germany sales rankings, view best-selling products in the German market',
-            tags: ['Amazon', 'Germany Store', 'Best Sellers'],
-            url: 'https://www.amazon.de/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Italy Best Sellers',
-            description: 'Amazon Italy sales rankings, view best-selling products in the Italian market',
-            tags: ['Amazon', 'Italy Store', 'Best Sellers'],
-            url: 'https://www.amazon.it/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
-            title: 'Amazon Australia Best Sellers',
-            description: 'Amazon Australia sales rankings, view best-selling products in the Australian market',
-            tags: ['Amazon', 'Australia Store', 'Best Sellers'],
-            url: 'https://www.amazon.com.au/gp/bestsellers',
-            subcategory: 'amazon'
-        },
-        {
             title: 'Amazon Canada Best Sellers',
             description: 'Amazon Canada sales rankings, view best-selling products in the Canadian market',
             tags: ['Amazon', 'Canada Store', 'Best Sellers'],
@@ -1489,175 +1314,237 @@ const sitesData = {
     
     // AI Writing
     ai_writing: [
-       
+        // Writing & Reasoning Models
+        {
+            title: 'Claude 4',
+            description: 'Widely seen in 2026 as the most human-sounding and structurally reliable writing model, with Artifacts excelling at long-form editing.',
+            tags: ['Long-Form Writing', 'Structured Editing', 'Natural Prose'],
+            url: 'https://claude.ai/',
+            subcategory: 'model_reasoning',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'DeepSeek V3 / R1',
+            description: 'High value and especially strong in Chinese context, with chain-of-thought performance that stands out for technical docs and complex analysis.',
+            tags: ['Chinese Writing', 'Technical Docs', 'Reasoning'],
+            url: 'https://chat.deepseek.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'ChatGPT - GPT-5.4',
+            description: 'OpenAI\'s latest reasoning model for academic writing, scientific reporting, and work that depends on high factual precision.',
+            tags: ['Academic Writing', 'Scientific Reports', 'Fact Accuracy'],
+            url: 'https://chat.openai.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Gemini',
+            description: 'Google\'s multimodal model for research synthesis, web-assisted drafting, and multi-format content generation.',
+            tags: ['Multimodal', 'Research Synthesis', 'Web-Assisted Writing'],
+            url: 'https://gemini.google.com/',
+            subcategory: 'model_reasoning',
+            needsMagic: true
+        },
+
+        // Productivity & Long-Form Tools
+        {
+            title: 'Jasper.ai',
+            description: 'Still a category leader in marketing writing, now deeply integrated with enterprise SEO data for Google-aligned blog generation.',
+            tags: ['SEO Writing', 'Marketing Copy', 'Blog Generation'],
+            url: 'https://www.jasper.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Writesonic',
+            description: 'Focused on fast generation and one-click publishing, with Article Writer support for real-time search-informed writing.',
+            tags: ['Real-Time Search', 'One-Click Publishing', 'Article Writer'],
+            url: 'https://writesonic.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Copy.ai Workflows',
+            description: 'Now positioned around writing automation, turning product inputs into multi-platform promotional scripts and copy at scale.',
+            tags: ['Workflow Automation', 'Batch Output', 'Marketing Ops'],
+            url: 'https://www.copy.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Rytr',
+            description: 'A cost-effective general writing assistant for drafts, emails, blog posts, and day-to-day writing productivity.',
+            tags: ['General Writing', 'Drafting', 'Cost-Effective'],
+            url: 'https://rytr.me/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'Otter.ai',
+            description: 'Real-time speech-to-text and meeting notes assistant for turning interviews and meetings into long-form source material.',
+            tags: ['Meeting Notes', 'Speech-to-Text', 'Source Material'],
+            url: 'https://otter.ai/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'Descript',
+            description: 'Combines transcription, subtitles, and editing, useful for podcasts, scripts, and long-form content repurposing.',
+            tags: ['Transcription', 'Subtitles', 'Content Editing'],
+            url: 'https://www.descript.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
+        {
+            title: 'DeepL',
+            description: 'High-quality translation and expression refinement for multilingual research collation and long-form writing support.',
+            tags: ['Translation', 'Multilingual', 'Expression Refinement'],
+            url: 'https://www.deepl.com/',
+            subcategory: 'productivity_longform',
+            needsMagic: true
+        },
         
-        // Marketing and Commercial Copy
+        // Content Safety & AI Humanization
+        {
+            title: 'QuillBot',
+            description: 'A top-tier rewriting and polishing tool with tone modes for academic, creative, and concise humanization workflows.',
+            tags: ['Paraphrasing', 'Polishing', 'Tone Modes'],
+            url: 'https://quillbot.com/',
+            subcategory: 'content_safety',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Originality.ai',
+            description: 'A leading platform for AI content detection and fact review, including hallucination-oriented risk checks before publishing.',
+            tags: ['AI Detection', 'Fact Review', 'Hallucination Check'],
+            url: 'https://originality.ai/',
+            subcategory: 'content_safety',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'DeepL Write',
+            description: 'Focused on English polishing and wording improvements for business emails, papers, and formal writing.',
+            tags: ['English Polishing', 'Wording', 'Formal Writing'],
+            url: 'https://www.deepl.com/write',
+            subcategory: 'content_safety',
+            needsMagic: true
+        },
+        {
+            title: 'Youdao Translate · AI Writing',
+            description: 'Supports translation, polishing, and grammar fixes for bilingual review and safer publishing workflows.',
+            tags: ['Chinese-English', 'Polishing', 'Grammar Fixes'],
+            url: 'https://ai.youdao.com/',
+            subcategory: 'content_safety',
+            needsMagic: false
+        },
+        
+        // Vertical Specialists
+        {
+            title: 'Notion AI',
+            description: 'If you already live inside Notion, its embedded writing flow is still one of the best productivity-native writing experiences available.',
+            tags: ['Knowledge Base', 'Embedded Writing', 'Workflows'],
+            url: 'https://www.notion.so/product/ai',
+            subcategory: 'vertical_specialized',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Lex.page',
+            description: 'Purpose-built for writers and bloggers, with a minimal editor that can continue drafts like a copilot when you get stuck.',
+            tags: ['Writers', 'Blogging', 'Minimal Editor'],
+            url: 'https://lex.page/',
+            subcategory: 'vertical_specialized',
+            needsMagic: true,
+            isRecommended: true
+        },
         {
             title: 'Huiwa AI Copywriting',
             description: 'An AI copywriting tool focused on the e-commerce and marketing fields, generating advertising copy, product descriptions, etc.',
             tags: ['e-commerce copywriting', 'product descriptions', 'marketing text'],
             url: 'https://huiwa.com/',
-            subcategory: 'marketing_copy',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
-            title: 'Copy.ai',
-            description: 'An AI copywriting generation tool for marketing and business, providing various copywriting templates',
-            tags: ['marketing copywriting', 'email writing', 'social media'],
-            url: 'https://www.copy.ai/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        {
-            title: 'Jasper',
-            description: 'A professional AI content creation platform that provides various templates and functions for marketing teams and content creators',
-            tags: ['content marketing', 'blog writing', 'professional creation'],
-            url: 'https://www.jasper.ai/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        {
-            title: 'Writesonic',
-            description: 'An all - around AI writing platform that provides content creation services such as blogs, advertisements, and product descriptions for enterprises and individuals',
-            tags: ['content creation', 'marketing copywriting', 'SEO optimization'],
-            url: 'https://writesonic.com/',
-            subcategory: 'marketing_copy',
-            needsMagic: true
-        },
-        
-        // Blog and Content Creation
-        {
             title: 'Songguo AI Writing',
-            description: 'A Chinese AI writing tool focused on new media content creation, suitable for content generation on official accounts, self - media, etc.',
+            description: 'A Chinese AI writing tool focused on new media content creation, suitable for content generation on official accounts and self-media.',
             tags: ['new media', 'official accounts', 'content creation'],
             url: 'https://songguo.ai/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'Chengpian',
-            description: 'An AI writing assistant for self - media creators, supporting the generation of hot articles, professional content, etc.',
-            tags: ['self - media', 'hot content', 'original articles'],
+            description: 'An AI writing assistant for self-media creators, supporting hot articles and more professional content generation.',
+            tags: ['self-media', 'hot content', 'original articles'],
             url: 'https://chengpian.com/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'Xiaoyu AI Writing',
             description: 'An AI assistant focused on new media creation, providing various writing styles and templates',
-            tags: ['self - media', 'writing styles', 'content creation'],
+            tags: ['self-media', 'writing styles', 'content creation'],
             url: 'https://xiaoyu.ai/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'AI New Media Articles (Quark)',
-            description: 'A new media article creation tool launched by Quark Search, supporting one - click generation of complete articles',
-            tags: ['new media', 'one - click generation', 'content creation'],
+            description: 'A new media article creation tool launched by Quark Search, supporting one-click generation of complete articles.',
+            tags: ['new media', 'one-click generation', 'content creation'],
             url: 'https://www.myquark.cn/',
-            subcategory: 'blog_media',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
-        {
-            title: 'Rytr',
-            description: 'An affordable AI writing assistant suitable for blog, email, and social media content creation',
-            tags: ['content creation', 'cost - effective', 'multilingual'],
-            url: 'https://rytr.me/',
-            subcategory: 'blog_media',
-            needsMagic: true
-        },
-        
-        // Multilingual Writing and Translation
-        {
-            title: 'QuillBot',
-            description: 'An intelligent rewriting and polishing tool that provides paraphrasing, summarizing, and grammar checking functions',
-            tags: ['text rewriting', 'summary tool', 'grammar checking'],
-            url: 'https://quillbot.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'Youdao Translate · AI Writing',
-            description: 'An AI writing assistant launched by NetEase Youdao, supporting multilingual translation and writing polishing',
-            tags: ['Chinese - English translation', 'writing polishing', 'grammar correction'],
-            url: 'https://ai.youdao.com/',
-            subcategory: 'multilingual',
-            needsMagic: false
-        },
-        {
-            title: 'DeepL Write',
-            description: 'An AI writing assistant launched by the top - level translation service DeepL, focused on multilingual writing optimization',
-            tags: ['multilingual writing', 'advanced translation', 'content polishing'],
-            url: 'https://www.deepl.com/write',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'DeepL',
-            description: 'A high - quality AI translation tool supporting accurate translation between multiple languages',
-            tags: ['translation tool', 'multilingual', 'professional translation'],
-            url: 'https://www.deepl.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'Descript',
-            description: 'A video and audio editing platform providing advanced transcription and subtitle generation functions',
-            tags: ['audio transcription', 'video subtitles', 'content editing'],
-            url: 'https://www.descript.com/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        {
-            title: 'Otter.ai',
-            description: 'A real - time speech - to - text tool suitable for meeting records and interview transcription',
-            tags: ['meeting records', 'speech - to - text', 'real - time transcription'],
-            url: 'https://otter.ai/',
-            subcategory: 'multilingual',
-            needsMagic: true
-        },
-        
-       
-        
-        // Script and Creative Content
         {
             title: 'Chuangyi AI',
-            description: 'An AI tool focused on video script and creative content generation, suitable for short - video creators',
+            description: 'An AI tool focused on video script and creative content generation, suitable for short-video creators',
             tags: ['video scripts', 'short videos', 'creative content'],
             url: 'https://chuangyi.ai/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'iFlytek Huiwen',
             description: 'A creative content generation tool launched by iFlytek, good at scripts, short dramas, and creative stories',
-            tags: ['creative scripts', 'short - drama content', 'story generation'],
+            tags: ['creative scripts', 'short-drama content', 'story generation'],
             url: 'https://www.xfyun.cn/services/huiwen',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'Wanneng Xiaoin',
-            description: 'An AI assistant for creative content production, supporting the generation of various creative texts such as scripts, outlines, and dialogues',
+            description: 'An AI assistant for creative content production, supporting scripts, outlines, dialogues, and other specialized writing tasks.',
             tags: ['creative production', 'content creation', 'script generation'],
             url: 'https://wannengxiaoin.com/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: false
         },
         {
             title: 'CaptionBot.ai',
-            description: 'An AI tool that automatically generates subtitles and descriptive text for pictures and videos',
-            tags: ['picture subtitles', 'video descriptions', 'AI subtitles'],
+            description: 'An AI tool that automatically generates captions and descriptive text for pictures and videos.',
+            tags: ['picture captions', 'video descriptions', 'AI subtitles'],
             url: 'https://captionbot.ai/',
-            subcategory: 'script_content',
+            subcategory: 'vertical_specialized',
             needsMagic: true
         },
         {
             title: 'Canva Text Generator',
-            description: 'An AI text generation tool built into the Canva design platform, which can create titles, descriptions, and short articles',
-            tags: ['design text', 'title generation', 'combination of pictures and text'],
-            url: 'https://www.canva.com/features/ai - text - generator/',
-            subcategory: 'script_content',
+            description: 'An AI text generation tool built into Canva for titles, descriptions, and short-form supporting copy.',
+            tags: ['design text', 'title generation', 'visual copy'],
+            url: 'https://www.canva.com/features/ai-text-generator/',
+            subcategory: 'vertical_specialized',
             needsMagic: true
         },
         
@@ -1714,6 +1601,14 @@ const sitesData = {
             url: 'https://leonardo.ai/',
             subcategory: 'general_image',
             needsMagic: true
+        },
+        {
+            title: 'Jimeng AI',
+            description: 'CapCut\'s Chinese image and video generation platform for posters, product creatives and social-ready visual assets',
+            tags: ['Chinese generation', 'visual assets', 'e-commerce creatives'],
+            url: 'https://jimeng.jianying.com/ai-tool/home/',
+            subcategory: 'general_image',
+            needsMagic: false
         },
         {
             title: 'Ideogram',
@@ -2148,9 +2043,17 @@ const sitesData = {
         },
         {
             title: 'Tongyi Qianwen',
-            description: 'Alibaba assistant for multi-turn conversation and task completion',
-            tags: ['Alibaba AI', 'multi-turn chat', 'task support'],
-            url: 'https://qianwen.aliyun.com/',
+            description: 'Alibaba\'s latest assistant for chat, writing, reasoning and workflow-style task execution',
+            tags: ['Alibaba AI', 'multi-turn chat', 'workflow execution'],
+            url: 'https://www.qianwen.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
+            title: 'MiniMax',
+            description: 'Fast-rising Chinese AI agent platform for chat, task decomposition and multi-step execution workflows',
+            tags: ['AI agent', 'task execution', 'domestic model'],
+            url: 'https://www.minimaxi.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
@@ -2312,6 +2215,14 @@ const sitesData = {
             "description": "Kuaishou's next-generation AI video platform with multimodal prompting, camera control and high-consistency generation",
             "tags": ["text-to-video", "camera control", "high consistency"],
             "url": "https://kling.ai/",
+            "subcategory": "text_to_video",
+            "needsMagic": false
+        },
+        {
+            "title": "Jimeng AI",
+            "description": "CapCut's Chinese AI video platform for text-to-video, image-to-video and fast short-form production workflows",
+            "tags": ["text-to-video", "image-to-video", "short-form creation"],
+            "url": "https://jimeng.jianying.com/ai-tool/home/",
             "subcategory": "text_to_video",
             "needsMagic": false
         },
