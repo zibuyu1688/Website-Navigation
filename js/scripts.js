@@ -1781,6 +1781,57 @@ function performSearch() {
     }
 }
 
+function getFabLanguage() {
+    if (typeof getCurrentLanguage === 'function') {
+        const currentLanguage = getCurrentLanguage();
+        if (currentLanguage === 'en' || currentLanguage === 'zh') {
+            return currentLanguage;
+        }
+    }
+
+    return (document.documentElement.lang || '').toLowerCase().startsWith('en') ? 'en' : 'zh';
+}
+
+function updateBackToTopVisibility() {
+    const button = document.getElementById('back-to-top-fab');
+    if (!button) return;
+
+    const isVisible = window.scrollY > 420;
+    button.classList.toggle('is-visible', isVisible);
+}
+
+function initFloatingActionButton() {
+    if (document.getElementById('floating-action-bar')) {
+        updateBackToTopVisibility();
+        return;
+    }
+
+    const language = getFabLanguage();
+    const label = language === 'en' ? 'Back to top' : '返回顶部';
+
+    const fabBar = document.createElement('div');
+    fabBar.id = 'floating-action-bar';
+    fabBar.className = 'floating-action-bar';
+    fabBar.innerHTML = `
+        <button id="back-to-top-fab" class="floating-action-btn" type="button" title="${label}" aria-label="${label}">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+    `;
+
+    document.body.appendChild(fabBar);
+
+    const button = document.getElementById('back-to-top-fab');
+    button.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+    updateBackToTopVisibility();
+}
+
 const TECH_BLOG_SUBCATEGORY_ORDER = [
     'tech_official_docs',
     'tech_tutorials',
@@ -2536,6 +2587,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初始化底部分类导航
     organizeFooterCategories();
+
+    // 初始化悬浮返回顶部按钮
+    initFloatingActionButton();
     
     // 为所有侧边栏和底部分类链接添加监听器，确保在搜索状态下点击也能切换类目
     initCategoryLinks();
@@ -3137,6 +3191,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 组织底部分类
     organizeFooterCategories();
+
+    // 初始化悬浮返回顶部按钮
+    initFloatingActionButton();
     
     // 为搜索输入框添加回车触发搜索
     document.getElementById('search-input').addEventListener('keypress', function(e) {
