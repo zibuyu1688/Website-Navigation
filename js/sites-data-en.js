@@ -4194,6 +4194,66 @@ const sitesData = {
             subcategory: 'academic_search',
             isRecommended: true
         }
+    ],
+    resources: [
+        {
+            title: 'Hugging Face',
+            description: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
+            tags: ['AI Resources', 'Models', 'Datasets'],
+            url: 'https://huggingface.co/',
+            isRecommended: true
+        },
+        {
+            title: 'Futurepedia',
+            description: 'Large AI tools directory covering automation products and use cases for discovery and competitor research.',
+            tags: ['AI Directory', 'Discovery', 'Tool Database'],
+            url: 'https://www.futurepedia.io/',
+            isRecommended: true
+        },
+        {
+            title: 'There’s An AI For That',
+            description: 'Task-based AI tool finder that helps users discover products by specific use cases and workflows.',
+            tags: ['Use Cases', 'AI Search', 'Tool Finder'],
+            url: 'https://theresanaiforthat.com/',
+            isRecommended: true
+        },
+        {
+            title: 'Product Hunt',
+            description: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
+            tags: ['Launches', 'Trends', 'Product Discovery'],
+            url: 'https://www.producthunt.com/',
+            isRecommended: true
+        }
+    ],
+    tech_blog: [
+        {
+            title: 'MDN Web Docs',
+            description: 'Core reference for web standards, frontend APIs and implementation details used in practical development.',
+            tags: ['Frontend', 'Web Docs', 'Reference'],
+            url: 'https://developer.mozilla.org/',
+            isRecommended: true
+        },
+        {
+            title: 'freeCodeCamp',
+            description: 'Offers structured coding tutorials, project-based practice and engineering articles from beginner to advanced.',
+            tags: ['Coding Tutorials', 'Projects', 'Learning Path'],
+            url: 'https://www.freecodecamp.org/',
+            isRecommended: true
+        },
+        {
+            title: 'roadmap.sh',
+            description: 'Developer roadmaps and skill trees for frontend, backend, DevOps and adjacent engineering tracks.',
+            tags: ['Roadmaps', 'Skills', 'Developer Growth'],
+            url: 'https://roadmap.sh/',
+            isRecommended: true
+        },
+        {
+            title: 'Vercel Docs',
+            description: 'Documentation hub for frontend deployment, edge rendering and performance optimization in production workflows.',
+            tags: ['Deployment', 'Frontend Engineering', 'Performance'],
+            url: 'https://vercel.com/docs',
+            isRecommended: true
+        }
     ]
 }; 
 

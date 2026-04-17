@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI365 Navigation - Cross-border E-commerce & AI Tools Directory</title>
-    <meta name="description" content="AI365 Navigation curates cross-border e-commerce platforms, AI tools, website resources and growth utilities for sellers, operators and AI enthusiasts.">
+    <meta name="description" content="AI365 Navigation curates cross-border e-commerce platforms, AI tools, resource guides and technical playbooks for sellers, operators, developers and AI builders.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#4285f4">
     <link rel="canonical" href="https://www.aitool365.com/en.html">
@@ -15,12 +15,12 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="AI365 Navigation">
     <meta property="og:title" content="AI365 Navigation - Cross-border E-commerce & AI Tools Directory">
-    <meta property="og:description" content="A practical navigation hub for cross-border sellers and AI users, covering operations, growth, content and development tools.">
+    <meta property="og:description" content="A practical navigation hub for cross-border sellers, developers and AI users, covering resource guides, technical playbooks, growth tools and production workflows.">
     <meta property="og:url" content="https://www.aitool365.com/en.html">
     <meta property="og:image" content="https://www.aitool365.com/logo.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI365 Navigation - Cross-border E-commerce & AI Tools Directory">
-    <meta name="twitter:description" content="Find curated tools for e-commerce growth, AI productivity and website operations.">
+    <meta name="twitter:description" content="Find curated tools, resource guides and technical playbooks for e-commerce growth, AI productivity and engineering execution.">
     <meta name="twitter:image" content="https://www.aitool365.com/logo.svg">
     <link rel="icon" type="image/png" href="favicon/default.png">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -232,6 +232,12 @@
                 <span>AI365 Nav</span>
             </div>
             <div class="right-nav-links">
+                <a href="#resources" title="Jump to Resource Guides" class="top-nav-link" onclick="showCategory('resources'); return false;">
+                    <i class="bi bi-book"></i> Resource Guides
+                </a>
+                <a href="#tech-blog" title="Jump to Technical Playbooks" class="top-nav-link" onclick="showCategory('tech-blog'); return false;">
+                    <i class="bi bi-code-square"></i> Technical Playbooks
+                </a>
                 <a href="https://virtualbrains.feishu.cn/wiki/SHUPwNzcbi3SkGkV3Vgcptb0nVb?from=from_copylink" target="_blank" rel="noopener noreferrer" title="Open niche sites knowledge base" class="top-nav-link">
                     <i class="bi bi-collection"></i> Niche Sites
                 </a>
@@ -250,6 +256,18 @@
                 <a class="nav-link active" onclick="showCategory('home')">
                     <i class="bi bi-house"></i>
                     Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('resources')">
+                    <i class="bi bi-book"></i>
+                    Resource Guides
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('tech-blog')">
+                    <i class="bi bi-code-square"></i>
+                    Technical Playbooks
                 </a>
             </li>
             <li class="nav-item has-submenu">
@@ -818,6 +836,34 @@
         
         <!-- Content area -->
         <div id="content-area">
+            <!-- Resource Guides -->
+            <section id="resources-section" class="category-section" aria-labelledby="resources-heading">
+                <div id="resources" class="category-anchor"></div>
+                <div class="category-title">
+                    <h2 id="resources-heading"><i class="bi bi-book"></i> Resource Guides</h2>
+                </div>
+                <div class="channel-intro">
+                    <p>Curated resource channel for AI directories, model communities, discovery platforms and reusable knowledge hubs for faster research and tool selection.</p>
+                </div>
+                <div class="site-grid placeholder-grid" id="resources-grid">
+                    <!-- Resource guide cards will be dynamically added via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Technical Playbooks -->
+            <section id="tech-blog-section" class="category-section" aria-labelledby="tech-blog-heading">
+                <div id="tech-blog" class="category-anchor"></div>
+                <div class="category-title">
+                    <h2 id="tech-blog-heading"><i class="bi bi-code-square"></i> Technical Playbooks</h2>
+                </div>
+                <div class="channel-intro">
+                    <p>Hands-on channel focused on coding tutorials, project breakdowns, deployment docs and implementation references for web, automation and AI workflows.</p>
+                </div>
+                <div class="site-grid placeholder-grid" id="tech-blog-grid">
+                    <!-- Technical playbook cards will be dynamically added via JavaScript -->
+                </div>
+            </section>
+
             <!-- E-commerce Platforms -->
             <div id="ecommerce-section" class="category-section">
                 <div class="category-title">

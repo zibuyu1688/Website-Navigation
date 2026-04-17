@@ -8,6 +8,8 @@ const languageData = {
     'zh': {
         // 导航菜单
         'menu_home': '首页',
+        'menu_resources': '资源导引',
+        'menu_tech_blog': '技术实战',
         'menu_ecommerce': '电商平台',
         'menu_amazon': '亚马逊',
         'menu_aliexpress': '速卖通',
@@ -124,6 +126,8 @@ const languageData = {
         'search_results_for': '搜索结果: ',
 
         // 分类标题
+        'resources_title': '资源导引',
+        'tech_blog_title': '技术实战',
         'ecommerce_title': '电商平台',
         'social_title': '社交平台',
         'website_title': '建站工具',
@@ -143,6 +147,8 @@ const languageData = {
     'en': {
         // Navigation menu
         'menu_home': 'Home',
+        'menu_resources': 'Resource Guides',
+        'menu_tech_blog': 'Technical Playbooks',
         'menu_ecommerce': 'E-commerce',
         'menu_amazon': 'Amazon',
         'menu_aliexpress': 'AliExpress',
@@ -259,6 +265,8 @@ const languageData = {
         'search_results_for': 'Search Results for: ',
 
         // Category titles
+        'resources_title': 'Resource Guides',
+        'tech_blog_title': 'Technical Playbooks',
         'ecommerce_title': 'E-commerce Platforms',
         'social_title': 'Social Media',
         'website_title': 'Website Tools',
@@ -483,6 +491,8 @@ function updateNavMenuTexts() {
         if (homeLink) homeLink.textContent = getText('menu_home');
         
         // 主菜单项（保留图标）
+        updateMenuItemByIcon('bi-book', 'menu_resources');
+        updateMenuItemByIcon('bi-code-square', 'menu_tech_blog');
         updateMenuItemByIcon('bi-shop', 'menu_ecommerce');
         updateMenuItemByIcon('bi-people', 'menu_social');
         updateMenuItemByIcon('bi-globe', 'menu_website');
@@ -662,6 +672,8 @@ function updateSearchAreaTexts() {
 function updateCategoryTitles() {
     try {
         const categoryTitles = {
+            'resources': 'resources_title',
+            'tech-blog': 'tech_blog_title',
             'ecommerce': 'ecommerce_title',
             'social': 'social_title',
             'website': 'website_title',

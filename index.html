@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI365导航 - 跨境电商与AI工具一站式导航平台</title>
-    <meta name="description" content="AI365导航为跨境电商卖家与AI爱好者精选电商平台、AI工具、建站与运营资源，覆盖选品、投放、内容、开发等核心场景。">
+    <meta name="description" content="AI365导航为跨境电商卖家、独立站运营者与 AI 创作者精选电商平台、AI工具、资源导引与技术实战内容，覆盖选品、增长、建站、开发与部署等核心场景。">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#4285f4">
     <link rel="canonical" href="https://www.aitool365.com/">
@@ -15,12 +15,12 @@
     <meta property="og:locale" content="zh_CN">
     <meta property="og:site_name" content="AI365导航">
     <meta property="og:title" content="AI365导航 - 跨境电商与AI工具一站式导航平台">
-    <meta property="og:description" content="覆盖跨境电商运营与AI生产力场景的高质量导航，帮助卖家和创作者高效找到可用工具。">
+    <meta property="og:description" content="覆盖跨境电商运营、AI资源导引与技术实战场景的高质量导航，帮助卖家、开发者和创作者高效找到可用工具与实践资料。">
     <meta property="og:url" content="https://www.aitool365.com/">
     <meta property="og:image" content="https://www.aitool365.com/logo.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI365导航 - 跨境电商与AI工具一站式导航平台">
-    <meta name="twitter:description" content="跨境卖家与AI爱好者常用工具导航，聚焦运营提效与出海增长。">
+    <meta name="twitter:description" content="跨境卖家、开发者与 AI 爱好者常用工具导航，新增资源导引与技术实战频道，聚焦运营提效与工程落地。">
     <meta name="twitter:image" content="https://www.aitool365.com/logo.svg">
     <link rel="icon" type="image/png" href="favicon/default.png">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -232,6 +232,12 @@
                 <span>AI365导航</span>
             </div>
             <div class="right-nav-links">
+                <a href="#resources" title="跳转到资源导引" class="top-nav-link" onclick="showCategory('resources'); return false;">
+                    <i class="bi bi-book"></i> 资源导引
+                </a>
+                <a href="#tech-blog" title="跳转到技术实战" class="top-nav-link" onclick="showCategory('tech-blog'); return false;">
+                    <i class="bi bi-code-square"></i> 技术实战
+                </a>
                 <a href="https://virtualbrains.feishu.cn/wiki/SHUPwNzcbi3SkGkV3Vgcptb0nVb?from=from_copylink" target="_blank" rel="noopener noreferrer" title="打开飞书小众网址资源库" class="top-nav-link">
                     <i class="bi bi-collection"></i> 小众网址
                 </a>
@@ -250,6 +256,18 @@
                 <a class="nav-link active" onclick="showCategory('home')">
                     <i class="bi bi-house"></i>
                     首页
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('resources')">
+                    <i class="bi bi-book"></i>
+                    资源导引
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('tech-blog')">
+                    <i class="bi bi-code-square"></i>
+                    技术实战
                 </a>
             </li>
             <li class="nav-item has-submenu">
@@ -821,6 +839,34 @@
         
         <!-- 内容区域 -->
         <div id="content-area">
+            <!-- 资源导引 -->
+            <section id="resources-section" class="category-section" aria-labelledby="resources-heading">
+                <div id="resources" class="category-anchor"></div>
+                <div class="category-title">
+                    <h2 id="resources-heading"><i class="bi bi-book"></i> 资源导引</h2>
+                </div>
+                <div class="channel-intro">
+                    <p>聚合 AI 工具目录、模型社区、产品发现平台与精选资源库，适合做工具发现、竞品调研、资料收藏与专题导引。</p>
+                </div>
+                <div class="site-grid placeholder-grid" id="resources-grid">
+                    <!-- 资源导引卡片将通过JavaScript动态添加 -->
+                </div>
+            </section>
+
+            <!-- 技术实战 -->
+            <section id="tech-blog-section" class="category-section" aria-labelledby="tech-blog-heading">
+                <div id="tech-blog" class="category-anchor"></div>
+                <div class="category-title">
+                    <h2 id="tech-blog-heading"><i class="bi bi-code-square"></i> 技术实战</h2>
+                </div>
+                <div class="channel-intro">
+                    <p>聚焦开发教程、项目拆解、部署文档与工程实践资料，覆盖前端、自动化、AI 集成、上线运维与性能优化等主题。</p>
+                </div>
+                <div class="site-grid placeholder-grid" id="tech-blog-grid">
+                    <!-- 技术实战卡片将通过JavaScript动态添加 -->
+                </div>
+            </section>
+
             <!-- 电商平台 -->
             <div id="ecommerce-section" class="category-section">
                 <div class="category-title">

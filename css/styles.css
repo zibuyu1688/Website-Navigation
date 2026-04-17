@@ -66,6 +66,13 @@
     box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
 }
 
+.category-anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+}
+
 .top-nav-bar .sidebar-logo {
     display: flex;
     align-items: center;
@@ -363,6 +370,24 @@ body {
     margin-left: 250px;
     padding: 2rem;
     padding-top: 2rem; /* 适应顶部导航栏 */
+}
+
+.channel-intro {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    line-height: 1.7;
+}
+
+.placeholder-grid {
+    align-items: stretch;
+}
+
+.placeholder-card {
+    min-height: 240px;
+}
+
+.placeholder-card .card-content {
+    justify-content: center;
 }
 
 /* 搜索区域样式 */

@@ -4123,6 +4123,90 @@ const sitesData = {
             subcategory: 'academic_search',
             isRecommended: true
         }
+    ],
+    resources: [
+        {
+            title: 'Hugging Face',
+            titleEn: 'Hugging Face',
+            description: '全球主流的开源 AI 模型、数据集与 Spaces 社区，适合查找模型资源、案例和工具集合。',
+            descriptionEn: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
+            tags: ['AI资源库', '模型社区', '数据集'],
+            tagsEn: ['AI Resources', 'Models', 'Datasets'],
+            url: 'https://huggingface.co/',
+            isRecommended: true
+        },
+        {
+            title: 'Futurepedia',
+            titleEn: 'Futurepedia',
+            description: '覆盖大量 AI 工具、自动化产品与行业场景的导航目录，适合做工具发现和竞品参考。',
+            descriptionEn: 'Large AI tools directory covering automation products and use cases for discovery and competitor research.',
+            tags: ['AI工具目录', '资源导航', '产品发现'],
+            tagsEn: ['AI Directory', 'Discovery', 'Tool Database'],
+            url: 'https://www.futurepedia.io/',
+            isRecommended: true
+        },
+        {
+            title: 'There’s An AI For That',
+            titleEn: 'There’s An AI For That',
+            description: '按任务场景快速查找 AI 工具的网站，适合从具体需求反推可用产品。',
+            descriptionEn: 'Task-based AI tool finder that helps users discover products by specific use cases and workflows.',
+            tags: ['任务场景', 'AI导航', '工具检索'],
+            tagsEn: ['Use Cases', 'AI Search', 'Tool Finder'],
+            url: 'https://theresanaiforthat.com/',
+            isRecommended: true
+        },
+        {
+            title: 'Product Hunt',
+            titleEn: 'Product Hunt',
+            description: '适合追踪新工具、新产品和创业趋势的发现平台，可快速了解热门资源与新上线服务。',
+            descriptionEn: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
+            tags: ['新品发现', '趋势观察', '工具上新'],
+            tagsEn: ['Launches', 'Trends', 'Product Discovery'],
+            url: 'https://www.producthunt.com/',
+            isRecommended: true
+        }
+    ],
+    tech_blog: [
+        {
+            title: 'MDN Web Docs',
+            titleEn: 'MDN Web Docs',
+            description: '前端开发与 Web 标准的核心文档站，适合查语法、API 和工程实践细节。',
+            descriptionEn: 'Core reference for web standards, frontend APIs and implementation details used in practical development.',
+            tags: ['前端开发', 'Web文档', '标准参考'],
+            tagsEn: ['Frontend', 'Web Docs', 'Reference'],
+            url: 'https://developer.mozilla.org/',
+            isRecommended: true
+        },
+        {
+            title: 'freeCodeCamp',
+            titleEn: 'freeCodeCamp',
+            description: '提供系统化编程教程、项目练习与实战文章，适合从入门到进阶持续训练。',
+            descriptionEn: 'Offers structured coding tutorials, project-based practice and engineering articles from beginner to advanced.',
+            tags: ['编程教程', '项目实战', '学习路径'],
+            tagsEn: ['Coding Tutorials', 'Projects', 'Learning Path'],
+            url: 'https://www.freecodecamp.org/',
+            isRecommended: true
+        },
+        {
+            title: 'roadmap.sh',
+            titleEn: 'roadmap.sh',
+            description: '开发者学习路线与技能树平台，适合规划前端、后端、DevOps 和 AI 工程成长路径。',
+            descriptionEn: 'Developer roadmaps and skill trees for frontend, backend, DevOps and adjacent engineering tracks.',
+            tags: ['成长路线', '开发者地图', '技术进阶'],
+            tagsEn: ['Roadmaps', 'Skills', 'Developer Growth'],
+            url: 'https://roadmap.sh/',
+            isRecommended: true
+        },
+        {
+            title: 'Vercel Docs',
+            titleEn: 'Vercel Docs',
+            description: '现代前端部署、边缘渲染和性能优化的重要文档库，适合构建与上线实战参考。',
+            descriptionEn: 'Documentation hub for frontend deployment, edge rendering and performance optimization in production workflows.',
+            tags: ['部署文档', '前端工程', '性能优化'],
+            tagsEn: ['Deployment', 'Frontend Engineering', 'Performance'],
+            url: 'https://vercel.com/docs',
+            isRecommended: true
+        }
     ]
 }; 
 

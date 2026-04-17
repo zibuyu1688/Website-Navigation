@@ -330,6 +330,8 @@ function initializeCardVisibility(sectionId) {
 
 // 处理分类切换后的卡片可见性
 function handleCategoryVisibility() {
+    initializeCardVisibility('resources-grid');
+    initializeCardVisibility('tech-blog-grid');
     initializeCardVisibility('ecommerce-grid');
     initializeCardVisibility('social-grid');
     initializeCardVisibility('website-tools-grid');
@@ -346,6 +348,26 @@ function handleCategoryVisibility() {
 
 // 加载网站数据
 function loadSites() {
+    // 加载资源导引
+    const resourcesGrid = document.getElementById('resources-grid');
+    if (resourcesGrid && Array.isArray(sitesData.resources)) {
+        resourcesGrid.innerHTML = '';
+        sitesData.resources.forEach(site => {
+            resourcesGrid.innerHTML += createSiteCard(site);
+        });
+        initializeCardVisibility('resources-grid');
+    }
+
+    // 加载技术实战
+    const techBlogGrid = document.getElementById('tech-blog-grid');
+    if (techBlogGrid && Array.isArray(sitesData.tech_blog)) {
+        techBlogGrid.innerHTML = '';
+        sitesData.tech_blog.forEach(site => {
+            techBlogGrid.innerHTML += createSiteCard(site);
+        });
+        initializeCardVisibility('tech-blog-grid');
+    }
+
     // 加载电商平台
     const ecommerceGrid = document.getElementById('ecommerce-grid');
     ecommerceGrid.innerHTML = '';
@@ -1309,6 +1331,14 @@ function showCategory(category) {
         document.querySelectorAll('.category-section').forEach(section => {
             section.style.display = 'block';
         });
+    } else if (category === 'resources') {
+        console.log('显示资源导引');
+        targetSectionId = 'resources-section';
+        document.getElementById(targetSectionId).style.display = 'block';
+    } else if (category === 'tech-blog') {
+        console.log('显示技术实战');
+        targetSectionId = 'tech-blog-section';
+        document.getElementById(targetSectionId).style.display = 'block';
     } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
                category === 'lazada' || category === 'shopee' || category === 'tiktok-shop' ||
                category === 'temu' || category === 'mercado-libre' || category === 'shopify' ||
@@ -1461,6 +1491,18 @@ function showCategory(category) {
     
     // 更新导航高亮显示
     updateNavHighlight(category);
+
+    if (category === 'resources' || category === 'tech-blog') {
+        const anchorElement = document.getElementById(category);
+        if (anchorElement) {
+            anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, '', `#${category}`);
+            } else {
+                window.location.hash = category;
+            }
+        }
+    }
 
     // 根据首页/分类页状态刷新结构化数据
     updateStructuredData(category);
@@ -1667,7 +1709,7 @@ function performSiteSearch(query) {
     
     // 搜索所有分类
     const categories = [
-        'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing', 'ai_image', 
+        'resources', 'tech_blog', 'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing', 'ai_image', 
         'ai_video', 'ai_audio', 'ai_design', 'ai_coding', 'ai_prompts', 'ai_search'
     ];
     
@@ -1727,19 +1769,22 @@ function performSiteSearch(query) {
 
 // 获取分类的显示名称
 function getCategoryDisplayName(categoryKey) {
+    const isEnglish = getCurrentLanguage() === 'en';
     const categoryMap = {
-        'ecommerce': '电商平台',
-        'social': '社交平台',
-        'website': '建站工具',
-        'ai_chat': 'AI对话',
-        'ai_writing': 'AI写作',
-        'ai_image': 'AI图像',
-        'ai_video': 'AI视频',
-        'ai_audio': 'AI音频',
-        'ai_design': 'AI设计',
-        'ai_coding': 'AI编程',
-        'ai_prompts': 'AI提示词',
-        'ai_search': 'AI搜索'
+        'resources': isEnglish ? 'Resource Guides' : '资源导引',
+        'tech_blog': isEnglish ? 'Technical Playbooks' : '技术实战',
+        'ecommerce': isEnglish ? 'E-commerce' : '电商平台',
+        'social': isEnglish ? 'Social Platforms' : '社交平台',
+        'website': isEnglish ? 'Website Tools' : '建站工具',
+        'ai_chat': isEnglish ? 'AI Chat' : 'AI对话',
+        'ai_writing': isEnglish ? 'AI Writing' : 'AI写作',
+        'ai_image': isEnglish ? 'AI Images' : 'AI图像',
+        'ai_video': isEnglish ? 'AI Video' : 'AI视频',
+        'ai_audio': isEnglish ? 'AI Audio' : 'AI音频',
+        'ai_design': isEnglish ? 'AI Design' : 'AI设计',
+        'ai_coding': isEnglish ? 'AI Coding' : 'AI编程',
+        'ai_prompts': isEnglish ? 'AI Prompts' : 'AI提示词',
+        'ai_search': isEnglish ? 'AI Search' : 'AI搜索'
     };
     
     return categoryMap[categoryKey] || categoryKey;
@@ -1796,6 +1841,8 @@ function createSiteCardWithCategory(site, categoryName) {
 }
 
 const SEO_CATEGORY_GROUPS = {
+    resources: [],
+    'tech-blog': [],
     ecommerce: ['amazon', 'aliexpress', 'ebay', 'lazada', 'shopee', 'tiktok-shop', 'temu', 'mercado-libre', 'shopify', 'other-ecommerce'],
     social: ['social-global', 'social-china'],
     website: ['seo', 'keyword', 'analytics', 'domain', 'server', 'payment', 'erp', 'network', 'account', 'temp-mail', 'ip-proxy', 'browser', 'backlink', 'content', 'learning'],
@@ -1814,6 +1861,9 @@ function getSeoLabel(key, isEnglish) {
     const map = {
         home: isEnglish ? 'Home' : '首页',
         search: isEnglish ? 'Search Results' : '搜索结果',
+        resources: isEnglish ? 'Resource Guides' : '资源导引',
+        'tech-blog': isEnglish ? 'Technical Playbooks' : '技术实战',
+        tech_blog: isEnglish ? 'Technical Playbooks' : '技术实战',
         ecommerce: isEnglish ? 'E-commerce' : '电商平台',
         social: isEnglish ? 'Social Platforms' : '社交平台',
         website: isEnglish ? 'Website Tools' : '建站工具',
@@ -1853,11 +1903,16 @@ function resolveSeoCategoryContext(category) {
 }
 
 function getCategorySitesForSchema(context) {
-    if (!context.topLevel || !Array.isArray(sitesData[context.topLevel])) {
+    if (!context.topLevel) {
         return [];
     }
 
-    const list = sitesData[context.topLevel];
+    const dataKey = context.topLevel === 'tech-blog' ? 'tech_blog' : context.topLevel;
+    if (!Array.isArray(sitesData[dataKey])) {
+        return [];
+    }
+
+    const list = sitesData[dataKey];
     if (!context.subcategory) {
         return list;
     }
@@ -1921,6 +1976,7 @@ function updateStructuredData(category = 'home') {
     }
 
     const defaultCategoryKeys = [
+        'resources', 'tech_blog',
         'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing',
         'ai_image', 'ai_video', 'ai_audio', 'ai_design', 'ai_coding',
         'ai_prompts', 'ai_search'
@@ -1988,6 +2044,17 @@ function updateStructuredData(category = 'home') {
             url: `${currentUrl}#${context.topLevel}`,
             inLanguage: isEnglish ? 'en' : 'zh-CN',
             description: metaDescription
+        });
+    } else if (context.pageType === 'home') {
+        defaultCategoryKeys.forEach(key => {
+            const schemaKey = key === 'tech_blog' ? 'tech-blog' : key;
+            graph.push({
+                '@type': 'CollectionPage',
+                name: getSeoLabel(schemaKey, isEnglish),
+                url: `${currentUrl}#${schemaKey}`,
+                inLanguage: isEnglish ? 'en' : 'zh-CN',
+                description: metaDescription
+            });
         });
     }
 
