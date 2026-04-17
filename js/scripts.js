@@ -2595,20 +2595,17 @@ function filterSitesByName(siteName, gridId) {
 
 // 获取当前语言
 function getCurrentLanguage() {
-    // 直接检查当前页面URL确定语言
-    const isEnglish = window.location.href.includes('en.html');
-    return isEnglish ? 'en' : 'zh';
+    if (typeof detectPageLanguage === 'function') {
+        return detectPageLanguage();
+    }
+
+    const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+    return path.endsWith('/en') || path.endsWith('/en.html') || htmlLang.startsWith('en') ? 'en' : 'zh';
 }
 
 // 在DOM加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化语言设置
-    const lang = navigator.language || navigator.userLanguage;
-    const isChineseUser = lang.startsWith('zh');
-    
-    // 根据用户系统语言设置默认语言
-    setLanguage(getCurrentLanguage());
-    
     // 加载网站数据
     loadSites();
     

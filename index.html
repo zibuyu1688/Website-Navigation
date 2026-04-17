@@ -1142,6 +1142,12 @@
         function switchLanguage(lang) {
             localStorage.setItem('preferredLanguage', lang);
             sessionStorage.setItem('ipLanguageResolved', '1');
+            const currentPageLanguage = typeof detectPageLanguage === 'function'
+                ? detectPageLanguage()
+                : ((document.documentElement.lang || '').toLowerCase().startsWith('en') ? 'en' : 'zh');
+            if (lang === currentPageLanguage) {
+                return;
+            }
             if (lang === 'en') {
                 window.location.href = "en.html";
             } else {
@@ -1170,8 +1176,10 @@
         
         // 页面加载时同步语言按钮状态
         document.addEventListener('DOMContentLoaded', function() {
-            const isEnglish = window.location.href.includes('en.html');
-            syncLanguageButtons(isEnglish ? 'en' : 'zh');
+            const currentPageLanguage = typeof detectPageLanguage === 'function'
+                ? detectPageLanguage()
+                : ((document.documentElement.lang || '').toLowerCase().startsWith('en') ? 'en' : 'zh');
+            syncLanguageButtons(currentPageLanguage);
         });
     </script>
 </body>
