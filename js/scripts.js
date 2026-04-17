@@ -390,6 +390,7 @@ function loadSites() {
     
     // 初始化卡片可见性
     initializeCardVisibility('ecommerce-grid');
+    filterEcommerceSubcategory('all');
     
     // 加载社交平台
     const socialGrid = document.getElementById('social-grid');
@@ -1437,6 +1438,12 @@ function filterSubcategoryGeneric(sectionId, subcategory) {
 function showCategory(category) {
     // 调试信息
     console.log('显示分类:', category);
+
+    if (category === 'tech_blog') {
+        category = 'tech-blog';
+    } else if (category === 'other-ecommerce') {
+        category = 'other';
+    }
     
     // 如果是要跳过的分类，直接返回
     if (category === 'office_writing' || category === 'summary_tools' || category === 'interactive_writing') {
@@ -1488,7 +1495,7 @@ function showCategory(category) {
     } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
                category === 'lazada' || category === 'shopee' || category === 'tiktok-shop' ||
                category === 'temu' || category === 'mercado-libre' || category === 'shopify' ||
-               category === 'other-ecommerce') {
+             category === 'other') {
         // 电商平台子分类
         console.log('显示电商平台子分类:', category);
         document.getElementById('ecommerce-section').style.display = 'block';
@@ -1645,13 +1652,14 @@ function showCategory(category) {
     updateNavHighlight(category);
 
     if (category === 'resources' || category === 'tech-blog') {
-        const anchorElement = document.getElementById(category);
+        const anchorId = category === 'tech-blog' ? 'tech-blog' : category;
+        const anchorElement = document.getElementById(anchorId);
         if (anchorElement) {
             anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             if (window.history && window.history.replaceState) {
-                window.history.replaceState(null, '', `#${category}`);
+                window.history.replaceState(null, '', `#${anchorId}`);
             } else {
-                window.location.hash = category;
+                window.location.hash = anchorId;
             }
         }
     }

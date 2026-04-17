@@ -6055,41 +6055,26 @@ const aiSearchData = [
 ]
 // 加载所有站点数据
 function loadAllSitesData() {
-    // 加载电商平台数据
-    loadEcommerceSites();
-    
-    // 加载社交平台数据
-    loadSocialSites();
-    
-    // 加载建站工具数据
-    loadWebsiteTools();
-    
-    // 加载AI对话工具数据
-    loadAiChatTools();
-    
-    // 加载AI写作工具数据
-    loadAiWritingTools();
-    
-    // 加载AI图像工具数据
-    loadAiImageTools();
-    
-    // 加载AI视频工具数据
-    loadAiVideoTools();
-    
-    // 加载AI音频工具数据
-    loadAiAudioTools();
-    
-    // 加载AI设计工具数据
-    loadAiDesignTools();
-    
-    // 加载AI编程工具数据
-    loadAiCodingTools();
-    
-    // 加载AI提示词工具数据
-    loadAiPromptsTools();
-    
-    // 加载AI搜索工具数据
-    loadAiSearchTools();
+    const legacyLoaderNames = [
+        'loadEcommerceSites',
+        'loadSocialSites',
+        'loadWebsiteTools',
+        'loadAiChatTools',
+        'loadAiWritingTools',
+        'loadAiImageTools',
+        'loadAiVideoTools',
+        'loadAiAudioTools',
+        'loadAiDesignTools',
+        'loadAiCodingTools',
+        'loadAiPromptsTools',
+        'loadAiSearchTools'
+    ];
+
+    legacyLoaderNames.forEach(loaderName => {
+        if (typeof window[loaderName] === 'function') {
+            window[loaderName]();
+        }
+    });
 }
 
 // ... existing code ...
@@ -6108,8 +6093,9 @@ function loadAiSearchTools() {
 
 // 执行所有站点数据加载
 document.addEventListener('DOMContentLoaded', function() {
-    // 加载所有数据
-    loadAllSitesData();
+    if (typeof window.loadSites !== 'function') {
+        loadAllSitesData();
+    }
 });
 
 // 通用加载分类网站数据的函数
