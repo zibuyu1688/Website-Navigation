@@ -4208,6 +4208,7 @@ const sitesData = {
             description: 'Core reference for web standards, frontend APIs and implementation details used in practical development.',
             tags: ['Frontend', 'Web Docs', 'Reference'],
             url: 'https://developer.mozilla.org/',
+            subcategory: 'tech_official_docs',
             isRecommended: true
         },
         {
@@ -4215,6 +4216,7 @@ const sitesData = {
             description: 'Offers structured coding tutorials, project-based practice and engineering articles from beginner to advanced.',
             tags: ['Coding Tutorials', 'Projects', 'Learning Path'],
             url: 'https://www.freecodecamp.org/',
+            subcategory: 'tech_tutorials',
             isRecommended: true
         },
         {
@@ -4222,6 +4224,7 @@ const sitesData = {
             description: 'Developer roadmaps and skill trees for frontend, backend, DevOps and adjacent engineering tracks.',
             tags: ['Roadmaps', 'Skills', 'Developer Growth'],
             url: 'https://roadmap.sh/',
+            subcategory: 'tech_tutorials',
             isRecommended: true
         },
         {
@@ -4229,6 +4232,7 @@ const sitesData = {
             description: 'Documentation hub for frontend deployment, edge rendering and performance optimization in production workflows.',
             tags: ['Deployment', 'Frontend Engineering', 'Performance'],
             url: 'https://vercel.com/docs',
+            subcategory: 'tech_deploy_ops',
             isRecommended: true
         }
     ]

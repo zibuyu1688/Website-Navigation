@@ -264,11 +264,18 @@
                     Resource Guides
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('tech-blog')">
+            <li class="nav-item has-submenu">
+                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('tech-blog')">
                     <i class="bi bi-code-square"></i>
                     Technical Playbooks
                 </a>
+                <ul class="nav-submenu submenu-tech-blog">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_official_docs')">Official Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_tutorials')">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_workflows')">Automation Workflows</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_deploy_ops')">Deployment & Ops</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_case_studies')">Case Breakdowns</a></li>
+                </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this)">
@@ -860,6 +867,14 @@
                 </div>
                 <div class="channel-intro">
                     <p>Hands-on channel focused on coding tutorials, project breakdowns, deployment docs and implementation references for web, automation and AI workflows.</p>
+                </div>
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterTechBlogSubcategory('all')">All</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_official_docs')">Official Docs</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_tutorials')">Tutorials</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_workflows')">Automation Workflows</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_deploy_ops')">Deployment & Ops</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_case_studies')">Case Breakdowns</button>
                 </div>
                 <div class="site-grid placeholder-grid" id="tech-blog-grid">
                     <!-- Technical playbook cards will be dynamically added via JavaScript -->

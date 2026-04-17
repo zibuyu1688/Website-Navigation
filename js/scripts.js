@@ -370,6 +370,8 @@ function loadSites() {
         initializeCardVisibility('tech-blog-grid');
     }
 
+    filterTechBlogSubcategory('all');
+
     // 加载电商平台
     const ecommerceGrid = document.getElementById('ecommerce-grid');
     ecommerceGrid.innerHTML = '';
@@ -591,6 +593,31 @@ function filterSubcategory(subcategory) {
     setTimeout(() => {
         balanceSubcategoryNav(document.querySelector('#website-section .subcategory-nav'));
     }, 50);
+}
+
+// 过滤技术实战二级分类
+function filterTechBlogSubcategory(subcategory) {
+    const section = document.getElementById('tech-blog-section');
+    if (!section) return;
+
+    section.querySelectorAll('.subcategory-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    const activeButton = section.querySelector(`.subcategory-btn[onclick*="filterTechBlogSubcategory('${subcategory}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    const cards = document.querySelectorAll('#tech-blog-grid .site-card');
+    cards.forEach(card => {
+        card.classList.remove('hidden');
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 
 // 过滤电商平台二级分类
@@ -1407,6 +1434,14 @@ function showCategory(category) {
         console.log('显示技术实战');
         targetSectionId = 'tech-blog-section';
         document.getElementById(targetSectionId).style.display = 'block';
+        filterTechBlogSubcategory('all');
+    } else if (category === 'tech_official_docs' || category === 'tech_tutorials' || 
+               category === 'tech_workflows' || category === 'tech_deploy_ops' || 
+               category === 'tech_case_studies') {
+        console.log('显示技术实战子分类:', category);
+        targetSectionId = 'tech-blog-section';
+        document.getElementById(targetSectionId).style.display = 'block';
+        filterTechBlogSubcategory(category);
     } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
                category === 'lazada' || category === 'shopee' || category === 'tiktok-shop' ||
                category === 'temu' || category === 'mercado-libre' || category === 'shopify' ||
@@ -1917,7 +1952,7 @@ function createSiteCardWithCategory(site, categoryName) {
 
 const SEO_CATEGORY_GROUPS = {
     resources: [],
-    'tech-blog': [],
+    'tech-blog': ['tech_official_docs', 'tech_tutorials', 'tech_workflows', 'tech_deploy_ops', 'tech_case_studies'],
     ecommerce: ['amazon', 'aliexpress', 'ebay', 'lazada', 'shopee', 'tiktok-shop', 'temu', 'mercado-libre', 'shopify', 'other-ecommerce'],
     social: ['social-global', 'social-china'],
     website: ['seo', 'keyword', 'analytics', 'domain', 'server', 'payment', 'erp', 'network', 'account', 'temp-mail', 'ip-proxy', 'browser', 'backlink', 'content', 'learning'],
@@ -1939,6 +1974,11 @@ function getSeoLabel(key, isEnglish) {
         resources: isEnglish ? 'Resource Guides' : '资源导引',
         'tech-blog': isEnglish ? 'Technical Playbooks' : '技术实战',
         tech_blog: isEnglish ? 'Technical Playbooks' : '技术实战',
+        tech_official_docs: isEnglish ? 'Official Docs' : '官方文档',
+        tech_tutorials: isEnglish ? 'Tutorials' : '教程实战',
+        tech_workflows: isEnglish ? 'Automation Workflows' : '自动化工作流',
+        tech_deploy_ops: isEnglish ? 'Deployment & Ops' : '部署与运维',
+        tech_case_studies: isEnglish ? 'Case Breakdowns' : '案例拆解',
         ecommerce: isEnglish ? 'E-commerce' : '电商平台',
         social: isEnglish ? 'Social Platforms' : '社交平台',
         website: isEnglish ? 'Website Tools' : '建站工具',

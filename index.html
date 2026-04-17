@@ -259,11 +259,18 @@
             <li class="sidebar-group-header">
                 <span class="sidebar-group-label">特色专区</span>
             </li>
-            <li class="nav-item">
-                <a class="nav-link nav-special-item" onclick="showCategory('tech-blog')">
+            <li class="nav-item has-submenu">
+                <a class="nav-link nav-special-item" onclick="toggleSubmenu(this); showCategory('tech-blog')">
                     <i class="fa-solid fa-code sidebar-fa-icon"></i>
                     技术实战
                 </a>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_official_docs')">官方文档</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_tutorials')">教程实战</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_workflows')">自动化工作流</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_deploy_ops')">部署与运维</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_case_studies')">案例拆解</a></li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link nav-special-item" onclick="showCategory('resources')">
@@ -441,6 +448,14 @@
                 </div>
                 <div class="channel-intro">
                     <p>聚焦开发教程、项目拆解、部署文档与工程实践资料，覆盖前端、自动化、AI 集成、上线运维与性能优化等主题。</p>
+                </div>
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterTechBlogSubcategory('all')">全部</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_official_docs')">官方文档</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_tutorials')">教程实战</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_workflows')">自动化工作流</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_deploy_ops')">部署与运维</button>
+                    <button class="subcategory-btn" onclick="filterTechBlogSubcategory('tech_case_studies')">案例拆解</button>
                 </div>
                 <div class="site-grid placeholder-grid" id="tech-blog-grid">
                     <!-- 技术实战卡片将通过JavaScript动态添加 -->

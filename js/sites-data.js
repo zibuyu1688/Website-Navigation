@@ -4698,6 +4698,7 @@ const sitesData = {
             tags: ['前端开发', 'Web文档', '标准参考'],
             tagsEn: ['Frontend', 'Web Docs', 'Reference'],
             url: 'https://developer.mozilla.org/',
+            subcategory: 'tech_official_docs',
             isRecommended: true
         },
         {
@@ -4708,6 +4709,7 @@ const sitesData = {
             tags: ['编程教程', '项目实战', '学习路径'],
             tagsEn: ['Coding Tutorials', 'Projects', 'Learning Path'],
             url: 'https://www.freecodecamp.org/',
+            subcategory: 'tech_tutorials',
             isRecommended: true
         },
         {
@@ -4718,6 +4720,7 @@ const sitesData = {
             tags: ['成长路线', '开发者地图', '技术进阶'],
             tagsEn: ['Roadmaps', 'Skills', 'Developer Growth'],
             url: 'https://roadmap.sh/',
+            subcategory: 'tech_tutorials',
             isRecommended: true
         },
         {
@@ -4728,6 +4731,7 @@ const sitesData = {
             tags: ['部署文档', '前端工程', '性能优化'],
             tagsEn: ['Deployment', 'Frontend Engineering', 'Performance'],
             url: 'https://vercel.com/docs',
+            subcategory: 'tech_deploy_ops',
             isRecommended: true
         }
     ]
