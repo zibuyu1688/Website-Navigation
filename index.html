@@ -26,8 +26,10 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        html { scroll-behavior: smooth; }
         /* 搜索结果页面样式 */
         #search-results-section {
             padding: 2rem 1rem;
@@ -232,11 +234,11 @@
                 <span>AI365导航</span>
             </div>
             <div class="right-nav-links">
-                <a href="#resources" title="跳转到资源导引" class="top-nav-link" onclick="showCategory('resources'); return false;">
-                    <i class="bi bi-book"></i> 资源导引
+                <a href="#resources" title="跳转到资源导引" class="top-nav-link top-nav-special" onclick="showCategory('resources'); return false;">
+                    <i class="fa-solid fa-compass"></i> 资源导引
                 </a>
-                <a href="#tech-blog" title="跳转到技术实战" class="top-nav-link" onclick="showCategory('tech-blog'); return false;">
-                    <i class="bi bi-code-square"></i> 技术实战
+                <a href="#tech-blog" title="跳转到技术实战" class="top-nav-link top-nav-special" onclick="showCategory('tech-blog'); return false;">
+                    <i class="fa-solid fa-pen-nib"></i> 技术实战
                 </a>
                 <a href="https://virtualbrains.feishu.cn/wiki/SHUPwNzcbi3SkGkV3Vgcptb0nVb?from=from_copylink" target="_blank" rel="noopener noreferrer" title="打开飞书小众网址资源库" class="top-nav-link">
                     <i class="bi bi-collection"></i> 小众网址
@@ -252,542 +254,123 @@
     <!-- 侧边栏 -->
     <div class="sidebar">
         <ul class="nav-menu">
+
+            <!-- ══ 特色专区 ══ -->
+            <li class="sidebar-group-header">
+                <span class="sidebar-group-label">特色专区</span>
+            </li>
             <li class="nav-item">
-                <a class="nav-link active" onclick="showCategory('home')">
-                    <i class="bi bi-house"></i>
-                    首页
+                <a class="nav-link nav-special-item" onclick="showCategory('tech-blog')">
+                    <i class="fa-solid fa-code sidebar-fa-icon"></i>
+                    技术实战
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('resources')">
-                    <i class="bi bi-book"></i>
+                <a class="nav-link nav-special-item" onclick="showCategory('resources')">
+                    <i class="fa-solid fa-compass sidebar-fa-icon"></i>
                     资源导引
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="showCategory('tech-blog')">
-                    <i class="bi bi-code-square"></i>
-                    技术实战
+                <a class="nav-link nav-special-item nav-hot-item" onclick="showCategory('ecommerce_zone')">
+                    <i class="fa-solid fa-crown sidebar-fa-icon"></i>
+                    电商专供
+                    <span class="nav-hot-badge">Hot</span>
                 </a>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this)">
-                    <i class="bi bi-shop"></i>
-                    电商平台
-                </a>
-                <ul class="nav-submenu submenu-ecommerce">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('amazon')">
-                            亚马逊
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('aliexpress')">
-                            速卖通
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ebay')">
-                            Ebay
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('lazada')">
-                            Lazada
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('shopee')">
-                            Shopee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('tiktok-shop')">
-                            TikTok Shop
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('temu')">
-                            Temu
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('mercado-libre')">
-                            Mercado Libre
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('shopify')">
-                            Shopify
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other-ecommerce')">
-                            其他
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('social');">
-                    <i class="bi bi-people"></i>
-                    社交平台
-                </a>
-                <ul class="nav-submenu submenu-social">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('social-global')">
-                            全球平台
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('social-china')">
-                            中国平台
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('website');">
-                    <i class="bi bi-globe"></i>
-                    建站工具
-                </a>
-                <ul class="nav-submenu submenu-website">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('seo')">
-                            SEO工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('keyword')">
-                            关键字工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('analytics')">
-                            网站分析
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('domain')">
-                            域名注册
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('server')">
-                            服务器
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('payment')">
-                            收款工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('erp')">
-                            ERP
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('network')">
-                            网络优化
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('account')">
-                            账号资源
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('temp-mail')">
-                            临时邮箱
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ip-proxy')">
-                            IP代理
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('browser')">
-                            指纹浏览器
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('backlink')">
-                            反向外链
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('content')">
-                            内容优化
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('learning')">
-                            学习资料
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_chat');">
-                    <i class="bi bi-chat-dots"></i>
-                    AI对话
-                </a>
-                <ul class="nav-submenu submenu-ai-chat">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_assistant')">
-                            AI聊天助手
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('multimodal_ai')">
-                            多模态AI聊天
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_ai')">
-                            AI办公与专业助手
-                        </a>
-                    </li>
-                    
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_writing');">
-                    <i class="bi bi-pen"></i>
-                    AI写作
-                </a>
-                <ul class="nav-submenu submenu-ai-writing">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('model_reasoning')">
-                            综合写作与逻辑之王
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('productivity_longform')">
-                            生产力与长文辅助
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('content_safety')">
-                            内容安全与AI伪装
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('vertical_specialized')">
-                            垂直领域专精
-                        </a>
-                    </li>
-                </ul>
+
+            <!-- ══ 核心工具分类 ══ -->
+            <li class="sidebar-group-header">
+                <span class="sidebar-group-label">核心工具分类</span>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_image');">
-                    <i class="bi bi-image"></i>
-                    AI图像
+                    <i class="fa-solid fa-palette sidebar-fa-icon" style="color:#FF54B0;"></i>
+                    AI 视觉创作
                 </a>
-                <ul class="nav-submenu submenu-ai-image">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_image')">
-                            AI图片生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('portrait')">
-                            AI头像与人像生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('background')">
-                            AI背景图与设计素材
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('brand_design')">
-                            AI品牌设计与商业海报
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('photo_enhancement')">
-                            AI修图与照片增强
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('anime')">
-                            AI动漫绘画
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fun_tools')">
-                            AI趣味图片工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fashion')">
-                            AI服装与时尚设计
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('image_editing')">
-                            AI图片编辑
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_scene')">
-                            AI场景图生成
-                        </a>
-                    </li>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('painting_creation')">绘画创作</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('image_postprocess')">图像后处理</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('portrait_custom')">人像定制</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('commercial_design')">商业设计</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ai_design')">AI 设计工具</a></li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_video');">
-                    <i class="bi bi-film"></i>
-                    AI视频
+                    <i class="fa-solid fa-video sidebar-fa-icon" style="color:#34C0EB;"></i>
+                    AI 视频生成
                 </a>
-                <ul class="nav-submenu submenu-ai-video">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('text_to_video')">
-                            AI文生视频
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('image_to_video')">
-                            AI图生视频
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('video_editing')">
-                            AI视频编辑
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('digital_human')">
-                            AI数字人与虚拟主播
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('animation')">
-                            AI动画生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('short_video')">
-                            AI短视频制作
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('speech_driven')">
-                            AI口播与配音视频
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_video')">
-                            AI专业视频生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('opensource_tools')">
-                            AI视频开源工具
-                        </a>
-                    </li>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('text_to_video')">文生视频</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('image_to_video')">图生视频</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('video_editing')">视频编辑</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('digital_human')">数字人与虚拟主播</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('short_video')">短视频制作</a></li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_audio');">
-                    <i class="bi bi-soundwave"></i>
-                    AI音频
+                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_chat');">
+                    <i class="fa-solid fa-pen-fancy sidebar-fa-icon" style="color:#50A7FF;"></i>
+                    AI 语言写作
                 </a>
-                <ul class="nav-submenu submenu-ai-audio">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('tts')">
-                            AI配音与文本转语音
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('music_generation')">
-                            AI音乐生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('speech_to_text')">
-                            AI语音转文字
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('voice_conversion')">
-                            AI变声与语音克隆
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('audio_editing')">
-                            AI音频编辑与增强
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other_audio_tools')">
-                            其他AI音频工具
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_design');">
-                    <i class="bi bi-palette"></i>
-                    AI设计
-                </a>
-                <ul class="nav-submenu submenu-ai-design">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('commerce_design')">
-                            平面与电商设计
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ui_ux')">
-                            UI/UX与原型设计
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('illustration')">
-                            插画与矢量设计
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('model_design')">
-                            3D与模型设计
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('assistant_tools')">
-                            辅助设计工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('special_tools')">
-                            其他专项工具
-                        </a>
-                    </li>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('general_assistant')">AI 聊天助手</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('professional_ai')">AI 办公助手</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ai_writing')">AI 写作工具</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ai_prompts')">AI 提示词</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ai_audio')">AI 音频与配音</a></li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
                 <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_coding');">
-                    <i class="bi bi-code-slash"></i>
-                    AI编程
+                    <i class="fa-solid fa-terminal sidebar-fa-icon" style="color:#4CD964;"></i>
+                    AI 编程与自动化
                 </a>
-                <ul class="nav-submenu submenu-ai-coding">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('code_generation')">
-                            AI代码生成
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fullstack_dev')">
-                            AI全栈开发
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('design_to_code')">
-                            AI设计稿转代码
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('code_review')">
-                            AI代码审查与测试
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('natural_language_dev')">
-                            AI对话式编程
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('low_code')">
-                            AI低代码与无代码开发
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('cloud_ide')">
-                            AI编程编辑器与IDE
-                        </a>
-                    </li>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('code_generation')">AI 代码生成</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('fullstack_dev')">AI 全栈开发</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('low_code')">低代码 / 无代码</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('cloud_ide')">AI 编程 IDE</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ai_search')">AI 搜索引擎</a></li>
                 </ul>
+            </li>
+
+            <!-- ══ 常用平台入口 ══ -->
+            <li class="sidebar-group-header">
+                <span class="sidebar-group-label">常用平台入口</span>
             </li>
             <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_prompts');">
-                    <i class="bi bi-lightbulb"></i>
-                    AI提示词
+                <a class="nav-link" onclick="toggleSubmenu(this)">
+                    <i class="fa-brands fa-amazon sidebar-fa-icon" style="color:#FF9E40;"></i>
+                    电商平台
                 </a>
-                <ul class="nav-submenu submenu-ai-prompts">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('prompt_platforms')">
-                            AI提示词平台
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('sd_tools')">
-                            Stable Diffusion提示词工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('chatgpt_prompts')">
-                            ChatGPT提示词优化
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('visual_tools')">
-                            AI可视化提示词工具
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('chinese_resources')">
-                            中文AI提示词资源
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other_tools')">
-                            AI提示词辅助工具
-                        </a>
-                    </li>
+                <ul class="nav-submenu">
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('amazon')">亚马逊</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tiktok-shop')">TikTok Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('aliexpress')">速卖通</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('ebay')">Ebay</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('lazada')">Lazada</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('shopee')">Shopee</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('temu')">Temu</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('mercado-libre')">Mercado Libre</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('shopify')">Shopify</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="showCategory('other-ecommerce')">其他</a></li>
                 </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_search');">
-                    <i class="bi bi-search"></i>
-                    AI搜索
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('social')">
+                    <i class="fa-solid fa-share-nodes sidebar-fa-icon" style="color:#A177FF;"></i>
+                    全球社媒
                 </a>
-                <ul class="nav-submenu submenu-ai-search">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_search')">
-                            AI搜索引擎
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('academic_search')">
-                            AI学术搜索
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('programming_search')">
-                            AI编程搜索
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('finance_search')">
-                            AI金融与商业搜索
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('life_search')">
-                            AI生活与娱乐搜索
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('product_search')">
-                            AI产品与公司搜索
-                        </a>
-                    </li>
-                </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('website')">
+                    <i class="fa-solid fa-globe sidebar-fa-icon" style="color:#5D9CEC;"></i>
+                    独立站建站
+                </a>
+            </li>
+
         </ul>
     </div>
 
@@ -935,7 +518,10 @@
             <!-- AI对话 -->
             <div id="ai-chat-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-chat-dots"></i> AI对话</h2>
+                    <h2><i class="bi bi-chat-dots"></i> AI语言与对话</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI对话工具简介">
+                    <!-- SEO百科描述区域：AI对话工具涵盖通用聊天助手、多模态AI与专业办公助手，适合写作提效、知识问答、任务拆解与工作流自动化等多种场景的高频使用需求。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
@@ -952,7 +538,10 @@
             <!-- AI写作 -->
             <div id="ai-writing-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-pen"></i> AI写作</h2>
+                    <h2><i class="bi bi-pen"></i> AI写作工具</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI写作工具简介">
+                    <!-- SEO百科描述区域：AI写作工具覆盖长文生成、内容安全检测、AI伪装改写与垂直领域专精写作，帮助内容运营者、跨境卖家与自媒体作者高效产出高质量、合规可用的文案内容。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
@@ -970,31 +559,52 @@
             <!-- AI图像 -->
             <div id="ai-image-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-image"></i> AI图像</h2>
+                    <h2><i class="bi bi-image"></i> AI视觉创作</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI图像工具简介">
+                    <!-- SEO百科描述区域：请在此补充约100字的分类说明，用于提升该页面在搜索引擎中的内容权重。示例：AI图像工具涵盖文本生成图像、人像定制、背景处理与商业设计等场景，帮助创作者与电商运营者高效产出视觉素材。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
                     <button class="subcategory-btn active" onclick="filterAiImageSubcategory('all')">全部</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('general_image')">AI图片生成</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('portrait')">AI头像与人像生成</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('background')">AI背景图与设计素材</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('brand_design')">AI品牌设计与商业海报</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('photo_enhancement')">AI修图与照片增强</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('anime')">AI动漫绘画</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fun_tools')">AI趣味图片工具</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('fashion')">AI服装与时尚设计</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('image_editing')">AI图片编辑</button>
-                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('professional_scene')">AI场景图生成</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('painting_creation')">绘画创作</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('image_postprocess')">图像后处理</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('portrait_custom')">人像定制</button>
+                    <button class="subcategory-btn" onclick="filterAiImageSubcategory('commercial_design')">商业设计</button>
                 </div>
                 <div class="site-grid" id="ai-image-grid">
                     <!-- AI图像工具网站卡片将通过JavaScript动态添加 -->
                 </div>
             </div>
             
+            <!-- 电商专区 -->
+            <div id="ecommerce-zone-section" class="category-section">
+                <div class="category-title">
+                    <h2><i class="fa-solid fa-crown" style="color:#FF9E40;font-size:1.2rem;"></i> 电商专供工具箱</h2>
+                </div>
+                <div class="seo-desc" aria-label="电商专供工具简介">
+                    <!-- SEO百科描述区域：为跨境电商卖家精选AI模特换装、商品摄影、Listing写作与广告投放助手等核心场景工具，覆盖亚马逊、TikTok Shop、独立站全链路提效需求。 -->
+                </div>
+                <!-- 二级分类导航 -->
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterEcommerceZoneSubcategory('all')">全部</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceZoneSubcategory('ai_model')">AI模特</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceZoneSubcategory('product_photo')">商品摄影</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceZoneSubcategory('listing_writing')">Listing写作</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceZoneSubcategory('ad_assistant')">投放助手</button>
+                </div>
+                <div class="site-grid" id="ecommerce-zone-grid">
+                    <!-- 电商专区工具网站卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            
             <!-- AI视频 -->
             <div id="ai-video-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-film"></i> AI视频</h2>
+                    <h2><i class="bi bi-film"></i> AI视频生成</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI视频工具简介">
+                    <!-- SEO百科描述区域：请在此补充约100字的分类说明，用于提升搜索权重。示例：AI视频工具涵盖文生视频、图生视频、数字人与短视频制作，适合内容创作者、电商运营者和企业品宣快速产出高质量视频素材。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
@@ -1017,7 +627,10 @@
             <!-- AI音频 -->
             <div id="ai-audio-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-soundwave"></i> AI音频</h2>
+                    <h2><i class="bi bi-soundwave"></i> AI音频与配音</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI音频工具简介">
+                    <!-- SEO百科描述区域：AI音频工具涵盖文字转语音、AI音乐生成、语音克隆与音频编辑，适合播客、广告配音与短视频内容创作者高效生产专业级音频内容。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
@@ -1037,7 +650,10 @@
             <!-- AI设计 -->
             <div id="ai-design-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-palette"></i> AI设计</h2>
+                    <h2><i class="bi bi-palette"></i> AI设计工具</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI设计工具简介">
+                    <!-- SEO百科描述区域：AI设计工具覆盖品牌Logo、UI原型、插画矢量、3D建模与电商海报等场景，帮助设计师与运营者在无专业背景情况下快速输出高水准视觉方案。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">
@@ -1057,7 +673,10 @@
             <!-- AI编程 -->
             <div id="ai-coding-section" class="category-section">
                 <div class="category-title">
-                    <h2><i class="bi bi-code-slash"></i> AI编程</h2>
+                    <h2><i class="bi bi-code-slash"></i> AI编程与自动化</h2>
+                </div>
+                <div class="seo-desc" aria-label="AI编程工具简介">
+                    <!-- SEO百科描述区域：AI编程工具涵盖代码生成、全栈开发、低代码平台与编程 IDE，帮助开发者、独立开发者与非技术创业者用对话指令快速构建应用，大幅降低研发门槛与成本。 -->
                 </div>
                 <!-- 二级分类导航 -->
                 <div class="subcategory-nav">

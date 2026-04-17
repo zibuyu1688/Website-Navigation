@@ -1751,4 +1751,129 @@ body {
     .top-nav-bar .sidebar-logo span {
         font-size: 1rem;
     }
+}
+
+/* ═══════════════════════════════════════════════
+   架构重组新增样式 - 2026
+   ═══════════════════════════════════════════════ */
+
+/* ── Header 特色按钮 ── */
+.top-nav-link.top-nav-special {
+    background-color: #eef5ff;
+    color: var(--primary-color) !important;
+    border: 1px solid #d0e3ff;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 14px;
+    transition: all 0.25s ease;
+}
+
+.top-nav-link.top-nav-special:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ── 侧边栏分组标题 ── */
+.sidebar-group-header {
+    list-style: none;
+    margin: 18px 0 6px 0;
+    padding: 0 10px;
+}
+
+.sidebar-group-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #aab4c8;
+    padding: 0 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* ── 侧边栏 FontAwesome 图标 ── */
+.sidebar-fa-icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* ── 特色专区导航项 ── */
+.nav-special-item {
+    position: relative;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.nav-special-item:hover {
+    background: #eef5ff !important;
+    color: var(--primary-color) !important;
+}
+
+/* ── Hot 标签 ── */
+.nav-hot-badge {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    border-radius: 4px;
+    padding: 2px 5px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+/* ── SEO 描述预留区 ── */
+.seo-desc {
+    font-size: 0.78rem;
+    color: #8a96a8;
+    line-height: 1.6;
+    margin: -12px 0 18px 0;
+    padding: 8px 14px;
+    background: #f9fbff;
+    border-left: 3px solid #d0e3ff;
+    border-radius: 0 6px 6px 0;
+    min-height: 16px; /* 空内容时保留最小高度 */
+}
+
+.seo-desc:empty,
+.seo-desc *:only-child:is(comment) {
+    display: none;
+}
+
+/* ── 手风琴箭头使用 Bootstrap Icons（保持原有机制） ── */
+.nav-item.has-submenu > .nav-link:after {
+    content: '\F282';
+    font-family: 'bootstrap-icons';
+    margin-left: auto;
+    transition: transform 0.3s;
+    color: #aab4c8;
+    font-size: 0.85rem;
+}
+
+.nav-item.has-submenu.active > .nav-link:after {
+    transform: rotate(90deg);
+    color: var(--primary-color);
+}
+
+/* ── 响应式适配 ── */
+@media (max-width: 768px) {
+    .top-nav-link.top-nav-special {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .seo-desc {
+        font-size: 0.72rem;
+    }
+
+    .sidebar-group-label {
+        font-size: 9px;
+    }
 } 

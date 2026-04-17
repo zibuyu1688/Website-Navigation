@@ -35,21 +35,23 @@ function createSiteCard(site) {
     const visitLinkTitle = escapeHtmlAttribute(`${visitButtonText} - ${displayTitle}`);
     
     return `
-        <div class="site-card" data-subcategory="${site.subcategory || ''}" ${descriptionEnAttr} ${titleEnAttr} style="position: relative;">
+        <div class="site-card" data-subcategory="${site.subcategory || ''}" ${descriptionEnAttr} ${titleEnAttr} style="position: relative;"
+             itemscope itemtype="https://schema.org/WebSite">
             ${magicTag}
             ${recommendTag}
             <div class="card-content">
                 <div class="card-header">
-                    <div class="site-title">${displayTitle}</div>
+                    <div class="site-title" itemprop="name">${displayTitle}</div>
                 </div>
-                <div class="site-desc">${displayDescription}</div>
+                <div class="site-desc" itemprop="description">${displayDescription}</div>
                 <div class="site-tags">
                     ${displayTags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
                 </div>
             </div>
             <div class="card-footer">
-                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="visit-btn" title="${visitLinkTitle}" aria-label="${visitLinkTitle}">
-                    ${visitButtonText} <i class="bi bi-box-arrow-up-right"></i>
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="visit-btn"
+                   title="${visitLinkTitle}" aria-label="${visitLinkTitle}" itemprop="url">
+                    ${visitButtonText} <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -434,6 +436,16 @@ function loadSites() {
     // 初始化卡片可见性
     initializeCardVisibility('ai-image-grid');
     
+    // 加载电商专区工具
+    const ecommerceZoneGrid = document.getElementById('ecommerce-zone-grid');
+    if (ecommerceZoneGrid && Array.isArray(sitesData.ecommerce_zone)) {
+        ecommerceZoneGrid.innerHTML = '';
+        sitesData.ecommerce_zone.forEach(site => {
+            ecommerceZoneGrid.innerHTML += createSiteCard(site);
+        });
+        initializeCardVisibility('ecommerce-zone-grid');
+    }
+    
     // 加载AI视频工具
     const aiVideoGrid = document.getElementById('ai-video-grid');
     aiVideoGrid.innerHTML = '';
@@ -575,7 +587,7 @@ function filterSubcategory(subcategory) {
         });
     }
     
-    // 平衡二级分类导航
+    // 建站工具二级分类在不同宽度下重新计算两行平衡
     setTimeout(() => {
         balanceSubcategoryNav(document.querySelector('#website-section .subcategory-nav'));
     }, 50);
@@ -923,6 +935,62 @@ function filterAiImageSubcategory(subcategory) {
         }
     } else {
         // 确保所有可见卡片都显示出来
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                card.classList.remove('hidden');
+            }
+        });
+    }
+}
+
+// 过滤电商专区二级分类
+function filterEcommerceZoneSubcategory(subcategory) {
+    // 更新按钮状态
+    document.querySelectorAll('#ecommerce-zone-section .subcategory-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`#ecommerce-zone-section .subcategory-btn[onclick*="filterEcommerceZoneSubcategory('${subcategory}')"]`).classList.add('active');
+
+    // 过滤卡片
+    const cards = document.querySelectorAll('#ecommerce-zone-grid .site-card');
+    let visibleCards = 0;
+    
+    cards.forEach(card => {
+        card.classList.remove('hidden');
+    });
+    
+    cards.forEach(card => {
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+            card.style.display = 'flex';
+            visibleCards++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    const allOldButtons = document.querySelectorAll('.more-sites-btn-container');
+    allOldButtons.forEach(button => {
+        if (button.querySelector('button').getAttribute('onclick').includes('ecommerce-zone-grid')) {
+            button.parentNode.removeChild(button);
+        }
+    });
+    
+    if (visibleCards > 8) {
+        let count = 0;
+        cards.forEach(card => {
+            if (card.style.display === 'flex') {
+                count++;
+                if (count > 8) {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+        const sectionElement = document.getElementById('ecommerce-zone-section');
+        const existingButton = document.querySelector('.more-sites-btn-container button[onclick*="ecommerce-zone-grid"]');
+        if (!existingButton) {
+            sectionElement.insertAdjacentHTML('beforeend', createMoreSitesButton('ecommerce-zone-grid'));
+        }
+    } else {
         cards.forEach(card => {
             if (card.style.display === 'flex') {
                 card.classList.remove('hidden');
@@ -1399,15 +1467,23 @@ function showCategory(category) {
         console.log('显示AI图像主分类');
         document.getElementById('ai-image-section').style.display = 'block';
         filterAiImageSubcategory('all');
-    } else if (category === 'general_image' || category === 'portrait' || 
-               category === 'background' || category === 'brand_design' || 
-               category === 'photo_enhancement' || category === 'anime' || 
-               category === 'fun_tools' || category === 'fashion' || 
-               category === 'image_editing' || category === 'professional_scene') {
+    } else if (category === 'painting_creation' || category === 'image_postprocess' || 
+               category === 'portrait_custom' || category === 'commercial_design') {
         // AI图像子分类
         console.log('显示AI图像子分类:', category);
         document.getElementById('ai-image-section').style.display = 'block';
         filterAiImageSubcategory(category);
+    } else if (category === 'ecommerce_zone') {
+        // 电商专区主分类
+        console.log('显示电商专区主分类');
+        document.getElementById('ecommerce-zone-section').style.display = 'block';
+        filterEcommerceZoneSubcategory('all');
+    } else if (category === 'ai_model' || category === 'product_photo' || 
+               category === 'listing_writing' || category === 'ad_assistant') {
+        // 电商专区子分类
+        console.log('显示电商专区子分类:', category);
+        document.getElementById('ecommerce-zone-section').style.display = 'block';
+        filterEcommerceZoneSubcategory(category);
     } else if (category === 'ai_video') {
         // AI视频主分类
         console.log('显示AI视频主分类');
@@ -1707,8 +1783,8 @@ function performSiteSearch(query) {
     
     // 搜索所有分类
     const categories = [
-        'resources', 'tech_blog', 'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing', 'ai_image', 
-        'ai_video', 'ai_audio', 'ai_design', 'ai_coding', 'ai_prompts', 'ai_search'
+        'resources', 'tech_blog', 'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing', 'ai_image',
+        'ecommerce_zone', 'ai_video', 'ai_audio', 'ai_design', 'ai_coding', 'ai_prompts', 'ai_search'
     ];
     
     // 对每个分类进行搜索
@@ -1777,6 +1853,7 @@ function getCategoryDisplayName(categoryKey) {
         'ai_chat': isEnglish ? 'AI Chat' : 'AI对话',
         'ai_writing': isEnglish ? 'AI Writing' : 'AI写作',
         'ai_image': isEnglish ? 'AI Images' : 'AI图像',
+        'ecommerce_zone': isEnglish ? 'E-commerce Zone' : '电商专区',
         'ai_video': isEnglish ? 'AI Video' : 'AI视频',
         'ai_audio': isEnglish ? 'AI Audio' : 'AI音频',
         'ai_design': isEnglish ? 'AI Design' : 'AI设计',
@@ -1976,7 +2053,7 @@ function updateStructuredData(category = 'home') {
     const defaultCategoryKeys = [
         'resources', 'tech_blog',
         'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing',
-        'ai_image', 'ai_video', 'ai_audio', 'ai_design', 'ai_coding',
+        'ai_image', 'ecommerce_zone', 'ai_video', 'ai_audio', 'ai_design', 'ai_coding',
         'ai_prompts', 'ai_search'
     ];
 
@@ -2199,6 +2276,7 @@ function organizeFooterCategories() {
         { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI对话' },
         { id: 'ai_writing', icon: 'bi-pen', text: 'AI写作' },
         { id: 'ai_image', icon: 'bi-image', text: 'AI图像' },
+        { id: 'ecommerce_zone', icon: 'bi-bag-check', text: '电商专区' },
         { id: 'ai_video', icon: 'bi-film', text: 'AI视频' },
         { id: 'ai_audio', icon: 'bi-soundwave', text: 'AI音频' },
         { id: 'ai_design', icon: 'bi-palette', text: 'AI设计' },
@@ -2335,6 +2413,8 @@ function balanceAllSubcategoryNavs() {
 
 // 平衡单个二级分类导航的布局
 function balanceSubcategoryNav(nav) {
+    if (!nav) return;
+
     // 首先移除任何现有的行分隔符
     const existingBreaks = nav.querySelectorAll('.row-break');
     existingBreaks.forEach(breakEl => breakEl.remove());
@@ -2379,6 +2459,47 @@ function balanceSubcategoryNav(nav) {
         // 尝试计算每行平均能放多少按钮
         const totalWidth = buttonInfo.reduce((sum, info) => sum + info.width, 0);
         const avgButtonsPerRow = Math.ceil(buttons.length / Math.ceil(totalWidth / navWidth));
+
+        // 建站工具特殊处理：优先保持两行，且两行宽度尽量均衡。
+        // 如果存在一个断点使得前后两行都能放下，则只使用两行，不再退化成三行。
+        if (sectionId === 'website-section') {
+            if (totalWidth <= navWidth) {
+                return [buttonInfo];
+            }
+
+            const prefixWidths = [];
+            let runningWidth = 0;
+            buttonInfo.forEach((info, index) => {
+                runningWidth += info.width;
+                prefixWidths[index] = runningWidth;
+            });
+
+            let bestSplit = -1;
+            let bestScore = Infinity;
+
+            for (let splitIndex = 1; splitIndex < buttonInfo.length; splitIndex++) {
+                const row1Width = prefixWidths[splitIndex - 1];
+                const row2Width = totalWidth - row1Width;
+
+                if (row1Width <= navWidth && row2Width <= navWidth) {
+                    const widthDiff = Math.abs(row1Width - row2Width);
+                    const centerBias = Math.abs(splitIndex - buttonInfo.length / 2);
+                    const score = widthDiff + centerBias * 10;
+
+                    if (score < bestScore) {
+                        bestScore = score;
+                        bestSplit = splitIndex;
+                    }
+                }
+            }
+
+            if (bestSplit !== -1) {
+                return [
+                    buttonInfo.slice(0, bestSplit),
+                    buttonInfo.slice(bestSplit)
+                ];
+            }
+        }
         
         // 初始化行数组
         let rows = [];

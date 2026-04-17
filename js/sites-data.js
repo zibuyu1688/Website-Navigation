@@ -2250,47 +2250,7 @@ const sitesData = {
             description: '强大的AI艺术生成工具，通过文本提示创建高质量艺术作品',
             tags: ['AI艺术', '图像生成', '创意设计'],
             url: 'https://www.midjourney.com/',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'DALL·E 3',
-            description: 'OpenAI开发的先进AI图像生成系统，支持复杂文本描述转化为精确图像',
-            tags: ['OpenAI', '文本生成图像', '高清图像'],
-            url: 'https://openai.com/dall-e-3',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'Stable Diffusion',
-            description: '开源的文本生成图像AI模型，支持本地部署和自定义微调',
-            tags: ['开源模型', '自定义部署', '社区支持'],
-            url: 'https://stability.ai/',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'DreamStudio',
-            description: 'Stability AI官方平台，提供Stable Diffusion模型的云端应用',
-            tags: ['Stability AI', '云端生成', '专业工具'],
-            url: 'https://dreamstudio.ai/',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'Firefly',
-            description: 'Adobe推出的AI图像生成工具，与创意云产品无缝集成',
-            tags: ['Adobe', '设计集成', '商业授权'],
-            url: 'https://firefly.adobe.com/',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'Leonardo.AI',
-            description: '专注于高精度和多样化风格的AI图像生成平台',
-            tags: ['高精度', '风格多样', '创意工具'],
-            url: 'https://leonardo.ai/',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2298,15 +2258,47 @@ const sitesData = {
             description: '剪映旗下的中文图像与视频生成平台，擅长海报、电商物料和短视频视觉内容一体化创作',
             tags: ['中文生成', '图生视频', '电商物料'],
             url: 'https://jimeng.jianying.com/ai-tool/home/',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: false
+        },
+        {
+            title: 'Stable Diffusion',
+            description: '开源的文本生成图像AI模型，支持本地部署和自定义微调',
+            tags: ['开源模型', '自定义部署', '社区支持'],
+            url: 'https://stability.ai/',
+            subcategory: 'painting_creation',
+            needsMagic: true
+        },
+        {
+            title: 'DreamStudio',
+            description: 'Stability AI官方平台，提供Stable Diffusion模型的云端应用',
+            tags: ['Stability AI', '云端生成', '专业工具'],
+            url: 'https://dreamstudio.ai/',
+            subcategory: 'painting_creation',
+            needsMagic: true
+        },
+        {
+            title: 'Firefly',
+            description: 'Adobe推出的AI图像生成工具，与创意云产品无缝集成',
+            tags: ['Adobe', '设计集成', '商业授权'],
+            url: 'https://firefly.adobe.com/',
+            subcategory: 'painting_creation',
+            needsMagic: true
+        },
+        {
+            title: 'Leonardo.AI',
+            description: '专注于高精度和多样化风格的AI图像生成平台',
+            tags: ['高精度', '风格多样', '创意工具'],
+            url: 'https://leonardo.ai/',
+            subcategory: 'painting_creation',
+            needsMagic: true
         },
         {
             title: 'Bing Image Creator',
             description: '微软推出的免费AI图像生成工具，基于DALL-E模型',
             tags: ['微软', '免费工具', '简易操作'],
             url: 'https://www.bing.com/create',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2314,7 +2306,7 @@ const sitesData = {
             description: '多模态生成模型，支持高质量图像和精确文本理解',
             tags: ['多模态', '高质量', '精确理解'],
             url: 'https://deepfloyd.ai/',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2322,7 +2314,7 @@ const sitesData = {
             description: '免费在线AI图像生成平台，用户友好的界面设计',
             tags: ['免费工具', '用户友好', '在线生成'],
             url: 'https://playgroundai.com/',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2330,7 +2322,7 @@ const sitesData = {
             description: '创意AI艺术社区，支持多种算法和风格创作',
             tags: ['创意社区', '多算法', '风格多样'],
             url: 'https://nightcafe.studio/',
-            subcategory: 'general_image',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         
@@ -2340,7 +2332,7 @@ const sitesData = {
             description: '爆款魔法头像生成应用，创建各种风格的艺术化个人头像',
             tags: ['魔法头像', '风格多样', '个人定制'],
             url: 'https://prisma-ai.com/lensa',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2348,7 +2340,7 @@ const sitesData = {
             description: '人工智能生成的虚拟人像库，提供多样化的人物形象',
             tags: ['虚拟人像', '多样化', '商业授权'],
             url: 'https://generated.photos/',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2356,7 +2348,7 @@ const sitesData = {
             description: '利用GAN技术生成逼真但不存在的人脸照片',
             tags: ['GAN技术', '虚拟人脸', '逼真效果'],
             url: 'https://thispersondoesnotexist.com/',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2364,7 +2356,7 @@ const sitesData = {
             description: '将个人照片转换为各种艺术风格的肖像画',
             tags: ['艺术肖像', '风格转换', '个人定制'],
             url: 'https://portraitai.com/',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2372,7 +2364,7 @@ const sitesData = {
             description: '定制专业数字人形象，适用于各种商业和个人场景',
             tags: ['数字人像', '商业应用', '专业形象'],
             url: 'https://avatarai.me/',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2380,7 +2372,7 @@ const sitesData = {
             description: '移动端AI头像生成应用，支持多种创意风格和效果',
             tags: ['移动应用', '创意风格', '快速生成'],
             url: 'https://dawn-ai.com/',
-            subcategory: 'portrait',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         
@@ -2390,7 +2382,7 @@ const sitesData = {
             description: '智能去除图像背景的AI工具，一键实现透明背景',
             tags: ['去背景', '透明背景', '一键操作'],
             url: 'https://www.remove.bg/',
-            subcategory: 'background',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2398,7 +2390,7 @@ const sitesData = {
             description: 'Canva旗下的AI图像编辑工具，提供背景替换和增强功能',
             tags: ['背景替换', 'Canva', '图像编辑'],
             url: 'https://magicstudio.com/',
-            subcategory: 'background',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2406,7 +2398,7 @@ const sitesData = {
             description: '利用AI生成无缝纹理和图案的设计工具',
             tags: ['无缝纹理', '图案设计', '设计素材'],
             url: 'https://patterned.ai/',
-            subcategory: 'background',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2414,7 +2406,7 @@ const sitesData = {
             description: '支持AI生成的动态壁纸创作平台，实现个性化桌面体验',
             tags: ['动态壁纸', '个性化', '创意设计'],
             url: 'https://www.wallpaperengine.io/',
-            subcategory: 'background',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         
@@ -2424,7 +2416,7 @@ const sitesData = {
             description: 'AI驱动的Logo设计工具，帮助创建专业品牌标识',
             tags: ['Logo设计', '品牌标识', 'AI设计'],
             url: 'https://looka.com/',
-            subcategory: 'brand_design',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2432,7 +2424,7 @@ const sitesData = {
             description: '专业的AI品牌套装生成工具，包含Logo、配色和品牌资产',
             tags: ['品牌套装', 'Logo设计', '配色方案'],
             url: 'https://brandmark.io/',
-            subcategory: 'brand_design',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2440,7 +2432,7 @@ const sitesData = {
             description: '集成AI功能的全能设计平台，支持多种商业设计需求',
             tags: ['全能设计', '商业模板', 'AI辅助'],
             url: 'https://www.canva.com/ai-image-generator/',
-            subcategory: 'brand_design',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2448,7 +2440,7 @@ const sitesData = {
             description: '专注于商品图生成和优化的AI工具，适合电商场景',
             tags: ['商品图', '电商优化', '图像增强'],
             url: 'https://vanceai.com/',
-            subcategory: 'brand_design',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         
@@ -2458,7 +2450,7 @@ const sitesData = {
             description: '专业的老照片上色和修复工具，保留历史细节',
             tags: ['老照片修复', '照片上色', '历史保存'],
             url: 'https://www.myheritage.com/incolor',
-            subcategory: 'photo_enhancement',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2466,7 +2458,7 @@ const sitesData = {
             description: '专业级照片增强工具，提供降噪、锐化和放大等功能',
             tags: ['照片增强', '专业处理', '画质提升'],
             url: 'https://www.topazlabs.com/topaz-photo-ai',
-            subcategory: 'photo_enhancement',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2474,7 +2466,7 @@ const sitesData = {
             description: '腾讯开源的人脸照片修复技术，专注于细节还原',
             tags: ['开源技术', '人脸修复', '细节还原'],
             url: 'https://github.com/TencentARC/GFPGAN',
-            subcategory: 'photo_enhancement',
+            subcategory: 'image_postprocess',
             needsMagic: false
         },
         {
@@ -2482,7 +2474,7 @@ const sitesData = {
             description: '手机端AI照片修复应用，轻松提升模糊照片质量',
             tags: ['移动应用', '快速修复', '用户友好'],
             url: 'https://remini.ai/',
-            subcategory: 'photo_enhancement',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2490,7 +2482,7 @@ const sitesData = {
             description: '基于神经网络的图片无损放大工具，保持清晰度',
             tags: ['无损放大', '神经网络', '细节保留'],
             url: 'https://bigjpg.com/',
-            subcategory: 'photo_enhancement',
+            subcategory: 'image_postprocess',
             needsMagic: false
         },
         
@@ -2500,7 +2492,7 @@ const sitesData = {
             description: '专注于动漫和二次元风格的AI图像生成工具',
             tags: ['二次元', '动漫风格', '风格化创作'],
             url: 'https://nijijourney.com/',
-            subcategory: 'anime',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2508,7 +2500,7 @@ const sitesData = {
             description: '个性化动漫头像生成器，可定制角色特征',
             tags: ['动漫头像', '角色定制', '二次元风格'],
             url: 'https://waifulabs.com/',
-            subcategory: 'anime',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2516,7 +2508,7 @@ const sitesData = {
             description: '专为小说配图和创意写作设计的AI绘图工具',
             tags: ['小说配图', '创意写作', '定制插画'],
             url: 'https://novelai.net/',
-            subcategory: 'anime',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2524,7 +2516,7 @@ const sitesData = {
             description: '专注于亚洲风格动漫和插画创作的AI平台',
             tags: ['亚洲风格', '插画创作', '二次元艺术'],
             url: 'https://pixai.art/',
-            subcategory: 'anime',
+            subcategory: 'painting_creation',
             needsMagic: true
         },
         {
@@ -2532,7 +2524,7 @@ const sitesData = {
             description: '国内领先的AI动漫创作平台，支持多种二次元风格',
             tags: ['国内平台', '二次元', '多风格支持'],
             url: 'https://chusu.cc/',
-            subcategory: 'anime',
+            subcategory: 'painting_creation',
             needsMagic: false
         },
         
@@ -2542,7 +2534,7 @@ const sitesData = {
             description: '有趣的AI换脸应用，将自己的脸换到各种场景中',
             tags: ['AI换脸', '娱乐应用', '社交分享'],
             url: 'https://reface.app/',
-            subcategory: 'fun_tools',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2550,7 +2542,7 @@ const sitesData = {
             description: 'AI驱动的表情包制作工具，支持自定义文字和模板',
             tags: ['表情包', '梗图制作', '社交媒体'],
             url: 'https://imgflip.com/',
-            subcategory: 'fun_tools',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2558,7 +2550,7 @@ const sitesData = {
             description: '将照片转换为迪士尼风格卡通头像的有趣工具',
             tags: ['卡通头像', '风格转换', '有趣效果'],
             url: 'https://voila-ai.com/',
-            subcategory: 'fun_tools',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         {
@@ -2566,7 +2558,7 @@ const sitesData = {
             description: '将自拍照转换为卡通化或艺术化效果的应用',
             tags: ['卡通化', '自拍美化', '艺术风格'],
             url: 'https://toonme.com/',
-            subcategory: 'fun_tools',
+            subcategory: 'portrait_custom',
             needsMagic: true
         },
         
@@ -2576,7 +2568,7 @@ const sitesData = {
             description: 'AI虚拟服装设计和模特试穿平台，适合电商展示',
             tags: ['虚拟服装', '模特试穿', '电商展示'],
             url: 'https://zmo.ai/',
-            subcategory: 'fashion',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2584,7 +2576,7 @@ const sitesData = {
             description: 'AI驱动的纹身设计工具，创建个性化纹身图案',
             tags: ['纹身设计', '个性化图案', '创意工具'],
             url: 'https://tattooai.com/',
-            subcategory: 'fashion',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2592,7 +2584,7 @@ const sitesData = {
             description: '电商换装AI工具，快速生成不同服饰的展示效果',
             tags: ['电商换装', '产品展示', '虚拟试衣'],
             url: 'https://www.v-make.ai/',
-            subcategory: 'fashion',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         
@@ -2602,7 +2594,7 @@ const sitesData = {
             description: 'Adobe Photoshop集成的AI功能，包括生成式填充等智能工具',
             tags: ['专业编辑', 'Adobe', '生成式填充'],
             url: 'https://www.adobe.com/products/photoshop/generative-fill.html',
-            subcategory: 'image_editing',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2610,7 +2602,7 @@ const sitesData = {
             description: '移动端全能图像编辑应用，集成AI编辑和创意工具',
             tags: ['移动编辑', '全能工具', 'AI创意'],
             url: 'https://picsart.com/',
-            subcategory: 'image_editing',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2618,7 +2610,7 @@ const sitesData = {
             description: '实景捕捉和AI编辑工具，支持物体提取和场景编辑',
             tags: ['实景捕捉', '物体提取', 'AI编辑'],
             url: 'https://clipdrop.co/',
-            subcategory: 'image_editing',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         {
@@ -2626,7 +2618,7 @@ const sitesData = {
             description: '在线图像编辑器，集成AI美化和设计功能',
             tags: ['在线编辑', 'AI美化', '简易操作'],
             url: 'https://www.fotor.com/',
-            subcategory: 'image_editing',
+            subcategory: 'image_postprocess',
             needsMagic: true
         },
         
@@ -2636,7 +2628,7 @@ const sitesData = {
             description: 'AI驱动的图表和流程图生成工具，适用于专业展示',
             tags: ['图表生成', '流程图', '专业展示'],
             url: 'https://diagram.codes/',
-            subcategory: 'professional_scene',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2644,7 +2636,7 @@ const sitesData = {
             description: '专业建筑渲染AI工具，生成逼真的建筑和景观效果图',
             tags: ['建筑渲染', '景观设计', '效果图'],
             url: 'https://architechtures.com/',
-            subcategory: 'professional_scene',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2652,7 +2644,7 @@ const sitesData = {
             description: 'AI驱动的室内设计可视化工具，生成逼真的装修效果',
             tags: ['室内设计', '装修效果', '空间可视化'],
             url: 'https://interiorai.com/',
-            subcategory: 'professional_scene',
+            subcategory: 'commercial_design',
             needsMagic: true
         },
         {
@@ -2660,7 +2652,150 @@ const sitesData = {
             description: 'NVIDIA推出的实时场景绘制工具，将简单草图转换为实景图像',
             tags: ['实时绘制', 'NVIDIA', '场景转换'],
             url: 'https://www.nvidia.com/en-us/studio/canvas/',
-            subcategory: 'professional_scene',
+            subcategory: 'commercial_design',
+            needsMagic: true
+        }
+    ],
+
+    // 电商专区
+    ecommerce_zone: [
+        // AI模特
+        {
+            title: 'ZMO.ai',
+            description: 'AI虚拟服装设计和模特试穿平台，一键生成多尺码、多肤色虚拟模特图，适合快速出图',
+            tags: ['AI模特', '虚拟试穿', '电商展示'],
+            url: 'https://zmo.ai/',
+            subcategory: 'ai_model',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Vmake',
+            description: '电商换装AI工具，上传产品图快速生成不同服饰与模特组合的展示效果',
+            tags: ['电商换装', '虚拟试衣', '产品展示'],
+            url: 'https://www.v-make.ai/',
+            subcategory: 'ai_model',
+            needsMagic: true
+        },
+        {
+            title: '即时AI模特',
+            description: '国内领先的AI模特生成平台，支持服装平铺图快速上模，批量生成买家秀效果',
+            tags: ['国内工具', '服装上模', '批量生成'],
+            url: 'https://www.jishi.ai/',
+            subcategory: 'ai_model',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'Kolors Virtual Try-On',
+            description: '快手可图推出的虚拟试穿模型，开源可商用，精度高、服装细节还原出色',
+            tags: ['开源模型', '虚拟试穿', '高精度'],
+            url: 'https://huggingface.co/Kwai-Kolors/Kolors-Virtual-Try-On',
+            subcategory: 'ai_model',
+            needsMagic: false
+        },
+        // 商品摄影
+        {
+            title: 'Photoroom',
+            description: '专业AI商品抠图与背景合成平台，支持批量处理，一键生成白底/场景图',
+            tags: ['商品抠图', '背景合成', '批量处理'],
+            url: 'https://www.photoroom.com/',
+            subcategory: 'product_photo',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Mokker AI',
+            description: 'AI商品场景图生成工具，上传产品图自动匹配高质量场景背景，无需摄影棚',
+            tags: ['场景生成', '商品摄影', '免摄影棚'],
+            url: 'https://mokker.ai/',
+            subcategory: 'product_photo',
+            needsMagic: true
+        },
+        {
+            title: 'Flair.ai',
+            description: '时尚和美妆品牌首选的AI商品场景创作工具，支持品牌场景模板定制',
+            tags: ['品牌场景', '时尚美妆', '模板定制'],
+            url: 'https://flair.ai/',
+            subcategory: 'product_photo',
+            needsMagic: true
+        },
+        {
+            title: 'Pebblely',
+            description: '一键AI商品背景替换工具，40+ 内置场景主题，快速输出电商主图',
+            tags: ['背景替换', '主图优化', '快速出图'],
+            url: 'https://pebblely.com/',
+            subcategory: 'product_photo',
+            needsMagic: true
+        },
+        // Listing写作
+        {
+            title: 'Helium 10 Listing Builder',
+            description: '亚马逊卖家必备工具，AI辅助Listing标题/五点/描述写作，集成关键词数据库',
+            tags: ['亚马逊', 'Listing优化', '关键词研究'],
+            url: 'https://www.helium10.com/tools/listing-builder/',
+            subcategory: 'listing_writing',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Jungle Scout AI',
+            description: '跨境电商选品和Listing写作AI平台，基于真实销售数据生成高转化文案',
+            tags: ['选品工具', 'Listing写作', '销量数据'],
+            url: 'https://www.junglescout.com/features/ai-assist/',
+            subcategory: 'listing_writing',
+            needsMagic: true
+        },
+        {
+            title: '万词王',
+            description: '国内跨境Listing关键词挖掘与AI写作工具，覆盖亚马逊/Shopee/速卖通等多平台',
+            tags: ['关键词挖掘', '多平台', 'Listing写作'],
+            url: 'https://www.wanciyuan.com/',
+            subcategory: 'listing_writing',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'SellerApp Listing Optimizer',
+            description: 'AI驱动的亚马逊Listing打分与优化建议平台，实时检测关键词覆盖率',
+            tags: ['Listing打分', '优化建议', '亚马逊'],
+            url: 'https://www.sellerapp.com/amazon-listing-optimizer.html',
+            subcategory: 'listing_writing',
+            needsMagic: true
+        },
+        // 投放助手
+        {
+            title: 'AdCreative.ai',
+            description: 'AI广告素材批量生成平台，输入品牌信息自动产出高点击率图文广告创意',
+            tags: ['广告创意', '批量生成', '高点击率'],
+            url: 'https://www.adcreative.ai/',
+            subcategory: 'ad_assistant',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: '巨量创意',
+            description: '字节跳动推出的投放创意工具，支持爆款素材分析、AI文案生成和落地页优化',
+            tags: ['字节系', '素材分析', 'AI文案'],
+            url: 'https://cc.oceanengine.com/',
+            subcategory: 'ad_assistant',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'Madgicx',
+            description: '专为Facebook/Meta广告优化的AI平台，自动调整受众定向、预算分配和素材轮换',
+            tags: ['Meta广告', '受众优化', '自动投放'],
+            url: 'https://madgicx.com/',
+            subcategory: 'ad_assistant',
+            needsMagic: true
+        },
+        {
+            title: 'Pencil',
+            description: 'AI预测广告素材表现的创意平台，基于历史数据生成高胜率广告变体',
+            tags: ['创意预测', '广告变体', '高胜率'],
+            url: 'https://www.trypencil.com/',
+            subcategory: 'ad_assistant',
             needsMagic: true
         }
     ],
