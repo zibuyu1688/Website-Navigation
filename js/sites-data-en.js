@@ -3655,6 +3655,30 @@ const sitesData = {
     ai_coding: [
        // 代码生成与补全
     {
+        "title": "ChatGPT",
+        "description": "OpenAI's general AI assistant for code generation, debugging help, refactoring, and scripting tasks",
+        "tags": ["OpenAI", "code generation", "debugging assistant"],
+        "url": "https://chatgpt.com/",
+        "subcategory": "code_generation",
+        "needsMagic": true
+    },
+    {
+        "title": "Claude",
+        "description": "Anthropic's coding and reasoning assistant with strong long-context code understanding and refactoring support",
+        "tags": ["Anthropic", "long context", "code understanding"],
+        "url": "https://claude.ai/",
+        "subcategory": "code_generation",
+        "needsMagic": true
+    },
+    {
+        "title": "Gemini",
+        "description": "Google's multimodal AI assistant for code generation, troubleshooting, and API example drafting",
+        "tags": ["Google", "code generation", "multimodal assistant"],
+        "url": "https://gemini.google.com/",
+        "subcategory": "code_generation",
+        "needsMagic": true
+    },
+    {
         "title": "GitHub Copilot",
         "description": "GitHub's AI programming assistant offering code completion and generation",
         "tags": ["GitHub", "code completion", "AI assistant"],
@@ -3854,6 +3878,32 @@ const sitesData = {
         "subcategory": "natural_language_dev",
         "needsMagic": true
     },
+
+    // Automation workflows
+    {
+        "title": "Make",
+        "description": "Visual automation workflow platform for connecting crawlers, spreadsheets, databases and third-party APIs into data pipelines",
+        "tags": ["automation workflow", "data processing", "no-code integration"],
+        "url": "https://www.make.com/",
+        "subcategory": "automation_workflow",
+        "needsMagic": true
+    },
+    {
+        "title": "n8n",
+        "description": "Open-source workflow orchestration platform for self-hosted crawling, data cleaning, webhooks and cross-system sync",
+        "tags": ["open-source automation", "workflow orchestration", "webhooks"],
+        "url": "https://n8n.io/",
+        "subcategory": "automation_workflow",
+        "needsMagic": true
+    },
+    {
+        "title": "OpenClaw",
+        "description": "AI-agent workflow platform for browser actions, automated crawling, task routing and structured data collection",
+        "tags": ["AI agent", "web automation", "workflow automation"],
+        "url": "https://openclaw.ai/",
+        "subcategory": "automation_workflow",
+        "needsMagic": true
+    },
     
     // 低代码/无代码平台
     {
@@ -3890,6 +3940,22 @@ const sitesData = {
         "subcategory": "cloud_ide",
         "needsMagic": true
     },
+        {
+            title: 'Codex',
+            description: 'OpenAI coding agent workspace for executing tasks, generating patches, and assisting end-to-end development flows',
+            tags: ['OpenAI', 'coding agent', 'workspace'],
+            url: 'https://chatgpt.com/codex',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
+        {
+            title: 'Claude Code',
+            description: 'Anthropic agentic coding tool for understanding repositories, applying edits, and supporting terminal-based development tasks',
+            tags: ['Anthropic', 'agentic coding', 'repository understanding'],
+            url: 'https://claude.ai/code',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
     {
         "title": "Windsurf",
         "description": "Codeium's AI-native coding editor built for agentic code changes, repo understanding and automated dev workflows",

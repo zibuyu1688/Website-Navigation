@@ -4130,6 +4130,30 @@ const sitesData = {
     ai_coding: [
         // 代码生成与补全
         {
+            title: 'ChatGPT',
+            description: 'OpenAI 的通用 AI 助手，适合代码生成、报错解释、重构建议与脚本编写',
+            tags: ['OpenAI', '代码生成', '调试助手'],
+            url: 'https://chatgpt.com/',
+            subcategory: 'code_generation',
+            needsMagic: true
+        },
+        {
+            title: 'Claude',
+            description: 'Anthropic 的编程与推理助手，擅长长上下文代码理解、重构和方案设计',
+            tags: ['Anthropic', '长上下文', '代码理解'],
+            url: 'https://claude.ai/',
+            subcategory: 'code_generation',
+            needsMagic: true
+        },
+        {
+            title: 'Gemini',
+            description: 'Google 的多模态 AI 助手，可用于代码生成、问题排查与 API 调用示例编写',
+            tags: ['Google', '代码生成', '多模态助手'],
+            url: 'https://gemini.google.com/',
+            subcategory: 'code_generation',
+            needsMagic: true
+        },
+        {
             title: 'GitHub Copilot',
             description: 'GitHub推出的AI编程助手，提供代码补全和生成功能',
             tags: ['GitHub', '代码补全', 'AI助手'],
@@ -4329,6 +4353,32 @@ const sitesData = {
             subcategory: 'natural_language_dev',
             needsMagic: true
         },
+
+        // 自动化工作流
+        {
+            title: 'Make',
+            description: '可视化自动化工作流平台，适合串联爬虫、表格、数据库和第三方 API 做批量数据处理',
+            tags: ['自动化工作流', '数据处理', '无代码集成'],
+            url: 'https://www.make.com/',
+            subcategory: 'automation_workflow',
+            needsMagic: true
+        },
+        {
+            title: 'n8n',
+            description: '开源自动化编排平台，适合自托管爬虫流程、数据清洗、Webhook 触发和多系统同步',
+            tags: ['开源自动化', '工作流编排', 'Webhook'],
+            url: 'https://n8n.io/',
+            subcategory: 'automation_workflow',
+            needsMagic: true
+        },
+        {
+            title: 'OpenClaw',
+            description: '面向 AI Agent 的自动化工作流平台，适合做网页操作、自动爬虫、任务流转与结构化数据采集',
+            tags: ['AI Agent', '自动爬虫', '工作流自动化'],
+            url: 'https://openclaw.ai/',
+            subcategory: 'automation_workflow',
+            needsMagic: true
+        },
         
         // 低代码/无代码平台
         {
@@ -4362,6 +4412,22 @@ const sitesData = {
             description: 'AI驱动的代码编辑器，提供智能编码辅助',
             tags: ['AI编辑器', '代码智能', '编程辅助'],
             url: 'https://cursor.com/',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
+        {
+            title: 'Codex',
+            description: 'OpenAI 推出的云端代码代理与编程工作区，可执行任务、生成补丁并协助开发流程',
+            tags: ['OpenAI', '代码代理', '云端工作区'],
+            url: 'https://chatgpt.com/codex',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
+        {
+            title: 'Claude Code',
+            description: 'Anthropic 推出的代理式编程工具，支持理解代码库、执行编辑并协助终端开发任务',
+            tags: ['Anthropic', '代理式编程', '代码库理解'],
+            url: 'https://claude.ai/code',
             subcategory: 'cloud_ide',
             needsMagic: true
         },

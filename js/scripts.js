@@ -1528,7 +1528,7 @@ function showCategory(category) {
         document.getElementById('ai-coding-section').style.display = 'block';
         filterAiCodingSubcategory('all');
     } else if (category === 'code_generation' || category === 'fullstack_dev' || 
-               category === 'design_to_code' || category === 'code_review' || 
+               category === 'automation_workflow' || category === 'design_to_code' || category === 'code_review' || 
                category === 'natural_language_dev' || category === 'low_code' || 
                category === 'cloud_ide') {
         // AI编程子分类
@@ -1927,7 +1927,7 @@ const SEO_CATEGORY_GROUPS = {
     ai_video: ['text_to_video', 'image_to_video', 'video_editing', 'digital_human', 'animation', 'short_video', 'speech_driven', 'professional_video', 'opensource_tools'],
     ai_audio: ['tts', 'music_generation', 'speech_to_text', 'voice_conversion', 'audio_editing', 'other_audio_tools'],
     ai_design: ['commerce_design', 'ui_ux', 'illustration', 'model_design', 'assistant_tools', 'special_tools'],
-    ai_coding: ['code_generation', 'fullstack_dev', 'design_to_code', 'code_review', 'natural_language_dev', 'low_code', 'cloud_ide'],
+    ai_coding: ['code_generation', 'fullstack_dev', 'automation_workflow', 'design_to_code', 'code_review', 'natural_language_dev', 'low_code', 'cloud_ide'],
     ai_prompts: ['prompt_platforms', 'sd_tools', 'chatgpt_prompts', 'visual_tools', 'chinese_resources', 'other_tools'],
     ai_search: ['general_search', 'academic_search', 'programming_search', 'finance_search', 'life_search', 'product_search']
 };
