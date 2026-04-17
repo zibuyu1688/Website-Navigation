@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce AI Navigation - One-stop Navigation for E-commerce Tools and Websites</title>
+    <title>AI365 Navigation - Cross-border E-commerce & AI Tools Directory</title>
+    <meta name="description" content="AI365 Navigation curates cross-border e-commerce platforms, AI tools, website resources and growth utilities for sellers, operators and AI enthusiasts.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#4285f4">
+    <link rel="canonical" href="https://www.aitool365.com/en.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.aitool365.com/">
+    <link rel="alternate" hreflang="en" href="https://www.aitool365.com/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.aitool365.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="AI365 Navigation">
+    <meta property="og:title" content="AI365 Navigation - Cross-border E-commerce & AI Tools Directory">
+    <meta property="og:description" content="A practical navigation hub for cross-border sellers and AI users, covering operations, growth, content and development tools.">
+    <meta property="og:url" content="https://www.aitool365.com/en.html">
+    <meta property="og:image" content="https://www.aitool365.com/logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI365 Navigation - Cross-border E-commerce & AI Tools Directory">
+    <meta name="twitter:description" content="Find curated tools for e-commerce growth, AI productivity and website operations.">
+    <meta name="twitter:image" content="https://www.aitool365.com/logo.svg">
+    <link rel="icon" type="image/png" href="favicon/default.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -128,6 +148,7 @@
         .site-card .card-description {
             display: -webkit-box;
             -webkit-line-clamp: 3;
+            line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
             line-height: 1.5;
@@ -211,7 +232,7 @@
                 <span>AI365 Nav</span>
             </div>
             <div class="right-nav-links">
-                <a href="https://virtualbrains.feishu.cn/wiki/SHUPwNzcbi3SkGkV3Vgcptb0nVb?from=from_copylink" target="_blank" class="top-nav-link">
+                <a href="https://virtualbrains.feishu.cn/wiki/SHUPwNzcbi3SkGkV3Vgcptb0nVb?from=from_copylink" target="_blank" rel="noopener noreferrer" title="Open niche sites knowledge base" class="top-nav-link">
                     <i class="bi bi-collection"></i> Niche Sites
                 </a>
                 <div class="language-buttons">
@@ -260,6 +281,26 @@
                     <li class="nav-item">
                         <a class="nav-link" onclick="showCategory('shopee')">
                             Shopee
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('tiktok-shop')">
+                            TikTok Shop
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('temu')">
+                            Temu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('mercado-libre')">
+                            Mercado Libre
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('shopify')">
+                            Shopify
                         </a>
                     </li>
                     <li class="nav-item">
@@ -386,8 +427,11 @@
                             Multimodal AI
                         </a>
                     </li>
-                   
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="showCategory('professional_ai')">
+                            Professional AI
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item has-submenu">
@@ -762,11 +806,11 @@
                         </div>
                     </div>
                 </div>
-                <input type="text" id="search-input" class="search-input" placeholder="Search AI tools, descriptions..." autofocus>
-                <button id="clear-search-btn" class="clear-search-btn" onclick="clearSearch()">
+                <input type="text" id="search-input" class="search-input" placeholder="Search AI tools, descriptions..." aria-label="Site search" autofocus>
+                <button id="clear-search-btn" class="clear-search-btn" title="Clear search" aria-label="Clear search" onclick="clearSearch()">
                     <i class="bi bi-x-lg"></i>
                 </button>
-                <button id="search-button" class="search-button" onclick="performSearch()">
+                <button id="search-button" class="search-button" title="Run search" aria-label="Run search" onclick="performSearch()">
                     <i class="bi bi-search"></i> Search
                 </button>
             </div>
@@ -787,6 +831,10 @@
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('ebay')">Ebay</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('lazada')">Lazada</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('shopee')">Shopee</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('tiktok-shop')">TikTok Shop</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('temu')">Temu</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('mercado-libre')">Mercado Libre</button>
+                    <button class="subcategory-btn" onclick="filterEcommerceSubcategory('shopify')">Shopify</button>
                     <button class="subcategory-btn" onclick="filterEcommerceSubcategory('other')">Others</button>
                 </div>
                 <div class="site-grid" id="ecommerce-grid">
@@ -849,6 +897,7 @@
                     <button class="subcategory-btn active" onclick="filterAiChatSubcategory('all')">All</button>
                     <button class="subcategory-btn" onclick="filterAiChatSubcategory('general_assistant')">General AI Assistants</button>
                     <button class="subcategory-btn" onclick="filterAiChatSubcategory('multimodal_ai')">Multimodal AI </button>
+                    <button class="subcategory-btn" onclick="filterAiChatSubcategory('professional_ai')">Professional AI</button>
                 </div>
                 <div class="site-grid" id="ai-chat-grid">
                     <!-- AI chat site cards will be dynamically added via JavaScript -->

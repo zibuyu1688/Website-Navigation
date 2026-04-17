@@ -10,14 +10,6 @@ const sitesData = {
     // E-commerce Platforms
     ecommerce: [
         {
-            title: 'Amazon Seller Central',
-            description: 'Amazon Seller Platform, providing product upload, order management, advertising, and more',
-            tags: ['Amazon', 'Seller Platform', 'Cross-border E-commerce'],
-            url: 'https://sellercentral.amazon.com/',
-            subcategory: 'amazon',
-            isRecommended: true
-        },
-        {
             title: 'Amazon Brand Analytics',
             description: 'Amazon Brand Analytics tool, providing keyword search, shopping behavior, product comparison data',
             tags: ['Amazon', 'Analytics', 'Brand'],
@@ -95,7 +87,7 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
-            title: '意大利站前台',
+            title: 'Amazon Italy Store',
             description: 'Amazon Italy shopping website, an e-commerce platform for Italian consumers',
             tags: ['Amazon', 'Italy Store', 'Consumer'],
             url: 'https://www.amazon.it/',
@@ -382,7 +374,7 @@ const sitesData = {
             subcategory: 'other'
         },
         {
-            title: '京东',
+            title: 'JD.com',
             description: 'China-owned B2C e-commerce platform, known for its quality assurance and fast logistics',
             tags: ['JD', 'Self-operated E-commerce', 'Fast Logistics'],
             url: 'https://www.jd.com/',
@@ -400,6 +392,90 @@ const sitesData = {
             description: 'Alibaba-owned B2B wholesale platform, connecting manufacturers and wholesalers',
             tags: ['1688', 'Alibaba', 'Wholesale', 'B2B'],
             url: 'https://www.1688.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Walmart',
+            description: 'Global retail and e-commerce platform with strong omnichannel operations, especially in the US market',
+            tags: ['US marketplace', 'omnichannel', 'e-commerce platform'],
+            url: 'https://www.walmart.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Temu',
+            description: 'Fast-growing global marketplace by PDD, known for value pricing and managed cross-border supply',
+            tags: ['global marketplace', 'value pricing', 'cross-border'],
+            url: 'https://www.temu.com/',
+            subcategory: 'temu'
+        },
+        {
+            title: 'TikTok Shop',
+            description: 'Commerce platform inside TikTok that converts short-video and livestream traffic into sales',
+            tags: ['social commerce', 'short video', 'livestream selling'],
+            url: 'https://seller-us.tiktok.com/',
+            subcategory: 'tiktok-shop'
+        },
+        {
+            title: 'SHEIN',
+            description: 'Global fast-fashion commerce platform expanding into broader consumer categories',
+            tags: ['fast fashion', 'global retail', 'cross-border'],
+            url: 'https://www.shein.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Mercado Libre',
+            description: 'Leading Latin America marketplace with integrated commerce, payments and logistics ecosystem',
+            tags: ['Latin America', 'marketplace', 'cross-border sales'],
+            url: 'https://www.mercadolibre.com/',
+            subcategory: 'mercado-libre'
+        },
+        {
+            title: 'Noon',
+            description: 'Major local e-commerce platform in the Middle East, strong in UAE and Saudi Arabia',
+            tags: ['Middle East', 'local marketplace', 'regional commerce'],
+            url: 'https://www.noon.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Coupang',
+            description: 'Leading Korean e-commerce platform known for high-speed fulfillment and delivery',
+            tags: ['Korea', 'fast delivery', 'e-commerce platform'],
+            url: 'https://www.coupang.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Shopify',
+            description: 'Mainstream SaaS storefront platform for building independent branded online stores',
+            tags: ['independent store', 'SaaS', 'brand commerce'],
+            url: 'https://www.shopify.com/',
+            subcategory: 'shopify'
+        },
+        {
+            title: 'WooCommerce',
+            description: 'Open-source WordPress e-commerce plugin for highly customizable independent stores',
+            tags: ['open-source', 'WordPress', 'independent store'],
+            url: 'https://woocommerce.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'BigCommerce',
+            description: 'Commerce platform for scaling brands with strong enterprise and multi-channel capabilities',
+            tags: ['SaaS', 'enterprise commerce', 'multi-channel'],
+            url: 'https://www.bigcommerce.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Alibaba.com',
+            description: 'Alibaba international B2B trade platform connecting global buyers with suppliers',
+            tags: ['B2B', 'global trade', 'wholesale sourcing'],
+            url: 'https://www.alibaba.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Made-in-China',
+            description: 'B2B platform focused on Chinese manufacturers, industrial products and export sourcing',
+            tags: ['B2B', 'manufacturing', 'industrial sourcing'],
+            url: 'https://www.made-in-china.com/',
             subcategory: 'other'
         }
     ],
@@ -578,6 +654,13 @@ const sitesData = {
             subcategory: 'seo'
         },
         {
+            title: 'Screaming Frog SEO Spider',
+            description: 'Desktop crawler for technical SEO audits, useful for indexing, redirects, and site structure diagnostics',
+            tags: ['Technical SEO', 'Site Crawling', 'SEO Audit'],
+            url: 'https://www.screamingfrog.co.uk/seo-spider/',
+            subcategory: 'seo'
+        },
+        {
             title: 'Udemy',
             description: 'One of the largest online learning platforms in the world, offering thousands of courses on website building, marketing, and e-commerce',
             tags: ['Online Learning', 'Website Building', 'E-commerce Skills'],
@@ -617,10 +700,26 @@ const sitesData = {
             subcategory: 'analytics'
         },
         {
+            title: 'Plausible Analytics',
+            description: 'Lightweight privacy-first web analytics platform with simple dashboards and no cookie-banner burden',
+            tags: ['Web Analytics', 'Privacy-First', 'Lightweight'],
+            url: 'https://plausible.io/',
+            subcategory: 'analytics',
+            needsMagic: true
+        },
+        {
+            title: 'Microsoft Clarity',
+            description: 'Free user behavior analytics with heatmaps, session replay, and conversion path insights',
+            tags: ['Heatmaps', 'Session Replay', 'Behavior Analytics'],
+            url: 'https://clarity.microsoft.com/',
+            subcategory: 'analytics',
+            needsMagic: true
+        },
+        {
             title: 'SimilarWeb',
-            description: 'Analyze competitor overall traffic (visits, country distribution, traffic sources), user behavior (bounce rate,停留时间) and keywords',
+            description: 'Similarweb corporate entry page, from which users can navigate to its traffic intelligence products',
             tags: ['Competitor Analysis', 'Traffic Analysis', 'User Behavior'],
-            url: 'https://www.similarweb.com/',
+            url: 'https://www.similarweb.com/corp/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -641,10 +740,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Moat',
-            description: '追踪竞品展示广告（Banner、视频广告），适合分析视觉营销策略',
-            tags: ['Advertising Analysis', 'Visual Marketing', 'Display Advertising'],
-            url: 'https://www.moat.com/',
+            title: 'Oracle Advertising (Moat)',
+            description: 'Moat has been integrated into Oracle Advertising for ad visibility and media quality analysis',
+            tags: ['Advertising Analysis', 'Viewability', 'Media Quality'],
+            url: 'https://www.oracle.com/advertising/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -657,10 +756,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Commerce Inspector',
-            description: '专攻Shopify独立站，分析竞品热销产品、价格变化、折扣策略，查看其使用的App',
-            tags: ['Shopify Analysis', 'Product Analysis', 'Price Strategy'],
-            url: 'https://www.commerceinspector.com/',
+            title: 'Koala Inspector',
+            description: 'Shopify-focused store intelligence tool to inspect themes, apps, and product signals',
+            tags: ['Shopify Analysis', 'Store Intelligence', 'Product Research'],
+            url: 'https://koala-apps.io/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -757,14 +856,6 @@ const sitesData = {
             subcategory: 'domain'
         },
         {
-            title: 'Google Domains',
-            description: 'Google-owned domain registration service, simple and stable, gradually migrating to Squarespace',
-            tags: ['Domain Registration', 'Google Services', 'Reliable'],
-            url: 'https://domains.google/',
-            subcategory: 'domain',
-            needsMagic: true
-        },
-        {
             title: 'Squarespace Domains',
             description: '收购Google Domains后提供集成建站服务的域名注册商',
             tags: ['Domain Registration', 'Website Building', '一站式'],
@@ -840,7 +931,7 @@ const sitesData = {
             subcategory: 'domain'
         },
         {
-            title: '爱名网',
+            title: '22.cn',
             description: 'Specializes in domain trading, offering professional domain backordering and auction services',
             tags: ['Domain Trading', 'Domain Name Registration', 'Domain Name Auction'],
             url: 'https://www.22.cn/',
@@ -911,7 +1002,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '金名网',
+            title: 'Juming',
             description: 'Chinese professional domain auction platform with localized transaction process',
             tags: ['Domain Auction', 'Domestic Trading', 'Localized Services'],
             url: 'https://www.juming.com/',
@@ -922,6 +1013,22 @@ const sitesData = {
             description: 'Amazon Web Services - The world\'s most comprehensive and broadly adopted cloud platform',
             tags: ['Cloud Services', 'Servers', 'Storage'],
             url: 'https://aws.amazon.com/',
+            subcategory: 'server',
+            needsMagic: true
+        },
+        {
+            title: 'Vercel',
+            description: 'Popular deployment platform for frontend and full-stack apps, especially strong for Next.js workflows',
+            tags: ['Frontend Deployment', 'Hosting', 'Full-Stack Platform'],
+            url: 'https://vercel.com/',
+            subcategory: 'server',
+            needsMagic: true
+        },
+        {
+            title: 'Netlify',
+            description: 'Mainstream static/Jamstack hosting with CI builds, CDN delivery, and edge capabilities',
+            tags: ['Static Hosting', 'Jamstack', 'Auto Deploy'],
+            url: 'https://www.netlify.com/',
             subcategory: 'server',
             needsMagic: true
         },
@@ -965,10 +1072,26 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '万里汇(WorldFirst)',
-            description: 'Alibaba-affiliated platform supporting Amazon/eBay settlements with low CNY withdrawal fees (0.3% cap) and multi-currency accounts',
-            tags: ['Cross-Border Settlements', 'Low Fees', 'Platform Payments'],
-            url: 'https://www.worldfirst.com/',
+            title: 'Checkout.com',
+            description: 'Enterprise payment platform for global processing, local acquiring, and advanced risk controls',
+            tags: ['Enterprise Payments', 'Global Acquiring', 'Risk Control'],
+            url: 'https://www.checkout.com/',
+            subcategory: 'payment',
+            needsMagic: true
+        },
+        {
+            title: 'Paddle',
+            description: 'Merchant-of-record platform for SaaS and digital products with subscriptions, billing, and tax compliance',
+            tags: ['SaaS Payments', 'Subscription Billing', 'Tax Compliance'],
+            url: 'https://www.paddle.com/',
+            subcategory: 'payment',
+            needsMagic: true
+        },
+        {
+            title: 'XTransfer',
+            description: 'Cross-border trade payment platform supporting multi-currency collections and enterprise risk control',
+            tags: ['Cross-Border Payments', 'Multi-Currency', 'Enterprise Finance'],
+            url: 'https://www.xtransfer.com/',
             subcategory: 'payment',
             needsMagic: true
         },
@@ -981,7 +1104,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Airwallex(空中云汇)',
+            title: 'Airwallex',
             description: 'Multi-currency accounts supporting global collections and batch payments, transparent fees (0.3%-1%), ideal for B2B/high-frequency trading',
             tags: ['Multi-Currency Accounts', 'Batch Payments', 'B2B Payments'],
             url: 'https://www.airwallex.com/',
@@ -989,7 +1112,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '连连支付(LianLian Pay)',
+            title: 'LianLian Pay',
             description: 'Wide platform integration (Wish/Shopee etc.), supports direct CNY withdrawals with ~0.7% fees',
             tags: ['Cross-Border Payments', 'Direct Withdrawals', 'Platform Settlements'],
             url: 'https://www.lianlianpay.com/',
@@ -997,7 +1120,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Payoneer(派安盈)',
+            title: 'Payoneer',
             description: 'Provides virtual bank accounts (USD/GBP/EUR etc.), suitable for platform commissions and freelancer payments, with ~1.2% withdrawal fees',
             tags: ['Virtual Accounts', 'Cross-Border Payments', 'Platform Commissions'],
             url: 'https://www.payoneer.com/',
@@ -1021,7 +1144,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Alipay Global(支付宝国际版)',
+            title: 'Alipay Global',
             description: 'Ideal for Chinese/SEA markets, provides localized payment experience',
             tags: ['Alipay', 'Chinese Market', 'Localized Payments'],
             url: 'https://global.alipay.com/',
@@ -1029,7 +1152,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Wise(原TransferWise)',
+            title: 'Wise',
             description: 'Multi-currency virtual accounts with low international transfer fees, suitable for B2B payments and overseas remittance',
             tags: ['Multi-Currency Accounts', 'Low Fees', 'International Transfers'],
             url: 'https://wise.com/',
@@ -1042,14 +1165,6 @@ const sitesData = {
             tags: ['Credit Card Processing', 'Payment Gateway', 'North America'],
             url: 'https://www.authorize.net/',
             subcategory: 'payment',
-            needsMagic: true
-        },
-        {
-            title: 'Shopify ERP',
-            description: 'Shopify-integrated ERP system for inventory, order and financial management',
-            tags: ['ERP', 'Inventory Management', 'Order Processing'],
-            url: 'https://www.shopify.com/enterprise/erp',
-            subcategory: 'erp',
             needsMagic: true
         },
         {
@@ -1085,35 +1200,28 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '店小秘',
+            title: 'Dianxiaomi ERP',
             description: 'Multi-platform support (Amazon/eBay/Shopify etc.) with order/inventory/purchase features for SMB sellers',
             tags: ['SMB Sellers', 'Multi-Platform', 'Cross-Border E-Commerce'],
             url: 'https://www.dianxiaomi.com/',
             subcategory: 'erp'
         },
         {
-            title: '马帮ERP',
+            title: 'Mabang ERP',
             description: 'Cross-border e-commerce focused ERP with supply chain, finance and multi-warehouse coordination',
             tags: ['Cross-Border E-Commerce', 'Supply Chain', 'Multi-Warehouse'],
             url: 'https://www.mabangerp.com/',
             subcategory: 'erp'
         },
         {
-            title: '通途ERP',
+            title: 'Tongtool ERP',
             description: 'Covers order processing, logistics tracking and profit calculation, integrated with major platforms',
             tags: ['Cross-Border E-Commerce', 'Logistics Tracking', 'Profit Analysis'],
             url: 'https://www.tongtool.com/',
             subcategory: 'erp'
         },
         {
-            title: '赛盒ERP',
-            description: 'AI-powered operations tool for Amazon/independent stores with data analysis automation',
-            tags: ['Smart Operations', 'Amazon', 'Data Analytics'],
-            url: 'https://www.saihesoft.com/',
-            subcategory: 'erp'
-        },
-        {
-            title: '领星ERP(原积加)',
+            title: 'Lingxing ERP',
             description: 'Amazon-focused solution for refined operations, financial accounting and ad management',
             tags: ['Amazon', 'Precision Operations', 'Ad Management'],
             url: 'https://www.lingxing.com/',
@@ -1127,14 +1235,14 @@ const sitesData = {
             subcategory: 'erp'
         },
         {
-            title: '易仓ERP',
+            title: 'Eccang ERP',
             description: 'Cross-border supply chain specialist supporting overseas warehouses and FBA management',
             tags: ['Supply Chain', 'Overseas Warehouses', 'FBA Management'],
             url: 'https://www.eccang.com/',
             subcategory: 'erp'
         },
         {
-            title: '船长BI(CaptainBI)',
+            title: 'CaptainBI',
             description: 'Amazon-focused data analysis tool providing deep market insights',
             tags: ['Amazon', 'Data Analytics', 'Market Intelligence'],
             url: 'https://www.captainbi.com/',
@@ -1149,10 +1257,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'QuickBooks Commerce(原TradeGecko)',
-            description: 'Shopify ecosystem ERP specializing in inventory/order management for independent stores',
-            tags: ['Shopify Ecosystem', 'Inventory Control', 'Independent Stores'],
-            url: 'https://quickbooks.intuit.com/global/commerce/',
+            title: 'Zoho Inventory',
+            description: 'Inventory and order management solution by Zoho, suitable for SMBs running multi-channel commerce',
+            tags: ['Inventory Management', 'Order Management', 'SMB'],
+            url: 'https://www.zoho.com/inventory/',
             subcategory: 'erp',
             needsMagic: true
         },
@@ -1163,13 +1271,6 @@ const sitesData = {
             url: 'https://www.brightpearl.com/',
             subcategory: 'erp',
             needsMagic: true
-        },
-        {
-            title: 'Dolphin ERP',
-            description: 'Budget-friendly solution for startups with multi-platform order collection',
-            tags: ['Startup-Friendly', 'Low Cost', 'Order Collection'],
-            url: 'https://www.dolphin-erp.com/',
-            subcategory: 'erp'
         },
         {
             title: 'Ranktank',
@@ -1192,6 +1293,14 @@ const sitesData = {
             description: 'Comprehensive SEO tool for keyword suggestions, content ideas and competitor analysis',
             tags: ['Keyword Tool', 'SEO Analysis', 'Content Ideas'],
             url: 'https://neilpatel.com/ubersuggest/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Google Keyword Planner',
+            description: 'Official Google Ads keyword planning tool for search volume ranges and campaign research',
+            tags: ['Keyword Planning', 'Google Ads', 'Search Volume'],
+            url: 'https://ads.google.com/home/tools/keyword-planner/',
             subcategory: 'keyword',
             needsMagic: true
         },
@@ -1227,14 +1336,6 @@ const sitesData = {
             subcategory: 'temp-mail',
             needsMagic: true
         }  ,
-        {   
-            title: 'Mailinator',
-            description: 'No registration required, public email pool (e.g. xxx@mailinator.com), ideal for testing environments',
-            tags: ['Public Email', 'Testing Environment', 'No Registration'],
-            url: 'https://www.mailinator.com/',
-            subcategory: 'temp-mail',
-            needsMagic: true
-        },
         {
             title: 'YOPmail',
             description: 'French provider with email format xxx@yopmail.com, long-term valid (requires periodic login)',
@@ -1244,10 +1345,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'ThrowAwayMail',
-            description: 'Multi-language support with configurable auto-destruct timer (1 hour to 1 month)',
-            tags: ['Custom Expiration', 'Multi-Language', 'Temporary Email'],
-            url: 'https://www.throwawaymail.com/',
+            title: 'Mail.tm',
+            description: 'Reliable temporary mailbox service with multilingual support and API-friendly workflows',
+            tags: ['Temporary Email', 'Multi-Language', 'API'],
+            url: 'https://mail.tm/en/',
             subcategory: 'temp-mail',
             needsMagic: true
         },
@@ -1255,11 +1356,11 @@ const sitesData = {
             title: '24mail',
             description: 'Stable access in China, temporary email service with 24-hour auto-deletion',
             tags: ['China Accessible', '24-Hour', 'Temporary Email'],
-            url: 'https://24mail.chacuo.net/',
+            url: 'http://24mail.chacuo.net/',
             subcategory: 'temp-mail'
         },
         {
-            title: '临时邮箱网(Linshi Youxiang)',
+            title: 'Linshiyouxiang',
             description: 'Chinese interface with customizable prefix, 12-hour email retention',
             tags: ['Chinese Interface', 'Custom Prefix', '12-Hour'],
             url: 'https://linshiyouxiang.net/',
@@ -1346,11 +1447,27 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'GoLogin',
+            description: 'Widely used anti-detect browser with cloud profiles, team collaboration, and multi-account isolation',
+            tags: ['Fingerprint Browser', 'Multi-Account', 'Team Collaboration'],
+            url: 'https://gologin.com/',
+            subcategory: 'browser',
+            needsMagic: true
+        },
+        {
             title: 'GMX Mail',
             description: 'Free email service with large storage and multi-account management',
             tags: ['Email', 'Free Mailbox', 'Account Resources'],
             url: 'https://www.gmx.com/',
             subcategory: 'account'
+        },
+        {
+            title: 'Proton Mail',
+            description: 'Privacy-first email service with end-to-end encryption and secure multi-device access',
+            tags: ['Privacy Email', 'End-to-End Encryption', 'Account Resources'],
+            url: 'https://proton.me/mail',
+            subcategory: 'account',
+            needsMagic: true
         },
         {
             title: 'Coursera',
@@ -1361,10 +1478,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Link Building HQ',
-            description: 'Professional backlink building service to improve domain authority',
-            tags: ['Link Building', 'SEO', 'Domain Authority'],
-            url: 'https://www.linkbuildinghq.com/',
+            title: 'Majestic',
+            description: 'Veteran backlink intelligence platform with Trust Flow and Citation Flow link quality metrics',
+            tags: ['Backlink Analysis', 'Link Quality', 'SEO Intelligence'],
+            url: 'https://majestic.com/',
             subcategory: 'backlink',
             needsMagic: true
         }
@@ -1551,7 +1668,7 @@ const sitesData = {
     ai_image: [
         // 通用AI图片生成
         {
-            title: 'MidJourney',
+            title: 'Midjourney',
             description: 'A powerful AI art generation tool that creates high - quality art through text prompts',
             tags: ['AI art', 'image generation', 'creative design'],
             url: 'https://www.midjourney.com/',
@@ -1599,18 +1716,26 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Bing Image Creator',
-            description: 'Microsoft\'s free AI image generation tool, based on the DALL-E model',
-            tags: ['Microsoft', 'free tool', 'easy operation'],
-            url: 'https://www.bing.com/create',
+            title: 'Ideogram',
+            description: 'AI image platform known for strong text rendering and branded visual generation for posters and marketing assets',
+            tags: ['text rendering', 'brand visuals', 'poster design'],
+            url: 'https://ideogram.ai/',
             subcategory: 'general_image',
             needsMagic: true
         },
         {
-            title: 'DeepFloyd IF',
-            description: 'A multi - modal generative model that supports high - quality image generation and precise text understanding',
-            tags: ['multi - modal', 'high - quality', 'precise text understanding'],
-            url: 'https://deepfloyd.ai/',
+            title: 'FLUX.1',
+            description: 'High-quality image model family by Black Forest Labs, strong at photorealism and fine text details',
+            tags: ['image models', 'photorealism', 'text details'],
+            url: 'https://bfl.ai/',
+            subcategory: 'general_image',
+            needsMagic: true
+        },
+        {
+            title: 'Bing Image Creator',
+            description: 'Microsoft\'s free AI image generation tool, based on the DALL-E model',
+            tags: ['Microsoft', 'free tool', 'easy operation'],
+            url: 'https://www.bing.com/create',
             subcategory: 'general_image',
             needsMagic: true
         },
@@ -1825,7 +1950,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '触手（Chushou)AI',
+            title: 'Chushou AI',
             description: 'An AI - driven logo design tool that helps create professional brand identities',
             tags: ['brand suite', 'logo design', 'color scheme'],
             url: 'https://chusu.cc/',
@@ -1963,11 +2088,11 @@ const sitesData = {
     ],
     // AI Chat
     ai_chat: [
-        // General AI Assistant
+        // General AI Assistants
         {
             title: 'ChatGPT',
-            description: 'A large - language model developed by OpenAI, capable of natural conversations, answering questions, creating content, etc.',
-            tags: ['general conversation', 'Q&A assistant', 'content creation'],
+            description: 'OpenAI assistant for general chat, writing, brainstorming, and problem solving',
+            tags: ['general chat', 'Q&A assistant', 'content creation'],
             url: 'https://chat.openai.com/',
             subcategory: 'general_assistant',
             isRecommended: true,
@@ -1975,342 +2100,191 @@ const sitesData = {
         },
         {
             title: 'Claude',
-            description: 'A conversational AI assistant developed by Anthropic, good at understanding context and long conversations',
-            tags: ['intelligent conversation', 'long - text processing', 'context understanding'],
+            description: 'Anthropic assistant known for strong long-context understanding and reasoning',
+            tags: ['long context', 'reasoning', 'analysis'],
             url: 'https://claude.ai/',
             subcategory: 'general_assistant',
             needsMagic: true
         },
-       
-        {
-            title: 'Tongyi Qianwen',
-            description: 'A large - language model developed by Alibaba, supporting multi - round dialogue and complex task processing',
-            tags: ['Alibaba AI', 'multi - round dialogue', 'Chinese optimization'],
-            url: 'https://qianwen.aliyun.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-      
-        
         {
             title: 'Gemini',
-            description: 'A multimodal AI model launched by Google, supporting various inputs such as text and images',
-            tags: ['Google AI', 'multimodal', 'advanced reasoning'],
+            description: 'Google assistant with multimodal capabilities and ecosystem integration',
+            tags: ['Google AI', 'multimodal', 'productivity'],
             url: 'https://gemini.google.com/',
             subcategory: 'general_assistant',
             needsMagic: true
         },
         {
-            title: 'Copilot',
-            description: 'An AI assistant launched by Microsoft, integrated into Windows and Office products',
-            tags: ['Microsoft AI', 'productivity tool', 'system integration'],
+            title: 'Grok',
+            description: 'xAI assistant focused on real-time conversations and technical topics',
+            tags: ['real-time info', 'technical Q&A', 'global platform'],
+            url: 'https://grok.com/',
+            subcategory: 'general_assistant',
+            needsMagic: true
+        },
+        {
+            title: 'Microsoft Copilot',
+            description: 'Microsoft AI assistant integrated with search and productivity workflows',
+            tags: ['Microsoft AI', 'productivity', 'search integration'],
             url: 'https://copilot.microsoft.com/',
             subcategory: 'general_assistant',
             needsMagic: true
         },
         {
             title: 'Doubao',
-            description: 'An AI assistant launched by ByteDance, supporting various creation and office scenarios',
-            tags: ['domestic AI', 'multi - scenario', 'creation assistant'],
+            description: 'ByteDance AI assistant for daily chat, writing, and office tasks',
+            tags: ['domestic AI', 'office assistant', 'daily usage'],
             url: 'https://www.doubao.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
             title: 'DeepSeek',
-            description: 'A large - language model launched by DeepSeek AI, with a rich knowledge base and reasoning ability',
-            tags: ['general AI', 'code ability', 'innovative model'],
+            description: 'High-performance assistant with strong reasoning and coding capabilities',
+            tags: ['reasoning', 'coding', 'LLM assistant'],
             url: 'https://www.deepseek.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
+            title: 'Tongyi Qianwen',
+            description: 'Alibaba assistant for multi-turn conversation and task completion',
+            tags: ['Alibaba AI', 'multi-turn chat', 'task support'],
+            url: 'https://qianwen.aliyun.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
             title: 'Kimi',
-            description: 'An AI assistant launched by Moonshot, with strong long - text understanding and memory ability',
-            tags: ['long - text understanding', 'knowledge Q&A', 'Chinese optimization'],
-            url: 'https://kimi.moonshot.cn/',
+            description: 'Moonshot AI assistant specialized in long document understanding',
+            tags: ['long documents', 'knowledge Q&A', 'productivity'],
+            url: 'https://kimi.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
             title: 'Tencent Yuanbao',
-            description: 'An AI conversational assistant launched by Tencent, good at communication and creation in Chinese context',
-            tags: ['Tencent AI', 'Chinese conversation', 'Hunyuan large - model'],
+            description: 'Tencent assistant for Chinese dialogue, writing, and office scenarios',
+            tags: ['Tencent AI', 'Chinese dialogue', 'office support'],
             url: 'https://hunyuan.tencent.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
-        
-    
-        
-        // Multimodal AI Assistant
         {
-            title: 'Monica AI',
-            description: 'An AI assistant supporting image recognition and multimodal interaction, capable of understanding image content',
-            tags: ['multimodal', 'image recognition', 'visual understanding'],
-            url: 'https://www.monica.ai/',
-            subcategory: 'multimodal_ai',
+            title: 'ERNIE Bot',
+            description: 'Baidu assistant for Chinese Q&A and knowledge-enhanced conversation',
+            tags: ['Baidu AI', 'Chinese Q&A', 'knowledge assistant'],
+            url: 'https://yiyan.baidu.com/',
+            subcategory: 'general_assistant',
             needsMagic: false
         },
+        {
+            title: 'Spark',
+            description: 'iFlytek assistant with strong Chinese language understanding and generation',
+            tags: ['iFlytek AI', 'Chinese NLP', 'assistant'],
+            url: 'https://xinghuo.xfyun.cn/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
+            title: 'ChatGLM',
+            description: 'Zhipu AI assistant used in learning, work, and daily productivity tasks',
+            tags: ['ChatGLM', 'domestic model', 'productivity'],
+            url: 'https://chatglm.cn/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+
+        // Multimodal and Multi-model Platforms
         {
             title: 'Poe',
-            description: 'A multimodal AI assistant by Huawei, supporting voice, image, and text interaction',
-            tags: ['Huawei AI', 'multimodal', 'voice interaction'],
-            url: 'https://www.poe.com/',
-            subcategory: 'multimodal_ai',
-            needsMagic: false   
-        },
-        
-        {
-            title: 'Meta AI Assistant',
-            description: 'A multimodal AI by Meta, supporting comprehensive understanding of images, voice, and text',
-            tags: ['Meta AI', 'multimodal', 'social platform'],
-            url: 'https://ai.meta.com/',
+            description: 'Quora platform for chatting with multiple AI models in one place',
+            tags: ['multi-model', 'model comparison', 'chat platform'],
+            url: 'https://poe.com/',
             subcategory: 'multimodal_ai',
             needsMagic: true
         },
         {
-            title: 'Midjourney AI',
-            description: 'A dialogue tool focused on AI art creation, generating high-quality images from text',
-            tags: ['AI painting', 'image generation', 'creative design'],
-            url: 'https://www.midjourney.com/',
-            subcategory: 'general_image',
+            title: 'Meta AI',
+            description: 'Meta assistant with multimodal interactions across text and images',
+            tags: ['Meta AI', 'multimodal', 'ecosystem'],
+            url: 'https://www.meta.ai/',
+            subcategory: 'multimodal_ai',
             needsMagic: true
         },
         {
-            title: 'DALL-E',
-            description: 'An AI image generation system developed by OpenAI, creating images from text descriptions',
-            tags: ['image generation', 'AI art', 'creative tool'],
-            url: 'https://openai.com/dall-e-3',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        
-        {
-            title: 'Stable Diffusion',
-            description: 'An open-source AI image generation model capable of generating high-quality images from text descriptions',
-            tags: ['open-source AI', 'image generation', 'model customization'],
-            url: 'https://stability.ai/',
-            subcategory: 'general_image',
+            title: 'Monica',
+            description: 'Browser AI assistant for reading, writing, translation, and multi-model chat',
+            tags: ['browser assistant', 'multi-model', 'workflow'],
+            url: 'https://monica.im/',
+            subcategory: 'multimodal_ai',
             needsMagic: true
         },
         {
-            title: 'Tiangong Image',
-            description: 'A multimodal AI launched by Kunlun Wanwei, supporting image recognition and generation functions',
-            tags: ['image processing', 'multimodal', 'Chinese optimization'],
-            url: 'https://tiangong.kunlun.com/image',
-            subcategory: 'general_image',
+            title: 'Cici',
+            description: 'Global AI assistant for multilingual conversation and content generation',
+            tags: ['multilingual', 'global product', 'chat assistant'],
+            url: 'https://www.cici.ai/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+        {
+            title: 'NotebookLM',
+            description: 'Google AI notebook assistant focused on source-grounded document Q&A',
+            tags: ['document Q&A', 'research', 'source grounding'],
+            url: 'https://notebooklm.google.com/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+
+        // Professional AI
+        {
+            title: 'GitHub Copilot',
+            description: 'Mainstream AI coding assistant for completion, explanation, and refactoring support',
+            tags: ['coding assistant', 'completion', 'developer productivity'],
+            url: 'https://github.com/features/copilot',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'Cursor',
+            description: 'AI-native coding environment for pair-programming and codebase-level editing',
+            tags: ['AI IDE', 'pair programming', 'engineering workflow'],
+            url: 'https://cursor.com/',
+            subcategory: 'professional_ai',
+            needsMagic: true
+        },
+        {
+            title: 'CodeGeeX',
+            description: 'AI coding assistant supporting multi-language code generation and completion',
+            tags: ['code generation', 'multi-language', 'developer tool'],
+            url: 'https://codegeex.cn/',
+            subcategory: 'professional_ai',
             needsMagic: false
         },
-        // Photo Enhancement and Enhancement
         {
-            title: 'MyHeritage InColor',
-            description: 'Professional old photo colorization and restoration tool, preserving historical details',
-            tags: ['photo restoration', 'photo colorization', 'historical preservation'],
-            url: 'https://www.myheritage.com/incolor',
-            subcategory: 'photo_enhancement',
+            title: 'Perplexity',
+            description: 'Research-focused AI answer engine with source citations',
+            tags: ['research assistant', 'citations', 'answer engine'],
+            url: 'https://www.perplexity.ai/',
+            subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Topaz Photo AI',
-            description: 'Professional photo enhancement tool offering noise reduction, sharpening and upscaling features',
-            tags: ['photo enhancement', 'professional processing', 'image quality improvement'],
-            url: 'https://www.topazlabs.com/topaz-photo-ai',
-            subcategory: 'photo_enhancement',
+            title: 'ChatPDF',
+            description: 'Document AI assistant for chatting with PDFs, summaries, and extraction',
+            tags: ['PDF chat', 'summarization', 'document analysis'],
+            url: 'https://www.chatpdf.com/',
+            subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'GFP-GAN',
-            description: 'Tencent open-source facial photo restoration technology focusing on detail restoration',
-            tags: ['open-source technology', 'face restoration', 'detail preservation'],
-            url: 'https://github.com/TencentARC/GFPGAN',
-            subcategory: 'photo_enhancement',
-            needsMagic: false
-        },
-        {
-            title: 'Remini',
-            description: 'Mobile AI photo restoration app for easily enhancing blurry photos',
-            tags: ['mobile app', 'quick restoration', 'user-friendly'],
-            url: 'https://remini.ai/',
-            subcategory: 'photo_enhancement',
+            title: 'Manus',
+            description: 'Agentic AI for research and workflow execution in complex tasks',
+            tags: ['AI agent', 'workflow execution', 'research automation'],
+            url: 'https://manus.im/',
+            subcategory: 'professional_ai',
             needsMagic: true
-        },
-        {
-            title: 'Bigjpg',
-            description: 'Neural network-based lossless image upscaling tool maintaining clarity',
-            tags: ['lossless upscaling', 'neural network', 'detail preservation'],
-            url: 'https://bigjpg.com/',
-            subcategory: 'photo_enhancement',
-            needsMagic: false
-        },
-        
-        // Anime and Manga Creation
-        {
-            title: 'Niji Journey',
-            description: 'AI image generation tool focused on anime and er ci yuan styles',
-            tags: ['er ci yuan', 'anime style', 'stylized creation'],
-            url: 'https://nijijourney.com/',
-            subcategory: 'anime',
-            needsMagic: true
-        },
-        {
-            title: 'Waifu Labs',
-            description: 'Personalized anime avatar generator with customizable character features',
-            tags: ['anime avatar', 'character customization', 'er ci yuan style'],
-            url: 'https://waifulabs.com/',
-            subcategory: 'anime',
-            needsMagic: true
-        },
-        {
-            title: 'NovelAI',
-            description: 'AI drawing tool designed for novel illustrations and creative writing',
-            tags: ['novel illustrations', 'creative writing', 'custom illustrations'],
-            url: 'https://novelai.net/',
-            subcategory: 'anime',
-            needsMagic: true
-        },
-        {
-            title: 'PixAI.art',
-            description: 'AI platform focused on Asian-style anime and illustration creation',
-            tags: ['Asian style', 'illustration creation', 'er ci yuan art'],
-            url: 'https://pixai.art/',
-            subcategory: 'anime',
-            needsMagic: true
-        },
-        {
-            title: 'Chushou AI',
-            description: 'Leading domestic AI anime creation platform supporting multiple er ci yuan styles',
-            tags: ['domestic platform', 'er ci yuan', 'multi-style support'],
-            url: 'https://chusu.cc/',
-            subcategory: 'anime',
-            needsMagic: false
-        },
-        
-        // Entertainment and Fun Tools
-        {
-            title: 'Reface',
-            description: 'Fun AI face swap app for placing your face in various scenes',
-            tags: ['AI face swap', 'entertainment app', 'social sharing'],
-            url: 'https://reface.app/',
-            subcategory: 'fun_tools',
-            needsMagic: true
-        },
-        {
-            title: 'Imgflip',
-            description: 'AI-powered meme creation tool supporting custom text and templates',
-            tags: ['meme creation', 'meme templates', 'social media'],
-            url: 'https://imgflip.com/',
-            subcategory: 'fun_tools',
-            needsMagic: true
-        },
-        {
-            title: 'Voilà AI',
-            description: 'Fun tool that converts photos into Disney-style cartoon avatars',
-            tags: ['cartoon avatar', 'style conversion', 'fun effects'],
-            url: 'https://voila-ai.com/',
-            subcategory: 'fun_tools',
-            needsMagic: true
-        },
-        {
-            title: 'ToonMe',
-            description: 'App that converts selfies into cartoon or artistic effects',
-            tags: ['cartoonization', 'selfie enhancement', 'artistic style'],
-            url: 'https://toonme.com/',
-            subcategory: 'fun_tools',
-            needsMagic: true
-        },
-        // Fashion and Fashion Design
-        {
-            "title": "ZMO.ai",
-            "description": "An AI virtual clothing design and model fitting platform suitable for e-commerce display",
-            "tags": ["virtual clothing", "model fitting", "e-commerce display"],
-            "url": "https://zmo.ai/",
-            "subcategory": "fashion",
-            "needsMagic": true
-        },
-        {
-            "title": "TattooAI",
-            "description": "An AI-driven tattoo design tool for creating personalized tattoo patterns",
-            "tags": ["tattoo design", "personalized patterns", "creative tool"],
-            "url": "https://tattooai.com/",
-            "subcategory": "fashion",
-            "needsMagic": true
-        },
-        {
-            "title": "Vmake",
-            "description": "An AI tool for e-commerce clothing changing, which can quickly generate display effects of different clothing",
-            "tags": ["e-commerce clothing changing", "product display", "virtual fitting"],
-            "url": "https://www.v-make.ai/",
-            "subcategory": "fashion",
-            "needsMagic": true
-        },
-    
-        // Image Editing and Processing
-        {
-            "title": "Photoshop AI",
-            "description": "AI features integrated into Adobe Photoshop, including intelligent tools such as generative fill",
-            "tags": ["professional editing", "Adobe", "generative fill"],
-            "url": "https://www.adobe.com/products/photoshop/generative-fill.html",
-            "subcategory": "image_editing",
-            "needsMagic": true
-        },
-        {
-            "title": "Picsart",
-            "description": "An all-round mobile image editing application integrating AI editing and creative tools",
-            "tags": ["mobile editing", "all-round tool", "AI creativity"],
-            "url": "https://picsart.com/",
-            "subcategory": "image_editing",
-            "needsMagic": true
-        },
-        {
-            "title": "ClipDrop",
-            "description": "A real-scene capture and AI editing tool supporting object extraction and scene editing",
-            "tags": ["real-scene capture", "object extraction", "AI editing"],
-            "url": "https://clipdrop.co/",
-            "subcategory": "image_editing",
-            "needsMagic": true
-        },
-        {
-            "title": "Fotor",
-            "description": "An online image editor integrating AI beautification and design functions",
-            "tags": ["online editing", "AI beautification", "easy operation"],
-            "url": "https://www.fotor.com/",
-            "subcategory": "image_editing",
-            "needsMagic": true
-        },
-    
-        // Professional Scene Generation
-        {
-            "title": "Diagram.codes",
-            "description": "An AI-driven chart and flowchart generation tool suitable for professional display",
-            "tags": ["chart generation", "flowchart", "professional display"],
-            "url": "https://diagram.codes/",
-            "subcategory": "professional_scene",
-            "needsMagic": true
-        },
-        {
-            "title": "Architechtures",
-            "description": "A professional AI tool for architectural rendering, generating realistic architectural and landscape renderings",
-            "tags": ["architectural rendering", "landscape design", "rendering"],
-            "url": "https://architechtures.com/",
-            "subcategory": "professional_scene",
-            "needsMagic": true
-        },
-        {
-            "title": "InteriorAI",
-            "description": "An AI-driven interior design visualization tool for generating realistic decoration effects",
-            "tags": ["interior design", "decoration effect", "space visualization"],
-            "url": "https://interiorai.com/",
-            "subcategory": "professional_scene",
-            "needsMagic": true
-        },
-        {
-            "title": "NVIDIA Canvas",
-            "description": "A real-time scene drawing tool launched by NVIDIA, which can convert simple sketches into real-scene images",
-            "tags": ["real-time drawing", "NVIDIA", "scene conversion"],
-            "url": "https://www.nvidia.com/en-us/studio/canvas/",
-            "subcategory": "professional_scene",
-            "needsMagic": true
         }
     ],
     
@@ -2334,20 +2308,12 @@ const sitesData = {
             "needsMagic": true
         },
         {
-            "title": "Kaiber",
-            "description": "An artificial intelligence video creation platform that generates artistically styled videos, which can be used for music visualization",
-            "tags": ["artistic video", "music visualization", "creative generation"],
-            "url": "https://kaiber.ai/",
+            "title": "Kling AI",
+            "description": "Kuaishou's next-generation AI video platform with multimodal prompting, camera control and high-consistency generation",
+            "tags": ["text-to-video", "camera control", "high consistency"],
+            "url": "https://kling.ai/",
             "subcategory": "text_to_video",
-            "needsMagic": true
-        },
-        {
-            "title": "Synthesia",
-            "description": "A professional AI digital human video generation platform that can create real-person news broadcast videos by simply inputting text",
-            "tags": ["digital human", "real-person news broadcast", "corporate promotion"],
-            "url": "https://www.synthesia.io/",
-            "subcategory": "text_to_video",
-            "needsMagic": true
+            "needsMagic": false
         },
         {
             "title": "InVideo AI",
@@ -2362,22 +2328,6 @@ const sitesData = {
             "description": "Focuses on quickly converting text content such as articles and blogs into social media videos",
             "tags": ["blog-to-video conversion", "social media", "content marketing"],
             "url": "https://lumen5.com/",
-            "subcategory": "text_to_video",
-            "needsMagic": true
-        },
-        {
-            "title": "Pictory",
-            "description": "Automatically converts long text content into short videos, suitable for content creators and marketers",
-            "tags": ["long-text-to-video conversion", "automatic extraction", "marketing content"],
-            "url": "https://pictory.ai/",
-            "subcategory": "text_to_video",
-            "needsMagic": true
-        },
-        {
-            "title": "HeyGen",
-            "description": "A high-quality AI digital human video generation platform providing multi-language and multi-scenario video production",
-            "tags": ["digital human news broadcast", "multi-language", "corporate video"],
-            "url": "https://www.heygen.com/",
             "subcategory": "text_to_video",
             "needsMagic": true
         },
@@ -2400,26 +2350,10 @@ const sitesData = {
     
         // Image-to-Video Generation
         {
-            "title": "AnimateDiff",
-            "description": "A Stable Diffusion plugin that can convert static images into dynamic short videos or animations",
-            "tags": ["image animation", "SD plugin", "open-source tool"],
-            "url": "https://huggingface.co/guoyww/animatediff",
-            "subcategory": "image_to_video",
-            "needsMagic": true
-        },
-        {
             "title": "Morph Studio",
             "description": "An AI platform focusing on converting static images into smooth animations, supporting multiple animation styles",
             "tags": ["image animation", "diverse styles", "creative tool"],
             "url": "https://www.morphstudio.io/",
-            "subcategory": "image_to_video",
-            "needsMagic": true
-        },
-        {
-            "title": "Stable Video Diffusion",
-            "description": "An image-to-video conversion model developed by Stability AI, which can generate smooth short videos",
-            "tags": ["image animation", "open-source model", "professional effect"],
-            "url": "https://stability.ai/stable-video",
             "subcategory": "image_to_video",
             "needsMagic": true
         },
@@ -2432,26 +2366,10 @@ const sitesData = {
             "needsMagic": true
         },
         {
-            "title": "Pika 1.0",
-            "description": "Extends a single image into a coherent video while maintaining the original image's style and details",
-            "tags": ["image extension", "coherent video", "style preservation"],
-            "url": "https://pika.art/",
-            "subcategory": "image_to_video",
-            "needsMagic": true
-        },
-        {
             "title": "Moonvalley",
             "description": "Converts static pictures into immersive dynamic scenes, suitable for artistic creation",
             "tags": ["scene animation", "artistic creation", "immersive experience"],
-            "url": "https://moonvalley.ai/",
-            "subcategory": "image_to_video",
-            "needsMagic": true
-        },
-        {
-            "title": "Zeroscope",
-            "description": "An open-source image-to-video conversion model that can be deployed locally, suitable for developers",
-            "tags": ["open-source model", "local deployment", "development tool"],
-            "url": "https://huggingface.co/cerspense/zeroscope_v2_576w",
+            "url": "https://www.moonvalley.com/",
             "subcategory": "image_to_video",
             "needsMagic": true
         },
@@ -2672,12 +2590,12 @@ const sitesData = {
             title: 'OpusClip',
             description: 'Smartly split long videos into short video content, suitable for cross-platform publishing',
             tags: ['long video split', 'automatic editing', 'content reuse'],
-            url: 'https://www.opus.pro/opusclip',
+            url: 'https://www.opus.pro/',
             subcategory: 'short_video',
             needsMagic: true
         },
         {
-            title: 'Vimeo AI工具',
+            title: 'Vimeo AI Tools',
             description: 'Professional video platform provides AI editing and enhancement tools to improve creation efficiency',
             tags: ['professional platform', 'AI editing', 'creation assistance'],
             url: 'https://vimeo.com/features/ai-video-tools',
@@ -2686,7 +2604,7 @@ const sitesData = {
         },
         {
             title: 'Supercreator',
-            description: '一站式短视频创作平台，自动生成脚本并辅助剪辑',
+            description: 'All-in-one short-video creation platform that helps generate scripts and streamline editing',
             tags: ['script generation', 'editing assistance', 'short video'],
             url: 'https://www.supercreator.com/',
             subcategory: 'short_video',
@@ -2743,10 +2661,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Wonder Dynamics',
-            description: 'AI-powered character animation and VFX tools for professional film production',
-            tags: ['character replacement', 'VFX production', 'professional tools'],
-            url: 'https://wonderdynamics.com/',
+            title: 'Autodesk Flow Studio',
+            description: 'Formerly Wonder Dynamics, now Autodesk\'s AI character animation and VFX toolset',
+            tags: ['character replacement', 'VFX production', 'Autodesk'],
+            url: 'https://www.autodesk.com/products/flow-studio/overview',
             subcategory: 'professional_video',
             needsMagic: true
         },
@@ -2852,7 +2770,7 @@ const sitesData = {
                 needsMagic: true
         },
         {
-            title: '超级鸭 Super Duck',
+            title: 'Super Duck',
             description: 'Open-source AI voice generation community with 5000+ voice options',
             tags: ['Open-source Community', 'Diverse Voices', 'Voice Generation'],
             url: 'https://github.com/babysor/MockingBird',
@@ -2868,7 +2786,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '刺鸟配音',
+            title: 'TTSMaker',
             description: 'Professional AI dubbing tool meeting various commercial dubbing needs',
             tags: ['Commercial Dubbing', 'Professional Service', 'Multi-scenario'],
             url: 'https://ttsmaker.cn/',
@@ -2884,8 +2802,8 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '假你FAKEYOU',
-            description: 'Deep Fake text-to-speech technology,实现高度拟真的声音复制',
+            title: 'FAKEYOU',
+            description: 'Deepfake text-to-speech platform focused on highly realistic voice cloning and character voices',
             tags: ['Deep Fake', 'Voice Replication', 'High Fidelity'],
             url: 'https://fakeyou.com/',
             subcategory: 'tts',
@@ -2986,14 +2904,6 @@ const sitesData = {
             "description": "A music generation tool by Stability AI for creating high-quality music content",
             "tags": ["Stability AI", "music generation", "high quality"],
             "url": "https://stability.ai/stable-audio",
-            "subcategory": "music_generation",
-            "needsMagic": true
-        },
-        {
-            "title": "Sonoptic",
-            "description": "A free AI music generation platform, a simple and easy-to-use music creation tool",
-            "tags": ["free platform", "easy operation", "AI music"],
-            "url": "https://sonoptic.com/",
             "subcategory": "music_generation",
             "needsMagic": true
         },
@@ -3111,7 +3021,7 @@ const sitesData = {
             "title": "Adobe Podcast",
             "description": "An AI audio recording and editing tool, a professional podcast production platform",
             "tags": ["Adobe", "podcast production", "AI editing"],
-            "url": "https://www.adobe.com/products/podcasts.html",
+            "url": "https://podcast.adobe.com/",
             "subcategory": "audio_editing",
             "needsMagic": true
         },
@@ -3204,22 +3114,6 @@ const sitesData = {
             "needsMagic": false
         },
         {
-            "title": "Pic Copilot",
-            "description": "Alibaba's international e-commerce design tool automatically generating images suitable for cross-border e-commerce",
-            "tags": ["Alibaba", "cross-border e-commerce", "intelligent design"],
-            "url": "https://www.alibabacloud.com/products/pic-copilot",
-            "subcategory": "commerce_design",
-            "needsMagic": false
-        },
-        {
-            "title": "Linglong",
-            "description": "JD.com's product image design platform offering intelligent design solutions for e-commerce merchants",
-            "tags": ["JD.com", "product images", "intelligent design"],
-            "url": "https://linglong.jd.com/",
-            "subcategory": "commerce_design",
-            "needsMagic": false
-        },
-        {
             "title": "Lingdong AI",
             "description": "An intelligent product image generation tool for one-click creation of e-commerce main images and detail pages",
             "tags": ["product images", "main image generation", "detail pages"],
@@ -3249,7 +3143,7 @@ const sitesData = {
             "title": "Gaoding AI",
             "description": "A one-stop design platform offering various design services including posters and promotional images",
             "tags": ["one-stop", "poster design", "promotional images"],
-            "url": "https://www.gaoding.com/ai",
+            "url": "https://www.gaoding.art/creation",
             "subcategory": "commerce_design",
             "needsMagic": false
         },
@@ -3265,7 +3159,7 @@ const sitesData = {
             "title": "Meitu Design Studio",
             "description": "An AI image creation platform providing intelligent poster design and image beautification functions",
             "tags": ["Meitu", "AI creation", "image beautification"],
-            "url": "https://design.meitu.com/",
+            "url": "https://www.designkit.cn/",
             "subcategory": "commerce_design",
             "needsMagic": false
         },
@@ -3312,14 +3206,6 @@ const sitesData = {
             "needsMagic": true
         },
         {
-            "title": "Alibaba Cloud Intelligent LOGO Design",
-            "description": "Alibaba Cloud's intelligent LOGO design service helping enterprises quickly establish brand images",
-            "tags": ["Alibaba Cloud", "LOGO design", "brand image"],
-            "url": "https://www.aliyun.com/activity/creation/intelligent-logo",
-            "subcategory": "commerce_design",
-            "needsMagic": false
-        },
-        {
             "title": "AIDesign",
             "description": "Tencent's free LOGO design tool supporting multiple industries and styles",
             "tags": ["Tencent", "free LOGO", "multiple styles"],
@@ -3361,14 +3247,6 @@ const sitesData = {
             "url": "https://mastergo.com/ai",
             "subcategory": "ui_ux",
             "needsMagic": false
-        },
-        {
-            "title": "Creatie",
-            "description": "An AI-driven UI/UX design tool providing intelligent design suggestions and automatic generation",
-            "tags": ["AI-driven", "UI/UX", "intelligent design"],
-            "url": "https://www.creatie.ai/",
-            "subcategory": "ui_ux",
-            "needsMagic": true
         },
         {
             "title": "Uizard",
@@ -3679,6 +3557,14 @@ const sitesData = {
         "subcategory": "special_tools",
         "needsMagic": true
     },
+    {
+        "title": "Gamma",
+        "description": "AI-native platform for turning ideas into presentations, documents and shareable web pages",
+        "tags": ["presentations", "document generation", "web publishing"],
+        "url": "https://gamma.app/",
+        "subcategory": "special_tools",
+        "needsMagic": true
+    },
     
     // 网站开发
     {
@@ -3702,9 +3588,9 @@ const sitesData = {
         
         // Low-Code设计
         {
-            title: 'Motiff 妙多',
-            description: '猿辅导UI工具，提供低代码设计和开发解决方案',
-            tags: ['猿辅导', 'UI工具', '低代码'],
+            title: 'Motiff',
+            description: 'Yuanfudao-backed UI tool offering low-code design and developer handoff workflows',
+            tags: ['Yuanfudao', 'UI tools', 'low-code'],
             url: 'https://motiff.yuanfudao.com/',
             subcategory: 'special_tools',
             needsMagic: false
@@ -3866,14 +3752,6 @@ const sitesData = {
         "needsMagic": true
     },
     {
-        "title": "Codeium",
-        "description": "AI-driven code completion tool supporting multiple programming languages and IDEs",
-        "tags": ["code completion", "multi-language support", "intelligent programming"],
-        "url": "https://codeium.com/",
-        "subcategory": "code_generation",
-        "needsMagic": true
-    },
-    {
         "title": "Tabnine",
         "description": "AI-based intelligent code completion tool enhancing programming efficiency",
         "tags": ["code completion", "intelligent suggestions", "programming efficiency"],
@@ -3882,10 +3760,10 @@ const sitesData = {
         "needsMagic": true
     },
     {
-        "title": "CodeWhisperer",
-        "description": "Amazon's AI code generation tool providing intelligent code completion",
-        "tags": ["Amazon", "code generation", "AWS"],
-        "url": "https://aws.amazon.com/codewhisperer/",
+        "title": "Amazon Q Developer",
+        "description": "Amazon's AI coding assistant for code completion, developer Q&A and workflow help across AWS environments",
+        "tags": ["Amazon", "code generation", "developer AI"],
+        "url": "https://aws.amazon.com/q/developer/",
         "subcategory": "code_generation",
         "needsMagic": true
     },
@@ -3928,6 +3806,14 @@ const sitesData = {
         "description": "StackBlitz full-stack development tool simplifying web application creation",
         "tags": ["full-stack tool", "web development", "StackBlitz"],
         "url": "https://bolt.new/",
+        "subcategory": "fullstack_dev",
+        "needsMagic": true
+    },
+    {
+        "title": "v0",
+        "description": "Vercel's AI full-stack app builder for creating, editing and publishing working apps from prompts",
+        "tags": ["Vercel", "full-stack generation", "prompt-driven development"],
+        "url": "https://v0.app/",
         "subcategory": "fullstack_dev",
         "needsMagic": true
     },
@@ -4000,10 +3886,10 @@ const sitesData = {
         "needsMagic": true
     },
     {
-        "title": "CodiumAI",
-        "description": "Code test analysis tool that automatically generates test cases",
-        "tags": ["code testing", "test generation", "AI analysis"],
-        "url": "https://www.codium.ai/",
+        "title": "Qodo",
+        "description": "AI code review and governance platform for complex repositories with rule-based review workflows",
+        "tags": ["code review", "code governance", "AI analysis"],
+        "url": "https://www.qodo.ai/",
         "subcategory": "code_review",
         "needsMagic": true
     },
@@ -4022,6 +3908,22 @@ const sitesData = {
         "description": "Conversational web development tool to create websites via natural language",
         "tags": ["conversational development", "web development", "natural language"],
         "url": "https://www.lovable.ai/",
+        "subcategory": "natural_language_dev",
+        "needsMagic": true
+    },
+    {
+        "title": "Cline",
+        "description": "AI coding agent that lives in your editor and terminal, reading files, writing code and running commands with approval",
+        "tags": ["AI agent", "editor extension", "terminal workflows"],
+        "url": "https://cline.bot/",
+        "subcategory": "natural_language_dev",
+        "needsMagic": true
+    },
+    {
+        "title": "Aider",
+        "description": "Terminal AI pair programming tool with repo mapping, git integration and automated lint/test workflows",
+        "tags": ["terminal coding", "git integration", "pair programming"],
+        "url": "https://aider.chat/",
         "subcategory": "natural_language_dev",
         "needsMagic": true
     },
@@ -4073,7 +3975,15 @@ const sitesData = {
         "title": "Cursor",
         "description": "AI-driven code editor providing intelligent coding assistance",
         "tags": ["AI editor", "code intelligence", "programming assistance"],
-        "url": "https://cursor.sh/",
+        "url": "https://cursor.com/",
+        "subcategory": "cloud_ide",
+        "needsMagic": true
+    },
+    {
+        "title": "Windsurf",
+        "description": "Codeium's AI-native coding editor built for agentic code changes, repo understanding and automated dev workflows",
+        "tags": ["AI editor", "agentic coding", "repo understanding"],
+        "url": "https://windsurf.com/",
         "subcategory": "cloud_ide",
         "needsMagic": true
     },
@@ -4116,8 +4026,8 @@ const sitesData = {
     },
     {
         "title": "PromptHero",
-        "description": "Prompt library focused on AI-generated content, especially suitable for Stable Diffusion and MidJourney users.",
-        "tags": ["AI-generated content", "Stable Diffusion", "MidJourney"],
+        "description": "Prompt library focused on AI-generated content, especially suitable for Stable Diffusion and Midjourney users.",
+        "tags": ["AI-generated content", "Stable Diffusion", "Midjourney"],
         "url": "https://prompthero.com",
         "subcategory": "prompt_platforms",
         "needsMagic": true
@@ -4150,14 +4060,14 @@ const sitesData = {
     },
     {
         "title": "MJ Prompt Tool",
-        "description": "MidJourney-specific prompt generator with style, lighting, and other parameter adjustments.",
-        "tags": ["MidJourney", "prompt generator", "parameter adjustments"],
+        "description": "Midjourney-specific prompt generator with style, lighting, and other parameter adjustments.",
+        "tags": ["Midjourney", "prompt generator", "parameter adjustments"],
         "url": "https://mjprompttool.com",
         "subcategory": "sd_tools",
         "needsMagic": true
     },
     
-    // ChatGPT提示优化
+    // ChatGPT prompt optimization
     {
         "title": "Awesome ChatGPT Prompts",
         "description": "GitHub open-source project providing reusable conversation templates (e.g., simulated Linux terminal, screenwriting assistant).",
@@ -4183,7 +4093,7 @@ const sitesData = {
         "needsMagic": true
     },
     
-    // 可视化提示工具
+    // Visual prompt tools
     {
         "title": "Visual Prompt Builder",
         "description": "Drag-and-drop tool for generating complex prompts, suitable for image generation models.",
@@ -4196,7 +4106,7 @@ const sitesData = {
         "title": "Generrated",
         "description": "DALL·E 2 prompt design guide with case analyses.",
         "tags": ["DALL·E 2", "prompt design", "case analysis"],
-        "url": "https://generrated.com/guides",
+        "url": "https://generrated.com/",
         "subcategory": "visual_tools",
         "needsMagic": true
     },
@@ -4228,14 +4138,6 @@ const sitesData = {
     },
     
     // 其他实用工具
-    {
-        "title": "ClickPrompt",
-        "description": "Visual prompt workflow tool supporting team collaboration.",
-        "tags": ["workflow tool", "team collaboration", "visualization"],
-        "url": "https://clickprompt.org",
-        "subcategory": "other_tools",
-        "needsMagic": true
-    },
     {
         "title": "Snack Prompt",
         "description": "Minimalist prompt generator suitable for quick experiments.",
@@ -4274,7 +4176,24 @@ const sitesData = {
             subcategory: 'general_search',
             isRecommended: true
         },
-        // ... 其他站点保持不变 ...
+        {
+            title: 'Genspark',
+            description: 'All-in-one AI workspace and search agent for deep research, page summarization and task execution',
+            descriptionEn: 'All-in-one AI workspace and search agent for deep research, page summarization and task execution',
+            tags: ['AI Search', 'Deep Research', 'Task Agent'],
+            url: 'https://www.genspark.ai/',
+            subcategory: 'general_search',
+            isRecommended: true
+        },
+        {
+            title: 'NotebookLM',
+            description: 'Google source-grounded research assistant for summaries, cited answers and audio overviews from uploaded materials',
+            descriptionEn: 'Google source-grounded research assistant for summaries, cited answers and audio overviews from uploaded materials',
+            tags: ['Research Assistant', 'Cited Answers', 'Audio Overview'],
+            url: 'https://notebooklm.google/',
+            subcategory: 'academic_search',
+            isRecommended: true
+        }
     ]
 }; 
 
@@ -4302,6 +4221,13 @@ const aiSearchData = [
         tags: ["Conversational Search", "Source Tracing"],
         subcategory: "general_search"
     },
+    {
+        name: "Genspark",
+        description: "All-in-one AI workspace and search agent for deep research, page summarization and automated task execution",
+        url: "https://www.genspark.ai/",
+        tags: ["Deep Research", "AI Agent"],
+        subcategory: "general_search"
+    },
     
     
     // 学术科研类
@@ -4315,8 +4241,15 @@ const aiSearchData = [
     {
         name: "Elicit",
         description: "AI research assistant that helps find relevant papers and summarize research findings",
-        url: "https://elicit.org/",
+        url: "https://elicit.com/",
         tags: ["Research Tool", "Paper Analysis"],
+        subcategory: "academic_search"
+    },
+    {
+        name: "NotebookLM",
+        description: "Google's source-grounded research assistant for uploaded materials, cited answers and audio overviews",
+        url: "https://notebooklm.google/",
+        tags: ["Research Assistant", "Cited Answers"],
         subcategory: "academic_search"
     },
     {
@@ -4333,29 +4266,13 @@ const aiSearchData = [
             tags: ["Literature Discovery", "Citation Analysis"],
             subcategory: "academic_search"
         },
-        {
-            "name": "Lumina", 
-            "logo": "https://lumina.com/favicon.ico",
-            "description": "Completely free AI academic search engine covering papers, journals and other resources, supporting one-click literature review generation",
-            "url": "https://lumina.com",
-            "tags": ["Academic Search", "Paper Retrieval"],
-            "subcategory": "academic_search"
-    },
+        
     {
         "name": "AMiner",
         "logo": "https://www.aminer.cn/favicon.ico",
         "description": "Zhipu AI academic platform, providing scholar portraits, paper recommendations and trend analysis based on large models",
         "url": "https://www.aminer.cn",
         "tags": ["Academic Graph", "Research Analysis"],
-        "subcategory": "academic_search"
-    },
-    
-    {
-        "name": "Consensus",
-        "logo": "https://consensus.app/favicon.ico",
-        "description": "AI tool directly linking to research paper conclusions, providing reliable research answers through question-and-answer format",
-        "url": "https://consensus.app",
-        "tags": ["Academic Q&A", "Paper Summary"],
         "subcategory": "academic_search"
     },
     
@@ -4370,9 +4287,9 @@ const aiSearchData = [
     
     {
         "name": "AlphaSense",
-        "logo": "https://www.alphasese.com/favicon.ico",
+        "logo": "https://www.alpha-sense.com/favicon.ico",
         "description": "AI platform exclusively for financial professionals, integrating financial statements, news and industry analysis data",
-        "url": "https://www.alphasese.com",
+        "url": "https://www.alpha-sense.com/",
         "tags": ["Financial Data", "Industry Analysis"],
         "subcategory": "finance_search"
     },
@@ -4426,13 +4343,6 @@ const aiSearchData = [
         description: "Code search engine, understanding semantics and providing context-related code results",
         url: "https://bloop.ai/",
         tags: ["Code Search", "Semantic Understanding"],
-        subcategory: "programming_search"
-    },
-    {
-        name: "Devv",
-        description: "Developer-specific AI search, providing code examples and technical solutions",
-        url: "https://devv.ai/",
-        tags: ["Code Examples", "Technical Solutions"],
         subcategory: "programming_search"
     },
     {

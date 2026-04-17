@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Keep static assets crawlable for proper rendering and indexing
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /favicon/
+
+Sitemap: https://www.aitool365.com/sitemap.xml

@@ -27,8 +27,12 @@ function createSiteCard(site) {
         displayTags = site.tags.map(tag => translateTag(tag));
     }
     
+    const displayTitle = isEnglish && site.titleEn ? site.titleEn : site.title;
+    const displayDescription = isEnglish && site.descriptionEn ? site.descriptionEn : site.description;
+
     // 获取访问按钮文本
     const visitButtonText = getText('visit_button');
+    const visitLinkTitle = escapeHtmlAttribute(`${visitButtonText} - ${displayTitle}`);
     
     return `
         <div class="site-card" data-subcategory="${site.subcategory || ''}" ${descriptionEnAttr} ${titleEnAttr} style="position: relative;">
@@ -36,20 +40,28 @@ function createSiteCard(site) {
             ${recommendTag}
             <div class="card-content">
                 <div class="card-header">
-                    <div class="site-title">${isEnglish && site.titleEn ? site.titleEn : site.title}</div>
+                    <div class="site-title">${displayTitle}</div>
                 </div>
-                <div class="site-desc">${isEnglish && site.descriptionEn ? site.descriptionEn : site.description}</div>
+                <div class="site-desc">${displayDescription}</div>
                 <div class="site-tags">
                     ${displayTags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
                 </div>
             </div>
             <div class="card-footer">
-                <a href="${site.url}" target="_blank" class="visit-btn">
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="visit-btn" title="${visitLinkTitle}" aria-label="${visitLinkTitle}">
                     ${visitButtonText} <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
         </div>
     `;
+}
+
+function escapeHtmlAttribute(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
 }
 
 // 翻译常见标签到英文
@@ -581,14 +593,17 @@ function filterEcommerceSubcategory(subcategory) {
         }
     });
     
-    // 只有当显示的卡片超过8个时才添加"显示更多"按钮
-    if (visibleCards > 8) {
-        // 隐藏第8个之后的卡片
+    // 电商“其他”分组条目较多，默认展示更多，避免用户误以为缺失
+    const maxVisibleCards = subcategory === 'other' ? 24 : 8;
+
+    // 只有当显示的卡片超过阈值时才添加"显示更多"按钮
+    if (visibleCards > maxVisibleCards) {
+        // 隐藏阈值之后的卡片
         let count = 0;
         cards.forEach(card => {
             if (card.style.display === 'flex') {
                 count++;
-                if (count > 8) {
+                if (count > maxVisibleCards) {
                     card.classList.add('hidden');
                 }
             }
@@ -1295,7 +1310,9 @@ function showCategory(category) {
             section.style.display = 'block';
         });
     } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
-               category === 'lazada' || category === 'shopee' || category === 'other-ecommerce') {
+               category === 'lazada' || category === 'shopee' || category === 'tiktok-shop' ||
+               category === 'temu' || category === 'mercado-libre' || category === 'shopify' ||
+               category === 'other-ecommerce') {
         // 电商平台子分类
         console.log('显示电商平台子分类:', category);
         document.getElementById('ecommerce-section').style.display = 'block';
@@ -1444,6 +1461,9 @@ function showCategory(category) {
     
     // 更新导航高亮显示
     updateNavHighlight(category);
+
+    // 根据首页/分类页状态刷新结构化数据
+    updateStructuredData(category);
 }
 
 // 切换子菜单
@@ -1700,6 +1720,9 @@ function performSiteSearch(query) {
     
     // 滚动到搜索结果区域
     searchResultsSection.scrollIntoView({ behavior: 'smooth' });
+
+    // 搜索结果页状态下刷新结构化数据
+    updateStructuredData('search');
 }
 
 // 获取分类的显示名称
@@ -1744,6 +1767,11 @@ function createSiteCardWithCategory(site, categoryName) {
         displayTags = site.tags.map(tag => translateTag(tag));
     }
     
+    const displayTitle = isEnglish && site.titleEn ? site.titleEn : site.title;
+    const displayDescription = isEnglish && site.descriptionEn ? site.descriptionEn : site.description;
+    const visitButtonText = getText('visit_button');
+    const visitLinkTitle = escapeHtmlAttribute(`${visitButtonText} - ${displayTitle}`);
+
     return `
         <div class="site-card" data-subcategory="${site.subcategory || ''}" style="position: relative;">
             ${magicTag}
@@ -1751,20 +1779,228 @@ function createSiteCardWithCategory(site, categoryName) {
             <div class="category-badge">${categoryName}</div>
             <div class="card-content">
                 <div class="card-header">
-                    <div class="site-title">${isEnglish && site.titleEn ? site.titleEn : site.title}</div>
+                    <div class="site-title">${displayTitle}</div>
                 </div>
-                <div class="site-desc">${isEnglish && site.descriptionEn ? site.descriptionEn : site.description}</div>
+                <div class="site-desc">${displayDescription}</div>
                 <div class="site-tags">
                     ${displayTags.slice(0, 3).map(tag => `<span class="site-tag">${tag}</span>`).join('')}
                 </div>
             </div>
             <div class="card-footer">
-                <a href="${site.url}" target="_blank" class="visit-btn">
-                    ${getText('visit_button')} <i class="bi bi-box-arrow-up-right"></i>
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="visit-btn" title="${visitLinkTitle}" aria-label="${visitLinkTitle}">
+                    ${visitButtonText} <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
         </div>
     `;
+}
+
+const SEO_CATEGORY_GROUPS = {
+    ecommerce: ['amazon', 'aliexpress', 'ebay', 'lazada', 'shopee', 'tiktok-shop', 'temu', 'mercado-libre', 'shopify', 'other-ecommerce'],
+    social: ['social-global', 'social-china'],
+    website: ['seo', 'keyword', 'analytics', 'domain', 'server', 'payment', 'erp', 'network', 'account', 'temp-mail', 'ip-proxy', 'browser', 'backlink', 'content', 'learning'],
+    ai_chat: ['general_assistant', 'entertainment_ai', 'role_play', 'multimodal_ai', 'professional_ai', 'international_ai'],
+    ai_writing: ['academic_paper', 'fiction_writing', 'marketing_copy', 'blog_media', 'official_document', 'multilingual', 'script_content'],
+    ai_image: ['general_image', 'portrait', 'background', 'brand_design', 'photo_enhancement', 'anime', 'fun_tools', 'fashion', 'image_editing', 'professional_scene'],
+    ai_video: ['text_to_video', 'image_to_video', 'video_editing', 'digital_human', 'animation', 'short_video', 'speech_driven', 'professional_video', 'opensource_tools'],
+    ai_audio: ['tts', 'music_generation', 'speech_to_text', 'voice_conversion', 'audio_editing', 'other_audio_tools'],
+    ai_design: ['commerce_design', 'ui_ux', 'illustration', 'model_design', 'assistant_tools', 'special_tools'],
+    ai_coding: ['code_generation', 'fullstack_dev', 'design_to_code', 'code_review', 'natural_language_dev', 'low_code', 'cloud_ide'],
+    ai_prompts: ['prompt_platforms', 'sd_tools', 'chatgpt_prompts', 'visual_tools', 'chinese_resources', 'other_tools'],
+    ai_search: ['general_search', 'academic_search', 'programming_search', 'finance_search', 'life_search', 'product_search']
+};
+
+function getSeoLabel(key, isEnglish) {
+    const map = {
+        home: isEnglish ? 'Home' : '首页',
+        search: isEnglish ? 'Search Results' : '搜索结果',
+        ecommerce: isEnglish ? 'E-commerce' : '电商平台',
+        social: isEnglish ? 'Social Platforms' : '社交平台',
+        website: isEnglish ? 'Website Tools' : '建站工具',
+        ai_chat: isEnglish ? 'AI Chat' : 'AI对话',
+        ai_writing: isEnglish ? 'AI Writing' : 'AI写作',
+        ai_image: isEnglish ? 'AI Image' : 'AI图像',
+        ai_video: isEnglish ? 'AI Video' : 'AI视频',
+        ai_audio: isEnglish ? 'AI Audio' : 'AI音频',
+        ai_design: isEnglish ? 'AI Design' : 'AI设计',
+        ai_coding: isEnglish ? 'AI Coding' : 'AI编程',
+        ai_prompts: isEnglish ? 'AI Prompts' : 'AI提示词',
+        ai_search: isEnglish ? 'AI Search' : 'AI搜索'
+    };
+
+    return map[key] || key;
+}
+
+function resolveSeoCategoryContext(category) {
+    if (!category || category === 'home') {
+        return { pageType: 'home', topLevel: null, subcategory: null };
+    }
+    if (category === 'search') {
+        return { pageType: 'search', topLevel: null, subcategory: null };
+    }
+
+    const topLevelKeys = Object.keys(SEO_CATEGORY_GROUPS);
+    for (const topKey of topLevelKeys) {
+        if (category === topKey) {
+            return { pageType: 'category', topLevel: topKey, subcategory: null };
+        }
+        if (SEO_CATEGORY_GROUPS[topKey].includes(category)) {
+            return { pageType: 'subcategory', topLevel: topKey, subcategory: category };
+        }
+    }
+
+    return { pageType: 'home', topLevel: null, subcategory: null };
+}
+
+function getCategorySitesForSchema(context) {
+    if (!context.topLevel || !Array.isArray(sitesData[context.topLevel])) {
+        return [];
+    }
+
+    const list = sitesData[context.topLevel];
+    if (!context.subcategory) {
+        return list;
+    }
+
+    const subcategory = context.subcategory === 'other-ecommerce' ? 'other' : context.subcategory;
+    return list.filter(site => site.subcategory === subcategory);
+}
+
+function updateStructuredData(category = 'home') {
+    if (typeof sitesData === 'undefined') {
+        return;
+    }
+
+    const existing = document.getElementById('ai365-structured-data');
+    if (existing) {
+        existing.remove();
+    }
+
+    const isEnglish = getCurrentLanguage() === 'en' || document.documentElement.lang.startsWith('en');
+    const baseUrl = window.location.origin;
+    const currentPath = window.location.pathname === '/index.html' ? '/' : window.location.pathname;
+    const currentUrl = `${baseUrl}${currentPath}`;
+    const metaDescription = document.querySelector('meta[name="description"]')?.content || '';
+    const siteName = isEnglish ? 'AI365 Navigation' : 'AI365导航';
+    const context = resolveSeoCategoryContext(category);
+
+    const breadcrumbs = [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: getSeoLabel('home', isEnglish),
+            item: currentUrl
+        }
+    ];
+
+    if (context.topLevel) {
+        breadcrumbs.push({
+            '@type': 'ListItem',
+            position: 2,
+            name: getSeoLabel(context.topLevel, isEnglish),
+            item: `${currentUrl}#${context.topLevel}`
+        });
+    }
+
+    if (context.subcategory) {
+        breadcrumbs.push({
+            '@type': 'ListItem',
+            position: 3,
+            name: context.subcategory,
+            item: `${currentUrl}#${context.subcategory}`
+        });
+    }
+
+    if (context.pageType === 'search') {
+        breadcrumbs.push({
+            '@type': 'ListItem',
+            position: breadcrumbs.length + 1,
+            name: getSeoLabel('search', isEnglish),
+            item: `${currentUrl}#search`
+        });
+    }
+
+    const defaultCategoryKeys = [
+        'ecommerce', 'social', 'website', 'ai_chat', 'ai_writing',
+        'ai_image', 'ai_video', 'ai_audio', 'ai_design', 'ai_coding',
+        'ai_prompts', 'ai_search'
+    ];
+
+    const categorySites = context.topLevel
+        ? getCategorySitesForSchema(context)
+        : defaultCategoryKeys.flatMap(key => (Array.isArray(sitesData[key]) ? sitesData[key] : []));
+
+    const listItems = categorySites.slice(0, 80).map((site, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: isEnglish && site.titleEn ? site.titleEn : site.title,
+        url: site.url
+    }));
+
+    const pageName = context.topLevel
+        ? `${getSeoLabel(context.topLevel, isEnglish)}${context.subcategory ? ` - ${context.subcategory}` : ''}`
+        : document.title;
+
+    const graph = [
+        {
+            '@type': 'Organization',
+            name: siteName,
+            url: `${baseUrl}/`,
+            logo: `${baseUrl}/logo.svg`
+        },
+        {
+            '@type': 'WebSite',
+            name: siteName,
+            url: `${baseUrl}/`,
+            inLanguage: isEnglish ? 'en' : 'zh-CN',
+            description: metaDescription
+        },
+        {
+            '@type': 'WebPage',
+            name: pageName,
+            url: context.pageType === 'home' ? currentUrl : `${currentUrl}#${category}`,
+            inLanguage: isEnglish ? 'en' : 'zh-CN',
+            description: metaDescription,
+            breadcrumb: {
+                '@id': `${currentUrl}#breadcrumb`
+            }
+        },
+        {
+            '@type': 'BreadcrumbList',
+            '@id': `${currentUrl}#breadcrumb`,
+            itemListElement: breadcrumbs
+        },
+        {
+            '@type': 'ItemList',
+            name: context.topLevel
+                ? `${getSeoLabel(context.topLevel, isEnglish)} ${isEnglish ? 'Tools' : '工具列表'}`
+                : (isEnglish ? 'Featured Tools Directory' : '精选工具导航'),
+            itemListOrder: 'https://schema.org/ItemListOrderAscending',
+            numberOfItems: listItems.length,
+            itemListElement: listItems
+        }
+    ];
+
+    if (context.topLevel) {
+        graph.push({
+            '@type': 'CollectionPage',
+            name: pageName,
+            url: `${currentUrl}#${context.topLevel}`,
+            inLanguage: isEnglish ? 'en' : 'zh-CN',
+            description: metaDescription
+        });
+    }
+
+    const schema = {
+        '@context': 'https://schema.org',
+        '@graph': graph
+    };
+
+    const script = document.createElement('script');
+    script.id = 'ai365-structured-data';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
 }
 
 // 页面加载时初始化
@@ -1817,6 +2053,9 @@ document.addEventListener('DOMContentLoaded', function() {
             searchBox.querySelector('.search-border-effect').style.opacity = '1';
         }
     });
+
+    // 注入首页结构化数据，后续在分类切换时动态更新
+    updateStructuredData('home');
     
     // 当搜索框失去焦点时，减弱边框亮度
     searchInput.addEventListener('blur', function() {
@@ -2220,6 +2459,10 @@ function filterSitesByName(siteName, gridId) {
         'ebay': 'ebay',
         'lazada': 'lazada',
         'shopee': 'shopee',
+        'tiktok-shop': 'tiktok-shop',
+        'temu': 'temu',
+        'mercado-libre': 'mercado-libre',
+        'shopify': 'shopify',
         'other-ecommerce': 'other'
     };
     
@@ -2257,6 +2500,10 @@ function filterSitesByName(siteName, gridId) {
             'ebay': ['ebay'],
             'lazada': ['lazada'],
             'shopee': ['shopee'],
+            'tiktok-shop': ['tiktok shop', 'tiktok'],
+            'temu': ['temu'],
+            'mercado-libre': ['mercado libre', 'mercadolibre'],
+            'shopify': ['shopify'],
             'other-ecommerce': ['other']
         };
         

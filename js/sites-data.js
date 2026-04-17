@@ -8,15 +8,6 @@ const sitesData = {
     // 电商平台
     ecommerce: [
         {
-            title: '亚马逊卖家中心',
-            description: '亚马逊卖家平台，提供产品上传、订单管理、广告投放等功能',
-            descriptionEn: 'Amazon Seller Platform, providing product upload, order management, advertising, and more',
-            tags: ['亚马逊', '卖家平台', '跨境电商'],
-            url: 'https://sellercentral.amazon.com/',
-            subcategory: 'amazon',
-            isRecommended: true
-        },
-        {
             title: 'Amazon Brand Analytics',
             description: '亚马逊品牌分析工具，提供关键词搜索、购物行为、商品比较等数据',
             descriptionEn: 'Amazon Brand Analytics tool, providing keyword search, shopping behavior, product comparison data',
@@ -462,6 +453,90 @@ const sitesData = {
             tags: ['1688', '阿里巴巴', '批发', 'B2B'],
             url: 'https://www.1688.com/',
             subcategory: 'other'
+        },
+        {
+            title: 'Walmart',
+            description: '沃尔玛全球电商平台，依托全渠道零售能力在美国市场增长迅速',
+            tags: ['美国电商', '全渠道', '平台入驻'],
+            url: 'https://www.walmart.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Temu',
+            description: '拼多多旗下全球化电商平台，以高性价比和全托管模式快速扩张',
+            tags: ['出海四小龙', '全托管', '跨境电商'],
+            url: 'https://www.temu.com/',
+            subcategory: 'temu'
+        },
+        {
+            title: 'TikTok Shop',
+            description: 'TikTok生态内的兴趣电商平台，结合短视频与直播进行商品转化',
+            tags: ['兴趣电商', '短视频', '直播带货'],
+            url: 'https://seller-us.tiktok.com/',
+            subcategory: 'tiktok-shop'
+        },
+        {
+            title: 'SHEIN',
+            description: '全球化快时尚电商平台，已从服饰延展至更多消费品类',
+            tags: ['快时尚', '全球化', '跨境零售'],
+            url: 'https://www.shein.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Mercado Libre',
+            description: '拉美领先电商平台，覆盖交易、支付与物流等多环节服务',
+            tags: ['拉美电商', '区域平台', '跨境销售'],
+            url: 'https://www.mercadolibre.com/',
+            subcategory: 'mercado-libre'
+        },
+        {
+            title: 'Noon',
+            description: '中东主流本土电商平台，在阿联酋和沙特等市场影响力强',
+            tags: ['中东电商', '区域平台', '本土化'],
+            url: 'https://www.noon.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Coupang',
+            description: '韩国领先电商平台，以高时效配送体系著称',
+            tags: ['韩国电商', '快速配送', '本土平台'],
+            url: 'https://www.coupang.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Shopify',
+            description: '全球主流SaaS独立站平台，支持品牌商家快速搭建电商网站',
+            tags: ['独立站', 'SaaS建站', '品牌出海'],
+            url: 'https://www.shopify.com/',
+            subcategory: 'shopify'
+        },
+        {
+            title: 'WooCommerce',
+            description: '基于WordPress的开源电商插件，适合可定制化独立站场景',
+            tags: ['开源', '独立站', 'WordPress'],
+            url: 'https://woocommerce.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'BigCommerce',
+            description: '面向成长型品牌的电商建站平台，提供较强的企业级扩展能力',
+            tags: ['独立站', '企业级', 'SaaS建站'],
+            url: 'https://www.bigcommerce.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Alibaba.com',
+            description: '阿里巴巴国际站，全球B2B贸易平台，连接海外采购商与工厂',
+            tags: ['B2B', '外贸', '国际站'],
+            url: 'https://www.alibaba.com/',
+            subcategory: 'other'
+        },
+        {
+            title: 'Made-in-China',
+            description: '中国制造网，面向工业品和制造业的B2B跨境贸易平台',
+            tags: ['B2B', '工业品', '跨境贸易'],
+            url: 'https://www.made-in-china.com/',
+            subcategory: 'other'
         }
     ],
     
@@ -641,6 +716,13 @@ const sitesData = {
             subcategory: 'seo'
         },
         {
+            title: 'Screaming Frog SEO Spider',
+            description: '桌面端网站爬取与技术SEO审计工具，适合排查索引、重定向和页面结构问题',
+            tags: ['技术SEO', '网站爬取', '站内审计'],
+            url: 'https://www.screamingfrog.co.uk/seo-spider/',
+            subcategory: 'seo'
+        },
+        {
             title: 'Udemy',
             description: '全球最大的在线学习平台之一，提供数千门关于网站建设、营销和电商的课程',
             tags: ['在线学习', '建站教程', '电商技能'],
@@ -680,10 +762,26 @@ const sitesData = {
             subcategory: 'analytics'
         },
         {
+            title: 'Plausible Analytics',
+            description: '轻量级隐私优先的网站统计工具，无Cookie弹窗负担，适合独立站和内容站',
+            tags: ['网站分析', '隐私优先', '轻量统计'],
+            url: 'https://plausible.io/',
+            subcategory: 'analytics',
+            needsMagic: true
+        },
+        {
+            title: 'Microsoft Clarity',
+            description: '微软免费行为分析工具，提供热力图、会话回放和转化路径观察',
+            tags: ['热力图', '会话回放', '行为分析'],
+            url: 'https://clarity.microsoft.com/',
+            subcategory: 'analytics',
+            needsMagic: true
+        },
+        {
             title: 'SimilarWeb',
-            description: '分析竞品整体流量（访问量、国家分布、流量来源）、用户行为（跳出率、停留时间）和关键词',
+            description: 'SimilarWeb 企业官网入口，可进一步进入其流量分析与市场情报产品页面',
             tags: ['竞品分析', '流量分析', '用户行为'],
-            url: 'https://www.similarweb.com/',
+            url: 'https://www.similarweb.com/corp/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -704,10 +802,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Moat',
-            description: '追踪竞品展示广告（Banner、视频广告），适合分析视觉营销策略',
-            tags: ['广告分析', '视觉营销', '展示广告'],
-            url: 'https://www.moat.com/',
+            title: 'Oracle Advertising (Moat)',
+            description: '原Moat品牌并入Oracle Advertising，可用于广告可见性与媒体质量分析',
+            tags: ['广告分析', '可见性监测', '媒体质量'],
+            url: 'https://www.oracle.com/advertising/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -720,10 +818,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Commerce Inspector',
-            description: '专攻Shopify独立站，分析竞品热销产品、价格变化、折扣策略，查看其使用的App',
-            tags: ['Shopify分析', '产品分析', '价格策略'],
-            url: 'https://www.commerceinspector.com/',
+            title: 'Koala Inspector',
+            description: '面向Shopify店铺的竞品侦查工具，可查看应用栈、主题与商品等线索',
+            tags: ['Shopify分析', '店铺侦查', '产品研究'],
+            url: 'https://koala-apps.io/',
             subcategory: 'analytics',
             needsMagic: true
         },
@@ -818,14 +916,6 @@ const sitesData = {
             tags: ['域名注册', '网站托管', '建站服务'],
             url: 'https://www.godaddy.com/',
             subcategory: 'domain'
-        },
-        {
-            title: 'Google Domains',
-            description: '谷歌旗下的域名注册服务，简洁稳定，已逐步迁移至Squarespace',
-            tags: ['域名注册', '谷歌服务', '稳定可靠'],
-            url: 'https://domains.google/',
-            subcategory: 'domain',
-            needsMagic: true
         },
         {
             title: 'Squarespace Domains',
@@ -989,6 +1079,22 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'Vercel',
+            description: '前端与全栈应用部署平台，适合静态站点和Next.js项目的快速上线',
+            tags: ['前端部署', '静态托管', '全栈平台'],
+            url: 'https://vercel.com/',
+            subcategory: 'server',
+            needsMagic: true
+        },
+        {
+            title: 'Netlify',
+            description: '主流静态站与Jamstack托管平台，支持自动构建、CDN分发与表单功能',
+            tags: ['静态托管', 'Jamstack', '自动部署'],
+            url: 'https://www.netlify.com/',
+            subcategory: 'server',
+            needsMagic: true
+        },
+        {
             title: 'Cloudflare',
             description: '网络安全与性能服务，提供CDN、DNS管理和DDoS防护',
             tags: ['CDN', '网络安全', 'DNS'],
@@ -1012,7 +1118,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '2Checkout(Verifone)',
+            title: '2Checkout',
             description: '支持全球支付方式（包括本地化支付），适合数字商品和服务',
             tags: ['全球支付', '数字商品', '本地化支付'],
             url: 'https://www.2checkout.com/',
@@ -1028,10 +1134,26 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '万里汇(WorldFirst)',
-            description: '阿里旗下，支持亚马逊、eBay等平台收款，提现人民币费率低（0.3%封顶），提供多币种账户',
-            tags: ['跨境收款', '低费率', '平台收款'],
-            url: 'https://www.worldfirst.com/',
+            title: 'Checkout.com',
+            description: '面向全球化企业的支付平台，支持高并发交易、风控和本地化收单',
+            tags: ['企业支付', '全球收单', '风控'],
+            url: 'https://www.checkout.com/',
+            subcategory: 'payment',
+            needsMagic: true
+        },
+        {
+            title: 'Paddle',
+            description: '面向SaaS和数字产品的支付与税务一体化平台，支持订阅计费与代缴税',
+            tags: ['SaaS支付', '订阅计费', '税务合规'],
+            url: 'https://www.paddle.com/',
+            subcategory: 'payment',
+            needsMagic: true
+        },
+        {
+            title: 'XTransfer',
+            description: '跨境贸易收款与风控平台，支持多币种收付和企业级跨境资金管理',
+            tags: ['跨境收款', '多币种账户', '企业支付'],
+            url: 'https://www.xtransfer.com/',
             subcategory: 'payment',
             needsMagic: true
         },
@@ -1044,7 +1166,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Airwallex(空中云汇)',
+            title: 'Airwallex',
             description: '多币种账户，支持全球收款、批量付款，费率透明（0.3%-1%），适合高频交易或B2B业务',
             tags: ['多币种账户', '批量付款', 'B2B收款'],
             url: 'https://www.airwallex.com/',
@@ -1052,7 +1174,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '连连支付(LianLian Pay)',
+            title: '连连支付',
             description: '合作平台覆盖广（Wish、Shopee等），支持人民币直接提现，费率约0.7%',
             tags: ['跨境支付', '直接提现', '平台收款'],
             url: 'https://www.lianlianpay.com/',
@@ -1060,7 +1182,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Payoneer(派安盈)',
+            title: 'Payoneer',
             description: '提供虚拟银行账户（USD/GBP/EUR等），适合平台佣金、自由职业者收款，提现费率1.2%左右',
             tags: ['虚拟账户', '跨境收款', '平台佣金'],
             url: 'https://www.payoneer.com/',
@@ -1084,7 +1206,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Alipay Global(支付宝国际版)',
+            title: 'Alipay Global',
             description: '适合面向华人或东南亚市场的独立站，提供本地化支付体验',
             tags: ['支付宝', '华人市场', '本地化支付'],
             url: 'https://global.alipay.com/',
@@ -1092,7 +1214,7 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Wise(原TransferWise)',
+            title: 'Wise',
             description: '多币种虚拟账户，国际转账费率低，适合B2B收款和个人海外汇款',
             tags: ['多币种账户', '低费率', '国际转账'],
             url: 'https://wise.com/',
@@ -1105,14 +1227,6 @@ const sitesData = {
             tags: ['信用卡收单', '支付网关', '北美市场'],
             url: 'https://www.authorize.net/',
             subcategory: 'payment',
-            needsMagic: true
-        },
-        {
-            title: 'Shopify ERP',
-            description: 'Shopify集成的ERP系统，帮助管理库存、订单和财务',
-            tags: ['ERP', '库存管理', '订单处理'],
-            url: 'https://www.shopify.com/enterprise/erp',
-            subcategory: 'erp',
             needsMagic: true
         },
         {
@@ -1169,14 +1283,7 @@ const sitesData = {
             subcategory: 'erp'
         },
         {
-            title: '赛盒ERP',
-            description: '智能化运营工具，支持亚马逊、独立站等，侧重数据分析和自动化',
-            tags: ['智能运营', '亚马逊', '数据分析'],
-            url: 'https://www.saihesoft.com/',
-            subcategory: 'erp'
-        },
-        {
-            title: '领星ERP(原积加)',
+            title: '领星 ERP',
             description: '聚焦亚马逊卖家，提供精细化运营、财务核算、广告管理服务',
             tags: ['亚马逊', '精细运营', '广告管理'],
             url: 'https://www.lingxing.com/',
@@ -1197,7 +1304,7 @@ const sitesData = {
             subcategory: 'erp'
         },
         {
-            title: '船长BI(CaptainBI)',
+            title: '船长 BI',
             description: '侧重亚马逊数据分析和运营优化，提供深度市场洞察',
             tags: ['亚马逊', '数据分析', '市场洞察'],
             url: 'https://www.captainbi.com/',
@@ -1212,10 +1319,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'QuickBooks Commerce(原TradeGecko)',
-            description: 'Shopify生态ERP，专注于库存与订单管理，适合独立站',
-            tags: ['Shopify生态', '库存管理', '独立站'],
-            url: 'https://quickbooks.intuit.com/global/commerce/',
+            title: 'Zoho Inventory',
+            description: 'Zoho旗下库存与订单管理系统，适合中小商家多渠道销售协同',
+            tags: ['库存管理', '订单管理', '中小商家'],
+            url: 'https://www.zoho.com/inventory/',
             subcategory: 'erp',
             needsMagic: true
         },
@@ -1226,13 +1333,6 @@ const sitesData = {
             url: 'https://www.brightpearl.com/',
             subcategory: 'erp',
             needsMagic: true
-        },
-        {
-            title: 'Dolphin ERP',
-            description: '适合初创团队，支持多平台订单抓取，成本较低',
-            tags: ['初创团队', '低成本', '订单抓取'],
-            url: 'https://www.dolphin-erp.com/',
-            subcategory: 'erp'
         },
         {
             title: 'Ranktank',
@@ -1255,6 +1355,14 @@ const sitesData = {
             description: '综合性SEO工具，提供关键词建议、内容创意和竞争分析',
             tags: ['关键词工具', 'SEO分析', '内容创意'],
             url: 'https://neilpatel.com/ubersuggest/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Google Keyword Planner',
+            description: 'Google Ads官方关键词规划工具，适合获取搜索量区间和投放参考',
+            tags: ['关键词规划', 'Google Ads', '搜索量'],
+            url: 'https://ads.google.com/home/tools/keyword-planner/',
             subcategory: 'keyword',
             needsMagic: true
         },
@@ -1299,10 +1407,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'ThrowAwayMail',
-            description: '多语言支持，自动销毁时间可设置（1小时至1个月）的临时邮箱',
-            tags: ['自定义销毁', '多语言', '临时邮箱'],
-            url: 'https://www.throwawaymail.com/',
+            title: 'Mail.tm',
+            description: '可用性较高的临时邮箱服务，支持自动跳转多语言页面与API场景',
+            tags: ['临时邮箱', '多语言', 'API支持'],
+            url: 'https://mail.tm/en/',
             subcategory: 'temp-mail',
             needsMagic: true
         },
@@ -1310,7 +1418,7 @@ const sitesData = {
             title: '24mail',
             description: '国内访问稳定，邮箱24小时后自动删除的临时邮箱服务',
             tags: ['国内访问', '24小时', '临时邮箱'],
-            url: 'https://24mail.chacuo.net/',
+            url: 'http://24mail.chacuo.net/',
             subcategory: 'temp-mail'
         },
         {
@@ -1401,11 +1509,27 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'GoLogin',
+            description: '主流指纹浏览器之一，支持云端配置、多账号隔离和团队协作',
+            tags: ['指纹浏览器', '多账号管理', '团队协作'],
+            url: 'https://gologin.com/',
+            subcategory: 'browser',
+            needsMagic: true
+        },
+        {
             title: 'GMX Mail',
             description: '免费电子邮件服务，提供大容量存储和多账户管理',
             tags: ['电子邮件', '免费邮箱', '账号资源'],
             url: 'https://www.gmx.com/',
             subcategory: 'account'
+        },
+        {
+            title: 'Proton Mail',
+            description: '注重隐私安全的邮箱服务，支持端到端加密与跨设备使用',
+            tags: ['隐私邮箱', '端到端加密', '账号资源'],
+            url: 'https://proton.me/mail',
+            subcategory: 'account',
+            needsMagic: true
         },
         {
             title: 'Coursera',
@@ -1416,10 +1540,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Link Building HQ',
-            description: '专业外链建设服务和策略，提高网站的域名权威性',
-            tags: ['外链建设', 'SEO', '域名权威'],
-            url: 'https://www.linkbuildinghq.com/',
+            title: 'Majestic',
+            description: '老牌外链分析平台，提供Trust Flow与Citation Flow等链接质量指标',
+            tags: ['反向外链', '链接质量', 'SEO分析'],
+            url: 'https://majestic.com/',
             subcategory: 'backlink',
             needsMagic: true
         }
@@ -1607,7 +1731,7 @@ const sitesData = {
         // 通用AI助手
         {
             title: 'ChatGPT',
-            description: 'OpenAI开发的大型语言模型，可进行自然对话、回答问题、创作内容等',
+            description: 'OpenAI开发的大型语言模型，可进行自然对话、问答和内容创作',
             tags: ['通用对话', '问答助手', '内容创作'],
             url: 'https://chat.openai.com/',
             subcategory: 'general_assistant',
@@ -1616,292 +1740,190 @@ const sitesData = {
         },
         {
             title: 'Claude',
-            description: 'Anthropic打造的对话AI助手，擅长理解上下文和长对话',
-            tags: ['智能对话', '长文处理', '上下文理解'],
+            description: 'Anthropic打造的对话AI助手，擅长长上下文理解与总结',
+            tags: ['长文处理', '上下文理解', '推理能力'],
             url: 'https://claude.ai/',
             subcategory: 'general_assistant',
             needsMagic: true
         },
         {
+            title: 'Gemini',
+            description: 'Google推出的AI助手，支持多轮对话与多模态输入',
+            tags: ['Google AI', '多轮对话', '多模态'],
+            url: 'https://gemini.google.com/',
+            subcategory: 'general_assistant',
+            needsMagic: true
+        },
+        {
+            title: 'Grok',
+            description: 'xAI推出的对话助手，偏技术和实时信息场景',
+            tags: ['技术问答', '实时信息', '国际主流'],
+            url: 'https://grok.com/',
+            subcategory: 'general_assistant',
+            needsMagic: true
+        },
+        {
             title: '豆包',
-            description: '字节跳动推出的AI助手，支持多种创作和办公场景',
-            tags: ['国产AI', '多场景', '创作助手'],
+            description: '字节跳动推出的AI助手，适合日常问答、写作和办公',
+            tags: ['国产AI', '办公助手', '创作支持'],
             url: 'https://www.doubao.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
             title: 'DeepSeek',
-            description: '深度求索AI推出的大语言模型，具有丰富的知识库和推理能力',
-            tags: ['通用AI', '代码能力', '创新模型'],
+            description: '深度求索推出的大模型助手，推理和代码能力突出',
+            tags: ['推理能力', '代码辅助', '国产模型'],
             url: 'https://www.deepseek.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: '文心一言',
-            description: '百度推出的人工智能语言模型，能够与人进行多轮对话交流',
-            tags: ['中文对话', '国产模型', '百度AI'],
-            url: 'https://yiyan.baidu.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
             title: '通义千问',
-            description: '阿里开发的大语言模型，支持多轮对话和复杂任务处理',
+            description: '阿里推出的通用AI助手，支持复杂任务与多轮会话',
             tags: ['阿里AI', '多轮对话', '中文优化'],
             url: 'https://qianwen.aliyun.com/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
+            title: 'Kimi',
+            description: '月之暗面推出的助手，擅长长文本理解和资料整理',
+            tags: ['长文处理', '知识问答', '中文场景'],
+            url: 'https://kimi.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
+            title: '腾讯元宝',
+            description: '腾讯推出的AI对话助手，覆盖问答、创作和办公场景',
+            tags: ['腾讯AI', '中文对话', '混元模型'],
+            url: 'https://hunyuan.tencent.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
+            title: '文心一言',
+            description: '百度推出的AI助手，支持中文问答与知识检索',
+            tags: ['百度AI', '中文问答', '知识检索'],
+            url: 'https://yiyan.baidu.com/',
+            subcategory: 'general_assistant',
+            needsMagic: false
+        },
+        {
             title: '讯飞星火',
-            description: '科大讯飞推出的认知大模型，具有强大的中文理解能力',
-            tags: ['国产AI', '认知模型', '中文优化'],
+            description: '科大讯飞推出的认知大模型助手，中文理解能力强',
+            tags: ['讯飞AI', '中文理解', '通用助手'],
             url: 'https://xinghuo.xfyun.cn/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
             title: '智谱清言',
-            description: '由智谱AI和清华大学共同开发的大语言模型，在中文和通用能力上表现优异',
-            tags: ['ChatGLM', '清华AI', '学术支持'],
+            description: '智谱AI推出的对话助手，面向学习和办公场景',
+            tags: ['ChatGLM', '国产AI', '学习办公'],
             url: 'https://chatglm.cn/',
             subcategory: 'general_assistant',
             needsMagic: false
         },
         {
-            title: 'Gemini',
-            description: 'Google推出的多模态AI模型，支持文本、图像等多种输入',
-            tags: ['Google AI', '多模态', '高级推理'],
-            url: 'https://gemini.google.com/',
+            title: 'Microsoft Copilot',
+            description: '微软推出的通用AI助手，可结合搜索和办公生态使用',
+            tags: ['微软AI', '生产力', '搜索增强'],
+            url: 'https://copilot.microsoft.com/',
             subcategory: 'general_assistant',
             needsMagic: true
         },
-       
-        
+
+        // 多模型/多模态AI平台
         {
-            title: 'Kimi',
-            description: '月之暗面推出的AI助手，拥有强大的长文本理解和记忆能力',
-            tags: ['长文理解', '知识问答', '中文优化'],
-            url: 'https://kimi.moonshot.cn/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: '腾讯元宝',
-            description: '腾讯推出的AI对话助手，擅长中文语境的交流和创作',
-            tags: ['腾讯AI', '中文对话', '混元大模型'],
-            url: 'https://hunyuan.tencent.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        {
-            title: '百小应',
-            description: '百度知识增强的AI助手，拥有及时更新的互联网信息',
-            tags: ['百度搜索', '实时信息', '知识问答'],
-            url: 'https://info.baidu.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-       
-        {
-            title: 'Bing新必应',
-            description: '微软搜索引擎结合AI能力的对话式搜索体验',
-            tags: ['AI搜索', '网络信息', '微软AI'],
-            url: 'https://www.bing.com/new',
-            subcategory: 'general_assistant',
-            needsMagic: true
-        },
-    
-        
-        {
-            title: '紫东太初',
-            description: '中科院自动化所推出的AI助手，具有强大的知识推理能力',
-            tags: ['学术支持', '知识推理', '中科院AI'],
-            url: 'https://chatbot.automata-ai.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        
-       
-        
-        // 多模态AI助手
-        
-        {
-            title: '华为小艺',
-            description: '华为推出的多模态AI助手，支持语音、图像和文本交互',
-            tags: ['华为AI', '多模态', '语音交互'],
-            url: 'https://xiaoyi.huawei.com/',
-            subcategory: 'multimodal_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Meta AI助手',
-            description: 'Meta推出的多模态AI，支持图像、语音和文本的综合理解',
-            tags: ['Meta AI', '多模态', '社交平台'],
-            url: 'https://ai.meta.com/',
+            title: 'Poe',
+            description: 'Quora推出的多模型AI平台，可快速切换不同模型进行对话',
+            tags: ['多模型', '模型切换', '对比体验'],
+            url: 'https://poe.com/',
             subcategory: 'multimodal_ai',
             needsMagic: true
         },
         {
-            title: 'Midjourney AI',
-            description: '专注于AI艺术创作的对话工具，通过文本生成高质量图像',
-            tags: ['AI绘画', '图像生成', '创意设计'],
-            url: 'https://www.midjourney.com/',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: 'DALL-E',
-            description: 'OpenAI开发的AI图像生成系统，可根据文本描述创建图像',
-            tags: ['图像生成', 'AI艺术', '创意工具'],
-            url: 'https://openai.com/dall-e-3',
-            subcategory: 'general_image',
-            needsMagic: true
-        },
-        {
-            title: '稀饭AI',
-            description: '专注于中文场景的AI对话助手，支持文生图、图生图等多种创作模式',
-            tags: ['AI创作', '图文结合', '中文优化'],
-            url: 'https://xfan.ai/',
+            title: 'Meta AI',
+            description: 'Meta推出的AI助手，支持文本和图像等多模态能力',
+            tags: ['Meta AI', '多模态', '社交生态'],
+            url: 'https://www.meta.ai/',
             subcategory: 'multimodal_ai',
-            needsMagic: false
-        },
-        {
-            title: 'Stable Diffusion',
-            description: '开源的AI图像生成模型，可通过文字描述生成高质量图像',
-            tags: ['开源AI', '图像生成', '模型定制'],
-            url: 'https://stability.ai/',
-            subcategory: 'general_image',
             needsMagic: true
         },
         {
-            title: '天工图像',
-            description: '昆仑万维推出的多模态AI，支持图像识别和生成功能',
-            tags: ['图像处理', '多模态', '中文优化'],
-            url: 'https://tiangong.kunlun.com/image',
-            subcategory: 'general_image',
-            needsMagic: false
+            title: 'Monica',
+            description: '浏览器侧AI助手，支持网页阅读、翻译和多模型对话',
+            tags: ['浏览器助手', '多模型', '效率工具'],
+            url: 'https://monica.im/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
         },
-        
+        {
+            title: 'Cici',
+            description: '面向国际用户的AI助手，支持多语言对话和创作',
+            tags: ['国际化', '多语言', '对话助手'],
+            url: 'https://www.cici.ai/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+        {
+            title: 'NotebookLM',
+            description: 'Google推出的资料型AI助手，擅长文档问答与知识整理',
+            tags: ['文档问答', '知识整理', '学习研究'],
+            url: 'https://notebooklm.google.com/',
+            subcategory: 'multimodal_ai',
+            needsMagic: true
+        },
+
         // 专业领域AI
         {
             title: 'GitHub Copilot',
-            description: 'AI代码助手，可以自动补全代码、提供建议和解释代码',
-            tags: ['代码补全', '开发助手', '编程辅助'],
+            description: '主流AI编程助手，支持代码补全、解释和重构建议',
+            tags: ['代码补全', '开发助手', '编程效率'],
             url: 'https://github.com/features/copilot',
-            subcategory: 'code_generation',
-            needsMagic: true
-        },
-        {
-            title: 'Qwen Chat',
-            description: '阿里开发者友好的AI助手，专为编程和技术开发设计',
-            tags: ['开发助手', '代码生成', '技术支持'],
-            url: 'https://qianwen.aliyun.com/',
-            subcategory: 'code_generation',
-            needsMagic: false
-        },
-        {
-            title: 'Grok',
-            description: 'xAI推出的技术导向型AI助手，擅长科技和编程问题',
-            tags: ['技术问答', '科学知识', '马斯克AI'],
-            url: 'https://grok.x.ai/',
-            subcategory: 'code_generation',
-            needsMagic: true
-        },
-        {
-            title: 'J1 Assistant',
-            description: '面向商务和专业人士的AI助手，擅长处理商业场景问题',
-            tags: ['商务AI', '专业助手', '企业应用'],
-            url: 'https://j1.ai/',
             subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Codeium',
-            description: '免费的AI代码助手，提供智能代码补全和生成功能',
-            tags: ['代码补全', '免费工具', '多语言支持'],
-            url: 'https://codeium.com/',
-            subcategory: 'code_generation',
+            title: 'Cursor',
+            description: 'AI原生代码编辑器，适合工程化开发与重构协作',
+            tags: ['AI编辑器', '代码生成', '开发工作流'],
+            url: 'https://cursor.com/',
+            subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Cursor',
-            description: '集成AI的代码编辑器，可以理解、解释和生成代码',
-            tags: ['AI编辑器', '代码理解', '快速开发'],
-            url: 'https://cursor.sh/',
-            subcategory: 'code_generation',
+            title: 'CodeGeeX',
+            description: '国产AI编程助手，支持多语言代码生成和补全',
+            tags: ['国产工具', '代码生成', '开发辅助'],
+            url: 'https://codegeex.cn/',
+            subcategory: 'professional_ai',
+            needsMagic: false
+        },
+        {
+            title: 'Perplexity',
+            description: 'AI问答搜索工具，提供可追溯来源和研究型回答',
+            tags: ['AI搜索', '引用来源', '研究问答'],
+            url: 'https://www.perplexity.ai/',
+            subcategory: 'professional_ai',
             needsMagic: true
         },
-        
         {
             title: 'ChatPDF',
-            description: '上传PDF文件并与之对话，可提取信息、总结内容或解答相关问题',
-            tags: ['PDF助手', '文档问答', '内容提取'],
+            description: '面向文档场景的AI助手，可上传PDF并进行问答总结',
+            tags: ['PDF问答', '文档总结', '知识提取'],
             url: 'https://www.chatpdf.com/',
             subcategory: 'professional_ai',
             needsMagic: true
         },
         {
-            title: 'Perplexity AI',
-            description: '基于AI的搜索引擎，提供实时信息和参考来源',
-            tags: ['AI搜索', '信息汇总', '实时资讯'],
-            url: 'https://www.perplexity.ai/',
-            subcategory: 'general_search',
-            needsMagic: true
-        },
-        {
-            title: 'CodeGeeX',
-            description: '清华大学开源的AI编程助手，支持多种编程语言的代码生成',
-            tags: ['国产AI', '代码生成', '开源项目'],
-            url: 'https://codegeex.cn/',
-            subcategory: 'code_generation',
-            needsMagic: false
-        },
-        
-        // 国际化AI助手
-        {
-            title: 'Poe',
-            description: 'Quora开发的AI平台，集成多种AI模型，方便用户对比使用',
-            tags: ['多模型集成', '快速切换', '比较体验'],
-            url: 'https://poe.com/',
-            subcategory: 'multimodal_a',
-            needsMagic: true
-        },
-        
-        {
-            title: 'Cici',
-            description: '豆包国际版，面向国际用户的中国AI技术展示',
-            tags: ['国际版', '中国技术', '多语言'],
-            url: 'https://www.cici.ai/',
-            subcategory: 'multimodal_a',
-            needsMagic: true
-        },
-        {
-            title: '百川大模型',
-            description: '提供多语言支持的中国大模型，面向国际市场',
-            tags: ['多语言', '国际化', '中国AI'],
-            url: 'https://www.baichuan-ai.com/',
-            subcategory: 'multimodal_a',
-            needsMagic: false
-        },
-        {
-            title: 'Langchain AI',
-            description: '开发者工具框架，用于构建基于大型语言模型的国际化应用程序',
-            tags: ['开发框架', 'LLM应用', '国际标准'],
-            url: 'https://www.langchain.com/',
-            subcategory: 'code_generation',
-            needsMagic: true
-        },
-    
-        
-        {
-            title: 'Jasper',
-            description: '专业的AI内容创作平台，面向全球企业和营销团队',
-            tags: ['全球化', '企业级AI', '多语言'],
-            url: 'https://www.jasper.ai/',
-            subcategory: 'ai_writing',
+            title: 'Manus',
+            description: '任务执行型AI代理，适合研究、分析和流程自动化',
+            tags: ['AI代理', '任务拆解', '自动化执行'],
+            url: 'https://manus.im/',
+            subcategory: 'professional_ai',
             needsMagic: true
         }
     ],
@@ -1910,7 +1932,7 @@ const sitesData = {
     ai_image: [
         // 通用AI图片生成
         {
-            title: 'MidJourney',
+            title: 'Midjourney',
             description: '强大的AI艺术生成工具，通过文本提示创建高质量艺术作品',
             tags: ['AI艺术', '图像生成', '创意设计'],
             url: 'https://www.midjourney.com/',
@@ -1958,18 +1980,26 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Bing Image Creator',
-            description: '微软推出的免费AI图像生成工具，基于DALL-E模型',
-            tags: ['微软', '免费工具', '简易操作'],
-            url: 'https://www.bing.com/create',
+            title: 'Ideogram',
+            description: '擅长文字排版与品牌视觉生成的AI图像平台，适合海报和营销素材',
+            tags: ['文字渲染', '品牌视觉', '海报设计'],
+            url: 'https://ideogram.ai/',
             subcategory: 'general_image',
             needsMagic: true
         },
         {
-            title: 'DeepFloyd IF',
-            description: '多模态生成模型，支持高质量图像和精确文本理解',
-            tags: ['多模态', '高质量', '精确理解'],
-            url: 'https://deepfloyd.ai/',
+            title: 'FLUX.1',
+            description: 'Black Forest Labs推出的高质量图像生成模型系列，擅长写实画质和文本细节',
+            tags: ['图像模型', '写实风格', '文本细节'],
+            url: 'https://bfl.ai/',
+            subcategory: 'general_image',
+            needsMagic: true
+        },
+        {
+            title: 'Bing Image Creator',
+            description: '微软推出的免费AI图像生成工具，基于DALL-E模型',
+            tags: ['微软', '免费工具', '简易操作'],
+            url: 'https://www.bing.com/create',
             subcategory: 'general_image',
             needsMagic: true
         },
@@ -2341,20 +2371,12 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Kaiber',
-            description: '人工智能视频创作平台，生成艺术化风格视频，可用于音乐视觉化',
-            tags: ['艺术视频', '音乐可视化', '创意生成'],
-            url: 'https://kaiber.ai/',
+            title: 'Kling AI',
+            description: '快手推出的新一代AI视频生成平台，支持多模态提示、镜头控制和高一致性视频创作',
+            tags: ['文本生成视频', '镜头控制', '高一致性'],
+            url: 'https://kling.ai/',
             subcategory: 'text_to_video',
-            needsMagic: true
-        },
-        {
-            title: 'Synthesia',
-            description: '专业AI数字人视频生成平台，只需输入文本即可创建真人播报视频',
-            tags: ['数字人', '真人播报', '企业宣传'],
-            url: 'https://www.synthesia.io/',
-            subcategory: 'text_to_video',
-            needsMagic: true
+            needsMagic: false
         },
         {
             title: 'InVideo AI',
@@ -2369,22 +2391,6 @@ const sitesData = {
             description: '专注于将文章、博客等文本内容快速转换为社交媒体视频',
             tags: ['博客转视频', '社交媒体', '内容营销'],
             url: 'https://lumen5.com/',
-            subcategory: 'text_to_video',
-            needsMagic: true
-        },
-        {
-            title: 'Pictory',
-            description: '自动将长文本内容转换成短视频，适合内容创作者和营销人员',
-            tags: ['长文转视频', '自动提取', '营销内容'],
-            url: 'https://pictory.ai/',
-            subcategory: 'text_to_video',
-            needsMagic: true
-        },
-        {
-            title: 'HeyGen',
-            description: '高质量AI数字人视频生成平台，提供多语言和多场景的视频制作',
-            tags: ['数字人播报', '多语言', '企业视频'],
-            url: 'https://www.heygen.com/',
             subcategory: 'text_to_video',
             needsMagic: true
         },
@@ -2407,26 +2413,10 @@ const sitesData = {
         
         // 图片生成视频
         {
-            title: 'AnimateDiff',
-            description: 'Stable Diffusion插件，可将静态图像转换为动态短视频或动画',
-            tags: ['图片动画', 'SD插件', '开源工具'],
-            url: 'https://huggingface.co/guoyww/animatediff',
-            subcategory: 'image_to_video',
-            needsMagic: true
-        },
-        {
             title: 'Morph Studio',
             description: '专注于将静态图像转换为流畅动画的AI平台，支持多种动画风格',
             tags: ['图像动画', '风格多样', '创意工具'],
             url: 'https://www.morphstudio.io/',
-            subcategory: 'image_to_video',
-            needsMagic: true
-        },
-        {
-            title: 'Stable Video Diffusion',
-            description: 'Stability AI开发的图像到视频转换模型，生成流畅短视频',
-            tags: ['图像动画', '开源模型', '专业效果'],
-            url: 'https://stability.ai/stable-video',
             subcategory: 'image_to_video',
             needsMagic: true
         },
@@ -2439,26 +2429,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Pika 1.0',
-            description: '将单一图像延展为连贯视频，保持原图风格和细节',
-            tags: ['图像延展', '连贯视频', '风格保持'],
-            url: 'https://pika.art/',
-            subcategory: 'image_to_video',
-            needsMagic: true
-        },
-        {
             title: 'Moonvalley',
             description: '将静态图片转换为沉浸式动态场景，适合艺术创作',
             tags: ['场景动画', '艺术创作', '沉浸体验'],
-            url: 'https://moonvalley.ai/',
-            subcategory: 'image_to_video',
-            needsMagic: true
-        },
-        {
-            title: 'Zeroscope',
-            description: '开源的图像到视频转换模型，可本地部署，适合开发者',
-            tags: ['开源模型', '本地部署', '开发工具'],
-            url: 'https://huggingface.co/cerspense/zeroscope_v2_576w',
+            url: 'https://www.moonvalley.com/',
             subcategory: 'image_to_video',
             needsMagic: true
         },
@@ -2682,12 +2656,12 @@ const sitesData = {
             title: 'OpusClip',
             description: '智能将长视频自动拆分为短视频内容，适合跨平台发布',
             tags: ['长视频拆条', '自动剪辑', '内容复用'],
-            url: 'https://www.opus.pro/opusclip',
+            url: 'https://www.opus.pro/',
             subcategory: 'short_video',
             needsMagic: true
         },
         {
-            title: 'Vimeo AI工具',
+            title: 'Vimeo AI Tools',
             description: '专业视频平台提供的AI编辑和增强工具，提升创作效率',
             tags: ['专业平台', 'AI编辑', '创作辅助'],
             url: 'https://vimeo.com/features/ai-video-tools',
@@ -2755,10 +2729,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Wonder Dynamics',
-            description: 'AI驱动的角色动画和特效工具，适合专业影视制作',
-            tags: ['角色替换', '特效制作', '专业工具'],
-            url: 'https://wonderdynamics.com/',
+            title: 'Autodesk Flow Studio',
+            description: '原Wonder Dynamics，现并入Autodesk的AI角色动画与影视特效工具',
+            tags: ['角色替换', '影视特效', 'Autodesk'],
+            url: 'https://www.autodesk.com/products/flow-studio/overview',
             subcategory: 'professional_video',
             needsMagic: true
         },
@@ -3005,14 +2979,6 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '索诺托',
-            description: '免费AI音乐生成平台，简单易用的音乐创作工具',
-            tags: ['免费平台', '简易操作', 'AI音乐'],
-            url: 'https://sonoptic.com/',
-            subcategory: 'music_generation',
-            needsMagic: true
-        },
-        {
             title: '天工SkyMusic',
             description: '昆仑万维AI音乐大模型，专业音乐创作平台',
             tags: ['昆仑万维', 'AI音乐', '大模型'],
@@ -3123,10 +3089,10 @@ const sitesData = {
             needsMagic: false
         },
         {
-            title: 'Adobe 播客',
+            title: 'Adobe Podcast',
             description: 'AI音频录制和编辑工具，专业播客制作平台',
             tags: ['Adobe', '播客制作', 'AI编辑'],
-            url: 'https://www.adobe.com/products/podcasts.html',
+            url: 'https://podcast.adobe.com/',
             subcategory: 'audio_editing',
             needsMagic: true
         },
@@ -3219,22 +3185,6 @@ const sitesData = {
             needsMagic: false
         },
         {
-            title: 'Pic Copilot',
-            description: '阿里国际电商设计工具，自动生成适合跨境电商的图片设计',
-            tags: ['阿里', '跨境电商', '智能设计'],
-            url: 'https://www.alibabacloud.com/products/pic-copilot',
-            subcategory: 'commerce_design',
-            needsMagic: false
-        },
-        {
-            title: '羚珑',
-            description: '京东商品图设计平台，为电商商家提供智能设计解决方案',
-            tags: ['京东', '商品图', '智能设计'],
-            url: 'https://linglong.jd.com/',
-            subcategory: 'commerce_design',
-            needsMagic: false
-        },
-        {
             title: '灵动AI',
             description: '智能商品图生成工具，一键创建电商主图和详情页',
             tags: ['商品图', '主图生成', '详情页'],
@@ -3264,7 +3214,7 @@ const sitesData = {
             title: '稿定AI',
             description: '一站式设计平台，提供海报、宣传图等多种设计服务',
             tags: ['一站式', '海报设计', '宣传图'],
-            url: 'https://www.gaoding.com/ai',
+            url: 'https://www.gaoding.art/creation',
             subcategory: 'commerce_design',
             needsMagic: false
         },
@@ -3280,7 +3230,7 @@ const sitesData = {
             title: '美图设计室',
             description: 'AI图像创作平台，提供智能海报设计和图片美化功能',
             tags: ['美图', 'AI创作', '图片美化'],
-            url: 'https://design.meitu.com/',
+            url: 'https://www.designkit.cn/',
             subcategory: 'commerce_design',
             needsMagic: false
         },
@@ -3327,14 +3277,6 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: '阿里云智能LOGO设计',
-            description: '阿里云提供的智能LOGO设计服务，帮助企业快速建立品牌形象',
-            tags: ['阿里云', 'LOGO设计', '品牌形象'],
-            url: 'https://www.aliyun.com/activity/creation/intelligent-logo',
-            subcategory: 'commerce_design',
-            needsMagic: false
-        },
-        {
             title: 'AIDesign',
             description: '腾讯推出的免费LOGO设计工具，支持多种行业和风格',
             tags: ['腾讯', '免费LOGO', '多风格'],
@@ -3376,14 +3318,6 @@ const sitesData = {
             url: 'https://mastergo.com/ai',
             subcategory: 'ui_ux',
             needsMagic: false
-        },
-        {
-            title: 'Creatie',
-            description: 'AI驱动的UI/UX设计工具，提供智能设计建议和自动生成',
-            tags: ['AI驱动', 'UI/UX', '智能设计'],
-            url: 'https://www.creatie.ai/',
-            subcategory: 'ui_ux',
-            needsMagic: true
         },
         {
             title: 'Uizard',
@@ -3695,6 +3629,14 @@ const sitesData = {
             subcategory: 'special_tools',
             needsMagic: true
         },
+        {
+            title: 'Gamma',
+            description: 'AI原生演示、文档和网页生成平台，可将想法快速转成可分享内容',
+            tags: ['演示文稿', '文档生成', '网页发布'],
+            url: 'https://gamma.app/',
+            subcategory: 'special_tools',
+            needsMagic: true
+        },
         
         // 网站开发
         {
@@ -3718,7 +3660,7 @@ const sitesData = {
         
         // Low-Code设计
         {
-            title: 'Motiff 妙多',
+            title: 'Motiff',
             description: '猿辅导UI工具，提供低代码设计和开发解决方案',
             tags: ['猿辅导', 'UI工具', '低代码'],
             url: 'https://motiff.yuanfudao.com/',
@@ -3739,14 +3681,6 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'Codeium',
-            description: 'AI驱动的代码补全工具，支持多种编程语言和IDE',
-            tags: ['代码补全', '多语言支持', '智能编程'],
-            url: 'https://codeium.com/',
-            subcategory: 'code_generation',
-            needsMagic: true
-        },
-        {
             title: 'Tabnine',
             description: '基于AI的代码智能补全工具，提高编程效率',
             tags: ['代码补全', '智能提示', '编程效率'],
@@ -3755,10 +3689,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'CodeWhisperer',
-            description: '亚马逊推出的AI代码生成工具，提供智能代码补全',
-            tags: ['亚马逊', '代码生成', 'AWS'],
-            url: 'https://aws.amazon.com/codewhisperer/',
+            title: 'Amazon Q Developer',
+            description: '亚马逊面向开发者的AI编程助手，整合代码补全、问答和工作流辅助能力',
+            tags: ['亚马逊', '代码生成', '开发者AI'],
+            url: 'https://aws.amazon.com/q/developer/',
             subcategory: 'code_generation',
             needsMagic: true
         },
@@ -3801,6 +3735,14 @@ const sitesData = {
             description: 'StackBlitz推出的全栈开发工具，简化Web应用创建过程',
             tags: ['全栈工具', 'Web开发', 'StackBlitz'],
             url: 'https://bolt.new/',
+            subcategory: 'fullstack_dev',
+            needsMagic: true
+        },
+        {
+            title: 'v0',
+            description: 'Vercel推出的AI全栈应用生成平台，可通过提示词快速创建、编辑并发布应用',
+            tags: ['Vercel', '全栈生成', '提示式开发'],
+            url: 'https://v0.app/',
             subcategory: 'fullstack_dev',
             needsMagic: true
         },
@@ -3873,10 +3815,10 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'CodiumAI',
-            description: '代码测试分析工具，自动生成测试用例',
-            tags: ['代码测试', '测试生成', 'AI分析'],
-            url: 'https://www.codium.ai/',
+            title: 'Qodo',
+            description: '面向复杂代码库的AI代码审查与治理平台，支持规则驱动审查和问题修复',
+            tags: ['代码审查', '代码治理', 'AI分析'],
+            url: 'https://www.qodo.ai/',
             subcategory: 'code_review',
             needsMagic: true
         },
@@ -3895,6 +3837,22 @@ const sitesData = {
             description: '对话式Web开发工具，通过自然语言创建网站',
             tags: ['对话式开发', 'Web开发', '自然语言'],
             url: 'https://www.lovable.ai/',
+            subcategory: 'natural_language_dev',
+            needsMagic: true
+        },
+        {
+            title: 'Cline',
+            description: '驻留在编辑器和终端中的AI编程代理，可读写文件、运行命令并在批准后执行复杂开发任务',
+            tags: ['AI代理', '编辑器插件', '终端协作'],
+            url: 'https://cline.bot/',
+            subcategory: 'natural_language_dev',
+            needsMagic: true
+        },
+        {
+            title: 'Aider',
+            description: '终端中的AI结对编程工具，支持代码库映射、Git集成和自动测试修复',
+            tags: ['终端编程', 'Git集成', '结对开发'],
+            url: 'https://aider.chat/',
             subcategory: 'natural_language_dev',
             needsMagic: true
         },
@@ -3946,7 +3904,15 @@ const sitesData = {
             title: 'Cursor',
             description: 'AI驱动的代码编辑器，提供智能编码辅助',
             tags: ['AI编辑器', '代码智能', '编程辅助'],
-            url: 'https://cursor.sh/',
+            url: 'https://cursor.com/',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
+        {
+            title: 'Windsurf',
+            description: 'Codeium推出的AI原生编程编辑器，支持代理式改代码、理解代码库和自动执行开发流程',
+            tags: ['AI编辑器', '代理式编程', '代码库理解'],
+            url: 'https://windsurf.com/',
             subcategory: 'cloud_ide',
             needsMagic: true
         },
@@ -3989,8 +3955,8 @@ const sitesData = {
         },
         {
             title: 'PromptHero',
-            description: '专注于AI生成内容的提示词库，尤其适合Stable Diffusion和MidJourney用户。',
-            tags: ['AI生成内容', 'Stable Diffusion', 'MidJourney'],
+            description: '专注于AI生成内容的提示词库，尤其适合Stable Diffusion和Midjourney用户。',
+            tags: ['AI生成内容', 'Stable Diffusion', 'Midjourney'],
             url: 'https://prompthero.com',
             subcategory: 'prompt_platforms',
             needsMagic: true
@@ -4023,8 +3989,8 @@ const sitesData = {
         },
         {
             title: 'MJ Prompt Tool',
-            description: 'MidJourney专用提示生成器，支持风格、灯光等参数调节。',
-            tags: ['MidJourney', '提示生成器', '参数调节'],
+            description: 'Midjourney专用提示生成器，支持风格、灯光等参数调节。',
+            tags: ['Midjourney', '提示生成器', '参数调节'],
             url: 'https://mjprompttool.com',
             subcategory: 'sd_tools',
             needsMagic: true
@@ -4069,7 +4035,7 @@ const sitesData = {
             title: 'Generrated',
             description: 'DALL·E 2提示词设计指南，附案例解析。',
             tags: ['DALL·E 2', '提示词设计', '案例解析'],
-            url: 'https://generrated.com/guides',
+            url: 'https://generrated.com/',
             subcategory: 'visual_tools',
             needsMagic: true
         },
@@ -4101,14 +4067,6 @@ const sitesData = {
         },
         
         // 其他实用工具
-        {
-            title: 'ClickPrompt',
-            description: '可视化提示词工作流工具，支持团队协作。',
-            tags: ['工作流工具', '团队协作', '可视化'],
-            url: 'https://clickprompt.org',
-            subcategory: 'other_tools',
-            needsMagic: true
-        },
         {
             title: 'Snack Prompt',
             description: '极简提示词生成器，适合快速实验。',
@@ -4147,7 +4105,24 @@ const sitesData = {
             subcategory: 'general_search',
             isRecommended: true
         },
-        // ... 其他站点保持不变 ...
+        {
+            title: 'Genspark',
+            description: '一站式AI工作空间与搜索代理，支持深度研究、网页总结和任务执行',
+            descriptionEn: 'All-in-one AI workspace and search agent for deep research, page summarization and task execution',
+            tags: ['AI搜索', '深度研究', '任务代理'],
+            url: 'https://www.genspark.ai/',
+            subcategory: 'general_search',
+            isRecommended: true
+        },
+        {
+            title: 'NotebookLM',
+            description: 'Google推出的来源驱动研究助手，可基于上传资料生成摘要、引用回答和音频概览',
+            descriptionEn: 'Google source-grounded research assistant for summaries, cited answers and audio overviews from uploaded materials',
+            tags: ['研究助手', '引用回答', '音频概览'],
+            url: 'https://notebooklm.google/',
+            subcategory: 'academic_search',
+            isRecommended: true
+        }
     ]
 }; 
 
@@ -4176,6 +4151,13 @@ const aiSearchData = [
         subcategory: "general_search"
     },
     {
+        name: "Genspark",
+        description: "一站式AI工作空间与搜索代理，支持深度研究、网页总结和任务自动执行",
+        url: "https://www.genspark.ai/",
+        tags: ["深度研究", "AI代理"],
+        subcategory: "general_search"
+    },
+    {
         name: "百度文心一言",
         description: "百度推出的AI搜索服务，提供中文内容理解和生成能力",
         url: "https://yiyan.baidu.com/",
@@ -4194,8 +4176,15 @@ const aiSearchData = [
     {
         name: "Elicit",
         description: "AI研究助手，帮助查找相关论文并总结研究发现",
-        url: "https://elicit.org/",
+        url: "https://elicit.com/",
         tags: ["研究工具", "论文分析"],
+        subcategory: "academic_search"
+    },
+    {
+        name: "NotebookLM",
+        description: "Google推出的来源驱动研究助手，可基于上传资料生成摘要、引用回答和音频概览",
+        url: "https://notebooklm.google/",
+        tags: ["研究助手", "引用回答"],
         subcategory: "academic_search"
     },
     {
@@ -4213,28 +4202,11 @@ const aiSearchData = [
         subcategory: "academic_search"
     },
     {
-        "name": "Lumina",
-        "logo": "https://lumina.com/favicon.ico",
-        "description": "完全免费的AI学术搜索引擎，覆盖论文、期刊等资源，支持一键生成文献综述",
-        "url": "https://lumina.com",
-        "tags": ["学术搜索", "论文检索"],
-        "subcategory": "academic_search"
-    },
-    {
         "name": "AMiner",
         "logo": "https://www.aminer.cn/favicon.ico",
         "description": "智谱AI推出的学术平台，基于大模型提供学者画像、论文推荐和趋势分析",
         "url": "https://www.aminer.cn",
         "tags": ["学术图谱", "科研分析"],
-        "subcategory": "academic_search"
-    },
-    
-    {
-        "name": "Consensus",
-        "logo": "https://consensus.app/favicon.ico",
-        "description": "直接链接科研论文结论的AI工具，用问答形式快速获取可信赖的研究答案",
-        "url": "https://consensus.app",
-        "tags": ["科研问答", "论文摘要"],
         "subcategory": "academic_search"
     },
     
@@ -4249,9 +4221,9 @@ const aiSearchData = [
     
     {
         "name": "AlphaSense",
-        "logo": "https://www.alphasese.com/favicon.ico",
+        "logo": "https://www.alpha-sense.com/favicon.ico",
         "description": "金融专业人士专用的AI平台，整合财报、新闻和行业分析数据",
-        "url": "https://www.alphasese.com",
+        "url": "https://www.alpha-sense.com/",
         "tags": ["金融数据", "行业分析"],
         "subcategory": "finance_search"
     },
@@ -4305,13 +4277,6 @@ const aiSearchData = [
         description: "代码搜索引擎，理解语义并提供上下文相关的代码结果",
         url: "https://bloop.ai/",
         tags: ["代码搜索", "语义理解"],
-        subcategory: "programming_search"
-    },
-    {
-        name: "Devv",
-        description: "开发者专用AI搜索，提供代码示例和技术解决方案",
-        url: "https://devv.ai/",
-        tags: ["代码示例", "技术解决方案"],
         subcategory: "programming_search"
     },
     {
