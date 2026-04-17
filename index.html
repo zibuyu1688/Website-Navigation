@@ -1140,6 +1140,8 @@
     <script>
         // 语言切换功能
         function switchLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            sessionStorage.setItem('ipLanguageResolved', '1');
             if (lang === 'en') {
                 window.location.href = "en.html";
             } else {

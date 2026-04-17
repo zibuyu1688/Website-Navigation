@@ -279,6 +279,9 @@ const languageData = {
 
 // 当前语言
 let currentLanguage = 'zh';
+const LANGUAGE_PREFERENCE_KEY = 'preferredLanguage';
+const LANGUAGE_IP_RESOLVED_KEY = 'ipLanguageResolved';
+const CHINESE_REGION_CODES = new Set(['CN', 'HK', 'MO', 'TW']);
 
 // 语言切换功能
 function initLanguage() {
@@ -291,34 +294,120 @@ function initLanguage() {
     
     if (isEnglish) {
         currentLanguage = 'en'; // 设置当前语言为英文
-        chineseBtn.classList.remove('active');
-        englishBtn.classList.add('active');
+        if (chineseBtn) chineseBtn.classList.remove('active');
+        if (englishBtn) englishBtn.classList.add('active');
     } else {
         currentLanguage = 'zh'; // 设置当前语言为中文
-        chineseBtn.classList.add('active');
-        englishBtn.classList.remove('active');
+        if (chineseBtn) chineseBtn.classList.add('active');
+        if (englishBtn) englishBtn.classList.remove('active');
+    }
+
+    const preferredLanguage = localStorage.getItem(LANGUAGE_PREFERENCE_KEY);
+    if (preferredLanguage === 'zh' || preferredLanguage === 'en') {
+        if (preferredLanguage !== currentLanguage) {
+            redirectToLanguage(preferredLanguage);
+            return;
+        }
+
+        updateAllTexts();
+        return;
+    }
+
+    if (!sessionStorage.getItem(LANGUAGE_IP_RESOLVED_KEY)) {
+        autoRedirectByClientIP();
+        return;
     }
     
     // 更新所有文本
     updateAllTexts();
 }
 
+async function autoRedirectByClientIP() {
+    try {
+        const targetLanguage = await detectLanguageByIP();
+        sessionStorage.setItem(LANGUAGE_IP_RESOLVED_KEY, '1');
+
+        if (!targetLanguage) {
+            updateAllTexts();
+            return;
+        }
+
+        if (targetLanguage !== currentLanguage) {
+            redirectToLanguage(targetLanguage);
+            return;
+        }
+
+        updateAllTexts();
+    } catch (error) {
+        console.warn('IP language detection failed, fallback to current page language.', error);
+        sessionStorage.setItem(LANGUAGE_IP_RESOLVED_KEY, '1');
+        updateAllTexts();
+    }
+}
+
+async function detectLanguageByIP() {
+    const endpoints = [
+        'https://ipapi.co/json/',
+        'https://ipwho.is/'
+    ];
+
+    for (const endpoint of endpoints) {
+        try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 2500);
+            const response = await fetch(endpoint, {
+                signal: controller.signal,
+                cache: 'no-store'
+            });
+            clearTimeout(timeout);
+
+            if (!response.ok) {
+                continue;
+            }
+
+            const data = await response.json();
+            const countryCode = String(
+                data.country_code || data.countryCode || data.country || ''
+            ).toUpperCase();
+
+            if (!countryCode) {
+                continue;
+            }
+
+            return CHINESE_REGION_CODES.has(countryCode) ? 'zh' : 'en';
+        } catch (e) {
+            continue;
+        }
+    }
+
+    return null;
+}
+
+function redirectToLanguage(lang) {
+    const target = lang === 'en' ? 'en.html' : 'index.html';
+    if (!window.location.pathname.endsWith(target)) {
+        window.location.replace(target);
+    }
+}
+
 // 切换语言函数
 function switchLanguage(lang) {
     const chineseBtn = document.getElementById('chinese-toggle');
     const englishBtn = document.getElementById('english-toggle');
+    localStorage.setItem(LANGUAGE_PREFERENCE_KEY, lang);
+    sessionStorage.setItem(LANGUAGE_IP_RESOLVED_KEY, '1');
     
     if (lang === 'en') {
         // 切换到英文
         window.location.href = 'en.html';
-        chineseBtn.classList.remove('active');
-        englishBtn.classList.add('active');
+        if (chineseBtn) chineseBtn.classList.remove('active');
+        if (englishBtn) englishBtn.classList.add('active');
         currentLanguage = 'en'; // 设置当前语言为英文
     } else {
         // 切换到中文
         window.location.href = 'index.html';
-        chineseBtn.classList.add('active');
-        englishBtn.classList.remove('active');
+        if (chineseBtn) chineseBtn.classList.add('active');
+        if (englishBtn) englishBtn.classList.remove('active');
         currentLanguage = 'zh'; // 设置当前语言为中文
     }
 }
