@@ -4245,7 +4245,7 @@ const sitesData = {
         {
             title: 'Hugging Face',
             description: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
-            tags: ['Open Models', 'Community', 'Datasets'],
+            tags: ['Model Hub', 'Datasets', 'Spaces Apps'],
             url: 'https://huggingface.co/',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4269,7 +4269,7 @@ const sitesData = {
         {
             title: 'Product Hunt',
             description: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
-            tags: ['Trends', 'Competitive Research', 'Leaderboard'],
+            tags: ['Product Launches', 'Top Products', 'Startup Trends'],
             url: 'https://www.producthunt.com/',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4277,7 +4277,7 @@ const sitesData = {
         {
             title: 'TopAI.tools',
             description: 'Daily-updated AI tools directory in 2026 with 22,000+ tools and 120+ categories, ideal for quickly finding candidates.',
-            tags: ['Tool Discovery', 'Use Cases', 'Leaderboard'],
+            tags: ['AI Tool Database', 'Category Search', 'Daily Updates'],
             url: 'https://topai.tools/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4285,7 +4285,7 @@ const sitesData = {
         {
             title: 'Future Tools',
             description: 'Matt Wolfe curated AI tools database that remains actively updated in 2026 for browsing launches by category and newsletter tracking.',
-            tags: ['Tool Discovery', 'Leaderboard', 'Model Comparison'],
+            tags: ['New Tools', 'Category Browse', 'AI Briefing'],
             url: 'https://www.futuretools.io/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4301,7 +4301,7 @@ const sitesData = {
         {
             title: 'Civitai',
             description: 'Active generative visual model community with 2026 leaderboards, model pages, and creator ecosystem for tracking image-model trends.',
-            tags: ['Community', 'Leaderboard', 'Model Comparison'],
+            tags: ['Model Community', 'Top Models', 'LoRA Models'],
             url: 'https://civitai.com/',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4309,7 +4309,7 @@ const sitesData = {
         {
             title: 'Hugging Face Open LLM Leaderboard',
             description: 'One of the central public ranking hubs for open LLMs, useful for tracking evaluation results and submission activity for Qwen, DeepSeek, GLM, and more.',
-            tags: ['Open Models', 'Leaderboard', 'Model Comparison'],
+            tags: ['Open LLM Rankings', 'Eval Submissions', 'Model Comparison'],
             url: 'https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4317,7 +4317,7 @@ const sitesData = {
         {
             title: 'OpenCompass',
             description: 'One of the most authoritative Chinese evaluation hubs, covering 2026 leaderboards for general LLMs, science, safety, embodied AI, and vertical domains.',
-            tags: ['Chinese', 'Science', 'Leaderboard'],
+            tags: ['Chinese Evaluations', 'Science Benchmarks', 'Model Rankings'],
             url: 'https://opencompass.org.cn/home',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4325,7 +4325,7 @@ const sitesData = {
         {
             title: 'Kaggle Benchmarks',
             description: 'One of the largest data science communities, with a 2026 AI evaluation ecosystem built around public benchmarks, competitions, and long-form discussions.',
-            tags: ['Community', 'Leaderboard', 'General'],
+            tags: ['Public Benchmarks', 'Data Competitions', 'Long-form Discussions'],
             url: 'https://www.kaggle.com/benchmarks',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4333,7 +4333,7 @@ const sitesData = {
         {
             title: 'V2EX OpenAI Node',
             description: 'Active Chinese geek-community entry for AI discussions, with ongoing threads on model APIs, Codex automation, global products, and practical tooling.',
-            tags: ['Chinese', 'Community', 'Practical Discussions'],
+            tags: ['Chinese Forum', 'Model APIs', 'Practical Discussions'],
             url: 'https://www.v2ex.com/go/openai',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4341,7 +4341,7 @@ const sitesData = {
         {
             title: 'Reddit AI Subreddits',
             description: 'Community entry point for local models, ChatGPT usage, AGI discussion, and prompt optimization, with key hubs like r/LocalLLaMA, r/ChatGPT, r/Singularity, and r/PromptEngineering.',
-            tags: ['Community', 'Local Models', 'Live Discussions'],
+            tags: ['Subreddit Hubs', 'Local Models', 'Prompt Discussions'],
             url: 'https://www.reddit.com/r/LocalLLaMA/',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4349,7 +4349,7 @@ const sitesData = {
         {
             title: 'Discord AI Communities',
             description: 'Many major AI projects run real-time discussion on Discord, making it a practical entry for live support and feedback communities around tools like Midjourney, Anthropic, and vibe-coding projects.',
-            tags: ['Community', 'Live Discussions', 'Project Servers'],
+            tags: ['Discord Servers', 'Live Support', 'Project Communities'],
             url: 'https://discord.com/community',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4357,7 +4357,7 @@ const sitesData = {
         {
             title: 'Exploding Topics',
             description: 'Trend discovery platform useful in 2026 for spotting emerging demand, product directions, competitor moves, and ecommerce opportunities.',
-            tags: ['Trends', 'Competitive Research', 'Market Intelligence'],
+            tags: ['Demand Growth', 'Emerging Niches', 'Market Intelligence'],
             url: 'https://explodingtopics.com/',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4365,7 +4365,7 @@ const sitesData = {
         {
             title: 'Similarweb',
             description: 'Market intelligence platform with expanded 2026 AI Search and AEO capabilities for traffic, competitor, demand, and channel research.',
-            tags: ['Market Intelligence', 'Competitive Research', 'Trends'],
+            tags: ['Traffic Analysis', 'Competitor Sites', 'Demand Trends'],
             url: 'https://www.similarweb.com/',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4373,7 +4373,7 @@ const sitesData = {
         {
             title: 'Crunchbase',
             description: 'Company intelligence database for tracking 2026 startups, funding, growth predictions, and product moves across sectors.',
-            tags: ['Funding', 'Competitive Research', 'Trends'],
+            tags: ['Funding Database', 'Startups', 'Company Intelligence'],
             url: 'https://www.crunchbase.com/',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4381,7 +4381,7 @@ const sitesData = {
         {
             title: 'Arena AI Leaderboard',
             description: 'Successor to LMSYS Chatbot Arena, with 2026 blind-vote leaderboards spanning text, code, vision, search, and other arenas.',
-            tags: ['Blind Tests', 'Leaderboard', 'Model Comparison'],
+            tags: ['Blind Voting', 'Model Arena', 'Multi-Leaderboards'],
             url: 'https://arena.ai/leaderboard/text',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4389,7 +4389,7 @@ const sitesData = {
         {
             title: 'LiveCodeBench',
             description: 'Contamination-resistant coding benchmark that continuously collects fresh problems from LeetCode, AtCoder, and Codeforces.',
-            tags: ['Coding', 'Leaderboard', 'Contamination-Free'],
+            tags: ['Coding Rankings', 'Fresh Problems', 'Contamination-Free'],
             url: 'https://livecodebench.github.io/leaderboard.html',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4429,7 +4429,7 @@ const sitesData = {
         {
             title: 'Humanity\'s Last Exam',
             description: 'Official home for the frontier academic benchmark, with a 2026 Nature publication and rolling progress tracking for top models on HLE.',
-            tags: ['Science', 'General', 'Frontier Evaluation'],
+            tags: ['Academic Benchmark', 'Nature Paper', 'Frontier Benchmark'],
             url: 'https://lastexam.ai/',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4437,7 +4437,7 @@ const sitesData = {
         {
             title: 'EvalPlus Leaderboard',
             description: 'Rigorous coding leaderboard for AI coders, comparing correctness and efficiency on HumanEval+, MBPP+, and related tests.',
-            tags: ['Coding', 'Leaderboard', 'Open Models'],
+            tags: ['Coding Rankings', 'HumanEval+', 'Efficiency'],
             url: 'https://evalplus.github.io/leaderboard.html',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4453,7 +4453,7 @@ const sitesData = {
         {
             title: 'Scale Labs Leaderboards',
             description: 'Frontier evaluation hub spanning 20+ benchmarks across frontier, agentic, and safety categories, including HLE, SWE Atlas, and MCP Atlas.',
-            tags: ['Science', 'Frontier Evaluation', 'General'],
+            tags: ['Frontier Evals', 'Agent Benchmarks', 'Safety Benchmarks'],
             url: 'https://labs.scale.com/leaderboard',
             subcategory: 'resource_product_research',
             isRecommended: true
@@ -4461,7 +4461,7 @@ const sitesData = {
         {
             title: 'The Rundown AI',
             description: 'Continuously updated AI briefing in 2026 covering new models, enterprise adoption, tool guides, and learning resources.',
-            tags: ['News', 'Briefings', 'General'],
+            tags: ['AI News', 'Email Briefings', 'Tool Roundups'],
             url: 'https://www.therundown.ai/',
             subcategory: 'resource_learning_news',
             isRecommended: true
@@ -4469,7 +4469,7 @@ const sitesData = {
         {
             title: 'State of AI Report',
             description: 'High-signal annual AI analysis hub with the latest 2025 report and ongoing 2026 survey cycle, useful for macro industry understanding.',
-            tags: ['Reports', 'Trends', 'General'],
+            tags: ['Annual Report', 'Industry Insights', 'Macro Trends'],
             url: 'https://www.stateof.ai/',
             subcategory: 'resource_learning_news',
             isRecommended: true
