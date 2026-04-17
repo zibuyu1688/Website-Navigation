@@ -283,10 +283,26 @@ const LANGUAGE_PREFERENCE_KEY = 'preferredLanguage';
 const LANGUAGE_IP_RESOLVED_KEY = 'ipLanguageResolved';
 const CHINESE_REGION_CODES = new Set(['CN', 'HK', 'MO', 'TW']);
 
+function detectPageLanguage() {
+    const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+
+    // 兼容 cleanUrls 场景：/en 与 /en.html 都视为英文页
+    if (path.endsWith('/en') || path.endsWith('/en.html') || htmlLang.startsWith('en')) {
+        return 'en';
+    }
+
+    return 'zh';
+}
+
+function isTargetLanguagePage(lang) {
+    return detectPageLanguage() === lang;
+}
+
 // 语言切换功能
 function initLanguage() {
     // 检查当前页面是中文还是英文
-    const isEnglish = window.location.href.includes('en.html');
+    const isEnglish = detectPageLanguage() === 'en';
     
     // 根据当前语言设置按钮状态
     const chineseBtn = document.getElementById('chinese-toggle');
@@ -384,10 +400,12 @@ async function detectLanguageByIP() {
 }
 
 function redirectToLanguage(lang) {
-    const target = lang === 'en' ? 'en.html' : 'index.html';
-    if (!window.location.pathname.endsWith(target)) {
-        window.location.replace(target);
+    if (isTargetLanguagePage(lang)) {
+        return;
     }
+
+    const target = lang === 'en' ? 'en.html' : 'index.html';
+    window.location.replace(target);
 }
 
 // 切换语言函数
