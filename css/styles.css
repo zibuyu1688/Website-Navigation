@@ -1580,109 +1580,141 @@ body {
     position: relative;
     z-index: 1;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    align-items: stretch;
+    gap: 18px;
     width: 100%;
 }
 
-.footer-category-row {
+.footer-category-group {
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 0;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: rgba(255,255,255,0.62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.footer-group-core {
+    background: linear-gradient(180deg, rgba(244, 247, 255, 0.9), rgba(255,255,255,0.75));
+}
+
+.footer-group-creative {
+    background: linear-gradient(180deg, rgba(255, 245, 249, 0.9), rgba(255,255,255,0.75));
+}
+
+.footer-group-resource {
+    background: linear-gradient(180deg, rgba(245, 251, 255, 0.9), rgba(255,255,255,0.75));
+}
+
+.footer-group-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-group-header h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.footer-group-header p {
+    margin: 0;
+    color: #999;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.footer-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .footer-category-item {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 16px 10px 14px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.76);
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.88);
     border: 1px solid rgba(226, 232, 240, 0.9);
-    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     color: var(--text-color);
-    width: auto;
-    min-width: 75px;
-    min-height: 110px;
-    flex: 1;
+    width: 100%;
+    min-height: 84px;
 }
 
 .footer-category-item:hover {
-    background: rgba(255,255,255,0.95);
+    background: var(--footer-hover-bg, rgba(241, 245, 249, 0.96));
     border-color: rgba(93, 156, 236, 0.22);
-    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    transform: translateY(-3px);
 }
 
-.footer-category-item i {
-    font-size: 1.55rem;
-    margin-bottom: 0;
+.footer-tone-core {
+    --footer-hover-bg: rgba(239, 245, 255, 0.96);
 }
 
-.footer-category-item span {
-    font-size: 0.98rem;
-    font-weight: 700;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    line-height: 1.35;
-    color: #2b2f36;
+.footer-tone-creative {
+    --footer-hover-bg: rgba(255, 241, 246, 0.96);
 }
 
-/* 保持图标彩色 */
-.footer-category-item i.bi-house {
-    color: #FF6B6B;
+.footer-tone-resource {
+    --footer-hover-bg: rgba(238, 248, 255, 0.96);
 }
 
-.footer-category-item i.bi-shop {
-    color: #FF9E40;
+.footer-category-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: var(--footer-icon-bg, rgba(226, 232, 240, 0.72));
+    color: var(--footer-icon-color, #4b5563);
+    flex-shrink: 0;
+    transition: transform 0.28s ease, background-color 0.28s ease;
 }
 
-.footer-category-item i.bi-people {
-    color: #A177FF;
+.footer-category-item:hover .footer-category-icon {
+    transform: scale(1.08);
 }
 
-.footer-category-item i.bi-globe {
-    color: #5D9CEC;
+.footer-category-icon i {
+    font-size: 1.28rem;
+    color: var(--footer-icon-color, #4b5563);
 }
 
-.footer-category-item i.bi-chat-dots {
-    color: #4CD964;
+.footer-category-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
 
-.footer-category-item i.bi-pen {
-    color: #50A7FF;
+.footer-category-copy strong {
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #333;
 }
 
-.footer-category-item i.bi-image {
-    color: #FF54B0;
-}
-
-.footer-category-item i.bi-film {
-    color: #34C0EB;
-}
-
-.footer-category-item i.bi-soundwave {
-    color: #FFCE44;
-}
-
-.footer-category-item i.bi-palette {
-    color: #FF77BC;
-}
-
-.footer-category-item i.bi-code-slash {
-    color: #00BCD4;
+.footer-category-copy small {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: #999;
 }
 
 /* 响应式调整 */
@@ -1705,23 +1737,55 @@ body {
         font-size: 0.88rem;
         line-height: 1.6;
     }
-    
-    .footer-category-item {
-        padding: 12px 8px 10px;
-        min-height: 92px;
-        border-radius: 14px;
-    }
-    
-    .footer-category-item i {
-        font-size: 1.2rem;
-    }
-    
-    .footer-category-item span {
-        font-size: 0.8rem;
+
+    .categories-container {
+        gap: 10px;
     }
 
-    .footer-category-row {
+    .footer-category-group {
+        flex: 1 1 calc(33.333% - 7px);
+        padding: 12px 10px;
+        border-radius: 16px;
+        gap: 10px;
+    }
+
+    .footer-group-header h4 {
+        font-size: 0.92rem;
+    }
+
+    .footer-group-header p {
+        font-size: 0.73rem;
+        line-height: 1.45;
+    }
+
+    .footer-category-list {
         gap: 8px;
+    }
+
+    .footer-category-item {
+        padding: 10px 9px;
+        min-height: 72px;
+        border-radius: 14px;
+        gap: 8px;
+    }
+
+    .footer-category-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+    }
+
+    .footer-category-icon i {
+        font-size: 1rem;
+    }
+
+    .footer-category-copy strong {
+        font-size: 0.82rem;
+    }
+
+    .footer-category-copy small {
+        font-size: 0.7rem;
+        line-height: 1.35;
     }
 }
 
@@ -1743,16 +1807,6 @@ body {
 /* AI提示词子菜单圆圈 - 橙色 */
 .submenu-ai-prompts .nav-item::before {
     background-color: #ff9800;
-}
-
-/* AI编程图标 - 蓝绿色 */
-.footer-category-item .bi-code-slash {
-    color: #00acc1;
-}
-
-/* AI提示词图标 - 橙色 */
-.footer-category-item .bi-lightbulb {
-    color: #ff9800;
 }
 
 #website-section .subcategory-nav {

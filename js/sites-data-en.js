@@ -3798,6 +3798,14 @@ const sitesData = {
         "needsMagic": true
     },
     {
+        "title": "CodeBuddy",
+        "description": "Business software build platform for service teams, combining an AI software studio, expert delivery and starter kits to launch custom systems faster",
+        "tags": ["business software", "full-stack development", "AI studio"],
+        "url": "https://www.codebuddy.com/",
+        "subcategory": "fullstack_dev",
+        "needsMagic": true
+    },
+    {
         "title": "Mashangfei",
         "description": "AI-driven automatic application generation platform improving development efficiency",
         "tags": ["application generation", "development efficiency", "AI programming"],
@@ -3975,6 +3983,14 @@ const sitesData = {
         "subcategory": "low_code",
         "needsMagic": true
     },
+    {
+        "title": "Meoo",
+        "description": "AI app creation platform that turns Excel, PPTs and resumes into H5 apps, interactive demos and web pages",
+        "tags": ["AI app generation", "H5 builder", "interactive demos"],
+        "url": "https://meoo.com/",
+        "subcategory": "low_code",
+        "needsMagic": false
+    },
     
     // 云端IDE与编辑器
     {
@@ -4022,6 +4038,14 @@ const sitesData = {
         "description": "Replit's AI programming assistant to help developers code faster",
         "tags": ["Replit", "AI assistant", "rapid coding"],
         "url": "https://replit.com/ai",
+        "subcategory": "cloud_ide",
+        "needsMagic": true
+    },
+    {
+        "title": "Qoder",
+        "description": "Agentic IDE for real software development with collaborative coding, Repo Wiki, CLI workflows and a JetBrains plugin",
+        "tags": ["agentic IDE", "repo understanding", "AI coding"],
+        "url": "https://qoder.com/",
         "subcategory": "cloud_ide",
         "needsMagic": true
     }
@@ -4221,7 +4245,7 @@ const sitesData = {
         {
             title: 'Hugging Face',
             description: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
-            tags: ['AI Resources', 'Models', 'Datasets'],
+            tags: ['Open Models', 'Community', 'Datasets'],
             url: 'https://huggingface.co/',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4229,7 +4253,7 @@ const sitesData = {
         {
             title: 'Futurepedia',
             description: 'Large AI tools directory covering automation products and use cases for discovery and competitor research.',
-            tags: ['AI Directory', 'Discovery', 'Tool Database'],
+            tags: ['Tool Discovery', 'Use Cases', 'Model Comparison'],
             url: 'https://www.futurepedia.io/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4237,7 +4261,7 @@ const sitesData = {
         {
             title: 'There’s An AI For That',
             description: 'Task-based AI tool finder that helps users discover products by specific use cases and workflows.',
-            tags: ['Use Cases', 'AI Search', 'Tool Finder'],
+            tags: ['Tool Discovery', 'Use Cases', 'Model Comparison'],
             url: 'https://theresanaiforthat.com/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4245,9 +4269,209 @@ const sitesData = {
         {
             title: 'Product Hunt',
             description: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
-            tags: ['Launches', 'Trends', 'Product Discovery'],
+            tags: ['Trends', 'Competitive Research', 'Leaderboard'],
             url: 'https://www.producthunt.com/',
             subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'TopAI.tools',
+            description: 'Daily-updated AI tools directory in 2026 with 22,000+ tools and 120+ categories, ideal for quickly finding candidates.',
+            tags: ['Tool Discovery', 'Use Cases', 'Leaderboard'],
+            url: 'https://topai.tools/',
+            subcategory: 'resource_tool_navigation',
+            isRecommended: true
+        },
+        {
+            title: 'Future Tools',
+            description: 'Matt Wolfe curated AI tools database that remains actively updated in 2026 for browsing launches by category and newsletter tracking.',
+            tags: ['Tool Discovery', 'Leaderboard', 'Model Comparison'],
+            url: 'https://www.futuretools.io/',
+            subcategory: 'resource_tool_navigation',
+            isRecommended: true
+        },
+        {
+            title: 'ModelScope',
+            description: 'Major open model community with active 2026 updates across models, datasets, studios, and MCP marketplace for the Chinese AI ecosystem.',
+            tags: ['Open Models', 'Community', 'Chinese'],
+            url: 'https://modelscope.cn/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Civitai',
+            description: 'Active generative visual model community with 2026 leaderboards, model pages, and creator ecosystem for tracking image-model trends.',
+            tags: ['Community', 'Leaderboard', 'Model Comparison'],
+            url: 'https://civitai.com/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Hugging Face Open LLM Leaderboard',
+            description: 'One of the central public ranking hubs for open LLMs, useful for tracking evaluation results and submission activity for Qwen, DeepSeek, GLM, and more.',
+            tags: ['Open Models', 'Leaderboard', 'Model Comparison'],
+            url: 'https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'OpenCompass',
+            description: 'One of the most authoritative Chinese evaluation hubs, covering 2026 leaderboards for general LLMs, science, safety, embodied AI, and vertical domains.',
+            tags: ['Chinese', 'Science', 'Leaderboard'],
+            url: 'https://opencompass.org.cn/home',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Kaggle Benchmarks',
+            description: 'One of the largest data science communities, with a 2026 AI evaluation ecosystem built around public benchmarks, competitions, and long-form discussions.',
+            tags: ['Community', 'Leaderboard', 'General'],
+            url: 'https://www.kaggle.com/benchmarks',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'V2EX OpenAI Node',
+            description: 'Active Chinese geek-community entry for AI discussions, with ongoing threads on model APIs, Codex automation, global products, and practical tooling.',
+            tags: ['Chinese', 'Community', 'Practical Discussions'],
+            url: 'https://www.v2ex.com/go/openai',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Reddit AI Subreddits',
+            description: 'Community entry point for local models, ChatGPT usage, AGI discussion, and prompt optimization, with key hubs like r/LocalLLaMA, r/ChatGPT, r/Singularity, and r/PromptEngineering.',
+            tags: ['Community', 'Local Models', 'Live Discussions'],
+            url: 'https://www.reddit.com/r/LocalLLaMA/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Discord AI Communities',
+            description: 'Many major AI projects run real-time discussion on Discord, making it a practical entry for live support and feedback communities around tools like Midjourney, Anthropic, and vibe-coding projects.',
+            tags: ['Community', 'Live Discussions', 'Project Servers'],
+            url: 'https://discord.com/community',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Exploding Topics',
+            description: 'Trend discovery platform useful in 2026 for spotting emerging demand, product directions, competitor moves, and ecommerce opportunities.',
+            tags: ['Trends', 'Competitive Research', 'Market Intelligence'],
+            url: 'https://explodingtopics.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Similarweb',
+            description: 'Market intelligence platform with expanded 2026 AI Search and AEO capabilities for traffic, competitor, demand, and channel research.',
+            tags: ['Market Intelligence', 'Competitive Research', 'Trends'],
+            url: 'https://www.similarweb.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Crunchbase',
+            description: 'Company intelligence database for tracking 2026 startups, funding, growth predictions, and product moves across sectors.',
+            tags: ['Funding', 'Competitive Research', 'Trends'],
+            url: 'https://www.crunchbase.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Arena AI Leaderboard',
+            description: 'Successor to LMSYS Chatbot Arena, with 2026 blind-vote leaderboards spanning text, code, vision, search, and other arenas.',
+            tags: ['Blind Tests', 'Leaderboard', 'Model Comparison'],
+            url: 'https://arena.ai/leaderboard/text',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'LiveCodeBench',
+            description: 'Contamination-resistant coding benchmark that continuously collects fresh problems from LeetCode, AtCoder, and Codeforces.',
+            tags: ['Coding', 'Leaderboard', 'Contamination-Free'],
+            url: 'https://livecodebench.github.io/leaderboard.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'SWE-bench Verified',
+            description: 'Core public benchmark for software engineering agents, with continuously updated 2026 results on resolving real GitHub issues.',
+            tags: ['Coding', 'Real Tasks', 'Agents'],
+            url: 'https://www.swebench.com/verified.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'GPQA Benchmark',
+            description: 'Canonical public entry for the PhD-level physics, chemistry, and biology reasoning benchmark used to judge top-end scientific reasoning.',
+            tags: ['Science', 'Reasoning', 'Hard QA'],
+            url: 'https://github.com/idavidrein/gpqa',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Vellum AI Leaderboard',
+            description: 'Deployment-oriented model leaderboard that compares 2026 benchmark scores alongside price, latency, speed, and context windows.',
+            tags: ['Deployment', 'Cost', 'Latency'],
+            url: 'https://www.vellum.ai/llm-leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'ARC Prize',
+            description: 'Official home for ARC-AGI and ARC Prize 2026, focused on low-noise, high-signal evaluation of general intelligence and fluid reasoning.',
+            tags: ['Science', 'Reasoning', 'AGI'],
+            url: 'https://arcprize.org/leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Humanity\'s Last Exam',
+            description: 'Official home for the frontier academic benchmark, with a 2026 Nature publication and rolling progress tracking for top models on HLE.',
+            tags: ['Science', 'General', 'Frontier Evaluation'],
+            url: 'https://lastexam.ai/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'EvalPlus Leaderboard',
+            description: 'Rigorous coding leaderboard for AI coders, comparing correctness and efficiency on HumanEval+, MBPP+, and related tests.',
+            tags: ['Coding', 'Leaderboard', 'Open Models'],
+            url: 'https://evalplus.github.io/leaderboard.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Aider Polyglot Leaderboard',
+            description: 'Official multilingual code-editing leaderboard from Aider, testing cross-language coding and editing on 225 Exercism exercises.',
+            tags: ['Coding', 'Code Editing', 'Multilingual'],
+            url: 'https://aider.chat/docs/leaderboards/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Scale Labs Leaderboards',
+            description: 'Frontier evaluation hub spanning 20+ benchmarks across frontier, agentic, and safety categories, including HLE, SWE Atlas, and MCP Atlas.',
+            tags: ['Science', 'Frontier Evaluation', 'General'],
+            url: 'https://labs.scale.com/leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'The Rundown AI',
+            description: 'Continuously updated AI briefing in 2026 covering new models, enterprise adoption, tool guides, and learning resources.',
+            tags: ['News', 'Briefings', 'General'],
+            url: 'https://www.therundown.ai/',
+            subcategory: 'resource_learning_news',
+            isRecommended: true
+        },
+        {
+            title: 'State of AI Report',
+            description: 'High-signal annual AI analysis hub with the latest 2025 report and ongoing 2026 survey cycle, useful for macro industry understanding.',
+            tags: ['Reports', 'Trends', 'General'],
+            url: 'https://www.stateof.ai/',
+            subcategory: 'resource_learning_news',
             isRecommended: true
         }
     ],

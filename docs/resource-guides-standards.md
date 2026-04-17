@@ -138,3 +138,7 @@ Technical Playbooks 回答：
 - `resource_model_community`
 - `resource_product_research`
 - `resource_learning_news`
+
+## 标签规范
+
+resources 条目的 tags / tagsEn 需遵循标准化标签词表，不再自由命名。详见 `docs/resource-guides-tag-glossary.md`。

@@ -4285,6 +4285,14 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'CodeBuddy',
+            description: '面向企业与服务行业的软件构建平台，结合 AI 工作室、专家交付与 StarterKit 快速搭建业务系统',
+            tags: ['业务系统', '全栈开发', 'AI工作室'],
+            url: 'https://www.codebuddy.com/',
+            subcategory: 'fullstack_dev',
+            needsMagic: true
+        },
+        {
             title: '码上飞',
             description: 'AI驱动的应用自动生成平台，提升开发效率',
             tags: ['应用生成', '开发效率', 'AI编程'],
@@ -4462,6 +4470,14 @@ const sitesData = {
             subcategory: 'low_code',
             needsMagic: true
         },
+        {
+            title: 'Meoo',
+            description: 'AI 应用创建平台，可将 Excel、PPT、简历等内容快速生成 H5、网页应用和可交互演示页面',
+            tags: ['AI应用生成', 'H5创建', '可视化演示'],
+            url: 'https://meoo.com/',
+            subcategory: 'low_code',
+            needsMagic: false
+        },
         
         // 云端IDE与编辑器
         {
@@ -4509,6 +4525,14 @@ const sitesData = {
             description: 'Replit推出的AI编程助手，帮助开发者快速编码',
             tags: ['Replit', 'AI助手', '快速编码'],
             url: 'https://replit.com/ai',
+            subcategory: 'cloud_ide',
+            needsMagic: true
+        },
+        {
+            title: 'Qoder',
+            description: '面向真实软件开发的 Agentic IDE，提供智能体协作编码、Repo Wiki、CLI 与 JetBrains 插件能力',
+            tags: ['Agentic IDE', '代码库理解', '智能体编程'],
+            url: 'https://qoder.com/',
             subcategory: 'cloud_ide',
             needsMagic: true
         }
@@ -4710,8 +4734,8 @@ const sitesData = {
             titleEn: 'Hugging Face',
             description: '全球主流的开源 AI 模型、数据集与 Spaces 社区，适合查找模型资源、案例和工具集合。',
             descriptionEn: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
-            tags: ['AI资源库', '模型社区', '数据集'],
-            tagsEn: ['AI Resources', 'Models', 'Datasets'],
+            tags: ['开源', '社区', '数据集'],
+            tagsEn: ['Open Models', 'Community', 'Datasets'],
             url: 'https://huggingface.co/',
             subcategory: 'resource_model_community',
             isRecommended: true
@@ -4721,8 +4745,8 @@ const sitesData = {
             titleEn: 'Futurepedia',
             description: '覆盖大量 AI 工具、自动化产品与行业场景的导航目录，适合做工具发现和竞品参考。',
             descriptionEn: 'Large AI tools directory covering automation products and use cases for discovery and competitor research.',
-            tags: ['AI工具目录', '资源导航', '产品发现'],
-            tagsEn: ['AI Directory', 'Discovery', 'Tool Database'],
+            tags: ['工具导航', '任务检索', '模型对比'],
+            tagsEn: ['Tool Discovery', 'Use Cases', 'Model Comparison'],
             url: 'https://www.futurepedia.io/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4732,8 +4756,8 @@ const sitesData = {
             titleEn: 'There’s An AI For That',
             description: '按任务场景快速查找 AI 工具的网站，适合从具体需求反推可用产品。',
             descriptionEn: 'Task-based AI tool finder that helps users discover products by specific use cases and workflows.',
-            tags: ['任务场景', 'AI导航', '工具检索'],
-            tagsEn: ['Use Cases', 'AI Search', 'Tool Finder'],
+            tags: ['工具导航', '任务检索', '模型对比'],
+            tagsEn: ['Tool Discovery', 'Use Cases', 'Model Comparison'],
             url: 'https://theresanaiforthat.com/',
             subcategory: 'resource_tool_navigation',
             isRecommended: true
@@ -4743,10 +4767,285 @@ const sitesData = {
             titleEn: 'Product Hunt',
             description: '适合追踪新工具、新产品和创业趋势的发现平台，可快速了解热门资源与新上线服务。',
             descriptionEn: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
-            tags: ['新品发现', '趋势观察', '工具上新'],
-            tagsEn: ['Launches', 'Trends', 'Product Discovery'],
+            tags: ['趋势', '竞品', '榜单'],
+            tagsEn: ['Trends', 'Competitive Research', 'Leaderboard'],
             url: 'https://www.producthunt.com/',
             subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'TopAI.tools',
+            titleEn: 'TopAI.tools',
+            description: '2026 年仍保持日更的 AI 工具目录与搜索入口，覆盖 22000+ 工具和 120+ 分类，适合快速找候选工具。',
+            descriptionEn: 'Daily-updated AI tools directory in 2026 with 22,000+ tools and 120+ categories, ideal for quickly finding candidates.',
+            tags: ['工具导航', '任务检索', '榜单'],
+            tagsEn: ['Tool Discovery', 'Use Cases', 'Leaderboard'],
+            url: 'https://topai.tools/',
+            subcategory: 'resource_tool_navigation',
+            isRecommended: true
+        },
+        {
+            title: 'Future Tools',
+            titleEn: 'Future Tools',
+            description: 'Matt Wolfe 维护的 AI 工具数据库，2026 年仍持续更新，适合按类别浏览新工具并订阅 AI Briefing。',
+            descriptionEn: 'Matt Wolfe curated AI tools database that remains actively updated in 2026 for browsing launches by category and newsletter tracking.',
+            tags: ['工具导航', '榜单', '模型对比'],
+            tagsEn: ['Tool Discovery', 'Leaderboard', 'Model Comparison'],
+            url: 'https://www.futuretools.io/',
+            subcategory: 'resource_tool_navigation',
+            isRecommended: true
+        },
+        {
+            title: 'ModelScope 魔搭社区',
+            titleEn: 'ModelScope',
+            description: '国内头部开源模型社区，2026 年持续更新模型库、数据集、创空间与 MCP 广场，适合进入中文模型生态。',
+            descriptionEn: 'Major open model community with active 2026 updates across models, datasets, studios, and MCP marketplace for the Chinese AI ecosystem.',
+            tags: ['模型社区', '数据集', '创空间'],
+            tagsEn: ['Model Community', 'Datasets', 'Studios'],
+            url: 'https://modelscope.cn/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Civitai',
+            titleEn: 'Civitai',
+            description: '面向生成式视觉创作者的模型与作品社区，2026 年仍有活跃榜单、模型页和创作者生态，适合跟踪图像模型趋势。',
+            descriptionEn: 'Active generative visual model community with 2026 leaderboards, model pages, and creator ecosystem for tracking image-model trends.',
+            tags: ['社区', '榜单', '模型对比'],
+            tagsEn: ['Community', 'Leaderboard', 'Model Comparison'],
+            url: 'https://civitai.com/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Hugging Face Open LLM Leaderboard',
+            titleEn: 'Hugging Face Open LLM Leaderboard',
+            description: '开源大模型最核心的公开排行榜入口之一，适合跟踪 Qwen、DeepSeek、GLM 等开源模型的评测结果与提交动态。',
+            descriptionEn: 'One of the central public ranking hubs for open LLMs, useful for tracking evaluation results and submission activity for Qwen, DeepSeek, GLM, and more.',
+            tags: ['开源', '榜单', '模型对比'],
+            tagsEn: ['Open Models', 'Leaderboard', 'Model Comparison'],
+            url: 'https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'OpenCompass 司南评测',
+            titleEn: 'OpenCompass',
+            description: '国内最权威的大模型评测入口之一，2026 年覆盖通用大模型、科学智能、安全、具身和金融医疗等垂类榜单。',
+            descriptionEn: 'One of the most authoritative Chinese evaluation hubs, covering 2026 leaderboards for general LLMs, science, safety, embodied AI, and vertical domains.',
+            tags: ['中文', '科学', '榜单'],
+            tagsEn: ['Chinese', 'Science', 'Leaderboard'],
+            url: 'https://opencompass.org.cn/home',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Kaggle Benchmarks',
+            titleEn: 'Kaggle Benchmarks',
+            description: '全球最大数据科学社区之一，2026 年已形成公开 Benchmarks、竞赛和长帖讨论三位一体的 AI 评测生态。',
+            descriptionEn: 'One of the largest data science communities, with a 2026 AI evaluation ecosystem built around public benchmarks, competitions, and long-form discussions.',
+            tags: ['社区', '榜单', '综合'],
+            tagsEn: ['Community', 'Leaderboard', 'General'],
+            url: 'https://www.kaggle.com/benchmarks',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'V2EX OpenAI 节点',
+            titleEn: 'V2EX OpenAI Node',
+            description: '国内活跃极客社区中的 AI 讨论入口，持续有模型 API 对比、Codex 自动化、出海业务和实战工具经验帖。',
+            descriptionEn: 'Active Chinese geek-community entry for AI discussions, with ongoing threads on model APIs, Codex automation, global products, and practical tooling.',
+            tags: ['中文', '社区', '实战讨论'],
+            tagsEn: ['Chinese', 'Community', 'Practical Discussions'],
+            url: 'https://www.v2ex.com/go/openai',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Reddit AI Subreddits',
+            titleEn: 'Reddit AI Subreddits',
+            description: '适合跟踪本地模型、ChatGPT 应用、AGI 讨论和提示词优化的社区入口，代表性版块包括 r/LocalLLaMA、r/ChatGPT、r/Singularity 和 r/PromptEngineering。',
+            descriptionEn: 'Community entry point for local models, ChatGPT usage, AGI discussion, and prompt optimization, with key hubs like r/LocalLLaMA, r/ChatGPT, r/Singularity, and r/PromptEngineering.',
+            tags: ['社区', '本地模型', '实时讨论'],
+            tagsEn: ['Community', 'Local Models', 'Live Discussions'],
+            url: 'https://www.reddit.com/r/LocalLLaMA/',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Discord AI Communities',
+            titleEn: 'Discord AI Communities',
+            description: '许多主流 AI 项目的实时讨论都在 Discord 上进行，适合进入 Midjourney、Anthropic 或 Vibe Coding 等项目的即时答疑与反馈社群。',
+            descriptionEn: 'Many major AI projects run real-time discussion on Discord, making it a practical entry for live support and feedback communities around tools like Midjourney, Anthropic, and vibe-coding projects.',
+            tags: ['社区', '实时讨论', '项目社群'],
+            tagsEn: ['Community', 'Live Discussions', 'Project Servers'],
+            url: 'https://discord.com/community',
+            subcategory: 'resource_model_community',
+            isRecommended: true
+        },
+        {
+            title: 'Exploding Topics',
+            titleEn: 'Exploding Topics',
+            description: '面向 2026 趋势研究的产品与赛道发现平台，可提前捕捉需求增长、竞品方向和电商机会。',
+            descriptionEn: 'Trend discovery platform useful in 2026 for spotting emerging demand, product directions, competitor moves, and ecommerce opportunities.',
+            tags: ['趋势', '竞品', '市场情报'],
+            tagsEn: ['Trends', 'Competitive Research', 'Market Intelligence'],
+            url: 'https://explodingtopics.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Similarweb',
+            titleEn: 'Similarweb',
+            description: '2026 年强化了 AI Search 与 AEO 能力的市场情报平台，适合做流量、竞品、需求与渠道研究。',
+            descriptionEn: 'Market intelligence platform with expanded 2026 AI Search and AEO capabilities for traffic, competitor, demand, and channel research.',
+            tags: ['市场情报', '竞品', '趋势'],
+            tagsEn: ['Market Intelligence', 'Competitive Research', 'Trends'],
+            url: 'https://www.similarweb.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Crunchbase',
+            titleEn: 'Crunchbase',
+            description: '适合追踪 2026 年创业公司、融资、增长预测和产品动向的公司情报数据库，可用于赛道扫描与竞品研究。',
+            descriptionEn: 'Company intelligence database for tracking 2026 startups, funding, growth predictions, and product moves across sectors.',
+            tags: ['融资', '竞品', '趋势'],
+            tagsEn: ['Funding', 'Competitive Research', 'Trends'],
+            url: 'https://www.crunchbase.com/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Arena AI 排行榜',
+            titleEn: 'Arena AI Leaderboard',
+            description: '由 LMSYS Chatbot Arena 演进而来的模型竞技场入口，2026 年已扩展到 Text、Code、Vision、Search 等多榜单盲测对战。',
+            descriptionEn: 'Successor to LMSYS Chatbot Arena, with 2026 blind-vote leaderboards spanning text, code, vision, search, and other arenas.',
+            tags: ['盲测', '榜单', '模型对比'],
+            tagsEn: ['Blind Tests', 'Leaderboard', 'Model Comparison'],
+            url: 'https://arena.ai/leaderboard/text',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'LiveCodeBench',
+            titleEn: 'LiveCodeBench',
+            description: '持续收集 LeetCode、AtCoder、Codeforces 新题的无污染代码评测榜，适合检验模型真实编程能力。',
+            descriptionEn: 'Contamination-resistant coding benchmark that continuously collects fresh problems from LeetCode, AtCoder, and Codeforces.',
+            tags: ['代码', '榜单', '无污染'],
+            tagsEn: ['Coding', 'Leaderboard', 'Contamination-Free'],
+            url: 'https://livecodebench.github.io/leaderboard.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'SWE-bench Verified',
+            titleEn: 'SWE-bench Verified',
+            description: '软件工程能力的核心公开榜单之一，2026 年持续更新真实 GitHub Issue 修复结果，可直接比较模型解决率与成本。',
+            descriptionEn: 'Core public benchmark for software engineering agents, with continuously updated 2026 results on resolving real GitHub issues.',
+            tags: ['代码', '真实任务', 'Agent'],
+            tagsEn: ['Coding', 'Real Tasks', 'Agents'],
+            url: 'https://www.swebench.com/verified.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'GPQA Benchmark',
+            titleEn: 'GPQA Benchmark',
+            description: '博士级物理、化学、生物推理 benchmark 的官方公开入口，适合判断模型在高难科学问答上的上限。',
+            descriptionEn: 'Canonical public entry for the PhD-level physics, chemistry, and biology reasoning benchmark used to judge top-end scientific reasoning.',
+            tags: ['科学', '推理', '高难问答'],
+            tagsEn: ['Science', 'Reasoning', 'Hard QA'],
+            url: 'https://github.com/idavidrein/gpqa',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Vellum AI Leaderboard',
+            titleEn: 'Vellum AI Leaderboard',
+            description: '商业部署视角很强的模型榜单，2026 年同时比较 GPQA、SWE Bench、价格、延迟、速度和上下文窗口。',
+            descriptionEn: 'Deployment-oriented model leaderboard that compares 2026 benchmark scores alongside price, latency, speed, and context windows.',
+            tags: ['商业部署', '成本', '延迟'],
+            tagsEn: ['Deployment', 'Cost', 'Latency'],
+            url: 'https://www.vellum.ai/llm-leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'ARC Prize',
+            titleEn: 'ARC Prize',
+            description: 'ARC-AGI 系列与 ARC Prize 2026 的官方入口，主打低噪声、高信号的通用智能与流体推理评测。',
+            descriptionEn: 'Official home for ARC-AGI and ARC Prize 2026, focused on low-noise, high-signal evaluation of general intelligence and fluid reasoning.',
+            tags: ['科学', '推理', 'AGI'],
+            tagsEn: ['Science', 'Reasoning', 'AGI'],
+            url: 'https://arcprize.org/leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Humanity\'s Last Exam',
+            titleEn: 'Humanity\'s Last Exam',
+            description: '前沿学术能力 benchmark 的官方入口，2026 年已发布 Nature 论文并持续滚动展示顶级模型在 HLE 上的进展。',
+            descriptionEn: 'Official home for the frontier academic benchmark, with a 2026 Nature publication and rolling progress tracking for top models on HLE.',
+            tags: ['科学', '综合', '前沿评测'],
+            tagsEn: ['Science', 'General', 'Frontier Evaluation'],
+            url: 'https://lastexam.ai/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'EvalPlus Leaderboard',
+            titleEn: 'EvalPlus Leaderboard',
+            description: '面向 AI Coder 的严格代码榜单，围绕 HumanEval+、MBPP+ 等测试集比较正确率与效率。',
+            descriptionEn: 'Rigorous coding leaderboard for AI coders, comparing correctness and efficiency on HumanEval+, MBPP+, and related tests.',
+            tags: ['代码', '榜单', '开源'],
+            tagsEn: ['Coding', 'Leaderboard', 'Open Models'],
+            url: 'https://evalplus.github.io/leaderboard.html',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Aider Polyglot Leaderboard',
+            titleEn: 'Aider Polyglot Leaderboard',
+            description: 'Aider 官方多语言代码编辑榜，测试模型在 225 道 Exercism 练习中的跨语言写码与改码能力。',
+            descriptionEn: 'Official multilingual code-editing leaderboard from Aider, testing cross-language coding and editing on 225 Exercism exercises.',
+            tags: ['代码', '代码编辑', '多语言'],
+            tagsEn: ['Coding', 'Code Editing', 'Multilingual'],
+            url: 'https://aider.chat/docs/leaderboards/',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'Scale Labs Leaderboards',
+            titleEn: 'Scale Labs Leaderboards',
+            description: '覆盖 frontier、agentic、safety 等 20+ 基准的前沿评测入口，可查看 HLE、SWE Atlas、MCP Atlas 等最新模型排名。',
+            descriptionEn: 'Frontier evaluation hub spanning 20+ benchmarks across frontier, agentic, and safety categories, including HLE, SWE Atlas, and MCP Atlas.',
+            tags: ['科学', '前沿评测', '综合'],
+            tagsEn: ['Science', 'Frontier Evaluation', 'General'],
+            url: 'https://labs.scale.com/leaderboard',
+            subcategory: 'resource_product_research',
+            isRecommended: true
+        },
+        {
+            title: 'The Rundown AI',
+            titleEn: 'The Rundown AI',
+            description: '2026 年持续更新的 AI 新闻与应用简报，覆盖最新模型、企业落地、工具指南和课程资源。',
+            descriptionEn: 'Continuously updated AI briefing in 2026 covering new models, enterprise adoption, tool guides, and learning resources.',
+            tags: ['资讯', '周报', '综合'],
+            tagsEn: ['News', 'Briefings', 'General'],
+            url: 'https://www.therundown.ai/',
+            subcategory: 'resource_learning_news',
+            isRecommended: true
+        },
+        {
+            title: 'State of AI Report',
+            titleEn: 'State of AI Report',
+            description: '长期高质量 AI 年度观察入口，当前可直达 2025 报告并延续到 2026 调研周期，适合做行业全局判断。',
+            descriptionEn: 'High-signal annual AI analysis hub with the latest 2025 report and ongoing 2026 survey cycle, useful for macro industry understanding.',
+            tags: ['报告', '趋势', '综合'],
+            tagsEn: ['Reports', 'Trends', 'General'],
+            url: 'https://www.stateof.ai/',
+            subcategory: 'resource_learning_news',
             isRecommended: true
         }
     ],

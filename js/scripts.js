@@ -2620,79 +2620,149 @@ function clearSearch() {
     });
 }
 
-// 组织底部分类导航为两行布局
+// 组织底部分类导航为三列分组布局
 function organizeFooterCategories() {
     const container = document.querySelector('.categories-container');
     if (!container) return;
+
+    const pageLanguage = typeof detectPageLanguage === 'function'
+        ? detectPageLanguage()
+        : ((document.documentElement.lang || '').toLowerCase().startsWith('en') ? 'en' : 'zh');
+    const isEnglish = pageLanguage === 'en';
     
     // 清空现有内容
     container.innerHTML = '';
-    
-    // 创建第一行和第二行容器
-    const row1 = document.createElement('div');
-    row1.className = 'footer-category-row';
-    
-    const row2 = document.createElement('div');
-    row2.className = 'footer-category-row';
-    
-    // 定义所有一级分类
-    const categories = [
-        { id: 'ecommerce', icon: 'bi-shop', text: '电商平台' },
-        { id: 'social', icon: 'bi-people', text: '社交平台' },
-        { id: 'website', icon: 'bi-globe', text: '建站工具' },
-        { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI对话' },
-        { id: 'ai_writing', icon: 'bi-pen', text: 'AI写作' },
-        { id: 'ai_image', icon: 'bi-image', text: 'AI图像' },
-        { id: 'ecommerce_zone', icon: 'bi-bag-check', text: '电商专区' },
-        { id: 'ai_video', icon: 'bi-film', text: 'AI视频' },
-        { id: 'ai_audio', icon: 'bi-soundwave', text: 'AI音频' },
-        { id: 'ai_design', icon: 'bi-palette', text: 'AI设计' },
-        { id: 'ai_coding', icon: 'bi-code-slash', text: 'AI编程' },
-        { id: 'ai_prompts', icon: 'bi-lightbulb', text: 'AI提示词' },
-        { id: 'ai_search', icon: 'bi-search', text: 'AI搜索' }
-    ];
-    
-    // 上半部分添加到第一行，下半部分添加到第二行
-    const firstRowItems = categories.slice(0, 6); // 前6个
-    const secondRowItems = categories.slice(6);   // 后6个
-    
-    // 为第一行创建分类项
-    firstRowItems.forEach(category => {
-        const item = document.createElement('a');
-        item.className = 'footer-category-item';
-        item.setAttribute('onclick', `showCategory('${category.id}')`);
-        
-        const icon = document.createElement('i');
-        icon.className = `bi ${category.icon}`;
-        
-        const text = document.createElement('span');
-        text.textContent = category.text;
-        
-        item.appendChild(icon);
-        item.appendChild(text);
-        row1.appendChild(item);
+
+    const groups = isEnglish
+        ? [
+            {
+                title: 'Core Channels',
+                description: 'High-frequency navigation and business entry points',
+                tone: 'core',
+                items: [
+                    { id: 'ecommerce', icon: 'bi-shop', text: 'E-commerce', description: 'Amazon / Shopify / DTC', title: 'E-commerce navigation, Amazon, Shopify, DTC tools', iconBg: 'rgba(255, 156, 110, 0.16)', iconColor: '#d96b3b' },
+                    { id: 'social', icon: 'bi-people', text: 'Social Media', description: 'TikTok / Instagram / Traffic', title: 'Social media navigation, TikTok, Instagram, growth resources', iconBg: 'rgba(111, 148, 255, 0.16)', iconColor: '#4e6fd8' },
+                    { id: 'ecommerce_zone', icon: 'bi-bag-check', text: 'Seller Zone', description: 'Products / Ads / Operations', title: 'Seller zone navigation, cross-border e-commerce operations and marketing', iconBg: 'rgba(115, 207, 168, 0.18)', iconColor: '#2f9c71' },
+                    { id: 'ai_search', icon: 'bi-search', text: 'AI Search', description: 'Research / Discovery / Insight', title: 'AI search navigation, search engines, research and insight tools', iconBg: 'rgba(100, 200, 224, 0.18)', iconColor: '#257f99' }
+                ]
+            },
+            {
+                title: 'Creative Tools',
+                description: 'Creation workflows across text, image, video and audio',
+                tone: 'creative',
+                items: [
+                    { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI Chat', description: 'Assistants / Q&A / Agents', title: 'AI chat navigation, assistants, Q&A and agent tools', iconBg: 'rgba(120, 224, 164, 0.18)', iconColor: '#2f9463' },
+                    { id: 'ai_writing', icon: 'bi-pen', text: 'AI Writing', description: 'Copy / SEO / Translation', title: 'AI writing navigation, content, SEO and translation tools', iconBg: 'rgba(118, 180, 255, 0.18)', iconColor: '#3d73cb' },
+                    { id: 'ai_image', icon: 'bi-image', text: 'AI Images', description: 'Posters / Branding / Visuals', title: 'AI image navigation, poster design and visual creation tools', iconBg: 'rgba(255, 135, 193, 0.18)', iconColor: '#c64d8d' },
+                    { id: 'ai_video', icon: 'bi-film', text: 'AI Video', description: 'Short-form / Editing / Motion', title: 'AI video navigation, short-form generation and editing tools', iconBg: 'rgba(106, 212, 247, 0.18)', iconColor: '#2384aa' },
+                    { id: 'ai_audio', icon: 'bi-soundwave', text: 'AI Audio', description: 'Voice / Music / Dubbing', title: 'AI audio navigation, voice, music and dubbing tools', iconBg: 'rgba(255, 208, 102, 0.22)', iconColor: '#b68315' },
+                    { id: 'ai_design', icon: 'bi-palette', text: 'AI Design', description: 'UI / Brand / Mockups', title: 'AI design navigation, UI, brand and mockup tools', iconBg: 'rgba(255, 159, 208, 0.18)', iconColor: '#bf5a92' }
+                ]
+            },
+            {
+                title: 'Resource Platforms',
+                description: 'Development, prompting and site-building resources',
+                tone: 'resource',
+                items: [
+                    { id: 'website', icon: 'bi-globe', text: 'Site Builders', description: 'Landing pages / Storefronts / CMS', title: 'Website builder navigation, landing page, store and CMS resources', iconBg: 'rgba(118, 165, 255, 0.18)', iconColor: '#3e65d1' },
+                    { id: 'ai_coding', icon: 'bi-code-slash', text: 'AI Coding', description: 'Code generation / IDE / Debugging', title: 'AI coding navigation, code generation, IDE and debugging tools', iconBg: 'rgba(108, 225, 224, 0.2)', iconColor: '#198b97' },
+                    { id: 'ai_prompts', icon: 'bi-lightbulb', text: 'Prompting', description: 'Prompt libraries / Templates / Workflows', title: 'Prompt engineering navigation, prompt libraries and workflow templates', iconBg: 'rgba(255, 215, 128, 0.22)', iconColor: '#b07a0f' }
+                ]
+            }
+        ]
+        : [
+            {
+                title: '核心频道',
+                description: '覆盖高频入口与主业务场景',
+                tone: 'core',
+                items: [
+                    { id: 'ecommerce', icon: 'bi-shop', text: '电商平台', description: 'Amazon / Shopify / 独立站', title: '电商平台导航，Amazon、Shopify、独立站资源', iconBg: 'rgba(255, 156, 110, 0.16)', iconColor: '#d96b3b' },
+                    { id: 'social', icon: 'bi-people', text: '社交平台', description: 'TikTok / Instagram / 引流', title: '社交平台导航，TikTok、Instagram、内容引流资源', iconBg: 'rgba(111, 148, 255, 0.16)', iconColor: '#4e6fd8' },
+                    { id: 'ecommerce_zone', icon: 'bi-bag-check', text: '电商专区', description: '选品 / 广告 / 运营', title: '电商专区导航，跨境卖家运营与营销工具', iconBg: 'rgba(115, 207, 168, 0.18)', iconColor: '#2f9c71' },
+                    { id: 'ai_search', icon: 'bi-search', text: 'AI搜索', description: '检索 / 调研 / 资讯发现', title: 'AI搜索导航，AI搜索引擎、调研与资讯检索工具', iconBg: 'rgba(100, 200, 224, 0.18)', iconColor: '#257f99' }
+                ]
+            },
+            {
+                title: '创作工具',
+                description: '覆盖文本、图像、视频与音频创作链路',
+                tone: 'creative',
+                items: [
+                    { id: 'ai_chat', icon: 'bi-chat-dots', text: 'AI对话', description: '助手 / 问答 / 智能体', title: 'AI对话导航，智能助手、问答与 Agent 工具', iconBg: 'rgba(120, 224, 164, 0.18)', iconColor: '#2f9463' },
+                    { id: 'ai_writing', icon: 'bi-pen', text: 'AI写作', description: '文案 / SEO / 翻译', title: 'AI写作导航，文案、SEO 与翻译工具', iconBg: 'rgba(118, 180, 255, 0.18)', iconColor: '#3d73cb' },
+                    { id: 'ai_image', icon: 'bi-image', text: 'AI图像', description: '海报 / 品牌视觉 / 素材', title: 'AI图像导航，海报设计与视觉生成工具', iconBg: 'rgba(255, 135, 193, 0.18)', iconColor: '#c64d8d' },
+                    { id: 'ai_video', icon: 'bi-film', text: 'AI视频', description: '短视频 / 剪辑 / 动效', title: 'AI视频导航，短视频生成与剪辑工具', iconBg: 'rgba(106, 212, 247, 0.18)', iconColor: '#2384aa' },
+                    { id: 'ai_audio', icon: 'bi-soundwave', text: 'AI音频', description: '配音 / 音乐 / 语音', title: 'AI音频导航，配音、音乐与语音工具', iconBg: 'rgba(255, 208, 102, 0.22)', iconColor: '#b68315' },
+                    { id: 'ai_design', icon: 'bi-palette', text: 'AI设计', description: 'UI / 品牌 / 原型', title: 'AI设计导航，UI、品牌与原型设计工具', iconBg: 'rgba(255, 159, 208, 0.18)', iconColor: '#bf5a92' }
+                ]
+            },
+            {
+                title: '资源平台',
+                description: '聚合建站、开发与提示词相关资源',
+                tone: 'resource',
+                items: [
+                    { id: 'website', icon: 'bi-globe', text: '建站工具', description: '落地页 / 商店 / CMS', title: '建站工具导航，落地页、商店与 CMS 资源', iconBg: 'rgba(118, 165, 255, 0.18)', iconColor: '#3e65d1' },
+                    { id: 'ai_coding', icon: 'bi-code-slash', text: 'AI编程', description: '代码生成 / IDE / 调试', title: 'AI编程导航，代码生成、IDE 与调试工具', iconBg: 'rgba(108, 225, 224, 0.2)', iconColor: '#198b97' },
+                    { id: 'ai_prompts', icon: 'bi-lightbulb', text: 'AI提示词', description: '提示词库 / 模板 / 工作流', title: 'AI提示词导航，提示词库、模板与工作流资源', iconBg: 'rgba(255, 215, 128, 0.22)', iconColor: '#b07a0f' }
+                ]
+            }
+        ];
+
+    groups.forEach(group => {
+        const groupSection = document.createElement('section');
+        groupSection.className = `footer-category-group footer-group-${group.tone}`;
+
+        const groupHeader = document.createElement('div');
+        groupHeader.className = 'footer-group-header';
+
+        const groupTitle = document.createElement('h4');
+        groupTitle.textContent = group.title;
+
+        const groupDescription = document.createElement('p');
+        groupDescription.textContent = group.description;
+
+        groupHeader.appendChild(groupTitle);
+        groupHeader.appendChild(groupDescription);
+
+        const groupList = document.createElement('div');
+        groupList.className = 'footer-category-list';
+
+        group.items.forEach(category => {
+            const item = document.createElement('a');
+            item.className = `footer-category-item footer-tone-${group.tone}`;
+            item.href = `#${category.id}-section`;
+            item.title = category.title;
+            item.setAttribute('aria-label', category.title);
+            item.setAttribute('onclick', `showCategory('${category.id}')`);
+            item.style.setProperty('--footer-icon-bg', category.iconBg);
+            item.style.setProperty('--footer-icon-color', category.iconColor);
+
+            const iconWrap = document.createElement('span');
+            iconWrap.className = 'footer-category-icon';
+
+            const icon = document.createElement('i');
+            icon.className = `bi ${category.icon}`;
+
+            const copy = document.createElement('span');
+            copy.className = 'footer-category-copy';
+
+            const text = document.createElement('strong');
+            text.textContent = category.text;
+
+            const description = document.createElement('small');
+            description.textContent = category.description;
+
+            iconWrap.appendChild(icon);
+            copy.appendChild(text);
+            copy.appendChild(description);
+            item.appendChild(iconWrap);
+            item.appendChild(copy);
+            groupList.appendChild(item);
+        });
+
+        groupSection.appendChild(groupHeader);
+        groupSection.appendChild(groupList);
+        container.appendChild(groupSection);
     });
-    
-    // 为第二行创建分类项
-    secondRowItems.forEach(category => {
-        const item = document.createElement('a');
-        item.className = 'footer-category-item';
-        item.setAttribute('onclick', `showCategory('${category.id}')`);
-        
-        const icon = document.createElement('i');
-        icon.className = `bi ${category.icon}`;
-        
-        const text = document.createElement('span');
-        text.textContent = category.text;
-        
-        item.appendChild(icon);
-        item.appendChild(text);
-        row2.appendChild(item);
-    });
-    
-    // 将行添加到容器
-    container.appendChild(row1);
-    container.appendChild(row2);
 }
 
 // 更新导航高亮状态
