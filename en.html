@@ -264,539 +264,83 @@
                     Resource Guides
                 </a>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('tech-blog')">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('tech-blog')">
                     <i class="bi bi-code-square"></i>
                     Technical Playbooks
                 </a>
-                <ul class="nav-submenu submenu-tech-blog">
-                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_official_docs')">Official Docs</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_tutorials')">Tutorials</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_workflows')">Automation Workflows</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_deploy_ops')">Deployment & Ops</a></li>
-                    <li class="nav-item"><a class="nav-link" onclick="showCategory('tech_case_studies')">Case Breakdowns</a></li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this)">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ecommerce')">
                     <i class="bi bi-shop"></i>
                     E-commerce
                 </a>
-                <ul class="nav-submenu submenu-ecommerce">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('amazon')">
-                            Amazon
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('aliexpress')">
-                            AliExpress
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ebay')">
-                            Ebay
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('lazada')">
-                            Lazada
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('shopee')">
-                            Shopee
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('tiktok-shop')">
-                            TikTok Shop
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('temu')">
-                            Temu
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('mercado-libre')">
-                            Mercado Libre
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('shopify')">
-                            Shopify
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other-ecommerce')">
-                            Others
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('social');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('social')">
                     <i class="bi bi-people"></i>
                     Social Media
                 </a>
-                <ul class="nav-submenu submenu-social">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('social-global')">
-                            Global Platforms
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('social-china')">
-                            Chinese Platforms
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('website');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('website')">
                     <i class="bi bi-globe"></i>
                     Website Tools
                 </a>
-                <ul class="nav-submenu submenu-website">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('seo')">
-                            SEO Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('keyword')">
-                            Keyword Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('analytics')">
-                            Web Analytics
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('domain')">
-                            Domain Registration
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('server')">
-                            Servers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('payment')">
-                            Payment Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('erp')">
-                            ERP
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('network')">
-                            Network Optimization
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('account')">
-                            Account Resources
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('temp-mail')">
-                            Temporary Email
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ip-proxy')">
-                            IP Proxy
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('browser')">
-                            Fingerprint Browsers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('backlink')">
-                            Backlinks
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('content')">
-                            Content Optimization
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('learning')">
-                            Learning Resources
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_chat');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_chat')">
                     <i class="bi bi-chat-dots"></i>
                     AI Chat
                 </a>
-                <ul class="nav-submenu submenu-ai-chat">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_assistant')">
-                            AI Chatbots
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('multimodal_ai')">
-                            Multimodal AI Chat
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_ai')">
-                            AI Work & Professional Assistants
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_writing');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_writing')">
                     <i class="bi bi-pen"></i>
                     AI Writing
                 </a>
-                <ul class="nav-submenu submenu-ai-writing">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('model_reasoning')">
-                            Writing & Reasoning Models
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('productivity_longform')">
-                            Productivity & Long-Form Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('content_safety')">
-                            Content Safety & AI Humanization
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('vertical_specialized')">
-                            Vertical Specialists
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_image');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_image')">
                     <i class="bi bi-image"></i>
                     AI Images
                 </a>
-                <ul class="nav-submenu submenu-ai-image">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_image')">
-                            AI Image Generator
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('portrait')">
-                            AI Avatar & Portrait Generator
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('background')">
-                            AI Background Generator & Design Assets
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('brand_design')">
-                            AI Brand Design & Ad Creatives
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('photo_enhancement')">
-                            AI Photo Enhancer & Restoration
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('anime')">
-                            AI Anime Art Generator
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fun_tools')">
-                            AI Fun Image Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fashion')">
-                            AI Fashion Design
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('image_editing')">
-                            AI Photo Editor
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_scene')">
-                            AI Scene Generator
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_video');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_video')">
                     <i class="bi bi-film"></i>
                     AI Video
                 </a>
-                <ul class="nav-submenu submenu-ai-video">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('text_to_video')">
-                            AI Text to Video
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('image_to_video')">
-                            AI Image to Video
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('video_editing')">
-                            AI Video Editor
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('digital_human')">
-                            AI Avatars & Virtual Hosts
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('animation')">
-                            AI Animation Generator
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('short_video')">
-                            AI Short Video Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('speech_driven')">
-                            AI Talking Avatar Video
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('professional_video')">
-                            AI Video Generation for Pros
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('opensource_tools')">
-                            Open Source AI Video Tools
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_audio');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_audio')">
                     <i class="bi bi-soundwave"></i>
                     AI Audio
                 </a>
-                <ul class="nav-submenu submenu-ai-audio">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('tts')">
-                            AI Text to Speech & Voiceover
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('music_generation')">
-                            AI Music Generator
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('speech_to_text')">
-                            AI Speech to Text
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('voice_conversion')">
-                            AI Voice Changer & Voice Cloning
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('audio_editing')">
-                            AI Audio Editor
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other_audio_tools')">
-                            Other AI Audio Tools
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_design');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_design')">
                     <i class="bi bi-palette"></i>
                     AI Design
                 </a>
-                <ul class="nav-submenu submenu-ai-design">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('commerce_design')">
-                            Graphic & E-commerce Design
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('ui_ux')">
-                            UI/UX & Prototype Design
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('illustration')">
-                            Illustration & Vector Design
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('model_design')">
-                            3D & Model Design
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('assistant_tools')">
-                            Design Assistant Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('special_tools')">
-                            Other Specialized Tools
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_coding');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_coding')">
                     <i class="bi bi-code-slash"></i>
                     AI Coding
                 </a>
-                <ul class="nav-submenu submenu-ai-coding">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('code_generation')">
-                            AI Code Generation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('fullstack_dev')">
-                            AI Full-Stack Development
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('automation_workflow')">
-                            Automation Workflows
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('design_to_code')">
-                            AI Design to Code
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('code_review')">
-                            AI Code Review & Testing
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('natural_language_dev')">
-                            Conversational AI Coding
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('low_code')">
-                            AI Low-Code & No-Code
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('cloud_ide')">
-                            AI Coding Editors & IDEs
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_prompts');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_prompts')">
                     <i class="bi bi-lightbulb"></i>
                     AI Prompts
                 </a>
-                <ul class="nav-submenu submenu-ai-prompts">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('prompt_platforms')">
-                            AI Prompt Libraries
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('sd_tools')">
-                            Stable Diffusion Prompt Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('chatgpt_prompts')">
-                            ChatGPT Prompt Engineering
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('visual_tools')">
-                            Visual AI Prompt Tools
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('chinese_resources')">
-                            Chinese AI Prompt Resources
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('other_tools')">
-                            AI Prompt Utilities
-                        </a>
-                    </li>
-                </ul>
             </li>
-            <li class="nav-item has-submenu">
-                <a class="nav-link" onclick="toggleSubmenu(this); showCategory('ai_search');">
+            <li class="nav-item">
+                <a class="nav-link" onclick="showCategory('ai_search')">
                     <i class="bi bi-search"></i>
                     AI Search
                 </a>
-                <ul class="nav-submenu submenu-ai-search">
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('general_search')">
-                            AI Search Engines
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('academic_search')">
-                            AI Academic Search
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('programming_search')">
-                            AI Code Search
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('finance_search')">
-                            AI Finance Search
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('life_search')">
-                            AI Lifestyle Search
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="showCategory('product_search')">
-                            AI Product & Company Search
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
     </div>
@@ -853,6 +397,13 @@
                 </div>
                 <div class="channel-intro">
                     <p>Curated resource channel for AI directories, model communities, discovery platforms and reusable knowledge hubs for faster research and tool selection.</p>
+                </div>
+                <div class="subcategory-nav">
+                    <button class="subcategory-btn active" onclick="filterResourcesSubcategory('all')">All</button>
+                    <button class="subcategory-btn" onclick="filterResourcesSubcategory('resource_tool_navigation')">Tool Navigation</button>
+                    <button class="subcategory-btn" onclick="filterResourcesSubcategory('resource_model_community')">Models & Communities</button>
+                    <button class="subcategory-btn" onclick="filterResourcesSubcategory('resource_product_research')">Product Research</button>
+                    <button class="subcategory-btn" onclick="filterResourcesSubcategory('resource_learning_news')">Learning & Insights</button>
                 </div>
                 <div class="site-grid placeholder-grid" id="resources-grid">
                     <!-- Resource guide cards will be dynamically added via JavaScript -->

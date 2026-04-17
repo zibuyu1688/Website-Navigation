@@ -377,6 +377,7 @@ function loadSites() {
         initializeCardVisibility('tech-blog-grid');
     }
 
+    filterResourcesSubcategory('all');
     filterTechBlogSubcategory('all');
 
     // 加载电商平台
@@ -535,6 +536,30 @@ function loadSites() {
     
     // 处理卡片可见性
     handleCategoryVisibility();
+}
+
+function filterResourcesSubcategory(subcategory) {
+    const section = document.getElementById('resources-section');
+    if (!section) return;
+
+    section.querySelectorAll('.subcategory-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    const activeButton = section.querySelector(`.subcategory-btn[onclick*="filterResourcesSubcategory('${subcategory}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    const cards = document.querySelectorAll('#resources-grid .site-card');
+    cards.forEach(card => {
+        card.classList.remove('hidden');
+        if (subcategory === 'all' || card.dataset.subcategory === subcategory) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 
 // 过滤建站工具二级分类
@@ -1437,6 +1462,13 @@ function showCategory(category) {
         console.log('显示资源导引');
         targetSectionId = 'resources-section';
         document.getElementById(targetSectionId).style.display = 'block';
+        filterResourcesSubcategory('all');
+    } else if (category === 'resource_tool_navigation' || category === 'resource_model_community' ||
+               category === 'resource_product_research' || category === 'resource_learning_news') {
+        console.log('显示资源导引子分类:', category);
+        targetSectionId = 'resources-section';
+        document.getElementById(targetSectionId).style.display = 'block';
+        filterResourcesSubcategory(category);
     } else if (category === 'tech-blog') {
         console.log('显示技术实战');
         targetSectionId = 'tech-blog-section';
@@ -1449,6 +1481,10 @@ function showCategory(category) {
         targetSectionId = 'tech-blog-section';
         document.getElementById(targetSectionId).style.display = 'block';
         filterTechBlogSubcategory(category);
+    } else if (category === 'ecommerce') {
+        console.log('显示电商平台主分类');
+        document.getElementById('ecommerce-section').style.display = 'block';
+        filterEcommerceSubcategory('all');
     } else if (category === 'amazon' || category === 'aliexpress' || category === 'ebay' || 
                category === 'lazada' || category === 'shopee' || category === 'tiktok-shop' ||
                category === 'temu' || category === 'mercado-libre' || category === 'shopify' ||

@@ -4223,6 +4223,7 @@ const sitesData = {
             description: 'Leading open AI community for models, datasets and Spaces, ideal for discovering reusable resources and examples.',
             tags: ['AI Resources', 'Models', 'Datasets'],
             url: 'https://huggingface.co/',
+            subcategory: 'resource_model_community',
             isRecommended: true
         },
         {
@@ -4230,6 +4231,7 @@ const sitesData = {
             description: 'Large AI tools directory covering automation products and use cases for discovery and competitor research.',
             tags: ['AI Directory', 'Discovery', 'Tool Database'],
             url: 'https://www.futurepedia.io/',
+            subcategory: 'resource_tool_navigation',
             isRecommended: true
         },
         {
@@ -4237,6 +4239,7 @@ const sitesData = {
             description: 'Task-based AI tool finder that helps users discover products by specific use cases and workflows.',
             tags: ['Use Cases', 'AI Search', 'Tool Finder'],
             url: 'https://theresanaiforthat.com/',
+            subcategory: 'resource_tool_navigation',
             isRecommended: true
         },
         {
@@ -4244,6 +4247,7 @@ const sitesData = {
             description: 'Product discovery platform for tracking new tools, launches and startup trends across fast-moving categories.',
             tags: ['Launches', 'Trends', 'Product Discovery'],
             url: 'https://www.producthunt.com/',
+            subcategory: 'resource_product_research',
             isRecommended: true
         }
     ],

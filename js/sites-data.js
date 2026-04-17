@@ -4713,6 +4713,7 @@ const sitesData = {
             tags: ['AI资源库', '模型社区', '数据集'],
             tagsEn: ['AI Resources', 'Models', 'Datasets'],
             url: 'https://huggingface.co/',
+            subcategory: 'resource_model_community',
             isRecommended: true
         },
         {
@@ -4723,6 +4724,7 @@ const sitesData = {
             tags: ['AI工具目录', '资源导航', '产品发现'],
             tagsEn: ['AI Directory', 'Discovery', 'Tool Database'],
             url: 'https://www.futurepedia.io/',
+            subcategory: 'resource_tool_navigation',
             isRecommended: true
         },
         {
@@ -4733,6 +4735,7 @@ const sitesData = {
             tags: ['任务场景', 'AI导航', '工具检索'],
             tagsEn: ['Use Cases', 'AI Search', 'Tool Finder'],
             url: 'https://theresanaiforthat.com/',
+            subcategory: 'resource_tool_navigation',
             isRecommended: true
         },
         {
@@ -4743,6 +4746,7 @@ const sitesData = {
             tags: ['新品发现', '趋势观察', '工具上新'],
             tagsEn: ['Launches', 'Trends', 'Product Discovery'],
             url: 'https://www.producthunt.com/',
+            subcategory: 'resource_product_research',
             isRecommended: true
         }
     ],

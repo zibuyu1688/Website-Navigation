@@ -223,6 +223,12 @@ body {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     position: relative;
+    transition: color 0.25s ease;
+    --submenu-accent: #5D9CEC;
+    --submenu-glow: rgba(93, 156, 236, 0.2);
+    --submenu-glow-strong: rgba(93, 156, 236, 0.32);
+    --submenu-dot-fill: transparent;
+    --submenu-dot-shadow: 0 0 0 1px transparent, 0 0 8px var(--submenu-glow);
 }
 
 .nav-submenu .nav-link::before {
@@ -233,11 +239,34 @@ body {
     transform: translateY(-50%);
     width: 8px;
     height: 8px;
-    background-color: transparent;
-    border: 1.5px solid;
+    background-color: var(--submenu-dot-fill);
+    border: 1.5px solid var(--submenu-accent);
     border-radius: 50%;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    box-shadow: var(--submenu-dot-shadow);
+    transition: background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, transform 0.28s ease, opacity 0.3s ease;
+    animation: submenu-dot-breathe 2.8s ease-in-out infinite;
+}
+
+.nav-submenu .nav-link:hover,
+.nav-submenu .nav-link:focus-visible {
+    --submenu-dot-fill: var(--submenu-accent);
+    --submenu-dot-shadow: 0 0 0 1px var(--submenu-glow-strong), 0 0 12px var(--submenu-glow-strong);
+}
+
+.nav-submenu .nav-link:hover::before,
+.nav-submenu .nav-link:focus-visible::before {
+    transform: translateY(-50%) scale(1.08);
+}
+
+@keyframes submenu-dot-breathe {
+    0%,
+    100% {
+        box-shadow: 0 0 0 1px transparent, 0 0 7px var(--submenu-glow, rgba(93, 156, 236, 0.2));
+    }
+    50% {
+        box-shadow: 0 0 0 1px transparent, 0 0 11px var(--submenu-glow-strong, rgba(93, 156, 236, 0.28));
+    }
 }
 
 .nav-item.has-submenu > .nav-link:after {
@@ -315,54 +344,81 @@ body {
 }
 
 /* 为不同分类的二级菜单设置不同的边框颜色（使用类名选择器） */
+/* 技术实战子菜单圆圈 - 蓝色 */
+.submenu-tech-blog .nav-link {
+    --submenu-accent: #4285F4;
+    --submenu-glow: rgba(66, 133, 244, 0.2);
+    --submenu-glow-strong: rgba(66, 133, 244, 0.32);
+}
+
 /* 电商平台子菜单圆圈 - 橙色 */
-.submenu-ecommerce .nav-link::before {
-    border-color: #FF9E40;
+.submenu-ecommerce .nav-link {
+    --submenu-accent: #FF9E40;
+    --submenu-glow: rgba(255, 158, 64, 0.2);
+    --submenu-glow-strong: rgba(255, 158, 64, 0.3);
 }
 
 /* 社交平台子菜单圆圈 - 紫色 */
-.submenu-social .nav-link::before {
-    border-color: #A177FF;
+.submenu-social .nav-link {
+    --submenu-accent: #A177FF;
+    --submenu-glow: rgba(161, 119, 255, 0.2);
+    --submenu-glow-strong: rgba(161, 119, 255, 0.3);
 }
 
 /* 建站工具子菜单圆圈 - 蓝色 */
-.submenu-website .nav-link::before {
-    border-color: #5D9CEC;
+.submenu-website .nav-link {
+    --submenu-accent: #5D9CEC;
+    --submenu-glow: rgba(93, 156, 236, 0.2);
+    --submenu-glow-strong: rgba(93, 156, 236, 0.3);
 }
 
 /* AI对话子菜单圆圈 - 绿色 */
-.submenu-ai-chat .nav-link::before {
-    border-color: #4CD964;
+.submenu-ai-chat .nav-link {
+    --submenu-accent: #4CD964;
+    --submenu-glow: rgba(76, 217, 100, 0.2);
+    --submenu-glow-strong: rgba(76, 217, 100, 0.3);
 }
 
 /* AI写作子菜单圆圈 - 靛蓝色 */
-.submenu-ai-writing .nav-link::before {
-    border-color: #50A7FF;
+.submenu-ai-writing .nav-link {
+    --submenu-accent: #50A7FF;
+    --submenu-glow: rgba(80, 167, 255, 0.2);
+    --submenu-glow-strong: rgba(80, 167, 255, 0.3);
 }
 
 /* AI图像子菜单圆圈 - 洋红色 */
-.submenu-ai-image .nav-link::before {
-    border-color: #FF54B0;
+.submenu-ai-image .nav-link {
+    --submenu-accent: #FF54B0;
+    --submenu-glow: rgba(255, 84, 176, 0.2);
+    --submenu-glow-strong: rgba(255, 84, 176, 0.3);
 }
 
 /* AI视频子菜单圆圈 - 青色 */
-.submenu-ai-video .nav-link::before {
-    border-color: #34C0EB;
+.submenu-ai-video .nav-link {
+    --submenu-accent: #34C0EB;
+    --submenu-glow: rgba(52, 192, 235, 0.2);
+    --submenu-glow-strong: rgba(52, 192, 235, 0.3);
 }
 
 /* AI音频子菜单圆圈 - 黄色 */
-.submenu-ai-audio .nav-link::before {
-    border-color: #FFCE44;
+.submenu-ai-audio .nav-link {
+    --submenu-accent: #FFCE44;
+    --submenu-glow: rgba(255, 206, 68, 0.2);
+    --submenu-glow-strong: rgba(255, 206, 68, 0.3);
 }
 
 /* AI设计子菜单圆圈 - 粉色 */
-.submenu-ai-design .nav-link::before {
-    border-color: #FF77BC;
+.submenu-ai-design .nav-link {
+    --submenu-accent: #FF77BC;
+    --submenu-glow: rgba(255, 119, 188, 0.2);
+    --submenu-glow-strong: rgba(255, 119, 188, 0.3);
 }
 
 /* AI编程子菜单圆圈 - 蓝绿色 */
-.submenu-ai-coding .nav-link::before {
-    border-color: #00BCD4;
+.submenu-ai-coding .nav-link {
+    --submenu-accent: #00BCD4;
+    --submenu-glow: rgba(0, 188, 212, 0.2);
+    --submenu-glow-strong: rgba(0, 188, 212, 0.3);
 }
 
 /* 主内容区域样式 */
