@@ -1401,18 +1401,71 @@ body {
 
 /* 底部分类导航样式 */
 .footer-categories {
-    background-color: #fff;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    padding: 15px 20px;
-    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(93, 156, 236, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 158, 64, 0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,250,252,0.98));
+    border-radius: 24px;
+    border: 1px solid rgba(93, 156, 236, 0.12);
+    padding: 24px 24px 18px;
+    margin: 52px auto 40px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     max-width: 100%;
 }
 
-.categories-container {
+.footer-categories::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 48%);
+    pointer-events: none;
+}
+
+.footer-categories-header {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.footer-categories-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(93, 156, 236, 0.1);
+    color: #4b78c8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.footer-categories-header h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    color: #1f2937;
+}
+
+.footer-categories-header p {
+    margin: 0;
+    max-width: 720px;
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.categories-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
 }
 
@@ -1420,43 +1473,55 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    gap: 12px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .footer-category-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 8px;
-    border-radius: 10px;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 10px 14px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.76);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    backdrop-filter: blur(8px);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     color: var(--text-color);
     width: auto;
     min-width: 75px;
+    min-height: 110px;
     flex: 1;
 }
 
 .footer-category-item:hover {
-    background-color: var(--hover-color);
-    transform: translateY(-3px);
+    background: rgba(255,255,255,0.95);
+    border-color: rgba(93, 156, 236, 0.22);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+    transform: translateY(-4px);
 }
 
 .footer-category-item i {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-size: 1.55rem;
+    margin-bottom: 0;
 }
 
 .footer-category-item span {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.98rem;
+    font-weight: 700;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: center;
     width: 100%;
+    line-height: 1.35;
+    color: #2b2f36;
 }
 
 /* 保持图标彩色 */
@@ -1507,11 +1572,28 @@ body {
 /* 响应式调整 */
 @media (max-width: 768px) {
     .footer-categories {
-        padding: 15px 0;
+        padding: 18px 14px 14px;
+        border-radius: 20px;
+        margin: 40px auto 28px;
+    }
+
+    .footer-categories-header {
+        margin-bottom: 14px;
+    }
+
+    .footer-categories-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .footer-categories-header p {
+        font-size: 0.88rem;
+        line-height: 1.6;
     }
     
     .footer-category-item {
-        padding: 8px 12px;
+        padding: 12px 8px 10px;
+        min-height: 92px;
+        border-radius: 14px;
     }
     
     .footer-category-item i {
@@ -1520,6 +1602,10 @@ body {
     
     .footer-category-item span {
         font-size: 0.8rem;
+    }
+
+    .footer-category-row {
+        gap: 8px;
     }
 }
 

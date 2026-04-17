@@ -1,0 +1,75 @@
+{
+  "section": {
+    "title": "Official",
+    "titleZh": "官方文档",
+    "description": "First-hand materials from the OpenClaw team",
+    "descriptionZh": "OpenClaw 团队的一手资料",
+    "icon": "📖",
+    "source": "user-provided HTML snippet"
+  },
+  "items": [
+    {
+      "title": "OpenClaw 官方文档",
+      "titleEn": "OpenClaw Official Docs",
+      "description": "完整的 API 参考、配置指南和架构说明",
+      "source": "OpenClaw",
+      "language": "EN",
+      "recommended": true,
+      "url": "https://docs.openclaw.ai/"
+    },
+    {
+      "title": "GitHub — openclaw/openclaw",
+      "titleEn": "GitHub — openclaw/openclaw",
+      "description": "源代码、Issue 跟踪和社区贡献指南 (354k+ ⭐)",
+      "source": "GitHub",
+      "language": "EN",
+      "recommended": true,
+      "url": "https://github.com/openclaw/openclaw"
+    },
+    {
+      "title": "ClawHub 技能市场",
+      "titleEn": "ClawHub Skill Marketplace",
+      "description": "发现、安装和分享 AI 技能插件",
+      "source": "ClawHub",
+      "language": "EN",
+      "recommended": true,
+      "url": "https://clawhub.com/"
+    },
+    {
+      "title": "Getting Started — 官方入门指南",
+      "titleEn": "Getting Started — Official Guide",
+      "description": "从零到第一次对话的最快路径",
+      "source": "OpenClaw Docs",
+      "language": "EN",
+      "recommended": false,
+      "url": "https://docs.openclaw.ai/start/getting-started"
+    },
+    {
+      "title": "Discord 社区",
+      "titleEn": "Discord Community",
+      "description": "与数万开发者和用户实时交流",
+      "source": "Discord",
+      "language": "EN",
+      "recommended": false,
+      "url": "https://discord.com/invite/clawd"
+    },
+    {
+      "title": "OpenClaw — Wikipedia",
+      "titleEn": "OpenClaw — Wikipedia",
+      "description": "维基百科词条，了解 OpenClaw 的历史和影响",
+      "source": "Wikipedia",
+      "language": "EN",
+      "recommended": false,
+      "url": "https://en.wikipedia.org/wiki/OpenClaw"
+    },
+    {
+      "title": "ClawHub Skills 仓库",
+      "titleEn": "ClawHub Skills Repository",
+      "description": "所有已发布技能的源码归档",
+      "source": "GitHub",
+      "language": "EN",
+      "recommended": false,
+      "url": "https://github.com/openclaw/skills"
+    }
+  ]
+}

@@ -66,6 +66,13 @@ function escapeHtmlAttribute(value) {
         .replace(/>/g, '&gt;');
 }
 
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 // 翻译常见标签到英文
 function translateTag(tag) {
     const tagTranslations = {
@@ -1738,10 +1745,174 @@ function performSearch() {
     }
 }
 
+const TECH_BLOG_SUBCATEGORY_ORDER = [
+    'tech_official_docs',
+    'tech_tutorials',
+    'tech_workflows',
+    'tech_deploy_ops',
+    'tech_case_studies'
+];
+
+const SEARCH_QUERY_VARIANTS = {
+    '选品': ['产品研究', '选品工具', '销量数据', '亚马逊关键词', '关键词研究', '产品发现'],
+    '产品研究': ['选品', '选品工具', '销量数据', '亚马逊关键词'],
+    '关键词': ['关键词研究', '关键词工具', '关键词规划', '搜索趋势', '亚马逊关键词'],
+    'listing': ['listing写作', 'listing优化', '关键词研究'],
+    '部署': ['一键部署', '私有服务器', 'vps', 'lighthouse', '集成指南'],
+    'deploy': ['deployment', 'one-click deploy', 'vps', 'integration guide'],
+    '飞书': ['feishu'],
+    'telegram': ['电报', 'telegram'],
+    'whatsapp': ['whatsapp'],
+    '企业微信': ['wecom'],
+    '微信': ['wecom', '微信插件']
+};
+
+const SEARCH_INTENT_BOOSTS = {
+    '选品': {
+        categories: ['website', 'ecommerce_zone'],
+        subcategories: ['keyword', 'analytics', 'listing_writing']
+    },
+    '产品研究': {
+        categories: ['website', 'ecommerce_zone'],
+        subcategories: ['keyword', 'analytics', 'listing_writing']
+    },
+    '关键词': {
+        categories: ['website', 'ecommerce_zone'],
+        subcategories: ['keyword', 'listing_writing']
+    },
+    '部署': {
+        categories: ['tech_blog'],
+        subcategories: ['tech_deploy_ops']
+    },
+    'deploy': {
+        categories: ['tech_blog'],
+        subcategories: ['tech_deploy_ops']
+    }
+};
+
+function getTechBlogSubcategoryRank(subcategory) {
+    const rank = TECH_BLOG_SUBCATEGORY_ORDER.indexOf(subcategory);
+    return rank === -1 ? TECH_BLOG_SUBCATEGORY_ORDER.length : rank;
+}
+
+function getSearchQueryVariants(query) {
+    const normalizedQuery = String(query || '').trim().toLowerCase();
+    if (!normalizedQuery) return [];
+
+    return [
+        { value: normalizedQuery, weight: 1 },
+        ...(SEARCH_QUERY_VARIANTS[normalizedQuery] || []).map(variant => ({
+            value: variant.toLowerCase(),
+            weight: 0.68
+        }))
+    ];
+}
+
+function scoreSearchFieldMatch(values, queryVariants) {
+    if (!values.length || !queryVariants.length) return 0;
+
+    let bestScore = 0;
+
+    queryVariants.forEach(variantEntry => {
+        const variant = typeof variantEntry === 'string' ? variantEntry : variantEntry.value;
+        const variantWeight = typeof variantEntry === 'string' ? 1 : variantEntry.weight;
+
+        values.forEach(value => {
+            if (!value) return;
+
+            if (value === variant) {
+                bestScore = Math.max(bestScore, 1 * variantWeight);
+            } else if (value.startsWith(variant)) {
+                bestScore = Math.max(bestScore, 0.82 * variantWeight);
+            } else if (value.includes(variant)) {
+                bestScore = Math.max(bestScore, 0.62 * variantWeight);
+            }
+        });
+    });
+
+    return bestScore;
+}
+
+function getSearchResultCategoryName(site) {
+    const isEnglish = getCurrentLanguage() === 'en';
+    const categoryName = getCategoryDisplayName(site.category);
+
+    if (site.category === 'tech_blog' && site.subcategory) {
+        return `${categoryName} · ${getSeoLabel(site.subcategory, isEnglish)}`;
+    }
+
+    return categoryName;
+}
+
+function getSiteSearchScore(site, category, query) {
+    const normalizedQuery = query.toLowerCase();
+    const queryVariants = getSearchQueryVariants(normalizedQuery);
+    const titles = [site.title, site.titleEn].filter(Boolean).map(text => text.toLowerCase());
+    const descriptions = [site.description, site.descriptionEn].filter(Boolean).map(text => text.toLowerCase());
+    const tags = [
+        ...(Array.isArray(site.tags) ? site.tags : []),
+        ...(Array.isArray(site.tagsEn) ? site.tagsEn : [])
+    ].filter(Boolean).map(tag => String(tag).toLowerCase());
+    const categoryLabels = [getCategoryDisplayName(category).toLowerCase()];
+    const subcategoryLabels = site.subcategory
+        ? [
+            getSeoLabel(site.subcategory, false).toLowerCase(),
+            getSeoLabel(site.subcategory, true).toLowerCase()
+        ]
+        : [];
+
+    const titleScore = scoreSearchFieldMatch(titles, queryVariants);
+    const tagScore = scoreSearchFieldMatch(tags, queryVariants);
+    const descriptionScore = scoreSearchFieldMatch(descriptions, queryVariants);
+    const subcategoryScore = scoreSearchFieldMatch(subcategoryLabels, queryVariants);
+    const categoryScore = scoreSearchFieldMatch(categoryLabels, queryVariants);
+
+    let score = 0;
+
+    score += Math.round(titleScore * 120);
+    score += Math.round(tagScore * 90);
+    score += Math.round(descriptionScore * 42);
+    score += Math.round(subcategoryScore * 28);
+    score += Math.round(categoryScore * 12);
+
+    // 没有任何字段命中时，不应仅靠分类偏置进入搜索结果。
+    if (score <= 0) {
+        return 0;
+    }
+
+    const intentBoost = SEARCH_INTENT_BOOSTS[normalizedQuery];
+    if (intentBoost) {
+        if (intentBoost.categories && intentBoost.categories.includes(category)) {
+            score += 22;
+        }
+
+        if (site.subcategory && intentBoost.subcategories && intentBoost.subcategories.includes(site.subcategory)) {
+            score += 34;
+        }
+    }
+
+    if (category === 'tech_blog') {
+        score += 8;
+    }
+
+    if (site.subcategory && TECH_BLOG_SUBCATEGORY_ORDER.includes(site.subcategory)) {
+        score += 6;
+    }
+
+    if (site.isRecommended) {
+        score += 2;
+    }
+
+    return score;
+}
+
 // 站内搜索功能
 function performSiteSearch(query) {
-    query = query.toLowerCase();
-    if (!query) {
+    const originalQuery = query.trim();
+    const normalizedQuery = originalQuery.toLowerCase();
+    const isEnglish = getCurrentLanguage() === 'en';
+
+    if (!normalizedQuery) {
         loadSites();
         document.querySelectorAll('.category-section').forEach(section => {
             section.style.display = 'block';
@@ -1767,7 +1938,7 @@ function performSiteSearch(query) {
         // 创建搜索结果标题
         const titleDiv = document.createElement('div');
         titleDiv.className = 'section-header';
-        titleDiv.innerHTML = `<h2><i class="bi bi-search"></i> 搜索结果</h2>`;
+        titleDiv.innerHTML = `<h2><i class="bi bi-search"></i> ${isEnglish ? 'Search Results' : '搜索结果'}</h2>`;
         searchResultsSection.appendChild(titleDiv);
         
         // 创建搜索结果网格
@@ -1825,21 +1996,45 @@ function performSiteSearch(query) {
     // 对每个分类进行搜索
     categories.forEach(category => {
         if (sitesData[category] && Array.isArray(sitesData[category])) {
-            const matchedSites = sitesData[category].filter(site => 
-                site && (
-                    (site.title && site.title.toLowerCase().includes(query)) || 
-                    (site.description && site.description.toLowerCase().includes(query)) ||
-                    (site.tags && Array.isArray(site.tags) && site.tags.some(tag => tag.toLowerCase().includes(query)))
-                )
-            );
-            
-            // 添加分类信息到每个站点
-            matchedSites.forEach(site => {
+            sitesData[category].forEach((site, index) => {
+                if (!site) return;
+
+                const searchScore = getSiteSearchScore(site, category, normalizedQuery);
+                if (searchScore <= 0) return;
+
                 // 创建副本以避免修改原始数据
-                const siteCopy = {...site, category: category};
+                const siteCopy = {
+                    ...site,
+                    category,
+                    searchScore,
+                    searchIndex: index,
+                    techBlogRank: category === 'tech_blog' ? getTechBlogSubcategoryRank(site.subcategory) : TECH_BLOG_SUBCATEGORY_ORDER.length
+                };
                 allMatchedSites.push(siteCopy);
             });
         }
+    });
+
+    allMatchedSites.sort((a, b) => {
+        if (b.searchScore !== a.searchScore) {
+            return b.searchScore - a.searchScore;
+        }
+
+        const aIsTechBlog = a.category === 'tech_blog';
+        const bIsTechBlog = b.category === 'tech_blog';
+        if (aIsTechBlog !== bIsTechBlog) {
+            return aIsTechBlog ? -1 : 1;
+        }
+
+        if (aIsTechBlog && bIsTechBlog && a.techBlogRank !== b.techBlogRank) {
+            return a.techBlogRank - b.techBlogRank;
+        }
+
+        if (a.category === b.category) {
+            return a.searchIndex - b.searchIndex;
+        }
+
+        return categories.indexOf(a.category) - categories.indexOf(b.category);
     });
     
     // 如果没有找到匹配结果
@@ -1847,8 +2042,8 @@ function performSiteSearch(query) {
         searchResultsGrid.innerHTML = `
             <div class="no-results-message" style="text-align: center; padding: 50px 0;">
                 <i class="bi bi-emoji-frown" style="font-size: 48px; color: #ccc; display: block; margin-bottom: 20px;"></i>
-                <p style="font-size: 20px; color: #666;">没有找到与 "<strong>${query}</strong>" 相关的结果</p>
-                <p style="color: #888;">请尝试使用其他关键词搜索</p>
+                <p style="font-size: 20px; color: #666;">${isEnglish ? `No results found for "<strong>${escapeHtml(originalQuery)}</strong>"` : `没有找到与 "<strong>${escapeHtml(originalQuery)}</strong>" 相关的结果`}</p>
+                <p style="color: #888;">${isEnglish ? 'Try another keyword or technical topic.' : '请尝试其他关键词，或直接搜索技术主题词。'}</p>
             </div>
         `;
         return;
@@ -1857,12 +2052,12 @@ function performSiteSearch(query) {
     // 更新搜索结果标题显示匹配数量
     const titleElement = searchResultsSection.querySelector('.section-header h2');
     if (titleElement) {
-        titleElement.innerHTML = `<i class="bi bi-search"></i> 搜索结果 <span style="font-size: 0.8em; color: #666;">(找到 ${allMatchedSites.length} 个匹配项)</span>`;
+        titleElement.innerHTML = `<i class="bi bi-search"></i> ${isEnglish ? 'Search Results' : '搜索结果'} <span style="font-size: 0.8em; color: #666;">${isEnglish ? `(${allMatchedSites.length} matches)` : `(找到 ${allMatchedSites.length} 个匹配项)`}</span>`;
     }
     
     // 显示所有匹配的站点卡片
     allMatchedSites.forEach(site => {
-        const categoryName = getCategoryDisplayName(site.category);
+        const categoryName = getSearchResultCategoryName(site);
         searchResultsGrid.innerHTML += createSiteCardWithCategory(site, categoryName);
     });
     
@@ -1996,6 +2191,47 @@ function getSeoLabel(key, isEnglish) {
     return map[key] || key;
 }
 
+function getSeoDescription(context, isEnglish, defaultDescription) {
+    const homeDescription = isEnglish
+        ? 'AI365 Navigation curates cross-border e-commerce tools, AI products, resource guides and technical playbooks, including official docs, tutorials, automation workflows, deployment references and engineering case studies.'
+        : 'AI365导航为跨境电商卖家、独立站运营者与 AI 创作者整理电商平台、AI工具、资源导引与技术实战内容，覆盖官方文档、教程实战、自动化工作流、部署运维与工程案例。';
+
+    const descriptions = {
+        'tech-blog': isEnglish
+            ? 'Technical playbooks for frontend, AI and infrastructure work, combining official docs, tutorials, workflow tools, deployment references and engineering case studies.'
+            : '技术实战频道聚合前端、AI 与基础设施落地资料，包含官方文档、教程实战、工作流平台、部署运维与真实工程案例。',
+        tech_official_docs: isEnglish
+            ? 'Official documentation resources for frontend frameworks, runtime platforms and AI APIs.'
+            : '官方文档分类集中收录前端框架、运行时平台与 AI API 的核心开发文档。',
+        tech_tutorials: isEnglish
+            ? 'Hands-on tutorials, courses and engineering articles for frontend, AI and full-stack implementation.'
+            : '教程实战分类聚合前端、AI 与全栈开发的课程、实战文章与上手指南。',
+        tech_workflows: isEnglish
+            ? 'Automation workflow resources covering CI/CD, durable execution, orchestration platforms and process automation tools.'
+            : '自动化工作流分类覆盖 CI/CD、持久化执行、流程编排平台与自动化工具文档。',
+        tech_deploy_ops: isEnglish
+            ? 'Deployment and operations references for hosting, containers, orchestration, edge platforms and production rollout.'
+            : '部署与运维分类覆盖托管平台、容器化、编排系统、边缘平台与生产发布资料。',
+        tech_case_studies: isEnglish
+            ? 'Engineering blogs and real-world case studies from leading teams building large-scale products and platforms.'
+            : '案例拆解分类收录头部团队的工程博客与真实案例，适合研究大规模产品与平台实践。'
+    };
+
+    if (context.pageType === 'home') {
+        return homeDescription;
+    }
+
+    if (context.subcategory && descriptions[context.subcategory]) {
+        return descriptions[context.subcategory];
+    }
+
+    if (context.topLevel && descriptions[context.topLevel]) {
+        return descriptions[context.topLevel];
+    }
+
+    return defaultDescription || homeDescription;
+}
+
 function resolveSeoCategoryContext(category) {
     if (!category || category === 'home') {
         return { pageType: 'home', topLevel: null, subcategory: null };
@@ -2053,6 +2289,7 @@ function updateStructuredData(category = 'home') {
     const metaDescription = document.querySelector('meta[name="description"]')?.content || '';
     const siteName = isEnglish ? 'AI365 Navigation' : 'AI365导航';
     const context = resolveSeoCategoryContext(category);
+    const schemaDescription = getSeoDescription(context, isEnglish, metaDescription);
 
     const breadcrumbs = [
         {
@@ -2076,7 +2313,7 @@ function updateStructuredData(category = 'home') {
         breadcrumbs.push({
             '@type': 'ListItem',
             position: 3,
-            name: context.subcategory,
+            name: getSeoLabel(context.subcategory, isEnglish),
             item: `${currentUrl}#${context.subcategory}`
         });
     }
@@ -2109,7 +2346,7 @@ function updateStructuredData(category = 'home') {
     }));
 
     const pageName = context.topLevel
-        ? `${getSeoLabel(context.topLevel, isEnglish)}${context.subcategory ? ` - ${context.subcategory}` : ''}`
+        ? `${getSeoLabel(context.topLevel, isEnglish)}${context.subcategory ? ` - ${getSeoLabel(context.subcategory, isEnglish)}` : ''}`
         : document.title;
 
     const graph = [
@@ -2124,14 +2361,14 @@ function updateStructuredData(category = 'home') {
             name: siteName,
             url: `${baseUrl}/`,
             inLanguage: isEnglish ? 'en' : 'zh-CN',
-            description: metaDescription
+            description: getSeoDescription({ pageType: 'home', topLevel: null, subcategory: null }, isEnglish, metaDescription)
         },
         {
             '@type': 'WebPage',
             name: pageName,
             url: context.pageType === 'home' ? currentUrl : `${currentUrl}#${category}`,
             inLanguage: isEnglish ? 'en' : 'zh-CN',
-            description: metaDescription,
+            description: schemaDescription,
             breadcrumb: {
                 '@id': `${currentUrl}#breadcrumb`
             }
@@ -2144,7 +2381,7 @@ function updateStructuredData(category = 'home') {
         {
             '@type': 'ItemList',
             name: context.topLevel
-                ? `${getSeoLabel(context.topLevel, isEnglish)} ${isEnglish ? 'Tools' : '工具列表'}`
+                ? `${pageName} ${isEnglish ? 'Tools' : '工具列表'}`
                 : (isEnglish ? 'Featured Tools Directory' : '精选工具导航'),
             itemListOrder: 'https://schema.org/ItemListOrderAscending',
             numberOfItems: listItems.length,
@@ -2156,9 +2393,9 @@ function updateStructuredData(category = 'home') {
         graph.push({
             '@type': 'CollectionPage',
             name: pageName,
-            url: `${currentUrl}#${context.topLevel}`,
+            url: `${currentUrl}#${context.subcategory || context.topLevel}`,
             inLanguage: isEnglish ? 'en' : 'zh-CN',
-            description: metaDescription
+            description: schemaDescription
         });
     } else if (context.pageType === 'home') {
         defaultCategoryKeys.forEach(key => {
@@ -2168,7 +2405,7 @@ function updateStructuredData(category = 'home') {
                 name: getSeoLabel(schemaKey, isEnglish),
                 url: `${currentUrl}#${schemaKey}`,
                 inLanguage: isEnglish ? 'en' : 'zh-CN',
-                description: metaDescription
+                description: getSeoDescription(resolveSeoCategoryContext(schemaKey), isEnglish, metaDescription)
             });
         });
     }

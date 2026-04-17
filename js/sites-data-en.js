@@ -31,6 +31,13 @@ const sitesData = {
             subcategory: 'amazon'
         },
         {
+            title: 'Amazon Seller Forums',
+            description: 'Official Amazon seller community for policy discussions, operational troubleshooting and peer knowledge sharing',
+            tags: ['Amazon', 'Seller Community', 'Operations'],
+            url: 'https://sellercentral.amazon.com/seller-forums',
+            subcategory: 'amazon'
+        },
+        {
             title: 'Amazon UK Store',
             description: 'Amazon UK shopping website, an e-commerce platform for UK consumers',
             tags: ['Amazon', 'UK Store', 'Consumer'],
@@ -479,6 +486,13 @@ const sitesData = {
             subcategory: 'seo'
         },
         {
+            title: 'Moz Link Explorer',
+            description: 'Moz backlink analysis tool for checking domain authority, backlink profiles and link-building opportunities',
+            tags: ['Backlink Analysis', 'Domain Authority', 'SEO Tools'],
+            url: 'https://moz.com/link-explorer',
+            subcategory: 'seo'
+        },
+        {
             title: 'Screaming Frog SEO Spider',
             description: 'Desktop crawler for technical SEO audits, useful for indexing, redirects, and site structure diagnostics',
             tags: ['Technical SEO', 'Site Crawling', 'SEO Audit'],
@@ -490,6 +504,13 @@ const sitesData = {
             description: 'One of the largest online learning platforms in the world, offering thousands of courses on website building, marketing, and e-commerce',
             tags: ['Online Learning', 'Website Building', 'E-commerce Skills'],
             url: 'https://www.udemy.com/',
+            subcategory: 'learning'
+        },
+        {
+            title: 'W3School China',
+            description: 'Chinese web development learning site covering HTML, CSS, JavaScript, SQL and reference tutorials',
+            tags: ['Programming Tutorials', 'Frontend Learning', 'Chinese Docs'],
+            url: 'https://www.w3school.com.cn/',
             subcategory: 'learning'
         },
         {
@@ -1118,6 +1139,30 @@ const sitesData = {
             description: 'Comprehensive SEO tool for keyword suggestions, content ideas and competitor analysis',
             tags: ['Keyword Tool', 'SEO Analysis', 'Content Ideas'],
             url: 'https://neilpatel.com/ubersuggest/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Google Trends',
+            description: 'Official Google search trends tool for topic interest over time, regional demand and seasonal patterns',
+            tags: ['Search Trends', 'Keyword Demand', 'Market Trends'],
+            url: 'https://trends.google.com/trends/?geo=US',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'Google Ads',
+            description: 'Official Google Ads campaign entry for search, shopping and customer acquisition advertising',
+            tags: ['Google Ads', 'Paid Search', 'Advertising'],
+            url: 'https://business.google.com/en-all/google-ads/',
+            subcategory: 'keyword',
+            needsMagic: true
+        },
+        {
+            title: 'MerchantWords',
+            description: 'Keyword research tool for Amazon sellers to discover shopper queries, product terms and category demand signals',
+            tags: ['Amazon Keywords', 'Product Research', 'E-commerce SEO'],
+            url: 'https://www.merchantwords.com/',
             subcategory: 'keyword',
             needsMagic: true
         },
@@ -4212,6 +4257,38 @@ const sitesData = {
             isRecommended: true
         },
         {
+            title: 'React Docs',
+            description: 'Official React documentation covering components, state, hooks and modern React patterns.',
+            tags: ['React', 'Official Docs', 'Frontend Framework'],
+            url: 'https://react.dev/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'Next.js Docs',
+            description: 'Official Next.js documentation covering App Router, data fetching, rendering and deployment practices.',
+            tags: ['Next.js', 'Full-stack', 'Official Docs'],
+            url: 'https://nextjs.org/docs',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'Node.js Docs',
+            description: 'Official Node.js documentation for runtime APIs, modules, CLI and server-side capabilities.',
+            tags: ['Node.js', 'Backend', 'Runtime Docs'],
+            url: 'https://nodejs.org/en/docs',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'Next.js Learn',
+            description: 'Official Next.js course that teaches routing, data, auth and deployment through a full demo app.',
+            tags: ['Next.js Course', 'Hands-on', 'Full-stack App'],
+            url: 'https://nextjs.org/learn',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
             title: 'freeCodeCamp',
             description: 'Offers structured coding tutorials, project-based practice and engineering articles from beginner to advanced.',
             tags: ['Coding Tutorials', 'Projects', 'Learning Path'],
@@ -4228,11 +4305,491 @@ const sitesData = {
             isRecommended: true
         },
         {
+            title: 'web.dev',
+            description: 'Google’s practical web development resource focused on performance, PWAs, accessibility and frontend UX.',
+            tags: ['Web Performance', 'PWA', 'Frontend Practices'],
+            url: 'https://web.dev/',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
+            title: 'CSS-Tricks',
+            description: 'A long-running frontend publication covering CSS, JavaScript, layout, animation and implementation techniques.',
+            tags: ['CSS', 'Frontend Tips', 'Web Development'],
+            url: 'https://css-tricks.com/',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
+            title: 'Smashing Magazine',
+            description: 'In-depth publication for frontend, design and UX with practical articles on components, performance and interaction design.',
+            tags: ['Frontend', 'UX', 'Design Engineering'],
+            url: 'https://www.smashingmagazine.com/',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
+            title: 'OpenAI Docs',
+            description: 'OpenAI platform docs with API onboarding, references and developer resources.',
+            tags: ['OpenAI', 'API Docs', 'AI Development'],
+            url: 'https://platform.openai.com/docs/overview',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'OpenAI Cookbook',
+            description: 'Official OpenAI examples and best practices for API usage, sample code and prompt engineering patterns.',
+            tags: ['OpenAI', 'Code Examples', 'Best Practices'],
+            url: 'https://cookbook.openai.com/',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
+            title: 'Anthropic Docs',
+            description: 'Official Anthropic developer docs covering Claude usage, prompting and platform capabilities.',
+            tags: ['Anthropic', 'Claude', 'Official Docs'],
+            url: 'https://platform.claude.com/docs/en/docs/intro-to-claude',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'LangChain Overview',
+            description: 'Official LangChain overview for quickly building custom agents, tool calling and LLM-powered applications.',
+            tags: ['LangChain', 'Agents', 'LLM Apps'],
+            url: 'https://docs.langchain.com/oss/python/langchain/overview',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'LlamaIndex Framework',
+            description: 'LlamaIndex framework docs covering RAG, agents, workflows and data ingestion for context-augmented applications.',
+            tags: ['LlamaIndex', 'RAG', 'Data Connectors'],
+            url: 'https://developers.llamaindex.ai/python/framework/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'Model Context Protocol',
+            description: 'Official MCP introduction explaining how a standard protocol connects AI applications to data sources, tools and workflows.',
+            tags: ['MCP', 'Protocol', 'Tool Connectivity'],
+            url: 'https://modelcontextprotocol.io/introduction',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'AutoGen',
+            description: 'Microsoft AutoGen framework docs for Python multi-agent conversations, event-driven systems and code execution.',
+            tags: ['AutoGen', 'Multi-Agent', 'Python'],
+            url: 'https://microsoft.github.io/autogen/stable/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'CrewAI Documentation',
+            description: 'CrewAI docs focus on collaborative agents, crews and flows for production-ready multi-agent systems.',
+            tags: ['CrewAI', 'Multi-Agent', 'Flows'],
+            url: 'https://docs.crewai.com/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'OpenClaw Official Docs',
+            description: 'Complete API references, configuration guides and architecture documentation for OpenClaw.',
+            tags: ['OpenClaw', 'API Docs', 'Architecture'],
+            url: 'https://docs.openclaw.ai/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'GitHub — openclaw/openclaw',
+            description: 'Source code, issue tracking and community contribution guidelines for the OpenClaw project.',
+            tags: ['OpenClaw', 'GitHub', 'Open Source'],
+            url: 'https://github.com/openclaw/openclaw',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'ClawHub Skill Marketplace',
+            description: 'Discover, install and share AI skill plugins in the OpenClaw ecosystem.',
+            tags: ['ClawHub', 'Skill Marketplace', 'Plugin Ecosystem'],
+            url: 'https://clawhub.com/',
+            subcategory: 'tech_official_docs',
+            isRecommended: true
+        },
+        {
+            title: 'Getting Started — Official Guide',
+            description: 'The fastest path from zero setup to your first OpenClaw conversation.',
+            tags: ['OpenClaw', 'Getting Started', 'Quickstart'],
+            url: 'https://docs.openclaw.ai/start/getting-started',
+            subcategory: 'tech_official_docs',
+            isRecommended: false
+        },
+        {
+            title: 'Discord Community',
+            description: 'Join the OpenClaw Discord community for real-time discussion with developers and users.',
+            tags: ['OpenClaw', 'Discord', 'Community'],
+            url: 'https://discord.com/invite/clawd',
+            subcategory: 'tech_official_docs',
+            isRecommended: false
+        },
+        {
+            title: 'OpenClaw — Wikipedia',
+            description: 'Wikipedia entry covering the background, history and broader impact of OpenClaw.',
+            tags: ['OpenClaw', 'Wikipedia', 'Background'],
+            url: 'https://en.wikipedia.org/wiki/OpenClaw',
+            subcategory: 'tech_official_docs',
+            isRecommended: false
+        },
+        {
+            title: 'ClawHub Skills Repository',
+            description: 'Repository archive containing the source code for published ClawHub skills.',
+            tags: ['ClawHub', 'GitHub', 'Skill Source'],
+            url: 'https://github.com/openclaw/skills',
+            subcategory: 'tech_official_docs',
+            isRecommended: false
+        },
+        {
+            title: 'Hugging Face Learn',
+            description: 'Hugging Face learning hub with courses on LLMs, agents, MCP, diffusion and an open-source cookbook.',
+            tags: ['AI Courses', 'Agents', 'Open-source Models'],
+            url: 'https://huggingface.co/learn',
+            subcategory: 'tech_tutorials',
+            isRecommended: true
+        },
+        {
+            title: 'GitHub Actions Docs',
+            description: 'Official GitHub Actions docs for CI/CD workflow orchestration, runners and automation practices.',
+            tags: ['CI/CD', 'GitHub Actions', 'Automation'],
+            url: 'https://docs.github.com/en/actions',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
+            title: 'n8n Docs',
+            description: 'Official n8n docs covering workflow building, integrations, AI features and self-hosting setup.',
+            tags: ['n8n', 'Automation', 'Self-hosting'],
+            url: 'https://docs.n8n.io/',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
+            title: 'Make Help Center',
+            description: 'Official Make help center for scenarios, error handling, templates and platform updates.',
+            tags: ['Make', 'Scenarios', 'Automation Platform'],
+            url: 'https://help.make.com/',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
+            title: 'Zapier Blog',
+            description: 'Zapier’s automation content hub with workflow examples, app connection guides and process optimization articles.',
+            tags: ['Zapier', 'Automation Examples', 'Process Improvement'],
+            url: 'https://zapier.com/blog/',
+            subcategory: 'tech_workflows',
+            isRecommended: false
+        },
+        {
+            title: 'Temporal Docs',
+            description: 'Official Temporal docs focused on reliable workflow execution, durable state and long-running orchestration.',
+            tags: ['Temporal', 'Durable Execution', 'Workflow Engine'],
+            url: 'https://docs.temporal.io/',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
+            title: 'Apache Airflow Docs',
+            description: 'Apache Airflow documentation for DAG orchestration, schedulers, providers and deployment options.',
+            tags: ['Airflow', 'Data Workflows', 'Orchestration'],
+            url: 'https://airflow.apache.org/docs/',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
+            title: 'Cloudflare Workflows',
+            description: 'Cloudflare’s durable multi-step workflow docs for retries, event waits and approval-driven background jobs.',
+            tags: ['Cloudflare', 'Durable Workflow', 'Background Jobs'],
+            url: 'https://developers.cloudflare.com/workflows/',
+            subcategory: 'tech_workflows',
+            isRecommended: true
+        },
+        {
             title: 'Vercel Docs',
             description: 'Documentation hub for frontend deployment, edge rendering and performance optimization in production workflows.',
             tags: ['Deployment', 'Frontend Engineering', 'Performance'],
             url: 'https://vercel.com/docs',
             subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Docker Docs',
+            description: 'Official Docker docs covering containers, Dockerfiles, Compose and image build workflows.',
+            tags: ['Docker', 'Containers', 'Build & Deploy'],
+            url: 'https://docs.docker.com/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Kubernetes Documentation',
+            description: 'Official Kubernetes documentation covering clusters, workloads, observability, logs and production deployment.',
+            tags: ['Kubernetes', 'Orchestration', 'Ops'],
+            url: 'https://kubernetes.io/docs/home/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Cloudflare Docs',
+            description: 'Cloudflare developer docs covering Workers, Pages, AI Gateway, Tunnel and the edge platform.',
+            tags: ['Cloudflare', 'Edge Computing', 'Platform Docs'],
+            url: 'https://developers.cloudflare.com/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Netlify Docs',
+            description: 'Official Netlify docs for static site deployment, forms, edge functions and frontend hosting.',
+            tags: ['Netlify', 'Static Deployment', 'Frontend Hosting'],
+            url: 'https://docs.netlify.com/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'Render Docs',
+            description: 'Official Render docs covering web services, databases, background jobs and deployment configuration.',
+            tags: ['Render', 'App Hosting', 'Deployment Config'],
+            url: 'https://render.com/docs',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'Fly.io Docs',
+            description: 'Official Fly.io docs for global deployment, containers, volumes and application delivery.',
+            tags: ['Fly.io', 'Global Deployments', 'Containers'],
+            url: 'https://fly.io/docs/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'Alibaba Cloud — Deploy OpenClaw for DingTalk AI Assistant',
+            description: 'One-click deployment on Alibaba Cloud Simple Application Server with a visual panel for DingTalk integration.',
+            tags: ['Alibaba Cloud', 'DingTalk', 'One-Click Deploy'],
+            url: 'https://help.aliyun.com/zh/simple-application-server/use-cases/quickly-deploy-and-use-openclaw',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Alibaba Cloud — AppFlow Integration with WeCom',
+            description: 'Integrate OpenClaw with WeCom via AppFlow connectors so teams can interact directly in group chats.',
+            tags: ['Alibaba Cloud', 'WeCom', 'AppFlow'],
+            url: 'https://help.aliyun.com/zh/simple-application-server/use-cases/openclaw-enterprise-wechat-integration',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Tencent Cloud — OpenClaw Feishu Integration Guide',
+            description: 'Lighthouse-based one-click deployment guide covering the full Feishu bot setup and integration flow.',
+            tags: ['Tencent Cloud', 'Feishu', 'Lighthouse'],
+            url: 'https://cloud.tencent.com/developer/article/2625073',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Tencent Cloud — OpenClaw WeCom Integration Guide',
+            description: 'Step-by-step Tencent Cloud guide for connecting OpenClaw to WeCom with a visual configuration panel.',
+            tags: ['Tencent Cloud', 'WeCom', 'Visual Config'],
+            url: 'https://cloud.tencent.com/developer/article/2625147',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'DigitalOcean — One-Click Deploy OpenClaw',
+            description: 'Guide for deploying OpenClaw using DigitalOcean\'s 1-Click solution for fast setup.',
+            tags: ['DigitalOcean', 'One-Click Deploy', 'VPS'],
+            url: 'https://www.digitalocean.com/community/tutorials/how-to-run-openclaw',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Hostinger — How to Set Up OpenClaw on a Private Server',
+            description: 'Step-by-step Hostinger VPS guide for setting up OpenClaw on a private server.',
+            tags: ['Hostinger', 'VPS Deploy', 'Private Server'],
+            url: 'https://www.hostinger.com/tutorials/how-to-set-up-openclaw',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'Alibaba Cloud Community — 2026 OpenClaw Deployment FAQ',
+            description: 'Alibaba Cloud developer article covering Bailian model config, Qwen integration, FAQs and full JSON examples.',
+            tags: ['Alibaba Cloud', 'Bailian', 'FAQ'],
+            url: 'https://developer.aliyun.com/article/1709761',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'AWS China Blog — Deploy OpenClaw on Mac Instances',
+            description: 'AWS China guide for deploying OpenClaw on Mac instances, useful for Apple ecosystem automation workflows.',
+            tags: ['AWS', 'Mac Instances', 'Apple Ecosystem'],
+            url: 'https://aws.amazon.com/cn/blogs/china/openclaw-deployment-aws-mac/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Alibaba Cloud — 2026 OpenClaw Fast Deployment Guide',
+            description: 'Updated Alibaba Cloud guide covering image-based one-click deployment, multi-channel integrations and troubleshooting.',
+            tags: ['Alibaba Cloud', 'Fast Deployment', 'Updated Guide'],
+            url: 'https://developer.aliyun.com/article/1710373',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Alibaba Cloud — OpenClaw One-Click Deployment Guide',
+            description: 'Direct deployment guide for Alibaba Cloud Simple Application Server with instance sizing and service terms.',
+            tags: ['Alibaba Cloud', 'Simple Application Server', 'Deployment Guide'],
+            url: 'https://developer.aliyun.com/article/1710471',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Alibaba Cloud — OpenClaw Messaging Platform Integration Guide',
+            description: 'Detailed Alibaba Cloud guide for connecting OpenClaw to WeChat, Feishu, DingTalk and QQ with token setup steps.',
+            tags: ['Alibaba Cloud', 'WeChat', 'Feishu'],
+            url: 'https://developer.aliyun.com/article/1710679',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Vercel — OpenClaw Official Integration Guide',
+            description: 'Official Vercel AI Gateway guide for OpenClaw, covering API key creation, setup flow and monitoring.',
+            tags: ['Vercel', 'AI Gateway', 'Official Integration'],
+            url: 'https://vercel.com/docs/ai-gateway/chat-platforms/openclaw',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Alibaba Cloud Bailian — OpenClaw Integration Guide',
+            description: 'Official Alibaba Cloud Bailian guide for connecting OpenClaw via an OpenAI-compatible endpoint with Qwen, DeepSeek and Kimi models.',
+            tags: ['Alibaba Cloud Bailian', 'OpenAI-Compatible API', 'Model Integration'],
+            url: 'https://help.aliyun.com/zh/model-studio/openclaw',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Step-by-Step Feishu Integration Guide for OpenClaw',
+            description: 'Chinese step-by-step guide for installing OpenClaw on Linux and connecting it to a Feishu bot.',
+            tags: ['OpenClaw', 'Feishu', 'Linux Deployment'],
+            url: 'https://www.cnblogs.com/catchadmin/p/19556552',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'MiniMax — Build AI Assistant on Telegram',
+            description: 'MiniMax solution guide for connecting M2.1 to Telegram via OpenClaw to build an AI assistant.',
+            tags: ['MiniMax', 'Telegram', 'OpenClaw Integration'],
+            url: 'https://platform.minimax.io/docs/solutions/moltbot',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Bright Data — Build a WhatsApp AI Assistant with OpenClaw',
+            description: 'Integration guide for combining OpenClaw with Bright Data to build a web-scraping-enabled WhatsApp AI assistant.',
+            tags: ['Bright Data', 'WhatsApp', 'Web Scraping'],
+            url: 'https://brightdata.com/blog/ai/openclaw-with-bright-data',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Deploy OpenClaw: From Install to QQ Bot Integration',
+            description: 'Chinese illustrated guide covering npm install, onboarding and full QQ bot integration for OpenClaw.',
+            tags: ['OpenClaw', 'QQ Bot', 'npm Install'],
+            url: 'https://catcat.blog/2026/03/deploy-openclaw-ai-assistant',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'OpenClaw WeChat Plugin Clawbot Tutorial',
+            description: 'Video tutorial showing one-command install and a complete WeChat integration workflow for OpenClaw.',
+            tags: ['OpenClaw', 'WeChat Plugin', 'Video Tutorial'],
+            url: 'https://www.youtube.com/watch?v=KZKT27Gk9lA',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: false
+        },
+        {
+            title: 'Langfuse Docs',
+            description: 'Langfuse is an open-source LLM engineering platform for tracing, prompt management, evaluations and production observability.',
+            tags: ['Langfuse', 'Observability', 'Evals'],
+            url: 'https://langfuse.com/docs/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Helicone Docs',
+            description: 'Helicone provides an OpenAI-compatible AI Gateway with request logging, observability and model fallbacks.',
+            tags: ['Helicone', 'AI Gateway', 'Observability'],
+            url: 'https://docs.helicone.ai/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'OpenLIT',
+            description: 'OpenLIT is an open-source AI engineering platform with OpenTelemetry-native observability for agents, vector DBs, MCP and GPUs.',
+            tags: ['OpenLIT', 'OpenTelemetry', 'AI Observability'],
+            url: 'https://docs.openlit.io/latest/',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Arize AX',
+            description: 'Arize AX focuses on evaluation, tracing and observability for AI applications and agents in production.',
+            tags: ['Arize', 'Tracing', 'AI Observability'],
+            url: 'https://www.arize.com/docs/ax',
+            subcategory: 'tech_deploy_ops',
+            isRecommended: true
+        },
+        {
+            title: 'Vercel Blog',
+            description: 'Vercel’s official blog with articles on frontend infrastructure, AI workflows, performance and customer case studies.',
+            tags: ['Vercel', 'Frontend Infrastructure', 'AI Workflows'],
+            url: 'https://vercel.com/blog',
+            subcategory: 'tech_case_studies',
+            isRecommended: true
+        },
+        {
+            title: 'GitHub Engineering',
+            description: 'GitHub’s engineering blog covering platform architecture, performance, accessibility and operations.',
+            tags: ['Engineering Blog', 'Architecture', 'Platform Practices'],
+            url: 'https://github.blog/engineering/',
+            subcategory: 'tech_case_studies',
+            isRecommended: true
+        },
+        {
+            title: 'Cloudflare Blog',
+            description: 'Cloudflare’s official blog with engineering breakdowns on edge infrastructure, AI platforms and security systems.',
+            tags: ['Edge Platform', 'AI Infrastructure', 'Case Studies'],
+            url: 'https://blog.cloudflare.com/',
+            subcategory: 'tech_case_studies',
+            isRecommended: true
+        },
+        {
+            title: 'Stripe Engineering',
+            description: 'Stripe’s engineering blog sharing lessons from payment APIs, docs platforms, databases and high-availability systems.',
+            tags: ['Payments', 'High Availability', 'Engineering Blog'],
+            url: 'https://stripe.com/blog/engineering',
+            subcategory: 'tech_case_studies',
+            isRecommended: true
+        },
+        {
+            title: 'Shopify Engineering',
+            description: 'Shopify’s engineering site covering commerce infrastructure, AI applications, GraphQL and platform scaling practices.',
+            tags: ['Shopify', 'Commerce Engineering', 'Platform Scale'],
+            url: 'https://shopify.engineering/',
+            subcategory: 'tech_case_studies',
+            isRecommended: true
+        },
+        {
+            title: 'Netflix TechBlog',
+            description: 'Netflix’s technology blog covering streaming platform data, distributed systems, machine learning and production engineering.',
+            tags: ['Netflix', 'Distributed Systems', 'Case Studies'],
+            url: 'https://netflixtechblog.com/',
+            subcategory: 'tech_case_studies',
             isRecommended: true
         }
     ]
