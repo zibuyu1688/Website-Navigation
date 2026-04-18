@@ -1778,14 +1778,6 @@ const sitesData = {
             needsMagic: false
         },
         {
-            title: '橙篇',
-            description: '面向自媒体创作者的AI写作助手，支持生成热点文章、专业内容等',
-            tags: ['自媒体', '热点内容', '原创文章'],
-            url: 'https://chengpian.com/',
-            subcategory: 'vertical_specialized',
-            needsMagic: false
-        },
-        {
             title: '小鱼AI写作',
             description: '专注于新媒体创作的AI助手，提供多种写作风格和模板',
             tags: ['自媒体', '写作风格', '内容创作'],
@@ -1813,25 +1805,12 @@ const sitesData = {
             title: '讯飞绘文',
             description: '科大讯飞推出的创意内容生成工具，擅长脚本、短剧和创意故事',
             tags: ['创意脚本', '短剧内容', '故事生成'],
-            url: 'https://www.xfyun.cn/services/huiwen',
-            subcategory: 'vertical_specialized',
-            needsMagic: false
-        },
-        {
             title: '万能小in',
             description: '面向创意内容制作的AI助手，支持脚本、梗概、对白等多种创意文本生成',
             tags: ['创意制作', '内容创作', '脚本生成'],
             url: 'https://wannengxiaoin.com/',
             subcategory: 'vertical_specialized',
             needsMagic: false
-        },
-        {
-            title: 'CaptionBot.ai',
-            description: '自动为图片和视频生成字幕和说明文字的AI工具',
-            tags: ['图片字幕', '视频说明', 'AI字幕'],
-            url: 'https://captionbot.ai/',
-            subcategory: 'vertical_specialized',
-            needsMagic: true
         },
         {
             title: 'Canva文本生成器',
@@ -1967,15 +1946,6 @@ const sitesData = {
             subcategory: 'general_assistant',
             needsMagic: false
         },
-        {
-            title: '紫东太初',
-            description: '中科院自动化所推出的AI助手，具有强大的知识推理能力',
-            tags: ['学术支持', '知识推理', '中科院AI'],
-            url: 'https://chatbot.automata-ai.com/',
-            subcategory: 'general_assistant',
-            needsMagic: false
-        },
-        
         // 游戏与娱乐AI
         {
             title: 'Character.AI',
@@ -2037,13 +2007,6 @@ const sitesData = {
             title: 'Cici',
             description: '面向年轻用户的娱乐AI助手，提供丰富的互动体验',
             tags: ['年轻风格', '互动娱乐', '趣味对话'],
-            url: 'https://www.cici.ai/',
-            subcategory: 'entertainment_ai',
-            needsMagic: true
-        },
-        
-        // 角色扮演与虚拟陪伴
-        {
             title: 'Ohai',
             description: '提供AI虚拟伴侣体验的平台，支持深度情感互动',
             tags: ['虚拟伴侣', '情感互动', '深度对话'],
@@ -2253,11 +2216,6 @@ const sitesData = {
             title: 'Cici',
             description: '豆包国际版，面向国际用户的中国AI技术展示',
             tags: ['国际版', '中国技术', '多语言'],
-            url: 'https://www.cici.ai/',
-            subcategory: 'international_ai',
-            needsMagic: true
-        },
-        {
             title: '百川大模型',
             description: '提供多语言支持的中国大模型，面向国际市场',
             tags: ['多语言', '国际化', '中国AI'],
@@ -2354,15 +2312,7 @@ const sitesData = {
             title: 'Bing Image Creator',
             description: '微软推出的免费AI图像生成工具，基于DALL-E模型',
             tags: ['微软', '免费工具', '简易操作'],
-            url: 'https://www.bing.com/create',
-            subcategory: 'painting_creation',
-            needsMagic: true
-        },
-        {
-            title: 'DeepFloyd IF',
-            description: '多模态生成模型，支持高质量图像和精确文本理解',
-            tags: ['多模态', '高质量', '精确理解'],
-            url: 'https://deepfloyd.ai/',
+            url: 'https://www.bing.com/images/create/ai-image-generator',
             subcategory: 'painting_creation',
             needsMagic: true
         },
@@ -2576,15 +2526,6 @@ const sitesData = {
             subcategory: 'painting_creation',
             needsMagic: true
         },
-        {
-            title: '触手AI',
-            description: '国内领先的AI动漫创作平台，支持多种二次元风格',
-            tags: ['国内平台', '二次元', '多风格支持'],
-            url: 'https://chusu.cc/',
-            subcategory: 'painting_creation',
-            needsMagic: false
-        },
-        
         // 娱乐与趣味工具
         {
             title: 'Reface',
@@ -2716,37 +2657,73 @@ const sitesData = {
 
     // 电商专区
     ecommerce_zone: [
-        // AI模特
+        // AI选品
         {
-            title: 'ZMO.ai',
-            description: 'AI虚拟服装设计和模特试穿平台，一键生成多尺码、多肤色虚拟模特图，适合快速出图',
-            tags: ['AI模特', '虚拟试穿', '电商展示'],
-            url: 'https://zmo.ai/',
-            subcategory: 'ai_model',
-            needsMagic: true,
-            isRecommended: true
-        },
-        {
-            title: 'Vmake',
-            description: '电商换装AI工具，上传产品图快速生成不同服饰与模特组合的展示效果',
-            tags: ['电商换装', '虚拟试衣', '产品展示'],
-            url: 'https://www.v-make.ai/',
-            subcategory: 'ai_model',
-            needsMagic: true
-        },
-        {
-            title: '即时AI模特',
-            description: '国内领先的AI模特生成平台，支持服装平铺图快速上模，批量生成买家秀效果',
-            tags: ['国内工具', '服装上模', '批量生成'],
-            url: 'https://www.jishi.ai/',
-            subcategory: 'ai_model',
+            title: '1688 遨虾 AlphaShop',
+            description: '面向跨境卖家的 AI 选品与找厂工具，支持以图搜款、工厂匹配、蓝海市场分析与自动询盘，强调从选品到供应链的闭环。',
+            tags: ['以图搜款', '找源头工厂', '自动询盘'],
+            url: 'https://www.1688.com/',
+            subcategory: 'ai_selection',
             needsMagic: false,
             isRecommended: true
         },
         {
+            title: '卖家精灵 SellerSprite',
+            description: '亚马逊和 TikTok 卖家的老牌数据工具，支持 AI 选品决策、竞品评论痛点挖掘以及 Listing 生成与诊断。',
+            tags: ['对话式选品', '评论挖掘', 'Listing诊断'],
+            url: 'https://www.sellersprite.com/cn/',
+            subcategory: 'ai_selection',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'Jungle Scout',
+            description: '面向亚马逊资深卖家的市场研究工具，擅长机会发现、低竞争细分扫描和未来销量趋势预测。',
+            tags: ['机会发掘', '细分市场', '销量预测'],
+            url: 'https://www.junglescout.com/',
+            subcategory: 'ai_selection',
+            needsMagic: true,
+            isRecommended: true
+        },
+        {
+            title: 'Sorftime',
+            description: '适合寻找黑马产品的跨境数据平台，通过“隐赚指数”筛出上新时间短、评论少但销量飙升的潜力款。',
+            tags: ['隐赚指数', '黑马选品', '蓝海机会'],
+            url: 'https://www.sorftime.com/',
+            subcategory: 'ai_selection',
+            needsMagic: false,
+            isRecommended: true
+        },
+        {
+            title: 'Temu 选品助手',
+            description: '围绕 Temu 平台规则的选品工具，结合实时销量、社媒热度和利润测算，帮助新手快速筛出高潜商品。',
+            tags: ['Temu选品', '利润测算', '平台规则'],
+            url: 'https://seller.temu.com/',
+            subcategory: 'ai_selection',
+            needsMagic: false
+        },
+        {
+            title: '爆单AI选品助手',
+            description: '面向 OZON 卖家的潜力品筛选方案，从销量趋势、平台合规和商品表现等维度给出爆款评分。',
+            tags: ['OZON卖家', '销量趋势', '合规评分'],
+            url: 'https://seller.ozon.ru/',
+            subcategory: 'ai_selection',
+            needsMagic: false
+        },
+        {
+            title: 'OpenClaw + 飞书',
+            description: '适合懂技术的卖家自建私有 AI 选品系统，可自动抓取竞品销量、价格和评论，再结合大模型做打分并回写飞书表格。',
+            tags: ['DIY选品系统', '竞品抓取', '飞书自动化'],
+            url: 'https://www.openclaw.cn/',
+            subcategory: 'ai_selection',
+            needsMagic: false
+        },
+
+        // AI模特
+        {
             title: 'Kolors Virtual Try-On',
             description: '快手可图推出的虚拟试穿模型，开源可商用，精度高、服装细节还原出色',
-            tags: ['开源模型', '虚拟试穿', '高精度'],
+            tags: ['开源试穿', '服装细节', '商用模型'],
             url: 'https://huggingface.co/Kwai-Kolors/Kolors-Virtual-Try-On',
             subcategory: 'ai_model',
             needsMagic: false
@@ -2755,7 +2732,7 @@ const sitesData = {
         {
             title: 'Photoroom',
             description: '专业AI商品抠图与背景合成平台，支持批量处理，一键生成白底/场景图',
-            tags: ['商品抠图', '背景合成', '批量处理'],
+            tags: ['商品抠图', '白底图', '批量处理'],
             url: 'https://www.photoroom.com/',
             subcategory: 'product_photo',
             needsMagic: true,
@@ -2764,7 +2741,7 @@ const sitesData = {
         {
             title: 'Mokker AI',
             description: 'AI商品场景图生成工具，上传产品图自动匹配高质量场景背景，无需摄影棚',
-            tags: ['场景生成', '商品摄影', '免摄影棚'],
+            tags: ['场景图生成', '商品摄影', '免摄影棚'],
             url: 'https://mokker.ai/',
             subcategory: 'product_photo',
             needsMagic: true
@@ -2772,7 +2749,7 @@ const sitesData = {
         {
             title: 'Flair.ai',
             description: '时尚和美妆品牌首选的AI商品场景创作工具，支持品牌场景模板定制',
-            tags: ['品牌场景', '时尚美妆', '模板定制'],
+            tags: ['品牌场景', '美妆电商', '模板定制'],
             url: 'https://flair.ai/',
             subcategory: 'product_photo',
             needsMagic: true
@@ -2780,7 +2757,7 @@ const sitesData = {
         {
             title: 'Pebblely',
             description: '一键AI商品背景替换工具，40+ 内置场景主题，快速输出电商主图',
-            tags: ['背景替换', '主图优化', '快速出图'],
+            tags: ['背景替换', '电商主图', '快速出图'],
             url: 'https://pebblely.com/',
             subcategory: 'product_photo',
             needsMagic: true
@@ -2789,42 +2766,17 @@ const sitesData = {
         {
             title: 'Helium 10 Listing Builder',
             description: '亚马逊卖家必备工具，AI辅助Listing标题/五点/描述写作，集成关键词数据库',
-            tags: ['亚马逊', 'Listing优化', '关键词研究'],
+            tags: ['亚马逊Listing', '五点描述', '关键词库'],
             url: 'https://www.helium10.com/tools/listing-builder/',
             subcategory: 'listing_writing',
             needsMagic: true,
             isRecommended: true
         },
-        {
-            title: 'Jungle Scout AI',
-            description: '跨境电商选品和Listing写作AI平台，基于真实销售数据生成高转化文案',
-            tags: ['选品工具', 'Listing写作', '销量数据'],
-            url: 'https://www.junglescout.com/features/ai-assist/',
-            subcategory: 'listing_writing',
-            needsMagic: true
-        },
-        {
-            title: '万词王',
-            description: '国内跨境Listing关键词挖掘与AI写作工具，覆盖亚马逊/Shopee/速卖通等多平台',
-            tags: ['关键词挖掘', '多平台', 'Listing写作'],
-            url: 'https://www.wanciyuan.com/',
-            subcategory: 'listing_writing',
-            needsMagic: false,
-            isRecommended: true
-        },
-        {
-            title: 'SellerApp Listing Optimizer',
-            description: 'AI驱动的亚马逊Listing打分与优化建议平台，实时检测关键词覆盖率',
-            tags: ['Listing打分', '优化建议', '亚马逊'],
-            url: 'https://www.sellerapp.com/amazon-listing-optimizer.html',
-            subcategory: 'listing_writing',
-            needsMagic: true
-        },
         // 投放助手
         {
             title: 'AdCreative.ai',
             description: 'AI广告素材批量生成平台，输入品牌信息自动产出高点击率图文广告创意',
-            tags: ['广告创意', '批量生成', '高点击率'],
+            tags: ['广告素材', '批量生成', '点击率优化'],
             url: 'https://www.adcreative.ai/',
             subcategory: 'ad_assistant',
             needsMagic: true,
@@ -2833,7 +2785,7 @@ const sitesData = {
         {
             title: '巨量创意',
             description: '字节跳动推出的投放创意工具，支持爆款素材分析、AI文案生成和落地页优化',
-            tags: ['字节系', '素材分析', 'AI文案'],
+            tags: ['抖音投放', '素材分析', 'AI文案'],
             url: 'https://cc.oceanengine.com/',
             subcategory: 'ad_assistant',
             needsMagic: false,
@@ -2842,7 +2794,7 @@ const sitesData = {
         {
             title: 'Madgicx',
             description: '专为Facebook/Meta广告优化的AI平台，自动调整受众定向、预算分配和素材轮换',
-            tags: ['Meta广告', '受众优化', '自动投放'],
+            tags: ['Meta广告', '受众定向', '预算优化'],
             url: 'https://madgicx.com/',
             subcategory: 'ad_assistant',
             needsMagic: true
@@ -2850,7 +2802,7 @@ const sitesData = {
         {
             title: 'Pencil',
             description: 'AI预测广告素材表现的创意平台，基于历史数据生成高胜率广告变体',
-            tags: ['创意预测', '广告变体', '高胜率'],
+            tags: ['创意预测', '广告变体', '素材测试'],
             url: 'https://www.trypencil.com/',
             subcategory: 'ad_assistant',
             needsMagic: true
@@ -2980,7 +2932,7 @@ const sitesData = {
             title: 'HitPaw视频修复',
             description: 'AI视频修复和增强工具，可提升老旧视频画质和补帧',
             tags: ['视频修复', '画质增强', '老旧视频'],
-            url: 'https://www.hitpaw.com/video-enhancer.html',
+            url: 'https://www.hitpaw.com/vikpea-video-enhancer.html',
             subcategory: 'video_editing',
             needsMagic: true
         },
@@ -3445,14 +3397,6 @@ const sitesData = {
             needsMagic: false
         },
         {
-            title: '穆雷克',
-            description: '昆仑万维商用音乐创作平台，专业AI音乐制作工具',
-            tags: ['商用音乐', '专业制作', 'AI创作'],
-            url: 'https://www.musicfy.ai/',
-            subcategory: 'music_generation',
-            needsMagic: false
-        },
-        {
             title: '天谱乐',
             description: '多模态音乐生成大模型，提供全面的音乐创作解决方案',
             tags: ['多模态', '音乐大模型', '创作解决方案'],
@@ -3480,11 +3424,6 @@ const sitesData = {
             title: 'TME工作室',
             description: '腾讯音乐智能创作助手，赋能音乐人的AI工具',
             tags: ['腾讯音乐', '创作助手', '音乐人工具'],
-            url: 'https://y.qq.com/tme',
-            subcategory: 'music_generation',
-            needsMagic: false
-        },
-        {
             title: '稳定的音频',
             description: 'Stability AI音乐生成工具，创建高质量音乐内容',
             tags: ['Stability AI', '音乐生成', '高质量'],
@@ -3514,7 +3453,7 @@ const sitesData = {
             title: '简单听记',
             description: '百度网盘语音转文字工具，便捷的录音转文本服务',
             tags: ['百度网盘', '语音转文字', '便捷服务'],
-            url: 'https://pan.baidu.com/tingji',
+            url: 'https://tingji.baidu.com/embed/listennote',
             subcategory: 'speech_to_text',
             needsMagic: false
         },
@@ -3523,14 +3462,6 @@ const sitesData = {
             description: '科大讯飞在线语音转写平台，专业的语音识别服务',
             tags: ['科大讯飞', '语音转写', '专业识别'],
             url: 'https://www.iflyrec.com/',
-            subcategory: 'speech_to_text',
-            needsMagic: false
-        },
-        {
-            title: '备忘录',
-            description: '免费语音转文字工具，方便记录和整理语音内容',
-            tags: ['免费工具', '语音记录', '文字整理'],
-            url: 'https://beiwanglu.com/',
             subcategory: 'speech_to_text',
             needsMagic: false
         },
@@ -3791,14 +3722,6 @@ const sitesData = {
             needsMagic: true
         },
         {
-            title: 'AIDesign',
-            description: '腾讯推出的免费LOGO设计工具，支持多种行业和风格',
-            tags: ['腾讯', '免费LOGO', '多风格'],
-            url: 'https://ailogo.qq.com/',
-            subcategory: 'commerce_design',
-            needsMagic: false
-        },
-        {
             title: 'LogoliveryAI',
             description: '免费LOGO生成工具，提供多种风格和自定义选项',
             tags: ['免费', 'LOGO生成', '自定义'],
@@ -4017,7 +3940,7 @@ const sitesData = {
             title: '酷家乐AI',
             description: '智能家居设计平台，提供一站式室内设计解决方案',
             tags: ['家居设计', '室内设计', '一站式'],
-            url: 'https://www.kujiale.com/ai',
+            url: 'https://www.kujiale.com/festatic/IntelligentDesign?from=webnav',
             subcategory: 'model_design',
             needsMagic: false
         },
@@ -4127,14 +4050,6 @@ const sitesData = {
         
         // 其他专项工具
         // 动效设计
-        {
-            title: 'Fable Prism',
-            description: 'AI驱动的动效设计工具，简化动画创作流程',
-            tags: ['动效设计', 'AI驱动', '动画创作'],
-            url: 'https://fable.app/prism',
-            subcategory: 'special_tools',
-            needsMagic: true
-        },
         {
             title: 'Framer AI',
             description: '基于AI的网站设计和动效创作平台，支持快速原型开发',
@@ -4264,7 +4179,7 @@ const sitesData = {
             title: 'Devin',
             description: '首个全自主AI工程师，能独立完成软件开发项目',
             tags: ['AI工程师', '全栈开发', '自主编程'],
-            url: 'https://www.cognition.ai/devin',
+            url: 'https://devin.ai/',
             subcategory: 'fullstack_dev',
             needsMagic: true
         },
@@ -4314,7 +4229,7 @@ const sitesData = {
             title: 'Sketch2Code',
             description: '微软开发的工具，将手绘草图转换为HTML代码',
             tags: ['微软', '草图转HTML', '设计转代码'],
-            url: 'https://www.microsoft.com/en-us/ai/ai-lab-sketch2code',
+            url: 'https://learn.microsoft.com/en-us/shows/ai-show/sketch2code',
             subcategory: 'design_to_code',
             needsMagic: true
         },
@@ -4645,14 +4560,6 @@ const sitesData = {
         },
         
         // 中文特色资源
-        {
-            title: '词魂',
-            description: '中文AIGC提示词库，聚焦本土化场景（如电商文案、短视频脚本）。',
-            tags: ['中文提示词', '本土化场景', '电商文案'],
-            url: 'https://cihun.com',
-            subcategory: 'chinese_resources',
-            needsMagic: false
-        },
         {
             title: 'AI Short',
             description: '中文精简提示词生成器，输入关键词快速输出优化指令。',
@@ -5167,7 +5074,7 @@ const sitesData = {
             descriptionEn: 'OpenAI platform docs with API onboarding, references and developer resources.',
             tags: ['OpenAI', 'API文档', 'AI开发'],
             tagsEn: ['OpenAI', 'API Docs', 'AI Development'],
-            url: 'https://platform.openai.com/docs/overview',
+            url: 'https://developers.openai.com/api/docs',
             subcategory: 'tech_official_docs',
             isRecommended: true
         },
@@ -5557,17 +5464,6 @@ const sitesData = {
             isRecommended: false
         },
         {
-            title: '阿里云开发者社区 — 2026年 OpenClaw 部署教程及常见问题解答',
-            titleEn: 'Alibaba Cloud Community — 2026 OpenClaw Deployment FAQ',
-            description: '涵盖百炼模型配置、通义千问接入、高频问题 FAQ 和完整 JSON 示例。',
-            descriptionEn: 'Alibaba Cloud developer article covering Bailian model config, Qwen integration, FAQs and full JSON examples.',
-            tags: ['阿里云', '百炼', 'FAQ'],
-            tagsEn: ['Alibaba Cloud', 'Bailian', 'FAQ'],
-            url: 'https://developer.aliyun.com/article/1709761',
-            subcategory: 'tech_deploy_ops',
-            isRecommended: true
-        },
-        {
             title: 'AWS 中国博客 — 基于 Mac 实例部署 OpenClaw',
             titleEn: 'AWS China Blog — Deploy OpenClaw on Mac Instances',
             description: '亚马逊云科技 Mac 实例部署指南，适合苹果生态自动化与桌面场景。',
@@ -5643,17 +5539,6 @@ const sitesData = {
             url: 'https://www.cnblogs.com/catchadmin/p/19556552',
             subcategory: 'tech_deploy_ops',
             isRecommended: false
-        },
-        {
-            title: 'MiniMax — Build AI Assistant on Telegram',
-            titleEn: 'MiniMax — Build AI Assistant on Telegram',
-            description: '通过 OpenClaw 将 MiniMax M2.1 接入 Telegram，搭建可对话的 AI 助手。',
-            descriptionEn: 'MiniMax solution guide for connecting M2.1 to Telegram via OpenClaw to build an AI assistant.',
-            tags: ['MiniMax', 'Telegram', 'OpenClaw集成'],
-            tagsEn: ['MiniMax', 'Telegram', 'OpenClaw Integration'],
-            url: 'https://platform.minimax.io/docs/solutions/moltbot',
-            subcategory: 'tech_deploy_ops',
-            isRecommended: true
         },
         {
             title: 'Bright Data — Build a WhatsApp AI Assistant with OpenClaw',

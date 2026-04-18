@@ -1529,14 +1529,6 @@ const sitesData = {
             needsMagic: false
         },
         {
-            title: 'Chengpian',
-            description: 'An AI writing assistant for self-media creators, supporting hot articles and more professional content generation.',
-            tags: ['self-media', 'hot content', 'original articles'],
-            url: 'https://chengpian.com/',
-            subcategory: 'vertical_specialized',
-            needsMagic: false
-        },
-        {
             title: 'Xiaoyu AI Writing',
             description: 'An AI assistant focused on new media creation, providing various writing styles and templates',
             tags: ['self-media', 'writing styles', 'content creation'],
@@ -1564,25 +1556,12 @@ const sitesData = {
             title: 'iFlytek Huiwen',
             description: 'A creative content generation tool launched by iFlytek, good at scripts, short dramas, and creative stories',
             tags: ['creative scripts', 'short-drama content', 'story generation'],
-            url: 'https://www.xfyun.cn/services/huiwen',
-            subcategory: 'vertical_specialized',
-            needsMagic: false
-        },
-        {
             title: 'Wanneng Xiaoin',
             description: 'An AI assistant for creative content production, supporting scripts, outlines, dialogues, and other specialized writing tasks.',
             tags: ['creative production', 'content creation', 'script generation'],
             url: 'https://wannengxiaoin.com/',
             subcategory: 'vertical_specialized',
             needsMagic: false
-        },
-        {
-            title: 'CaptionBot.ai',
-            description: 'An AI tool that automatically generates captions and descriptive text for pictures and videos.',
-            tags: ['picture captions', 'video descriptions', 'AI subtitles'],
-            url: 'https://captionbot.ai/',
-            subcategory: 'vertical_specialized',
-            needsMagic: true
         },
         {
             title: 'Canva Text Generator',
@@ -1675,7 +1654,7 @@ const sitesData = {
             title: 'Bing Image Creator',
             description: 'Microsoft\'s free AI image generation tool, based on the DALL-E model',
             tags: ['Microsoft', 'free tool', 'easy operation'],
-            url: 'https://www.bing.com/create',
+            url: 'https://www.bing.com/images/create/ai-image-generator',
             subcategory: 'general_image',
             needsMagic: true
         },
@@ -1889,15 +1868,6 @@ const sitesData = {
             subcategory: 'anime',
             needsMagic: true
         },
-        {
-            title: 'Chushou AI',
-            description: 'An AI - driven logo design tool that helps create professional brand identities',
-            tags: ['brand suite', 'logo design', 'color scheme'],
-            url: 'https://chusu.cc/',
-            subcategory: 'anime',
-            needsMagic: false
-        },
-        
         // 娱乐与趣味工具
         {
             title: 'Reface',
@@ -2172,11 +2142,6 @@ const sitesData = {
             title: 'Cici',
             description: 'Global AI assistant for multilingual conversation and content generation',
             tags: ['multilingual', 'global product', 'chat assistant'],
-            url: 'https://www.cici.ai/',
-            subcategory: 'multimodal_ai',
-            needsMagic: true
-        },
-        {
             title: 'NotebookLM',
             description: 'Google AI notebook assistant focused on source-grounded document Q&A',
             tags: ['document Q&A', 'research', 'source grounding'],
@@ -2357,7 +2322,7 @@ const sitesData = {
             "title": "HitPaw Video Enhancer",
             "description": "AI video restoration and enhancement tool that can improve old video quality and add frames",
             "tags": ["video restoration", "quality enhancement", "old videos"],
-            "url": "https://www.hitpaw.com/video-enhancer.html",
+            "url": "https://www.hitpaw.com/vikpea-video-enhancer.html",
             "subcategory": "video_editing",
             "needsMagic": true
         },
@@ -2816,14 +2781,6 @@ const sitesData = {
             needsMagic: false
         },
         {
-            "title": "Musicfy",
-            "description": "A commercial music creation platform by Kunlun Wanwei, a professional AI music production tool",
-            "tags": ["commercial music", "professional production", "AI creation"],
-            "url": "https://www.musicfy.ai/",
-            "subcategory": "music_generation",
-            "needsMagic": false
-        },
-        {
             "title": "Tianpule",
             "description": "A multimodal music generation large model providing comprehensive music creation solutions",
             "tags": ["multimodal", "music large model", "creation solutions"],
@@ -2851,11 +2808,6 @@ const sitesData = {
             "title": "TME Studio",
             "description": "Tencent Music's intelligent creation assistant, an AI tool empowering musicians",
             "tags": ["Tencent Music", "creation assistant", "musician tools"],
-            "url": "https://y.qq.com/tme",
-            "subcategory": "music_generation",
-            "needsMagic": false
-        },
-        {
             "title": "Stable Audio",
             "description": "A music generation tool by Stability AI for creating high-quality music content",
             "tags": ["Stability AI", "music generation", "high quality"],
@@ -2885,7 +2837,7 @@ const sitesData = {
             "title": "Jiandan Tingji",
             "description": "Baidu Netdisk's speech-to-text tool, a convenient recording-to-text service",
             "tags": ["Baidu Netdisk", "speech-to-text", "convenient service"],
-            "url": "https://pan.baidu.com/tingji",
+            "url": "https://tingji.baidu.com/embed/listennote",
             "subcategory": "speech_to_text",
             "needsMagic": false
         },
@@ -2894,14 +2846,6 @@ const sitesData = {
             "description": "iFlytek's online speech-to-text platform, a professional speech recognition service",
             "tags": ["iFlytek", "speech transcription", "professional recognition"],
             "url": "https://www.iflyrec.com/",
-            "subcategory": "speech_to_text",
-            "needsMagic": false
-        },
-        {
-            "title": "Beiwanglu",
-            "description": "A free speech-to-text tool for convenient recording and organizing of voice content",
-            "tags": ["free tool", "voice recording", "text organization"],
-            "url": "https://beiwanglu.com/",
             "subcategory": "speech_to_text",
             "needsMagic": false
         },
@@ -3162,14 +3106,6 @@ const sitesData = {
             "needsMagic": true
         },
         {
-            "title": "AIDesign",
-            "description": "Tencent's free LOGO design tool supporting multiple industries and styles",
-            "tags": ["Tencent", "free LOGO", "multiple styles"],
-            "url": "https://ailogo.qq.com/",
-            "subcategory": "commerce_design",
-            "needsMagic": false
-        },
-        {
             "title": "LogoliveryAI",
             "description": "A free LOGO generation tool offering multiple styles and customization options",
             "tags": ["free", "LOGO generation", "customization"],
@@ -3387,7 +3323,7 @@ const sitesData = {
         "title": "Kujiale AI",
         "description": "Smart home design platform offering one-stop interior design solutions",
         "tags": ["home design", "interior design", "one-stop"],
-        "url": "https://www.kujiale.com/ai",
+        "url": "https://www.kujiale.com/festatic/IntelligentDesign?from=webnav",
         "subcategory": "model_design",
         "needsMagic": false
     },
@@ -3497,14 +3433,6 @@ const sitesData = {
     
     // 其他专项工具
     // 动效设计
-    {
-        "title": "Fable Prism",
-        "description": "AI-driven motion design tool simplifying animation creation workflows",
-        "tags": ["motion design", "AI-driven", "animation creation"],
-        "url": "https://fable.app/prism",
-        "subcategory": "special_tools",
-        "needsMagic": true
-    },
     {
         "title": "Framer AI",
         "description": "AI-based website design and motion creation platform supporting rapid prototyping",
@@ -3674,7 +3602,7 @@ const sitesData = {
             title: 'Public Interest Registry',
             description: 'Non-profit organization managing .ORG domains for non-profit and community organizations',
             tags: ['.ORG Registry', 'Non-profit', 'Community Domains'],
-            url: 'https://thenew.org/',
+            url: 'https://pir.org/',
             subcategory: 'domain',
             needsMagic: true
         },
@@ -3777,7 +3705,7 @@ const sitesData = {
         "title": "Devin",
         "description": "The first fully autonomous AI engineer capable of independent software development projects",
         "tags": ["AI engineer", "full-stack development", "autonomous programming"],
-        "url": "https://www.cognition.ai/devin",
+        "url": "https://devin.ai/",
         "subcategory": "fullstack_dev",
         "needsMagic": true
     },
@@ -3827,7 +3755,7 @@ const sitesData = {
         "title": "Sketch2Code",
         "description": "Microsoft tool converting hand-drawn sketches to HTML code",
         "tags": ["Microsoft", "sketch to HTML", "design to code"],
-        "url": "https://www.microsoft.com/en-us/ai/ai-lab-sketch2code",
+        "url": "https://learn.microsoft.com/en-us/shows/ai-show/sketch2code",
         "subcategory": "design_to_code",
         "needsMagic": true
     },
@@ -3842,7 +3770,7 @@ const sitesData = {
     {
         "title": "Deco",
         "description": "JD.com's design-to-multi-terminal-code tool supporting multiple platforms",
-        "tags": ["JD.com", "design to code", "multi-terminal development"],
+            url: 'https://pir.org/',
         "url": "https://deco-preview.jd.com/",
         "subcategory": "design_to_code",
         "needsMagic": false
@@ -4158,14 +4086,6 @@ const sitesData = {
     },
     
     // 中文特色资源
-    {
-        "title": "词魂",
-        "description": "Chinese AIGC prompt library focusing on localized scenarios (e.g., e-commerce copy, short video scripts).",
-        "tags": ["Chinese prompts", "localized scenarios", "e-commerce copy"],
-        "url": "https://cihun.com",
-        "subcategory": "chinese_resources",
-        "needsMagic": false
-    },
     {
         "title": "AI Short",
         "description": "Chinese concise prompt generator that quickly outputs optimized commands from keywords.",
@@ -4560,7 +4480,7 @@ const sitesData = {
             title: 'OpenAI Docs',
             description: 'OpenAI platform docs with API onboarding, references and developer resources.',
             tags: ['OpenAI', 'API Docs', 'AI Development'],
-            url: 'https://platform.openai.com/docs/overview',
+            url: 'https://developers.openai.com/api/docs',
             subcategory: 'tech_official_docs',
             isRecommended: true
         },
@@ -4845,14 +4765,6 @@ const sitesData = {
             isRecommended: false
         },
         {
-            title: 'Alibaba Cloud Community — 2026 OpenClaw Deployment FAQ',
-            description: 'Alibaba Cloud developer article covering Bailian model config, Qwen integration, FAQs and full JSON examples.',
-            tags: ['Alibaba Cloud', 'Bailian', 'FAQ'],
-            url: 'https://developer.aliyun.com/article/1709761',
-            subcategory: 'tech_deploy_ops',
-            isRecommended: true
-        },
-        {
             title: 'AWS China Blog — Deploy OpenClaw on Mac Instances',
             description: 'AWS China guide for deploying OpenClaw on Mac instances, useful for Apple ecosystem automation workflows.',
             tags: ['AWS', 'Mac Instances', 'Apple Ecosystem'],
@@ -4907,14 +4819,6 @@ const sitesData = {
             url: 'https://www.cnblogs.com/catchadmin/p/19556552',
             subcategory: 'tech_deploy_ops',
             isRecommended: false
-        },
-        {
-            title: 'MiniMax — Build AI Assistant on Telegram',
-            description: 'MiniMax solution guide for connecting M2.1 to Telegram via OpenClaw to build an AI assistant.',
-            tags: ['MiniMax', 'Telegram', 'OpenClaw Integration'],
-            url: 'https://platform.minimax.io/docs/solutions/moltbot',
-            subcategory: 'tech_deploy_ops',
-            isRecommended: true
         },
         {
             title: 'Bright Data — Build a WhatsApp AI Assistant with OpenClaw',

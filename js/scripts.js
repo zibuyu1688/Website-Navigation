@@ -1563,7 +1563,7 @@ function showCategory(category) {
         console.log('显示电商专区主分类');
         document.getElementById('ecommerce-zone-section').style.display = 'block';
         filterEcommerceZoneSubcategory('all');
-    } else if (category === 'ai_model' || category === 'product_photo' || 
+    } else if (category === 'ai_selection' || category === 'ai_model' || category === 'product_photo' || 
                category === 'listing_writing' || category === 'ad_assistant') {
         // 电商专区子分类
         console.log('显示电商专区子分类:', category);
@@ -2396,6 +2396,7 @@ const SEO_CATEGORY_GROUPS = {
     resources: [],
     'tech-blog': ['tech_official_docs', 'tech_tutorials', 'tech_workflows', 'tech_deploy_ops', 'tech_case_studies'],
     ecommerce: ['amazon', 'aliexpress', 'ebay', 'lazada', 'shopee', 'tiktok-shop', 'temu', 'mercado-libre', 'shopify', 'other-ecommerce'],
+    ecommerce_zone: ['ai_selection', 'ai_model', 'product_photo', 'listing_writing', 'ad_assistant'],
     social: ['social-global', 'social-china'],
     website: ['seo', 'keyword', 'analytics', 'domain', 'server', 'payment', 'erp', 'network', 'account', 'temp-mail', 'ip-proxy', 'browser', 'backlink', 'content', 'learning'],
     ai_chat: ['general_assistant', 'entertainment_ai', 'role_play', 'multimodal_ai', 'professional_ai', 'international_ai'],
@@ -2422,6 +2423,12 @@ function getSeoLabel(key, isEnglish) {
         tech_deploy_ops: isEnglish ? 'Deployment & Ops' : '部署与运维',
         tech_case_studies: isEnglish ? 'Case Breakdowns' : '案例拆解',
         ecommerce: isEnglish ? 'E-commerce' : '电商平台',
+        ecommerce_zone: isEnglish ? 'Seller Toolbox' : '电商专供工具箱',
+        ai_selection: isEnglish ? 'AI Product Research' : 'AI选品',
+        ai_model: isEnglish ? 'AI Models' : 'AI模特',
+        product_photo: isEnglish ? 'Product Photo' : '商品摄影',
+        listing_writing: isEnglish ? 'Listing Writing' : 'Listing写作',
+        ad_assistant: isEnglish ? 'Ad Assistant' : '投放助手',
         social: isEnglish ? 'Social Platforms' : '社交平台',
         website: isEnglish ? 'Website Tools' : '建站工具',
         ai_chat: isEnglish ? 'AI Chat' : 'AI对话',
@@ -2508,6 +2515,7 @@ function resolveCategoryNavigationTarget(category) {
     const context = resolveSeoCategoryContext(normalizedCategory);
     const fallbackTopLevels = {
         ecommerce_zone: 'ecommerce_zone',
+        ai_selection: 'ecommerce_zone',
         ai_model: 'ecommerce_zone',
         product_photo: 'ecommerce_zone',
         listing_writing: 'ecommerce_zone',
