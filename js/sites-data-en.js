@@ -9,6 +9,12 @@
 const sitesData = {
     video_downloads: [
         {
+            title: 'Download Dogs',
+            description: 'Paste a video link to parse it online. The site lists Douyin, Xiaohongshu, Bilibili, and YouTube among its supported platforms.',
+            tags: ['Online tool', 'Douyin', 'Rednote', 'Bilibili', 'YouTube'],
+            url: 'https://www.xiazaitool.com/'
+        },
+        {
             title: 'WeChat Channels Downloader',
             description: 'Download videos from WeChat Channels. The project site links to documentation and installers.',
             tags: ['WeChat', 'Channels', 'Desktop'],
