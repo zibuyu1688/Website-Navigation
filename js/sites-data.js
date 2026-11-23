@@ -7,6 +7,15 @@
 const sitesData = {
     video_downloads: [
         {
+            title: '下载狗',
+            description: '粘贴视频链接即可在线解析。官网列出的平台包括抖音、小红书、哔哩哔哩和 YouTube。',
+            titleEn: 'Download Dogs',
+            descriptionEn: 'Paste a video link to parse it online. The site lists Douyin, Xiaohongshu, Bilibili, and YouTube among its supported platforms.',
+            tags: ['在线工具', '抖音', '小红书', '哔哩哔哩', 'YouTube'],
+            tagsEn: ['Online tool', 'Douyin', 'Rednote', 'Bilibili', 'YouTube'],
+            url: 'https://www.xiazaitool.com/'
+        },
+        {
             title: '微信视频号下载器',
             description: '视频号下载工具，项目页提供使用文档和各系统安装包。',
             tags: ['微信', '视频号', '桌面工具'],
