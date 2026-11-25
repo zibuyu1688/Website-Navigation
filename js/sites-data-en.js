@@ -2849,6 +2849,14 @@ const sitesData = {
             "needsMagic": true
         },
         {
+            "title": "Kite",
+            "description": "A collaborative design tool where AI agents (Claude, ChatGPT, Cursor, Codex) draw editable layers via MCP; export frames as HTML, React or Tailwind",
+            "tags": ["UI design", "MCP", "collaboration"],
+            "url": "https://kite.new/",
+            "subcategory": "ui_ux",
+            "needsMagic": true
+        },
+        {
             "title": "Google Stitch",
             "description": "Google’s interface design tool for generating and iterating on UI from text or reference images.",
             "tags": ["high-fidelity", "prototyping", "text generation"],

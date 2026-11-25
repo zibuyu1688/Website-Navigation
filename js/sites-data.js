@@ -3263,6 +3263,14 @@ const sitesData = {
             needsMagic: true
         },
         {
+            title: 'Kite',
+            description: 'AI 智能体（Claude、ChatGPT、Cursor、Codex）通过 MCP 直接绘制可编辑图层的协作设计工具，可导出 HTML / React / Tailwind',
+            tags: ['UI设计', 'MCP', '团队协作'],
+            url: 'https://kite.new/',
+            subcategory: 'ui_ux',
+            needsMagic: true
+        },
+        {
             title: 'Google Stitch',
             description: 'Google 的界面设计工具，可从文字或参考图片生成和迭代 UI。',
             tags: ['高保真', '原型设计', '文本生成'],
